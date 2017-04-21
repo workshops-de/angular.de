@@ -1,0 +1,14 @@
+pre {
+  background-color: #fafafa;
+  //border: 1px solid #f3f3f3;
+  word-wrap: normal !important;
+  white-space: pre-wrap;
+  overflow: auto;
+
+  code {
+    padding: 10px 10px;
+    white-space: pre !important;
+  }
+}
+
+code { white-space: pre-wrap; }

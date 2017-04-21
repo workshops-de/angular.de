@@ -1,0 +1,41 @@
+---
+---
+
+// Variables
+//
+$font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       "Playfair Display", Georgia, "Times New Roman", Times, serif !default;
+
+$line-height: 1.618;
+$headings-margin-bottom: 1.1rem;
+$card-cap-bg: #fff;
+
+$brand-primary:         #0386c9;
+$brand-success:         #43ac6a;
+$brand-warning:         #e99002;
+$brand-danger:          #f04124;
+$brand-info:            #5bc0de;
+
+// Imports
+//
+
+@import "bootstrap";
+@import "mixins";
+@import "font-source-sans";
+@import "font-awesome";
+@import "inputs";
+@import "turbolinks";
+@import "image-loader";
+@import "navigation";
+@import "footer";
+@import "rouge-highlight";
+@import "headroom";
+@import "google-search";
+@import "header";
+@import "col-count";
+@import "post";
+@import "code";
+@import "unsorted-crap";
+
+// Nothing else
+// Pay 10 Euros if you commit sth. here

@@ -1,0 +1,20 @@
+{% if page.noindex != true and jekyll.environment == "development" %}
+  {% if page.description.size <= 50 %}
+  <div class="alert alert-danger fixed-bottom mb-0">
+    Meta Description too short. ({{page.description.size}} chars). Should be more than 50 chars.
+  </div>
+  {% endif %}
+
+  {% if page.description.size > 156 %}
+  <div class="alert alert-danger fixed-bottom mb-0">
+    Meta Description too long ({{page.description.size}} chars). Should be less than 156 chars.
+  </div>
+  {% endif %}
+
+  {% assign page_word_count = page.content | strip_html | number_of_words %}
+  {% if page_word_count <= 500 %}
+  <div class="alert alert-danger fixed-bottom mb-0">
+    This Page has only <strong>{{ page_word_count }}</strong> words. Should be more than 500 words.
+  </div>
+  {% endif %}
+{% endif %}

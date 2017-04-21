@@ -1,0 +1,53 @@
+<footer>
+  {% include _newsletter.html %}
+
+  <div class="info-footer">
+    <div class="container text-center">
+      <ul class="list-inline pull-md-right hidden-print">
+        <li>
+          <a href="/feed.xml" target="_blank" track-ga-event="navigation;top;@href">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-rss fa-stack-0-85x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="https://twitter.com/angularjs_de" target="_blank">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="https://github.com/angularjs-de" target="_blank">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="https://www.facebook.com/angularjs.de" target="_blank">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="mailto:info@workshops.de">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-envelope fa-stack-0-85x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <div class="text-md-left pull-xs-center pull-md-left">
+        <ul class="list-inline text-uppercase">
+          <li class="list-inline-item"><a href="/workshops/angular-intensiv/">Workshops / Schulungen</a></li>
+          <li class="list-inline-item"><a href="/buecher/angularjs-buch/">Buch</a></li>
+          <li class="list-inline-item"><a href="/ueber-uns/">Team</a></li>
+          <li class="list-inline-item"><a href="/impressum/">Impressum</a></li>
+          <li class="list-inline-item"><a href="/datenschutz/">Datenschutz</a></li>
+        </ul>
+        <small class="text-muted footer-copyright">© 2013-{{ site.time | date: '%y' }} Symetics GmbH. Alle Rechte vorbehalten.</small>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</footer>

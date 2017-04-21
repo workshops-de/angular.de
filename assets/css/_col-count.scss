@@ -1,0 +1,11 @@
+.col-count-2 {
+  // padding: $spacer;
+  column-count: 1;
+  column-gap: $spacer*2;
+  // column-rule: $hr-border-width solid $hr-border-color;
+}
+@include media-breakpoint-up(sm) {
+  .col-count-2 {
+    column-count: 2;
+  }
+}

@@ -1,0 +1,28 @@
+---
+layout: base
+---
+
+<div class="header header-post background-gradient-overlay">
+  <div class="header header-post hidden-print"
+       data-background-src="{{page.header_image}}"
+       style="background-image: url('/assets/img/banners/{{page.slug}}.jpg'); display: block;"></div>
+  <div class="container text-wrapper" style="text-align: center;">
+    <h1 class="header-post-title">{{ page.title }}</h1>
+    <div class="header-post-author">von {{ page.author }}</div>
+  </div>
+</div>
+
+<div class="container">
+  <main role="main">
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-12 col-lg-8">
+        {{ content }}
+        <p>
+          <a href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">Diesen Artikel auf GitHub verbessern</a>
+        </p>
+      </div>
+    </div>
+
+  </main>
+</div>

@@ -1,0 +1,26 @@
+<script type="application/ld+json">{"url":"{{post.url}}","publisher":"AngularJS.DE","image":{"width":920,"url":"{{post.header_image}}","height":270,"@type":"ImageObject"},"headline":"{{post.title}}","description":"{{post.description}}","datePublished":"2017-01-12","dateModified":"2017-02-05","author":"{{post.author}}","@type":"Article","@context":"http://schema.org"}</script>
+
+<article class="card mb-3">
+  <a href="{{ post.url }}">
+    <img data-src="{{post.header_image}}"
+          alt="Vorschaubild zum Artikel {{post.title}}"
+          src="/assets/img/banners/{{post.slug}}.jpg"
+          style="display: inline;">
+  </a>
+  <div class="card-block">
+    <h2 class="h4 card-title"><a href="{{ post.url }}">{{post.title}}</a></h2>
+    <p>
+      {{post.description}}
+    </p>
+    <p>
+      <small><a class="text-muted" href="{{ post.url }}">Weiterlesen...</a></small>
+    </p>
+    <small>
+      <span class="text-muted">{% include _reading_time.html %}</span>
+      <span class="float-right">
+        <a class="text-muted" href="#" rel="author">von {{post.author}}</a>
+      </span>
+    </small>
+    <div class="clearfix"></div>
+  </div>
+</article>

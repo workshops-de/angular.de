@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+
+  {% if page.noindex %}
+  <meta name="robots" content="noindex, follow">
+  {% else %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
+  {% endif %}
+
+  <link rel="stylesheet" href="/assets/css/app.css">
+  {% include _ga.html %}
+</head>
+
+<body>
+  {% include _navigation.html %}
+
+  {{content}}
+
+  {% include _footer.html %}
+  {% include _seo_helper.html %}
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+  <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+</body>
+</html>

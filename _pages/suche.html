@@ -1,0 +1,29 @@
+---
+title: Suche
+noindex: true
+sitemap: false
+---
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <script>
+      (function() {
+        if (window.google && window.google.search) {
+          return;
+        }
+        // TODO: Make this configurable
+        var cx = '007941608982900491482:r7e7-yv3ix4';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:searchresults-only linkTarget="_self">
+      <br>
+      Suche läuft...
+    </gcse:searchresults-only>
+  </div>
+</div>

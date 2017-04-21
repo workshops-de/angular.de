@@ -1,0 +1,61 @@
+.header {
+  position: relative;
+  margin-bottom: 20px;
+
+  .page-header {
+    color: #eee;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, .15);
+  }
+
+  a:hover {
+    color: #4d9de0;
+  }
+
+  &.header-default {
+    padding-bottom: 10px;
+    padding-top: 1px;
+    box-shadow: 0 0 20px #aaa;
+    color: #fff;
+  }
+
+  &.header-post {
+    color: #fff;
+    text-shadow: 1px 1px 0 #000;
+    background-size: cover;
+    background-position: center;
+    min-height: 200px;
+    .header-post-title {
+      color: #fff;
+      padding-top: 15px;
+      font-size: 3rem;
+    }
+    .header-post-author {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .header {
+    &.header-post {
+      min-height: 400px;
+      .text-wrapper {
+        position: absolute; bottom: 0; left: 0; right: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .header {
+    &.header-post {
+      .text-wrapper {
+        position: absolute; bottom: 0; left: 0; right: 0;
+
+      }
+      .header-post-title {
+        font-size: 200%;
+      }
+    }
+  }
+}

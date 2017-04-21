@@ -1,0 +1,92 @@
+.text-unstyled, a.text-unstyled {
+  color: $body-color;
+  &:hover { text-decoration: none; }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: $body-color;
+  word-wrap: break-word; // for mobile
+
+  a {
+    color: $body-color;
+  }
+}
+
+.user-thumbnail img { height: auto; }
+
+a.underlined {
+  @include underline($link-color);
+}
+
+img { max-width: 100% !important; }
+
+footer {
+  color: #ccc;
+  a { color: #999; }
+}
+
+// Misc
+//==================================================
+li code,
+p code {
+  background-color: #fafafa;
+  border: 1px solid darken($gray-lighter, 10%);
+  border-radius: 3px;
+  color: #000;
+  font-size: 12px;
+  padding: 2px;
+}
+
+.profile-info {
+  font-weight: 300;
+  i { color: #8a8a8a; margin-right: 5px; }
+}
+
+// Blockquotes
+//==================================================
+blockquote {
+  background-color: #f9f9f9;
+  border: 0;
+  color: #222;
+  font-size: $font-size-base;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  position: relative;
+
+  p { color: #000; margin: 0; }
+}
+
+.body-grey {
+  background-color: #f8f8f8; //#fbfbfb;
+}
+
+.logo {
+  display: block;
+  margin-top: 5px;
+}
+
+.background-gradient-overlay {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, transparent, #333);
+    opacity: .4;
+  }
+}
+
+

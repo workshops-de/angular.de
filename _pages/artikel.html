@@ -1,0 +1,51 @@
+---
+title: Artikel
+noindex: true
+sitemap: false
+---
+
+<div class="row hidden-md-up">
+  <div class="col-12">
+    <div class="col-12">
+      <form action="/suche/" method="get">
+        <input type="text" class="form-control article-search" name="q" placeholder="Artikel durchsuchen">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+  {% for post in site.posts %}
+    {% include _article.html %}
+  {% endfor %}
+  </div>
+  <div class="col-md-4">
+    <div class="row hidden-sm-down">
+      <div class="col-lg-10">
+        <form action="/suche/" method="get">
+          <input type="text" class="form-control article-search" name="q" placeholder="Artikel durchsuchen">
+        </form>
+      </div>
+    </div>
+
+    <br>
+
+    <h2 class="h3">Featured</h2>
+    {% for post in site.posts %}
+      {% if post.categories contains 'featured' %}
+        <div class="row mb-3">
+          <div class="col-sm-3 col-xl-2">
+            <span>
+              <img alt="{{post.author}}" class="rounded-circle" height="32" src="//www.gravatar.com/avatar/{{post.author.gravatar}}?s=64" width="32">
+            </span>
+          </div>
+          <div class="col-sm-9 col-xl-10">
+            <a class="text-unstyled" href="{{post.url}}">{{post.title}}</a> <br>
+            <span class="text-muted">{{post.author}}</span>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

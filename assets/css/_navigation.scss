@@ -1,0 +1,52 @@
+$hover-color: rgba(255,255,255,0.75);
+
+.bg-orange-gradient {
+  background-image: radial-gradient(  circle at 50% 50%, #F67938 29%, #EF4734 120%);
+  // background-image: rgba(0,0,0, 0.8);
+}
+
+.navbar-inverse .navbar-nav {
+  .open > .nav-link {
+    color: $hover-color;
+  }
+
+  .nav-link {
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .nav-link.nav-link-avatar {
+    padding: 0 5px 0 0;
+
+    > img {
+      border: 1px solid transparent;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $hover-color;
+
+      > img {
+        border-color: $hover-color;
+      }
+
+      ::after {
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+.form-inline .navbar-search {
+  background-color: rgba(#fff, 0.6);
+  width: 8em;
+  border: 0;
+  border-radius: 9999px;
+  transition: all 0.2s;
+
+
+
+  &:focus {
+    width: 15em;
+  }
+
+}

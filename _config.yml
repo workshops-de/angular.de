@@ -1,0 +1,48 @@
+title: AngularJS.DE
+description: ""
+url: "https://angularjs.de" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+ga_property: "UA-39010393-1"
+permalink: /artikel/:slug/
+repository_url: "https://github.com/workshops-de/angularjs.de"
+ws_course_id: 4
+
+include: ["_posts/banners"]
+
+collections:
+  books:
+    output: true
+    permalink: /buecher/:path/
+  pages:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: "_posts" # an empty string here means all files in the project
+    values:
+      layout: "post"
+  - scope:
+      path: "_books" # an empty string here means all files in the project
+    values:
+      layout: "chapter"
+  - scope:
+      path: "_pages" # an empty string here means all files in the project
+    values:
+      layout: "page"
+
+# Build settings
+markdown: kramdown
+sass:
+  style: :compressed
+  sass_dir: assets/css
+gems:
+  - jekyll-feed
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Dockerfile
+  - .gitignore
+  - nginx.conf
