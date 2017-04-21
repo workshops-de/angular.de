@@ -1,7 +1,8 @@
 ---
-chapter: 6.60
+number: 6.60
 title: Promises
 part: Konzepte und Hintergründe
+status: 100
 ---
 ## Promises - Was ist das und was können sie?
 

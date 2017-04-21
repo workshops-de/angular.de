@@ -1,7 +1,8 @@
 ---
-chapter: 1.4
+number: 1.4
 title: Didaktischer Hintergrund
 part: Einleitung
+status: 90
 ---
 
 Wir möchten mit diesem Buch nicht nur trocken das nötige Wissen für AngularJS vermitteln, sondern auch die Motivation beim Erlernen hoch zu halten. Wir nehmen an, dass uns Folgendes motiviert beim Lernen:

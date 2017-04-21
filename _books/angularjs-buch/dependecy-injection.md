@@ -1,7 +1,8 @@
 ---
-chapter: 6.10
+number: 6.10
 title: Dependency Injection und der Injektor
 part: Konzepte und Hintergründe
+status: 90
 ---
 
 *Dependecy Injection* ist auch unter dem Namen *Inversion of control* bekannt. Bevor wir zeigen, welche Kontrolle diese umgekehrt und welche Vorteile sich daraus ergeben, zeigen wir zuerst den klassischen Weg.

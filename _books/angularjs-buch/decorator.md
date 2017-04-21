@@ -1,7 +1,8 @@
 ---
-chapter: 6.12
+number: 6.12
 title: Decorator
 part: Konzepte und Hintergründe
+status: 80
 ---
 
 > Der Decorator (auch Dekorierer) ist ein Entwurfsmuster und eine flexible Alternative zur Unterklassenbildung, um eine Klasse um zusätzliche Funktionalitäten zu erweitern. *Entwurfsmuster. 5 Auflage*

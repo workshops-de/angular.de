@@ -1,7 +1,8 @@
 ---
-chapter: 7.10
+number: 7.10
 title: Trend-Vergleich mit anderen Frameworks
 part: Anhang
+status: 90
 ---
 
 ![Vergleich Frameworks](/images/screenshots/framework-comparison.png)

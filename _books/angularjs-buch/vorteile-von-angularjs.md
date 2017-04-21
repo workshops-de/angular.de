@@ -1,7 +1,8 @@
 ---
-chapter: 2.2
+number: 2.2
 title: Vorteile von AngularJS
 part: Grundlagen
+status: 80
 ---
 
 ### Code-Reduktion

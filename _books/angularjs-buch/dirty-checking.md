@@ -1,7 +1,8 @@
 ---
-chapter: 6.80
+number: 6.80
 title: Dirty-Checking / Updatezyklus
 part: Konzepte und Hintergründe
+status: 50
 ---
 
 Um Model und View synchron zu halten, gibt es verschiedene Möglichkeiten. Wir beleuchten zuerst den Fall, den viele andere Frameworks nutzen und gehen danach auf die Methode von AngularJS ein.

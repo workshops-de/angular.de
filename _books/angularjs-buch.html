@@ -4,176 +4,22 @@ noindex: true
 layout: page
 ---
 
-
-
-
-<hr>
-{% assign sorted = (site.books | sort: 'chapter') %}
-{% for book in sorted %}
-  <li>{{ book.chapter }} {{ book.title }}</li>
-{% endfor %}
-<hr>
-
-
-
-
+{% assign sorted_chapters = (site.books | sort: 'number') %}
 <table class="table">
-  <tr class="table-active">
-    <td colspan="2" class="font-weight-bold">1. Einleitung</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="icon">1.1</td>
-    <td><a href="erwartete-vorkenntnisse" id="erwartete-vorkenntnisse">Erwartete Vorkenntnisse</a></td>
-    <td><span class="badge badge-success pull-right">90%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">1.2</td>
-    <td><a href="aufbau" id="aufbau">Aufbau des Buches</a></td>
-    <td><span class="badge badge-success pull-right">80%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">1.3</td>
-    <td><a href="lernstrategie" id="lernstrategie">Lernstrategie</a></td>
-    <td><span class="badge badge-success pull-right">90%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">1.4</td>
-    <td><a href="didaktischer-hintergrund" id="didaktischer-hintergrund">Didaktischer Hintergrund</a></td>
-    <td><span class="badge badge-success pull-right">90%</span></td>
-  </tr>
-  <tr class="table-active">
-    <td colspan="2" class="font-weight-bold">2. Grundlagen</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="icon">2.1</td>
-    <td><a href="was-ist-angularjs" id="was-ist-angularjs">Was ist AngularJS</a></td>
-    <td><span class="badge badge-danger pull-right">30%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">2.2</td>
-    <td><a href="vorteile-von-angularjs" id="vorteile-von-angularjs">Vorteile von AngularJS</a></td>
-    <td><span class="badge badge-success pull-right">80%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">2.3</td>
-    <td><a href="databinding" id="databinding">Databinding - einfach/bidirektional</a></td>
-    <td><span class="badge badge-success pull-right">80%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">2.4</td>
-    <td><a href="ueberblick" id="ueberblick">Überblick der wichtigsten Komponenten</a></td>
-    <td><span class="badge badge-success pull-right">80%</span></td>
-  </tr>
-  <tr class="table-active">
-    <td colspan="2" class="font-weight-bold">3. Basisapplikation</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="icon">3.05</td>
-    <td><a href="np-app-minimal" id="np-app-minimal">Ein erstes Programm</a></td>
-    <td><span class="badge badge-success pull-right">80%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">3.10</td>
-    <td><a href="ng-controller" id="ng-controller">ngController</a></td>
-    <td><span class="badge badge-danger pull-right">20%</span></td>
-  </tr>
-  <tr class="table-active">
-    <td colspan="2" class="font-weight-bold">4. Erweiterungen der Applikation</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="icon">4.20</td>
-    <td><a href="angularjs-directives" id="angularjs-directives">Eigene Direktiven mit AngularJS</a></td>
-    <td><span class="badge badge-danger pull-right">30%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">4.40</td>
-    <td><a href="suchmaschinenoptimierung" id="suchmaschinenoptimierung">SEO / Suchmaschinenoptimierung</a></td>
-    <td><span class="badge badge-danger pull-right">5%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">4.50</td>
-    <td><a href="twitter-bootstrap" id="twitter-bootstrap">Erweiterungen für Twitter Bootstrap</a></td>
-    <td><span class="badge badge-success pull-right">99%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">4.60</td>
-    <td><a href="module" id="module">Module: Die Applikation aufteilen</a></td>
-    <td><span class="badge badge-warning pull-right">50%</span></td>
-  </tr>
-  <tr class="table-active">
-    <td colspan="2" class="font-weight-bold">5. Testen</td>
-    <td></td>
-  </tr>
-  <tr class="table-active">
-    <td colspan="2" class="font-weight-bold">6. Konzepte und Hintergründe</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="icon">6.10</td>
-    <td><a href="dependecy-injection" id="dependecy-injection">Dependency Injection und der Injektor</a></td>
-    <td><span class="badge badge-success pull-right">90%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.11</td>
-    <td><a href="services" id="services">Factory, Service und Provider</a></td>
-    <td><span class="badge badge-success pull-right">80%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.12</td>
-    <td><a href="decorator" id="decorator">Decorator</a></td>
-    <td><span class="badge badge-success pull-right">80%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.20</td>
-    <td><a href="unobstrusivejs" id="unobstrusivejs">Unobtrusive JavaScript</a></td>
-    <td><span class="badge badge-success pull-right">95%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.30</td>
-    <td><a href="minification" id="minification">Verwendung von Minifiern</a></td>
-    <td><span class="badge badge-success pull-right">75%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.40</td>
-    <td><a href="jquery-kompatibilitaet" id="jquery-kompatibilitaet">jqLite - Kompatibilität mit jQuery</a></td>
-    <td><span class="badge badge-success pull-right">90%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.50</td>
-    <td><a href="browser-kompatibilitaet" id="browser-kompatibilitaet">Internet Explorer - Kompatibilität (IE6, IE7, IE8)</a></td>
-    <td><span class="badge badge-success pull-right">90%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.60</td>
-    <td><a href="angularjs-promises" id="angularjs-promises">Promises - Callback 2.0</a></td>
-    <td><span class="badge badge-success pull-right">100%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.80</td>
-    <td><a href="dirty-checking" id="dirty-checking">Dirty-Checking / Updatezyklus</a></td>
-    <td><span class="badge badge-warning pull-right">50%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">6.90</td>
-    <td><a href="performance" id="performance">Performance-Tipps</a></td>
-    <td><span class="badge badge-danger pull-right">15%</span></td>
-  </tr>
-  <tr class="table-active">
-    <td colspan="2" class="font-weight-bold">7. Anhang</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="icon">7.10</td>
-    <td><a href="framework-trend" id="framework-trend">Trend-Vergleich mit anderen Frameworks</a></td>
-    <td><span class="badge badge-success pull-right">90%</span></td>
-  </tr>
-  <tr>
-    <td class="icon">7.20</td>
-    <td><a href="entstehungsgeschichte" id="entstehungsgeschichte">Die Entstehungsgeschichte von AngularJS</a></td>
-    <td><span class="badge badge-success pull-right">80%</span></td>
-  </tr>
+  {% for chapter in sorted_chapters %}
+    {% if chapter.number %}
+      {% if last_part != chapter.part %}
+        <tr class="table-active">
+          <td colspan="3" class="font-weight-bold">{{ chapter.part }}</td>
+        </tr>
+      {% endif %}
+      <tr>
+        <td width="20">{{ chapter.number }}</td>
+        <td><a href="{{ chapter.url }}">{{ chapter.title }}</a></td>
+        <td><span class="badge badge-primary float-right">{{ chapter.status }}</span></td>
+      </tr>
+    {% endif %}
+    {% assign last_part = chapter.part %}
+  {% endfor %}
 </table>
+

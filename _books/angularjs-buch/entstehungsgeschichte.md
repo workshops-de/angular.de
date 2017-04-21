@@ -1,7 +1,8 @@
 ---
-chapter: 7.20
+number: 7.20
 title: Entstehungsgeschichte
 part: Anhang
+status: 80
 ---
 
 Der ursprüngliche Autor von AngularJS ist [Miško Hevery](https://twitter.com/mhevery). Miško hatte sich 2009 intensiv mit JavaScript beschäftigt und begann ein Framework zu schreiben, um sein Wissen zu vertiefen. Damals arbeitete er bei Google im Rahmen seines 20%-Projekt an AngularJS. Die eigentliche Idee von Miško war: Designer sollen Programme mit nur ein wenig mehr Markup schreiben können. Das anfängliche Logo sah so aus:

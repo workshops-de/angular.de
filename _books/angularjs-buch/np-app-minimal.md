@@ -1,7 +1,8 @@
 ---
-chapter: 3.05
+number: 3.05
 title: Ein erstes Programm
 part: Basisapplikation
+status: 80
 ---
 
 > **API**:

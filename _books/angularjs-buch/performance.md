@@ -1,7 +1,8 @@
 ---
-chapter: 6.90
+number: 6.90
 title: Performance
 part: Konzepte und Hintergründe
+status: 15
 ---
 
 ### Angular Performance Tip 1 - $apply und $digest

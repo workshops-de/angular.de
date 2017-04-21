@@ -1,7 +1,8 @@
 ---
-chapter: 6.30
+number: 6.30
 title: Verwendung von Minifiern
 part: Konzepte und Hintergründe
+status: 75
 ---
 
 Bei der Verwendung von AngularJS und Minifiern gibt es einen Fallstrick. Der Injektor von AngularJS erzeugt neue Objekte anhand der Namen, die einer Funktion übergeben werden. Nehmen wir als Beispiel einen Controller, der folgendermaßen aussieht:

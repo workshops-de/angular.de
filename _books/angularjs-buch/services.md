@@ -1,7 +1,8 @@
 ---
-chapter: 6.11
+number: 6.11
 title: Factory, Service und Provider
 part: Konzepte und Hintergründe
+status: 80
 ---
 
 Nachdem wir [Dependency Injection](#dependency-injection) verstanden haben, lernen wir diese sinnvoll zu gebrauchen. Der Injektor vor AngularJS bietet mehrere Methoden, um Funktionen zu erzeugen, die später injiziert werden können. Die gesamten Methoden werden in der Dokumentation Services genannt und sind nicht zu verwechseln mit der einzelnen Methode *service*. Alle Services sind Singletons. Wir unterteilen die Services in:

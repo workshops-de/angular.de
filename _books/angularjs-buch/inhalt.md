@@ -1,7 +1,8 @@
 ---
-chapter: 3.10
+number: 3.10
 title: ngController
 part: Basisapplikation
+status: 20
 ---
 
 > **API**: [ng-controller](http://docs.angularjs.org/api/ng.directive:ngController)

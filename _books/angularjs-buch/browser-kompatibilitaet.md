@@ -1,7 +1,8 @@
 ---
-chapter: 6.50
+number: 6.50
 title: Internet Explorer - Kompatibilität (IE6, IE7, IE8)
 part: Konzepte und Hintergründe
+status: 90
 ---
 
 AngularJS ist von Haus aus kompatibel zum Internet Explorer ab Version 9. Kompatibilität mit älteren Version zu erreichen ist möglich und erfordert nur mäßigen Aufwand.

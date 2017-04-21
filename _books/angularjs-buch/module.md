@@ -1,7 +1,8 @@
 ---
-chapter: 4.60
+number: 4.60
 title: Module - Die Applikation aufteilen
 part: Erweiterungen der Applikation
+status: 50
 ---
 
 Die meisten Anwendungen verfügen über eine main-Methode, die alle benötigen Komponenten initialisiert und lädt. AngularJS geht einen anderen Weg und lässt deklarativ den Ladeprozess beschreiben. Diese Vorgehensweise hat mehrere Vorteile:
