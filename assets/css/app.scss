@@ -8,7 +8,7 @@ $font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial,
 $border-radius: 0;
 $border-radius-sm: 0;
 $border-radius-lg: 0;
-$line-height: 1.618;
+$line-height-base: 1.618;
 $headings-margin-bottom: 1.1rem;
 $card-cap-bg: #fff;
 
@@ -24,6 +24,7 @@ $brand-info:            #5bc0de;
 @import "bootstrap";
 @import "mixins";
 @import "font-source-sans";
+@import 'font-playfair';
 @import "font-awesome";
 @import "inputs";
 @import "turbolinks";

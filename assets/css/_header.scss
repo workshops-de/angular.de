@@ -14,24 +14,47 @@
   &.header-default {
     padding-bottom: 10px;
     padding-top: 1px;
-    box-shadow: 0 0 20px #aaa;
+    background: #555 url('/images/noise.png');
+    // background-image: url('/images/noise.png'), radial-gradient(50% 100%, #5287c1 0%, #345d9a 100%);
+    box-shadow: 0px 0px 20px #aaa;
     color: #fff;
+  }
+
+  &.header-workshop {
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #efefef;
+    color: #333;
+    font-family: $font-family-serif;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    margin-bottom: 40px;
   }
 
   &.header-post {
     color: #fff;
-    text-shadow: 1px 1px 0 #000;
+    text-shadow: 1px 1px 0px #000;
     background-size: cover;
     background-position: center;
     min-height: 200px;
     .header-post-title {
       color: #fff;
       padding-top: 15px;
-      font-size: 3rem;
+      font-size: 250%;
     }
     .header-post-author {
       margin-bottom: 30px;
     }
+  }
+
+  &.header-book {
+    background: #fff;
+    border: 0;
+  }
+
+  &.header-bg-homepage {
+    background: url('/images/homepage-background.jpg') !important;
+    color: #333;
+    padding: 80px 0 40px;
   }
 }
 
