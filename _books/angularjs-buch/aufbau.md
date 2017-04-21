@@ -7,7 +7,7 @@ status: 80
 
 Das Buch ist folgendermaßen gegliedert:
 
-![AngularJS Aufbau](/images/figures/structure.png)
+![AngularJS Aufbau](../images/figures/structure.png)
 
 1. Grundlagen: Du bekommst einen Überblick, was AngularJS umfasst. Konzepte von AngularJS werden von uns kurz umrissen. Am Ende des Kapitels findest du die wichtigsten Komponenten grafisch dargestellt.
 2. Basisapplikation: In diesem Teil erstellen wir eine Beispielapplikation. Mit dieser behandeln wir die grundlegenden Funktionen von AngularJS.

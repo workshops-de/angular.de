@@ -17,11 +17,11 @@ An dieser Stelle wird `ng-controller` als neue Direktive hinzugekommen. Wie der 
 
 Ein Controller in AngularJS ist nichts weiter als eine normale Funktion. Eine Besonderheit ist nur die übergebene Variable `$scope`. Mit dieser Variable können wir Daten mit dem View austauschen. Dieser Controller macht nichts weiter, als auf dem Scope `name` den Wert *AngularJS* hinzuzufügen.
 
-![AngularJS - Controller Scope](/images/figures/scope-controller.png)
+![AngularJS - Controller Scope](../images/figures/scope-controller.png)
 
 Wie man sieht, existieren jetzt zwei Scopes. Das `$rootScope`, definiert durch `ng-app` und ein neues Scope, definiert durch `ng-controller`.
 
-![AngularJS - Root Scope](/images/figures/scopes.png)
+![AngularJS - Root Scope](../images/figures/scopes.png)
 
 Das Bild oberhalb verdeutlicht noch einmal die Kommunikation zwischen Variablen und Scopes. Das Scope ist die Verbindung zwischen View und Controller. Wird eine Variable auf dem Scope geändert, werden alle Elemente im View davon benachrichtigt und der entsprechende Wert geändert.
 
