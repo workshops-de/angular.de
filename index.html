@@ -5,78 +5,76 @@ description: Alles rund um Angular/JavaScript auf deutsch - Tutorials · Artikel
 permalink: /
 ---
 
-<div class="container">
-  <main role="main">
-    <div style="background-color: #f1f1f1; border-bottom: 3px solid #eee;" class="mb-2">
-      <div class="container">
-        <br><br>
-        <h1 class="text-center">Alles rund um Angular</h1>
-        <h2 class="text-center"><small>Seit über 4 Jahren</small></h2>
-        <div class="row mt-1 mb-2">
-          <div class="col-md-4 pt-1 hidden-sm-down">
-            <h3>Lernen &amp; Austausch</h3>
-            <p class="text-justify">
-              Stöbere durch unsere <a href="/artikel">Artikel</a>
-              und <a href="/tutorials">Tutorials</a> - erfahre alles rund um Angular.</p>
-            <p class="text-justify">Tausch Dich aus und werde Teil der größten
-              <a href="/entwickler">Angular-Community</a> in Deutschland, Österreich und der Schweiz!</p>
-          </div>
-          <div class="col-md-4">
-            <div class="mx-auto circled-logo-wrapper">
-              <div class="circled-logo" style="background-image: url(/img/angularjs-de-logo.svg);">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 pt-1 hidden-sm-down">
-            <h3>Workshops &amp; Jobs</h3>
-            <p class="text-justify">Lerne aus unseren Fehlern. Erfahre alles über die Fallstricke von Angular in unseren <a href="/workshops/angular-intensiv">Offenen-</a>
-              und <a href="/inhouse-workshop">Inhouse-Schulungen</a>.</p>
-            <p class="text-justify">Suche und <a href="/jobs">finde Jobs</a> in unserem Jobportal. Schalte selbst eine <a href="/jobs/new">kostenlose Stellenanzeige</a>.</p>
-          </div>
-        </div>
-
-        <div class="alert alert-info text-center lead">
-          Noch keine Erfahrung mit
-          <strong>Angular</strong> oder
-          <strong>Ionic</strong>?
-          - Starte hier mit unseren
-          <a href="/tutorials"><strong>Einsteiger-Tutorials!</strong></a>
-        </div>
-      </div>
-    </div>
-
+<main role="main">
+  <div style="background-color: #f1f1f1; border-bottom: 3px solid #eee;" class="mb-2">
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% for post in site.posts limit:4 %}
-            {% include _article.html %}
-          {% endfor %}
-          <a class="btn btn-block btn-secondary text-muted hidden-sm-up" href="/artikel">weitere Artikel</a>      <br class="hidden-sm-up">
-          <br class="hidden-sm-up">
+      <br><br>
+      <h1 class="text-center">Alles rund um Angular</h1>
+      <h2 class="text-center"><small>Seit über 4 Jahren</small></h2>
+      <div class="row mt-1 mb-2">
+        <div class="col-md-4 pt-1 hidden-sm-down">
+          <h3>Lernen &amp; Austausch</h3>
+          <p class="text-justify">
+            Stöbere durch unsere <a href="/artikel">Artikel</a>
+            und <a href="/tutorials">Tutorials</a> - erfahre alles rund um Angular.</p>
+          <p class="text-justify">Tausch Dich aus und werde Teil der größten
+            <a href="/entwickler">Angular-Community</a> in Deutschland, Österreich und der Schweiz!</p>
         </div>
-
         <div class="col-md-4">
-          <div class="row">
-            <div class="col-sm-6 col-md-12">
-              <!-- events -->
-              <h4><a href="/workshops/angular-intensiv/">Anstehende Workshops »</a></h4>
+          <div class="mx-auto circled-logo-wrapper">
+            <div class="circled-logo" style="background-image: url(/assets/img/angularjs-de-logo.svg);">
             </div>
           </div>
         </div>
+        <div class="col-md-4 pt-1 hidden-sm-down">
+          <h3>Workshops &amp; Jobs</h3>
+          <p class="text-justify">Lerne aus unseren Fehlern. Erfahre alles über die Fallstricke von Angular in unseren <a href="/workshops/angular-intensiv">Offenen-</a>
+            und <a href="/inhouse-workshop">Inhouse-Schulungen</a>.</p>
+          <p class="text-justify">Suche und <a href="/jobs">finde Jobs</a> in unserem Jobportal. Schalte selbst eine <a href="/jobs/new">kostenlose Stellenanzeige</a>.</p>
+        </div>
       </div>
 
-    <br>
-
-    <h2>Wie es zu dieser Seite kam</h2>
-
-    <div class="col-count-2">
-
+      <div class="alert alert-info text-center lead">
+        Noch keine Erfahrung mit
+        <strong>Angular</strong> oder
+        <strong>Ionic</strong>?
+        - Starte hier mit unseren
+        <a href="/tutorials"><strong>Einsteiger-Tutorials!</strong></a>
+      </div>
     </div>
-    <p>
-      <a href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">Diese Seite auf GitHub verbessern</a>
-    </p>
-  </main>
-</div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% for post in site.posts limit:4 %}
+          {% include _article.html %}
+        {% endfor %}
+        <a class="btn btn-block btn-secondary text-muted hidden-sm-up" href="/artikel">weitere Artikel</a>      <br class="hidden-sm-up">
+        <br class="hidden-sm-up">
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <!-- events -->
+            <h4><a href="/workshops/angular-intensiv/">Anstehende Workshops »</a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <br>
+
+  <h2>Wie es zu dieser Seite kam</h2>
+
+  <div class="col-count-2">
+
+  </div>
+  <p>
+    <a href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">Diese Seite auf GitHub verbessern</a>
+  </p>
+</main>
 
 
 
