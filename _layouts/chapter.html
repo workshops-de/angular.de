@@ -2,6 +2,35 @@
 layout: base
 ---
 
+{% assign sorted_chapters = (site.books | sort: 'number') %}
+
+{% for links in sorted_chapters  %}
+{% if forloop.first %}
+	{% assign first = links %}
+{% endif %}
+{% if forloop.last %}
+	{% assign last = links %}
+{% endif %}
+  {% if links.title == page.title %}
+	{% unless forloop.first %}
+		{% assign prevurl = prev.url %}
+		{% assign prevtitle = prev.title %}
+	{% endunless %}
+	{% unless forloop.last %}
+		{% assign next = sorted_chapters[forloop.index] %}
+		{% assign nexturl = next.url %}
+		{% assign nexttitle = next.title %}
+	{% endunless %}
+  {% endif %}
+  {% assign prev = links %}
+{% endfor %}
+
+{% assign firsturl = first.url %}
+{% assign lasturl = last.url %}
+
+
+
+
 <div class="container">
   <main role="main">
     <br>
@@ -18,13 +47,17 @@ layout: base
 
         <div class="row mb-4">
           <div class="col-md-4">
-              <a class="text-truncate btn btn-primary btn-block" href="/buecher/angularjs-buch/erwartete-vorkenntnisse">« Erwartete Vorkenntnisse</a>
+            {% if prevurl %}
+              <a class="text-truncate btn btn-primary btn-block" href="{{prevurl}}">« {{ prevtitle }}</a>
+            {% endif %}
           </div>
           <div class="col-md-4">
             <a class="btn btn-secondary btn-block" href="{{ page.url | replace:page.slug,'' | replace:'//','/' }}#{{ page.slug }}">Übersicht</a>
           </div>
           <div class="col-md-4">
-            <a class="text-truncate btn btn-primary btn-block" href="/buecher/angularjs-buch/lernstrategie">Lernstrategie »</a>
+            {% if nexturl %}
+              <a class="text-truncate btn btn-primary btn-block" href="{{ nexturl }}">{{ nexttitle }} »</a>
+            {% endif %}
           </div>
         </div>
         <p>
