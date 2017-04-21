@@ -15,7 +15,7 @@ layout: page
       {% endif %}
       <tr>
         <td width="20">{{ chapter.number }}</td>
-        <td><a href="{{ chapter.url }}">{{ chapter.title }}</a></td>
+        <td><a id="{{ chapter.slug }}" href="{{ chapter.url }}">{{ chapter.title }}</a></td>
         <td><span class="badge badge-primary float-right">{{ chapter.status }}</span></td>
       </tr>
     {% endif %}

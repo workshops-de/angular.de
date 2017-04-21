@@ -9,15 +9,36 @@ layout: base
     <br>
     <h1>{{ page.title }}</h1>
 
-    {% if page.next and page.next.categories contains "blog" %}
-      <a href="{{ page.next.url }}">Next Post</a>
-    {% else if page.previous and page.previous.categories contains "blog" %}
-      <a href="{{ page.previous.url }}">Previous Post</a>
-    {% endif %}
-
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-9">
         {{ content }}
+
+        <br>
+        <hr>
+
+        <div class="row mb-4">
+          <div class="col-md-4">
+              <a class="text-truncate btn btn-primary btn-block" href="/buecher/angularjs-buch/erwartete-vorkenntnisse">« Erwartete Vorkenntnisse</a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-secondary btn-block" href="{{ page.url | replace:page.slug,'' | replace:'//','/' }}#{{ page.slug }}">Übersicht</a>
+          </div>
+          <div class="col-md-4">
+            <a class="text-truncate btn btn-primary btn-block" href="/buecher/angularjs-buch/lernstrategie">Lernstrategie »</a>
+          </div>
+        </div>
+        <p>
+          <a href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">Dieses Kapitel auf GitHub erweitern oder verbessern</a>
+        </p>
+      </div>
+      <div class="col-md-3">
+        <a href="/workshops/angular-intensiv?utm_source=developer_index&amp;utm_campaign=workshop_teaser&amp;utm_medium=text_banner">      <div class="alert alert-success">
+            <p>
+              <strong>Angular in nur 3 Tagen lernen</strong> - in Berlin, München oder Inhouse.
+            </p>
+            <span class="btn btn-success">Jetzt informieren</span>
+          </div>
+        </a>
       </div>
     </div>
   </main>
