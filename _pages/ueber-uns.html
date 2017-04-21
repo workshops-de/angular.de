@@ -1,0 +1,20 @@
+---
+title: Das Team von AngularJS.DE
+---
+
+{% for member in site.data.team_members %}
+  <hr>
+  <div class="row">
+    <div class="col-5 col-sm-4 col-md-2 user-thumbnail text-center">
+      <img alt="{{ member.name }}" class="rounded-circle" height="150" src="//www.gravatar.com/avatar/{{ member.gravatar_uid }}?s=300" width="150">
+    </div>
+    <div class="col-7 col-sm-8 col-md-6">
+      <h2>{{ member.name }}</h2>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6">
+      <p>{{ member.bio }}</p>
+    </div>
+    <div class="col-sm-12 col-md-3 offset-lg-1">
+    </div>
+  </div>
+{% endfor %}
