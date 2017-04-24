@@ -4,7 +4,7 @@ description: "Tutorial zu Angular  - die neue Version des beliebtesten Single-Pa
 author: "Robin Böhm"
 slug: "angular2-tutorial-deutsch"
 published_at: 2015-12-19 08:00:00.000000Z
-categories: "angular2 angular angular4 featured"
+categories: tutorial angular2 angular angular4 featured
 header_image: "/artikel/header_images/angular2-tutorial-deutsch.jpg"
 ---
 
@@ -21,7 +21,7 @@ Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories:
                 Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und Spaß machen. Wir bieten euch auch
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
                     und TypeScript Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
-            </p>                
+            </p>
             <p class="">
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
                     <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
@@ -40,7 +40,7 @@ Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories:
 
 ## Überblick
 
-Wir haben die Artikelreihe in verschiedene Teile aufgeteilt. 
+Wir haben die Artikelreihe in verschiedene Teile aufgeteilt.
 
 * Basis-Komponente, Klassen und Decorators(ähnlich Annotationen)
 * Property- und Event-Binding
@@ -118,7 +118,7 @@ Als nächsten müssen wir die Meta-Daten der eigentlichen Komponente definieren.
 
     import {Component} from '@angular/core';
     import {bootstrap} from '@angular/platform-browser-dynamic';
-    
+
     @Component({
       selector: 'pizza-root',
       template : `<h1>
@@ -128,17 +128,17 @@ Als nächsten müssen wir die Meta-Daten der eigentlichen Komponente definieren.
                   </h1>`
     })
     export class AppComponent {
-    }    
-    
-    
-Nun haben wir unsere [minimale Komponente](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/app/app.component.ts) bereits fast komplett fertig definiert. Was uns jetzt noch fehlt ist eine kleine Helper-Funktion die Angular uns mitliefert: Die `bootstrap` Funktion. Mit Hilfe dieser Funktion stoßen wir die Initialisierung des Modules an. 
-    
+    }
+
+
+Nun haben wir unsere [minimale Komponente](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/app/app.component.ts) bereits fast komplett fertig definiert. Was uns jetzt noch fehlt ist eine kleine Helper-Funktion die Angular uns mitliefert: Die `bootstrap` Funktion. Mit Hilfe dieser Funktion stoßen wir die Initialisierung des Modules an.
+
     import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     import { AppModule } from './app/';
-    
+
     platformBrowserDynamic().bootstrapModule(AppModule);
-    
-    
+
+
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/app/app.component.ts) app.component.ts<br>
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/main.ts) main.ts
 
@@ -149,9 +149,9 @@ Nach dem Angular Style-Guide sollte das Starten der Anwendung in einer extra Dat
 Nachdem wir unsere Basis-Komponente nun erfolgreich eingebunden haben, werfen wir einmal ein Blick auf die Features die uns das Angular Framework mitbringt.
 
 ## Property- und Event-Binding
-Angular bietet uns viel generische Möglichkeiten um auf Events zu reagieren oder Eigenschaften an einem Element dynamisch zu definieren. Mussten wir in Angular 1 noch für jedes Event eine extra Direktive definieren, wie z.B. `ng-click`, `ng-doubleclick`, `ng-mouseover` usw., können wir dies nun generisch mit Hilfe der Runden klammern lösen. 
+Angular bietet uns viel generische Möglichkeiten um auf Events zu reagieren oder Eigenschaften an einem Element dynamisch zu definieren. Mussten wir in Angular 1 noch für jedes Event eine extra Direktive definieren, wie z.B. `ng-click`, `ng-doubleclick`, `ng-mouseover` usw., können wir dies nun generisch mit Hilfe der Runden klammern lösen.
 
-Da sich Angular hierbei direkt an die nativen Events der DOM-Elemente hängt, können wir auch ohne Probleme Standart-Elemente, Polymer, WebComponents oder auch Komponenten von anderen Frameworks wie z.B. ReactJS miteinander kombinieren. Das selbe gilt natürlich auch für die `Property-Bindings`, welche sich auf die Eigenschaften eines Elements beziehen. War es bei AngularJS 1 noch so, dass wir diese in einem JavaScript Scope halten mussten und schwer nach externen Komponenten (nativ oder andere Frameworks) kommunizieren konnten, können wir nun auch auf den Browser-DOM-Objekten unsere Daten manipulieren und mit anderen Komponenten austauschen. 
+Da sich Angular hierbei direkt an die nativen Events der DOM-Elemente hängt, können wir auch ohne Probleme Standart-Elemente, Polymer, WebComponents oder auch Komponenten von anderen Frameworks wie z.B. ReactJS miteinander kombinieren. Das selbe gilt natürlich auch für die `Property-Bindings`, welche sich auf die Eigenschaften eines Elements beziehen. War es bei AngularJS 1 noch so, dass wir diese in einem JavaScript Scope halten mussten und schwer nach externen Komponenten (nativ oder andere Frameworks) kommunizieren konnten, können wir nun auch auf den Browser-DOM-Objekten unsere Daten manipulieren und mit anderen Komponenten austauschen.
 
 So können wir mit `[style.background-color]` auf die Hintergrundfarbe eines Elements Einfluss nehmen. Diesen Wert können wir sowohl statisch als auch über dynamisch Variablen setzen. Um auf `input-Events` zu reagieren, können wir hierbei einen Listener direkt mit einer Expression erstellen.
 Wir bekommen hierbei eine Referenz auf das native Event an die Hand.
@@ -161,7 +161,7 @@ Wir bekommen hierbei eine Referenz auf das native Event an die Hand.
     @Component({
         selector: 'pizza-root',
         template: `
-    <input 
+    <input
         type="text"
         (keyup)="onKeyUp()"
         (input)="color=$event.target.value"
@@ -171,14 +171,14 @@ Wir bekommen hierbei eine Referenz auf das native Event an die Hand.
     export class AppComponent {
         public color: string;
         onKeyUp() {
-            console.log('keyup: ' +         
+            console.log('keyup: ' +
             this.color)
         }
     }
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/03a-event-property-bindings/src/app/app.component.ts) für die Verwendung von Property- und Eventbinding
 
-Wir können natürlich auch jedes andere Event wie keyup benutzen und die Methode onKeyUp an dieses Event binden. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist das unabhängig davon, ob sie in Angular oder einem anderem Framework geschrieben sind. 
+Wir können natürlich auch jedes andere Event wie keyup benutzen und die Methode onKeyUp an dieses Event binden. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist das unabhängig davon, ob sie in Angular oder einem anderem Framework geschrieben sind.
 
 > Die Syntax `[()]` (also eckige UND runde Klammern) ist einfach nur ein Indikator, dass diese Direktive die übergebene Eigenschaft liest und ebenso schreibt. Wir werden diese im nächsten Kapitel innerhalb der Form-Direktiven verwenden. Eselsbrücken zum Merken sind `banana in a box` oder für die Fußball-Begeisterten: `Das Runde muss in das Eckige` :)
 
@@ -199,11 +199,11 @@ Dies ist seit der Einführung von `@NgModules` nicht mehr notwendig und wird hie
         <h1>
             Angular2 Tutorial von
             AngularJS.DE</h1>
-            <input 
+            <input
                type="text"
                [(ngModel)]="search" >
          <p>
-             Du suchst gerade nach: 
+             Du suchst gerade nach:
              {{search}}
          </p>
     `
@@ -222,7 +222,7 @@ Expressions sind viel mächtiger, als sie im ersten Moment erscheinen. Expressio
     {{search.toUpperCase() + "!"}}
     {{1 + 2 + 3}}
 
-In diesem Fall wird z.B. der Inhalt von search immer direkt in Großbuchstaben umgewandelt und ein Ausrufezeichen angehängt. 
+In diesem Fall wird z.B. der Inhalt von search immer direkt in Großbuchstaben umgewandelt und ein Ausrufezeichen angehängt.
 
 Ein eleganter Anwendungsfall ist die Nutzung des ternären Operators. So kann eine abhängige Ausgabe ohne die Nutzung von *ngIf oder DOM-Manipulation geregelt werden.
 
@@ -286,8 +286,8 @@ Wie wir bereits gelernt haben, gibt es Event- und Property-Bindings in Angular. 
 
 #### Das * Symbol in Angular
 
-Das Asterisk-Zeichen stellt die Kurzschreibweise einer strukturellen Direktive dar. Sie stellt auch automatisch das Data-Binding her. 
-    
+Das Asterisk-Zeichen stellt die Kurzschreibweise einer strukturellen Direktive dar. Sie stellt auch automatisch das Data-Binding her.
+
     <pizza-list-item *ngFor="let pizza of menu"></pizza-list-item>
 
 Strukturelle Direktiven würden im erweiterten Syntax den eigenen Quellcode sehr aufblähen. Das template-Tag gibt an, dass nachfolgend ein Angular-Template folgt, welches über die Bedingung entfernt oder hinzugefügt wird.
@@ -307,7 +307,7 @@ Wie der Name schon sagt, werden diese Direktiven als Attribut an ein DOM-Element
 Als kleines Beispiel schreiben wir nun für das Ändern der Schriftfarbe eine eigene Direktive.
 
     import {Directive, ElementRef, Renderer} from '@angular/core';
-    
+
     @Directive({
         selector: '[redFont]'
     })
@@ -317,7 +317,7 @@ Als kleines Beispiel schreiben wir nun für das Ändern der Schriftfarbe eine ei
             renderer.setElementStyle(el.nativeElement, 'color', 'red');
         }
     }
-    
+
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/05-directives/src/app/shared/red-font.directive.ts) zur Definition einer eigenen Direktive
 
 Eine Direktive wird über den Decorator `@Directive` definiert. Als wichtigste Meta-Daten muss wieder ein selector angegeben werden, damit unsere Direktive überhaupt ausgeführt wird. Im Unterscheid zur @Component wird der Selektor in [] geschrieben, wodurch ein Attribut-Name definiert wird. Im Beispiel werden zwei wichtige Bestandteile für die Arbeit mit Direktiven der Angular-Bibliothek genutzt.
@@ -390,16 +390,16 @@ Die Erstellung einer eigenen Pipe ist denkbar einfach. Ähnlich wie andere Besta
 Diese Pipe mit dem Namen *addTwo* addiert zur Eingabe die Zahl 2.
 
     import {Pipe, PipeTransform} from '@angular/core';
-    
+
     @Pipe({name: 'addTwo'})
     export class AddTwoPipe implements PipeTransform {
         transform(number:number) : any {
             return number + 2;
         }
     }
-    
+
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/07-pipes/src/app/shared/add-two.pipe.ts) zur Defintion eigener Pipes.
-    
+
 Um unsere Pipe benutzen zu können, müssen wir diese wieder unserem Modul hinzufügen. Also die entsprechende Klasse importieren und bei `declrations` anfügen.
 
     import { AddTwoPipe } from './shared/add-two.pipe';
@@ -427,7 +427,7 @@ Eine einfache Möglichkeit wiederverwendbare Programmteile auszulagern oder Date
 
 Somit können wir, ähnlich wie in AngularJS, Logik in plain JavaScript schreiben und an Komponenten weitergeben. Hiermit können wir unsere Implementierungen der Business-Logik später auch in anderen Frameworks wiederverwenden oder aber auch unsere Services als AngularJS sehr einfach in die Angular Welt bringen.
 
-Damit die Typ-Informationen des Constructors, welche wir gleich für die Injection von anderen Services benötigen, beim der Kompilierung nicht verloren gehen, können wir mit dem Decorator `@Injectable` die Generierung dieser Metadaten erzwingen. Somit können wir auch später in der ES5 Version sicherstelle, dass wir den HTTP-Service anhand des Typs korrekt einbinden können. 
+Damit die Typ-Informationen des Constructors, welche wir gleich für die Injection von anderen Services benötigen, beim der Kompilierung nicht verloren gehen, können wir mit dem Decorator `@Injectable` die Generierung dieser Metadaten erzwingen. Somit können wir auch später in der ES5 Version sicherstelle, dass wir den HTTP-Service anhand des Typs korrekt einbinden können.
 
     import {Injectable} from '@angular/core';
 
@@ -459,9 +459,9 @@ Damit die Typ-Informationen des Constructors, welche wir gleich für die Injecti
 Als nächstes kann der Service in einer Komponente importiert und genutzt werden. Danach werden Abhängigkeiten von Services über die `providers`-Eigenschaft von `@Component` bekannt gemacht. Jetzt kann der Service in die Klasse über die `Dependency-Injection` geladen werden.
 
     import {Component} from '@angular/core';
-    
+
     import {PizzaService} from './shared/index';
-    
+
     @Component({
         selector: 'pizza-root',
         providers: [PizzaService],
@@ -471,7 +471,7 @@ Als nächstes kann der Service in einer Komponente importiert und genutzt werden
     })
     export class AppComponent {
         public pizzas = [];
-    
+
         constructor(private pizzaService: PizzaService) {
             this.pizzas = this.pizzaService.getPizza();
         }
@@ -481,36 +481,36 @@ Als nächstes kann der Service in einer Komponente importiert und genutzt werden
 
 Durch die Angabe des Services als Provider der Component, wird beim Erstellen der Komponente eine neue Instanz des Services erzeugt. Diese ist auch nur für diese Komponente und ihre Kind-Komponenten, welche diesen Service gegebenenfalls auch benutzen, verfügbar.
 
-Soll ein Service global - sprich anwendungsweit - verfügbar sein, kann dieser in unserem Hauptmodul der Anwendung geladen und verfügbar gemacht werden. 
+Soll ein Service global - sprich anwendungsweit - verfügbar sein, kann dieser in unserem Hauptmodul der Anwendung geladen und verfügbar gemacht werden.
 
     import { PizzaService } from './shared/pizza.service';
-    
+
     @NgModule({
-    // .. 
+    // ..
       providers: [PizzaService],
     // ...
     })
     export class AppModule { }
-    
+
 <div class="alert alert-info">Hinweis: In Angular sollte die Nutzung eines Prefixes, wie *_*, zum Visualisieren einer privaten Funktion oder Variable vermieden werden.</div>
-    
+
 
 ## HTTP in Angular
 
 Ein wichtiger Bestandteil von Web-Anwendungen ist die Kommunikation mit Schnittstellen. Typischerweise basieren diese Schnittstellen auf dem HTTP-Protokoll. Für diesen Zweck existiert ein `HTTP-Service` innerhalb des Angular-HTTP Modules. Dieses können wir von `@angular/http` importieren unserem AppModule hinzufügen.
 
     import { HttpModule } from '@angular/http';
-    
+
     @NgModule({
-      
-      // ... 
-      
+
+      // ...
+
       imports: [
         BrowserModule,
         FormsModule,
         HttpModule
       ]
-      
+
       // ...
     })
     export class AppModule { }
@@ -535,7 +535,7 @@ Für die Kommunikation mit einer Schnittstelle sollte ein eigener Service angele
                 .map((res: Response) => res.json());
         }
     }
-    
+
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/09-http/src/app/shared/pizza.service.ts) für das Senden von Http-Anfragen
 
 Zuerst wird der Http-Service von Angular importiert und dann über die Dependency-Injection dem Service bereitgestellt. Die Funktion `getPizza()` kann dann innerhalb einer Komponente aufgerufen werden, um die Daten abzurufen. Ein Request läuft asynchron, daher liefert der Http-Service ein so genanntes Observable zurück, welches über die RxJS-Bibliothek erzeugt wird.
@@ -571,8 +571,8 @@ Um ein Observable zu abonnieren, muss dessen subscribe-Funktion aufgerufen werde
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/09-http/src/app/app.component.ts#L18-L20) zur Nutzung von Observables
 
-Wenn du mehr über das Thema erfahren möchtest schau dir doch mal diesen Artikel an: 
-[Angular - Asynchronität von Callbacks zu Observables](https://angularjs.de/artikel/angular2-observables). 
+Wenn du mehr über das Thema erfahren möchtest schau dir doch mal diesen Artikel an:
+[Angular - Asynchronität von Callbacks zu Observables](https://angularjs.de/artikel/angular2-observables).
 
 
 ## Component Lifecycle
@@ -611,14 +611,14 @@ Unser Beispiel zur Verwendung des Http-Services wird nun so erweitert, dass die 
               .subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
         }
     }
-    
+
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/10-component-lifecycle/src/app/app.component.ts) zur Implementierung eines Lifecycle-Hooks
 
 Für jeden Hook existiert ein Interface, welches die Komponentenklasse implementieren sollte. Der Name der Hook-Funktion setzt sich dann aus *ng* und *Interface-Name* zusammen.
 
 
-Wenn Ihr weitere Informationen zu [LifeCycles in Angular2](https://angularjs.de/artikel/angular-2-component-lifecycle) wollt, haben wir hierzu auch einen ganzen Artikel für euch. 
-  
+Wenn Ihr weitere Informationen zu [LifeCycles in Angular2](https://angularjs.de/artikel/angular-2-component-lifecycle) wollt, haben wir hierzu auch einen ganzen Artikel für euch.
+
 ## Interfaces
 
 *Interfaces* ist sicher vielen bereits ein Begriff. Wollt ihr in einer Java-Anwendung sicher gehen, dass eine Klasse bestimmte Eigenschaften besitzt und Funktionen impementiert, dann definiert ihr vorher ein *Interface*. Ihr könnt Interfaces aber auch zur einfachen Definition von eigenen Datenstrukturen nutzen. In unserem Fall wäre ein Pizza-Interface recht hilfreich, um den Rückgabewert unseres HTTP-Requests zu typisieren.
@@ -630,7 +630,7 @@ Ein Interface wird dazu meist in einer eigenen Datei über das Schlüsselwort *i
         name: string;
         price: number;
     }
-    
+
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/11-interfaces/src/app/shared/pizza.ts) zur Definition eines Interfaces
 
 Nach dem gleichen Prinzip können auch Funktionendefintionen angegeben werden. Es besteht auch optionale Bestandteile eines Interface zu definieren. Dazu hängt ihr an den Namen/Schlüssel einfach ein `?` an.
@@ -658,14 +658,14 @@ Nach dem gleichen Prinzip können auch Funktionendefintionen angegeben werden. E
                 .subscribe((pizzas: Pizza[]) => this.pizzas = pizzas);
         }
     }
-    
+
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/11-interfaces/src/app/app.component.ts) zur Nutzung von Interfaces
 
 Durch Interfaces legt ihr nur die Struktur fest. Wollt ihr gleichzeitig eine sinnvolle Belegung von Standardwerten, könnt ihr auch ganz normale Klassen dazu nehmen.
 
 # Fazit
 
-Mit Angular ist vieles neu und bekannte Dinge funktionieren doch ein wenig anders. Dennoch lohnt sich bereits ein genauerer Blick auf die neue Version des Single-Page-Application Frameworks. Viel Spaß beim Lernen von Angular. 
+Mit Angular ist vieles neu und bekannte Dinge funktionieren doch ein wenig anders. Dennoch lohnt sich bereits ein genauerer Blick auf die neue Version des Single-Page-Application Frameworks. Viel Spaß beim Lernen von Angular.
 
 
 Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](https://angularjs.de/chat)!
@@ -682,7 +682,7 @@ Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Sl
                     <button class="btn btn-danger">Jetzt weiter lernen</button>
                 </a>
             </p>
-        
+
     </div>
     <div class="col-xs-12 col-md-6">
         <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">

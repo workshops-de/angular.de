@@ -4,7 +4,7 @@ description: "Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anh
 author: "Sascha Brink"
 slug: "angularjs-tutorial-deutsch"
 published_at: 2014-03-23 12:12:00.000000Z
-categories: "angular2 angular angular4"
+categories: tutorial angular2 angular angular4
 header_image: "/artikel/header_images/angularjs-tutorial-deutsch.jpg"
 ---
 
@@ -29,7 +29,7 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
                 Du lernst lieber interaktiv und möchtest Fragen an Experten stellen? Wir bieten euch auch
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
                     und TypeScript Schulungen</a> an. Hier kannst du in kleinen Gruppen deine Lernkurve maximieren.
-            </p>                
+            </p>
             <p class="">
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
                     <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
@@ -171,7 +171,7 @@ Auch wenn wir bisher ohne eine Zeile JavaScript-Code ausgekommen sind, kommt doc
 
     angular.module('tutorialApp', []);
 
-Ein Modul ist eine Sammlung von Controllern, Services, Filtern und Direktiven. Module können dabei von anderen Modulen abhängig sein. Diese tragen wir in das Array hinter dem Modulnamen ein. 
+Ein Modul ist eine Sammlung von Controllern, Services, Filtern und Direktiven. Module können dabei von anderen Modulen abhängig sein. Diese tragen wir in das Array hinter dem Modulnamen ein.
 
 Das leere Array hinter `tutorialApp` bedeutet in diesem Fall, dass wir noch keine Abhängigkeit haben. Wenn wir eine Abhängigkeit hätte, könnte die Moduldefinition z.B. so aussehen: `angular.module('tutorialApp', ['ng-animate']);`.
 
@@ -208,7 +208,7 @@ Wie wir sehen, können wir nicht nur einfache Arrays mit primitiven Datentypen s
       </tr>
     </table>
 
-An dieser Stelle lernen wir zwei neue Dinge kennen: *Controller* und *Scopes*. In einem Scope werden die Variablen gespeichert, die View- und JavaScript-Code miteinander verbinden. Mit dem *Controller* mappen wir einen Teil des DOMs zum entsprechenden JavaScript-Code. 
+An dieser Stelle lernen wir zwei neue Dinge kennen: *Controller* und *Scopes*. In einem Scope werden die Variablen gespeichert, die View- und JavaScript-Code miteinander verbinden. Mit dem *Controller* mappen wir einen Teil des DOMs zum entsprechenden JavaScript-Code.
 
 Als wir das erste Mal `search` mit `ng-model` benutzten und es auf magische Weise `{{search}}` änderte, nachdem wir den Text im Eingabefeld änderten, musste der Wert von `search` irgendwo zwischengespeichert werden.
 
@@ -291,7 +291,7 @@ In der `Cart`-Factory definieren wir 3 Funktionen:
   * `addArticle()` nimmt ein Objekt entgegen und fügt einen Artikel hinzu.
   * `sum()` summiert die Preise im Warenkorb.
 
-Die Artikel selber halten wir in einem Array `items` vor. 
+Die Artikel selber halten wir in einem Array `items` vor.
 
 Um unsere `Cart`-Factory als Service nutzen zu können, müssen wir sie dem Controller bekannt machen. Genau wie `$http` fügen wir sie nach `$scope` in die Parameterliste ein. Danach weisen wir den Service noch einer Variable auf dem Scope zu. Ansonsten könnten wir den Warenkorb nicht im Template verwenden.
 
@@ -458,7 +458,7 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
 * Lokalisierung
 * Dependency Injection
 * Formular-Validierung
-* Unit- und E2E-Tests 
+* Unit- und E2E-Tests
 
 
 <hr>
@@ -473,7 +473,7 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
                     <button class="btn btn-danger">Jetzt weiter lernen</button>
                 </a>
             </p>
-        
+
     </div>
     <div class="col-xs-12 col-md-6">
         <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">

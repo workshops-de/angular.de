@@ -4,7 +4,7 @@ description: "Unser Einführungstutorial zu Ionic erklärt euch alle wichtigen K
 author: "Bengt Weiße"
 slug: "ionic-tutorial-deutsch"
 published_at: 2016-03-12 08:29:00.000000Z
-categories: "angular2 angular angular4"
+categories: tutorial angular2 angular angular4
 header_image: "/artikel/header_images/ionic-tutorial-deutsch.jpg"
 ---
 
@@ -19,7 +19,7 @@ Der erste Teil des Tutorials befasst sich mit folgenden Themen:
  - App anlegen
  - Routing mit uiRouter
  - Basiselemente - ionHeader, ionContent, ionFooter
- - Navigation - ionNavView, ionView 
+ - Navigation - ionNavView, ionView
  - Nutzung von Sidemenus
  - [Modals](/artikel/ionic-tutorial-deutsch-modals)
  - [Popups](/artikel/ionic-tutorial-deutsch-popups)
@@ -41,8 +41,8 @@ Alle Quelltexte findet ihr auf [GitHub](https://github.com/angularjs-de/ionic-tu
             <p>
                 Du willst tiefer und vor allem effektiv in das Thema Ionic einsteigen? Kein Problem! Wir bieten interative Workshops zum Thema
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Ionic
-                    und TypeScript</a> an. 
-            </p>                
+                    und TypeScript</a> an.
+            </p>
             <p class="">
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
                     <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
@@ -112,7 +112,7 @@ Mögliche Templates sind:
 
 Im `www`-Verzeichnis befinden sich jetzt die eigentlichen Anwendungsquellen, die für diese Einführung wichtig sind.
 
-Über den Befehl 
+Über den Befehl
 
     ionic serve
 
@@ -210,7 +210,7 @@ Der Inhalt unserer `index.html` könnte unter Verwendung der vorgestellten Direk
       <a ui-sref="order" ui-sref-active="active">Start</a>
       <a ui-sref="about" ui-sref-active="active">Über Uns</a>
       <ui-view></ui-view>
-    </body>	
+    </body>
 
 Unsere App hat nun ein Einhängepunkt in dem Inhalte eingefügt werden, sowie zwei Verlinkungen. Falls ein Zustand aktiv ist, wird am Element die Klasse `active` gesetzt. Werden nun noch die fehlenden Templates und der Controller angelegt, lässt sich die Anwendung fehlerfrei ausführen.
 
@@ -242,7 +242,7 @@ Natürlich kann ein Zustand auch Parameter erhalten. Dazu muss einfach der Name 
     /order/:id
 
 Alternativ kann die '{}'-Schreibweise genutzt und optional sogar der Datentyp festgelegt werden. Das spart möglicherweise unnötiges Parsen der Daten.
- 
+
     /order/{id:int}
 
 Einen vollständigen Überblick erhaltet ihr im dazugehörigen Abschnitt des [UI-Router-Wikis](https://github.com/angular-ui/ui-router/wiki/url-routing#url-parameters).
@@ -396,7 +396,7 @@ Wir könnten jetzt innerhalb der Navigationsleiste die Buttons mit der `ionNavBu
     </ion-view>
 
 Zusätzlich erhält die Navigationsleiste im Basis-Template einen `ionNavBackButton` und setzt den App-Titel über die `ionNavTitle`-Komponente.
- 
+
     <ion-nav-bar class="bar-positive">
       <ion-nav-back-button></ion-nav-back-button>
       <ion-nav-title class="title">Pizza App</ion-nav-title>
@@ -518,7 +518,7 @@ Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/
 
 Eine der wichtigsten Komponente zur Darstellung von Content in einer App sind Listen. Ob einfach nur zur Umsetzung eine simplen Aufzählung von Einträgen gleichen Typs oder zum strukturieren komplexer Inhalte, Listen sind überall.
 
-Als wohl häufigsten Anwendungsfall zeigen Listen eine Auswahl, die per Interaktion, wie Klick/Tap auf eine Detailseite des Eintrags leitet. Daran angelehnt, bietet Ionic - wie so oft - zwei Möglichkeiten zur Umsetzung. 
+Als wohl häufigsten Anwendungsfall zeigen Listen eine Auswahl, die per Interaktion, wie Klick/Tap auf eine Detailseite des Eintrags leitet. Daran angelehnt, bietet Ionic - wie so oft - zwei Möglichkeiten zur Umsetzung.
 
  1. einfache Listen mit HTML/CSS
  2. erweiterte Listenfunktionalitäten über JavaScript-Komponenten
@@ -566,7 +566,7 @@ Nach dem gleichen Prinzip können auch Buttons oder Bilder ausgerichtet und ange
 	 - CSS-Klassen: item-avatar, item-thumbnail-left, item-thumbnail-right
 	 - Avatar: zeigt automatisch einen runden Bildauschnitt
 	 - Thumbnail: kleine Vorschauansicht
- 
+
  Eine vollständige Dokumentation dazu findet ihr in den [Ionic-Docs](http://ionicframework.com/docs/components/#list).
 
 Natürlich hat Ionic auch daran gedacht, dass Listen in nativen Apps viel mehr können als nur Daten auflisten. So können Einträge umsortiert oder über Gesten erweiterte Funktionalitäten angesteuert werden. Ionic bietet genau dafür eigene Direktiven und Services an.
@@ -680,12 +680,12 @@ Als kleine Übung bauen wir unsere Startseite der Pizza-App so um, dass die Pizz
 	        'cartService',
 	        'pizzaService',
 	        function ($scope, $timeout, $ionicLoading, cartService, pizzaService) {
-	        
+
 				// Einblenden des Layers
 	            $ionicLoading.show({
 	                template: 'Bitte warten...'
 	            });
-		
+
 				// Laden der Pizzen
 	            pizzaService
 	                .getPizzas()
@@ -701,7 +701,7 @@ Als kleine Übung bauen wir unsere Startseite der Pizza-App so um, dass die Pizz
 	                        $ionicLoading.hide();
 	                    }, 2000);
 	                });
-	
+
 	            $scope.addToCart = function (pizza) {
 	                cartService.addCartItem(pizza);
 	            };
@@ -723,7 +723,7 @@ Der Controller-Code sieht nun so aus.
 	        'pizzaService',
 	        function ($scope, $timeout, cartService, pizzaService) {
 	            $scope.loading = true;
-	
+
 	            pizzaService
 	                .getPizzas()
 	                .then(function (result) {
@@ -736,7 +736,7 @@ Der Controller-Code sieht nun so aus.
 	                        $scope.loading = false;
 	                    }, 2000);
 	                });
-	
+
 	            $scope.addToCart = function (pizza) {
 	                cartService.addCartItem(pizza);
 	            };
@@ -888,7 +888,7 @@ Das dazugehörige Template sieht dann so aus.
 	                <h2>{{pizza.name}}</h2>
 	                <p>Ist in unserem Angebot die Nummer {{pizza.id}}</p>
 	            </div>
-	
+
 	            <div class="item item-body">
 	                <p>
 	                    {{pizza.description}}
@@ -913,14 +913,14 @@ Im entsprechenden Detail-Controller wird die anzuzeigende Pizza geladen und bere
 
 ### Abschluss
 
-Damit ist unsere kleine Rundreise durch den Ionischen-Ozean abgeschlossen. Wir hoffen es hat euch gefallen und euer Interesse an der hybriden Entwicklung mobiler Apps geweckt. 
+Damit ist unsere kleine Rundreise durch den Ionischen-Ozean abgeschlossen. Wir hoffen es hat euch gefallen und euer Interesse an der hybriden Entwicklung mobiler Apps geweckt.
 
 Leider haben nicht alle Komponenten im Tutorial und in unserer App ihren Platz gefunden. Aus diesem Grund nun noch die wichtigsten kurz vorgestellt.
 
  - Popover - Overlay, welches sich teilweise über die View legt, wird an einem DOM-Element ausgerichtet, z.B. Button in Kopfzeile öffnet Popover mit Liste an weiteren Navigationspunkten oder Einstellungen
  - ActionSheet - Schiebt sich von unten über die View, bedeckt diese nur teilweise, Auswahl an Funktionen und Aktionen
  - Tabs - Grundlegends Navigationskonzept, jeder Tab hat eigene Navigationshistorie
- - Slidebox - Galerie von Inhalten, z.B. Bildergalerie, **ab v1.2. sollte [ionSlides](https://angularjs.de/artikel/ionic-framework-new-slider "ionSlides") benutzt werden!!!** 
+ - Slidebox - Galerie von Inhalten, z.B. Bildergalerie, **ab v1.2. sollte [ionSlides](https://angularjs.de/artikel/ionic-framework-new-slider "ionSlides") benutzt werden!!!**
 
 Hinzu kommen noch zahlreiche Services und Funktionen, die euch vor dem Kentern bewahren oder euch zumindest erstmal über Wasser halten.
 
@@ -942,7 +942,7 @@ Link zum [Quellcode](https://github.com/angularjs-de/ionic-pizza-service/tree/ma
                     <button class="btn btn-danger">Jetzt weiter lernen</button>
                 </a>
             </p>
-        
+
     </div>
     <div class="col-xs-12 col-md-6">
         <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
