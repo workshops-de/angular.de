@@ -48,7 +48,7 @@ layout: base
         <div class="row mb-4">
           <div class="col-md-4">
             {% if prevurl %}
-              <a class="text-truncate btn btn-primary btn-block" href="{{prevurl}}">« {{ prevtitle }}</a>
+              <a class="text-truncate btn btn-primary btn-block" href="{{prevurl | split:'/' | join:'/'}}">« {{ prevtitle }}</a>
             {% endif %}
           </div>
           <div class="col-md-4">
@@ -56,7 +56,7 @@ layout: base
           </div>
           <div class="col-md-4">
             {% if nexturl %}
-              <a class="text-truncate btn btn-primary btn-block" href="{{ nexturl }}">{{ nexttitle }} »</a>
+              <a class="text-truncate btn btn-primary btn-block" href="{{ nexturl | split:'/' | join:'/' }}">{{ nexttitle }} »</a>
             {% endif %}
           </div>
         </div>
