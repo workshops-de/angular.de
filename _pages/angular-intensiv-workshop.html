@@ -201,3 +201,12 @@ permalink: /workshops/angular-intensiv/
 </p>
 
 <br>
+
+{% if jekyll.environment == "production" %}
+  <script src="https://workshops.de/js/embed.js"></script>
+{% else %}
+  <script>window.wsEmbedBaseUrl = "https://beta.workshops.de/embed";</script>
+  <script src="https://beta.workshops.de/js/embed.js"></script>
+{% endif %}
+
+<div class="ws-event" data-course-id="{{ site.ws_course_id }}"></div>
