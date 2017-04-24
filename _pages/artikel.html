@@ -2,7 +2,18 @@
 title: Artikel
 noindex: true
 sitemap: false
+pagination:
+  enabled: true
+  per_page: 3
 ---
+
+<hr>
+<h1>paginator</h1>
+{% for post in paginator.posts %}
+  <h1>{{ post.title }}</h1>
+{% endfor %}
+<hr>
+
 
 <form action="/suche" method="get" class="hidden-md-up mb-2">
   <input type="text" class="form-control article-search" name="q" placeholder="Artikel durchsuchen">
