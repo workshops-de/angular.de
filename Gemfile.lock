@@ -25,6 +25,8 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.9.1)
       jekyll (~> 3.3)
+    jekyll-paginate-v2 (1.7.4)
+      jekyll (~> 3.0)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-sitemap (0.10.0)
@@ -53,11 +55,12 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha6)
   jekyll (= 3.4.0)
   jekyll-feed (~> 0.6)
+  jekyll-paginate-v2
   jekyll-sitemap
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.2.2p95
+   ruby 2.3.3p222
 
 BUNDLED WITH
    1.14.6
