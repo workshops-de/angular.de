@@ -5,7 +5,7 @@ description: Alles rund um Angular/JavaScript auf deutsch - Tutorials · Artikel
 permalink: /
 ---
 <main>
-  <div style="background-color: #f1f1f1; border-bottom: 3px solid #eee;" class="mb-2 pb-5">
+  <div style="background-color: #f1f1f1; border-bottom: 3px solid #eee;" class="mb-2 pb-2">
     <br>
     <div class="container mt-4">
       <br><br>
@@ -17,8 +17,8 @@ permalink: /
           <p class="text-justify">
             Stöbere durch unsere <a href="/artikel">Artikel</a>
             und <a href="/tutorials">Tutorials</a> - erfahre alles rund um Angular.</p>
-          <p class="text-justify">Tausch Dich aus und werde Teil der größten
-            <a href="/entwickler">Angular-Community</a> in Deutschland, Österreich und der Schweiz!</p>
+          <p class="text-justify">Tausch Dich aus mit der größten
+            <a href="https://slack.angularjs.de" target="_blank">Angular-Community</a> in Deutschland, Österreich und der Schweiz!</p>
         </div>
         <div class="col-md-4">
           <div class="mx-auto circled-logo-wrapper">
@@ -28,14 +28,15 @@ permalink: /
         </div>
         <div class="col-md-4 pt-1 hidden-sm-down">
           <h3>Workshops &amp; Jobs</h3>
-          <p class="text-justify">Lerne aus unseren Fehlern. Erfahre alles über die Fallstricke von Angular in unseren <a href="/workshops/angular-intensiv">Offenen-</a>
+          <p class="text-justify">Lerne aus unseren Fehlern!</p>
+          <p class="text-justify">
+            Erfahre alles über die Fallstricke von Angular in unseren <a href="/workshops/angular-intensiv">Offenen-</a>
             und <a href="/inhouse-workshop">Inhouse-Schulungen</a>.</p>
-          <p class="text-justify">Suche und <a href="/jobs">finde Jobs</a> in unserem Jobportal. Schalte selbst eine <a href="/jobs/new">kostenlose Stellenanzeige</a>.</p>
         </div>
       </div>
 
       <div class="alert alert-info text-center lead">
-        Noch keine Erfahrung mit
+        Noch neu im Bereich
         <strong>Angular</strong> oder
         <strong>Ionic</strong>?
         - Starte hier mit unseren
@@ -45,7 +46,7 @@ permalink: /
   </div>
 
   <div class="container">
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-md-8">
         {% for post in site.posts limit:4 %}
           {% include _article.html %}

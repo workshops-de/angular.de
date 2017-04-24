@@ -90,3 +90,26 @@ blockquote {
 }
 
 
+$circleWidth: 200;
+$lineHeight: ($circleWidth / 2) + 15;
+
+.circled-logo-wrapper {
+  border-radius: 50%;
+  border: 1px solid $gray-lighter;
+  line-height: $lineHeight + px;
+  background-color: #fbfbfb;
+  width: $circleWidth + px;
+  height: $circleWidth + px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 6em;
+  padding: 40px;
+
+  .circled-logo {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
