@@ -48,7 +48,7 @@ Der *$ionicModal*-Service wird ganz normal, wie jede andere Abhängigkeit in eur
 
 Beide Funktionen erwarten zwei Parameter, wobei der letztere ein Konfigations-/Optionsobjekt ist. Dieses Objekt kann folgende Keys beinhalten.
 
- - scope - ein Scope-Objekt, standardmäßig wird ein neuer scope angelegt 
+ - scope - ein Scope-Objekt, standardmäßig wird ein neuer scope angelegt
  - animation - Animationsklasse, die beim ein- bzw- ausblenden genutzt wird, standardmäßig *slide-in-up*
  - focusFirstInput - true oder false, ob das erste Eingabefeld automatisch fokussiert werden soll, standardmäßig false
  - backdropClickToClose - true oder false, ob Modal beim Klick auf den Backdrop geschlossen wird, standardmäßig true
@@ -122,4 +122,4 @@ Wir stellen dem baseCtrl-Scope unseren Modal zur Verfügung. Dadurch können wir
 Der about-Zustand kann nun aus der State-Definition entfernt werden.
 Das Ergebnis kann sich dann sehen lassen :).
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/animated-gifs/ionic-modals.gif?v=63629079934)
+![Bild](ionic-modals.gif?v=63629079934)

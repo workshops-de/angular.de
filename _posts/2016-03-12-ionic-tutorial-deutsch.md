@@ -405,7 +405,7 @@ Zusätzlich erhält die Navigationsleiste im Basis-Template einen `ionNavBackBut
 
 Klicken wir nun auf *Über Uns* erscheint sofort der Zurück-Button in der Navigationsleiste.
 
-![Ionic Navigation Bild](https://assets-production-workshops-de.s3.amazonaws.com/animated-gifs/ionic-navigation.gif?v=63629079934)
+![Ionic Navigation Bild](ionic-navigation.gif?v=63629079934)
 
 #### Services
 
@@ -477,7 +477,7 @@ In unsere Anwendung bauen wir, wie für eine mobile App typisch, in der Navigati
 
 Nun können wir schnell und einfach unser wunderschönes Seitenmenü ein- und ausblenden.
 
-![Ionic Sidemenu Bild](https://assets-production-workshops-de.s3.amazonaws.com/animated-gifs/ionic-sidemenu.gif?v=63629079934)
+![Ionic Sidemenu Bild](ionic-sidemenu.gif?v=63629079934)
 
 #### Einhalten des Navigationskonzeptes
 
@@ -599,7 +599,7 @@ Das Template zum Warenkorb könnte dann wie folgt aussehen.
 
 Die *ionOptionButton*-Direktive wird als Kind des Listeneintrags eingebunden und erhält eine Klick-Funktion die diesen Eintrag aus dem Warenkorb entfernt. Im Hintergrund besitzt die App nun einen eigenen *cartService*, der die nötigen Daten speichert.
 
-![Ionic Tutorial Extend List](https://assets-production-workshops-de.s3.amazonaws.com/animated-gifs/ionic-extended-list.gif?v=63629079934)
+![Ionic Tutorial Extend List](ionic-extended-list.gif?v=63629079934)
 
 Die Benutzung von *ionReorderButton* und *ionDeleteButton* sind sich sehr ähnlich. Als Beispiel könnte das Löschen im Warenkorb auch über *ionDeleteButtons* funktionieren.
 
@@ -614,7 +614,7 @@ Die Benutzung von *ionReorderButton* und *ionDeleteButton* sind sich sehr ähnli
 
 Über das Attribute *show-delete* können die Löschen-Buttons auch flexibel ein- und auch wieder ausgeblendet werden. Für ionReorderButton existiert dafür das Attribut *show-reorder*. Als Kind des *ionItems* kann dem Button ganz normal unsere Klick-Funktion übergeben werden.
 
-![Ionic Tutorial Extend List](https://assets-production-workshops-de.s3.amazonaws.com/animated-gifs/ionic-list-delete.gif?v=63629079934)
+![Ionic Tutorial Extend List](ionic-list-delete.gif?v=63629079934)
 
 Programmatischen Zugriff auf eure Listen erhaltet ihr über den **$ionicListDelegate**-Service.
 Mit diesem lassen sich die Spezial-Buttons ein und ausblenden, Swipen der Listeneinträge unterbinden. Eine Funktionsübersicht erhaltet ihr auch in den [Ionic-Docs](http://ionicframework.com/docs/api/service/$ionicListDelegate/) des Services.
@@ -859,7 +859,7 @@ Hier eine mögliche Umsetzung des Controller-Codes.
 	    </ion-content>
 	</ion-view>
 
-![Ionic Tutorial Refresher](https://assets-production-workshops-de.s3.amazonaws.com/animated-gifs/ionic-refresher.gif?v=63629079934)
+![Ionic Tutorial Refresher](ionic-refresher.gif?v=63629079934)
 
 ### Strukturieren von Inhalten durch Cards
 
