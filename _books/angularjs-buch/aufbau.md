@@ -2,7 +2,7 @@
 number: 1.2
 title: Aufbau
 part: Einleitung
-status: 80
+progress: 80
 ---
 
 Das Buch ist folgendermaßen gegliedert:

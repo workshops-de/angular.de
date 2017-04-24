@@ -2,7 +2,7 @@
 number: 6.40
 title: jqLite - Kompatibilität mit jQuery
 part: Konzepte und Hintergründe
-status: 90
+progress: 90
 ---
 
 AngularJS ist Kompatibel mit jQuery. AngularJS enthält sogar eine abgespeckte Version von jQuery. Diese wird intern [jqLite](https://github.com/angular/angular.js/blob/master/src/jqLite.js) genannt. jqLite enthält nur die wichtigsten Funktionen, um die Arbeit am DOM in Direktiven zu erleichtern. Neben dem fehlenden Funktionsumfang ist auch die Performance etwas schlechter.

@@ -2,7 +2,7 @@
 number: 1.3
 title: Lernstrategie
 part: Einleitung
-status: 90
+progress: 90
 ---
 
 Dieses Buch folgt einer durchdachten Struktur mit der es dir in kurzer Zeit möglich ist, AngularJS zu verstehen und zu verwenden. Theorie und Praxis werden sich abwechseln. Halte dich an die folgende Vorgehensweise, um möglich schnell voranzukommen:

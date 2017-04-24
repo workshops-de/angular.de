@@ -2,7 +2,7 @@
 number: 4.20
 title: Eigene Direktiven mit AngularJS
 part: Erweiterungen der Applikation
-status: 30
+progress: 30
 ---
 
 Bisher hatten wir schon einige Direktiven von AngularJS selbst genutzt, z.B. `ng-app`, `ng-repeat`, usw. Was aber AngularJS so mächtig macht, ist die Möglichkeit, eigene Direktiven zu schreiben.

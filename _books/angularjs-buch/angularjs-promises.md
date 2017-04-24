@@ -2,7 +2,7 @@
 number: 6.60
 title: Promises
 part: Konzepte und Hintergründe
-status: 100
+progress: 100
 ---
 ## Promises - Was ist das und was können sie?
 
@@ -23,11 +23,11 @@ Hier wird mit jQuery ein Ajax-Request abgesendet und auf den Erfolgs- und Fehler
 
 Das sieht an sich ja schon ganz ordentlich aus. Wozu brauchen wir dann Callbacks 2.0?
 
-Dafür müssen wir ein Stück weiter denken.  Das Senden von HTTP-Anfragen ist dazu schon ein sehr gutes Beispiel. Es folgt eine Liste von Problemen bzw. Anwendungsfällen, die mit Callbacks nur schlecht, gar nicht oder nicht gerade elegant zu lösen sind. 
+Dafür müssen wir ein Stück weiter denken.  Das Senden von HTTP-Anfragen ist dazu schon ein sehr gutes Beispiel. Es folgt eine Liste von Problemen bzw. Anwendungsfällen, die mit Callbacks nur schlecht, gar nicht oder nicht gerade elegant zu lösen sind.
 
 **Callback Probleme**
 
-  - Übersichtlichkeit - Pyramids of Doom 
+  - Übersichtlichkeit - Pyramids of Doom
   - Fehlerbehandlung - Abfangen und Korrektur von Fehlern
   - Parallelität - Synchronisation mehrerer Asynchronitäten
   - Vermischung von Verantwortlichkeiten
@@ -54,19 +54,19 @@ Gehen wir alle Punkte nun Schritt für Schritt durch.
 Der $q-Service wird ganz normal als Abhängigkeit in den gewünschten Bestandteil der AngularJS-Anwendung injiziert. Danach könnt ihr Promises einfach über den Aufruf folgenden Code-Schnipsels erzeugen.
 
     $q()
-    
+
 Soll nun eine asynchrone Funktion ein Promise zurückgeben, geschieht dies einfach durch das erzeugte Promise.
 
     function asyncFn() {
       return $q();
-    } 
+    }
 
 **Promise-Funktion aufrufen**
 
 Nun folgt ein noch simplerer Teil. Die eben erstelle Promise-Funktion muss natürlich auch aufgerufen werden. Ihr könnt die Funktion, wie einen ganz normalen Funktionsaufruf betrachten.
 
     asyncFn();
-    
+
 **Promise resolve und reject**
 
 Jetzt muss unsere Funktion natürlich auch noch etwas asynchrones machen und dann das Versprechen halten oder nicht. Dazu müsst ihr der Promise-Erzeugung eine Funktion übergeben, die automatisch zwei Funktionen als Parameter erhält. Dabei handelt es sich beim ersten um die *resolve*- und beim zweiten *reject*-Funktion.
@@ -86,7 +86,7 @@ Als Beispiel führen wir mit setTimeout verzögert eine Funktion aus und resolve
       	}, 2000);
       });
     }
-    
+
 Das Ablehnen erfolgt äquivalent. Mit reject und resolve könnt ihr zusätzlich Daten als primitiven Datentyp, Objekt oder Array zurückgeben.
 
 **Promise wird aufgelöst**
@@ -124,7 +124,7 @@ Hier erfahrt ihr noch mehr über Promises und ihre Funktionen. Wir werden erkenn
 
 **Problem**
 
-Wenn wir mehrere asynchrone Aufrufe mit Callbacks verschachteln, wird es sehr schnell unübersichtlich. Leider lässt sich dies oft nicht vermeiden, da asynchrone Programmteile voneinander anhängig sein können. Dieses Probleme der Übersichtlichkeit ist so massiv, dass es sogar einen eigenen Namen bekommen hat: **Pyramid of Doom**. 
+Wenn wir mehrere asynchrone Aufrufe mit Callbacks verschachteln, wird es sehr schnell unübersichtlich. Leider lässt sich dies oft nicht vermeiden, da asynchrone Programmteile voneinander anhängig sein können. Dieses Probleme der Übersichtlichkeit ist so massiv, dass es sogar einen eigenen Namen bekommen hat: **Pyramid of Doom**.
 
 Nehmen wir das vorherige - noch übersichtliche - Beispiel eines Requests mit jQuery und senden in Abhängigkeit dazu weitere Anfragen. Der Fehlerfall wird hierbei vernachlässigt.
 
@@ -138,7 +138,7 @@ Nehmen wir das vorherige - noch übersichtliche - Beispiel eines Requests mit jQ
 
 **Lösung**
 
-Der Aufruf unserer Promise-Funktion sieht schon mal ganz annehmbar aus. Doch was passiert, wenn wir aufeinander aufbauende Funktionalitäten haben, die bei Callbacks zu einer tiefen Verschachtelung führten. Hier können wir uns eine der wichtigsten Eigenschaften eines Promises zu nutzen machen. Promises sind verkettbar, sprich sie können per *Dot*-Notation hintereinander geschrieben werden, denn als Rückgabewert eines Promise könnt ihr entweder wieder ein Promise oder einen ganz normalen Wert zurückgeben. Im nächsten `then` stehen uns die Rückgabewerte wieder zur Verfügung. 
+Der Aufruf unserer Promise-Funktion sieht schon mal ganz annehmbar aus. Doch was passiert, wenn wir aufeinander aufbauende Funktionalitäten haben, die bei Callbacks zu einer tiefen Verschachtelung führten. Hier können wir uns eine der wichtigsten Eigenschaften eines Promises zu nutzen machen. Promises sind verkettbar, sprich sie können per *Dot*-Notation hintereinander geschrieben werden, denn als Rückgabewert eines Promise könnt ihr entweder wieder ein Promise oder einen ganz normalen Wert zurückgeben. Im nächsten `then` stehen uns die Rückgabewerte wieder zur Verfügung.
 
     asyncFn()
       .then(function (data) {
@@ -194,7 +194,7 @@ Jetzt tritt der Fall ein, dass wir die Möglichkeit haben fehlgeschlagene Reques
         }).fail(function(err){
           // retry with api3b
           $.get('/api3b').done(function(data) {
-	      }).fail(function(err){ ... }); 
+	      }).fail(function(err){ ... });
         });
       }).fail(function(err){
         // retry with api2b and after that the whole api3 block
@@ -202,7 +202,7 @@ Jetzt tritt der Fall ein, dass wir die Möglichkeit haben fehlgeschlagene Reques
           $.get('/api3').done(function(data) {
           }).fail(function(err){
             $.get('/api3b').done(function(data) {
-	        }).fail(function(err){ ... }); 
+	        }).fail(function(err){ ... });
           });
         }).fail(function(err){ ... });;
       });
@@ -283,7 +283,7 @@ Wie ihr sehen könnt, ist die gesamte Funktionalität pro Schnittstelle gekapsel
 
 Stellen wir uns vor, wir haben einen Programmteil, der gleichzeitig mehrere Schnittstellen abfragen möchten. Die Ergebnisse der APIs kommen in beliebiger Reihenfolge zurück. Natürlich müssen wir darauf reagieren wenn alle fertig sind, damit wir gebündelt mit den Daten weiterarbeiten können. Dies ist rein mit Callbacks ein sehr aufwändig Unterfangen.
 
-Beispiel paralleler Anfragen mit jQuery: 
+Beispiel paralleler Anfragen mit jQuery:
 
     $.get('/api1').done(function(data){ result1 = data; });
     $.get('/api2').done(function(data){ result2 = data; });
@@ -297,12 +297,12 @@ Auch dieses Problem lässt sich mit Promises spielend leicht lösen. Mit Hilfe v
 
     $q.all([asyncFn(), anotherAsyncFn()])
       .then(successFn, errorFn);
-      
+
 Dabei wird der Erfolgs-Callback ausgeführt, wenn alle Promises erfüllt wurden und die Fehlerfunktion, wenn ein Promise fehlschlägt. Als Parameter erhält der Erfolgs-Callback ein Array mit den Ergebnisse der Promise-Funktionen und der Fehler-Callback in der Regel ein Error-Objekt.
 
-Wie wir im obigen Problembeispiel gesehen haben, ist das Synchronisieren von Callbacks nicht besonders elegant. 
+Wie wir im obigen Problembeispiel gesehen haben, ist das Synchronisieren von Callbacks nicht besonders elegant.
 
-Beispiel paralleler Anfragen mit `$http`: 
+Beispiel paralleler Anfragen mit `$http`:
 
     var api1 = $http.get('/api1');
     var api2 = $http.get('/api2');
@@ -325,7 +325,7 @@ Nehmen wir wieder einen Standard-Callback als Beispiel:
       updateView(data);
       processData(data);
     });
-    
+
  Wenn die unsere API abgerufen wurde, möchten wir etwas in der View aktualisieren mit `updateView()` und gleichzeitig die Daten weiterverarbeiten, mit `processData()`. Wir können uns sicher darauf einigen, dass das 2 sehr verschiedene Aufgaben sind.
 
 **Lösung**
@@ -335,10 +335,10 @@ Ein Promise-Objekt oder ein Aufruf einer Promise-Funktion kann ganz einfach eine
 Schauen wir uns die Lösung des Problems im Quellcode an.
 
     var apiPromise = $http.get('/meine/api.json');
-    
+
     apiPromise.then(updateView);
     apiPromise.then(processData);
-    
+
 Die Funktionen `updateView` und `processData` können direkt als Funktionsreferenzen übergeben werden, da sie die gleiche Struktur, wie ein normal Callback für `$http`-Anfragen besitzen.
 
 ### Fazit

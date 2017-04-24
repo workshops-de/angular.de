@@ -2,7 +2,7 @@
 number: 2.2
 title: Vorteile von AngularJS
 part: Grundlagen
-status: 80
+progress: 80
 ---
 
 ### Code-Reduktion

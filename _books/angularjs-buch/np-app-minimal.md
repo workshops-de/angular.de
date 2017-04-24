@@ -2,7 +2,7 @@
 number: 3.05
 title: Ein erstes Programm
 part: Basisapplikation
-status: 80
+progress: 80
 ---
 
 > **API**:

@@ -2,7 +2,7 @@
 number: 4.50
 title: Erweiterungen für Twitter Bootstrap
 part: Erweiterungen der Applikation
-status: 99
+progress: 99
 ---
 
 Wenn wir über Erweiterungen für Twitter Bootstrap reden, meinen wir natürlich den JavaScript-Teil. Um AngularJS mit Twitter Bootstrap einzusetzen, gibt es im Momement zwei Alternativen - UI Bootstrap und AngularStrap. Beide sind quelloffen und unter der MIT-Lizenz auf GitHub verfügbar.

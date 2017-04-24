@@ -16,7 +16,7 @@ layout: page
       <tr>
         <td width="20">{{ chapter.number }}</td>
         <td><a id="{{ chapter.slug }}" href="{{ chapter.url }}">{{ chapter.title }}</a></td>
-        <td><span class="badge badge-primary float-right">{{ chapter.status }}</span></td>
+        <td>{% include _color_progress.html value="sdf" %}</td>
       </tr>
     {% endif %}
     {% assign last_part = chapter.part %}
