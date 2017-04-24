@@ -1,11 +1,11 @@
 ---
-title: Ionic Framework - Ionicons als Icon-Font
-description: Die Ionic Framework eigene Icon-Font im Detail erklärt. Auch außerhalb der Ionic-Welt einsetzbar!
-author: Bengt Weiße
-slug: ionic-tutorial-deutsch-ionicons
+title: "Ionic Framework - Ionicons als Icon-Font"
+description: "Die Ionic Framework eigene Icon-Font im Detail erklärt. Auch außerhalb der Ionic-Welt einsetzbar!"
+author: "Bengt Weiße"
+slug: "ionic-tutorial-deutsch-ionicons"
 published_at: 2016-02-25 08:29:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/86/optimized-ionic-font.jpg?v=63630942195
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/ionic-tutorial-deutsch-ionicons.jpg"
 ---
 
 Für eine stylische App dürfen auch passende Icons nicht fehlen. Bei Ionic hat der Entwickler das Glück, dass das Ionic-Team eine eigene Icon-Font unter dem Namen **Ionicons** pflegt und stetig weiterentwickelt. Sie orientiert sich dabei an den System-Icons von iOS und Android. Dadurch stehen für verschiedene Anwendungsfälle gleich mehrere Icons zur Verfügung.

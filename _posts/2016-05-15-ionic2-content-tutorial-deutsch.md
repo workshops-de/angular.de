@@ -1,11 +1,11 @@
 ---
-title: Ionic 2 Tutorial - ionList, ionSpinner, Modal und Alert
-description: In diesem Teil unserer Ionic 2 Einführung zeigen wir, wie ihr eure Inhalt strukturieren und ansprechend aufbereiten könnt. Alles über Listen, Card, Modal, Toast.
-author: Bengt Weiße
-slug: ionic2-content-tutorial-deutsch
+title: "Ionic 2 Tutorial - ionList, ionSpinner, Modal und Alert"
+description: "In diesem Teil unserer Ionic 2 Einführung zeigen wir, wie ihr eure Inhalt strukturieren und ansprechend aufbereiten könnt. Alles über Listen, Card, Modal, Toast."
+author: "Bengt Weiße"
+slug: "ionic2-content-tutorial-deutsch"
 published_at: 2016-05-15 06:12:12.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/94/optimized-ionic2-part2.jpg?v=63631552159
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/ionic2-content-tutorial-deutsch.jpg"
 ---
 
 Aufbauend auf dem [ersten Teil](https://angularjs.de/artikel/ionic2-tutorial-deutsch) unseres Ionic 2 Tutorials wollen wir uns nun anschauen, wie ihr in Ionic 2 eure Inhalt ansprechend präsentieren und vor allem strukturieren könnt.
@@ -17,7 +17,7 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
 2. Ladehandling - Ladelayer und - spinner mit `Loading` und `ionSpinner`
 3. Aktualisierung von Inhalten durch den `ionRefresher`
 4. Strukturierung von Inhalten durch Cards und `ionCard`
-5. Anzeigen zusätzlicher Informationen in Dialogen mit `Modal`
+5. Anzeigen zusätzlicher Informationen in Dialogen mit `Modal` 
 6. Realisierung von Hinweisen und kurzer Nutzerabfragen durch `Alert`s
 7. Statusmeldungen über `Toast`s
 
@@ -91,7 +91,7 @@ Im Template greifen wir nun auf unser `pizzas` Array zu. Wir definieren eine Lis
           {{pizza.name}}
         </ion-item>
       </ion-list>
-    </ion-content>
+    </ion-content> 
 
 ![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/169/medium_ionic2-simple-list.png?v=63630686993)
 
@@ -191,7 +191,7 @@ Im Code könnte ein Layer so erzeugt werden.
     import {LoadingController} from 'ionic-angular';
     ...
 		constructor(private loadingCtrl: LoadingController) {...}
-
+    
     let loading = this.loadingCtrl.create({
       content: 'Loading...',
       dismissOnPageChange: true
@@ -212,7 +212,7 @@ Wollt ihr beim Ausblenden noch speziellen Programmcode ausführen, dann könnt i
     loading.onDidDismiss(() => {
 	    console.log('Dismissed loading');
 	  });
-
+	
     loading.dismiss();
 
 ### `ionSpinner`
@@ -322,7 +322,7 @@ Um Zugriff auf den aktuellen Refresher auf einer Seite erhalten, müsst ihr für
 
     import {Refresher} from 'ionic-angular';
 
-Als nächstes benötigen wir noch eine Funktion, die unsere Daten aktualisiert und am Ende müssen wir dem Refresher Bescheid geben, dass der Aktualisierungsprozess abgeschlossen ist. Dies machen wir über die schon mehrfach erwähnte `complete` Funktion. Zugriff auf die aktuelle Refresher Instanz erhalten wir über das `$event` Objekt eines Outputs.
+Als nächstes benötigen wir noch eine Funktion, die unsere Daten aktualisiert und am Ende müssen wir dem Refresher Bescheid geben, dass der Aktualisierungsprozess abgeschlossen ist. Dies machen wir über die schon mehrfach erwähnte `complete` Funktion. Zugriff auf die aktuelle Refresher Instanz erhalten wir über das `$event` Objekt eines Outputs. 
 
     doRefresh(refresher: Refresher) {
       const subscription = this.pizzaService
@@ -495,7 +495,7 @@ Das Ergebnis ist schon gar nicht mal so schlecht.
 Aber wie schließen wir das ganze wieder? Ganz einfach!
 Wir können einfach unsere `NavController` Instanz nutzen und führen ein `pop` aus, beispielsweise beim Klick auf einen Schließen-Button im Modal Template.
 
-Es gibt aber noch eine andere Möglichkeit, die uns sogar erlaubt noch zusätzlich Daten beim Schließen aus dem Modal heraus zu übertragen. Dazu nutzen wir die `dismiss` Funktion des zum Modal gehörenden `ViewController`s. Jede Seite besitzt einen [ViewController](http://ionicframework.com/docs/v2/api/components/nav/ViewController/), welcher Informationen und zusätzliche Funktionen zur aktuellen View bereitstellt. Bei einem Modal nutzen wir die `dismiss` Funktion, die die View schließt und entfernt.
+Es gibt aber noch eine andere Möglichkeit, die uns sogar erlaubt noch zusätzlich Daten beim Schließen aus dem Modal heraus zu übertragen. Dazu nutzen wir die `dismiss` Funktion des zum Modal gehörenden `ViewController`s. Jede Seite besitzt einen ViewController, welcher Informationen und zusätzliche Funktionen zur aktuellen View bereitstellt. Bei einem Modal nutzen wir die `dismiss` Funktion, die die View schließt und entfernt.
 
     import {Component} from '@angular/core';
     import {ViewController} from 'ionic-angular';
@@ -539,7 +539,7 @@ Jetzt werden einige denken: "Toll, ich kann Daten aus dem Modal nach außen gebe
     const modal = this.modalCtrl.create(AboutModalComponent, { data: 123 });
 
 Die Klasse unseres Modal erhält die Daten dann als Navigationsparameter, welche über die Dependency Injection geladen werden können.
-
+      
     constructor(params: NavParams) {
       console.log('data', params.get('data'));
     }
@@ -605,7 +605,7 @@ Ein Button kann auch nur über seinen Text definiert werden. Dadurch sparen wir 
 
 Im Normalfall wird das Alert automatisch beim Klick auf einen definierten Button automatisch geschlossen. Würde jedoch seine `handler` Funktion `false`  zurückgeben, wird das automatische Schließen unterbunden.
 
-Eine `Alert` Instanz besitzt zusätzlich auch eine  `dismiss` Funktion, die einfach aufgerufen werden kann.
+Eine `Alert` Instanz besitzt zusätzlich auch eine  `dismiss` Funktion, die einfach aufgerufen werden kann. 
 
     alert.dismiss();
 

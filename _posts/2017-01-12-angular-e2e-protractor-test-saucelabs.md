@@ -1,11 +1,11 @@
 ---
-title: Angular E2E Tests mit Protractor und Sauce Labs
-description: Einführung in E2E Tests mit Protractor und Sauce Labs - Die universelle Fernbedienung für Browser. Hier findest du eine Schritt für Schritt Anleitung.
-author: Martin Wiesmüller
-slug: angular-e2e-protractor-test-saucelabs
+title: "Angular E2E Tests mit Protractor und Sauce Labs"
+description: "Einführung in E2E Tests mit Protractor und Sauce Labs - Die universelle Fernbedienung für Browser. Hier findest du eine Schritt für Schritt Anleitung."
+author: "Martin Wiesmüller"
+slug: "angular-e2e-protractor-test-saucelabs"
 published_at: 2017-01-12 08:00:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/125/optimized-p-xsl33wxyc-farzad-nazifi.jpg?v=63651350493
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular-e2e-protractor-test-saucelabs.jpg"
 ---
 
 Die innovative Entwicklung der Web Welt bietet inzwischen eine ganze Menge an Möglichkeiten, testgetriebene Entwicklungen durchzuführen. Neben den Komponententests mittels [Karma](https://karma-runner.github.io) und [PhantomJs](http://phantomjs.org/), nehmen wir heute End2End Tests mit Hilfe von [Protractor](http://www.protractortest.org/#/) genauer unter die Lupe. Um anschließend eine Testabdeckung über verschiedene Browser und deren Versionen zu erreichen, wollen wir das ganze zusammen mit dem Cloud Dienst von [SauceLabs](https://saucelabs.com/) realiseren.
@@ -50,7 +50,7 @@ Aber diese Tests als notwendiges Übel anzusehen ist nicht richtig. Man muss nur
 
 [Protractor](http://www.protractortest.org/#/) ist ein Testframework, welches speziell für Angular Apps entwickelt wurde. Die Entwicklung basiert auf Node und knüpft an [WebDriverJs](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs) von Selenium an. Dieses Framework stellt den Mittelpunkt der Schnittstelle zwischen euren Tests und den Browser dar.
 
-Die Version 4 von [Protractor](http://www.protractortest.org/#/) ist lauffähig auf Node Version > 4\. In dieser Version werden sowohl Angular Apps größer 1.1.4 unterstützt, als auch alle Angular 2 Apps. Allerdings wird hier das Testen auf Bindings und Models nicht unterstützt.
+Die Version 4 von [Protractor](http://www.protractortest.org/#/) ist lauffähig auf Node Version > 4\. In dieser Version werden sowohl Angular Apps größer 1.1.4 unterstützt, als auch alle Angular 2 Apps. Allerdings wird hier das Testen auf Bindings und Models nicht unterstützt.  
 
 Nähere und die aktuellsten Informationen findet Ihr auf der Github Page von [Protractor](http://www.protractortest.org/#/).
 
@@ -138,7 +138,7 @@ In diesem JSON werden die zu testenden Browser definiert. Das Objekt hat insgesa
 }`
 ```
 
-Die genaue Definition für die Konfiguration der SauceLab Browser findet ihr im SauceLabs [Platform Configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/). Zudem möchte ich euch dennoch die Keys kurz erklären:
+Die genaue Definition für die Konfiguration der SauceLab Browser findet ihr im SauceLabs [Platform Configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/). Zudem möchte ich euch dennoch die Keys kurz erklären:  
 
 *   `browserName` (string)
 Der Name des Browsers, welcher verwendet werden soll.
@@ -167,13 +167,13 @@ Das Objekt in diesem File wurde von mir genauso wie die `browserlist.json` aus d
 }
 ```
 
-Als Key wird der Name der Suite definiert. Das dazugehörige Array definiert die Dateien mit den Testfällen. Die Aufteilung der Tests in Suiten ist nicht zwingend erforderlich. Man kann theoretisch auch alle Testfiles ohne Suites angeben. Allerdings nimmt man sich hiermit einen großen Vorteil:
+Als Key wird der Name der Suite definiert. Das dazugehörige Array definiert die Dateien mit den Testfällen. Die Aufteilung der Tests in Suiten ist nicht zwingend erforderlich. Man kann theoretisch auch alle Testfiles ohne Suites angeben. Allerdings nimmt man sich hiermit einen großen Vorteil:  
 
 Wenn ich die Testfälle in Suiten aufteile, habe ich anschließend auch die Möglichkeit, Suiten einzeln zu testen. Andernfalls kann ich nur alle Tests auf einmal starten. Und da die E2E Tests mitunter auch sehr viel Zeit in Anspruch nehmen können, ist es sehr hilfreich, nur einzelne Suiten aufzurufen.
 
 ##### PROTRACTOR.CONF.JS
 
-Hier mal eine Protractor Konfigurationsdatei, welche das Testing lokal, sowie auch über SauceLabs unterstüzt. Als Testframework verwende ich hier [Jasmine](https://jasmine.github.io/). Zudem habe ich einen Testreporter mit integriert, welcher Screenshots erstellt und diese zusammen mit dem Test-Report lokal ablegt.
+Hier mal eine Protractor Konfigurationsdatei, welche das Testing lokal, sowie auch über SauceLabs unterstüzt. Als Testframework verwende ich hier [Jasmine](https://jasmine.github.io/). Zudem habe ich einen Testreporter mit integriert, welcher Screenshots erstellt und diese zusammen mit dem Test-Report lokal ablegt.  
 Dieses File wollen wir uns mal Stück für Stück ansehen:
 
 ```
@@ -291,7 +291,7 @@ exports.config = {
 }`
 ```
 
-Im oberen Teil laden wir die externen Module, sowie die zwei bereits genannten JSON Files für die Browser- und der Testsuites Definitionen. Als externe Module werden hier folgende Dependencies geladen:
+Im oberen Teil laden wir die externen Module, sowie die zwei bereits genannten JSON Files für die Browser- und der Testsuites Definitionen. Als externe Module werden hier folgende Dependencies geladen:  
 
 *   [protractor-jasmine2-screenshot-reporter](https://www.npmjs.com/package/protractor-jasmine2-screenshot-reporter)
 Das ist der Jasmine Reporter welcher die Screenshots während der Tests durchführt. Dieses Modul wird anschließend direkt mit der Variable `reporter` konfiguriert. Mit dem Key `dest` wird die Destination für die Screenshots, und mit dem Key `filename` der Pfad für den globalen Report angegeben.

@@ -1,16 +1,16 @@
 ---
-title: Angular 2.0.0 Final Release
-description: Bei dem heutigen Meetup im Google HQ wurde die Version Angular 2.0.0 veröffentlicht. Der Nachfolger des Frameworks AngularJS nennt sich jetzt bewusst Plattform.
-author: Robin Böhm
-slug: angular2-final-release
+title: "Angular 2.0.0 Final Release"
+description: "Bei dem heutigen Meetup im Google HQ wurde die Version Angular 2.0.0 veröffentlicht. Der Nachfolger des Frameworks AngularJS nennt sich jetzt bewusst Plattform."
+author: "Robin Böhm"
+slug: "angular2-final-release"
 published_at: 2016-09-15 07:00:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/116/optimized-Screen-Shot-2016-09-15-at-07.37.47.jpg?v=63641137085
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular2-final-release.jpg"
 ---
 
-Lange haben wir auf diesen Moment gewartet - es war eine Fahrt mit einigen Höhen und Tiefen.
+Lange haben wir auf diesen Moment gewartet - es war eine Fahrt mit einigen Höhen und Tiefen. 
 
-Das Kern-Team von Angular 2 hat die finale Version **Angular 2.0.0** im Google Meetup vorgestellt. Den Nachfolger des Frameworks AngularJS nennen sie jetzt bewusst **Plattform**, da es nun ein ganzes Öko-System bietet um Entwickler produktiver zu machen.
+Das Kern-Team von Angular 2 hat die finale Version **Angular 2.0.0** im Google Meetup vorgestellt. Den Nachfolger des Frameworks AngularJS nennen sie jetzt bewusst **Plattform**, da es nun ein ganzes Öko-System bietet um Entwickler produktiver zu machen. 
 
 Auch die Geschwindigkeit wurde um ein vielfaches, im Vergleich zu Angular, verbessert. Features wie **Ahead-of-Time Kompilierung** und **Lazy-Loading** sind nun ein fester Bestandteil von Angular 2. Extra hervorgehoben hierbei wurden ebenfalls die Fortschritte im Styleguide und dem Generator Angular-CLI.
 

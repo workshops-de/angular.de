@@ -1,11 +1,11 @@
 ---
-title: Kostenloses Angular TypeScript Webinar
-description: Als Erweiterung unserer Workshops setzen wir nun zusätzlich auf die Wissensvermittlung via Webinar. Findet einen ersten Einstieg in Angular.
-author: Robin Böhm
-slug: angular2-typescript-webinar
+title: "Kostenloses Angular TypeScript Webinar"
+description: "Als Erweiterung unserer Workshops setzen wir nun zusätzlich auf die Wissensvermittlung via Webinar. Findet einen ersten Einstieg in Angular."
+author: "Robin Böhm"
+slug: "angular2-typescript-webinar"
 published_at: 2016-08-23 10:00:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/111/optimized-Screen-Shot-2016-08-23-at-11.04.02.jpg?v=63639162276
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular2-typescript-webinar.jpg"
 ---
 
 Als Erweiterung unserer Workshops setzen wir nun vermehrt auf Wissensvermittlung via Webinar, um das Workshop-Erlebnis unserer Teilnehmer noch weiter zu verbessern! Wir haben gemerkt, dass es so viele interessante und relevante Themen gibt und hierzu 3 Tage meist fast schon zu kurz sind. Darum gibt es nun die Möglichkeit, sich vor unseren [Workshops](/workshops/angular-intensiv) schon einiges an Vorwissen anzueignen, um dann im Workshop die richtigen Fragen stellen zu können!

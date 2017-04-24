@@ -1,16 +1,16 @@
 ---
-title: Angular - Outputs, Events und EventEmitter
-description: Lasst eure Komponenten miteinander schnell und einfach über Events kommunizieren. Informiert Anwendungsteile über Änderungen an einem gemeinsamen Datenmodel über Service-Events.
-author: Bengt Weiße
-slug: angular2-output-events
+title: "Angular - Outputs, Events und EventEmitter"
+description: "Lasst eure Komponenten miteinander schnell und einfach über Events kommunizieren. Informiert Anwendungsteile über Änderungen an einem gemeinsamen Datenmodel über Service-Events."
+author: "Bengt Weiße"
+slug: "angular2-output-events"
 published_at: 2016-05-17 12:12:12.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/92/optimized-a2-async.jpg?v=63630265394
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular2-output-events.jpg"
 ---
 
-Für das Verständnis dieses Artikels solltet ihr euch zurvor mit den Grundlagen der Angular Entwicklung befassen. Dazu bietet sich unser [Einführungstutorial](https://angularjs.de/artikel/angular2-tutorial-deutsch) auf AngularJS.DE an.
+Für das Verständnis dieses Artikels solltet ihr euch zurvor mit den Grundlagen der Angular Entwicklung befassen. Dazu bietet sich unser [Angular-Einführungstutorial](/artikel/angular2-tutorial-deutsch) an.
 
-### Events in JavaScript
+## Events in JavaScript
 
 Jedem JavaScript-Entwickler sind sicher schon einmal Events über den Weg gelaufen. Sei es beim Einsatz von jQuery, um auf bestimmte DOM-Events (beispielsweise einem Klick) zu reagieren oder die direkte Nutzung nativer Events, um einen Fehler abzufangen. Als kleines Code-Beispiel hören wir auf einen Button-Klick und zeigen eine Meldung an.
 
@@ -25,7 +25,7 @@ Jedem JavaScript-Entwickler sind sicher schon einmal Events über den Weg gelauf
       <body>
         <button onclick="showAlert()">Say: Hello</button>
       </body>
-    </html>
+    </html> 
 
 Eine andere Möglichkeit ist den Event-Listener selbst per JavaScript auf das Element zu setzen. Dadurch entfällt das `onclick` am button-Tag.
 
@@ -45,15 +45,15 @@ Eine andere Möglichkeit ist den Event-Listener selbst per JavaScript auf das El
       <body onload="addListener()">
         <button>Say: Hello</button>
       </body>
-    </html>
+    </html> 
 
 > Events werden immer dann benutzt, wenn wir andere Code-Bestandteile über das Eintreten eines bestimmten Ereignisses informieren wollen. Dabei kann dies auch irgendwann in der Zukunft geschehen.
 
 Es besteht auch die Möglichkeit eigene Events zu erzeugen, diese auszuführen und auf sie zu reagieren.
 
-### Events und Outputs in Angular
+## Events und Outputs in Angular
 
-#### Components/Directives
+### Components/Directives
 
 In Angular können Standart-DOM-Events sehr einfach genutzt werden. Dazu schreibt ihr das Event, was abgefangen werden soll, in die bereits aus dem Einführungsartikel bekannten `()` (Output) Klammern. Als Wert setzt ihr eine Expression, worunter auch Funktionsaufrufe zählen.
 
@@ -79,7 +79,7 @@ Zur Vereinfachung nehmen wir einfach unser bisheriges `click`-Beispiel und wande
 2. **Click-Komponente** - enthält Button, gibt Nachricht beim Klick and Basis-Komponente
 
 
-Beginnen wir mit der Basis-Komponente.
+Beginnen wir mit der Basis-Komponente. 
 
     @Component({
       selector: 'base-component',
@@ -90,11 +90,11 @@ Beginnen wir mit der Basis-Komponente.
       `
     })
     export class MyParentComponent {
-
+    
       handleMsg(msg) {
         window.alert(msg);
       }
-
+    
     }
 
 Unsere Basis-Komponente bindet als Abhängigkeit die `ClickComponent` ein, damit diese im Template benutzt werden kann. Dort fügt sie einen Listener auf das Event mit dem Name `showMsg` hinzu. Wird das Event ausgeführt, rufen wir die Funktion `handleMsg` mit einem Parameter `$event` auf. Ihr werden recht häufig auf die von Angular reservierte Variable `$event` stoßen. Sie steht im Grunde immer für das Event-Objekt, des aktuellen Ereignisses.
@@ -110,7 +110,7 @@ Daraus erhalten wir schon ein paar Vorgaben für unsere `ClickComponent`.
     })
     export class ClickComponent {
       @Output() showMsg = new EventEmitter<string>();
-
+      
       triggerEvent() {
         this.showMsg.emit('Hello');
       }
@@ -122,7 +122,7 @@ Beim Klick auf den Button wird nun die `triggerEvent`-Funktion ausgeführt, die 
 
 Unsere Basis-Komponente hört auf unser Event und zeigt daraufhin, wie erwartet, die Hinweisbox mit dem übergebenen Text an.
 
-### Services bzw. Injectables
+## Services bzw. Injectables
 
 In der Regel werden Services - oder auch *Injectables* genannt - dazu genutzt Funktionalitäten oder Daten zwischen mehreren Anwendungsabschnitten zu teilen. Nehmen wir dazu an, dass sich zwei Components einen DataService teilen. Beide können Daten im Service ändern. Beide Komponenten müssen natürlich die eigenen Daten aktualisieren, wenn sich der DataService ändert. Die Lösung dazu nennt sich *Service-Events*. Ein Service erstellt dazu einen neuen und öffentlichen `EventEmitter`. Alle Funktionen im Service, die Daten des Services ändern, können das Event dann nutzen, um allen Interessenten über die neuen Daten zu informieren.
 
@@ -145,9 +145,9 @@ Als Beispiel haben wir einen `CartService`, der alle Warenkorbeinträge hält. E
         this.cart.push(item);
         this.cartChanged.emit(this.cart);
       };
-
+      
     }
-
+    
 Eine Komponente könnte dann wie folgt ein Event abonnieren.
 
     @Component({
@@ -155,7 +155,7 @@ Eine Komponente könnte dann wie folgt ein Event abonnieren.
     })
     export class ProductComponent implements OnInit {
       constructor(private cartService: CartService) {}
-
+      
       ngOnInit() {
         this.cartService
           .cartChanged
@@ -164,13 +164,13 @@ Eine Komponente könnte dann wie folgt ein Event abonnieren.
           });
       }
     }
-
+    
 Was das Interface `OnInit` und die `ngOnInit` Funktion bedeuten, könnt ihr in unseren Artikel über den [Component-Lifecycle](https://angularjs.de/artikel/angular-2-component-lifecycle) nachlesen.
 
 Wer jetzt denkt, dass alles sieht jetzt doch schon irgendwie nach Observables aus. Ja, ihr habt recht, denn intern arbeitet der EventEmitter auch mit Observables.
 
 <div class="alert alert-info"><b>Hinweis:</b> Der EventEmitter in Angular basiert intern auf Observables!</div>
 
-### Fazit
+## Fazit
 
 Events sind äußerst nützlich und dienen nicht nur zu Kommunikation zwischen Komponenten über den DOM, sondern auch über Services. Dadurch lassen sich intelligente Anwendungen schreiben, die schnell und elegant auf Änderungen auf Datenebene reagieren.

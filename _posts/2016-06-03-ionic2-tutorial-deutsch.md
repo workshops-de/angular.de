@@ -1,24 +1,24 @@
 ---
-title: Ionic 2 Tutorial - Hybride Apps 2.0
-description: Ionic 2 ist der Nachfolger des beliebten Frameworks Ionic für die Entwicklung hybrider und mobiler Apps auf Basis von Angular2. Wir helfen euch beim Start.
-author: Bengt Weiße
-slug: ionic2-tutorial-deutsch
+title: "Ionic 2 Tutorial - Einstieg zu hybriden Apps"
+description: "Ionic 2 ist der Nachfolger des beliebten Frameworks Ionic für die Entwicklung hybrider und mobiler Apps auf Basis von Angular2. Wir helfen euch beim Start."
+author: "Bengt Weiße"
+slug: "ionic2-tutorial-deutsch"
 published_at: 2016-06-03 06:12:12.000000Z
-categories: tutorial angular2 angular angular4 featured
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/93/optimized-ionic2-article.jpg?v=63631485343
+categories: "angular2 angular angular4 featured"
+header_image: "/artikel/header_images/ionic2-tutorial-deutsch.jpg"
 ---
 
-Nach unserem [Tutorial](https://angularjs.de/artikel/ionic-tutorial-deutsch "Ionic 1 Tutorial") über **Ionic 1** und das [Ionic Framework](http://ionicframework.com/ "Ionic Framework")  wird es doch langsam Zeit sich einmal die neue Version des beliebten Frameworks zur Erstellung von mobilen hybriden Apps anzusehen.
+Nach unserem [Ionic 1 Tutorial](https://angularjs.de/artikel/ionic-tutorial-deutsch "Ionic 1 Tutorial") über **Ionic 1** und das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") wird es Zeit , sich die neue Version des beliebten Frameworks zur Erstellung von mobilen hybriden Apps anzusehen.
 
-Dabei setzt das Ionic-Team natürlich auch auf Angular 2 und benutzt daher auch vieles aus diesem neuen Universum. Daher bietet es sich an vorher unsere Artikel über Angular 2 zu lesen oder zumindest einen Blick in unser [Angular 2 Einführungstutorial](https://angularjs.de/artikel/angular2-tutorial-deutsch "Angular 2 Einführungstutorial") zu werfen.
+Dabei setzt das Ionic-Team natürlich auf Angular und benutzt daher auch vieles aus diesem neuen Universum. Daher bietet es sich an vorher unsere Artikel über Angular 2 zu lesen oder zumindest einen Blick in unser [Angular Einführungstutorial](https://angularjs.de/artikel/angular2-tutorial-deutsch "Angular Einführungstutorial") zu werfen.
 
-Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1. Dadurch könnt ihr einfach vergleichen, was jetzt wie anders oder sogar besser funktioniert. Außerdem findet ihr dort auch alle allgemeinen Grundlagen und Informationen, was Ionic genau ist, worauf es basiert und was ihr damit machen könnt. Daher sparen wir uns diese Punkte hier und steigen direkt bei der Entwicklung ein. Unser Tutorial ist in drei Abschnitte aufgeteilt.
+Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1. Dadurch könnt ihr vergleichen, was anders oder besser funktioniert. Außerdem findet ihr dort auch alle allgemeinen Grundlagen und Informationen, was Ionic genau ist, worauf es basiert und was ihr damit machen könnt. Daher sparen wir uns diese Punkte hier und steigen direkt bei der Entwicklung ein. Unser Tutorial ist in drei Abschnitte aufgeteilt. 
 
 **Teil 1: Allgemein**
 1. Installation und Anlegen eines Projekts
 2. Anlegen einer App und Starten einer App
 3. Erstellen von Inhalten mit `@Component`
-4. Die Basiskomponenten - `ionContent` und `ionToolbar` mit `ionHeader`/`ionFooter`
+4. Die Basiskomponenten - `ionContent` und `ionToolbar` mit `ionHeader`/`ionFooter` 
 5. Elegante und einfache Navigation - `NavController`, `ionNav` und `ionNavBar`
 6. Nutzung von Seitenmenüs über `ionMenu`
 
@@ -27,7 +27,7 @@ Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1
 2. Ladehandling - Ladelayer und - spinner mit `Loading` und `ionSpinner`
 3. Aktualisierung von Inhalten durch den `ionRefresher`
 4. Strukturierung von Inhalten durch Cards und `ionCard`
-5. Anzeigen zusätzlicher Informationen in Dialogen mit `Modal`
+5. Anzeigen zusätzlicher Informationen in Dialogen mit `Modal` 
 6. Realisierung von Hinweisen und kurzer Nutzerabfragen durch `Alert`s
 7. Statusmeldungen über `Toast`s
 
@@ -41,6 +41,31 @@ Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1
 In diesem Artikel behandeln wir zunächst den 1. Teil und schauen uns den Grundaufbau einer Ionic 2 Anwendung an.
 
 Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pizza-service "Quellcode Ionic 2 Pizza App") der in diesem Tutorial entwickelten App findet unter unserem GitHub-Account. Außerdem gibt es auch eine [Live-Vorschau](http://angularjs-de.github.io/ionic2-pizza-service/www/ "Ionic 2 Pizza App") der App.
+
+<hr>
+<div class="">
+    <div class="h3">Keine Lust zu Lesen?</div>
+    <div class="row mb-2">
+        <div class="col-xs-12 col-md-6">
+            <p>
+                Du möchtest dich oder dein ganzen Team schnellstmöglich produktive Ionic Anwendung entwickeln lassen? Dann nutze unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Ionic und TypeScript Schulungen</a>. Wir haben die Konzepte des Frameworks und unsere Projekterfahrung für euch in einen interaktiven Kurs gegossen.
+            </p>                
+            <p class="">
+                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+                    <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+                </a>
+            </p>
+
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <img class="img-fluid img-rounded"
+                 src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 alt="Teilnehmer in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
+        </div>
+    </div>
+</div>
+<hr>
+
 
 ### Installation und Anlegen eines Projekts
 
@@ -94,7 +119,7 @@ Werfen wir also den ersten Blick in das `src/app`-Verzeichnis. In diesem Kapitel
     export class PizzaAppComponent {
       ...
     }
-
+ 
 So wie generell in TypeScript und Angular 2 kann ein Modul Abhängigkeiten zu anderen Modulen haben. In diesem Fall bietet uns Ionic über `ionic-angular` einen Werkzeugkasten mit allen Dingen, die wir so brauchen könnten. In unserem Falle benutzt Ionic 2 jedoch den normalen Component *Decorator*.  Diesen nutzen wir um eine Klasse als unsere Anwendung auszuzeichnen. Er nimmt Optionen entgegen, um unsere Komponente zu konfigurieren. Als Beispiel benötigt die Anwendung häufig ein Basis-Template.
 
 Damit weiß Ionic jedoch noch nicht, wo es die Anwendung starten soll. Warum funktioniert unsere Anwendung dann bereits? Dazu schauen wir jetzt in den `www` Ordner und öffnen die `index.html`. Dort entdecken wir im `body` eine Direktive mit dem Namen `ionApp`. Sie sorgt dafür, dass hier unsere Anwendung zumindest in den DOM eingehangen wird.
@@ -140,7 +165,7 @@ Als nächstes definieren wir unsere zukünftige Startseite der Anwendung im `pag
 
 <div class="alert alert-info"><b>Hinweis:</b> Eine Seite in Ionic2 ist einfach eine Angular2 <code>@Component</code>.</div>
 
-In unserem neuen Ordner erstellen wir eine Datei  mit dem Namen `order.component.ts`. Ein Dateiname sollte eindeutig sein. Aus diesem Grund folgt nach dem eigentlichen Namen noch der Typ, des darin enthaltenen Inhalts.
+In unserem neuen Ordner erstellen wir eine Datei  mit dem Namen `order.component.ts`. Ein Dateiname sollte eindeutig sein. Aus diesem Grund folgt nach dem eigentlichen Namen noch der Typ, des darin enthaltenen Inhalts. 
 
 Fügt den nun folgenden Code in unsere `order.component.ts` ein.
 
@@ -187,7 +212,7 @@ Wie schon in unserem Tutorial zu Ionic 1 wird es jetzt Zeit unserer Anwendung au
 
 - ionContent - eigentliche Inhalt der View (scrollbar)
 - ionHeader/ionFooter - erzeugt Fuß- und Kopfzeilen
-- ionToolbar - erstellt Funktionsleiste in Kopf- oder Fußzeile
+- ionToolbar - erstellt Funktionsleiste in Kopf- oder Fußzeile 
 
 ### Content
 
@@ -249,9 +274,9 @@ Damit unsere Klasse nicht zu aufgebläht wird, lagern wir unser Template in eine
     @Component({
       templateUrl: 'order.component.html'
     })
-
+    
 	...
-
+	
     <ion-header>
       <ion-toolbar>
         <ion-title>Pizza App</ion-title>
@@ -277,12 +302,12 @@ Ein wichtiger Anwendungsfall ist das Ausrichten von Schaltflächen. Dies funktio
         <button ion-button>Right</button>
       </ion-buttons>
     </ion-toolbar>
-
-Mit Ionic 2 ist es auch möglich, dass der Inhalt des `ionContent` hinter der Kopfzeile entlang scrollt. Dies macht vor allem mit einer transparenten Kopfzeile etwas her. Dazu setzt ihr am `ionContent` einfach das Attribut `fullscreen` auf true.
-
+ 
+Mit Ionic 2 ist es auch möglich, dass der Inhalt des `ionContent` hinter der Kopfzeile entlang scrollt. Dies macht vor allem mit einer transparenten Kopfzeile etwas her. Dazu setzt ihr am `ionContent` einfach das Attribut `fullscreen` auf true. 
+ 
 ## Elegante und einfache Navigation
 
-Das Herzstück eine App ist ihre Navigation. Sie sollte gut durchdacht und einfach zu verstehen sein. In der neuen Version des Frameworks wird das Navigieren noch einfacher. Das mühselige Definieren von Routen oder Zuständen entfällt. Keine lästigen Angaben von komplexen Urls oder Namen. Möglich wird dies über den `NavController` von Ionic.
+Das Herzstück eine App ist ihre Navigation. Sie sollte gut durchdacht und einfach zu verstehen sein. In der neuen Version des Frameworks wird das Navigieren noch einfacher. Das mühselige Definieren von Routen oder Zuständen entfällt. Keine lästigen Angaben von komplexen Urls oder Namen. Möglich wird dies über den `NavController` von Ionic. 
 
 ### Der `NavController`
 
@@ -309,7 +334,7 @@ den Navigations-Stack zu manipulieren. Alle weiteren Funktionen findet ihr in de
 
 <div class="alert alert-danger"><b>Achtung:</b> Falls ihr den NavController auch in eurer <code>App Component</code> Klasse benötigt, ist dieser erst nach dem Initialisieren verfügbar und kann nicht einfach per Dependency Injection geladen werden! Nutzt als Alternative <code>@ViewChild</code> aus Angular2 und <code>Nav</code> aus *ionic-angular*</div>
 
-Benötigt ihr den NavController bereits in der App-Definition/Klasse ist es nicht ganz so einfach. Denn erst nach dem Initialisieren der Anwendung und ihrer Kind-Komponenten ist die Navigation bereit. Damit ihr trotzdem Zugriff darauf bekommt, könnt ihr euch einen Angular 2 Decorator zu Nutze machen. Über `@ViewChild` bekommt ihr Zugriff auf eine Kind-Komponente. Da die Navigation eine besondere Kind-Komponente unser App ist, können wir diese laden.
+Benötigt ihr den NavController bereits in der App-Definition/Klasse ist es nicht ganz so einfach. Denn erst nach dem Initialisieren der Anwendung und ihrer Kind-Komponenten ist die Navigation bereit. Damit ihr trotzdem Zugriff darauf bekommt, könnt ihr euch einen Angular 2 Decorator zu Nutze machen. Über `@ViewChild` bekommt ihr Zugriff auf eine Kind-Komponente. Da die Navigation eine besondere Kind-Komponente unser App ist, können wir diese laden. 
 
 Zur Typisierung stellt Ionic die Navigation-Komponente über `Nav` bereit.
 
@@ -390,15 +415,15 @@ Zunächst machen wir die `AboutComponent` in der `OrderComponent` verfügbar.
 
     // OrderComponent class
     import {AboutComponent} from '../about/index';
-
+    
     @Component(...)
     export class OrderComponent {
       aboutComponent = AboutComponent;
-
+    
       constructor(...) {...}
       ...
     }
-
+    
 Jetzt können wir `aboutComponent` im Template nutzen.
 
     <button [navPush]="aboutComponent">Über Uns</button>
@@ -443,7 +468,7 @@ In manchen Fällen müsst ihr darauf warten, dass der Seitenwechsel bzw. das Nav
 Programmatischen Zugriff auf die übergebenen Navigationsparameter erhaltet ihr über den `NavParams` Service. Einmal eingebunden, könnt ihr über seine `get` Funktion und unter der Angabe des Parameters den Wert abfragen.
 
     import {NavParams, ...} from 'ionic-angular';
-
+    
     ...
     export class MyComponent {
       constructor(params: NavParams){
@@ -486,7 +511,7 @@ Hauptbestandteil des ganzen ist dabei die `ionMenu` Komponente. Sie zeichnet die
   	      <ion-title>Menü</ion-title>
         </ion-toolbar>
       </ion-header>
-
+      
       <ion-content>
       </ion-content>
 
@@ -544,7 +569,7 @@ Neben der `menuToggle` existiert auch noch die `menuClose` Direktive. Benutzt ih
 
 ### `MenuController`
 
-Als letztes müssen wir nur noch klären, wie wir auch programmatischen Zugriff auf Menüs bekommen. Nicht allzu selten müssen wir ein Menü programmatisch schließen oder öffnen, deaktivieren bzw. aktivieren oder mit mehreren Menüs umgehen. Für diese Zwecke stellt uns Ionic den `MenuController` zur Verfügung.
+Als letztes müssen wir nur noch klären, wie wir auch programmatischen Zugriff auf Menüs bekommen. Nicht allzu selten müssen wir ein Menü programmatisch schließen oder öffnen, deaktivieren bzw. aktivieren oder mit mehreren Menüs umgehen. Für diese Zwecke stellt uns Ionic den `MenuController` zur Verfügung. 
 
     import { MenuController} from 'ionic-angular';
 
@@ -595,3 +620,24 @@ Schaut euch einfach die [Dokumentation](http://ionicframework.com/docs/v2/) an, 
 Wir hoffen das Tutorial hat euch gefallen und ihr konntet das eine oder andere Hilfreiche entnehmen.
 
 Viel Spaß beim Ausprobieren und Entwickeln der eigenen App!
+
+<hr>
+<div class="text-center">
+<div class="h3">Hat dir das Tutorial geholfen?</div>
+<div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+<p> Noch schneller lernen geht nur in unseren <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Ionic und TypeScript Schulungen</a>. In kleinen Gruppen bieten wir öffentliche und Inhouse Schulungen an, um dich möglichst effektiv in das Thema Ionic zu begleiten. </p>
+
+<p class="text-center">
+                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+                    <button class="btn btn-danger">Jetzt weiter lernen</button>
+                </a>
+            </p>
+        
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+</div>
+</div>
+<hr>

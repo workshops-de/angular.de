@@ -1,11 +1,11 @@
 ---
-title: Ionic Framework - Konfiguration mit $ionicConfigProvider
-description: Im letzten Teil unserer Ionic Tutorialreihe zeigen wir euch, wie ihr mit dem $ionicConfigProvider das Framework nach euren Wünschen pro Plattform konfigurieren könnt.
-author: Bengt Weiße
-slug: ionic-tutorial-deutsch-configuration
+title: "Ionic - Konfiguration mit $ionicConfigProvider"
+description: "Im letzten Teil unserer Ionic Tutorialreihe zeigen wir euch, wie ihr mit dem $ionicConfigProvider das Framework nach euren Wünschen pro Plattform konfigurieren könnt."
+author: "Bengt Weiße"
+slug: "ionic-tutorial-deutsch-configuration"
 published_at: 2016-01-27 08:29:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/88/optimized-ionic-config.jpg?v=63630942812
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/ionic-tutorial-deutsch-configuration.jpg"
 ---
 
 Wie wir im [Einführungsartikel](https://angularjs.de/artikel/ionic-tutorial-deutsch) zu Ionic erfahren haben, bringt das Framework eine Reihe von Funktionen und Komponenten mit. Viele von diesen sind über eigene Services konfigurierbar und lassen sich so spielend leicht den eigenen Vorstellungen anpassen. Für die grundlegenden Einstellungen des Frameworks bietet Ionic einen eigenen Provider mit dem Namen **$ionicConfigProvider** an.
@@ -16,11 +16,11 @@ Für uns bedeutet das, dass wir zusätzlich zu den Zustandsdefinitionen auch Ion
 
 Danach stehen uns eine Vielzahl von Funktionen zur Verfügung. Es sei erwähnt, dass die Funktionen Setter, als Getter sind. Übergebt ihr ihnen keinen Wert, erhaltet ihr die aktuelle Konfiguration zurück.
 
-Des Weiteren könnt ihr auch plattform-spezifisch alle Funktionen aufrufen und so eure App, je nach Betriebssystem anpassen. Dazu ruft ihr alle nachfolgend vorgestellten Funktionen über `platform.NAME` auf. Als Beispiel würde das Setzten der zu cachenden Views unter Android folgendermaßen aussehen.
+Des Weiteren könnt ihr auch plattform-spezifisch alle Funktionen aufrufen und so eure App, je nach Betriebssystem anpassen. Dazu ruft ihr alle nachfolgend vorgestellten Funktionen über `platform.NAME` auf. Als Beispiel würde das Setzten der zu cachenden Views unter Android folgendermaßen aussehen. 
 
 `$ionicConfigProvider.platform.android.views.maxCache(5);`
 
-#### Verhalten der Views und Caching
+## Verhalten der Views und Caching
 
 **$ionicConfigProvider.views.transition(transition)**
 
@@ -39,7 +39,7 @@ Setzt die maximale Anzahl von Views, die im Cache gehalten werden. Dadurch bleib
 
 Im Normalfall werden von Ionic nur die so genannten BackViews gecached. Das bedeutet, wenn ich mich in die Navigationshistorie hineinnavigiere, werden die vorherigen Views gecached. Gehe ich jetzt wieder Schritt für Schritt zurück, werden diese nach und nach wieder aus dem Cache entfernt. Sollen diese auch behalten werden, dann müsst ihr das ForwardCaching aktivieren und die Funktion mit *true* als *value* aufrufen.
 
-#### JS- und Overflow-Scrolling
+## JS- und Overflow-Scrolling
 
 Wollt ihr generell JS-Scrolling in eurer App an- bzw. ausschalten, müsst ihr nicht jeden ionContent einzeln anfasse. Einfach die entsprechende Funktion auf dem $ionicConfigProvider aufrufen.
 
@@ -47,7 +47,7 @@ Wollt ihr generell JS-Scrolling in eurer App an- bzw. ausschalten, müsst ihr ni
 
 Aktiviert bzw. deaktiviert JavaScript-Scrolling global für alle ionContents. Dabei kann *value* die Werte *true* oder *false* annehmen.
 
-#### Zurück-Button Styling
+## Zurück-Button Styling
 
 Um den ionNavBackButton zu stylen, müsst ihr nicht einmal HTML-Code schreiben. Über die nun vorgestellten Funktionen könnt ihr das direkt im JavaScript-Code.
 
@@ -63,7 +63,7 @@ Damit setzt ihr den Text des Zurück-Knopfes. Einfach die entsprechende Zeichenk
 
 Auf iOS ist es Standard, dass neben dem Zurück-Knopf der Titel der vorherigen View angezeigt wird. Hier könnt ihr dieses Verhalten pro Plattform oder generell aktivieren oder deaktivieren. Dazu die Funktion einfach mit *true* bzw. *false* aufrufen.
 
-#### Aussehen von ionCheckbox und ionToggle
+## Aussehen von ionCheckbox und ionToggle
 
 Natürlich sehen auch die Eingabeelement nicht bei jedem Betriebssystem gleich aus. Am meisten fällt das im Vergleich zwischen iOS und Android bei den Checkboxen und den Toggle-Buttons auf. Über den $ionicConfigProvider könnt ihr nun selbst entscheiden, welches Styling genutzt werden soll.
 
@@ -75,7 +75,7 @@ Setzt das Aussehen von Checkboxes. Als Wert können die Strings **square** oder 
 
 Setzt das Aussehen von Toggle-Knöpfen. Als Wert können die Strings **small** oder **large** übergeben werden. Ersteres orientiert sich dabei mehr an Android und das andere ans iOS.
 
-#### Styling der Tabs
+## Styling der Tabs
 
 Ein wichtiges Navigationskonzept für Apps sind Tabs. Auch Ionic bietet eine solche Komponente an. Wie so oft macht auch hier jede Plattform ihr eigenes Ding. Wer nicht die plattform-spezifische Konfiguration nutzen will, kann diese hier ändern.
 
@@ -87,7 +87,7 @@ Als Wert nimmt diese Funktion die Strings *striped* (Android) oder *standard* (i
 
 Auch bei der Positionierung unterscheiden sich Tabs je nach Betriebssystem. Bei iOS sind diese normalerweise am View-Ende und bei Android zu Beginn. Aus diesem Grund kann die Funktion auch mit den Werten *top* oder *bottom* aufgerufen werden.
 
-#### Vorladen von Templates
+## Vorladen von Templates
 
 Wer sich während der Entwicklung seiner Ionic-App mal den Netzwerk-Verkehr angesehen hat, dem ist sicher aufgefallen, dass direkt beim Aufruf der App, die Templates angefordert werden. Dies soll später die Ausführung und den Zugriff auf diese beschleunigen.
 
@@ -95,9 +95,9 @@ Wer sich während der Entwicklung seiner Ionic-App mal den Netzwerk-Verkehr ange
 
 Damit könnt ihr die Anzahl der Template setzen, die vorgeladen werden sollen. Wollt ihr diese Funktion ganz ausstellen, dann übergebt einfach eine *0* als *value*. Der Standardwert beträgt *30*.
 
-#### Anpassen der Navigationsleiste
+## Anpassen der Navigationsleiste
 
-Ja, auch bei den Kopf- bzw. Navigationsleisten unterscheiden sich die Plattformen und Geschmäcker enorm.
+Ja, auch bei den Kopf- bzw. Navigationsleisten unterscheiden sich die Plattformen und Geschmäcker enorm. 
 
 **$ionicConfigProvider.navBar.alignTitle(value)**
 
@@ -126,4 +126,4 @@ Ein weiterer Unterschied, welche Seite für die App die Primär- bzw. Sekundärs
 
 Als klitzekleines Beispiel setzen wir die Beschriftung des Zurück-Buttons in der Ionic-Pizza-App auf einen Leerstring.
 
-Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/15-configProvider) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/15-configProvider/#/order)
+Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/15-configProvider) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/15-configProvider/#/order) 

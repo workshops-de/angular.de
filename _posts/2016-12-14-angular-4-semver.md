@@ -1,19 +1,20 @@
 ---
-title: Angular 4 kommt
-description: Das Angular Projekt setzt auf das System der semantischen Versionierung(SEMVER). Hierbei geht es darum, den Versionsnummer eine wirkliche Bedeutung zu geben.
-author: Robin Böhm
-slug: angular-4-semver
+title: "Angular 4 kommt mit einem Versionssprung"
+description: "Angular setzt ab jetzt auf das System der semantischen Versionierung(SEMVER). Hierbei geht es darum, den Versionsnummern eine wirkliche Bedeutung zu geben."
+author: "Robin Böhm"
+slug: "angular-4-semver"
 published_at: 2016-12-14 09:00:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/124/optimized-Screen-Shot-2016-12-14-at-11.22.35.jpg?v=63648930684
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular-4-semver.jpg"
 ---
 
 
 ![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/217/medium_angular4announcement.png?v=63648928534)
 
-Kurzer Schock? Vielleicht! Aber keine Angst, ich erkläre euch worum es geht. Am 8. Dezember 2016 hat Igor Minar in seiner Keynote der NG-BE Conference den Release-Plan für das Angular Projekt angekündigt. Das Angular Projekt setzt auf das System der semantischen Versionierung(SEMVER). Hierbei geht es darum, den Versionsnummer eine wirkliche Bedeutung zu geben. Dies soll Entwickler dabei unterstützen, besser mit Updates umzugehen.
+Kurzer Schock? Vielleicht! Woher kommt der Versionssprung? Keine Angst, ich erkläre euch worum es geht. Am 8. Dezember 2016 hat Igor Minar in seiner Keynote der NG-BE Conference den Release-Plan für das Angular Projekt angekündigt. Das Angular-Projekt setzt auf das System der semantischen Versionierung(SEMVER). Hierbei geht es darum, den Versionsnummer eine wirkliche Bedeutung zu geben. Dies soll Entwickler dabei unterstützen, besser mit Updates umzugehen. 
 
 ## Was ist SEMVER?
+
 SEMVER besteht hierbei aus 3 Teilen: **Major** Version, **Minor** Version, **Patch** Version. Die Idee ist nun ganz simple: Dein Projekt ist auf Version 2.3.1. Nun kommt ein neues Release 2.3.2 - es hat sich also die Patch-Version erhöht. Das heißt, dass wir dieses Update ohne weiteres einspielen können, da es sich um Bugfixes in unserer aktuellen Version handelt. Wir könnten dieses Update sogar automatisch via NPM durchführen lassen.
 
 ![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/218/medium_semver.png?v=63648928594)
@@ -29,6 +30,6 @@ Dies wird wahrscheinlich im März passieren. Den Release plan hierfür gibt es a
 
 ![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/221/medium_angular-releases.png?v=63648928744)
 
-## Zusammenfassend
+## Zusammenfassend 
 
 Lasst euch einfach nicht zu sehr von den Versionsnummer schocken und nutzt die klare Versions-Struktur, die euch direkt wissen lässt, ob ihr manuellen Aufwand bei einem Update einplanen müsst oder nicht. Ich finde die Entscheidung sehr gut und freue mich die Projekte mit der neuen Versionierung zu betreiben, da die Planung von Updates viel einfacher und klarer wird!

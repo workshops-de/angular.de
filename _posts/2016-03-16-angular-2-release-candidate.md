@@ -1,21 +1,21 @@
 ---
-title: Angular 2 Release Candidate angekündigt
-description: Es rückt näher und näher! Brad Green hat in einem Tweet den Milestone für den Release Candidate von Angular 2 angekündigt.
-author: Robin Böhm
-slug: angular-2-release-candidate
+title: "Angular 2 Release Candidate angekündigt"
+description: "Es rückt näher und näher! Brad Green hat in einem Tweet den Milestone für den Release Candidate von Angular 2 angekündigt."
+author: "Robin Böhm"
+slug: "angular-2-release-candidate"
 published_at: 2016-03-16 11:00:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/79/optimized-photo-1453738773917-9c3eff1db985.jpg?v=63629094690
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular-2-release-candidate.jpg"
 ---
 
-Es rückt näher und näher! Brad Green hat in einem Tweet den Milestone für den Release Candidate von Angular 2 angekündigt. Es ist kein genauer Termin des Release oder der Angular 2 Final, mehr ist es ein Zeichen für den aktuellen Prozess der Entwicklung des Frameworks.
+Es rückt näher und näher! Brad Green hat in einem Tweet den Milestone für den Release Candidate von Angular 2 angekündigt. Es ist kein genauer Termin des Release oder der Angular 2 Final, mehr ist es ein Zeichen für den aktuellen Prozess der Entwicklung des Frameworks. 
 
 
 <br/>
 ![Angular 2 Release Candidate Tweet Brad Green](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/116/medium_Screen-Shot-2016-03-17-at-11.25.56.png?v=63625429605)
 <br/>
 
-Zum heutigen Tag befindet sich der [Milestone](https://github.com/angular/angular/milestones) bei 21% der Entwicklung. Wenn wir einen Blick auf die Issues in dieser Liste werfen, sind viele der Implementierung mit Easy oder Medium bewertet. Große Punkte wie i18n sind jedoch noch gar nicht bewertet und kaum diskutiert. Es bleibt also spannend wann wir mit einem Release oder Final rechnen können. Diesen Prozess aber öffentlich zu Kommunizieren ist ein sehr sinnvoller Schritt. Somit kann man auch ggf noch Breaking Changes besser vorhersagen/sehen welche  bis dahin noch passieren.
+Zum heutigen Tag befindet sich der [Milestone](https://github.com/angular/angular/milestones) bei 21% der Entwicklung. Wenn wir einen Blick auf die Issues in dieser Liste werfen, sind viele der Implementierung mit Easy oder Medium bewertet. Große Punkte wie i18n sind jedoch noch gar nicht bewertet und kaum diskutiert. Es bleibt also spannend wann wir mit einem Release oder Final rechnen können. Diesen Prozess aber öffentlich zu Kommunizieren ist ein sehr sinnvoller Schritt. Somit kann man auch ggf noch Breaking Changes besser vorhersagen/sehen welche  bis dahin noch passieren. 
 
 <br/>
 ![Angular 2 Release Candidate Milestone Overview](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/115/medium_Screen-Shot-2016-03-17-at-10.57.23.png?v=63625429412)

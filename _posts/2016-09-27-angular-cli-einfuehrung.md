@@ -1,20 +1,20 @@
 ---
-title: Einführung in Angular-CLI
-description: Angular-CLI ist ein Werkzeug zum Generieren von Angular Projekten. Es hilft euch dabei Komponenten, Direktiven, Services und noch mehr zu generieren.
-author: David Müllerchen
-slug: angular-cli-einfuehrung
+title: "Einführung in Angular-CLI"
+description: "Angular-CLI ist ein Werkzeug zum Generieren von Angular Projekten. Es hilft euch dabei Komponenten, Direktiven, Services und noch mehr zu generieren."
+author: "David Müllerchen"
+slug: "angular-cli-einfuehrung"
 published_at: 2016-09-27 00:00:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/114/optimized-Screen-Shot-2016-09-09-at-16.31.59.jpg?v=63640650768
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular-cli-einfuehrung.jpg"
 ---
 
-Seit Brad Green auf der ng-conf verkündet hat, Angular2 sei kein Framework mehr, sondern eine Plattform, stellt sich die Frage, was die anderen Teile neben dem Framework Angular2 sind.
-Der interesanteste Teil (für mich jedenfalls) ist die Cli (command line interface) `angular-cli`.
+Seit Brad Green auf der ng-conf verkündet hat, Angular2 sei kein Framework mehr, sondern eine Plattform, stellt sich die Frage, was die anderen Teile neben dem Framework Angular2 sind. 
+Der interesanteste Teil (für mich jedenfalls) ist die Cli (command line interface) `angular-cli`.  
 
 ## Was ist angular-cli?
 
-Zu allererst ist die cli ein Tool, um Angular2-Apps aufzusetzten.
-Dabei wird das komplette Projekt generiert, mit der Entwicklungsumgebung und dem eigentlichen Projekt - dem, was man als Code versteht.
+Zu allererst ist die cli ein Tool, um Angular2-Apps aufzusetzten. 
+Dabei wird das komplette Projekt generiert, mit der Entwicklungsumgebung und dem eigentlichen Projekt - dem, was man als Code versteht.  
 
 Die Entwicklungsumgebung umfasst:
 
@@ -26,10 +26,10 @@ Die Entwicklungsumgebung umfasst:
 6. Dependency Managment für die generierten Elemente
 7. Build System, um den Auslieferungscode zu generieren
 8. Alle diese Funktionen werden von der cli entgegengenommen und an die eigentliche Logik weitergereicht (Blackboxed), was den Umgang mit der cli recht komfortabel macht
-
+ 
 ## Warum sollte man es verwenden?
 
-Der Styleguide wird befolgt, wodurch man einen sehr aufgeräumten Code bekommt. Im Idealfall findet sich so jeder recht schnell in dem Projekt zurecht.
+Der Styleguide wird befolgt, wodurch man einen sehr aufgeräumten Code bekommt. Im Idealfall findet sich so jeder recht schnell in dem Projekt zurecht. 
 Im Urlaub fand ich ein perfektes Beispiel anhand zweier Grundstücke, die nebeneinenader liegen. Man erkennt schnell, welches von beiden den Styleguide ignoriert:
 
 ![Styleguide](https://pbs.twimg.com/media/Cp_9AwhXYAAqBJz.jpg:small)
@@ -40,40 +40,40 @@ Zuerst muss die cli installiert werden. Dafür benötigen wir wie so oft nodejs,
 
 `npm install -g @angular/cli`
 
-Das Angular-cli-Team kam dem Wunsch der Comunity nach und wechselte von broccoli/SytemJS als Modulbundler zu Webpack.
-Das war meiner Meinung nach eine sehr gute Entscheidung, denn dadurch wurde die Nutzung sehr einfach.
+Das Angular-cli-Team kam dem Wunsch der Comunity nach und wechselte von broccoli/SytemJS als Modulbundler zu Webpack. 
+Das war meiner Meinung nach eine sehr gute Entscheidung, denn dadurch wurde die Nutzung sehr einfach. 
 
 ### Aufruf
-Wenn ihr die cli installiert habt könnt ihr die cli in der CMD über `ng` erreichen.
-Es gibt für einige Befehle eine Kurz- und eine Langschreibweise.
-
-
- `ng v == ng version`
- `ng g == ng generate`
- `ng s == ng serve`
- `ng t == ng test`
- `ng b == ng build`
-
-
+Wenn ihr die cli installiert habt könnt ihr die cli in der CMD über `ng` erreichen. 
+Es gibt für einige Befehle eine Kurz- und eine Langschreibweise.  
+ 
+ 
+ `ng v == ng version`  
+ `ng g == ng generate`  
+ `ng s == ng serve`  
+ `ng t == ng test`  
+ `ng b == ng build`  
+ 
+ 
  Ich verwende oft die Kurzschreibweise.
 
 ### Unser erstes Projekt
-Somit sind wir bereit ein Projekt aufzusetzten. Dabei können diverse optionale Parameter mitgegeben werden. Ein Wichtiger ist das Setzen des CSS-Reprocessors, hier können wir zur Zeit unter den vier populärsten wählen:
+Somit sind wir bereit ein Projekt aufzusetzten. Dabei können diverse optionale Parameter mitgegeben werden. Ein Wichtiger ist das Setzen des CSS-Reprocessors, hier können wir zur Zeit unter den vier populärsten wählen:  
 
-`--style=scss`
-`--style=sass`
-`--style=less`
-`--style=styl`
+`--style=scss`  
+`--style=sass`  
+`--style=less`  
+`--style=styl`  
 
 Dann werden die Styles bei jeder Änderung kompiliert.
 
 
 Um ein Projekt zu starten nutzen wir den `ng new` Befehl. Je nach Netzwerkverbindung und Geschwindigkeit des Rechners kann dies auchmal etwas länger dauern ... aber zur Not einfach mal einen Kaffee holen.
-
-    ng new [projektname] [options]
-
-Wir starten in unserem workspace `cd workspace` hier rufen wir `ng new hello-cli --style=scss` auf.
-
+ 
+    ng new [projektname] [options]  
+    
+Wir starten in unserem workspace `cd workspace` hier rufen wir `ng new hello-cli --style=scss` auf. 
+ 
 
 #### Die Ordnerstrucktur
 Im Ordner hello-cli wurden nun dieverse Ordner und Dateien erstellt.
@@ -94,22 +94,24 @@ __config__: Hier liegen u.a. die Konfigurationsdateien für die Tests.
 
 
 ### Starten der App
-Um nun unsere App im Browser anzuzeigen, müssen wir in der CMD `ng s` ausführen. Anschließend können wir im Browser unter `http://localhost:4200/` die App sehen.
+Um nun unsere App im Browser anzuzeigen, müssen wir in der CMD `ng s` ausführen. Anschließend können wir im Browser unter `http://localhost:4200/` die App sehen. 
 Die default Einstellungen sind hier der host mit localhost und der Port mit 4200. Aber diese kann man natürlich über parameter einstellen. Bei mir wäre zur Zeit `ng s -H=192.168.56.1 -p=3333` möglich.
 
 Danach könnt ihr die Url aufrufen und seht:
-<hr>
+
+```
 <h1>app works!</h1>
-<hr>
-Wenn ihr nun in einer Datei im Ordner src Änderungen vornehmt, führt der Browser einen Reload durch.
+```
+
+Wenn ihr nun in einer Datei im Ordner `src` Änderungen vornehmt, führt der Browser einen Reload durch.
 
 ### Code generieren
-Wir wollen mal eine eigene Komponente generieren. Eine Navigation bietet sich immer an. Den Code-Generator werfen wir über `ng g [type] [name]` an. Wenn wir also eine Komponente Navbar anlegen wollen, führen wir `ng g component navbar` in der CMD aus. Die Ausgabe sieht dann so aus:
+Wir wollen mal eine eigene Komponente generieren. Eine Navigation bietet sich immer an. Den Code-Generator werfen wir über `ng g [type] [name]` an. Wenn wir also eine Komponente Navbar anlegen wollen, führen wir `ng g component navbar` in der CMD aus. Die Ausgabe sieht dann so aus:   
 
 ```
 installing component
-  create src\app\navbar\navbar.component.scss
-  create src\app\navbar\navbar.component.html
+  create src\app\navbar\navbar.component.scss     
+  create src\app\navbar\navbar.component.html   
   create src\app\navbar\navbar.component.spec.ts
   create src\app\navbar\navbar.component.ts
 ```
@@ -146,31 +148,36 @@ export class AppModule {
 
 Wenn wir diese Komponnete in der app.component.html verwenden,
 
-<pre>
+```
 <app-navbar></app-navbar>
 <h1>
   {{title}}
 </h1>
+```
 
-</pre>
 
 lädt der Browser neu und wir sehen die Ausgabe der Komponente.
-<hr>
+
+---
+
+```
 <p>
   navbar works!
 </p>
 <h1>app works!</h1>
-<hr>
+```
+
+---
 
 ### Was können wir noch generieren?
-Es gibt zur Zeit Generatoren für
+Es gibt zur Zeit Generatoren für 
 - component
 - directive
 - pipe
 - service
 
-Wobei `ng g component [comp-name]` der einzige Generator ist, der einen eigenen Ordner erstellt.
-Der Name des generierten Elements kann auch einen existierenden Pfad enthalten z.B.: `ng g service exampleModule/my-service`. Das generiert dann:
+Wobei `ng g component [comp-name]` der einzige Generator ist, der einen eigenen Ordner erstellt.   
+Der Name des generierten Elements kann auch einen existierenden Pfad enthalten z.B.: `ng g service exampleModule/my-service`. Das generiert dann:   
 
 ```
 create src\app\exampleModule\my-service.service.spec.ts
@@ -218,26 +225,30 @@ export class AppComponent {
 
 Die Ausgabe sollte dann so aussehen:
 
-<hr>
+---
+
+```
 <p>
   navbar works!
 </p>
 <h1>Hi from my-service.service.ts</h1>
-<hr>
+```
+
+---
 
 
 ### Einbinden globaler Sourcen über den Public-Ordner
 Wir gehen mal davon aus, das wir vom Projektdesigner eine CSS-Datei bekommen haben. Diese soll ja für alle Elemente der App erreichbar sein, global eben. Die Datei (gobal.css) sieht so aus:
 
 ```css
-h1{
+h1 {
   color: deeppink;
 }
 ```
 
-Diese Datei legt ihr im Ordner public ab. _Der Ordner wird nicht überwacht von der Changedetection, ein Reload wird nur aus dem src-Ordner initiiert_.
+Diese Datei legt ihr im Ordner public ab. _Der Ordner wird nicht überwacht von der Changedetection, ein Reload wird nur aus dem src-Ordner initiiert_.  
 
-In der index.html muss diese Datei noch eingebunden werden:
+In der index.html muss diese Datei noch eingebunden werden:  
 
 
     <link rel="stylesheet" href="global.css">
@@ -245,16 +256,19 @@ In der index.html muss diese Datei noch eingebunden werden:
 
 Wenn ihr jetzt speichert, wird die App neu geladen, dabei werden auch die Dateien welche sich in _public_ befinden (bei uns ist es nur die global.css) von webpack copiert und alle h1-Tags sind in deeppink.
 
+---
 
-<hr>
+```
 <p>
   navbar works!
 </p>
 <h1 style="color: deeppink;">Hi from my-service.service.ts</h1>
-<hr>
+```
+
+---
 
 ## Test
-Wie ihr gesehen habt, wird bei jedem Element eine `*.spec.ts` mit generiert. Das ist, wie viele wissen, der Unittest.
+Wie ihr gesehen habt, wird bei jedem Element eine `*.spec.ts` mit generiert. Das ist, wie viele wissen, der Unittest.  
 Dieser wird mit `ng t` ausgeführt und verwendent Karma und Jasmine.
 Wenn wir jetzt den Test ausführen, schlägt er fehl, da wir in der app.componnet.ts den Titel geändert haben.
 Wir müssen unseren Test in der app.component.spec.ts noch fixen:
@@ -284,7 +298,7 @@ describe('App: HelloCli', () => {
 
 ```
 
-Jetzt sollte der Test __Grün__ sein.
+Jetzt sollte der Test *grün* sein.
 
 ```
 14 09 2016 10:03:49.554:WARN [karma]: No captured browser, open http://localhost:9876/
@@ -318,25 +332,25 @@ describe('hello-cli App', function() {
 
 ```
 
-Danach sollt auch der e2e Test __Grün__ sein.
+Danach sollt auch der e2e Test *grün* sein.
 
 ```
 Spec started
-
+  
   hello-cli App
     √ should display message saying Hi from my-service.service.ts
-
+   
 Executed 1 of 1 spec SUCCESS in 1 sec.
 [10:20:17] I/launcher - 0 instance(s) of WebDriver still running
 [10:20:17] I/launcher - chrome #01 passed
-
+   
 All end-to-end tests pass.
 
 ```
 
 ## Build
 Am Ende des Tages soll die App zum Kunden oder auf euren Server deployed werden, dafür müssen wir den Build-Schritt ausführen.
-Während der Testphase macht es Sinn, die Sourcen leserlich zu haben - dafür gibt es `ng b` , wenn ihr dann produktiv deployen wollt, ist `ng b --prod` euer Freund. Damit werden die Sourcen minifiziert und mit einem hash versehen.
+Während der Testphase macht es Sinn, die Sourcen leserlich zu haben - dafür gibt es `ng b` , wenn ihr dann produktiv deployen wollt, ist `ng b --prod` euer Freund. Damit werden die Sourcen minifiziert und mit einem hash versehen. 
 Das ergebnis findet ihr dann im Ordner _dist_.
 
 ## Gibt es eine Doku?
@@ -364,5 +378,5 @@ Ihr könnt kinderleicht 3rd-Party-Libs über npm installieren, hierzu genügt ei
 
 
 ## Kann man das so schon einsetzen?
-Ja, auch wenn es noch im Betastadium ist, habe ich schon Projekte damit umgesetzt.
+Ja, auch wenn es noch im Betastadium ist, habe ich schon Projekte damit umgesetzt.  
 Für mich bekommt das Tool das Prädikat: **besonders wertvoll**

@@ -1,39 +1,65 @@
 ---
-title: Angular - Asynchronität von Callbacks zu Observables
-description: Moderne Web-Awendungen leben von mehr Interaktion. Hier erfahrt ihr wie - von Callbacks bis zu den neuen Observables in Angular.
-author: Bengt Weiße
-slug: angular2-observables
+title: "Angular - Asynchronität von Callbacks zu Observables"
+description: "Moderne Web-Awendungen leben von mehr Interaktion. Hier erfahrt ihr wie - von Callbacks bis zu den neuen Observables in Angular."
+author: "Bengt Weiße"
+slug: "angular2-observables"
 published_at: 2016-05-27 10:00:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/91/optimized-a2-observables.jpg?v=63630265510
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular2-observables.jpg"
 ---
 
 Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadurch von Asynchronität. Sei es nur ein Tap/Klick, oder das Abschnicken einer Anfrage an eine Schnittstelle. In unserem [Angular Einsteigertutorials](/artikel/angular2-tutorial-deutsch) sind wir schon kurz auf wichtige Punkte bezüglich der Asynchonität in Angular Anwendungen eingegangen. Natürlich steckt hinter diesem Begriff noch viel mehr, was erklärt werden kann und sollte. Daher folgt nun dieser Artikel, in dem wir uns ausschließlich mit Fragen und Problemen rundum das Thema Asynchronität beschäftigen.
 
+<hr>
+<div class="">
+    <div class="h3">Keine Lust zu Lesen?</div>
+    <div class="row mb-2">
+        <div class="col-xs-12 col-md-6">
+            <p>
+                Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und auch Spaß machen. Wir bieten euch auch
+                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+                    und TypeScript Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
+            </p>                
+            <p class="">
+                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+                    <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+                </a>
+            </p>
 
-### Asynchronität
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <img class="img-fluid img-rounded"
+                 src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        </div>
+    </div>
+</div>
+<hr>
+
+
+## Asynchronität
 
 Was genau bedeuted eigentlich *asynchron* und *synchron*. Vielleicht habt ihr selbst schon beides genutzt, aber wart euch dessen gar nicht bewusst.
 
 Synchronität zeichnet sich in der Programmierung oft dadurch aus, dass ihr das Ergebnis eines Funktionsaufrufs direkt einer Variablen zuweisen könnt, welche dann den entsprechenden Rückgabewert beinhaltet.
 
     var count = 2; // count is 2
-
+    
     function sum(a, b) {
       return a + b;
     }
     var result = sum(1, 2); // result = 3
-
+    
 Bei Asynchronität steht das Ergebnis erst nach einer unbestimmbaren Zeit oder erst zu einem bestimmten Zeitpunkt in der Zukunft fest. Erweitern wir das obige Beispiel und starten die Berechnung einer Summe zu einem späteren Zeitpunkt.
 
     var result = 0;
-
+    
     setTimeout(function () {
       result = sum(1, 2);
     }, 2000);
-
+    
     alert(result);
-
+    
 Führen wir dieses Code-Beispiel aus, erscheint im Browser eine Hinweisbox mit dem Inhalt `0`. Die Funktion `setTimeout` startet einen asynchronen Kontext, da die Ausführung und somit das Ergebnis der Funktion erst nach mindestens zwei Sekunden feststeht. Der restliche Code wird normal (synchron) ausgeführt.
 
 Asynchron bedeuetet daher auch nicht blockierend, sonst würde zwei Sekunden lang nichts passieren und danach die Hinweisbox mit dem Wert `3` erscheinen.
@@ -45,7 +71,7 @@ Wie eingangs erwähnt, müssen wir uns früher oder später auch mit Asynchonron
 - **Promise** - kapselt Asynchrone Code-Blöcke, kann erfolgreich sein oder fehlschlagen
 - **Observable** - Stream, wichtiger Bestandteil der reaktiven Programmierung
 
-### Probleme
+## Probleme
 
 **Callbacks**
 
@@ -56,7 +82,7 @@ Wie wir schon ausführlich in userem [AngularJS-Buch im Kapitel Promises](https:
 - umständliche Fehlerbehandlung, -korrektur (try-catch funktioniert nicht!)
 - Vermischung von Verantwortlichkeiten
 
-Aus dem Kapitel können wir auch entnehmen, dass Promises dafür eine geeignete Lösung darstellt.
+Aus dem Kapitel können wir auch entnehmen, dass Promises dafür eine geeignete Lösung darstellt. 
 
 Promises sind auch in Angular vorhanden. Programmiert ihr mit TypeScript, könnt bereits die ES2015 Promises verwenden. Diese werden einfach durch den Aufruf von `new Promise()` erstellt.
 
@@ -76,7 +102,7 @@ Daraus resultiert auch, dass Promises in Verbindung von WebSockets unbrauchbar s
 
 Glücklicherweise sind wir ja noch nicht am Ende unseres Artikels. Vielleicht lassen sich ja die oben aufgeführten Problemchen mit Observables lösen.
 
-### Observables
+## Observables
 
 Observables (dt. *beobachtbar*) seid ihr vielleicht schon einmal begegnet, wenn ihr bereits mit Angular oder reaktiven Programmierung gearbeitet habt.
 
@@ -92,7 +118,7 @@ Im folgenden werden die einzelnen Abschnitte und Funktionen des nachstehenden Qu
 
     // import observable from the reactivex lib
     import {Observable} from 'rxjs/Observable';
-
+    
     // create an oberservable
     const source = Observable.create((observer) => {
       // random async operation
@@ -107,14 +133,14 @@ Im folgenden werden die einzelnen Abschnitte und Funktionen des nachstehenden Qu
         // no other "next"-call --> complete
         observer.complete();
       });
-
+      
       // optional clean up function
       return () => {
         // is called on unsubcription
         deregister();
       };
     });
-
+    
     // listen on observable
     source.subscribe((data) => {
       // success
@@ -123,22 +149,22 @@ Im folgenden werden die einzelnen Abschnitte und Funktionen des nachstehenden Qu
     }, () => {
       // complete
     });
-
+    
     // source.unsubscribe();
-
+    
 **Observable erzeugen**
 
 Als Ausgangspunkt benötigen wir ein Observable mit dem wir weiter arbeiten können. Dazu existiert in der `rxjs`-Bibliothek ein extra Modul mit dem Namen *Observable*. Dieses exportiert wiederum die Basis-Klasse `Observable`.
 
     import {Observable} from 'rxjs/Observable';
-
+    
 Auf dem `Observable` Objekt existiert die `create`-Funktion. Sie erlaubt uns ein neues Observable-Objekt zu erzeugen und erwartet eine Callback-Funktion, die einen *Observer* als Parameter erhält. Als Rückgabewert kann eine Funktion angegeben werden.
 
     const source = Observable.create((observer) => {
       // optional clean up function
       return () => {};
     });
-
+    
 Glücklicherweise müsst ihr euch in den meisten Anwendungsfälle nicht selbst um die Erzeugung eines Observables kümmern. Dazu gibts es verschiedene Hilfsfunktion oder ein externer Programmteil liefert euch direkt ein Observable. Als Beispiel ist der Rückgabewert eines Http-Requests bereits ein Observable.
 
 Über folgende Funktionen könnt ihr euch ein Observalbe erzeugen lassen.
@@ -146,7 +172,7 @@ Glücklicherweise müsst ihr euch in den meisten Anwendungsfälle nicht selbst u
 - **Observalbe.of**(value1 [, value2, ...]) - erzeugt aus einer Reihe von Werten ein Observable
 - **Observable.from**(promise | iterable | observable) - wandelt, z.b. ein Promise in ein Observable um
 - **Observable.fromEvent**(eventEmitter, eventName [, selectorFn]) - wandelt ein Event in ein Observable um, `eventEmitter` kann, z.B. ein DOM-, Angular-Element, EventEmitter, ... sein
-
+    
 <div class="alert alert-warning"><b>Wichtig:</b> In den meisten Fällen müsst ihr euch nicht selbst um die Erstellung eines Observables kümmern!</div>
 
 **Arbeiten mit dem Observer**
@@ -175,7 +201,7 @@ Daraus ergibts sich dann folgender, vereinfachter Observable-Code.
 
 **Subscribe und Unsubscribe**
 
-Damit uns der Observer überhaupt mitteilen kann, dass Änderungen vorliegen, müssen wir uns am Observable dazu anmelden. Die passende Funktion dazu heißt `subscribe` und kann auf der Observer-Instanz aufgerufen werden. Als Parameter können drei Funktionen für
+Damit uns der Observer überhaupt mitteilen kann, dass Änderungen vorliegen, müssen wir uns am Observable dazu anmelden. Die passende Funktion dazu heißt `subscribe` und kann auf der Observer-Instanz aufgerufen werden. Als Parameter können drei Funktionen für 
 
 1. den Erfolgsfall - erhält die Daten
 2. den Fehlerfall - erhält Informationen über den Fehler bzw. das Fehlerobjekt
@@ -196,7 +222,7 @@ Möchte man nicht mehr auf Änderungen reagieren, können wir uns vom Observable
 
     source.unsubscribe();
 
-<div class="alert alert-info"><b>Hinweis:</b> Ihr könnt euch jederzeit von einem Observable abmelden und wieder anmelden.</div>
+<div class="alert alert-info"><b>Hinweis:</b> Ihr könnt euch jederzeit von einem Observable abmelden und wieder anmelden.</div>    
 
 **Weitere Funktionen und Operatoren**
 
@@ -206,16 +232,16 @@ Um beispielsweise die `of` oder `from` Funktionen zur Verfügung zu haben, müss
 
     import 'rxjs/add/observable/of';
     import 'rxjs/add/observable/from';
-
+    
 Das gleiche Spiel müsst ihr bei der Nutzung von Operatoren betreiben.
 
     import 'rxjs/add/operator/map';
-
+ 
 <div class="alert alert-warning"><b>Wichtig:</b> Zusätzliche Funktionen und Operatoren müssen extra importiert werden.</div>
 
 Darüberhinaus gibt es eine Vielzahl von Operatoren, wie z.B. *zip* - Zusammenführen von Observables, *flatMap* - transformiert Werte eines Observables zu einem neuen Observable oder *map* - Transformationsfunktion für jeden Wert des Observables.
 
-#### Lösung der Probleme mit Promises? - JA!
+### Lösung der Probleme mit Promises? - JA!
 
 Euch ist vielleicht schon aufgefallen, dass alle noch offenen Probleme von Promises allein beim Erklären von Observables gelöst wurden.
 
@@ -231,7 +257,7 @@ Solange ihr auf Änderungen hört, werdet ihr bei jedem Aufruf von *next* darüb
 
 Observables sind *lazy*, da sie nur Daten generieren, wenn auf sie *subscribed* wurde. Dabei spielt es keine Rolle, ob die Asynchronität direkt oder erst später ausgeführt wird.
 
-#### Anwendung in Angular
+### Anwendung in Angular
 
 Es folgen noch ein paar kleine Anwendungsfälle in Angular Apps. Vielleicht habt ihr sogar unbewusst bereits mit Observables gearbeitet.
 
@@ -240,16 +266,16 @@ Es folgen noch ein paar kleine Anwendungsfälle in Angular Apps. Vielleicht habt
 Der Http-Servie in Angular arbeitet mit Observables.
 
     import {Http} from '@angular/http';
-
+    
     ...
-
+    
     // returns an observable
     return this.http.get(XXX);
     ...
-
+    
 Mehr Informationen, wie ihr Http-Requests senden könnt, folgt in einem späteren Artikel von uns.
 
-**Reagieren auf Benutzereingaben**
+**Reagieren auf Benutzereingaben**    
 
 Nehmen wir an, wir wollen eine Suche realisieren. Dabei gelten folgende Bedingungen:
 
@@ -275,7 +301,7 @@ Puh, das sieht jetzt aber doch nach ziemlich viel Arbeit aus. Normalerweise ja, 
 
 Was es genau mit einem *Control* auf sich hat erfahrt ihr auch bald in einem eigenen Artikel über Formulare in Angular.
 
-### Zusammenfassung
+## Zusammenfassung
 
 Zum Abschluss stellen wir die vorgestellten Methoden, um mit Asychronitäten zu arbeiten gegenüber.
 
@@ -292,10 +318,31 @@ Wie sich bereits herausgestellt hat, sind Observables derzeit der flexibelste We
 
 <div class="alert alert-info"><b>Hinweis:</b> Nur weil Observables das meiste können, müsst ihr sie nicht unbedingt überall einsetzen.</div>
 
-### Fazit
+## Fazit
 
 Asynchronität ist im modernen Web überall zu finden. Gerade in Single-Page-Applications, bei denen es auf dynamische Inhalte und Interaktionen ankommt, muss es für den Entwickler elegant möglich sein auf solche Situationen zu reagieren. Jede der angesprochenen Möglichkeiten hat seine Daseinsberechtigung. Verlangt ein Anwendungsfall nicht kontinuierlich auf Änderungen zu reagieren und der Vorgang muss auch nicht abgebrochen werden, steht der Nutzung von Promises im Vergleich zu Observables nichts entgegen. Auch Events oder einfache Callbacks werden euch immer noch begegnen und ihr werdet sie nutzen.
 
 Angular setzt schon an den richtigen Stellen auf die aktuellste und flexibelste Methode mit den Observables. Kommunikation zwischen Komponenten erfolgt über Events, um eine einheitliche Basis zu den DOM-Events zu halten.
 
 Wir hoffen, dass wir euch die Angst vor dem Arbeiten mit asynchronen Programmteilen genommen haben und ihr nun das Rüstzeug besitzt, um eure Probleme elegant und einfach zu lösen.
+
+<hr>
+<div class="text-center">
+<div class="h3">Hat dir das Tutorial geholfen?</div>
+<div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+<p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a> an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten. </p>
+
+<p class="text-center">
+                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+                    <button class="btn btn-danger">Jetzt weiter lernen</button>
+                </a>
+            </p>
+        
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+</div>
+</div>
+<hr>

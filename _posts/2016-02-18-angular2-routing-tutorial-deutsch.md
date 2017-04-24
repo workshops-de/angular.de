@@ -1,11 +1,11 @@
 ---
-title: Angular Routing Tutorial für Einsteiger
-description: Das Routing durchläuft gerade in der 1er  und 2er Version des Frameworks einen gewaltigen Wandel. Wie das aktuelle Routing im Vergleich zu AngularJS funktioniert, erfahrt ihr hier.
-author: Bengt Weiße
-slug: angular2-routing-tutorial-deutsch
+title: "Angular Routing Tutorial für Einsteiger"
+description: "Das Routing durchläuft gerade in der 1er  und 2er Version des Frameworks einen gewaltigen Wandel. Wie das aktuelle Routing im Vergleich zu AngularJS funktioniert, erfahrt ihr hier."
+author: "Bengt Weiße"
+slug: "angular2-routing-tutorial-deutsch"
 published_at: 2016-02-18 10:30:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/77/optimized-photo-1447622919665-d95b0d80b251.jpg?v=63629078514
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/angular2-routing-tutorial-deutsch.jpg"
 ---
 
 ## Routing im Überblick
@@ -150,7 +150,7 @@ Als erstes muss das **ngComponentRouter**-Modul als Abhängigkeit zu unserer Anw
                     .config([{
                         path: '/start',
                         name: 'Start',
-                        component: 'articleComponent'
+                        component: 'articleComponent'   
                     });
             });
         ])
@@ -213,7 +213,7 @@ Die Hauptkomponente mit der Definition der AngularJS 1.x Anwendung im Angular Ko
 
     @RouteConfig([{
 	    path: '/',
-	    redirectTo: '/order'
+	    redirectTo: '/order' 
 	},{
 	    path: '/order',
 	    component: OrderComponent,
@@ -223,15 +223,15 @@ Die Hauptkomponente mit der Definition der AngularJS 1.x Anwendung im Angular Ko
 	    component: AboutComponent,
 	    name: 'About'
 	}])
-
+	
     @Component({
         selector: 'pizza-app',
         directives: [ROUTER_DIRECTIVES],
         providers: [ROUTER_PROVIDERS, PizzaService],
-        template:
+        template: 
         `
         <p class="well">
-		    <a [routerLink]="['Order']">Start</a> |
+		    <a [routerLink]="['Order']">Start</a> | 
 		    <a [routerLink]="['About']">Über</a>
 		</p>
         <router-outlet></router-outlet>
@@ -252,7 +252,7 @@ Neben den bereits hoffentlich bekannten Angular Komponenten, werden mit `RouteCo
 
 Als Pendant zur `ngView`-Direktive kann `routerOutlet` im Template benutzt werden. Hier wird dann das Template der mit der Route verbundenen Komponente eingehangen, um es dem Nutzer zu präsentieren. Damit die Direktive im Template zur Verfügung steht, muss diese in der Komponenten-Defintion über den `directives`-Schlüssel bekannt gemacht werden. Auch hier kann die einzelne Direktive oder einfach alle importiert werden.
 
-Soll das Routing funktionieren, müssen zu Beginn der Anwendung die eigenen Komponenten `OrderComponent` und `AboutComponent` über `import` eingebunden werden.
+Soll das Routing funktionieren, müssen zu Beginn der Anwendung die eigenen Komponenten `OrderComponent` und `AboutComponent` über `import` eingebunden werden. 
 
 #### `routerLink` - Verlinkung im Template
 
@@ -265,14 +265,14 @@ Um Routen im Template zu verlinken wird die `RouterLink`-Komponente zu Beginn du
 Natürlich kann auch programmatisch zwischen Routen gewechselt werden. Dies geschieht über den `Router`-Service. Er bietet unter anderem eine `navigate`-Methode.
 
 	import { Router } from 'angular2/router';
-
+	
 	@Component({
-	    ...
+	    ...       
 	})
     export class MyComponent {
         constructor(router: Router) {
         }
-
+		
 		goTo(path) {
 			this.router.navigate(path);
 		}
@@ -285,7 +285,7 @@ Um mit Parametern in Routen zu arbeiten kann die `RouteParams`-Komponente genutz
 	import { RouteParams } from 'angular2/router';
 
 	@Component({
-	    ...
+	    ...       
 	})
       export class MyComponent {
         constructor(routeParams: RouteParams) {
@@ -303,7 +303,7 @@ Um wirklich mit Parametern arbeiten zu können, müssen auch Routen mit diesen a
 Im Template wird dann einfach die `routerLink`-Direktive ein wenig erweitert.
 
     <a [routerLink]="['test', {'param': 1}]">Test</a>
-
+   
 #### Bootstrap der Anwendung
 
 Als letzten Schritt muss die Anwendung noch gestartet werden. Dies geschieht über die allgemeine `Bootstrap`-Komponente. Entweder die Hauptanwendung wird dafür erweitert oder es wird eine eigene Datei dazu angelegt. Aus persönlicher Vorliebe entscheide ich mich hier für Variante 2.
@@ -515,7 +515,7 @@ Der nächste Schritt ist schnell erledigt. Damit Angular überhaupt akzeptiert, 
 
     { path: '/pizza/...', name: 'Pizza', component: PizzaComponent }
 
-Als letzten Schritt muss die Verlinkung im Template über `routerLink` hinzugefügt werden. Dazu geben wir als Wert einen zweiten Array-Eintrag mit, welcher den Namen der Child-Route beinhaltet. In diesem Fall wird diese `List` heißen.
+Als letzten Schritt muss die Verlinkung im Template über `routerLink` hinzugefügt werden. Dazu geben wir als Wert einen zweiten Array-Eintrag mit, welcher den Namen der Child-Route beinhaltet. In diesem Fall wird diese `List` heißen. 
 
 Das Verfahren kann auch genutzt werden, um natürlich noch tiefere Verschachtelungen zu erzeugen. Dadurch haben wir als Entwickler ein mächtiges Werkzeug, um Anwendungen besser Modularisieren bzw. Funktionen einfach kapseln zu können.
 
@@ -523,7 +523,7 @@ Es müssen nicht alle Routen in einer Komponente definiert werden.
 
 #### Routing-Hooks
 
-Natürlich bietet Angular auch mit dem neuen Routing Einhängepunkte, um auf diverse Routing-Zustände reagieren zu können.
+Natürlich bietet Angular auch mit dem neuen Routing Einhängepunkte, um auf diverse Routing-Zustände reagieren zu können. 
 
   - **routerOnActivate**
 	  - wird aufgerufen, wenn die mit der Komponente verknüpfte Route aktiv wird
@@ -555,12 +555,13 @@ Als kleines Beispiel kann in einer Komponente einfach auf die Funktionen zugegri
 
 Zusätzlich kann einer Komponente der *Decorator* `@CanActivate` angegeben werden. Dieser erwartet eine Funktion welche einen booleschen Wert oder ein Promise-Objekt zurückgibt. Wird das Promise abgelehnt (rejected) oder `false` zurückgegeben, wird die Komponente nicht eingehangen/ausgeführt. Der Decorator übernimmt damit die Funktion der *resolve*-Eigenschaft einer Route in AngularJS 1.
 
-     @CanActivate(() => {
+     @CanActivate(() => { 
 	     // if false --> OrderComponente is not executed
-	     return true;
-     })
+	     return true; 
+     }) 
      export class OrderComponent() {}
 
 ### Fazit
 
-Es hat sich allein in den letzten Wochen viel beim Thema Routing getan. Aber wer das Routing von AngularJS 1.x verstanden hat, wird Ähnlichkeiten erkennen. Anwendung und die vorhandenen Standardkomponenten ähneln den bisher bekannten sehr. Des Weiteren fällt auf, dass gut gepflegte Apps wohl sehr wenig Probleme beim Upgrade auf Angular haben werden. Wie der Artikel zeigt, bemüht sich das Angular-Team Erkenntnisse und Neuerungen auch in die erste Version des Frameworks einzubringen. Dadurch können neue Paradigmen, wie Components oder das flexible Definieren von Routen bereits jetzt angewandt werden. Ob das finale Routing jedoch wirklich so aussehen wird, steht noch in den Sternen.
+Es hat sich allein in den letzten Wochen viel beim Thema Routing getan. Aber wer das Routing von AngularJS 1.x verstanden hat, wird Ähnlichkeiten erkennen. Anwendung und die vorhandenen Standardkomponenten ähneln den bisher bekannten sehr. Des Weiteren fällt auf, dass gut gepflegte Apps wohl sehr wenig Probleme beim Upgrade auf Angular haben werden. Wie der Artikel zeigt, bemüht sich das Angular-Team Erkenntnisse und Neuerungen auch in die erste Version des Frameworks einzubringen. Dadurch können neue Paradigmen, wie Components oder das flexible Definieren von Routen bereits jetzt angewandt werden. Ob das finale Routing jedoch wirklich so aussehen wird, steht noch in den Sternen. 
+ 

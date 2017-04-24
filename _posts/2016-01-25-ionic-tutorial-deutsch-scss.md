@@ -1,21 +1,21 @@
 ---
-title: Ionic Framework - Das Arbeiten mit SCSS
-description: Mit Ionic habt ihr die Möglichkeit eure App mit SCSS zu stylen. Wie und warum ihr das tun solltet, erfahrt ihr hier.
-author: Bengt Weiße
-slug: ionic-tutorial-deutsch-scss
+title: "Ionic Framework - Das Arbeiten mit SCSS"
+description: "Mit Ionic habt ihr die Möglichkeit eure App mit SCSS zu stylen. Wie und warum ihr das tun solltet, erfahrt ihr hier."
+author: "Bengt Weiße"
+slug: "ionic-tutorial-deutsch-scss"
 published_at: 2016-01-25 08:29:00.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/87/optimized-ionic-scss.jpg?v=63630942489
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/ionic-tutorial-deutsch-scss.jpg"
 ---
 
-Für den geübten Webentwickler sind die Erweiterungssprachen Less und SASS/SCSS nicht mehr wegzudenken. Variablen und Mixins lassen - sagen wir mal fast - kinderleicht komplexe Layouts realisieren und redundanter CSS-Code sollte damit der Vergangenheit angehören.
+Für den geübten Webentwickler sind die Erweiterungssprachen Less und SASS/SCSS nicht mehr wegzudenken. Variablen und Mixins lassen - sagen wir mal fast - kinderleicht komplexe Layouts realisieren und redundanter CSS-Code sollte damit der Vergangenheit angehören. 
 
 Wie schöne wäre es, wenn das auch in Ionic-Projekten ginge.
 **ES GEHT!**
 
-Falls ihr noch eine kleine EInführung in das Thema Ionic und das Framework braucht, empfehle ich euch unser [Einführungstutorial](https://angularjs.de/artikel/ionic-tutorial-deutsch "Einführung in Ionic").
+Falls ihr noch eine kleine Einführung in das Thema Ionic und das Framework braucht, empfehle ich euch unser [Ionic-Einführungstutorial](https://angularjs.de/artikel/ionic-tutorial-deutsch "Einführung in Ionic").
 
-#### SCSS in CLI-Projekten
+## SCSS in CLI-Projekten
 
 Ist euer Ionic-CLI-Projekt fertig eingerichtet, seid ihr nur ein paar kleine Schritte von der Lösung entfernt.
 
@@ -29,26 +29,26 @@ Danach habt ihr im Wurzelverzeichnis des Projekt einen scss-Order. In diesem lie
 
 Im Hintergrund passieren folgende Schritte (die ihr natürlich auch manuell ausführen könne, falls euer Projekt nicht dem Ionic-Standard folgt oder der obige Befehl nicht funktioniert).
 
- 1. führt `npm install` aus und installiert alle nötigen Abhängigkeiten, z.B. Gulp, gulp-sass, gulp-minify-sass
- 2. Löscht die CSS-Pfade aus der index.html:
-	 3. `<link href="lib/ionic/css/ionic.css" rel="stylesheet">`
-	 4. `<link href="css/style.css" rel="stylesheet">`
- 5. Fügt dafür den neuen CSS-Pfad ein `<link href="css/ionic.app.css" rel="stylesheet">`
- 6. in die `ionic.project`  Datei fügt ihr dann folgende Zeile ein: `"gulpStartupTasks": ["sass", "watch"]`
+1. führt `npm install` aus und installiert alle nötigen Abhängigkeiten, z.B. Gulp, gulp-sass, gulp-minify-sass
+2. Löscht die CSS-Pfade aus der index.html:
+3. `<link href="lib/ionic/css/ionic.css" rel="stylesheet">`
+4. `<link href="css/style.css" rel="stylesheet">`
+5. Fügt dafür den neuen CSS-Pfad ein `<link href="css/ionic.app.css" rel="stylesheet">`
+6. in die `ionic.project`  Datei fügt ihr dann folgende Zeile ein: `"gulpStartupTasks": ["sass", "watch"]`
 
 Der letzte Schritt startet bei diversen CLI-Befehlen, wie `ionic serve` automatisch den Standard-SCSS-Watcher. Bei jeder Änderung in der ionic.app.scss wird das CSS neu generiert und die Vorschau im Browser automatisch aktualisiert. Natürlich könnt ihr hier auch euren eigenen Gulp-Task einfügen oder zusätzliche ergänzen.
 
-### SCSS in einfachen Webprojekten
+## SCSS in einfachen Webprojekten
 
 Durch Services, wie PhoneGap-Build ist man nicht immer auf das CLI angewiesen. Auch hier lässt sich recht simpel mit den SCSS-Quellen Arbeiten.
 
-Dazu ladet ihr entweder die Quellen aus dem [Ionic-Bower-Repository](https://github.com/driftyco/ionic-bower "Ionic-Bower Repository") herunter oder installiert das Framework direkt über bower mit `bower install driftyco/ionic-bower#master`.
+Dazu ladet ihr entweder die Quellen aus dem [Ionic-Bower-Repository](https://github.com/driftyco/ionic-bower "Ionic-Bower Repository") herunter oder installiert das Framework direkt über bower mit `bower install driftyco/ionic-bower#master`. 
 
-Nach dem Installieren findet ihr im Ionic-Verzeichnis unter *scss* eine Reihe von Dateien. Die wichtigste davon ist die **ionic.scss**. Diese müsst ihr in eure eigene scss-Datei importieren.
+Nach dem Installieren findet ihr im Ionic-Verzeichnis unter *scss* eine Reihe von Dateien. Die wichtigste davon ist die **ionic.scss**. Diese müsst ihr in eure eigene scss-Datei importieren. 
 
 Danach könnt ihr euch zum Einrichten des Watchern, zum Kompilieren der Datei, an dem Gulpfile von einem Ionic-CLI-Projekt orientieren.
 
-#### Hinweise zum Arbeiten mit SCSS und Ionic
+### Hinweise zum Arbeiten mit SCSS und Ionic
 
 Vor dem planlosen Start mit SCSS und Ionic solltet ihr euch die verschiedenen scss-Dateien von Ionic näher anschauen.
 
@@ -63,9 +63,9 @@ Die *_animations.scss* und *transitions.scss* sind hilfreich, wenn ihr eigene An
 
 Oft ist es nervig für jeden zu unterstützenden Browser bestimmte Style-Attribute zu setzen. In der *_mixins.scss* findet ihr für die gängigsten Probleme (z.B. box-shadow, Animationen) ein Mixin, welches ihr natürlich in eurer scss-Datei einfach durch den Import der ionic.scss nutzen könnt.
 
-Die wohl wichtigste Datei für euch ist die *_variables.scss*. Dort sind alle Grundfarben, -schriften und weitere Variablen definiert. Viele fangen an für solche Dinge einfach eigene Variablen oder gar die kompletten CSS-Klassen zu überschreiben. Dabei braucht ihr einfach die nötigen Variablen überschreiben, und schon habt ihr der App einen eigenen Touch verliehen. **Wichtig dafür ist aber, dass ihr die Variablen vor dem Einbinden der ionic.scss überschreiben müsst!**
+Die wohl wichtigste Datei für euch ist die *_variables.scss*. Dort sind alle Grundfarben, -schriften und weitere Variablen definiert. Viele fangen an für solche Dinge einfach eigene Variablen oder gar die kompletten CSS-Klassen zu überschreiben. Dabei braucht ihr einfach die nötigen Variablen überschreiben, und schon habt ihr der App einen eigenen Touch verliehen. *Wichtig dafür ist aber, dass ihr die Variablen vor dem Einbinden der ionic.scss überschreiben müsst!*
 
-#### Beispiel scss-Datei
+### Beispiel einer SCSS-Datei
 
 ```
 /*

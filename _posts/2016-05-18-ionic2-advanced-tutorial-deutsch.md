@@ -1,11 +1,11 @@
 ---
-title: Ionic 2 Tutorial - Ionicons, ionic-native und Theming
-description: Im letzte Teil unseres Ionic 2 Tutorials betrachten wir noch einige besondere Funktionen und Bestandteile des Frameworks wie Ionicons oder ionic-native.
-author: Bengt Weiße
-slug: ionic2-advanced-tutorial-deutsch
+title: "Ionic 2 Tutorial - Ionicons, ionic-native und Theming"
+description: "Im letzte Teil unseres Ionic 2 Tutorials betrachten wir noch einige besondere Funktionen und Bestandteile des Frameworks wie Ionicons oder ionic-native."
+author: "Bengt Weiße"
+slug: "ionic2-advanced-tutorial-deutsch"
 published_at: 2016-05-18 12:12:12.000000Z
-categories: angular2 angular angular4
-header_image: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/posts/header_images/95/optimized-ionic2-part3.jpg?v=63631552103
+categories: "angular2 angular angular4"
+header_image: "/artikel/header_images/ionic2-advanced-tutorial-deutsch.jpg"
 ---
 
 Im letzten Teil unseres Ionic 2 Tutorials schauen wir uns ein paar besondere Bestandteile und Funktionen des Frameworks an. Dabei legen wir auch ein letztes Mal Hand an unsere Pizza-App, die wir in [Teil 1](https://angularjs.de/artikel/ionic2-tutorial-deutsch) und [Teil 2](https://angularjs.de/artikel/ionic2-content-tutorial-deutsch) schon von Grund auf entwickelt haben.
@@ -39,13 +39,13 @@ Falls ihr die Icons dynamisch setzten wollte, können diese natürlich auch aus 
 
     <ion-icon [name]="myIconVar"></ion-icon>
 
-Eine erfreuliche Zusatzfunktion erhaltet ihr über das Setzen des `isActive` Attributes auf `false` bzw. wieder auf `true`. Dadurch werden automatisch im aktiven Modus gefüllte und im inaktiven leere (outline), nur mit einer Randlinie versehene Icons genutzt.
+Eine erfreuliche Zusatzfunktion erhaltet ihr über das Setzen des `isActive` Attributes auf `false` bzw. wieder auf `true`. Dadurch werden automatisch im aktiven Modus gefüllte und im inaktiven leere (outline), nur mit einer Randlinie versehene Icons genutzt. 
 
     <!-- active -->
     <ion-icon name="pizza"></ion-icon>
     <!-- inactive -->
     <ion-icon name="pizza" isActive="false"></ion-icon>
-
+    
 ## Theming der eigenen App
 
 Das Layouten der eigenen Ionic App nennt sich nun *Theming*, da nun das Styling der einzelnen Plattformen explizit getrennt wurde. Im Vergleich zu Ionic 1 müsst ihr nicht erst die Nutzung von SASS/SCSS extra aktivieren. In der neuen Version des Frameworks wird standardmäßig mit SCSS gearbeitet. Alle wichtigen Dateien findet ihr wieder im `src` Ordner im Unterverzeichnis `theme`. Hier findet ihr eine `variables.scss`, in der ihr einfach die Style-Variablen, z.B. die Farben anpassen könnt.
@@ -65,7 +65,7 @@ In der `variables.scss` werden Standardfarben gesetzt. Dabei ist `primary` die e
 
 Ihr könnt die Farben aber nicht nur im SCSS wiederverwenden. Nutzt sie einfach im Template.
 
-    <button ion-button color="danger">Attention!</button>
+    <button ion-button color="danger">Attention!</button> 
 
 Fügt einfach weitere Farben hinzu und spezifiziert sowohl Text- als auch Hintergrundfarbe!
 
@@ -77,7 +77,7 @@ Fügt einfach weitere Farben hinzu und spezifiziert sowohl Text- als auch Hinter
       )
     )
 
-    <button ion-button color="twitter">Blue & White!</button>
+    <button ion-button color="twitter">Blue & White!</button> 
 
 Euch steht euch ein extra `color` Mixin zur Verfügung, um auf die Farben im SCSS zu zugreifen und auf deren Basis neue Farben zu erzeugen.
 
@@ -151,7 +151,7 @@ Als Beispiel würde die Nutzung der Geräte-Kamera wie folgt aussehen:
       // If it's base64:
       let base64Image = "data:image/jpeg;base64," + imageData;
       }, (err) => {
-    });
+    }); 
 
 <div class="alert alert-warning"><b>Beachte:</b> Ist euer Projekt über die Ionic CLI angelegt, ist <code>ionic-native</code> bereits installiert und eingebunden. In allen anderen Fällen folgt bitte der <a href="http://ionicframework.com/docs/v2/native/" target="_blank">Anleitung in der Dokumentation</a>.</div>
 
@@ -165,7 +165,7 @@ Er erlaubt es euch über `publish()` ein Event auszusenden, mit `subscribe()` da
  - **subscribe**(topic, handler) - sich zu einem Thema anmelden, `handler` Funktion wird mit `eventData` ausgeführt
  - **unsubscribe**(topic, handler) - meldet ein bestimmtes Abonnement wieder ab
 
-Das Eventsystem ist intern einfach eine Liste von `Topics` an denen alle Abonnenten mit Handler Funktion gespeichert werden. Der ein oder andere hat sich vielleicht nach dem gleichen Schema schon mal selbst ein Eventsystem geschrieben.
+Das Eventsystem ist intern einfach eine Liste von `Topics` an denen alle Abonnenten mit Handler Funktion gespeichert werden. Der ein oder andere hat sich vielleicht nach dem gleichen Schema schon mal selbst ein Eventsystem geschrieben. 
 
 Im Quellcode sieht das dann so aus.
 
