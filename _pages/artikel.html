@@ -7,6 +7,8 @@ pagination:
   per_page: 3
 ---
 
+{% include event_json_ld.html %}
+
 <hr>
 <h1>paginator</h1>
 {% for post in paginator.posts %}
