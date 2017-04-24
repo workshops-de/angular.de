@@ -1,0 +1,16 @@
+{% for post in site.posts %}
+  {% if post.categories contains include.contains %}
+    <div class="row mb-3">
+      <div class="col-sm-3 col-xl-2">
+        <span>
+          <img alt="{{ post.author }}" class="rounded-circle" height="32" src="//www.gravatar.com/avatar/{{ post.author.gravatar }}?s=64" width="32">
+        </span>
+      </div>
+      <div class="col-sm-9 col-xl-10">
+        <a class="text-unstyled" href="{{ post.url | split:'/' | join:'/' }}">{{ post.title }}</a>
+        <br>
+        <span class="text-muted">{{ post.author }}</span>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
