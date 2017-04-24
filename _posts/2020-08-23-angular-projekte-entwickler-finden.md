@@ -1,6 +1,6 @@
 ---
 title: "Angular Projekte suchen und finden"
-description: 
+description:
 author: "Robin Böhm"
 slug: "angular-projekte-entwickler-finden"
 published_at: 2020-08-23 10:00:00.000000Z
@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/angular-projekte-entwickler-finden.jpg"
 ---
 
-Bisherige Teilnehmer bestätigen: Unsere Passion ist Wissen und die Wissensvermittlung! Euch in kürzester Zeit so produktiv zu machen wie nur eben möglich motiviert uns jeden Tag aufs Neue. Darum verbessern wir täglich unsere Methoden und Materialien um dies stetig zu optimieren. 
+Bisherige Teilnehmer bestätigen: Unsere Passion ist Wissen und die Wissensvermittlung! Euch in kürzester Zeit so produktiv zu machen wie nur eben möglich motiviert uns jeden Tag aufs Neue. Darum verbessern wir täglich unsere Methoden und Materialien um dies stetig zu optimieren.
 
 Durch unsere Workshops lernen wir sowohl **gute Entwickler** als auch **interessante Projekte** kennen. Oftmals bekommen wir dann Anfragen von Teilnehmern die interessante Herausforderungen in Projekten suchen oder auch Projektteams die vor spannenden Herausforderungen stehen und fähige Unterstützung suchen.
 
@@ -54,17 +54,17 @@ Bisher haben wir das auf “Gut Glück” nebenbei gemacht wenn wir mal was geh�
     <div class="row article-projects">
 
         <div class="col-md-6 col-sm-12 thumbnail text-center mb-2">
-        
+
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeLb1j45VqK27PlrDMIsDqtr06U04ct-0qmTaW_0Ol5c-bILw/viewform"
                target="_blank">
             <div class="img-wrapper">
                 <img class="img-fluid rounded"
-                     src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/225/medium_jwimshwif14-jeff-sheldon.jpg?v=63653693977">
+                     src="medium_jwimshwif14-jeff-sheldon.jpg?v=63653693977">
             </div>
             <div class="caption">
                 <p>Projekte finden</p>
             </div>
-            
+
 
             </a>
         </div>
@@ -73,12 +73,12 @@ Bisher haben wir das auf “Gut Glück” nebenbei gemacht wenn wir mal was geh�
                target="_blank">
             <div class="img-wrapper">
                 <img class="img-fluid rounded"
-                     src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/226/medium_i8ohou-wlo4-tirza-van-dijk.jpg?v=63653694269">
+                     src="medium_i8ohou-wlo4-tirza-van-dijk.jpg?v=63653694269">
             </div>
             <div class="caption">
                 <p>Entwickler finden</p>
             </div>
-            
+
             </a>
         </div>
 

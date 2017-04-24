@@ -1,6 +1,6 @@
 ---
 title: "Funktionale Reaktive Programmierung mit Bacon.js"
-description: 
+description:
 author: "Ramy Hardan"
 slug: "angularjs-baconjs"
 published_at: 2014-07-07 07:00:00.000000Z
@@ -33,11 +33,11 @@ Im nicht-reaktiven Zusammenhang wäre dies eine einfache Zuweisung: "Weise der V
 
 Bei reaktiver Programmierung bedeutet der Ausdruck: "Beobachte ständig jede Änderung in `dom.input` und leite sie an `scope.username` weiter." Wegen dieser Eigenschaft hat sich die Bezeichnung *Observable* für solche dynamischen Datentypen durchgesetzt. Das *Observable* ist der funktionale Bruder des objektorientierten [Observer-Entwurfsmusters](https://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)).
 
-Die Werte eines *Observable* sind also nie einfach, sondern immer Ströme von Werten über die Zeit. Wenn ich z.B. `Ramy` in das Eingabefeld tippe, dann könnte `dom.input` den Wert `...'R'....'a'..'m'...'y'..` haben, je nachdem, wann ich die Tasten drücke. Die Punkte entsprechen jeweils einer Zeiteinheit. 
+Die Werte eines *Observable* sind also nie einfach, sondern immer Ströme von Werten über die Zeit. Wenn ich z.B. `Ramy` in das Eingabefeld tippe, dann könnte `dom.input` den Wert `...'R'....'a'..'m'...'y'..` haben, je nachdem, wann ich die Tasten drücke. Die Punkte entsprechen jeweils einer Zeiteinheit.
 
-|   | Synchron | Asynchron | 
-| Ein Wert | ![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/41/medium_bacon1.png?v=12345678)<br>Datentyp: z.B. Number | ![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/43/medium_bacon3.png?v=12345678)<br>Datentyp: Promise/Future |
-| Viele Werte | ![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/42/medium_bacon2.png?v=12345678)<br>Datentyp: Array/Object | ![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/44/medium_bacon4.png?v=12345678)<br>Datentyp: Observable |
+|   | Synchron | Asynchron |
+| Ein Wert | ![Bild](medium_bacon1.png?v=12345678)<br>Datentyp: z.B. Number | ![Bild](medium_bacon3.png?v=12345678)<br>Datentyp: Promise/Future |
+| Viele Werte | ![Bild](medium_bacon2.png?v=12345678)<br>Datentyp: Array/Object | ![Bild](medium_bacon4.png?v=12345678)<br>Datentyp: Observable |
 |   |   |   |
 
 Das war der reaktive Teil, es fehlt noch der funktionale. Auf den Ereignisströmen lassen sich Funktionen definieren, deren Ergebnisse wiederum Ereignisströme sind. So können wir Ströme  kombinieren und zu einer "Kanalisation" ausbauen, um komplexes Verhalten abzubilden.
@@ -101,7 +101,7 @@ So können wir z.B. in unseren AngularJS-Controllern Properties aus dem Scope al
             return aggregate !== tick ? 1 : 0
         };
         var ticktackProp = tickStream.scan(0, aggregator);
-  
+
         ticktackProp.digest($scope, 'ticktack');
     });
 
@@ -145,7 +145,7 @@ Im Scope haben wir nun eine Property `blinkCss` mit CSS-Daten, die wir für unse
         return {
             restrict: 'E',
             transclude: true,
-            template: '<div ng-style="blinkCss" ng-transclude></div>', 
+            template: '<div ng-style="blinkCss" ng-transclude></div>',
         }
     });
 
@@ -240,7 +240,7 @@ Ein Circuit Breaker kennt 3 Zustände
 
 3. Hier taucht der Circuit Breaker den großen Zeh ins Wasser und lässt genau eine Anfrage durch. Scheitert sie, kehrt er in den offenen Zustand zurück und die Warteperiode beginnt von neuem. Ist sie erfolgreich, schließt er den Kreis wieder.
 
-![image alt text](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/39/image_0.png)
+![image alt text](image_0.png)
 
 Wir steuern unseren Circuit Breaker über 3 Busse `sendQueue`, `successes` und `failures`. Ein [Bus](https://github.com/baconjs/bacon.js#bus) ist ein [EventStream](https://github.com/baconjs/bacon.js#eventstream), der zusätzlich eine [push](https://github.com/baconjs/bacon.js#bus-push)-Methode anbietet, um Werte in den Strom zu schieben. Um den Circuit Breaker in AngularJS zu nutzen, habe ich ihn als [$http](https://docs.angularjs.org/api/ng/service/$http)-Interceptor eingebunden:
 
@@ -256,13 +256,13 @@ Wir steuern unseren Circuit Breaker über 3 Busse `sendQueue`, `successes` und `
                 circuitBreaker.sendQueue.push({deferred: deferred, config: config});
                 return deferred.promise;
             },
-    
+
             response: function (response) {
                 $log.info("CB", "Response", response);
                 circuitBreaker.successes.push(1);
                 return response;
             },
-    
+
             responseError: function (rejection) {
                 $log.error("CB", "ResponseError", rejection);
                 circuitBreaker.failures.push(1);
@@ -286,7 +286,7 @@ Den Code des Circuit Breakers will ich nicht in jedem Detail erklären, weil er 
 <iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/VZbodliA86xSQotOxpKZ/preview.html" width="100%" height="330" frameborder="0"></iframe>
 
 [Plunkr in neuem Fenster öffnen](https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/VZbodliA86xSQotOxpKZ/preview.html)
- 
+
 
 Ich beleuchte deshalb nur die Stellen, an denen wir den neuen Funktionen [throttle](https://github.com/baconjs/bacon.js#observable-throttle), [merge](https://github.com/baconjs/bacon.js#stream-merge) und [slidingWindow](https://github.com/baconjs/bacon.js#observable-slidingwindow) begegnen.
 
@@ -316,7 +316,7 @@ Der folgende Codeblock entscheidet, ob wir vom halboffenen Zustand in den geschl
                                 .merge(successes.map(1))
                                 .merge(failures.map(3))
                                 .slidingWindow(2,2);
-  
+
     var halfOpenToClosedReceive = halfOpenReceive.filter(function(v) {
         return v[0] == 2 && v[1] == 1;
     });
@@ -335,7 +335,7 @@ Der Strom `retries` enthält für jeden Verbindungsversuch im halboffenen Zustan
     merge:            ..2......2.1.
 
 
-Um herauszufinden, ob ein Verbindungsversuch erfolgreich war, betrachten wir die letzten beiden Werte des zusammengeführten Stroms und schließen den Kreis wieder, wenn auf einen Verbindungsversuch ein Erfolg folgt. Dazu picken wir mit `slidingWindow(2,2)`mind. 2 und max. 2, also genau 2 Werte aus dem Strom und schieben sie als Array in den Ausgabestrom. 
+Um herauszufinden, ob ein Verbindungsversuch erfolgreich war, betrachten wir die letzten beiden Werte des zusammengeführten Stroms und schließen den Kreis wieder, wenn auf einen Verbindungsversuch ein Erfolg folgt. Dazu picken wir mit `slidingWindow(2,2)`mind. 2 und max. 2, also genau 2 Werte aus dem Strom und schieben sie als Array in den Ausgabestrom.
 
 
     halfOpenReceive:         [2,3][2,3][2,1]
@@ -348,13 +348,13 @@ Meine Erfahrung ist, dass ich mit FRP kompakteren und robusteren Code schreibe, 
 
 Ich führe das auf folgende Eigenschaften von FRP zurück:
 
-* **Inversion of Control**: Unser Code muss sich nicht um den Kontrollfluss kümmern. Alle hier gezeigten Beispiele kommen ohne Schleifen und [if](https://cirillocompany.de/pages/anti-if-campaign)-Anweisungen aus ([McCabe](http://de.wikipedia.org/wiki/McCabe-Metrik) würde sich freuen). Mit [Dependency Injection](https://docs.angularjs.org/guide/di) begegnet uns eine Anwendung dieses Prinzips bereits bei AngularJS. 
+* **Inversion of Control**: Unser Code muss sich nicht um den Kontrollfluss kümmern. Alle hier gezeigten Beispiele kommen ohne Schleifen und [if](https://cirillocompany.de/pages/anti-if-campaign)-Anweisungen aus ([McCabe](http://de.wikipedia.org/wiki/McCabe-Metrik) würde sich freuen). Mit [Dependency Injection](https://docs.angularjs.org/guide/di) begegnet uns eine Anwendung dieses Prinzips bereits bei AngularJS.
 
 * **Vielseitigkeit**: Wir programmieren für den allgemeinen Fall, d.h. uns ist egal, ob wir einen Wert oder viele Werte, synchron oder asynchron verarbeiten. Wie unsere Beispiele zeigen, arbeitet der Großteil unseres Codes mit nur ein oder zwei Werten, die er als Funktionsparameter erhält, und bleibt so sehr einfach.
 
 * **Komponierbarkeit**: FRP kommt dem Lego-Ideal recht nahe. Observables können wir beliebig zusammenstecken, zerlegen, und neu zusammensetzen. Die Selbstähnlichkeit und Wiederverwendbarkeit unseres Codes steigt, da Komponenten nur über Ein- und Ausgabeströme ohne gemeinsamen Zustand miteinander gekoppelt sind, egal, wie tief wir zoomen.
 
-![image alt text](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/40/image_1.png)
+![image alt text](image_1.png)
 
 ## Was sollte ich bei der Entwicklung mit FRP/Bacon.js beachten?
 
@@ -405,4 +405,3 @@ Im Zusammenspiel mit AngularJS kann Bacon.js den Bau von Oberflächen und Kompon
 * Bacon.js Tutorial [Teil 1](http://nullzzz.blogspot.fi/2012/11/baconjs-tutorial-part-i-hacking-with.html), [Teil 2](http://nullzzz.blogspot.fi/2012/11/baconjs-tutorial-part-ii-get-started.html), [Teil 3](http://nullzzz.blogspot.fi/2012/12/baconjs-tutorial-part-iii-ajax-and-stuff.html)
 
 * [Reactive Programming in Practice](http://eamodeorubio.github.io/reactive-baconjs/#/)
- 

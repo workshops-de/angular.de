@@ -50,7 +50,7 @@ Aber diese Tests als notwendiges Übel anzusehen ist nicht richtig. Man muss nur
 
 [Protractor](http://www.protractortest.org/#/) ist ein Testframework, welches speziell für Angular Apps entwickelt wurde. Die Entwicklung basiert auf Node und knüpft an [WebDriverJs](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs) von Selenium an. Dieses Framework stellt den Mittelpunkt der Schnittstelle zwischen euren Tests und den Browser dar.
 
-Die Version 4 von [Protractor](http://www.protractortest.org/#/) ist lauffähig auf Node Version > 4\. In dieser Version werden sowohl Angular Apps größer 1.1.4 unterstützt, als auch alle Angular 2 Apps. Allerdings wird hier das Testen auf Bindings und Models nicht unterstützt.  
+Die Version 4 von [Protractor](http://www.protractortest.org/#/) ist lauffähig auf Node Version > 4\. In dieser Version werden sowohl Angular Apps größer 1.1.4 unterstützt, als auch alle Angular 2 Apps. Allerdings wird hier das Testen auf Bindings und Models nicht unterstützt.
 
 Nähere und die aktuellsten Informationen findet Ihr auf der Github Page von [Protractor](http://www.protractortest.org/#/).
 
@@ -58,7 +58,7 @@ Nähere und die aktuellsten Informationen findet Ihr auf der Github Page von [Pr
 
 Um sich das Thema Cross-Browser Testing deutlich zu vereinfachen, bietet [SauceLabs](https://saucelabs.com/) für die E2E Tests hier eine spitzen Integrationsmöglichkeit für Protractor. [SauceLabs](https://saucelabs.com/) bietet einen Selenium Dienst in der Cloud an, mit welchem alle aktuellsten Browser und Versionen von Protractor angesprochen werden können. Die zu testenden Browser werden in Protractor definiert und beim Starten der Tests an den Seleniumdienst von [SauceLabs](https://saucelabs.com/) übergeben.
 
-![Protractor-Angular-Test-Sauce Labs](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/224/medium_Artikel-Martin-Wiesmu-ller-E2E-Testing-Angular-Protractor.png?v=63651354226)
+![Protractor-Angular-Test-Sauce Labs](medium_Artikel-Martin-Wiesmu-ller-E2E-Testing-Angular-Protractor.png?v=63651354226)
 
 Dieser Dienst erstellt eine virtuelle Maschine mit der genannten Browserversion und führt darin die definierten Test-Suites durch. Darüber hinaus werden die Tests von [SauceLabs](https://saucelabs.com/) aufgezeichnet, sowie Screenshots erstellt. Diese können hinterher sehr bequem innerhalb der UI von SauceLabs angesehen werden. Dies vereinfacht das Debugging bei der Suche von Fehlern deutlich. Hat man sich zusätzlich eine Deployment-Pipe innerhalb seiner Architektur aufgesetzt, kann man mit dem Ergebnis dieser Tests ein Deployment durchführen oder auch verhindern.
 
@@ -138,7 +138,7 @@ In diesem JSON werden die zu testenden Browser definiert. Das Objekt hat insgesa
 }`
 ```
 
-Die genaue Definition für die Konfiguration der SauceLab Browser findet ihr im SauceLabs [Platform Configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/). Zudem möchte ich euch dennoch die Keys kurz erklären:  
+Die genaue Definition für die Konfiguration der SauceLab Browser findet ihr im SauceLabs [Platform Configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/). Zudem möchte ich euch dennoch die Keys kurz erklären:
 
 *   `browserName` (string)
 Der Name des Browsers, welcher verwendet werden soll.
@@ -167,13 +167,13 @@ Das Objekt in diesem File wurde von mir genauso wie die `browserlist.json` aus d
 }
 ```
 
-Als Key wird der Name der Suite definiert. Das dazugehörige Array definiert die Dateien mit den Testfällen. Die Aufteilung der Tests in Suiten ist nicht zwingend erforderlich. Man kann theoretisch auch alle Testfiles ohne Suites angeben. Allerdings nimmt man sich hiermit einen großen Vorteil:  
+Als Key wird der Name der Suite definiert. Das dazugehörige Array definiert die Dateien mit den Testfällen. Die Aufteilung der Tests in Suiten ist nicht zwingend erforderlich. Man kann theoretisch auch alle Testfiles ohne Suites angeben. Allerdings nimmt man sich hiermit einen großen Vorteil:
 
 Wenn ich die Testfälle in Suiten aufteile, habe ich anschließend auch die Möglichkeit, Suiten einzeln zu testen. Andernfalls kann ich nur alle Tests auf einmal starten. Und da die E2E Tests mitunter auch sehr viel Zeit in Anspruch nehmen können, ist es sehr hilfreich, nur einzelne Suiten aufzurufen.
 
 ##### PROTRACTOR.CONF.JS
 
-Hier mal eine Protractor Konfigurationsdatei, welche das Testing lokal, sowie auch über SauceLabs unterstüzt. Als Testframework verwende ich hier [Jasmine](https://jasmine.github.io/). Zudem habe ich einen Testreporter mit integriert, welcher Screenshots erstellt und diese zusammen mit dem Test-Report lokal ablegt.  
+Hier mal eine Protractor Konfigurationsdatei, welche das Testing lokal, sowie auch über SauceLabs unterstüzt. Als Testframework verwende ich hier [Jasmine](https://jasmine.github.io/). Zudem habe ich einen Testreporter mit integriert, welcher Screenshots erstellt und diese zusammen mit dem Test-Report lokal ablegt.
 Dieses File wollen wir uns mal Stück für Stück ansehen:
 
 ```
@@ -291,7 +291,7 @@ exports.config = {
 }`
 ```
 
-Im oberen Teil laden wir die externen Module, sowie die zwei bereits genannten JSON Files für die Browser- und der Testsuites Definitionen. Als externe Module werden hier folgende Dependencies geladen:  
+Im oberen Teil laden wir die externen Module, sowie die zwei bereits genannten JSON Files für die Browser- und der Testsuites Definitionen. Als externe Module werden hier folgende Dependencies geladen:
 
 *   [protractor-jasmine2-screenshot-reporter](https://www.npmjs.com/package/protractor-jasmine2-screenshot-reporter)
 Das ist der Jasmine Reporter welcher die Screenshots während der Tests durchführt. Dieses Modul wird anschließend direkt mit der Variable `reporter` konfiguriert. Mit dem Key `dest` wird die Destination für die Screenshots, und mit dem Key `filename` der Pfad für den globalen Report angegeben.
@@ -329,13 +329,13 @@ Hier wird das Protokoll des Jasmine-Tests abgeschlossen.
 *   `onComplete`
 Dies ist der Lifecycle, wenn der Test abgeschlossen wurde. Hier melden wir unsere Testergebnisse an den Build in SauceLabs zurück. Als Build-ID nehme ich hier den Namen aus der `package.json` sowie das aktuelle Datum. Hiermit wird dann der Build auch eindeutig.
 
-![Protractor Sauce Labs Overview](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/222/medium_Artikel-Martin-Wiesmu-ller-E2E-Testing-Angular-SAUCELABS-BROWSERMATRIX.png?v=63651352583)
+![Protractor Sauce Labs Overview](medium_Artikel-Martin-Wiesmu-ller-E2E-Testing-Angular-SAUCELABS-BROWSERMATRIX.png?v=63651352583)
 
 ##### SauceLabs Browsermatrix
 
 Wenn wir im Lifecycle `onComplete` unsere Testergebnisse, sowie eindeutige Build-ID's zurückliefern, können wir uns von SauceLabs eine Browsermatrix erstellen lassen:
 
-![Browsermatrix](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/223/medium_browsermatrix.png?v=63651352718)
+![Browsermatrix](medium_browsermatrix.png?v=63651352718)
 
 Diese Browsermatrix kann dann beispielsweise in der Beschreibung des GitHub Repos oder auf Promotion Seiten der Applikation mit eingebunden werden. Diese Browsermatrix wird vor allem immer mit den Ergebnissen der Tests live aktualisiert. Das bedeutet, wenn z.B. die Tests bei Firefox fehlschlagen, wird dieser automatisch rot. Einbinden lässt sich die Matrix ganz einfach per Markdown:
 

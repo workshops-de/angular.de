@@ -1,6 +1,6 @@
 ---
 title: "Diagramme in AngularJS mit D3/nvd3"
-description: 
+description:
 author: "Robin Böhm"
 slug: "angularjs-directives-d3-nvd3"
 published_at: 2014-02-28 14:12:00.000000Z
@@ -35,9 +35,9 @@ Aktuell hat **nvd3** folgende Direktiven:
 Wir nehmen als Beispiel ein einfaches Liniendiagram. Die Daten werden in einem mehrdimensionalen Array abgelegt:
 
     values: [[ 1025409600000 , 0], [ 1028088000000 , -6.3382185140371] ... ]
-    
 
-Dieses könnt ihr dann mit der Direktive `nvd3-line-chart` ausgeben. 
+
+Dieses könnt ihr dann mit der Direktive `nvd3-line-chart` ausgeben.
 
 ![D3 Chart][5]
 
@@ -58,14 +58,14 @@ Dieses könnt ihr dann mit der Direktive `nvd3-line-chart` ausgeben.
             return d3.time.format('%x')(new Date(d));
           }
         };
-    
+
         $scope.yAxisTickFormat = function () {
           return function (d) {
             return Math.round(d,10);
           }
         };
     });
-    
+
 
 **index.html**
 
@@ -91,7 +91,7 @@ Dieses könnt ihr dann mit der Direktive `nvd3-line-chart` ausgeben.
       </nvd3-line-chart>
     </body>
     </html>
-    
+
 
 Weitere Diagramm-Beispiele findet ihr in der [Projektdokumentation][6].
 
@@ -100,6 +100,5 @@ Viel Spaß beim Ausprobieren!
  [1]: http://d3js.org/
  [2]: https://github.com/mbostock/d3/wiki/Gallery
  [3]: https://github.com/cmaurer/angularjs-nvd3-directives
- [5]: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/23/angularjs-directives-d3-nvd3-chart.png
+ [5]: angularjs-directives-d3-nvd3-chart.png
  [6]: http://cmaurer.github.io/angularjs-nvd3-directives/line.chart.html
- 

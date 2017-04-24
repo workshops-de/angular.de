@@ -1,6 +1,6 @@
 ---
 title: "Die JavaScript Web Worker API mit AngularJS"
-description: 
+description:
 author: "Björn Weinbrenner"
 slug: "angularjs-web-worker"
 published_at: 2014-02-17 10:30:00.000000Z
@@ -20,7 +20,7 @@ Wie wichtig Letzteres sein kann, verdeutlicht das folgende Code-Beispiel ([hier 
     var start = new Date().getTime();
     for (; new Date().getTime() - start < 1000;) {}
     $('#status').html('I\'m back.');
-    
+
 
 In der ersten Zeile soll mithilfe von jQuery `Back in a second` ausgegeben werden, bevor dann eine Sekunde lang eine Schleife läuft. Anschließend wird `I'm back` ausgegeben. Das Interessante hieran: Wider Erwarten wird die Nachricht `Back in a second` nie angezeigt. Solange die Schleife läuft, werden keine weiteren Anweisungen ausgeführt, auch nicht das Rendern der Nachricht, obwohl es vor der Schleife in Auftrag gegeben wurde. Wenn dann der Thread bereit dafür wäre, wird die Ausgabe sofort von der letzten Zeile überschrieben.
 
@@ -59,7 +59,7 @@ Die Web Worker API wird durch den Einsatz der Bibliothek nur noch indirekt verwe
 Um das Modul webWorkerPool zu verwenden, wird es einfach als Modulabhängigkeit deklariert:
 
     angular.module('myApp', ['webWorkerPool']);
-    
+
 
 Damit es richtig los gehen kann, bedarf es eines konfigurierten WebWorkerPools. Um einen solchen zu bekommen bestehen zwei Möglichkeiten: Wer in seiner Applikation nur ein einziges Worker-Script ansprechen möchte, der kann die URL des Workers und die Kapazität des Pools zentral konfigurieren und sich dann den Service **webWorkerPool** injizieren. Die Konfiguration wird über den Provider des Services vorgenommen, indem **workerUrl** und **capacity** gesetzt werden.
 
@@ -67,12 +67,12 @@ Damit es richtig los gehen kann, bedarf es eines konfigurierten WebWorkerPools. 
         webWorkerPoolProvider.workerUrl('hello-worker.js');
         webWorkerPoolProvider.capacity(8);
     });
-    
+
 
 Wer mehrere Worker-URLs ansprechen möchte, der kann den WebWorkerPool selbst erstellen. Dazu besteht ein Service webWorkerPoolFactory. Über die createPool-Methode wird der WebWorkerPool erstellt, URL und Pool-Kapazität werden als Parameter übergeben.
 
     var webWorkerPool = webWorkerPoolFactory.createPool('hello-worker.js', 8);
-    
+
 
 ## Verwendung des WebWorkerPools
 
@@ -81,7 +81,7 @@ Genau wie die Web Worker API bietet WebWorkerPool eine postMessage-Methode, mit 
     webWorkerPool.postMessage('Bob').then(function(event) {
         console.log(event.data);
     });
-    
+
 
 Weitere Codebeispiele bieten die Jasmine-Specs des Projekts.
 
@@ -99,11 +99,10 @@ Durch den Einsatz der WebWorkerPool.js-Bibliothek lassen sich sehr einfach mehre
 
  [1]: http://jsfiddle.net/bjoerne/zeLxM
  [2]: http://www.monkkee.com
- [3]: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/20/angularjs-web-worker-monkkee.png
- [4]: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/21/angularjs-web-worker-communication.png
+ [3]: angularjs-web-worker-monkkee.png
+ [4]: angularjs-web-worker-communication.png
  [5]: http://en.wikipedia.org/wiki/Web_worker
  [6]: http://www.developer.com/lang/jscript/7-things-you-need-to-know-about-web-workers.html
  [7]: http://caniuse.com/#feat=webworkers
  [8]: https://github.com/bjoerne2/webworkerpool.js
  [9]: https://github.com/bjoerne2/webworkerpool.js/tree/master/dist
- 

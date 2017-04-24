@@ -1,6 +1,6 @@
 ---
 title: "Angular2 Mini Workshop FrankenJS"
-description: 
+description:
 author: "Robin Böhm"
 slug: "frankenjs-mini-workshop"
 published_at: 2020-08-23 10:00:00.000000Z
@@ -16,14 +16,14 @@ Hier eine kleine Vorschau, was euch erwartet:
 <br/><br/>
 
 <center>
-<img src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/212/medium_Screen-Shot-2016-09-27-at-10.00.19.png?v=63642184659"/>
+<img src="medium_Screen-Shot-2016-09-27-at-10.00.19.png?v=63642184659"/>
 </center>
 
 <br/><br/>
 
 ## Anmeldung zum Classroom
 
-Falls Ihr im Classroom dabei seinen wollt: Ihr könnt euch hier eintragen und bekommt den Link zum Classroom direkt nach der Bestätigung euerer Mail-Adresse zugesendet. 
+Falls Ihr im Classroom dabei seinen wollt: Ihr könnt euch hier eintragen und bekommt den Link zum Classroom direkt nach der Bestätigung euerer Mail-Adresse zugesendet.
 
 <br/><br/>
 
@@ -37,7 +37,7 @@ Falls Ihr im Classroom dabei seinen wollt: Ihr könnt euch hier eintragen und be
             </div>
           </div>
         </form>
-        
+
 <br/><br/>
 
 Wir optimieren unsere Workshops immer weiter und ich bin sehr gespannt, ob dieses Format auch in einem kleinen Einführungs-Abend funktioniert! Das Schlimmste was passieren kann: Ihr bekommt ein normalen Talk mit Hands-On-Beispielen von mir. Im optimalen Fall kann ich euch aber ein deutlichen Mehrwert geben und ein geführtes Beispiel zum selber ausprobieren anbieten!

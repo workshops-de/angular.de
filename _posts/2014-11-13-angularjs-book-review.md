@@ -1,6 +1,6 @@
 ---
 title: "Buch Review auf Heise zum AngularJS-Buch"
-description: 
+description:
 author: "Robin Böhm"
 slug: "angularjs-book-review"
 published_at: 2014-11-13 05:16:00.000000Z
@@ -15,9 +15,8 @@ Auch in seinem Fazit sind wir sehr gut weg gekommen.
 > Das Buch ist gut zu lesen und bietet Einsteigern eine gute Einführung.
 > Auch Fortgeschrittene, die schon erste Anwendungen mit AngularJS erstellt haben, sollten an dem Buch interessiert sein.
 
-[![Buch Cover](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/50/ajs.jpg)](https://www.amazon.de/gp/product/B00L2FCJI8)
+[![Buch Cover](ajs.jpg)](https://www.amazon.de/gp/product/B00L2FCJI8)
 
 Vielen Dank für die nette Review!
 
 
- 

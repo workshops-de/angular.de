@@ -59,7 +59,7 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
                  alt="Teilnehmer in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -94,7 +94,7 @@ Im Prinzip war es das auch schon. Ihr werden euch vielleicht über die im Tutori
 
 Durch den `--lab` Parameter erhaltet ihr eine Gegenüberstellung vom Layout eurer App auf iOS und Android.
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/160/medium_ionic2-blank-labs.png?v=63630356411)
+![Bild](medium_ionic2-blank-labs.png?v=63630356411)
 
 ## Anlegen einer App
 
@@ -151,7 +151,7 @@ Wir starten unsere Anwendung nun unter der Angabe unserer `PizzaAppComponent`.
 
 Das Ergebnis sieht im Browser zwar nicht mehr sonderlich ansprechend aus, aber das wird schon noch ;-). Versprochen!
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/161/medium_ionic2-app.png?v=63630362119)
+![Bild](medium_ionic2-app.png?v=63630362119)
 
 ## Erstellen von Inhalten
 
@@ -203,7 +203,7 @@ Zusätzlich zum `Component` Decorator importieren wir jetzt unsere Seite. Außer
 
 Wie das mit der Navigation genau funktioniert, wird in einem späteren Kapitel erklärt. Für uns ist nur wichtig, dass unsere Seite auch funktioniert!
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/162/medium_ionic2-page.png?v=63630367169)
+![Bild](medium_ionic2-page.png?v=63630367169)
 
 
 ## Die Basiskomponenten
@@ -247,7 +247,7 @@ Wir erweitern unsere Startseite nun so, dass wir unseren Inhalt scrollen können
       }
     }
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/168/medium_ionic2-scroll.png?v=63630618004)
+![Bild](medium_ionic2-scroll.png?v=63630618004)
 
 Auf unserem `content` Objekt stehen neben den Scroll-Funktionen noch weitere zur Verfügung, die wir hier kurz auflisten. Ihre genaue Anwendung findet ihr in der Ionic 2 Dokumentation.
 
@@ -289,7 +289,7 @@ Damit unsere Klasse nicht zu aufgebläht wird, lagern wir unser Template in eine
       <b>Hello</b> World!
     </ion-content>`
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/167/medium_ionic2-toolbar.png?v=63630617952)
+![Bild](medium_ionic2-toolbar.png?v=63630617952)
 
 Ein wichtiger Anwendungsfall ist das Ausrichten von Schaltflächen. Dies funktioniert ähnlich zu Ionic 1. Über die Komponente `ionButtons` lassen sich diese unter Angabe der Position anordnen. Damit aus einem normalen Link oder einer Schaltfläche ein Ionic-Button wird, sollten wir die Direktive `ion-button` an die Schaltflächen schreiben.
 
@@ -444,9 +444,9 @@ Wir entscheiden uns aber hier für den programmatischen Weg und navigieren mitte
       }
     }
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/165/medium_ionic2-nav1.png?v=63630617647)
+![Bild](medium_ionic2-nav1.png?v=63630617647)
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/166/medium_ionic2-nav2.png?v=63630617693)
+![Bild](medium_ionic2-nav2.png?v=63630617693)
 
 Wir ihr sicher gemerkt habt, findet der Seitenwechsel mit der von der Plattform bekannten Animation statt. Der Zurück-Knopf wird auch automatisch auf der Über Uns Seite angezeigt.
 
@@ -539,7 +539,7 @@ Das Template unserer Anwendung sieht dann wie folgt aus.
 
 Zieht ihr jetzt am Inhalt der Startseite, sollte sich langsam auf der linken Seite das Menü auffahren.
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/173/medium_ionic2-menu-blank.png?v=63631389716)
+![Bild](medium_ionic2-menu-blank.png?v=63631389716)
 
 Hier könnt ihr erkennen, dass Ionic weiter an der Individualisierung pro Plattform gearbeitet hat. Unter Android legt sich das Menü über den eigentlichen Inhalt. Auf iOS schiebt es den Inhalt nach rechts aus der View.
 
@@ -561,7 +561,7 @@ Ein `ionButton` kann so konfiguriert werden, dass er nur ein Icon oder Icon und 
 - `icon-left`: erst Icon dann Text
 - `icon-right`: erst Text dann Icon
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/174/medium_ionic2-menu-toggle.png?v=63631395379)
+![Bild](medium_ionic2-menu-toggle.png?v=63631395379)
 
 <div class="alert alert-info"><b>Hinweis</b> Seitenmenüs sind im Normalfall nur in den Wurzelseiten der App (root pages) verfügbar. Wollt ihr auch von Kinder-Seiten Zugriff darauf, müsst ihr das Attribute <code>persistent</code> am Menü auf <code>true</code> setzen.</div>
 
@@ -600,7 +600,7 @@ Dieser besitzt folgende Funktionen. Der `[id]` Parameter ist optional und wird n
 
 Als nächsten füllen wir unser Seitenmenü mit einer einfachen Liste von Links zu zukünftigen und bisherigen Seiten, wie der Warenkorb und unserer Über Uns Seite. Hier könnt ihr das Wissen über die Navigation wiederverwenden. Wir haben außerdem Ionic Listen genutzt, um die Links zu formatieren. Wie das genau funktioniert, erfahrt ihr in Teil 2 unseres Tutorials.
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/175/medium_ionic2-menu-filled.png?v=63631397393)
+![Bild](medium_ionic2-menu-filled.png?v=63631397393)
 
 ## Wie geht es weiter
 
@@ -636,7 +636,7 @@ Viel Spaß beim Ausprobieren und Entwickeln der eigenen App!
 
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>

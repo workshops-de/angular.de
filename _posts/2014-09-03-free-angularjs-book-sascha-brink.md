@@ -1,6 +1,6 @@
 ---
 title: "Free AngularJS CookBook - 70 Rezepte, die euer Leben erleichtern"
-description: 
+description:
 author: "Robin Böhm"
 slug: "free-angularjs-book-sascha-brink"
 published_at: 2014-09-03 13:43:00.000000Z
@@ -10,7 +10,7 @@ header_image: "/artikel/header_images/free-angularjs-book-sascha-brink.jpg"
 
 [Sascha Brink](http://angularjs.de/entwickler/saschabrink) hat sein [AngularJS CookBook](https://leanpub.com/angularjs-cookbook) komplett frei zur Verfügung gestellt!
 
-[![Sascha Brink - AngularJS Cookbook](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/46/large.jpeg)](https://leanpub.com/angularjs-cookbook) 
+[![Sascha Brink - AngularJS Cookbook](large.jpeg)](https://leanpub.com/angularjs-cookbook)
 
 
 Es enthält derzeit folgende Rezepte:
@@ -89,8 +89,7 @@ Es enthält derzeit folgende Rezepte:
 	* 65 Deregister an event listener
 	* 66 How to use the dot correctly
 	* 67 What belongs on the scope
-	
+
 Ihr könnt es über [Leanpub](https://leanpub.com/angularjs-cookbook) kostenlos herunterladen und ihm optional einen kleinen Betrag dafür spenden.
 
 Vielen Dank Sascha!
- 

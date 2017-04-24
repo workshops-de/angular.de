@@ -41,7 +41,7 @@ Das sieht aus wie normales JavaScript, ist aber eben auch valides TypeScript. Nu
 
 Damit legen wir fest, dass `coolFramework` immer vom Typ `string` sein muss. Doch Achtung, coolFramework darf auch die Werte `undefined` und `null` einnehmen. In `thingsILearned` definieren wir ein Array aus Strings.  Alternativ hätten wir auch `Array<string>` schreiben können.
 
-TypeScript erlaubt uns außerdem [Klassen](http://www.typescriptlang.org/Handbook#classes) und [Interfaces](http://www.typescriptlang.org/Handbook#interfaces) zu definieren. 
+TypeScript erlaubt uns außerdem [Klassen](http://www.typescriptlang.org/Handbook#classes) und [Interfaces](http://www.typescriptlang.org/Handbook#interfaces) zu definieren.
 
 	interface IHuman {
 		name: string
@@ -70,13 +70,13 @@ Schauen wir uns die `index.html` an, sehen wir eine kleine Besonderheit. In dies
 
 	import * as angular from 'angular'
 	import 'angular-route'
-	
+
 	import routes from './routes'
-	
+
 	import navigation from './components/navigation/navigation'
 	import booksIndex from './components/books-index/books-index'
 	import booksShow from './components/books-show/books-show'
-	
+
 	angular.module('myApp', [
 	  'ngRoute',
 	  routes,
@@ -92,22 +92,22 @@ Diese Datei könnte genau so gut ein ES2015-Modul sein. Hier versteckt sich kein
 Schauen wir uns also mal die entscheiden Dateien in diesem Projekt genauer an. In der Datei `app/components/books-index/books-index.ts` finden wir zunächst eine `class` mit den Namen `BooksIndex`. Das ist unser Controller für die gleichnamige Komponente die wir mit `component(…)` definiert haben.
 
 	import * as angular from 'angular'
-	
+
 	import booksApiModule, {IBook, IBooksApi} from '../../services/books-api/books-api'
-	
+
 	class BooksIndex {
-	  
+
 	  books: IBook[]
-	  
+
 	  constructor (booksApi: IBooksApi) {
 		booksApi.all()
 		  .then(books => this.books = books)
 	  }
 	}
-	
+
 	const moduleName = 'myApp.books-index'
 	export default moduleName
-	
+
 	angular.module(moduleName, [booksApiModule])
 	  .component('booksIndex', {
 		templateUrl: 'app/components/books-index/books-index.html',
@@ -115,7 +115,7 @@ Schauen wir uns also mal die entscheiden Dateien in diesem Projekt genauer an. I
 		controllerAs: 'booksIndex'
 	  })
 
-In dem Controller steckt nun einiges an TypeScript. Schauen wir uns das mal Zeile für Zeile an. 
+In dem Controller steckt nun einiges an TypeScript. Schauen wir uns das mal Zeile für Zeile an.
 
     class BooksIndex {
       books: IBook[]
@@ -137,16 +137,16 @@ Innerhalb des `.then()` nutzen wir eine weitere ES2015-Technik: [Die Arrow-Funct
     }
 
 
-Wir exportieren unsere Modulnamen als mit `export default` um die Abhängigkeiten einfacher Verwalten zu können. Außerdem registrieren wir eine neue [`component`](https://angularjs.de/artikel/angularjs-component-helper) mit Hilfe von `.component()`. Da wir die Type Definitions nutzen, ist die Methode `component()` bekannt und wir bekommen je nach Editor oder IDE sogar eine Code Completion. 
+Wir exportieren unsere Modulnamen als mit `export default` um die Abhängigkeiten einfacher Verwalten zu können. Außerdem registrieren wir eine neue [`component`](https://angularjs.de/artikel/angularjs-component-helper) mit Hilfe von `.component()`. Da wir die Type Definitions nutzen, ist die Methode `component()` bekannt und wir bekommen je nach Editor oder IDE sogar eine Code Completion.
 
-![Code Completion mit Code](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/100/vs-code-typescript.png)
+![Code Completion mit Code](vs-code-typescript.png)
 
 ### Services
 
 Beim Umgang mit Services spielt TypeScript seine großen Stärken aus. In Services implementieren wir unsere Geschäftslogik, wir laden Daten und verändern diese. Schauen wir uns unseren booksApi-Service in `app/services/books-api/books-api.ts` mal genauer an.
 
 	import * as angular from 'angular'
-	
+
 	export interface IBook {
     title: string
     subtitle: string
@@ -170,12 +170,12 @@ Erst dann folgt unser eigentlicher Service, den wir ebenfalls als Klasse definie
 
     class HttpBooksApi implements IBooksApi {
       private baseUrl: string = 'http://bookmonkey-api.angularjs.de/books'
-      
+
       constructor(
         private $http: angular.IHttpService
       ) {}
 
-Das Attribute `baseUrl` definieren wir als `private`. Dies schützt uns davor, dass die `baseUrl` von außen geändert werden kann. Dann folgt unser `constructor()`, der wieder Services mittels DI injectet. Das Schlüsselwort `private` sorgt dafür, dass wir innerhalb der Klasse mit `this.$http` auf den Service zugreifen können. Gleiches würde auch mit `public` funktionieren, dann wäre der Wert auch von Außen zugänglich. Auch hier benötigen wir wieder einen Typ. Die Type Definition für Angular folgt dem Schema `angular.I<Name des Service ohne $>Service`. 
+Das Attribute `baseUrl` definieren wir als `private`. Dies schützt uns davor, dass die `baseUrl` von außen geändert werden kann. Dann folgt unser `constructor()`, der wieder Services mittels DI injectet. Das Schlüsselwort `private` sorgt dafür, dass wir innerhalb der Klasse mit `this.$http` auf den Service zugreifen können. Gleiches würde auch mit `public` funktionieren, dann wäre der Wert auch von Außen zugänglich. Auch hier benötigen wir wieder einen Typ. Die Type Definition für Angular folgt dem Schema `angular.I<Name des Service ohne $>Service`.
 
     public all() {
       return this.$http.get<IBook[]>(this.baseUrl)
@@ -189,7 +189,7 @@ Wir senden unseren `$http`-Request an unsere API ab. Der Request liefert ein Arr
     angular.module(moduleName, [])
       .service('booksApi', HttpBooksApi)
 
-Natürlich müssen wir unseren Service noch bei Angular anmelden. Dafür nutzen wir den `service`-Service der auf die `factory` aufsetzt und unsere Klasse instanziiert. 
+Natürlich müssen wir unseren Service noch bei Angular anmelden. Dafür nutzen wir den `service`-Service der auf die `factory` aufsetzt und unsere Klasse instanziiert.
 
 ## Kann ich TypeScript schon heute nutzen?
 
@@ -200,8 +200,7 @@ Die Frage, ob man TypeScript mit Angular im 1er-Zweig nutzen kann, ist ganz klar
 ## Mehr Interesse am Thema?
 Elmar Burke gibt monatliche Workshops zum Thema [AngularJS+TypeScript](https://angularjs.de/workshops/angularjs-typescript). In 3 Tagen könnt Ihr hier die Sprache TypeScript in Verbindung mit AngularJS lernen. Gerade im Bezug auf die Wartbarkeit und die Entwicklungen zu Angular (Angular >2.X ist komplett in TypeScript entwickelt) ist es sinnvoll sich mit dieser Kombination zu beschäftigen.
 
-[![AngularJS und TypeScript Workshop](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/99/angularjs-de-intensivworkshop-ajs-typescript.png)](https://angularjs.de/workshops/angularjs-typescript)
+[![AngularJS und TypeScript Workshop](angularjs-de-intensivworkshop-ajs-typescript.png)](https://angularjs.de/workshops/angularjs-typescript)
 
 
 *[DI]: Dependency Injection
- 

@@ -1,6 +1,6 @@
 ---
 title: "AngularJS Days 2015 - Wir sind die Program Chairs"
-description: 
+description:
 author: "Robin Böhm"
 slug: "program-chairs-angularjs-days-2015"
 published_at: 2015-08-11 05:35:00.000000Z
@@ -8,10 +8,10 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/program-chairs-angularjs-days-2015.jpg"
 ---
 
-![AngularJS Days 2015](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/75/Screen_Shot_2015-08-11_at_07.52.15.png)
+![AngularJS Days 2015](Screen_Shot_2015-08-11_at_07.52.15.png)
 
 Es ist endlich wieder so weit! Vom 05. bis zum 07. Oktober 2015 veranstaltet der Software & Support Verlag die nächste Ausgabe der AngularJS Days!
-Diesmal ist das Event im Best Western Hotel Moa Berlin, Mitte. Tickets gibt es [hier](http://angularjs-days.de/2015fall/preise-anmeldung). Wir hatten mal wieder die Ehre für euch die Speaker und Tracks der Veranstaltung auszuwählen! 
+Diesmal ist das Event im Best Western Hotel Moa Berlin, Mitte. Tickets gibt es [hier](http://angularjs-days.de/2015fall/preise-anmeldung). Wir hatten mal wieder die Ehre für euch die Speaker und Tracks der Veranstaltung auszuwählen!
 
 ***TIP***
 Ihr habt hierbei die Chance 15% zu sparen! Nutz hierfür einfach folgenden **Rabattcode: angularjs2971**.
@@ -25,7 +25,7 @@ AngularJS ist ein JavaScript-Framework, das Sie dabei unterstützt, moderne clie
 Der Workshop "AngularJS: Der Weg zu einer vollständigen Applikation" schließt an den Workshop "AngularJS Basics: Die Grundlagen einfach und verständlich vermittelt" vom Vormittag an. In dem zweiten Teil des zweiteiligen Workshops erweitern wir die im ersten Teil erstellte Anwendung um weitere Features. Insbesondere zeigen wir dabei, wie Sie mit AngularJS wiederkehrende Probleme auf eine elegante Art und Weise lösen können. Saubere Anwendungsentwicklung mit JavaScript ist eben doch möglich. Finden Sie es heraus!
 
 **Philipp Tarasiewicz, Robin Böhm - Testen in AngularJS: Unit-Testing im Detail**
-AngularJS ist ein JavaScript-Framework, das dabei unterstützt, moderne clientseitige Web-Anwendungen zu erstellen. Erstmalig finden bewährte Konzepte wie Dependency Injection und testgetriebene Entwicklung nun auch Einzug in die JavaScript-Welt und machen diese attraktiv für den Enterprise-Einsatz. AngularJS bietet hier eine sehr nachvollziehbare Implementierung und achtet im hohen Maße auf das Bilden und Einhalten von Schnittstellen. Dieser Workshop führt an die Entwicklung mit AngularJS heran und fokussiert insbesondere die Möglichkeiten zum Test-Driven-Development (TDD). Im ersten Teil gehen wir insbesondere darauf ein, wie Sie für die verschiedenen Anwendungskomponenten von AngularJS mit geeigneten Unit-Tests ein Sicherheitsnetz für Regressionsfehler aufspannen können. 
+AngularJS ist ein JavaScript-Framework, das dabei unterstützt, moderne clientseitige Web-Anwendungen zu erstellen. Erstmalig finden bewährte Konzepte wie Dependency Injection und testgetriebene Entwicklung nun auch Einzug in die JavaScript-Welt und machen diese attraktiv für den Enterprise-Einsatz. AngularJS bietet hier eine sehr nachvollziehbare Implementierung und achtet im hohen Maße auf das Bilden und Einhalten von Schnittstellen. Dieser Workshop führt an die Entwicklung mit AngularJS heran und fokussiert insbesondere die Möglichkeiten zum Test-Driven-Development (TDD). Im ersten Teil gehen wir insbesondere darauf ein, wie Sie für die verschiedenen Anwendungskomponenten von AngularJS mit geeigneten Unit-Tests ein Sicherheitsnetz für Regressionsfehler aufspannen können.
 
 **Philipp Tarasiewicz, Robin Böhm - E2E-Testing in AngularJS: Mit E2E-Tests ganzheitliche Benutzerszenarien prüfen**
 Der Workshop "E2E-Testing in AngularJS: Mit E2E-Tests ganzheitliche Benutzerszenarien prüfen" schließt an den Workshop "Testen in AngularJS: Unit-Testing im Detail" vom Vormittag an. Im zweiten Teil zeigen wir, wie Sie mithilfe von E2E-Tests User-Szenarien skripten können, um eine Anwendung aus der Sicht des Benutzers zu testen.
@@ -62,4 +62,4 @@ Dieser Workshop knüpft direkt an den ersten an und behandelt einige Features de
 
 Die Liste inklusive der Räume ist auf der [offiziellen Webseite der AngularJS Days](http://angularjs-days.de/2015fall/zeitplaner) einzusehen.
 
-Wir hoffen das Programm gefällt euch, falls Ihr Anmerkungen, Kritik oder auch Ideen habt was wir verbessern können - immer her damit! :) 
+Wir hoffen das Programm gefällt euch, falls Ihr Anmerkungen, Kritik oder auch Ideen habt was wir verbessern können - immer her damit! :)

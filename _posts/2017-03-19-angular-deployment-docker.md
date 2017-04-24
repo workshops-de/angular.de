@@ -20,9 +20,9 @@ Bevor wir jedoch in das Gesamtkonstrukt eintauchen, müssen wir uns die einzelne
 
 Mit Docker wurde eine Engine geschaffen, welche es ermöglicht eine Anwendung zusammen mit allen notwendigen Umgebungen in einen Container einzusperren und zu starten. Dieser Container ist eine Art leichtgewichtige virtuelle Maschine, die alles mitbringt, um die Applikation laufen zu lassen. Dies hat den Vorteil, dass das Problem "Is running on my machine" nahezu völlig ausgeschlossen wird.
 
-![Docker](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/228/medium_docker.jpg?v=63657051997)
+![Docker](medium_docker.jpg?v=63657051997)
 
-Als Grundlage für den Dockercontainer muss immer ein Image definiert werden. In diesem Image befindet sich das komplette Betriebssystem, auf welchem anschließend unsere Applikation läuft. Auch hier ist der Aufbau dieses Schemas sehr flexibel und kann frei definiert werden. Die Apple-Jünger unter euch müssen [Docker-Machine auf ihrem System installieren](https://docs.docker.com/machine/install-machine/).  
+Als Grundlage für den Dockercontainer muss immer ein Image definiert werden. In diesem Image befindet sich das komplette Betriebssystem, auf welchem anschließend unsere Applikation läuft. Auch hier ist der Aufbau dieses Schemas sehr flexibel und kann frei definiert werden. Die Apple-Jünger unter euch müssen [Docker-Machine auf ihrem System installieren](https://docs.docker.com/machine/install-machine/).
 
 Bei den Linux Anwendern reicht die Engine selbst. Hierzu gibt es eine ausführliche [Installationsanleitung für Docker unter Linix](https://docs.docker.com/engine/installation/).
 
@@ -88,7 +88,7 @@ Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, das
             <p>
                 Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und auch Spaß machen. Wir bieten euch auch
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=article&utm_medium=link&utm_content=text-top">Docker Schulungen</a> an, falls du tiefer in die Thematik einsteigen willst.
-            </p>                
+            </p>
             <p class="">
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=article&utm_medium=button&utm_content=text-top">
                     <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
@@ -98,7 +98,7 @@ Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, das
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
                  alt="Teilnehmer in der Veranstaltung Docker &amp; Kubernetes Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -220,7 +220,7 @@ Wie bereits beschrieben, kann man mit Hilfe von Webhooks einem anderem System et
 
 Nun kennt Ihr alle Bausteine, aus welchem das Gesamtkonstrukt gebaut werden soll. Ich habe euch eine Schemazeichnung erstellt, in welcher euch der Gesamtprozess bildlich dargestellt werden soll:
 
-![Schema der Angular Docker Continuous Deployment Pipe](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/229/medium_schema.jpg?v=63657052773)
+![Schema der Angular Docker Continuous Deployment Pipe](medium_schema.jpg?v=63657052773)
 
 Wie ihr erkennen könnt, gibt es zwei Auslöser, welche die Automatismen anwerfen können. Zum einem Check-In von Code, zum anderen per Scheduler (Nightly Build).
 
@@ -263,10 +263,10 @@ Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche
                     <button class="btn btn-danger">Jetzt weiter lernen</button>
                 </a>
             </p>
-        
+
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>

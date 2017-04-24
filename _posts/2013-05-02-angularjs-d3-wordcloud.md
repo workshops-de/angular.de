@@ -12,7 +12,7 @@ Eine beeindruckende Eigenschaft unterscheidet AngularJS von anderen Frameworks -
 
 <!--more-->
 
-![Tagcloud](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/1/angularjs-d3-tagcloud.png)
+![Tagcloud](angularjs-d3-tagcloud.png)
 
 D3 steht für Data-Driven-Documents und ist eine JavaScript-Bibliothek, die von [Mike Bostock](http://bost.ocks.org/mike/) geschrieben wurde. Unter Verwendung von HTML5, SVG und CSS können wir Daten enorm vereinfacht visualisieren. Eines dieser Beispiele ist auch die bereits erwähnte Darstellung einer WordCloud, die von [Jason Davies](https://www.jasondavies.com/wordcloud/) entwickelt wurde. J. Davies ist ein Datenvisualisierungs-Spezialist aus England der sich intensiv mit D3 auseinander setzt. In diesem Beispiel nutzt Davies die öffentliche Schnittstelle von Twitter, um eine WordCloud aus Beiträgen zu einem bestimmten Thema zu erstellen. Wir beschreiben beispielhaft das Vorgehen, wie auf der Basis dieser Implementierung eine AngularJS Direktive erstellt werden kann, die diese Logik kapselt.
 
@@ -24,32 +24,32 @@ Zuerst wird die Methode `angular.factory` genutzt, um die D3-Bibliothek innerhal
         //d3 code...
         return d3;
       }]);
-    
+
 
 Nach diesem Schritt können wir in einer eigenen Applikation D3 verwenden, indem wir es als Abhänigkeit in dem sogenannten Dependency-Array einer Modul-Definition angeben. In dem folgenden Code-Snippet siehst du, wie das aussehen könnte:
 
     angular.module('exampleApp', ['d3']);
-    
+
     angular.module('exampleApp').directive('example',
       function (d3){
       // use d3 to implement some fancy directive
     });
-    
+
 
 Um die WordCloud Direktive möglichst einfach nutzen zu können, müssen wir der D3 Bibliothek als erstes die benötigte Funktionalität hinzufügen. AngularJS bietet hierzu einen Mechanismus, der es uns erlaubt, bereits registrierte Services zu erweitern. Dies wird mit dem Decorator-Pattern realisiert.
 
     angular.module('d3')
       .config( ['$provide', function ($provide) {
-    
+
         var d3WorldCloudDecorator = function($delegate){
           var d3 = $delegate;
           ... // word cloud layout definition
           return d3;
         };
-    
+
         $provide.decorator('d3', d3WorldCloudDecorator);
       }]);
-    
+
 
 Nachdem wir dies getan haben, implementieren wir nun die eigentliche Direktive. Diese wird unter dem Namen `wordcloud` registriert und enthält eine Abhänigkeit zu dem D3-Service. Somit können wir diesen innerhalb unserer Direktive nutzen. Folgende Attribute soll die Direktive unterstützen:
 
@@ -89,7 +89,7 @@ Um dies zu erreichen, wird ein neuer isolierter Scope erstellt, der einige Param
           }
         };
       }]);
-    
+
 
 ## Wie verwende ich die Direktive?
 
@@ -98,7 +98,7 @@ Um dies zu erreichen, wird ein neuer isolierter Scope erstellt, der einige Param
 Es gibt drei verschiedene Möglichkeiten, die Direktive zu benutzen. Die Erste und wahrscheinlich einfachste Möglichkeit, ist die Erstellung einer WordCloud mit einer festen Anzahl von Wörtern, die mittels einer kommaseparierten Liste definiert werden.
 
     <wordcloud>this,is,a,test,with,strings</wordcloud>
-    
+
 
 ### Option 2: XML “konformes” Template
 
@@ -115,7 +115,7 @@ Mit der zweiten Option können die Elemente in einem “XML-konformen” Format 
         <word>this</word>
         <word>feature</word>
     </wordcloud>
-    
+
 
 ### Option 3: Nutzung des Controller Scopes
 
@@ -126,7 +126,7 @@ Mit der dritten Option ist es möglich, die Wörter über den Controller-Scope e
         on-click="myOnClickFunction(element)"
         on-hover="myOnHoverFunction(element)">
     </wordcloud>
-    
+
 
 ## Testbarkeit
 
@@ -138,7 +138,7 @@ Aufgrund der Tatsache, dass D3 einfache SVG-Elemente nutzt, um die Visualisierun
         element = $compile(element)($rootScope);
         expect(element.children().children().length).toBe(0);
     }));
-    
+
 
 Die komplette Test-Suite ist auf GitHub zu finden.
 

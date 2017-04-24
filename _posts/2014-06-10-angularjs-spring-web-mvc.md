@@ -1,6 +1,6 @@
 ---
 title: "Spring Web MVC mit AngularJS - Eine Fallstudie"
-description: 
+description:
 author: "Björn Wilmsmann"
 slug: "angularjs-spring-web-mvc"
 published_at: 2014-06-10 07:00:00.000000Z
@@ -173,7 +173,7 @@ Das Deployment der fertigen Anwendung erfolgt letztlich ganz genauso wie das ein
 
 Da eine AngularJS App aus reinem HTML, JavaScript und CSS besteht, lässt sich das Frontend anschließend einfach über den Browser wie eine statische HTML-Seite aufrufen. Das ZenQuery Frontend lädt daraufhin in Sekundenbruchteilen, holt sich den aktuellen Datenbestand via REST aus dem Java Backend und stellt diese Daten in einem aufgeräumten User Interface dar:
 
-![image alt text](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/38/image_0.png)
+![image alt text](image_0.png)
 
 ## Ausblick
 
@@ -189,4 +189,4 @@ Mit AngularJS und Spring Web MVC erhält man so ‘das beste aus beiden Welten�
 
 * ausgereifte Komponenten für praktisch jeden Anwendungsfall
 
-Die Entscheidung, ZenQuery mittels dieser Technologien zu entwickeln, hat sich bereits jetzt gelohnt und ich denke, dass sich diese Wahl auch im Hinblick auf die Weiterentwicklung des Produktes bewähren wird. 
+Die Entscheidung, ZenQuery mittels dieser Technologien zu entwickeln, hat sich bereits jetzt gelohnt und ich denke, dass sich diese Wahl auch im Hinblick auf die Weiterentwicklung des Produktes bewähren wird.

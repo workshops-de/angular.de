@@ -1,6 +1,6 @@
 ---
 title: "Login & Sicherheit in AngularJS"
-description: 
+description:
 author: "Marius Soutier"
 slug: "angularjs-login-sicherheit"
 published_at: 2013-07-23 16:00:00.000000Z
@@ -32,7 +32,7 @@ Auch für diesen Ansatz gilt natürlich, dass man eine verschlüsselte Verbindun
 
 Die folgende Abbildung verdeutlicht nochmals den Ablauf.
 
-![Security Workflow](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/11/angularjs-login-sicherheit-workflow.png)
+![Security Workflow](angularjs-login-sicherheit-workflow.png)
 
 ## Auth-Token in AngularJS
 
@@ -43,7 +43,7 @@ Zunächst bietet uns der [$http](http://docs.angularjs.org/api/ng.$http)-Service
     $http.post("/login", credentials).then(function(response) {
       $httpProvider.defaults.headers.common["X-AUTH-TOKEN"] = response.data.token;
     });
-    
+
 
 Da es sich aber um eine recht übliche Anforderung handelt, bringt $http einen Auth-Token-Mechanismus von Hause aus mit. Dabei muss der Server einfach nur ein Cookie namens `XSRF-TOKEN` ausliefern. AngularJS liest dieses Cookie automatisch aus und setzt den Header `X-XSRF-TOKEN`. Wird das Cookie vom Server oder Client entfernt, setzt AngularJS den Header nicht mehr. Damit ist dieser Teil erledigt.
 
@@ -65,7 +65,7 @@ $http bietet einige Methoden um GET-, POST-, PUT-, DELETE- und HEAD-Requests beq
       else
         // Fehlermeldung anzeigen
     });
-    
+
 
 Nicht schlecht, aber natürlich wollen wir nicht bei jeder Anfrage abfragen, ob der Server mit 401 geantwortet hat. Auch hier bietet uns AngularJS eine Hilfestellung. Wir können beim \$httpProvider einen so genannten **HTTP-Interceptor** anmelden. Ein Interceptor fängt jede Response ab und entscheidet, ob die Response an die aufrufende Funktion weitergeleitet wird oder nicht. Ein Interceptor ist dabei nichts anderes als eine Funktion, die eine Promise übermittelt bekommt. Status-Codes im 200er-Bereich werden dabei als erfolgreiche (**resolved**) Promise übergeben, alle anderen Codes sind nicht-erfolgreich (**rejected**). Auf Basis unserer eignenen Logik können wir darauf reagieren oder sogar die Promise ändern.
 
@@ -84,7 +84,7 @@ Nicht schlecht, aber natürlich wollen wir nicht bei jeder Anfrage abfragen, ob 
       };
     };
     $httpProvider.responseInterceptors.push(interceptor);
-    
+
 
 Man kann mithilfe von HTTP-Interceptoren jede Menge Nettigkeiten einbauen, um innerhalb unserer Anwendung intelligent mit Fehlern umzugehen. Beispielsweise könnten wir bei einem 401 direkt ein Login-Fenster anzeigen und nach getätigtem Login den ursprünglichen Request erneut abschicken (dies wird mit [Angular 1.2](http://www.youtube.com/watch?v=W13qDdJDHp8) und around-interceptors noch einfacher). Ein weiterer Anwendungsfall könnte sich dadurch äußern, dass wir bei einem 404 mithilfe des `Exponential Backoff`-Algorithmus Timeout-Zeiten berechnen und den Request nach Ablauf des jeweiligen Timeouts erneut stellen und im Erfolgsfall die Daten nachladen.
 
@@ -98,7 +98,7 @@ Wenn man mit Routen arbeitet, bietet es sich an, schon vor dem Laden der Route a
         }
       }
     })
-    
+
 
 Antwortet der Server nun mit 401, wird das Event `$routeChangeError` gefeuert, auf das wir nun reagieren können. Da uns mit `nextRoute` die angeforderte Route übergeben wird, können wir uns diese merken und nach getätigtem Login wieder ansteuern.
 
@@ -106,7 +106,7 @@ Antwortet der Server nun mit 401, wird das Event `$routeChangeError` gefeuert, a
       // Zur Login-Seite
       $rootScope.nextRoute = nextRoute; // oder in einem Service speichern
     });
-    
+
 
 ## Datei-Uploads
 

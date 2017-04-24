@@ -17,11 +17,11 @@ Als erstes erzeugt Angular die Komponente. Dann muss das dazugehörige Template 
 
 Zu guter letzt kann es natürlich auch vorkommen, dass eine Komponente wieder entfernt wird. Dies kann beispielsweise durch die Nutzung struktureller Direktiven, wie `ngIf` oder `ngFor`, passieren oder durch den Austausch des Inhalts beim Wechseln der Route.
 
-In Angular kann eine Komponente wieder andere Komponenten nutzen, wodurch eine Abhängigkeit zwischen diesen entsteht. Aus diesem Grund kümmert sich Angular auch um diese. Der oben beschriebene Ablauf gilt natürlich dann auch für alle Kind-Komponenten. Hier können wieder verschiedene Zustände eintreten. Eine Kind-Komponente könnte entfernt oder eingefügt werden. 
+In Angular kann eine Komponente wieder andere Komponenten nutzen, wodurch eine Abhängigkeit zwischen diesen entsteht. Aus diesem Grund kümmert sich Angular auch um diese. Der oben beschriebene Ablauf gilt natürlich dann auch für alle Kind-Komponenten. Hier können wieder verschiedene Zustände eintreten. Eine Kind-Komponente könnte entfernt oder eingefügt werden.
 
 Der passende Name sagt im Grunde schon alles über die Funktion aus: Der Component Lifecycle bildet das ganze Leben einer Komponente ab und gibt uns Zugriff auf ihre wichtigsten Zustände.
 
- ![Lifecycle Hooks Angular from init to destroy](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/139/medium_Copy-of-lifecycle-hooks-init.png?v=63628809011)
+ ![Lifecycle Hooks Angular from init to destroy](medium_Copy-of-lifecycle-hooks-init.png?v=63628809011)
 
 ## Zugriff auf den Life cycle
 
@@ -86,21 +86,21 @@ Keine Angst, falls viele Begrifflichkeiten, wie Projektion, euch noch kein Begri
 Aber jetzt ist erstmal interessant, wie die Nutzung der Hooks im Quellcode aussehen könnte. Dazu basteln wir uns eine kleine Komponente, die den *ngOnInit* Hook nutzt.
 
     import { Component, OnInit } from '@angular/core';
-    
+
     @Component({
       selector: 'name-component',
       template: `<div>{{name}}</div>`
     })
     export class NameComponent implements OnInit {
       @Input name: string;
-      
+
       constructor() {
       	// <name-component [name]="AngularJS"></name-component>
         console.log(this.name); // undefined
       }
-      
+
       ngOnInit() {
-      	// name is defined, if a value is set via 
+      	// name is defined, if a value is set via
         console.log(this.name);
       }
     }
@@ -111,10 +111,10 @@ Alle Interfaces können einfach über ein `import` aus *angular2/core* geladen w
 
 Im folgenden Abschnitt stellen wir euch die Bedeutung und mögliche Nutzung der einzelnen Lifecycle Hooks im Detail vor. Dazu gehen wir sie nach ihrer ersten Ausführung sortiert durch. Dabei sollte beachtet werden, dass beim Erzeugen einer Komponente ihr Konstruktor ausgeführt wird. Zu diesem Zeitpunkt sind die Data-Bindings noch nicht aufgebaut!
 
-<div class="alert alert-danger">Achtung: Im Konstruktor sind bereits gesetzte Werte der Inputs noch nicht verfügbar, da das Data-Binding noch nicht aufgebaut ist!</div> 
+<div class="alert alert-danger">Achtung: Im Konstruktor sind bereits gesetzte Werte der Inputs noch nicht verfügbar, da das Data-Binding noch nicht aufgebaut ist!</div>
 
 
-### ngOnChanges 
+### ngOnChanges
 
 Nachdem Erzeugen der Komponente werden die Data-Bindings aufgebaut. Dadurch können bereits Änderungen der Eingaben vorliegen. Nehmen wir den obige Quellcode, dann wird am Anfang bereits *name* gesetzt. Diese Änderungen werden dann dem *ngOnChanges* mitgeteilt. Der spätere Vorgang zum Überprüfen von Änderungen nennt sich in Angular übrigens Change Detection (im Angular 1 Kontexten als *Dirty Checking* implementiert). Nach jeder Change Detection wird dann der *ngOnChanges* Hook ausgeführt, falls Änderungen vorliegen.
 
@@ -125,18 +125,18 @@ Als Parameter erhält die Funktion ein sogenanntes Änderungsobjekt, dessen Wert
 Nutzen wir das obige Code-Beispiel und wandeln es so ab, dass wir den ngOnChanges Hook nutzen.
 
     import { Component, OnChanges, SimpleChange } from '@angular/core';
-    
+
     @Component({
       selector: 'name-component',
       template: `<div>{{name}}</div>`
     })
     export class NameComponent implements OnChanges {
       @Input name: string;
-      
+
       constructor() {
         console.log(this.name); // undefined
       }
-      
+
       // changes is an object with a list of keys from type string
       // and the values are SimpleChange objects
       ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
@@ -158,7 +158,7 @@ Wollt ihr jedoch einfach nach dem Initialisieren der Inputs einmalig eine Funkti
 
 Wie im letzten Satz des vorherigen Abschnittes beschrieben, greift nach der ersten Ausführung des ngOnChanges Hooks der ngOnInit Hook, um auf das Initialisieren der Inputs zu reagieren.
 
-Hier ist auch der Platz für asynchronen Code, der nach dem Erzeugen der Komponente ausgeführt werden soll. 
+Hier ist auch der Platz für asynchronen Code, der nach dem Erzeugen der Komponente ausgeführt werden soll.
 
 <div class="alert alert-info">Hinweis: Im Konstruktor einer Komponente sollte nur zur Dependency Injection genutzt werden. Alles andere kann in den ngOnInit Hook verschoben werden.</div>
 
@@ -169,7 +169,7 @@ Ein Beispiel dazu habt ihr ja bereits im Abschnitt *Zugriff auf den Lifecycle* g
 
 Im Verlaufe des Artikel ist ab und zu das Wort Change Detection zu lesen. Dabei handelt es sich einfach gesprochen um eine Funktion, die prüft und erkennt, ob sich Eingabewerte der Komponente geändert haben.
 
-Standardmäßig wird der Hook sehr häufig ausgeführt, da er eng mit diesem Change Detection Zyklus der App verknüpft ist. Dabei reagiert eine Angular Anwendung intern auf unterschiedlichste Umstände und Interaktionen, um diesen Vorgang zu starten. Im Normalfall geschieht dies von der obersten Komponente aus bis zu den letzten Kindern (*Top-to-Bottom*). Dabei spielt es keine Rolle, ob die Änderungen in der aktuellen Komponente erfolgt oder in einem ganz anderen Anwendungsteil. Als Beispiel kann bereits ein einfacher Klick eine Aktualisierung aller Komponenten auslösen. 
+Standardmäßig wird der Hook sehr häufig ausgeführt, da er eng mit diesem Change Detection Zyklus der App verknüpft ist. Dabei reagiert eine Angular Anwendung intern auf unterschiedlichste Umstände und Interaktionen, um diesen Vorgang zu starten. Im Normalfall geschieht dies von der obersten Komponente aus bis zu den letzten Kindern (*Top-to-Bottom*). Dabei spielt es keine Rolle, ob die Änderungen in der aktuellen Komponente erfolgt oder in einem ganz anderen Anwendungsteil. Als Beispiel kann bereits ein einfacher Klick eine Aktualisierung aller Komponenten auslösen.
 
 <div class="alert alert-warning">Wichtig: Der ngDoCheck Hook wird immer dann ausgeführt, wenn die Komponente ihre Eingabewerte auf Änderungen prüfen soll. Dies kann je nach aktiver Change Detection Strategie sehr häufig passieren.</div>
 
@@ -178,20 +178,20 @@ Die eigene Change Detection Funktion sollte daher sehr performant implementiert 
 Es folgt wieder ein kleines Beispiel. Ihr solltet damit ein wenig ausprobieren, bis euch klar ist, wann und wie oft dieser Hook ausgeführt wird!
 
     import { Component, DoCheck } from '@angular/core';
-    
+
     @Component({
       selector: 'name-component',
       template: `<div>{{name}}</div>`
     })
     export class NameComponent implements DoCheck {
       @Input name: string;
-      
+
       oldName: string;
-      
+
       constructor() {
         console.log(this.name); // undefined
       }
-      
+
       // is executed everytime Change Detection runs
       ngDoCheck() {
         // check if there is a new value
@@ -200,7 +200,7 @@ Es folgt wieder ein kleines Beispiel. Ihr solltet damit ein wenig ausprobieren, 
           // Maybe do something special
         }
       }
-      
+
     }
 
 
@@ -237,9 +237,9 @@ Der AngularJS Code:
           transclude: true,
           template: '... <ng-transclude></ng-transclude> ...'
         }
-      });  
+      });
 
-In Angular heißt dieses Prinzip nun vielleicht ein wenig passender *Projection*. Dieses hat aber die gleiche Funktion. 
+In Angular heißt dieses Prinzip nun vielleicht ein wenig passender *Projection*. Dieses hat aber die gleiche Funktion.
 
 <div class="alert alert-warning">Wichtig: Im Zusammenhang mit Komponenten/Direktiven steht der Begriff <i>Content</i> für den Inhalt zwischen dem Start- und End-Tag des Selektors.</div>
 
@@ -312,11 +312,11 @@ In den folgenden Grafiken erhaltet ihr noch einmal einen Überblick, wann und in
 
 Als ersten schauen wir uns die ausgeführten Hooks bei der Erzeugung einer Komponente an.
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/140/medium_lifecycle-hooks-init.png?v=63628812859)
+![Bild](medium_lifecycle-hooks-init.png?v=63628812859)
 
 Wenn die Change Detection an einer Komponente nach der Initialisierung angestoßen wird, haben wir den Zugriff auf folgende Hooks innerhalb dieser Komponente.
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/141/medium_lifecycle-hooks-change.png?v=63628812928)
+![Bild](medium_lifecycle-hooks-change.png?v=63628812928)
 
 <div class="alert alert-info">Hinweis: Nach dem Ausführen des ngOnChanges Hooks prüft Angular nochmal auf Änderungen, wodurch ngDoCheck, ngAfterContentChecked und ngAfterViewChecked ein weiteres Mal ausgeführt werden. Falls Angular dabei erneut Änderungen erkennt, erhaltet ihr im Entwicklermodus eine Warnung in der JavaScript-Konsole des Browsers.</div>
 

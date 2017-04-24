@@ -1,6 +1,6 @@
 ---
 title: "Animationen mit ng-animate in AngularJS 1.2"
-description: 
+description:
 author: "Sascha Brink"
 slug: "angularjs-animationen-ng-animate"
 published_at: 2014-02-24 13:38:00.000000Z
@@ -18,12 +18,12 @@ Die Unterstützung für Animationen befindet sich in einer separaten Datei. Der 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-animate.js"></script>
-    
+
 
 Dazu die Modul-Deklaration im JavaScript:
 
     angular.module('myApp', ['ngAnimate'])
-    
+
 
 ## Direktiven und Ereignisse
 
@@ -35,79 +35,79 @@ AngularJS unterstützt Animationen für die folgenden Direktiven:
       <th>
         Direktive
       </th>
-      
+
       <th>
         Unterstützte Animationen
       </th>
     </tr>
   </thead>
-  
+
   <tbody>
     <tr>
       <td>
         <a href="http://docs.angularjs.org/api/ng/directive/ngRepeat#usage_animations" target="_blank">ngRepeat</a>
       </td>
-      
+
       <td>
         enter, leave and move
       </td>
     </tr>
-    
+
     <tr>
       <td>
         <a href="http://docs.angularjs.org/api/ngRoute/directive/ngView#usage_animations" target="_blank">ngView</a>
       </td>
-      
+
       <td>
         enter and leave
       </td>
     </tr>
-    
+
     <tr>
       <td>
         <a href="http://docs.angularjs.org/api/ng/directive/ngInclude#usage_animations" target="_blank">ngInclude</a>
       </td>
-      
+
       <td>
         enter and leave
       </td>
     </tr>
-    
+
     <tr>
       <td>
         <a href="http://docs.angularjs.org/api/ng/directive/ngSwitch#usage_animations" target="_blank">ngSwitch</a>
       </td>
-      
+
       <td>
         enter and leave
       </td>
     </tr>
-    
+
     <tr>
       <td>
         <a href="http://docs.angularjs.org/api/ng/directive/ngIf#usage_animations" target="_blank">ngIf</a>
       </td>
-      
+
       <td>
         enter and leave
       </td>
     </tr>
-    
+
     <tr>
       <td>
         <a href="http://docs.angularjs.org/api/ng/directive/ngClass#usage_animations" target="_blank">ngClass</a>
       </td>
-      
+
       <td>
         add and remove
       </td>
     </tr>
-    
+
     <tr>
       <td>
         <a href="http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations" target="_blank">ngShow & ngHide</a>
       </td>
-      
+
       <td>
         add and remove
       </td>
@@ -126,7 +126,7 @@ Von jeder Direktive können verschiedene Ereignisse animiert werden. Für `ngRep
 Der erste Schritt besteht immer darin, dem Element mit der Direktive eine Klasse zu geben. Dies gilt sowohl für Animation mit CSS3 als auch für Javascript.
 
     <li ng-repeat="item in items" class="list-item">{{item}}</li>
-    
+
 
 Ab jetzt kommt es darauf an, ob ihr CSS oder JavaScript unterstützen wollt.
 
@@ -142,7 +142,7 @@ Beginnen wir mit der einfachen Variante - CSS3-Animationen. Wir animieren im fol
     .list-item.ng-enter-active {
       background-color: white;
     }
-    
+
 
 > [Demo CSS3-Animation als JSFiddle][2]
 
@@ -176,19 +176,19 @@ Grundsätzlicher Aufbau einer Animation mit JavaScript:
             // Die eigentliche Animation wird hier gestartet.
             // done() muss nach Beenden aufgerufen werden
           },
-    
+
           // Animation, die vor Hinzufügen/Entfernen der Klassen
           // ausgeführt werden soll
           beforeAddClass: function(element, className, done) { },
           beforeRemoveClass: function(element, className, done) { },
-    
+
           // Animation, die nach Hinzufügen/Entfernen der Klassen
           // ausgeführt werden soll
           addClass: function(element, className, done) { },
           removeClass: function(element, className, done) { }
         };
       });
-    
+
 
 > [Demo JavaScript-Animation als JSFiddle][4]
 
@@ -199,6 +199,5 @@ Bei JavaScript-Animationen müsst ihr euch selbst um das richtige Timing der Ani
 Seit Version 1.1.5 hat sich die Animations-API noch einmal komplett geändert - zum Besseren. Sobald das 'ngAnimate'-Modul eingebunden wurde, ist die Bedienung kinderleicht. Zudem lassen sich Animationen sehr einfach später nachrüsten.
 
  [2]: http://jsfiddle.net/angularjs_de/7uV6g/
- [3]: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/22/ng-animate-ablauf.svg
+ [3]: ng-animate-ablauf.svg
  [4]: http://jsfiddle.net/angularjs_de/Lgngx/
- 

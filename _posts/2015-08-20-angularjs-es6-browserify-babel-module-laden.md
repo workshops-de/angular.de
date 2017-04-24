@@ -1,6 +1,6 @@
 ---
 title: "ES6 mit Browserify und Babel in AngularJS"
-description: 
+description:
 author: "Robin Böhm"
 slug: "angularjs-es6-browserify-babel-module-laden"
 published_at: 2015-08-20 08:58:00.000000Z
@@ -24,7 +24,7 @@ Klassisch müsst ihr all eure Skripte in die *index.html* einzubinden, damit Con
     <!-- index.html -->
     <script src="components/BookData/services/book-data.module.js"></script>
     <script src="components/BookData/services/book-data.service.js"></script>
-    
+
     <script src="src/app.js"></script>
 
 Der JavaScript-Code sollte bei ungefähr so aussehen:
@@ -38,9 +38,9 @@ Der JavaScript-Code sollte bei ungefähr so aussehen:
     // book-data.service.js
     angular.module('myApp.bookData').service('BookData', ...)
 
-Somit müsst Ihr an mehreren Stellen das Modul eintragen, um es nutzen zu können. Richtig problematisch wird es aber erst, wenn Ihr ein Modul umbenennen wollt. Ist es dann noch ein Modul mit Kernfunktionalitäten, das Ihr in verschiedenen Modulen referenziert, müsst Ihr es überall umbenennen. 
+Somit müsst Ihr an mehreren Stellen das Modul eintragen, um es nutzen zu können. Richtig problematisch wird es aber erst, wenn Ihr ein Modul umbenennen wollt. Ist es dann noch ein Modul mit Kernfunktionalitäten, das Ihr in verschiedenen Modulen referenziert, müsst Ihr es überall umbenennen.
 
-Habt Ihr die ganzen Sourcen in einem einzigen Paket geht das noch mit *Suchen und Ersetzen*. Habt Ihr aber ggfs ein öffentliches Modul oder semi-öffentlich im eigenen Unternehmen, welches in verschiedenen Projekten verteilt ist, wird der Prozess schon deutlich schwerer! 
+Habt Ihr die ganzen Sourcen in einem einzigen Paket geht das noch mit *Suchen und Ersetzen*. Habt Ihr aber ggfs ein öffentliches Modul oder semi-öffentlich im eigenen Unternehmen, welches in verschiedenen Projekten verteilt ist, wird der Prozess schon deutlich schwerer!
 
 Um dieses Problem zu vereinfachen hilft euch hierbei Browserify und eine Konvention!
 
@@ -51,7 +51,7 @@ Das Ganze sieht so aus:
 
     // app.js
     angular.module('myApp', [require('../components/bookData/book-data.module')])
-    
+
 Fällt euch etwas auf? Richtig! Wir müssen hierbei nichtmehr auf den Modulnamen achten. Aber wie ist das möglich? - Schauen wir uns die Definition dieser Datei an!
 
     // book-data.module.js
@@ -59,8 +59,8 @@ Fällt euch etwas auf? Richtig! Wir müssen hierbei nichtmehr auf den Modulnamen
       .service('BookData', require('./book-data.service'));
 
     export 'myApp.bookData';
-    
-Was passiert hier also genau? Wenn wir die Datei anfragen, wird diese geladen und ihr Code ausgeführt. Somit registrieren wir das neue Modul inklusive dem Service über die globale Variable `angular.module()`. Über den Befehl `export` geben wir den Rückgabewert an, den wir erhalten wenn wir das Modul per `require(''../components/bookData/bookData.module')` einbinden. Diesen Wert legen wir dann direkt in das Dependency-Array und können uns somit die lästige Umbenennung an verschiedenen Orten sparen! Eine echte Erleichterung für Wartung und Refactoring! 
+
+Was passiert hier also genau? Wenn wir die Datei anfragen, wird diese geladen und ihr Code ausgeführt. Somit registrieren wir das neue Modul inklusive dem Service über die globale Variable `angular.module()`. Über den Befehl `export` geben wir den Rückgabewert an, den wir erhalten wenn wir das Modul per `require(''../components/bookData/bookData.module')` einbinden. Diesen Wert legen wir dann direkt in das Dependency-Array und können uns somit die lästige Umbenennung an verschiedenen Orten sparen! Eine echte Erleichterung für Wartung und Refactoring!
 
 ## index.js oder package.json
 
@@ -71,9 +71,9 @@ Ihr könnt eure `bookData.module.js` in `index.js`umbenennen. Der Module-Loader 
     // app.js
     angular.module('myApp', [require('../components/bookData')])
 
-Dies erspart uns wieder ein wenig Schreibarbeit. Diese Schreibweise bringt allerdings auch einen Nachteil: Wenn Ihr euch gerne in euer IDE mit *Navigate-To-File* Funktionen bewegt bekommt Ihr sehr schnell folgende Ansicht: 
+Dies erspart uns wieder ein wenig Schreibarbeit. Diese Schreibweise bringt allerdings auch einen Nachteil: Wenn Ihr euch gerne in euer IDE mit *Navigate-To-File* Funktionen bewegt bekommt Ihr sehr schnell folgende Ansicht:
 
-![IDE-Index-js-navigate-to-file.png](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/79/IDE-Index-js-navigate-to-file-small.png)
+![IDE-Index-js-navigate-to-file.png](IDE-Index-js-navigate-to-file-small.png)
 
 Die zweite Alternative ist, eine eigene `package.json` für die Komponente anzulegen. Der wichtige Parameter für das Laden unseres Modules ist hierbei: `main`.
 
@@ -97,7 +97,7 @@ Die AngularJS-Pakete sind selber auch auf diese Möglichkeit optimiert. Somit k�
 
     // CMD
     $ npm install angular-animate angular-aria angular-route --save
-    
+
 Da diese Module nun in unserem *node_modules* Ordner liegen(sofern nicht anders konfiguriert), können wir diese direkt referenzieren.
 
     angular.module('myApp', [
@@ -114,7 +114,7 @@ Schauen wir uns an, was wir in Kombination mit Babel noch weiter erreichen könn
 Natürlich wollen wir uns langsam mit dem neuen JavaScript Sprachstandart ECMAScript 6 in Verbindung mit AngularJS beschäftigen. Dazu können wir z.B. den Transpiler [BabelJS](https://babeljs.io/) benutzen. Hierzu installieren wir uns zuerst das Paket `babelify`.
 
     $ npm install babelify --save
-    
+
 Weiter müssen wir in unseren Browserify Bundle-Prozess diesen Schritt als Transformation einfügen.
 
     browserify(bundleConfig).transform(babel);
@@ -132,13 +132,13 @@ Nun können wir die neuen ES6 Features benutzen wie z.B. `import` und können un
       .service('BookData', BookDataService);
 
     export default 'book-data';
-    
+
 Unserer BookData-Service:
 
     export default function ($http) {
-    
+
       const baseUrl = 'http://ajs-workshop.herokuapp.com/api/books/';
-    
+
       this.getAll = function () {
         return $http.get(baseUrl)
           .then(response => response.data);
@@ -166,11 +166,11 @@ Unsere app.js:
     import RouteConfig from './configs/route.config'
 
     angular.module('myApp', [
-    
+
       // 3rd party || angular libs
       angularRoute,
       angularAria,
-    
+
       // my libs
       BookDataModule,
       BookListModule,
@@ -181,4 +181,4 @@ Unsere app.js:
 
 # Fazit
 
-Alles in allem können wir uns mit diesem Aufbau eine Menge an Schreibarbeit durch das manuelle Einbinden von Skript-Tags, aber auch Modul-Abhängigkeiten sparen. In Verbindung mit Babel sind wir dazu noch ein Stück weiter an Angular2 und können unsere Module für spätere Portierungen vorbereiten. Dazu werde ich in einem weiteren Artikel mehr schreiben. Die Erleichterung der Modul-Einbindung ist eine kleine aber im Entwickler-Alltag sehr angenehme Erweiterung. 
+Alles in allem können wir uns mit diesem Aufbau eine Menge an Schreibarbeit durch das manuelle Einbinden von Skript-Tags, aber auch Modul-Abhängigkeiten sparen. In Verbindung mit Babel sind wir dazu noch ein Stück weiter an Angular2 und können unsere Module für spätere Portierungen vorbereiten. Dazu werde ich in einem weiteren Artikel mehr schreiben. Die Erleichterung der Modul-Einbindung ist eine kleine aber im Entwickler-Alltag sehr angenehme Erweiterung.

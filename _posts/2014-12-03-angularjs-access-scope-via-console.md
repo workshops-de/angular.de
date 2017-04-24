@@ -1,6 +1,6 @@
 ---
 title: "Angular in der Browser Konsole Teil 2 - Scopes"
-description: 
+description:
 author: "Tilman Potthof"
 slug: "angularjs-access-scope-via-console"
 published_at: 2014-12-03 07:57:00.000000Z
@@ -26,7 +26,7 @@ Hier noch mal die Übersicht:
 * Eine Angular Anwendung zum experimentieren
    * [Angular TodoMVC](http://programmingisart.com/todomvc-angularjs/#/)
    * Irgendeine andere Angular Anwendung
-  
+
 ## Zugriff auf Scopes
 
 Scope-Objekte in Angular sind dazu da, um Variablen für das Template-Rendering bereitzuhalten.
@@ -36,14 +36,14 @@ Daher kann man auf die verschiedenen Scopes über die Elemente zugreifen.
 Zuerst müssen wir ein Element zum Analysieren aussuchen.
 Dazu muss man nur einen Kontext-Klick auf das Todo-Eingabefeld machen und die Option "Element untersuchen" auswählen.
 
-![TodoMVC](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/53/todomvc-inspect-element.png)
+![TodoMVC](todomvc-inspect-element.png)
 
 Jetzt können wir die aktuellen Elemente auf der Seite sehen.
 Der Body-Tag hat das `ng-app` Attribut und eine Klasse `ng-scope`. Jedes Element, das einen eigenen Scope hat, erhält auch die CSS-Klasse `ng-scope`, um das Debuggen zu vereinfachen.
 Die einzige Ausnahme sind direkte Kind-Elemente eines `ng-view` Elements.
 Im Beispiel teilt sich sowohl das Section- als auch das Footer-Element einen Scope mit dem `ng-view` Element, aber alle haben die `ng-scope` Klasse.
 
-![Chrome Element Ansicht](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/54/todomvc-html-structure.png)
+![Chrome Element Ansicht](todomvc-html-structure.png)
 
 Wie man sehen kann, hat das Section-Element die ID `todoapp`, mit der wir es auswählen können.
 Häufig nimmt man dafür jQuery, und viele Angular Anwendungen werden zusammen mit jQuery verwendet, allerdings funktioniert Angular auch ohne jQuery.
@@ -70,10 +70,10 @@ Das Ganze noch mal als Einzeiler.
 ### Die $0 Variable
 
 Die Chrome [Command Line API](https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference) bietet einen weiteren sehr einfachen Weg an, auf Elemente zuzugreifen.
-Durch die Variable `$0` erhält man Zugriff auf das Element, das man in der Element-Anzeige gerade ausgewählt hat. 
+Durch die Variable `$0` erhält man Zugriff auf das Element, das man in der Element-Anzeige gerade ausgewählt hat.
 Um den dazugehörigen Scope zu laden kann man `angular.element($0).scope()` ähnlich zu den Beispielen oben verwenden.
 
- ![Der $0 Trick in der Konsole](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/52/chrome-dev-tools-dollar-zero-trick.png)
+ ![Der $0 Trick in der Konsole](chrome-dev-tools-dollar-zero-trick.png)
 
 ## Scope Attribute
 
@@ -81,7 +81,7 @@ Das so erhaltene Scope-Objekt kann jetzt analysiert und manipuliert werden.
 Man kann es einfach in der Browser Konsole ausgeben und sich die innere Struktur genauer anschauen.
 Dabei findet man die Todo-Liste, die wir schon im letzten Artikel manipuliert haben, als `$scope.todos`.
 
-![Scope Attributes](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/55/todomvc-scope-introspection.png)
+![Scope Attributes](todomvc-scope-introspection.png)
 
 ## Scope Attribute mit $ und $$
 
@@ -98,7 +98,7 @@ Auch wenn man diese privaten Attribute nicht für seine Anwendungen verwenden so
 Ein schönes Beispiel ist das `$$watchers` Array, das Informationen über überwachte Expressions und Funktionen speichert.
 Die einzelnen Watcher werden entweder von der `$scope.$watch` Methode (ebenfalls `$scope.$watchCollection` seit 1.2.x) erzeugt oder von Template Expressions.
 
-![Scope Watchers](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/56/scope-watchers.png)
+![Scope Watchers](scope-watchers.png)
 
 Man kann einfach überprüfen, wie die Watcher von Angular verwendet werden, indem man einen Watcher hinzufügt und danach die Länge des Watcher-Arrays überprüft.
 
@@ -164,14 +164,14 @@ Die Änderung hat wieder außerhalb des `$digest()` Aktualisierungszyklus stattg
 
 Damit erreichen wir dann die gewünschte Aktualisierung der Anzeige.
 
-![Aktualisiertes Eingabefeld](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/57/todomvc-new-todo.png)
+![Aktualisiertes Eingabefeld](todomvc-new-todo.png)
 
 Wir können über den Scope ebenfalls den neuen Todo-Eintrag der Liste hinzufügen.
 
 	$scope.addTodo();
 	$scope.$apply();
 
-![Hinzugefügtes Todo](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/58/todomvc-added-todo.png)
+![Hinzugefügtes Todo](todomvc-added-todo.png)
 
 
 ### Anmerkung zu `$apply`
@@ -198,7 +198,7 @@ Welche Scopes noch auf der Seite vorhanden sind, kann man mit folgender Funktion
 Wenn man alle Todos löscht und die Seite neu lädt, dann sollte `scopeIds()` folgende IDs ausgeben.
 
      ["001", "002", "002", "002"]
-     
+
 Zum einen hat man den Root-Scope (`"001"`) und den Scope, der von `ng-view` erzeugt wird (`"002"`), wobei dieser auch noch für die Kind-Elemente (`section#todoapp`, `footer#info`) auftaucht.
 Wenn man jetzt ein Todo hinzufügt, dann erzeugt `ng-repeat` einen weiteren Scope (`"003"`).
 
@@ -211,6 +211,6 @@ Anschließend wählen wir den Todo-Filter *Active* aus und erhalten eine andere 
 ## Fazit
 
 Scopes sind ein Herzstück von Angular und zum Debuggen und Analysieren praktischerweise komplett zugreifbar.
-Allerdings eröffnen diese Techniken auch vielfältige Möglichkeiten, um echte Anwendungen zu manipulieren oder einfach nur schwer nachvollziehbaren Code zu schreiben. 
+Allerdings eröffnen diese Techniken auch vielfältige Möglichkeiten, um echte Anwendungen zu manipulieren oder einfach nur schwer nachvollziehbaren Code zu schreiben.
 
-Falls für euch noch Fragen offengeblieben sind, oder Ihr coole Ideen habt, was man mit Scopes noch für Experimente machen kann, wir freuen uns über jeden Kommentar. 
+Falls für euch noch Fragen offengeblieben sind, oder Ihr coole Ideen habt, was man mit Scopes noch für Experimente machen kann, wir freuen uns über jeden Kommentar.

@@ -1,6 +1,6 @@
 ---
 title: "SlideCaptain - Entwicklung einer AngularJS-App"
-description: 
+description:
 author: "Gerd Jungbluth"
 slug: "angularjs-case-study-slidecaptain"
 published_at: 2013-09-29 17:00:40.000000Z
@@ -69,7 +69,7 @@ Eine SlideCaptain Präsentation besteht - neben ein paar Meta-Informationen - au
         "font": 4
       }
     }
-    
+
 
 ### Server (Node.js / MongoDB)
 
@@ -97,7 +97,7 @@ Gerne greifen wir natürlich auf externe Module zurück, als da wären:
 
 *   [AngularUI][7] ('ui'): nützliche UI Helferlein
 *   [UI Bootstrap][8] ('ui.bootstrap'): da wir das Layout ohnehin mit [Bootstrap][9] machen
-*   [ui.ace][10] ('ui.ace'): die Userin kann beliebigen Code auf einer Seite präsentieren. Um das Einfügen / Editieren möglichst simpel zu machen, nutzen wir an der Stelle [Ace][11] 
+*   [ui.ace][10] ('ui.ace'): die Userin kann beliebigen Code auf einer Seite präsentieren. Um das Einfügen / Editieren möglichst simpel zu machen, nutzen wir an der Stelle [Ace][11]
 *   [ui.sortable][12]: zum Sortieren der Kapitel und Seiten per Drag and Drop
 *   [angular-translate][13] ('ngTranslate'): SlideCaptain wird weltweit genutzt, daher möchten wir selbstverständlich auch Versionen in mehreren Spachen anbieten (derzeit fünf). Eine Einführung in das Modul gibt's unter [I18n in AngularJS Anwendungen einfach gemacht][14].
 *   Darüber hinaus binden wir noch verschiedene JavaScript-Bibliotheken ein, die nichts mit AngularJS zu tun haben. (z.B. [Lo-Dash][15], [Moment.js][17], [MathJax][18])
@@ -146,7 +146,7 @@ Seit Kurzem gibt es einen sehr schönen Blog-Artikel zu [10 Reasons Why You Shou
 Trotz (oder vielleicht gerade wegen) der vielen Möglichkeiten, die AngularJS von Haus aus mitbringt, bleibt es natürlich nicht aus, dass manches auf Anhieb nicht so klappt, wie wir uns das gewünscht hätten.
 
 *   Weil wir - um flexibel auf unsere eigenen Ideen und die unserer User reagieren zu können - in sehr kurzen Iterationen entwickeln, fehlt manchmal der Blick auf das große Ganze (die 'Architektur').
-*   Besonders folgende Punkte mussten wir mit dem Wachsen von SlideCaptain immer mal wieder neu überdenken: 
+*   Besonders folgende Punkte mussten wir mit dem Wachsen von SlideCaptain immer mal wieder neu überdenken:
     *   verschachtelte `$scope`s (z.B. Welche Direktive und welcher Controller hat wie Zugriff auf die Modell-Objekte?)
     *   Event Handling (z.B. Wie erfahren die einzelnen Komponenten, wo sich was geändert hat?)
     *   Kommunikation zwischen Direktiven (z.B. Wie teilt die 'sc-toolbar'-Direktive der 'sc-wysiwygeditor'-Direktive mit, welchen Button der User geklickt hat?).
@@ -172,8 +172,8 @@ Wir sind davon überzeugt (und erzählen das auch gerne jedem, der es hören mö
  [2]: http://nodejs.org
  [3]: https://www.mongodb.com/
  [4]: http://angularjs.org/
- [5]: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/18/angularjs-case-study-slidecaptatin-dashboard.png
- [6]: https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/19/angularjs-case-study-slidecaptatin-workspace.png
+ [5]: angularjs-case-study-slidecaptatin-dashboard.png
+ [6]: angularjs-case-study-slidecaptatin-workspace.png
  [7]: http://angular-ui.github.io/
  [8]: http://angular-ui.github.io/bootstrap/
  [9]: http://getbootstrap.com/

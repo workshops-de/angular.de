@@ -52,7 +52,7 @@ Alle Quelltexte findet ihr auf [GitHub](https://github.com/angularjs-de/ionic-tu
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
                  alt="Teilnehmer in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -120,7 +120,7 @@ wird ein lokaler Dateiserver gestartet, sodass die Anwendung ohne Einschränkung
 
     ionic serve --lab
 
-![Beispiel eines ionic serve --lab](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/98/02-ionic-serve-lab.png)
+![Beispiel eines ionic serve --lab](02-ionic-serve-lab.png)
 
 **Web-App**
 
@@ -545,7 +545,7 @@ Erinnern wir uns kurz an den letzten Stand unserer Pizza-App. Wir haben zwar ein
         </ion-content>
     </ion-view>
 
-![Ionic Tutorial Simple List](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/147/medium_ionic-list.png?v=63629398881)
+![Ionic Tutorial Simple List](medium_ionic-list.png?v=63629398881)
 
 Aus meiner Erfahrung als Ionic-Entwickler weiß ich, dass Listeneinträge oft gruppiert ausgegeben werden soll, beispielsweise wie ein Kontaktliste nach Buchstaben getrennt oder wie in einem Kalendar nach Zeit/Datum. Auch für solche Trenner bietet Ionic eine einfache Lösung. Durch die zusätzliche CSS-Klasse *item-divider* wird ein Listeneintrag zum Trenner.
 
@@ -708,7 +708,7 @@ Als kleine Übung bauen wir unsere Startseite der Pizza-App so um, dass die Pizz
 	        }
 	    ]);
 
- ![Ionic Tutorial Loading Layer](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/148/medium_ionic-loading.png?v=63629399654)
+ ![Ionic Tutorial Loading Layer](medium_ionic-loading.png?v=63629399654)
 
 Für unsere Beispiel-App ist der Lade-Layer ein wenig unpraktikabel, da der Nutzer sich ja trotzdem frei in der Anwendung bewegen können soll. Aus diesem Grund nutzen wir nun den **ionSpinner**. Während des Ladevorgangs setzen wir eine Scope-Variable als Indikator, um den Spinner über *ngIf* oder *ngShow* ein- und vor allem wieder auszublenden.
 
@@ -765,7 +765,7 @@ Im Template richten wir den Spinner noch zentriert aus und blenden den Listeninh
 	    </ion-content>
 	</ion-view>
 
-![Ionic Tutorial Loading Spinner](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/149/medium_ionic-loading-spinner.png?v=63629399832)
+![Ionic Tutorial Loading Spinner](medium_ionic-loading-spinner.png?v=63629399832)
 
 Standardmäßig bestimmt Ionic die passende Ladeanimation. Darüber hinaus könnt ihr aber mit Hilfe einer CSS-Klasse eine eigene Ladeanimation als SVG erstellen oder einfach eine der vordefinierten [Spinner-Klassen](http://ionicframework.com/docs/api/directive/ionSpinner/) nutzen.
 
@@ -869,11 +869,11 @@ Mit sogenannten Karten (engl. Cards) bietet Ionic eine gute Möglichkeit Listene
 
 Der Aufbau ist dem einer Liste sehr ähnlich. Ein Elternelement - meist ein div-Tag - bekommt die CSS-Klasse *card* und das Kindelement - oft auch ein div- oder a-Tag - erhält die bereits bekannte *item*-Klasse. Darüber hinaus können auch alle weiteren "item"-Klassen genutzt werden, um das Layout anzupassen, z.B. *item-divider*, *item-avatar*, *item-icon-left|right*, ...
 
-![Ionic Tutorial Cards](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/145/medium_ionic-cards.png?v=63629390074)
+![Ionic Tutorial Cards](medium_ionic-cards.png?v=63629390074)
 
 Als kleines Praxisbeispiel erhält unsere App eine Detail-View für die Pizzen, die beim Klick auf einen Angebotseintrag angezeigt wird.
 
-![Ionic Tutorial Cards Pizza](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/144/medium_ionic-card-final.png?v=63629390026)
+![Ionic Tutorial Cards Pizza](medium_ionic-card-final.png?v=63629390026)
 
 Das dazugehörige Template sieht dann so aus.
 
@@ -945,7 +945,7 @@ Link zum [Quellcode](https://github.com/angularjs-de/ionic-pizza-service/tree/ma
 
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>

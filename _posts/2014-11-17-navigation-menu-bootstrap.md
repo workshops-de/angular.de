@@ -1,6 +1,6 @@
 ---
 title: "Generierte Navigation mit AngularJS und Bootstrap"
-description: 
+description:
 author: "Tilman Potthof"
 slug: "navigation-menu-bootstrap"
 published_at: 2014-11-17 11:52:00.000000Z
@@ -12,7 +12,7 @@ header_image: "/artikel/header_images/navigation-menu-bootstrap.jpg"
 Wenn man mit AngularJS Single-page-Webanwendungen entwickelt und gleichzeitig Wert auf benutzerfreundliche URLs legt, dann kommt man am `ngRoute` Modul nicht vorbei.
 In diesem Artikel möchte ich euch zeigen, wie ihr eine Navigations-Direktive mit dem `$route` Service und Bootstrap bauen könnt, die automatisch durch die Definition der Routen erzeugt wird.
 
-![AngularJS Navigation mit $route und Bootstrap](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/51/route-navigation.png)
+![AngularJS Navigation mit $route und Bootstrap](route-navigation.png)
 
 ## Definition der Routen
 
@@ -44,7 +44,7 @@ Besonders wichtig ist hier die `ng-view`-Direktive in der *index.html* Seite, di
 	  </div>
 	</body>
 	...
-	
+
 	<!-- dashboard.html -->
 	<div>
 	  <h2>Dashboard</h2>
@@ -137,7 +137,7 @@ Damit haben wir die Möglichkeit nur die Routen mit konfigurierten Namen zu verw
 	      });
 	    }
 	  });
-	  
+
 Als Ergebnis erhalten wir folgende Liste:
 
 	  [
@@ -236,7 +236,7 @@ Wenn man jetzt eine neue Unterseite hinzufügen möchte, dann reicht es aus sie 
 	})
 	...
 
-## Plunker Beispiel 
+## Plunker Beispiel
 
 Fertig zusammengefügt sieht das Beispiel wie folgt aus.
 
@@ -248,4 +248,3 @@ Wir haben über eigene Attribute Namen für die Navigation hinterlegt, die wir d
 Diese Namen lassen sich über den `$route` Service auslesen.
 Daraus haben wir wiederum eine `navigation` Direktive erstellt, die automatisch alle mit einem Namen konfigurierten Routes anzeigt.
 
- 

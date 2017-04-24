@@ -19,7 +19,7 @@ Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadu
                 Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und auch Spaß machen. Wir bieten euch auch
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
                     und TypeScript Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
-            </p>                
+            </p>
             <p class="">
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
                     <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
@@ -29,7 +29,7 @@ Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadu
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
                  alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -44,22 +44,22 @@ Was genau bedeuted eigentlich *asynchron* und *synchron*. Vielleicht habt ihr se
 Synchronität zeichnet sich in der Programmierung oft dadurch aus, dass ihr das Ergebnis eines Funktionsaufrufs direkt einer Variablen zuweisen könnt, welche dann den entsprechenden Rückgabewert beinhaltet.
 
     var count = 2; // count is 2
-    
+
     function sum(a, b) {
       return a + b;
     }
     var result = sum(1, 2); // result = 3
-    
+
 Bei Asynchronität steht das Ergebnis erst nach einer unbestimmbaren Zeit oder erst zu einem bestimmten Zeitpunkt in der Zukunft fest. Erweitern wir das obige Beispiel und starten die Berechnung einer Summe zu einem späteren Zeitpunkt.
 
     var result = 0;
-    
+
     setTimeout(function () {
       result = sum(1, 2);
     }, 2000);
-    
+
     alert(result);
-    
+
 Führen wir dieses Code-Beispiel aus, erscheint im Browser eine Hinweisbox mit dem Inhalt `0`. Die Funktion `setTimeout` startet einen asynchronen Kontext, da die Ausführung und somit das Ergebnis der Funktion erst nach mindestens zwei Sekunden feststeht. Der restliche Code wird normal (synchron) ausgeführt.
 
 Asynchron bedeuetet daher auch nicht blockierend, sonst würde zwei Sekunden lang nichts passieren und danach die Hinweisbox mit dem Wert `3` erscheinen.
@@ -82,7 +82,7 @@ Wie wir schon ausführlich in userem [AngularJS-Buch im Kapitel Promises](https:
 - umständliche Fehlerbehandlung, -korrektur (try-catch funktioniert nicht!)
 - Vermischung von Verantwortlichkeiten
 
-Aus dem Kapitel können wir auch entnehmen, dass Promises dafür eine geeignete Lösung darstellt. 
+Aus dem Kapitel können wir auch entnehmen, dass Promises dafür eine geeignete Lösung darstellt.
 
 Promises sind auch in Angular vorhanden. Programmiert ihr mit TypeScript, könnt bereits die ES2015 Promises verwenden. Diese werden einfach durch den Aufruf von `new Promise()` erstellt.
 
@@ -118,7 +118,7 @@ Im folgenden werden die einzelnen Abschnitte und Funktionen des nachstehenden Qu
 
     // import observable from the reactivex lib
     import {Observable} from 'rxjs/Observable';
-    
+
     // create an oberservable
     const source = Observable.create((observer) => {
       // random async operation
@@ -133,14 +133,14 @@ Im folgenden werden die einzelnen Abschnitte und Funktionen des nachstehenden Qu
         // no other "next"-call --> complete
         observer.complete();
       });
-      
+
       // optional clean up function
       return () => {
         // is called on unsubcription
         deregister();
       };
     });
-    
+
     // listen on observable
     source.subscribe((data) => {
       // success
@@ -149,22 +149,22 @@ Im folgenden werden die einzelnen Abschnitte und Funktionen des nachstehenden Qu
     }, () => {
       // complete
     });
-    
+
     // source.unsubscribe();
-    
+
 **Observable erzeugen**
 
 Als Ausgangspunkt benötigen wir ein Observable mit dem wir weiter arbeiten können. Dazu existiert in der `rxjs`-Bibliothek ein extra Modul mit dem Namen *Observable*. Dieses exportiert wiederum die Basis-Klasse `Observable`.
 
     import {Observable} from 'rxjs/Observable';
-    
+
 Auf dem `Observable` Objekt existiert die `create`-Funktion. Sie erlaubt uns ein neues Observable-Objekt zu erzeugen und erwartet eine Callback-Funktion, die einen *Observer* als Parameter erhält. Als Rückgabewert kann eine Funktion angegeben werden.
 
     const source = Observable.create((observer) => {
       // optional clean up function
       return () => {};
     });
-    
+
 Glücklicherweise müsst ihr euch in den meisten Anwendungsfälle nicht selbst um die Erzeugung eines Observables kümmern. Dazu gibts es verschiedene Hilfsfunktion oder ein externer Programmteil liefert euch direkt ein Observable. Als Beispiel ist der Rückgabewert eines Http-Requests bereits ein Observable.
 
 Über folgende Funktionen könnt ihr euch ein Observalbe erzeugen lassen.
@@ -172,7 +172,7 @@ Glücklicherweise müsst ihr euch in den meisten Anwendungsfälle nicht selbst u
 - **Observalbe.of**(value1 [, value2, ...]) - erzeugt aus einer Reihe von Werten ein Observable
 - **Observable.from**(promise | iterable | observable) - wandelt, z.b. ein Promise in ein Observable um
 - **Observable.fromEvent**(eventEmitter, eventName [, selectorFn]) - wandelt ein Event in ein Observable um, `eventEmitter` kann, z.B. ein DOM-, Angular-Element, EventEmitter, ... sein
-    
+
 <div class="alert alert-warning"><b>Wichtig:</b> In den meisten Fällen müsst ihr euch nicht selbst um die Erstellung eines Observables kümmern!</div>
 
 **Arbeiten mit dem Observer**
@@ -201,7 +201,7 @@ Daraus ergibts sich dann folgender, vereinfachter Observable-Code.
 
 **Subscribe und Unsubscribe**
 
-Damit uns der Observer überhaupt mitteilen kann, dass Änderungen vorliegen, müssen wir uns am Observable dazu anmelden. Die passende Funktion dazu heißt `subscribe` und kann auf der Observer-Instanz aufgerufen werden. Als Parameter können drei Funktionen für 
+Damit uns der Observer überhaupt mitteilen kann, dass Änderungen vorliegen, müssen wir uns am Observable dazu anmelden. Die passende Funktion dazu heißt `subscribe` und kann auf der Observer-Instanz aufgerufen werden. Als Parameter können drei Funktionen für
 
 1. den Erfolgsfall - erhält die Daten
 2. den Fehlerfall - erhält Informationen über den Fehler bzw. das Fehlerobjekt
@@ -222,7 +222,7 @@ Möchte man nicht mehr auf Änderungen reagieren, können wir uns vom Observable
 
     source.unsubscribe();
 
-<div class="alert alert-info"><b>Hinweis:</b> Ihr könnt euch jederzeit von einem Observable abmelden und wieder anmelden.</div>    
+<div class="alert alert-info"><b>Hinweis:</b> Ihr könnt euch jederzeit von einem Observable abmelden und wieder anmelden.</div>
 
 **Weitere Funktionen und Operatoren**
 
@@ -232,11 +232,11 @@ Um beispielsweise die `of` oder `from` Funktionen zur Verfügung zu haben, müss
 
     import 'rxjs/add/observable/of';
     import 'rxjs/add/observable/from';
-    
+
 Das gleiche Spiel müsst ihr bei der Nutzung von Operatoren betreiben.
 
     import 'rxjs/add/operator/map';
- 
+
 <div class="alert alert-warning"><b>Wichtig:</b> Zusätzliche Funktionen und Operatoren müssen extra importiert werden.</div>
 
 Darüberhinaus gibt es eine Vielzahl von Operatoren, wie z.B. *zip* - Zusammenführen von Observables, *flatMap* - transformiert Werte eines Observables zu einem neuen Observable oder *map* - Transformationsfunktion für jeden Wert des Observables.
@@ -266,16 +266,16 @@ Es folgen noch ein paar kleine Anwendungsfälle in Angular Apps. Vielleicht habt
 Der Http-Servie in Angular arbeitet mit Observables.
 
     import {Http} from '@angular/http';
-    
+
     ...
-    
+
     // returns an observable
     return this.http.get(XXX);
     ...
-    
+
 Mehr Informationen, wie ihr Http-Requests senden könnt, folgt in einem späteren Artikel von uns.
 
-**Reagieren auf Benutzereingaben**    
+**Reagieren auf Benutzereingaben**
 
 Nehmen wir an, wir wollen eine Suche realisieren. Dabei gelten folgende Bedingungen:
 
@@ -338,10 +338,10 @@ Wir hoffen, dass wir euch die Angst vor dem Arbeiten mit asynchronen Programmtei
                     <button class="btn btn-danger">Jetzt weiter lernen</button>
                 </a>
             </p>
-        
+
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>

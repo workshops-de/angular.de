@@ -8,12 +8,12 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/ionic-framework-new-slider.jpg"
 ---
 
-Immer wieder gab es [Probleme] mit der bisherigen Slidebox-Komponente des hybriden Frameworks zur Erstellung von mobilen Apps auf Basis von AngularJS. 
+Immer wieder gab es [Probleme] mit der bisherigen Slidebox-Komponente des hybriden Frameworks zur Erstellung von mobilen Apps auf Basis von AngularJS.
 Von inkorrekter Darstellung bis zerstörten Funktionalität war alles dabei. Nun hat das Team rund um [Ionic] reagiert und bietet nun einen alternativen Slider an.
 
-Ab jetzt kann auch der solide, hoch funktionelle und sehr stark konfigurierbare Slider [Swiper] von [iDangero.us] genutzt werden. Dazu bietet Ionic zwei neue Direktiven an, um Swiper zu initialisieren und und Slides hinzuzufügen.  
+Ab jetzt kann auch der solide, hoch funktionelle und sehr stark konfigurierbare Slider [Swiper] von [iDangero.us] genutzt werden. Dazu bietet Ionic zwei neue Direktiven an, um Swiper zu initialisieren und und Slides hinzuzufügen.
 
-![Ionic Slider Box](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/89/ionic-slider-box.gif)
+![Ionic Slider Box](ionic-slider-box.gif)
 
 ## Nutzung
 
@@ -22,7 +22,7 @@ Das Erstellen des Sliders erfolgt über die ionSlides-Komponente.
     <ion-slides options="options" slider="slider">
     </ion-slides>
 
-Dabei kann diese über ein Objekt (*options*) konfiguriert und der erstellte Slider mit einer Scope-Variable (*slider*) verknüpft werden. Das Options-Objekt kann dabei alle verfügbaren Einstellungen des Sliders entgegen. Unter anderem können Standardwerte, wie Höhe und Breite gesetzt werden oder ob die Slides automatisch durchlaufen und wenn wie schnell. 
+Dabei kann diese über ein Objekt (*options*) konfiguriert und der erstellte Slider mit einer Scope-Variable (*slider*) verknüpft werden. Das Options-Objekt kann dabei alle verfügbaren Einstellungen des Sliders entgegen. Unter anderem können Standardwerte, wie Höhe und Breite gesetzt werden oder ob die Slides automatisch durchlaufen und wenn wie schnell.
 
 __Besonderheiten__
 
@@ -68,4 +68,3 @@ Es geht voran! Mit dem Release der Version 1.2 macht das Framework einen riesen 
    [iDangero.us]: <http://www.idangero.us/>
    [Ionic]: <http://ionicframework.com/>
    [Probleme]: <https://github.com/driftyco/ionic/issues?utf8mb4=%E2%9C%93&q=is%3Aissue+is%3Aopen+is%3Aclosed+slide>
- 

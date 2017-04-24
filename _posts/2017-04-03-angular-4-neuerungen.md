@@ -10,7 +10,7 @@ header_image: "/artikel/header_images/angular-4-neuerungen.jpg"
 
 ## Schneller, kleiner und agiler: Angular 4 ist da
 
-Lange haben wir drauf gewartet und mussten bangen, dass es pünktlich kommt. Jetzt ist es raus – am 23.3.2017 ist schlussendlich die finale Version von Angular v4 erschienen und freigegeben. 
+Lange haben wir drauf gewartet und mussten bangen, dass es pünktlich kommt. Jetzt ist es raus – am 23.3.2017 ist schlussendlich die finale Version von Angular v4 erschienen und freigegeben.
 
 ### Versionssprung: Wo ist die Version 3 geblieben?
 
@@ -61,7 +61,7 @@ Mehr Informationen finden sich auch im Designdokument: [„Angular - Generating 
 
 #### Animation-Package: Kein unnötiger Ballast
 
-Um Code einzusparen, wurde aber nicht nur die View Engine überarbeitet, sondern auch das Animation-Package aus dem Angular Core geworfen. 
+Um Code einzusparen, wurde aber nicht nur die View Engine überarbeitet, sondern auch das Animation-Package aus dem Angular Core geworfen.
 
 Somit muss, und darf, jeder entscheiden, ob er überhaupt Animationen benötigt. Sollte kein Bedarf bestehen, müssen wir keinen unnötigen Ballast in unserem Projekt mehr mit herumschleppen.
 
@@ -118,7 +118,7 @@ class XY extends OnInit {} --> class XY implements OnInit {}
 
     </div>
     <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
         alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
   </div>
@@ -142,6 +142,6 @@ class XY extends OnInit {} --> class XY implements OnInit {}
 
 ### Das Fazit zu Angular v4
 
-Insgesamt macht Angular in der neusten Version einen sehr starken Eindruck und verfolgt weiterhin die Ziele und Ansätze von Version 2 – macht dieses aber nochmals deutlicher besser und punktet mit vielen kleinen und großes Performance-Improvements. 
+Insgesamt macht Angular in der neusten Version einen sehr starken Eindruck und verfolgt weiterhin die Ziele und Ansätze von Version 2 – macht dieses aber nochmals deutlicher besser und punktet mit vielen kleinen und großes Performance-Improvements.
 
 Die Entfernung von überflüssigen Code und die Integration von neuen Mechaniken, macht Angular noch agiler und flexibler. Mit Angular Universal bald nicht nur im Browser, sondern auf jedem Server möglich. In unseren Augen eine transparente und gelungene Weiterentwicklung von Angular 2.

@@ -1,6 +1,6 @@
 ---
 title: "Angular Workshop Angular Days München"
-description: 
+description:
 author: "David Müllerchen"
 slug: "angular-days-2017-munich"
 published_at: 2020-08-23 10:00:00.000000Z
@@ -16,7 +16,7 @@ Hier eine kleine Vorschau, was euch erwartet:
 <br/><br/>
 
 <center>
-<img src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/213/medium_Screen-Shot-2016-09-30-at-15.08.26.png?v=63642460229"/>
+<img src="medium_Screen-Shot-2016-09-30-at-15.08.26.png?v=63642460229"/>
 </center>
 
 <br/><br/>
@@ -24,11 +24,11 @@ Hier eine kleine Vorschau, was euch erwartet:
 
 ## Vorbereitung
 
-Die Vorbereitung findet Ihr dann unter dem Bereich **Aufgaben**. Hier bieten wir euch wie gewohnt eine Schritt-für-Schritt Anleitung um euren Rechner für die Aufgaben vorzubereiten. 
+Die Vorbereitung findet Ihr dann unter dem Bereich **Aufgaben**. Hier bieten wir euch wie gewohnt eine Schritt-für-Schritt Anleitung um euren Rechner für die Aufgaben vorzubereiten.
 
 ## Anmeldung zum Classroom
 
-Falls Ihr im Classroom dabei sein wollt, könnt Ihr euch hier eintragen und bekommt den Link zum Classroom direkt nach der Bestätigung euerer Mail-Adresse zugesendet. 
+Falls Ihr im Classroom dabei sein wollt, könnt Ihr euch hier eintragen und bekommt den Link zum Classroom direkt nach der Bestätigung euerer Mail-Adresse zugesendet.
 
 <br/><br/>
 
@@ -43,10 +43,10 @@ Falls Ihr im Classroom dabei sein wollt, könnt Ihr euch hier eintragen und beko
           </div>
         </form>
 
-        
+
 <br/><br/>
 
-Wir optimieren unsere Workshops immer weiter und ich bin sehr gespannt, ob dieses Format mit euch zusammen funktioniert! 
+Wir optimieren unsere Workshops immer weiter und ich bin sehr gespannt, ob dieses Format mit euch zusammen funktioniert!
 
 <br>
 <br>

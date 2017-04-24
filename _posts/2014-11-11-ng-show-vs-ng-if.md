@@ -1,6 +1,6 @@
 ---
 title: "ng-show vs. ng-if in AngularJS"
-description: 
+description:
 author: "Tilman Potthof"
 slug: "ng-show-vs-ng-if"
 published_at: 2014-11-11 08:10:00.000000Z
@@ -32,7 +32,7 @@ Zweitens, `ng-show` erzeugt keinen neuen Scope, denn dann könnte man von außer
 
 Der Grund dafür ist einfach, denn `ng-show` blendet Elemente mithilfe der CSS-Klasse `ng-hide` aus, die das Style-Attribute `display: none` setzt. Daher verhält sich alles innerhalb des Blocks so, als ob es angezeigt würde und Direktiven wie z.B. `ng-init` werden nicht beeinflusst.
 
-![ng-show in der Element Analyse](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/48/inspect-element-ng-show.png)
+![ng-show in der Element Analyse](inspect-element-ng-show.png)
 
 ## Verhalten von `ng-if`
 
@@ -51,13 +51,13 @@ Das heißt, dass das innere `ng-init` nicht ausgewertet wird.
 Wenn man sich die Elemente in der Browser-Analyse anschaut, dann sieht man anstelle des Label-Elements einen HTML-Kommentar als Platzhalter.
 Die `ng-if` Direktive führt also dazu, dass ein Element wirklich nicht erzeugt wird und damit auch alle Elemente innerhalb des Blocks nicht ausgewertet werden.
 
-![ng-if in der Element Analyse](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/47/inspect-element-ng-if.png)
+![ng-if in der Element Analyse](inspect-element-ng-if.png)
 
 Wenn man den Text anschließend einblendet, kann man auch die innere Checkbox verändern.
 Beide Checkboxen, die Innere und die Äußere, sind mit einer `showMyText` Variable verbunden, aber wenn man die Innere anklickt, verändert sich die Äußere nicht.
 Damit wissen wir auch, dass die `ng-if` Direktive im Gegensatz zur `ng-show` Direktive einen eigenen Scope erzeugt.
 
-![ng-if Checkboxen mit unterschiedlichen Scopes](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/49/ng-if-checkboxes.png)
+![ng-if Checkboxen mit unterschiedlichen Scopes](ng-if-checkboxes.png)
 
 ## Abläufe und Scopes
 
@@ -87,4 +87,3 @@ Bei `ng-show` wird initial mehr Zeit verbraucht, da sofort alles ausgewertet wir
 Bei `ng-if` erfolgt die Auswertung erst beim Einblenden, dafür aber auch bei jedem Einblenden.
 
 Auf jeden Fall ist es hilfreich den Unterschied zwischen beiden Direktiven zu kennen und beide Varianten in seinem Angular Repertoire zu haben.
- 

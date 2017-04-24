@@ -39,7 +39,7 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png"
                  alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -214,7 +214,7 @@ Als wir das erste Mal `search` mit `ng-model` benutzten und es auf magische Weis
 
 Dieser Ort ist ein Scope. Wir schreiben *ein* Scope, weil es mehrere geben kann. Zudem können wir sie verschachteln. Das ist aber im Moment noch nicht wichtig. Wichtig ist, dass sie einen Mechanismus besitzen, um Teile der Applikation zu informieren, wenn etwas geändert wurde.
 
-![Scopes](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/26/angularjs-tutorial-deutsch-scopes.png)
+![Scopes](angularjs-tutorial-deutsch-scopes.png)
 
 Ein Controller kann einen neuen Scope erstellen und ihn für einen Abschnitt im DOM festlegen. Wenn wir uns das Beispiel oben anschauen, legen wir für die Tabelle einen Controller `ArticlesCtrl` fest. Im JavaScript-Code beschreiben wir den Controller näher. Dieser soll in dem Scope, unserer Vermittlungsschicht zum Template, eine Variable `articles` mit einem Array von Objekten enthalten. Deshalb können wir auch im Template über alle Artikel iterieren.
 
@@ -361,7 +361,7 @@ Zum praktischen Schritt. Neue Artikel im Warenkorb wollen wir kurz aufblinken la
 
 Die zwei CSS-Klassen bestimmen Start- und Endzustand. In `ng-enter` werden die Startfarbe *gelb* und die CSS3-Transition festgelegt. Diese Klasse wird zuerst hinzugefügt. Unmittelbar danach wird die zweite Klasse mit dem Endzustand der Farbe *weiß* hinzugefügt. Ist die Animation durchgelaufen, werden beide entfernt. Im Folgenden sehen wir graphisch, was passiert:
 
-![Animation](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/25/angularjs-tutorial-deutsch-ng-animate.png)
+![Animation](angularjs-tutorial-deutsch-ng-animate.png)
 
 Mit minimalem Aufwand könnt ihr dadurch sehr schöne Effekte erzielen. AngularJS kümmert sich dabei vollständig um das richtige Timing. Animationen über JavaScript-Frameworks sind auch möglich, sprengen aber den Rahmen dieses Tutorials.
 
@@ -476,7 +476,7 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
 
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/233/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>

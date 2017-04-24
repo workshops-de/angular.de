@@ -1,6 +1,6 @@
 ---
 title: "Angular Watcher - Chrome Extension"
-description: 
+description:
 author: "Robin Böhm"
 slug: "angular-watcher-chrome-extension"
 published_at: 2015-08-13 05:57:00.000000Z
@@ -16,4 +16,4 @@ Hiermit könnt Ihr einen sehr guten Überblick über mögliche Performance Probl
 
 Hier mal ein kleines Beispiel wie das aussehen könnte:
 
-![Bild](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/76/Angular-Watchers-Aug_11__2015_19_45.gif) 
+![Bild](Angular-Watchers-Aug_11__2015_19_45.gif)

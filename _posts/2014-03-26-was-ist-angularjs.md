@@ -16,13 +16,13 @@ header_image: "/artikel/header_images/was-ist-angularjs.jpg"
 * MVVM (zum größten Teil)
 * Opinionated
 
-Mit AngularJS bauen wir normalerweise **Webapplikationen**. Natürlich kannst du es auch in normalen Webseiten benutzen. Wenn dir Suchmaschinenoptimierung aber wichtig ist, wirst du dabei zusätzlichen Aufwand betreiben müssen. In AngularJS wird alles per JavaScript gerendert, womit Suchmaschinen bis heute noch ihre Probleme haben. 
+Mit AngularJS bauen wir normalerweise **Webapplikationen**. Natürlich kannst du es auch in normalen Webseiten benutzen. Wenn dir Suchmaschinenoptimierung aber wichtig ist, wirst du dabei zusätzlichen Aufwand betreiben müssen. In AngularJS wird alles per JavaScript gerendert, womit Suchmaschinen bis heute noch ihre Probleme haben.
 
 **Single-Page-Application** bedeutet, dass wir die meisten Daten beim ersten Aufruf laden. Bei einer Änderung der URL wird nicht mehr die komplette Seite aktualisiert, sondern nur noch neue benötigte Daten per Ajax nachgeladen.
 
 Wir nennen AngularJS **opinionated**,  weil es viele Vorgaben macht, wie wir das Framework nutzen sollen. Zum Beispiel gibt es nur eine Template-Sprache. Unsere gesammte Applikation fügen wir über Dependency Injection zusammen.
 
-![Macht AngularJS stark!](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/27/angularjs-staerken.png)
+![Macht AngularJS stark!](angularjs-staerken.png)
 
 ## Stärken von AngularJS
 
@@ -34,9 +34,9 @@ Wir nennen AngularJS **opinionated**,  weil es viele Vorgaben macht, wie wir das
 
 **Zwei-Wege-Datenbindung** bezieht sich auf die Synchronisation der Daten zwischen View und Model. Wenn wir in der View Daten ändern, werde diese auf die Datenstruktur im Model übertragen. Wenn wir die Datenstruktur im Model ändern, wird die Anzeige der View entsprechend angepasst.
 
-![Binding Types](https://assets-production-workshops-de.s3.amazonaws.com/system/projects/1/uploads/28/binding-types.png)
+![Binding Types](binding-types.png)
 
-Als Template-Sprache setzt AngularJS auf **erweiterbares HTML**. Wir können zu HTML eigene Tags und Attribute hinzufügen. Zum Beispiel können wir ein neues Tag `<tabs title="Einstellungen">` erstellen, das intern mehrere Div-Elemente erzeugt. 
+Als Template-Sprache setzt AngularJS auf **erweiterbares HTML**. Wir können zu HTML eigene Tags und Attribute hinzufügen. Zum Beispiel können wir ein neues Tag `<tabs title="Einstellungen">` erstellen, das intern mehrere Div-Elemente erzeugt.
 
 **Low-Level-Operationen:** Wenn wir jQuery benutzen, müssen wir immer wieder die gleichen Dinge tun - DOM-Manipulationen/-Selektionen. Haben wir ein neues Element in ein Array eingefügt, müssen wir in jQuery selbst dafür sorgen, dass wir z.B. die entsprechende Liste im DOM finden (Selektion) und auch dort das Element eintragen (Manipulation). Mit AngularJS beschreiben wir nur, dass wir eine Liste im DOM mit einem Array verknüpfen wollen. Ab da synchronisiert AngularJS diese selbständig. Keine überflüssigen IDs und Klassen. Kein Boilerplate-Code mehr.
 
