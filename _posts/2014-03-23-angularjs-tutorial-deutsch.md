@@ -214,7 +214,7 @@ Als wir das erste Mal `search` mit `ng-model` benutzten und es auf magische Weis
 
 Dieser Ort ist ein Scope. Wir schreiben *ein* Scope, weil es mehrere geben kann. Zudem können wir sie verschachteln. Das ist aber im Moment noch nicht wichtig. Wichtig ist, dass sie einen Mechanismus besitzen, um Teile der Applikation zu informieren, wenn etwas geändert wurde.
 
-![Scopes](/artikel/angularjs-tuorial-deutsch/angularjs-tutorial-deutsch-scopes.png)
+![Scopes](/artikel/angularjs-tutorial-deutsch/angularjs-tutorial-deutsch-scopes.png)
 
 Ein Controller kann einen neuen Scope erstellen und ihn für einen Abschnitt im DOM festlegen. Wenn wir uns das Beispiel oben anschauen, legen wir für die Tabelle einen Controller `ArticlesCtrl` fest. Im JavaScript-Code beschreiben wir den Controller näher. Dieser soll in dem Scope, unserer Vermittlungsschicht zum Template, eine Variable `articles` mit einem Array von Objekten enthalten. Deshalb können wir auch im Template über alle Artikel iterieren.
 
@@ -361,7 +361,7 @@ Zum praktischen Schritt. Neue Artikel im Warenkorb wollen wir kurz aufblinken la
 
 Die zwei CSS-Klassen bestimmen Start- und Endzustand. In `ng-enter` werden die Startfarbe *gelb* und die CSS3-Transition festgelegt. Diese Klasse wird zuerst hinzugefügt. Unmittelbar danach wird die zweite Klasse mit dem Endzustand der Farbe *weiß* hinzugefügt. Ist die Animation durchgelaufen, werden beide entfernt. Im Folgenden sehen wir graphisch, was passiert:
 
-![Animation](/artikel/angularjs-tuorial-deutsch/angularjs-tutorial-deutsch-ng-animate.png)
+![Animation](/artikel/angularjs-tutorial-deutsch/angularjs-tutorial-deutsch-ng-animate.png)
 
 Mit minimalem Aufwand könnt ihr dadurch sehr schöne Effekte erzielen. AngularJS kümmert sich dabei vollständig um das richtige Timing. Animationen über JavaScript-Frameworks sind auch möglich, sprengen aber den Rahmen dieses Tutorials.
 
