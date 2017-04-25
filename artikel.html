@@ -1,0 +1,94 @@
+---
+title: Artikel
+noindex: true
+sitemap: false
+permalink: /artikel/
+layout: "page"
+pagination:
+  enabled: true
+  per_page: 5
+  trail:
+    before: 2
+    after: 2
+---
+
+{% include event_json_ld.html %}
+
+<form action="/suche" method="get" class="hidden-md-up mb-2">
+  <input type="text" class="form-control article-search" name="q" placeholder="Artikel durchsuchen">
+</form>
+
+<div class="row">
+  <div class="col-md-8">
+
+    <nav aria-label="Paginierung">
+      <ul class="pagination">
+        {% if paginator.previous_page %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Zurück">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Zurück</span>
+            </a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Zurück">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Zurück</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if paginator.page_trail %}
+          {% for trail in paginator.page_trail %}
+            <li class="page-item {% if page.url == trail.path %}disabled{% endif %}">
+              <a class="page-link" href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        {% if paginator.next_page %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Weiter">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Weiter</span>
+            </a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Weiter">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Weiter</span>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+
+  {% for post in paginator.posts %}
+    {% include _article.html %}
+  {% endfor %}
+
+  </div>
+  <div class="col-md-4">
+    <form action="/suche" method="get" class="mb-4">
+      <input type="text" class="form-control article-search" name="q" placeholder="Artikel durchsuchen">
+    </form>
+
+    <h2 class="h3">Tutorials</h2>
+    {% include sidebar_posts.html contains='tutorial' %}
+
+
+    <h2>Partner</h2>
+
+    <div class="card card-block text-center">
+      <a href="http://localhost:4000/jobs/mehrkanal">
+        Finde einen Job bei <span class="font-weight-bold">Mehrkanal in Essen</span><br> als Frontend-Entwickler!
+        <img alt="MEHRKANAL GmbH Logo" class="my-1" src="/assets/img/jobs/logo-mehrkanal-180x50.png">
+      </a>
+    </div>
+
+
+  </div>
+</div>
