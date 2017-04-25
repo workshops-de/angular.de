@@ -15,7 +15,7 @@ Nachdem wir [Dependency Injection](#dependency-injection) verstanden haben, lern
 
 Constant macht dabei genau das, was der Name vermuten lässt - eine Konstante definieren. Die restlichen vier Methoden sind dynamisch und bauen aufeinander auf (siehe Abbildung). Provider steht dabei ganz oben und bietet die meisten Möglichkeiten an. Die restlichen Methoden bieten ein vereinfachtes Interface für häufig genutzte Anwendungsfälle. Wir gehen im Folgenden auf die Unterschiede und Einsatzmöglichkeiten ein.
 
-![AngularJS - Root Scope](../images/figures/services.png)
+![AngularJS - Root Scope](images/figures/services.png)
 
 
 ### Provider

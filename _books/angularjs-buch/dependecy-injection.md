@@ -35,7 +35,7 @@ function findUser(db){
 
 Der Injektor kann nicht nur Instanzen zu erzeugen, sondern kümmert sich auch darum, diese in die richtige Reihenfolge zu setzen. Nehmen wir ein Beispiel mit untereinander abhängigen Services:
 
-![AngularJS - Injektor](../images/figures/angularjs-injector.png)
+![AngularJS - Injektor](images/figures/angularjs-injector.png)
 
 Als Pseudo-JavaScript würden wir die Servies folgendermaßen erzeugen:
 
