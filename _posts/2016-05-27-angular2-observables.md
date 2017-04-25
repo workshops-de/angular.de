@@ -29,7 +29,7 @@ Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadu
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 src="/artikel/angular2-observables/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
                  alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -341,7 +341,7 @@ Wir hoffen, dass wir euch die Angst vor dem Arbeiten mit asynchronen Programmtei
 
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="/artikel/angular2-observables/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>

@@ -98,7 +98,7 @@ Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, das
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 src="/artikel/angular-deployment-docker/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
                  alt="Teilnehmer in der Veranstaltung Docker &amp; Kubernetes Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -266,7 +266,7 @@ Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche
 
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="/artikel/angular-deployment-docker/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>

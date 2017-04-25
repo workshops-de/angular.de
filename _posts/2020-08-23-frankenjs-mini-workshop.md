@@ -16,7 +16,7 @@ Hier eine kleine Vorschau, was euch erwartet:
 <br/><br/>
 
 <center>
-<img src="medium_Screen-Shot-2016-09-27-at-10.00.19.png?v=63642184659"/>
+<img src="/artikel/frankenjs-mini-workshop/medium_Screen-Shot-2016-09-27-at-10.00.19.png?v=63642184659"/>
 </center>
 
 <br/><br/>

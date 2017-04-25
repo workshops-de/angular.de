@@ -31,7 +31,7 @@ Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories:
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
+                 src="/artikel/angular2-tutorial-deutsch/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
                  alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -685,7 +685,7 @@ Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Sl
 
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="/artikel/angular2-tutorial-deutsch/medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>

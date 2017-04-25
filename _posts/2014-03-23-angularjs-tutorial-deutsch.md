@@ -39,7 +39,7 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
         </div>
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png"
+                 src="/artikel/angularjs-tutorial-deutsch/medium_Screen-Shot-2017-03-19-at-11.52.54.png"
                  alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
         </div>
     </div>
@@ -476,7 +476,7 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
 
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+        <img class="img-fluid img-rounded" src="/artikel/angularjs-tutorial-deutsch/medium_Screen-Shot-2017-03-19-at-11.52.54.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
 </div>
 </div>
