@@ -18,8 +18,11 @@ pagination:
 
 <div class="row">
   <div class="col-md-8">
+  {% for post in paginator.posts %}
+    {% include _article.html %}
+  {% endfor %}
 
-    <nav aria-label="Paginierung">
+  <nav aria-label="Paginierung" class="mx-auto">
       <ul class="pagination">
         {% if paginator.previous_page %}
           <li class="page-item">
@@ -43,9 +46,6 @@ pagination:
             </li>
           {% endfor %}
         {% endif %}
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
         {% if paginator.next_page %}
           <li class="page-item">
             <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Weiter">
@@ -63,11 +63,6 @@ pagination:
         {% endif %}
       </ul>
     </nav>
-
-  {% for post in paginator.posts %}
-    {% include _article.html %}
-  {% endfor %}
-
   </div>
   <div class="col-md-4">
     <form action="/suche" method="get" class="mb-4">

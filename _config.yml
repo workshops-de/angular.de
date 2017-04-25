@@ -35,10 +35,12 @@ defaults:
 pagination:
   enabled: true
   per_page: 3
-  permalink: '/page/:num/'
-  title: ':title - page :num of :max'
+  permalink: '/:num/'
+  # title: ':title - Seite :num von :max'
+  # title_suffix: ' - Seite :num'
   limit: 0
   sort_field: 'date'
+  locale: 'de'
   sort_reverse: true
 
 # Build settings
