@@ -22,7 +22,7 @@ Wenn wir eigene Komponenten bauen wollen, sollten sie in jeder möglichen Umgebu
 
 Die Art und Weise, wie wir dies in AngularJS tun, nennt sich Scope-Isolierung. In den Eigenschaften, einer Direktive können wir sagen `scope: {}`. Damit haben wir keinen Zugriff mehr auf die Scope-Variablen, die oberhalb der Direktive liegen.
 
-![Isolierte Scopes](https://assets-production-workshops-de.s3.amazonaws.com/system/uploads/29/angularjs-scopes-isoliert.png)
+![Isolierte Scopes](../images/figures/angularjs-scopes-isoliert.png)
 
 Nachdem wir die Direktive isoliert haben, können wir wieder eine Verbindung zur Außenwelt herstellen. Dies passiert über Attribute am Element der Direktive. Haben wir eine Direktive `<colorpicker>`, können wir zum Beispiel Attribute für den aktuellen Wert angeben. Das könnte so aussehen: `<colorpicker value="#ff0000">`. Die Schnittstelle zur Außenwelt können wir nun auf 3 verschiedene Arten herstellen. Im Folgenden wollen wir diese erklären.
 
