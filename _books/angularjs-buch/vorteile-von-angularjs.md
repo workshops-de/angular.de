@@ -2,6 +2,7 @@
 number: 2.2
 title: Vorteile von AngularJS
 part: Grundlagen
+description: Lerne, welche Vorteile dir AngularJS für dein Projekt bringt.
 progress: 80
 ---
 

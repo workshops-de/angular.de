@@ -2,6 +2,7 @@
 number: 4.60
 title: Module - Die Applikation aufteilen
 part: Erweiterungen der Applikation
+description: Lerne mehr über das Modul-System von AngularJS.
 progress: 50
 ---
 

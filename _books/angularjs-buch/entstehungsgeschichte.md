@@ -1,6 +1,7 @@
 ---
 number: 7.20
 title: Entstehungsgeschichte
+description: Lerne mehr über die Entstehungsgeschichte von AngularJS und den Erfinder Miško Hevery.
 part: Anhang
 progress: 80
 noindex: true

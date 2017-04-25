@@ -2,6 +2,7 @@
 number: 2.3
 title: Databinding - einfach/bidirektional
 part: Grundlagen
+description: Was ist der Unterschied zwischen einfachem und bidirektionalem Databinding? Lerne hier mehr darüber!
 progress: 80
 ---
 Im der traditionellen JavaScript-Programmierung werden Änderungen direkt im DOM von einem Event-Handler ausgeführt. Bei bidirektionalem ändert man nur das Model. Änderungen vom Model werden vom Framework in den DOM übertragen. Dies sorgt für eine klare Trennung und verständlicheren Code.

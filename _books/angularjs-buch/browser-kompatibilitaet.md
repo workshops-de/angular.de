@@ -2,6 +2,7 @@
 number: 6.50
 title: Internet Explorer - Kompatibilität (IE6, IE7, IE8)
 part: Konzepte und Hintergründe
+description: Zu welchen Browsern ist AngularJS kompatibel? Lerne hier, was zu beachten ist!
 progress: 90
 ---
 
