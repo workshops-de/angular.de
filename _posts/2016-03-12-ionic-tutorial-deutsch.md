@@ -120,7 +120,7 @@ wird ein lokaler Dateiserver gestartet, sodass die Anwendung ohne Einschränkung
 
     ionic serve --lab
 
-![Beispiel eines ionic serve --lab](02-ionic-serve-lab.png)
+![Beispiel eines ionic serve --lab](/artikel/ionic-tutorial-deutsch/02-ionic-serve-lab.png)
 
 **Web-App**
 
@@ -405,7 +405,7 @@ Zusätzlich erhält die Navigationsleiste im Basis-Template einen `ionNavBackBut
 
 Klicken wir nun auf *Über Uns* erscheint sofort der Zurück-Button in der Navigationsleiste.
 
-![Ionic Navigation Bild](ionic-navigation.gif?v=63629079934)
+![Ionic Navigation Bild](/artikel/ionic-tutorial-deutsch/ionic-navigation.gif?v=63629079934)
 
 #### Services
 
@@ -477,7 +477,7 @@ In unsere Anwendung bauen wir, wie für eine mobile App typisch, in der Navigati
 
 Nun können wir schnell und einfach unser wunderschönes Seitenmenü ein- und ausblenden.
 
-![Ionic Sidemenu Bild](ionic-sidemenu.gif?v=63629079934)
+![Ionic Sidemenu Bild](/artikel/ionic-tutorial-deutsch/ionic-sidemenu.gif?v=63629079934)
 
 #### Einhalten des Navigationskonzeptes
 
@@ -545,7 +545,7 @@ Erinnern wir uns kurz an den letzten Stand unserer Pizza-App. Wir haben zwar ein
         </ion-content>
     </ion-view>
 
-![Ionic Tutorial Simple List](medium_ionic-list.png?v=63629398881)
+![Ionic Tutorial Simple List](/artikel/ionic-tutorial-deutsch/medium_ionic-list.png?v=63629398881)
 
 Aus meiner Erfahrung als Ionic-Entwickler weiß ich, dass Listeneinträge oft gruppiert ausgegeben werden soll, beispielsweise wie ein Kontaktliste nach Buchstaben getrennt oder wie in einem Kalendar nach Zeit/Datum. Auch für solche Trenner bietet Ionic eine einfache Lösung. Durch die zusätzliche CSS-Klasse *item-divider* wird ein Listeneintrag zum Trenner.
 
@@ -599,7 +599,7 @@ Das Template zum Warenkorb könnte dann wie folgt aussehen.
 
 Die *ionOptionButton*-Direktive wird als Kind des Listeneintrags eingebunden und erhält eine Klick-Funktion die diesen Eintrag aus dem Warenkorb entfernt. Im Hintergrund besitzt die App nun einen eigenen *cartService*, der die nötigen Daten speichert.
 
-![Ionic Tutorial Extend List](ionic-extended-list.gif?v=63629079934)
+![Ionic Tutorial Extend List](/artikel/ionic-tutorial-deutsch/ionic-extended-list.gif?v=63629079934)
 
 Die Benutzung von *ionReorderButton* und *ionDeleteButton* sind sich sehr ähnlich. Als Beispiel könnte das Löschen im Warenkorb auch über *ionDeleteButtons* funktionieren.
 
@@ -614,7 +614,7 @@ Die Benutzung von *ionReorderButton* und *ionDeleteButton* sind sich sehr ähnli
 
 Über das Attribute *show-delete* können die Löschen-Buttons auch flexibel ein- und auch wieder ausgeblendet werden. Für ionReorderButton existiert dafür das Attribut *show-reorder*. Als Kind des *ionItems* kann dem Button ganz normal unsere Klick-Funktion übergeben werden.
 
-![Ionic Tutorial Extend List](ionic-list-delete.gif?v=63629079934)
+![Ionic Tutorial Extend List](/artikel/ionic-tutorial-deutsch/ionic-list-delete.gif?v=63629079934)
 
 Programmatischen Zugriff auf eure Listen erhaltet ihr über den **$ionicListDelegate**-Service.
 Mit diesem lassen sich die Spezial-Buttons ein und ausblenden, Swipen der Listeneinträge unterbinden. Eine Funktionsübersicht erhaltet ihr auch in den [Ionic-Docs](http://ionicframework.com/docs/api/service/$ionicListDelegate/) des Services.
@@ -708,7 +708,7 @@ Als kleine Übung bauen wir unsere Startseite der Pizza-App so um, dass die Pizz
 	        }
 	    ]);
 
- ![Ionic Tutorial Loading Layer](medium_ionic-loading.png?v=63629399654)
+ ![Ionic Tutorial Loading Layer](/artikel/ionic-tutorial-deutsch/medium_ionic-loading.png?v=63629399654)
 
 Für unsere Beispiel-App ist der Lade-Layer ein wenig unpraktikabel, da der Nutzer sich ja trotzdem frei in der Anwendung bewegen können soll. Aus diesem Grund nutzen wir nun den **ionSpinner**. Während des Ladevorgangs setzen wir eine Scope-Variable als Indikator, um den Spinner über *ngIf* oder *ngShow* ein- und vor allem wieder auszublenden.
 
@@ -765,7 +765,7 @@ Im Template richten wir den Spinner noch zentriert aus und blenden den Listeninh
 	    </ion-content>
 	</ion-view>
 
-![Ionic Tutorial Loading Spinner](medium_ionic-loading-spinner.png?v=63629399832)
+![Ionic Tutorial Loading Spinner](/artikel/ionic-tutorial-deutsch/medium_ionic-loading-spinner.png?v=63629399832)
 
 Standardmäßig bestimmt Ionic die passende Ladeanimation. Darüber hinaus könnt ihr aber mit Hilfe einer CSS-Klasse eine eigene Ladeanimation als SVG erstellen oder einfach eine der vordefinierten [Spinner-Klassen](http://ionicframework.com/docs/api/directive/ionSpinner/) nutzen.
 
@@ -859,7 +859,7 @@ Hier eine mögliche Umsetzung des Controller-Codes.
 	    </ion-content>
 	</ion-view>
 
-![Ionic Tutorial Refresher](ionic-refresher.gif?v=63629079934)
+![Ionic Tutorial Refresher](/artikel/ionic-tutorial-deutsch/ionic-refresher.gif?v=63629079934)
 
 ### Strukturieren von Inhalten durch Cards
 
@@ -869,11 +869,11 @@ Mit sogenannten Karten (engl. Cards) bietet Ionic eine gute Möglichkeit Listene
 
 Der Aufbau ist dem einer Liste sehr ähnlich. Ein Elternelement - meist ein div-Tag - bekommt die CSS-Klasse *card* und das Kindelement - oft auch ein div- oder a-Tag - erhält die bereits bekannte *item*-Klasse. Darüber hinaus können auch alle weiteren "item"-Klassen genutzt werden, um das Layout anzupassen, z.B. *item-divider*, *item-avatar*, *item-icon-left|right*, ...
 
-![Ionic Tutorial Cards](medium_ionic-cards.png?v=63629390074)
+![Ionic Tutorial Cards](/artikel/ionic-tutorial-deutsch/medium_ionic-cards.png?v=63629390074)
 
 Als kleines Praxisbeispiel erhält unsere App eine Detail-View für die Pizzen, die beim Klick auf einen Angebotseintrag angezeigt wird.
 
-![Ionic Tutorial Cards Pizza](medium_ionic-card-final.png?v=63629390026)
+![Ionic Tutorial Cards Pizza](/artikel/ionic-tutorial-deutsch/medium_ionic-card-final.png?v=63629390026)
 
 Das dazugehörige Template sieht dann so aus.
 

@@ -58,7 +58,7 @@ Nähere und die aktuellsten Informationen findet Ihr auf der Github Page von [Pr
 
 Um sich das Thema Cross-Browser Testing deutlich zu vereinfachen, bietet [SauceLabs](https://saucelabs.com/) für die E2E Tests hier eine spitzen Integrationsmöglichkeit für Protractor. [SauceLabs](https://saucelabs.com/) bietet einen Selenium Dienst in der Cloud an, mit welchem alle aktuellsten Browser und Versionen von Protractor angesprochen werden können. Die zu testenden Browser werden in Protractor definiert und beim Starten der Tests an den Seleniumdienst von [SauceLabs](https://saucelabs.com/) übergeben.
 
-![Protractor-Angular-Test-Sauce Labs](medium_Artikel-Martin-Wiesmu-ller-E2E-Testing-Angular-Protractor.png?v=63651354226)
+![Protractor-Angular-Test-Sauce Labs](/artikel/angular-e2e-protractor-test-saucelabs/medium_Artikel-Martin-Wiesmu-ller-E2E-Testing-Angular-Protractor.png?v=63651354226)
 
 Dieser Dienst erstellt eine virtuelle Maschine mit der genannten Browserversion und führt darin die definierten Test-Suites durch. Darüber hinaus werden die Tests von [SauceLabs](https://saucelabs.com/) aufgezeichnet, sowie Screenshots erstellt. Diese können hinterher sehr bequem innerhalb der UI von SauceLabs angesehen werden. Dies vereinfacht das Debugging bei der Suche von Fehlern deutlich. Hat man sich zusätzlich eine Deployment-Pipe innerhalb seiner Architektur aufgesetzt, kann man mit dem Ergebnis dieser Tests ein Deployment durchführen oder auch verhindern.
 
@@ -329,13 +329,13 @@ Hier wird das Protokoll des Jasmine-Tests abgeschlossen.
 *   `onComplete`
 Dies ist der Lifecycle, wenn der Test abgeschlossen wurde. Hier melden wir unsere Testergebnisse an den Build in SauceLabs zurück. Als Build-ID nehme ich hier den Namen aus der `package.json` sowie das aktuelle Datum. Hiermit wird dann der Build auch eindeutig.
 
-![Protractor Sauce Labs Overview](medium_Artikel-Martin-Wiesmu-ller-E2E-Testing-Angular-SAUCELABS-BROWSERMATRIX.png?v=63651352583)
+![Protractor Sauce Labs Overview](/artikel/angular-e2e-protractor-test-saucelabs/medium_Artikel-Martin-Wiesmu-ller-E2E-Testing-Angular-SAUCELABS-BROWSERMATRIX.png?v=63651352583)
 
 ##### SauceLabs Browsermatrix
 
 Wenn wir im Lifecycle `onComplete` unsere Testergebnisse, sowie eindeutige Build-ID's zurückliefern, können wir uns von SauceLabs eine Browsermatrix erstellen lassen:
 
-![Browsermatrix](medium_browsermatrix.png?v=63651352718)
+![Browsermatrix](/artikel/angular-e2e-protractor-test-saucelabs/medium_browsermatrix.png?v=63651352718)
 
 Diese Browsermatrix kann dann beispielsweise in der Beschreibung des GitHub Repos oder auf Promotion Seiten der Applikation mit eingebunden werden. Diese Browsermatrix wird vor allem immer mit den Ergebnissen der Tests live aktualisiert. Das bedeutet, wenn z.B. die Tests bei Firefox fehlschlagen, wird dieser automatisch rot. Einbinden lässt sich die Matrix ganz einfach per Markdown:
 

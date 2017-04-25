@@ -16,7 +16,7 @@ Jedoch kommen wir manchmal doch in Situationen, in denen wir bestimmte Fehler od
 
 ## Welche Werkzeuge kann ich hierzu nutzen?
 
-Um unsere Applikation debuggen zu können, benötigen wir ein Werkzeug, das den Ablauf unserer *Anwendung überwacht*. In diesem können wir dann für gewöhntlich Haltepunkte definieren, an denen der Ablauf angehalten wird und wir den aktuellen *Zustand analysieren* können. Außerdem können wir Veränderungen des Zustands Schritt für Schritt *nachvollziehen*. Ein ziemlich bekanntes Werkzeug, welches diesen Vorgang sehr einfach macht, sind die [Chrome Developer Tools](https://developer.chrome.com/devtools). ![Chrome Developer Tools](richtig-debuggen-chrome-dev-tools.png) Über den Tab *Sources* können wir hier in unserem Quellcode Haltepunkte definieren, an denen die Anwendung stoppt und wir somit den Zustand ablesen können.
+Um unsere Applikation debuggen zu können, benötigen wir ein Werkzeug, das den Ablauf unserer *Anwendung überwacht*. In diesem können wir dann für gewöhntlich Haltepunkte definieren, an denen der Ablauf angehalten wird und wir den aktuellen *Zustand analysieren* können. Außerdem können wir Veränderungen des Zustands Schritt für Schritt *nachvollziehen*. Ein ziemlich bekanntes Werkzeug, welches diesen Vorgang sehr einfach macht, sind die [Chrome Developer Tools](https://developer.chrome.com/devtools). ![Chrome Developer Tools](/artikel/richtig-debuggen/richtig-debuggen-chrome-dev-tools.png) Über den Tab *Sources* können wir hier in unserem Quellcode Haltepunkte definieren, an denen die Anwendung stoppt und wir somit den Zustand ablesen können.
 
 Folgende Hotkeys erleichtern uns hierbei das Leben:
 
@@ -27,13 +27,13 @@ Folgende Hotkeys erleichtern uns hierbei das Leben:
 
 Ein weiteres Werkzeug, das sich in diesem Kontext sehr gut eignet und aktuell eine verbreitete Entwicklungsumgebung im Bereich JavaScript ist, ist *[IDEA IntelliJ](http://www.jetbrains.com/webstorm/)*. Wir können hier eine *JavaScript Remote Debug* Konfiguration für unser Projekt erstellen. Dazu ist lediglich eine Basis-URL anzugeben und das lokale Mapping auf unsere Projekt-Struktur zu definieren. Ein Beispiel hierfür ist in dem folgenden Screenshot dargestellt:
 
-![Chrome Developer Tools](richtig-debuggen-idea-config.png)
+![Chrome Developer Tools](/artikel/richtig-debuggen/richtig-debuggen-idea-config.png)
 
 > Zu beachten ist hierbei, dass die URL zu unserer Anwendung ohne die Raute angegeben wird, da das Mapping auf die Web-Ressourcen hierüber läuft und diese ohne Raute aufgerufen werden.
 
 Darüber hinaus benötigen wir hierfür die [Chrome-Erweiterung *JetBrains IDE Support*](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji), die sich über den Chrome Web Store installieren lässt. Ist dies getan, können wir unsere Anwendung im *Debug Modus starten* (Shift+F9). Es öffnet sich der Browser und führt unsere Web-Anwendung aus. Die Haltepunkte können wir nun bequem innerhalb der IDE setzen. Erreicht die Anwendung einen der definierten Haltepunkt, wird die Ausführung angehalten.
 
-![Chrome Developer Tools](richtig-debuggen-idea-breakpoint.png)
+![Chrome Developer Tools](/artikel/richtig-debuggen/richtig-debuggen-idea-breakpoint.png)
 
 Auch hier können wir den aktuellen *Stacktrace* und die Variablenbelegung einsehen. Außerdem natürlich den weiteren Programmablauf steuern.
 
@@ -44,13 +44,13 @@ Folgende IntelliJ-Hotkeys erleichtern uns hierbei das Leben:
 *   F10 - In den nächsten Funktionsaufruf springen
 *   Shift + F8 - Aus dem aktuellen Funktionsaufruf heraus springen
 
-![Chrome Developer Tools](richtig-debuggen-idea-debug.png)
+![Chrome Developer Tools](/artikel/richtig-debuggen/richtig-debuggen-idea-debug.png)
 
 ## Debuggen von Tests in der Ablaufumgebung Karma
 
 Im Kontext von AngularJS nutzen wir oftmals *Karma* als *Test Runner* für unsere Tests. Auch das Yeoman-Projekt, welches aktuell quasi einen Standard-Stack für AngularJS-Projekte definiert, stellt eine Karma-Konfiguration für eine bequeme Testausführung zur Verfügung. Daher ist es wünschenswert, innerhalb von Tests auf das Debugging zurückgreifen zu können. Sogar in diesem Szenario können wir IntelliJ nutzen, um uns mithilfe des Remote Debuggers in den Applikationsablauf einzuklinken. Jedoch sind hier die *Mapping-Konfigurationen* nicht so offensichtlich wie beim Starten eines simplen Web-Servers mit unserer Anwendung. Die verschiedenen Dateien werden in virtuelle Unterordner gemappt. Unsere Anwendungsdateien befindet sich hierbei in dem Pfad `base`. In dem folgenden Bild ist eine lauffähige Konfiguration hierfür dargestellt:
 
-![Chrome Developer Tools](richtig-debuggen-karma-debug.png)
+![Chrome Developer Tools](/artikel/richtig-debuggen/richtig-debuggen-karma-debug.png)
 
 Somit ist auch das Debuggen von Tests im JavaScript-Umfeld kein großes Problem.
 
@@ -60,7 +60,7 @@ Ein weiteres Werkzeug, das uns bei der Automatisierung von wiederkehrenden Aufga
 
 Wir erstellen in diesem Fall eine Debug-Konfiguration in Node.js und geben dort unser Projekt-Verzeichnis als Working Directory an. Außerdem müssen wir den Pfad zu dem globalen Grunt-CLI Modul als Node App JS File angeben. Optional können wir noch Parameter an den Grunt-Prozess übergeben.
 
-![Chrome Developer Tools](richtig-debuggen-grunt-debug.png)
+![Chrome Developer Tools](/artikel/richtig-debuggen/richtig-debuggen-grunt-debug.png)
 
 Ist dies erledigt, können wir wie gewohnt in unseren Grunt-Plugins Haltepunkte setzen, an denen der Ablauf gestoppt werden soll.
 

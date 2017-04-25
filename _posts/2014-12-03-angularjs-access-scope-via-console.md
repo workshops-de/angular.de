@@ -36,14 +36,14 @@ Daher kann man auf die verschiedenen Scopes über die Elemente zugreifen.
 Zuerst müssen wir ein Element zum Analysieren aussuchen.
 Dazu muss man nur einen Kontext-Klick auf das Todo-Eingabefeld machen und die Option "Element untersuchen" auswählen.
 
-![TodoMVC](todomvc-inspect-element.png)
+![TodoMVC](/artikel/angularjs-access-scope-via-console/todomvc-inspect-element.png)
 
 Jetzt können wir die aktuellen Elemente auf der Seite sehen.
 Der Body-Tag hat das `ng-app` Attribut und eine Klasse `ng-scope`. Jedes Element, das einen eigenen Scope hat, erhält auch die CSS-Klasse `ng-scope`, um das Debuggen zu vereinfachen.
 Die einzige Ausnahme sind direkte Kind-Elemente eines `ng-view` Elements.
 Im Beispiel teilt sich sowohl das Section- als auch das Footer-Element einen Scope mit dem `ng-view` Element, aber alle haben die `ng-scope` Klasse.
 
-![Chrome Element Ansicht](todomvc-html-structure.png)
+![Chrome Element Ansicht](/artikel/angularjs-access-scope-via-console/todomvc-html-structure.png)
 
 Wie man sehen kann, hat das Section-Element die ID `todoapp`, mit der wir es auswählen können.
 Häufig nimmt man dafür jQuery, und viele Angular Anwendungen werden zusammen mit jQuery verwendet, allerdings funktioniert Angular auch ohne jQuery.
@@ -73,7 +73,7 @@ Die Chrome [Command Line API](https://developers.google.com/web/tools/chrome-dev
 Durch die Variable `$0` erhält man Zugriff auf das Element, das man in der Element-Anzeige gerade ausgewählt hat.
 Um den dazugehörigen Scope zu laden kann man `angular.element($0).scope()` ähnlich zu den Beispielen oben verwenden.
 
- ![Der $0 Trick in der Konsole](chrome-dev-tools-dollar-zero-trick.png)
+ ![Der $0 Trick in der Konsole](/artikel/angularjs-access-scope-via-console/chrome-dev-tools-dollar-zero-trick.png)
 
 ## Scope Attribute
 
@@ -81,7 +81,7 @@ Das so erhaltene Scope-Objekt kann jetzt analysiert und manipuliert werden.
 Man kann es einfach in der Browser Konsole ausgeben und sich die innere Struktur genauer anschauen.
 Dabei findet man die Todo-Liste, die wir schon im letzten Artikel manipuliert haben, als `$scope.todos`.
 
-![Scope Attributes](todomvc-scope-introspection.png)
+![Scope Attributes](/artikel/angularjs-access-scope-via-console/todomvc-scope-introspection.png)
 
 ## Scope Attribute mit $ und $$
 
@@ -98,7 +98,7 @@ Auch wenn man diese privaten Attribute nicht für seine Anwendungen verwenden so
 Ein schönes Beispiel ist das `$$watchers` Array, das Informationen über überwachte Expressions und Funktionen speichert.
 Die einzelnen Watcher werden entweder von der `$scope.$watch` Methode (ebenfalls `$scope.$watchCollection` seit 1.2.x) erzeugt oder von Template Expressions.
 
-![Scope Watchers](scope-watchers.png)
+![Scope Watchers](/artikel/angularjs-access-scope-via-console/scope-watchers.png)
 
 Man kann einfach überprüfen, wie die Watcher von Angular verwendet werden, indem man einen Watcher hinzufügt und danach die Länge des Watcher-Arrays überprüft.
 
@@ -164,14 +164,14 @@ Die Änderung hat wieder außerhalb des `$digest()` Aktualisierungszyklus stattg
 
 Damit erreichen wir dann die gewünschte Aktualisierung der Anzeige.
 
-![Aktualisiertes Eingabefeld](todomvc-new-todo.png)
+![Aktualisiertes Eingabefeld](/artikel/angularjs-access-scope-via-console/todomvc-new-todo.png)
 
 Wir können über den Scope ebenfalls den neuen Todo-Eintrag der Liste hinzufügen.
 
 	$scope.addTodo();
 	$scope.$apply();
 
-![Hinzugefügtes Todo](todomvc-added-todo.png)
+![Hinzugefügtes Todo](/artikel/angularjs-access-scope-via-console/todomvc-added-todo.png)
 
 
 ### Anmerkung zu `$apply`

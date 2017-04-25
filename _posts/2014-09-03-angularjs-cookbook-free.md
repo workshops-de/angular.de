@@ -10,7 +10,7 @@ header_image: "/artikel/header_images/angularjs-cookbook-free.jpg"
 
 [Sascha Brink](/entwickler/saschabrink) hat sein [AngularJS CookBook](https://leanpub.com/angularjs-cookbook) komplett frei zur Verfügung gestellt!
 
-[![Sascha Brink - AngularJS Cookbook](large.jpeg)](https://leanpub.com/angularjs-cookbook)
+[![Sascha Brink - AngularJS Cookbook](/artikel/angularjs-cookbook-free/large.jpeg)](https://leanpub.com/angularjs-cookbook)
 
 
 Es enthält derzeit folgende Rezepte:

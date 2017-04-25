@@ -16,4 +16,4 @@ Hiermit könnt Ihr einen sehr guten Überblick über mögliche Performance Probl
 
 Hier mal ein kleines Beispiel wie das aussehen könnte:
 
-![Bild](Angular-Watchers-Aug_11__2015_19_45.gif)
+![Bild](/artikel/angular-watcher-chrome-extension/Angular-Watchers-Aug_11__2015_19_45.gif)

@@ -12,7 +12,7 @@ header_image: "/artikel/header_images/navigation-menu-bootstrap.jpg"
 Wenn man mit AngularJS Single-page-Webanwendungen entwickelt und gleichzeitig Wert auf benutzerfreundliche URLs legt, dann kommt man am `ngRoute` Modul nicht vorbei.
 In diesem Artikel möchte ich euch zeigen, wie ihr eine Navigations-Direktive mit dem `$route` Service und Bootstrap bauen könnt, die automatisch durch die Definition der Routen erzeugt wird.
 
-![AngularJS Navigation mit $route und Bootstrap](route-navigation.png)
+![AngularJS Navigation mit $route und Bootstrap](/artikel/navigation-menu-bootstrap/route-navigation.png)
 
 ## Definition der Routen
 

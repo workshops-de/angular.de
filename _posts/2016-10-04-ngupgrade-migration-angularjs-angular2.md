@@ -19,7 +19,7 @@ Um eine Migration starten zu können, müssen wir unsere AngularJS-Anwendung zuv
 ### Components
 Der Kernunterschied von Angular2 zu AngularJS ist, dass die ganze Applikation in Components aufgeschlüsselt wird und es dabei keine eigenständige Controller oder Directives mit Template mehr gibt. Diese werden in Angular2 durch Components ersetzt. Components können wiederum Child-Components enthalten und erlauben uns somit die Funktionalität in kleine wartbare und wiederverwendbare Container zu verschachteln.
 
-![Component Struktur](medium_Screen-Shot-2016-09-11-at-15.42.31.png?v=63640820603)
+![Component Struktur](/artikel/ngupgrade-migration-angularjs-angular2/medium_Screen-Shot-2016-09-11-at-15.42.31.png?v=63640820603)
 
 Ab der AngularJS 1.5 Version können Components  erstellt werden, die maßgeblich wichtig für die Migration sind. Besteht unsere Logik bereits aus Components, haben wir den größten Teil der Migration fast schon erledigt. Sollten wir noch eine unfertige Applikation besitzen, die noch mit Directives oder reinen Controllers arbeitet, müssen wir an diesen Stellen auf Components umsteigen.
 
@@ -74,7 +74,7 @@ Für die Big-Bang-Strategie gibt es keine weitere Erläuterung. Der Code wird we
 
 Hingegen die Baby-Steps-Strategie ihren Namen erhalten hat, da wir die Applikation in kleinen einfachen Schritten immer weiter migrieren. Grundsätzlich kann gesagt werden, was mit AngularJS funktioniert hat, lässt sich auch mit Angular2 bewerkstelligen.
 
-![AngularJS to Angular 2 Migration Process](medium_Screen-Shot-2016-09-11-at-15.36.50.png?v=63640820242)
+![AngularJS to Angular 2 Migration Process](/artikel/ngupgrade-migration-angularjs-angular2/medium_Screen-Shot-2016-09-11-at-15.36.50.png?v=63640820242)
 
 Um die Migration zu starten, müssen wir zuvor Angular2 in unsere AngularJS integrieren und das Modul ngUpgrade installieren.
 
@@ -86,7 +86,7 @@ const upgradeAdapter = new UpgradeAdapter();
 ### Components
 Nach und nach können nun unsere AngularJS-Components in neue Angular2-Components migrieren.
 
-![Migration AngularJS Components zu Angular 2](medium_Screen-Shot-2016-09-11-at-15.47.44.png?v=63640820915)
+![Migration AngularJS Components zu Angular 2](/artikel/ngupgrade-migration-angularjs-angular2/medium_Screen-Shot-2016-09-11-at-15.47.44.png?v=63640820915)
 
 Der große Vorteil: Sobald wir eine Component übersetzt haben, können wir die Angular2-Component wieder mit Hilfe des ngUpgrade-Moduls in unserer AngularJS-Applikation lauffähig machen.
 
@@ -135,13 +135,13 @@ export class HeroDetailComponent {
 }
 ```
 
-![Anmeldung am jeweiligen Root-Injector](medium_Screen-Shot-2016-09-11-at-15.49.44.png?v=63640821011)
+![Anmeldung am jeweiligen Root-Injector](/artikel/ngupgrade-migration-angularjs-angular2/medium_Screen-Shot-2016-09-11-at-15.49.44.png?v=63640821011)
 
 ### Change Detection
 
 View & Logic sind zwischen den Schnittstellen verknüpft, aber wie löst man das Problem der Change-Detection - ohne auf den alten $scope zuzugreifen? Kein Problem für ngZone, welches sich zwischen dem Browser-Event-Handler und der Applikation als Zwischenschicht legt. Hier werden alle Events abgefangen, die in  AngularJS und Angular2 benutzt werden können.
 
-![Change-Detection mit ngZone](medium_Screen-Shot-2016-09-11-at-15.53.02.png?v=63640821222)
+![Change-Detection mit ngZone](/artikel/ngupgrade-migration-angularjs-angular2/medium_Screen-Shot-2016-09-11-at-15.53.02.png?v=63640821222)
 
 
 ### TypeScript
