@@ -1,4 +1,4 @@
-# angularjs.de
+# angularjs.de [![Build Status](https://semaphoreci.com/api/v1/workshops/angularjs-de/branches/master/badge.svg)](https://semaphoreci.com/workshops/angularjs-de)
 
 ## Installation
 
