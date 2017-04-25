@@ -20,7 +20,7 @@ Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadu
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
                     und TypeScript Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
             </p>
-            <p class="">
+            <p>
                 <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
                     <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
                 </a>
@@ -239,7 +239,7 @@ Das gleiche Spiel müsst ihr bei der Nutzung von Operatoren betreiben.
 
 <div class="alert alert-warning"><b>Wichtig:</b> Zusätzliche Funktionen und Operatoren müssen extra importiert werden.</div>
 
-Darüberhinaus gibt es eine Vielzahl von Operatoren, wie z.B. *zip* - Zusammenführen von Observables, *flatMap* - transformiert Werte eines Observables zu einem neuen Observable oder *map* - Transformationsfunktion für jeden Wert des Observables.
+Darüber hinaus gibt es eine Vielzahl von Operatoren, wie z.B. *zip* - Zusammenführen von Observables, *flatMap* - transformiert Werte eines Observables zu einem neuen Observable oder *map* - Transformationsfunktion für jeden Wert des Observables.
 
 ### Lösung der Probleme mit Promises? - JA!
 
