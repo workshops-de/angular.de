@@ -3,6 +3,7 @@ number: 1.2
 title: Aufbau
 part: Einleitung
 progress: 80
+noindex: true
 ---
 
 Das Buch ist folgendermaßen gegliedert:

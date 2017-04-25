@@ -3,6 +3,7 @@ number: 7.10
 title: Trend-Vergleich mit anderen Frameworks
 part: Anhang
 progress: 90
+noindex: true
 ---
 
 ![Vergleich Frameworks](images/screenshots/framework-comparison.png)

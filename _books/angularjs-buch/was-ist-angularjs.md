@@ -3,6 +3,7 @@ number: 2.1
 title: Was ist AngularJS
 part: Grundlagen
 progress: 30
+noindex: true
 ---
 AngularJS ist in wenigen Stichpunkten zusammengefasst:
 
