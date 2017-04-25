@@ -1,0 +1,14 @@
+---
+title: Artikelübersicht
+permalink: /artikel/alle/
+---
+
+
+
+{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | split:'/' | join:'/' }}">{{ post.title }}</a>
+    <span class="text-muted">von {{post.author}}</span>
+  </li>
+{% endfor %}
+

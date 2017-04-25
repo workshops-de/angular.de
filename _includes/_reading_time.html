@@ -3,5 +3,5 @@
 {% if words < 360 %}
   1 Minute
 {% else %}
-  <span class="fa fa-hourglass-o"></span> {{ words | divided_by:180 }} Minuten
+  <span class="fa fa-hourglass-o"></span>&nbsp; {{ words | divided_by:180 }} Minuten
 {% endif %}
