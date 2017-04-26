@@ -44,25 +44,26 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
 
 <hr>
 <div class="">
-    <div class="h3">Keine Lust zu Lesen?</div>
-    <div class="row mb-2">
-        <div class="col-xs-12 col-md-6">
-            <p>
-                Du möchtest dich oder dein ganzen Team schnellstmöglich produktive Ionic Anwendung entwickeln lassen? Dann nutze unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Ionic und TypeScript Schulungen</a>. Wir haben die Konzepte des Frameworks und unsere Projekterfahrung für euch in einen interaktiven Kurs gegossen.
-            </p>
-            <p class="">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
-                    <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-                </a>
-            </p>
+  <div class="h3">Keine Lust zu Lesen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Du möchtest dich oder dein ganzen Team schnellstmöglich produktive Ionic Anwendung entwickeln lassen? Dann nutze unsere
+        <a
+          target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Ionic und TypeScript Schulungen</a>. Wir haben die Konzepte des Frameworks und unsere Projekterfahrung für euch in
+          einen interaktiven Kurs gegossen.
+      </p>
+      <p class="">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
 
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
-                 alt="Teilnehmer in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
-        </div>
     </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
+    </div>
+  </div>
 </div>
 <hr>
 
@@ -71,8 +72,10 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
 
 Wie auch schon Ionic 1, basiert die neue Version ebenso auf dem Ionic CLI. Damit ihr auch alle nötigen Quellen der neue Version besitzt, müsst ihr diese über folgenden Befehl installieren.
 
-    npm install -g ionic
-    npm install -g cordova
+```shell
+npm install -g ionic
+npm install -g cordova
+```
 
 Danach könnt ihr über `ionic` alle gängigen und bereits aus Version 1 bekannten Befehle nutzen.
 
