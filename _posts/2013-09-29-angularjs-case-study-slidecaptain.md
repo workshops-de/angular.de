@@ -172,8 +172,8 @@ Wir sind davon überzeugt (und erzählen das auch gerne jedem, der es hören mö
  [2]: http://nodejs.org
  [3]: https://www.mongodb.com/
  [4]: http://angularjs.org/
- [5]: /artikel/angularjs-case-study-sidecaptain/angularjs-case-study-slidecaptatin-dashboard.png
- [6]: /artikel/angularjs-case-study-sidecaptain/angularjs-case-study-slidecaptatin-workspace.png
+ [5]: angularjs-case-study-slidecaptatin-dashboard.png
+ [6]: angularjs-case-study-slidecaptatin-workspace.png
  [7]: http://angular-ui.github.io/
  [8]: http://angular-ui.github.io/bootstrap/
  [9]: http://getbootstrap.com/

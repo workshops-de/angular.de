@@ -55,7 +55,7 @@ Nun können wir in unseren Komponenten direkt die Bootstrap-Klassen benutzen. In
 </div>
 ```
 
-![Bild](/artikel/angular2-bootstrap-scss-angular-cli/medium_Screen-Shot-2016-09-01-at-19.00.45.png?v=63639968496)
+![Bild](medium_Screen-Shot-2016-09-01-at-19.00.45.png?v=63639968496)
 
 
 

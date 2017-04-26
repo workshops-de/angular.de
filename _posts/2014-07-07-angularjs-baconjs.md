@@ -36,8 +36,8 @@ Bei reaktiver Programmierung bedeutet der Ausdruck: "Beobachte ständig jede Än
 Die Werte eines *Observable* sind also nie einfach, sondern immer Ströme von Werten über die Zeit. Wenn ich z.B. `Ramy` in das Eingabefeld tippe, dann könnte `dom.input` den Wert `...'R'....'a'..'m'...'y'..` haben, je nachdem, wann ich die Tasten drücke. Die Punkte entsprechen jeweils einer Zeiteinheit.
 
 |   | Synchron | Asynchron |
-| Ein Wert | ![Bild](/artikel/angularjs-baconjs/medium_bacon1.png?v=12345678)<br>Datentyp: z.B. Number | ![Bild](/artikel/angularjs-baconjs/medium_bacon3.png?v=12345678)<br>Datentyp: Promise/Future |
-| Viele Werte | ![Bild](/artikel/angularjs-baconjs/medium_bacon2.png?v=12345678)<br>Datentyp: Array/Object | ![Bild](/artikel/angularjs-baconjs/medium_bacon4.png?v=12345678)<br>Datentyp: Observable |
+| Ein Wert | ![Bild](medium_bacon1.png?v=12345678)<br>Datentyp: z.B. Number | ![Bild](medium_bacon3.png?v=12345678)<br>Datentyp: Promise/Future |
+| Viele Werte | ![Bild](medium_bacon2.png?v=12345678)<br>Datentyp: Array/Object | ![Bild](medium_bacon4.png?v=12345678)<br>Datentyp: Observable |
 |   |   |   |
 
 Das war der reaktive Teil, es fehlt noch der funktionale. Auf den Ereignisströmen lassen sich Funktionen definieren, deren Ergebnisse wiederum Ereignisströme sind. So können wir Ströme  kombinieren und zu einer "Kanalisation" ausbauen, um komplexes Verhalten abzubilden.
@@ -240,7 +240,7 @@ Ein Circuit Breaker kennt 3 Zustände
 
 3. Hier taucht der Circuit Breaker den großen Zeh ins Wasser und lässt genau eine Anfrage durch. Scheitert sie, kehrt er in den offenen Zustand zurück und die Warteperiode beginnt von neuem. Ist sie erfolgreich, schließt er den Kreis wieder.
 
-![image alt text](/artikel/angularjs-baconjs/image_0.png)
+![image alt text](image_0.png)
 
 Wir steuern unseren Circuit Breaker über 3 Busse `sendQueue`, `successes` und `failures`. Ein [Bus](https://github.com/baconjs/bacon.js#bus) ist ein [EventStream](https://github.com/baconjs/bacon.js#eventstream), der zusätzlich eine [push](https://github.com/baconjs/bacon.js#bus-push)-Methode anbietet, um Werte in den Strom zu schieben. Um den Circuit Breaker in AngularJS zu nutzen, habe ich ihn als [$http](https://docs.angularjs.org/api/ng/service/$http)-Interceptor eingebunden:
 
@@ -354,7 +354,7 @@ Ich führe das auf folgende Eigenschaften von FRP zurück:
 
 * **Komponierbarkeit**: FRP kommt dem Lego-Ideal recht nahe. Observables können wir beliebig zusammenstecken, zerlegen, und neu zusammensetzen. Die Selbstähnlichkeit und Wiederverwendbarkeit unseres Codes steigt, da Komponenten nur über Ein- und Ausgabeströme ohne gemeinsamen Zustand miteinander gekoppelt sind, egal, wie tief wir zoomen.
 
-![image alt text](/artikel/angularjs-baconjs/image_1.png)
+![image alt text](image_1.png)
 
 ## Was sollte ich bei der Entwicklung mit FRP/Bacon.js beachten?
 

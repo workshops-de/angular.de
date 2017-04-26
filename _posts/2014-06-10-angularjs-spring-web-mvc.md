@@ -173,7 +173,7 @@ Das Deployment der fertigen Anwendung erfolgt letztlich ganz genauso wie das ein
 
 Da eine AngularJS App aus reinem HTML, JavaScript und CSS besteht, lässt sich das Frontend anschließend einfach über den Browser wie eine statische HTML-Seite aufrufen. Das ZenQuery Frontend lädt daraufhin in Sekundenbruchteilen, holt sich den aktuellen Datenbestand via REST aus dem Java Backend und stellt diese Daten in einem aufgeräumten User Interface dar:
 
-![image alt text](/artikel/angularjs-spring-web-mvc/image_0.png)
+![image alt text](image_0.png)
 
 ## Ausblick
 

@@ -61,9 +61,9 @@ Wie auch in anderen XUnit Test-Frameworks bekannt, ermögtlicht uns Jasmine `set
 
 Du kannst beliebig viele `describe(…)` Aufrufe schachteln und somit auch `setup` und `teardown` Funktionen für ganze Suites definieren.
 
-![Schachtelung von setup & teardown in einer Suite](/artikel/angularjs-test/angularjs-test-dia-2.png)
+![Schachtelung von setup & teardown in einer Suite](angularjs-test-dia-2.png)
 
-![Schachtelung von setup & teardown über eine Suite](/artikel/angularjs-test/angularjs-test-dia-1.png)
+![Schachtelung von setup & teardown über eine Suite](angularjs-test-dia-1.png)
 
 ## Spies
 
@@ -80,7 +80,7 @@ Oft kommt es vor, dass eine Methode ein anderes Objekt über ein Interface anspr
 
 Wollen wir die Logik dieses Controllers isoliert testen, ohne die Implementierung des *restService* indirekt mit einzubeziehen, benötigen wir ein Stub- oder Mock-Objekt. Sogenannte Stubs sind Objekte, die lediglich das Interface anbieten, jedoch keine wirkliche Implementierung beinhalten. Mocks sind Objekte, die das Verhalten eines Objektes in einem ganz bestimmten Zustand simulieren. Diese strikte Trennung von anderen Komponenten ist durchaus sinnvoll und beabsichtigt, da somit der Test komplett isoliert den einzelnen atomaren Funktionsteil testet und keine Abhängigkeiten zu der Korrektheit einer speziellen Implementierung hat. Der Mechanismus, den uns Jasmine hier anbietet, nennt sich Spies (Spione). Mit Jasmine kann man sehr einfache solche Spies erstellen. Gehen wir davon aus, dass wir ein einfaches Funktions-Objekt mit dem Namen ‘restService’ in unserem Scope haben. Wir wollen nun herausfinden, ob unsere Methode wirklich, wie wir es erwarten, die Methode C aufruft. Somit erstellen wir einen Spy auf diese Methode.
 
-![RestService](/artikel/angularjs-test/angularjs-test-restservice-1.png)
+![RestService](angularjs-test-restservice-1.png)
 
     describe('A spy', function() {
       var foo, bar = null;
@@ -107,7 +107,7 @@ Wollen wir die Logik dieses Controllers isoliert testen, ohne die Implementierun
     });
 
 
-![RestService mit spyOn](/artikel/angularjs-test/angularjs-test-restservice-2.png)
+![RestService mit spyOn](angularjs-test-restservice-2.png)
 
 Falls wir die Aufrufe der reale Implementierung überwachen wollen, können wir dies mit `.andCallThrough()` einleiten.
 
@@ -120,7 +120,7 @@ Falls wir die Aufrufe der reale Implementierung überwachen wollen, können wir 
     });
 
 
-![RestService mit .andCallThrough()](/artikel/angularjs-test/angularjs-test-restservice-3.png)
+![RestService mit .andCallThrough()](angularjs-test-restservice-3.png)
 
 Wollen wir den Test isoliert ausführen, können wir die Implementierung der auth-Funktion simulieren und die erwartete Rückgabe definieren.
 
@@ -136,7 +136,7 @@ Wollen wir den Test isoliert ausführen, können wir die Implementierung der aut
     });
 
 
-![RestService mit .andCallFake()](/artikel/angularjs-test/angularjs-test-restservice-4.png)
+![RestService mit .andCallFake()](angularjs-test-restservice-4.png)
 
 ## Testen Deiner AngularJS Module
 

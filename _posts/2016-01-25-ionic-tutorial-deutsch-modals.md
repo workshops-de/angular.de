@@ -122,4 +122,4 @@ Wir stellen dem baseCtrl-Scope unseren Modal zur Verfügung. Dadurch können wir
 Der about-Zustand kann nun aus der State-Definition entfernt werden.
 Das Ergebnis kann sich dann sehen lassen :).
 
-![Bild](/artikel/ionic-tutorial-deutsch-modals/ionic-modals.gif?v=63629079934)
+![Bild](ionic-modals.gif?v=63629079934)

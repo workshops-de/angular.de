@@ -199,5 +199,5 @@ Bei JavaScript-Animationen müsst ihr euch selbst um das richtige Timing der Ani
 Seit Version 1.1.5 hat sich die Animations-API noch einmal komplett geändert - zum Besseren. Sobald das 'ngAnimate'-Modul eingebunden wurde, ist die Bedienung kinderleicht. Zudem lassen sich Animationen sehr einfach später nachrüsten.
 
  [2]: http://jsfiddle.net/angularjs_de/7uV6g/
- [3]: /artikel/angularjs-animationen-ng-animate/ng-animate-ablauf.svg
+ [3]: ng-animate-ablauf.svg
  [4]: http://jsfiddle.net/angularjs_de/Lgngx/

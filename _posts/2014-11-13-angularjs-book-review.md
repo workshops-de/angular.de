@@ -15,7 +15,7 @@ Auch in seinem Fazit sind wir sehr gut weg gekommen.
 > Das Buch ist gut zu lesen und bietet Einsteigern eine gute Einführung.
 > Auch Fortgeschrittene, die schon erste Anwendungen mit AngularJS erstellt haben, sollten an dem Buch interessiert sein.
 
-[![Buch Cover](/artikel/angularjs-book-review/ajs.jpg)](https://www.amazon.de/gp/product/B00L2FCJI8)
+[![Buch Cover](ajs.jpg)](https://www.amazon.de/gp/product/B00L2FCJI8)
 
 Vielen Dank für die nette Review!
 

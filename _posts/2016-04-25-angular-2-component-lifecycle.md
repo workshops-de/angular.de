@@ -21,7 +21,7 @@ In Angular kann eine Komponente wieder andere Komponenten nutzen, wodurch eine A
 
 Der passende Name sagt im Grunde schon alles über die Funktion aus: Der Component Lifecycle bildet das ganze Leben einer Komponente ab und gibt uns Zugriff auf ihre wichtigsten Zustände.
 
- ![Lifecycle Hooks Angular from init to destroy](/artikel/angular-2-component-lifecycle/medium_Copy-of-lifecycle-hooks-init.png?v=63628809011)
+ ![Lifecycle Hooks Angular from init to destroy](medium_Copy-of-lifecycle-hooks-init.png?v=63628809011)
 
 ## Zugriff auf den Life cycle
 
@@ -312,11 +312,11 @@ In den folgenden Grafiken erhaltet ihr noch einmal einen Überblick, wann und in
 
 Als ersten schauen wir uns die ausgeführten Hooks bei der Erzeugung einer Komponente an.
 
-![Bild](/artikel/angular-2-component-lifecycle/medium_lifecycle-hooks-init.png?v=63628812859)
+![Bild](medium_lifecycle-hooks-init.png?v=63628812859)
 
 Wenn die Change Detection an einer Komponente nach der Initialisierung angestoßen wird, haben wir den Zugriff auf folgende Hooks innerhalb dieser Komponente.
 
-![Bild](/artikel/angular-2-component-lifecycle/medium_lifecycle-hooks-change.png?v=63628812928)
+![Bild](medium_lifecycle-hooks-change.png?v=63628812928)
 
 <div class="alert alert-info">Hinweis: Nach dem Ausführen des ngOnChanges Hooks prüft Angular nochmal auf Änderungen, wodurch ngDoCheck, ngAfterContentChecked und ngAfterViewChecked ein weiteres Mal ausgeführt werden. Falls Angular dabei erneut Änderungen erkennt, erhaltet ihr im Entwicklermodus eine Warnung in der JavaScript-Konsole des Browsers.</div>
 

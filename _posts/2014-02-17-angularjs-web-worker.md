@@ -99,8 +99,8 @@ Durch den Einsatz der WebWorkerPool.js-Bibliothek lassen sich sehr einfach mehre
 
  [1]: http://jsfiddle.net/bjoerne/zeLxM
  [2]: http://www.monkkee.com
- [3]: /artikel/angularjs-web-worker/angularjs-web-worker-monkkee.png
- [4]: /artikel/angularjs-web-worker/angularjs-web-worker-communication.png
+ [3]: angularjs-web-worker-monkkee.png
+ [4]: angularjs-web-worker-communication.png
  [5]: http://en.wikipedia.org/wiki/Web_worker
  [6]: http://www.developer.com/lang/jscript/7-things-you-need-to-know-about-web-workers.html
  [7]: http://caniuse.com/#feat=webworkers

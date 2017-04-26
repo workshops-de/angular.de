@@ -32,7 +32,7 @@ Auch für diesen Ansatz gilt natürlich, dass man eine verschlüsselte Verbindun
 
 Die folgende Abbildung verdeutlicht nochmals den Ablauf.
 
-![Security Workflow](/artikel/angularjs-login-sicherheit/angularjs-login-sicherheit-workflow.png)
+![Security Workflow](angularjs-login-sicherheit-workflow.png)
 
 ## Auth-Token in AngularJS
 

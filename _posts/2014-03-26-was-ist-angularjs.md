@@ -22,7 +22,7 @@ Mit AngularJS bauen wir normalerweise **Webapplikationen**. Natürlich kannst du
 
 Wir nennen AngularJS **opinionated**,  weil es viele Vorgaben macht, wie wir das Framework nutzen sollen. Zum Beispiel gibt es nur eine Template-Sprache. Unsere gesammte Applikation fügen wir über Dependency Injection zusammen.
 
-![Macht AngularJS stark!](/artikel/was-ist-angularjs/angularjs-staerken.png)
+![Macht AngularJS stark!](angularjs-staerken.png)
 
 ## Stärken von AngularJS
 
@@ -34,7 +34,7 @@ Wir nennen AngularJS **opinionated**,  weil es viele Vorgaben macht, wie wir das
 
 **Zwei-Wege-Datenbindung** bezieht sich auf die Synchronisation der Daten zwischen View und Model. Wenn wir in der View Daten ändern, werde diese auf die Datenstruktur im Model übertragen. Wenn wir die Datenstruktur im Model ändern, wird die Anzeige der View entsprechend angepasst.
 
-![Binding Types](/artikel/was-ist-angularjs/binding-types.png)
+![Binding Types](binding-types.png)
 
 Als Template-Sprache setzt AngularJS auf **erweiterbares HTML**. Wir können zu HTML eigene Tags und Attribute hinzufügen. Zum Beispiel können wir ein neues Tag `<tabs title="Einstellungen">` erstellen, das intern mehrere Div-Elemente erzeugt.
 

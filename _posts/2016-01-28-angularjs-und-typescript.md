@@ -139,7 +139,7 @@ Innerhalb des `.then()` nutzen wir eine weitere ES2015-Technik: [Die Arrow-Funct
 
 Wir exportieren unsere Modulnamen als mit `export default` um die Abhängigkeiten einfacher Verwalten zu können. Außerdem registrieren wir eine neue [`component`](https://angularjs.de/artikel/angularjs-component-helper) mit Hilfe von `.component()`. Da wir die Type Definitions nutzen, ist die Methode `component()` bekannt und wir bekommen je nach Editor oder IDE sogar eine Code Completion.
 
-![Code Completion mit Code](/artikel/angularjs-und-typescript/vs-code-typescript.png)
+![Code Completion mit Code](vs-code-typescript.png)
 
 ### Services
 
@@ -200,7 +200,7 @@ Die Frage, ob man TypeScript mit Angular im 1er-Zweig nutzen kann, ist ganz klar
 ## Mehr Interesse am Thema?
 Elmar Burke gibt monatliche Workshops zum Thema [AngularJS+TypeScript](https://angularjs.de/workshops/angularjs-typescript). In 3 Tagen könnt Ihr hier die Sprache TypeScript in Verbindung mit AngularJS lernen. Gerade im Bezug auf die Wartbarkeit und die Entwicklungen zu Angular (Angular >2.X ist komplett in TypeScript entwickelt) ist es sinnvoll sich mit dieser Kombination zu beschäftigen.
 
-[![AngularJS und TypeScript Workshop](/artikel/angularjs-und-typescript/angularjs-de-intensivworkshop-ajs-typescript.png)](https://angularjs.de/workshops/angularjs-typescript)
+[![AngularJS und TypeScript Workshop](angularjs-de-intensivworkshop-ajs-typescript.png)](https://angularjs.de/workshops/angularjs-typescript)
 
 
 *[DI]: Dependency Injection

@@ -73,7 +73,7 @@ Ihr könnt eure `bookData.module.js` in `index.js`umbenennen. Der Module-Loader 
 
 Dies erspart uns wieder ein wenig Schreibarbeit. Diese Schreibweise bringt allerdings auch einen Nachteil: Wenn Ihr euch gerne in euer IDE mit *Navigate-To-File* Funktionen bewegt bekommt Ihr sehr schnell folgende Ansicht:
 
-![IDE-Index-js-navigate-to-file.png](/artikel/angularjs-es6-browserify-babel-module-laden/IDE-Index-js-navigate-to-file-small.png)
+![IDE-Index-js-navigate-to-file.png](IDE-Index-js-navigate-to-file-small.png)
 
 Die zweite Alternative ist, eine eigene `package.json` für die Komponente anzulegen. Der wichtige Parameter für das Laden unseres Modules ist hierbei: `main`.
 

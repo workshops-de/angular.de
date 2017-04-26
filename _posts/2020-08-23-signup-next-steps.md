@@ -9,6 +9,6 @@ header_image: "/artikel/header_images/signup-next-steps.jpg"
 ---
 
 ## Schritt 1: Email öffnen
-![Bild](/artikel/signup-next-steps/medium_signup-step1.png?v=63642463898)
+![Bild](medium_signup-step1.png?v=63642463898)
 ## Schritt 2: Deine Email bestätigen
-![Bild](/artikel/signup-next-steps/medium_signup-step2.png?v=63642463862)
+![Bild](medium_signup-step2.png?v=63642463862)

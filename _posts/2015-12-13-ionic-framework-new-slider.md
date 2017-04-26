@@ -13,7 +13,7 @@ Von inkorrekter Darstellung bis zerstörten Funktionalität war alles dabei. Nun
 
 Ab jetzt kann auch der solide, hoch funktionelle und sehr stark konfigurierbare Slider [Swiper] von [iDangero.us] genutzt werden. Dazu bietet Ionic zwei neue Direktiven an, um Swiper zu initialisieren und und Slides hinzuzufügen.
 
-![Ionic Slider Box](/artikel/ionic-framework-new-slider/ionic-slider-box.gif)
+![Ionic Slider Box](ionic-slider-box.gif)
 
 ## Nutzung
 

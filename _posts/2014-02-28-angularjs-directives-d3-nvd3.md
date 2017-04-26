@@ -100,5 +100,5 @@ Viel Spaß beim Ausprobieren!
  [1]: http://d3js.org/
  [2]: https://github.com/mbostock/d3/wiki/Gallery
  [3]: https://github.com/cmaurer/angularjs-nvd3-directives
- [5]: /artikel/angularjs-directives-d3-nvd3/angularjs-directives-d3-nvd3-chart.png
+ [5]: angularjs-directives-d3-nvd3-chart.png
  [6]: http://cmaurer.github.io/angularjs-nvd3-directives/line.chart.html

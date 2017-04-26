@@ -12,7 +12,7 @@ Eine beeindruckende Eigenschaft unterscheidet AngularJS von anderen Frameworks -
 
 <!--more-->
 
-![Tagcloud](/artikel/angularjs-d3-wordcloud/angularjs-d3-tagcloud.png)
+![Tagcloud](./angularjs-d3-tagcloud.png)
 
 D3 steht für Data-Driven-Documents und ist eine JavaScript-Bibliothek, die von [Mike Bostock](http://bost.ocks.org/mike/) geschrieben wurde. Unter Verwendung von HTML5, SVG und CSS können wir Daten enorm vereinfacht visualisieren. Eines dieser Beispiele ist auch die bereits erwähnte Darstellung einer WordCloud, die von [Jason Davies](https://www.jasondavies.com/wordcloud/) entwickelt wurde. J. Davies ist ein Datenvisualisierungs-Spezialist aus England der sich intensiv mit D3 auseinander setzt. In diesem Beispiel nutzt Davies die öffentliche Schnittstelle von Twitter, um eine WordCloud aus Beiträgen zu einem bestimmten Thema zu erstellen. Wir beschreiben beispielhaft das Vorgehen, wie auf der Basis dieser Implementierung eine AngularJS Direktive erstellt werden kann, die diese Logik kapselt.
 
