@@ -195,12 +195,5 @@ Natürlich müssen wir unseren Service noch bei Angular anmelden. Dafür nutzen 
 
 Die Frage, ob man TypeScript mit Angular im 1er-Zweig nutzen kann, ist ganz klar mit **JA!** zu beantworten. Der Core von Angular wird in TypeScript geschrieben sein, so dass viele Projekte in Zukunft sicherlich auch TypeScript nutzen werden. TypeScript hilft euch, viele Fehler zu vermeiden und unterstützt dabei noch durch eine Code Completion. Die Unaufdringlichkeit von TypeScript (Typen sind nicht verpflichtend) hilft besonders Einsteigern, welche bereits Programmiersprachen wie Java oder C# kennen.
 
-<hr/>
-
-## Mehr Interesse am Thema?
-Elmar Burke gibt monatliche Workshops zum Thema [AngularJS+TypeScript](https://angularjs.de/workshops/angularjs-typescript). In 3 Tagen könnt Ihr hier die Sprache TypeScript in Verbindung mit AngularJS lernen. Gerade im Bezug auf die Wartbarkeit und die Entwicklungen zu Angular (Angular >2.X ist komplett in TypeScript entwickelt) ist es sinnvoll sich mit dieser Kombination zu beschäftigen.
-
-[![AngularJS und TypeScript Workshop](angularjs-de-intensivworkshop-ajs-typescript.png)](https://angularjs.de/workshops/angularjs-typescript)
-
 
 *[DI]: Dependency Injection
