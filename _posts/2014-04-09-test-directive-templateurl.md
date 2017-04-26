@@ -10,13 +10,15 @@ header_image: "/artikel/header_images/test-directive-templateurl.jpg"
 
 Fast in jedem Projekt nutzen wir Direktiven, die mit Templates arbeiten. Diese verweisen mit dem Parameter `templateUrl` auf eine Datei, die während der Laufzeit der Anwendung per HTTP-Request nachgeladen wird.
 
-    angular.module('angularjsDE')
-      .directive('templateUrlDirective', function () {
-        return {
-          restrict: 'E',
-          templateUrl: 'views/TemplateUrlDirective.html'
-        };
-      });
+```javascript
+angular.module('angularjsDE')
+  .directive('templateUrlDirective', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/TemplateUrlDirective.html'
+    };
+  });
+```
 
 
 Möchte man diese Direktive testen, stopelt man relativ schnell über folgenden Fehler:
@@ -31,23 +33,29 @@ Alternativ können wir den Karma-Preprocessor [nghtml2js](https://github.com/kar
 
 **npm install**
 
-    npm install karma-ng-html2js-preprocessor --save-dev
+```shell
+npm install karma-ng-html2js-preprocessor --save-dev
+```
 
 **karma.conf.js**
 
-    files: [
-      [...]
-      // Match all templates for nghtml2js
-      'src/**/*.html'
-    ],
-    preprocessors: {
-       'src/**/*.html': 'ng-html2js'
-    },
-    ngHtml2JsPreprocessor: {
-      stripPrefix: 'src/',
-      moduleName: 'templates'
-    }
+```javascript
+files: [
+  [...]
+  // Match all templates for nghtml2js
+  'src/**/*.html'
+],
+preprocessors: {
+  'src/**/*.html': 'ng-html2js'
+},
+ngHtml2JsPreprocessor: {
+  stripPrefix: 'src/',
+  moduleName: 'templates'
+}
+```
 
 **test/_common/templates.js**
 
-    beforeEach(module('templates'));
+```javascript
+beforeEach(module('templates'));
+```

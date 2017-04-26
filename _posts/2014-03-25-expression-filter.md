@@ -17,44 +17,52 @@ Ein Expressionfilter wird - genau wie ein Collectionfilter - mit der `filter()`-
 
 Im nachfolgenden Beispiel sehen wir die Implementierung eines `truncate`-Filters. Dieser Filter überprüft, ob eine Zeichenkette mehr als `charCount` Zeichen enthält. Wenn das der Fall ist, dann wird die Zeichenkette abgeschnitten und durch drei Punkte (…) ergänzt. An diesem Filter können wir erkennen, dass Filter auch eine beliebige Anzahl von Parametern entgegennehmen können.
 
-    angular.module('myApp').filter('truncate', function() {
-      return function (input, charCount) {
-        var output  = input;
+```javascript
+angular.module('myApp').filter('truncate', function() {
+  return function (input, charCount) {
+    var output  = input;
 
-        if (output.length > charCount) {
-          output = output.substr(0, charCount) + '...';
-        }
+    if (output.length > charCount) {
+      output = output.substr(0, charCount) + '...';
+    }
 
-        return output;
-      };
-    });
+    return output;
+  };
+});
+```
 
 Wir können den `truncate`-Filter nun in einem Template in Verbindung mit einer Expression verwenden.
 
-    <p>
-      {{ '0123456789' | truncate:3 }}
-    </p>
+```html
+<p>
+  {{ '0123456789' | truncate:3 }}
+</p>
+```
 
 Das Ergebnisse dieser Transformation würde somit folgendermaßen aussehen:
 
-    012…
+```javascript
+012…
+```
 
 Filter lassen sich übrigens auch sehr einfach testen. Wer keine Tests schreibt, ist also - wie so häufig - selbst schuld!
 
-    describe('Filter: truncate', function () {
-      var truncate, $filter;
+```javascript
+describe('Filter: truncate', function () {
+  var truncate, $filter;
 
-      beforeEach(module('myApp'));
+  beforeEach(module('myApp'));
 
-      beforeEach(inject(function (_$filter_) {
-        $filter = _$filter_;
-      }));
+  beforeEach(inject(function (_$filter_) {
+    $filter = _$filter_;
+  }));
 
-      beforeEach(function () {
-        truncate = $filter('truncate');
-      });
+  beforeEach(function () {
+    truncate = $filter('truncate');
+  });
 
-      it('should truncate the input accordingly', function () {
-        expect(truncate('0123456789', 3)).toBe('012...');
-      });
-    });
+  it('should truncate the input accordingly', function () {
+    expect(truncate('0123456789', 3)).toBe('012...');
+  });
+});
+```

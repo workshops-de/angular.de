@@ -1,6 +1,6 @@
 ---
 title: "Service-Ergebnisse veränderen mit Decorators"
-description: 
+description:
 author: "Sascha Brink"
 slug: "service-decorator-erstellen"
 published_at: 2014-03-12 13:13:54.000000Z
@@ -22,14 +22,16 @@ Um den Decorator zu erstellen, benutzen wir den `$provide`-Service, welcher die 
 
 Wir möchten das Verhalten unseres Log-Services nicht verändern. Deshalb erstellen wir ein neues Objekt und stellen alle Methoden bereit, die der originale `$log`-Service bietet.
 
-    .config(function($provide) {
-      $provide.decorator('$log', function($delegate) {
-        var logger = {};
-        ['log','info','warn','error','debug'].forEach(function(level) {
-          logger[level] = function(message) {
-            $delegate[level]('[' + level.toUpperCase() + '] ' + message);
-          };
-        });
-        return logger;
-      });
-    }) 
+```javascript
+.config(function($provide) {
+  $provide.decorator('$log', function($delegate) {
+    var logger = {};
+    ['log','info','warn','error','debug'].forEach(function(level) {
+      logger[level] = function(message) {
+        $delegate[level]('[' + level.toUpperCase() + '] ' + message);
+      };
+    });
+    return logger;
+  });
+})
+```
