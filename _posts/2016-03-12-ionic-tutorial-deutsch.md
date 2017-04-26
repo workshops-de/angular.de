@@ -503,10 +503,12 @@ Beim Ausführen der App fällt auf, dass es keinen Button gibt, um das Menü zu 
 Natürlich hat das Ionic-Team auch daran gedacht, dass ein Seitenmenü auch möglichst elegant über einen Button oder generell eine Klick-Aktion geöffnet und geschlossen werden kann. Dazu existiert die Direktive `menuToggle`. Als Wert erhält sie dann den Wert, welches Seitenmenü (`left` oder `right`) mit dem Button verknüpft ist.
 In unsere Anwendung bauen wir, wie für eine mobile App typisch, in der Navigationsleiste auf der linken Seite eine Schaltfläche ein, die unser Menü öffnet und schließt.
 
-    <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-    </ion-nav-buttons>
+```html
+<ion-nav-buttons side="left">
+  <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+  </button>
+</ion-nav-buttons>
+```
 
 Nun können wir schnell und einfach unser wunderschönes Seitenmenü ein- und ausblenden.
 
@@ -524,17 +526,21 @@ Dieses Verhalten lässt sich dank einer eigenen Direktive - namens `menuClose` f
 
 Daher erweitern wir die Links, um die `menuClose`-Direktive.
 
-    <a ui-sref="base.order" ui-sref-active="active" class="item" menu-close>
-        Bestellen
-    </a>
+```html
+<a ui-sref="base.order" ui-sref-active="active" class="item" menu-close>
+  Bestellen
+</a>
+```
 
 Weil die Historie der Navigation zurückgesetzt wird verhindern wir, dass Zustände mehrfach in der Historie landen.
 
 Hätten wir an dieser Stelle schon eine Detail-View auf einen weiteren Zustand, wie eine Informationsseite zu einer bestimmten Pizza, würde auffallen, dass unser Menü-Knopf dort automatisch ausgeblendet wird. Dies hat schlicht und ergreifend den Grund, dass man den Weg, den man als Nutzer gegangen ist auch erst wieder zurückgehen sollte. Das hat den Grund, dass sonst an vielen Stellen Navigationzyklen entstehen könnten und dadurch Funktionen oder der Bedienbarkeit der Anwendung in Mitleidenschaft gezogen werden. Wer dieses Verhalten nicht mag, kann dieses auch einfach über einen Konfigurationsparameter der `ionSideMenus`-Direktive ändern. Über das Attribut `enable-menu-with-back-views` kann der Menü-Button immer eingeblendet werden. Dazu setzt ihr den Wert einfach auf `true`.
 
-    <ion-side-menus enable-menu-with-back-views="true">
-        ...
-    </ion-side-menus>
+```html
+<ion-side-menus enable-menu-with-back-views="true">
+  ...
+</ion-side-menus>
+```
 
 #### Programmatischer Zugriff auf Seitenmenüs
 
@@ -558,38 +564,44 @@ Als wohl häufigsten Anwendungsfall zeigen Listen eine Auswahl, die per Interakt
 
 Bei den einfachen Listen passiert die ganze Magie nur über einer bestimmten DOM-Struktur und dazugehörigen CSS-Klassen. Ein kleines Beispiel:
 
-    <ul class="list">
-        <li class="item">
-            ...
-        </li>
-    </ul>
+```html
+<ul class="list">
+  <li class="item">
+    ...
+  </li>
+</ul>
+```
 
 Im Grunde besteht eine Liste aus einem Wrapper-Knoten - im Normalfall ein *ul*- oder ein *div*-Tag mit der CSS-Klasse ***list***. Jeder Listen Eintrag ist wiederum ein *li*- bzw. *div*-Tag mit der Klasse ***item***.
 
 Erinnern wir uns kurz an den letzten Stand unserer Pizza-App. Wir haben zwar ein Sidemenu und die Pizzen werden auch bereits auf der Start-View ausgegeben, aber hübsch ist etwas anderes. Das sollten wir schleunigst ändern und passen das ***order***-Template, wie folgt an.
 
-    <ion-view>
-        <ion-content padding="true">
-            <div class="list">
-                <div class="item" ng-repeat="pizza in pizzas">
-                    {{pizza.name}} {{pizza.price}}
-                </div>
-            </div>
-        </ion-content>
-    </ion-view>
+```html
+<ion-view>
+  <ion-content padding="true">
+    <div class="list">
+      <div class="item" ng-repeat="pizza in pizzas">
+        {{pizza.name}} {{pizza.price}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+```
 
 ![Ionic Tutorial Simple List](medium_ionic-list.png?v=63629398881)
 
 Aus meiner Erfahrung als Ionic-Entwickler weiß ich, dass Listeneinträge oft gruppiert ausgegeben werden soll, beispielsweise wie ein Kontaktliste nach Buchstaben getrennt oder wie in einem Kalendar nach Zeit/Datum. Auch für solche Trenner bietet Ionic eine einfache Lösung. Durch die zusätzliche CSS-Klasse *item-divider* wird ein Listeneintrag zum Trenner.
 
-    <div class="list">
-        <div class="item item-divider">
-            Angebot
-        </div>
-        <div class="item" ng-repeat="pizza in pizzas">
-            {{pizza.name}} {{pizza.price}}
-        </div>
-    </div>
+```html
+<div class="list">
+  <div class="item item-divider">
+    Angebot
+  </div>
+  <div class="item" ng-repeat="pizza in pizzas">
+    {{pizza.name}} {{pizza.price}}
+  </div>
+</div>
+```
 
 Nach dem gleichen Prinzip können auch Buttons oder Bilder ausgerichtet und angepasst werden.
 
@@ -615,20 +627,22 @@ Als Beispiel erweitern wir unsere Pizza-App, um die Funktionalität Pizzen in ei
 
 Das Template zum Warenkorb könnte dann wie folgt aussehen.
 
-    <ion-view>
-        <ion-nav-title>Warenkorb</ion-nav-title>
-        <ion-content>
-            <ion-list>
-                <ion-item ng-repeat="item in cart">
-                    <h2>{{item.name}}</h2>
-                    <p>{{item.price | currency}}</p>
-                    <ion-option-button class="button-assertive" ng-click="removeFromCart($index)">
-                        <i class="icon ion-minus-circled"></i>
-                    </ion-option-button>
-                </ion-item>
-            </ion-list>
-        </ion-content>
-    </ion-view>
+```html
+<ion-view>
+  <ion-nav-title>Warenkorb</ion-nav-title>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in cart">
+        <h2>{{item.name}}</h2>
+        <p>{{item.price | currency}}</p>
+        <ion-option-button class="button-assertive" ng-click="removeFromCart($index)">
+          <i class="icon ion-minus-circled"></i>
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+```
 
 Die *ionOptionButton*-Direktive wird als Kind des Listeneintrags eingebunden und erhält eine Klick-Funktion die diesen Eintrag aus dem Warenkorb entfernt. Im Hintergrund besitzt die App nun einen eigenen *cartService*, der die nötigen Daten speichert.
 
@@ -636,14 +650,16 @@ Die *ionOptionButton*-Direktive wird als Kind des Listeneintrags eingebunden und
 
 Die Benutzung von *ionReorderButton* und *ionDeleteButton* sind sich sehr ähnlich. Als Beispiel könnte das Löschen im Warenkorb auch über *ionDeleteButtons* funktionieren.
 
-    <ion-list show-delete="true">
-        <ion-item ng-repeat="item in cart">
-            <h2>{{item.name}}</h2>
-            <p>{{item.price | currency}}</p>
-            <ion-delete-button class="ion-minus-circled" ng-click="removeFromCart($index)">
-            </ion-delete-button>
-        </ion-item>
-    </ion-list>
+```html
+<ion-list show-delete="true">
+  <ion-item ng-repeat="item in cart">
+    <h2>{{item.name}}</h2>
+    <p>{{item.price | currency}}</p>
+    <ion-delete-button class="ion-minus-circled" ng-click="removeFromCart($index)">
+    </ion-delete-button>
+  </ion-item>
+</ion-list>
+```
 
 Über das Attribute *show-delete* können die Löschen-Buttons auch flexibel ein- und auch wieder ausgeblendet werden. Für ionReorderButton existiert dafür das Attribut *show-reorder*. Als Kind des *ionItems* kann dem Button ganz normal unsere Klick-Funktion übergeben werden.
 
@@ -658,14 +674,16 @@ Im Prinzip funktioniert collectionRepeat wie ein ngRepeat mit Arrays. Einziger U
 
 Hier der Code unserer Warenkorbliste mit *collection-repeat*.
 
-    <ion-list show-delete="true">
-        <ion-item collection-repeat="item in cart">
-            <h2>{{item.name}}</h2>
-            <p>{{item.price | currency}}</p>
-            <ion-delete-button class="ion-minus-circled" ng-click="removeFromCart($index)">
-            </ion-delete-button>
-        </ion-item>
-    </ion-list>
+```html
+<ion-list show-delete="true">
+  <ion-item collection-repeat="item in cart">
+    <h2>{{item.name}}</h2>
+    <p>{{item.price | currency}}</p>
+    <ion-delete-button class="ion-minus-circled" ng-click="removeFromCart($index)">
+    </ion-delete-button>
+  </ion-item>
+</ion-list>
+```
 
 ### Ladehandling
 
@@ -704,42 +722,43 @@ In einer Ionic-Anwendung gibt es nur einen einzigen Ladelayer. Wird `$ionicLoadi
 
 Als kleine Übung bauen wir unsere Startseite der Pizza-App so um, dass die Pizzen aus einer eigenen Datei mit einer $http-Anfrage geladen werden. Während dieser Zeit blenden wir ein Ladeoverlay ein, das mindestens 2000ms zu sehen ist. Das Absenden des Requests übernimmt ein eigener Pizza-Service.
 
-    angular
-      .module('pizzaApp')
-      .controller('OrderCtrl', [
-          '$scope',
-          '$timeout',
-          '$ionicLoading',
-          'cartService',
-          'pizzaService',
-          function ($scope, $timeout, $ionicLoading, cartService, pizzaService) {
+```javascript
+angular
+  .module('pizzaApp')
+  .controller('OrderCtrl', [
+    '$scope',
+    '$timeout',
+    '$ionicLoading',
+    'cartService',
+    'pizzaService',
+    function ($scope, $timeout, $ionicLoading, cartService, pizzaService) {
+      // Einblenden des Layers
+      $ionicLoading.show({
+        template: 'Bitte warten...'
+      });
 
-        // Einblenden des Layers
-              $ionicLoading.show({
-                  template: 'Bitte warten...'
-              });
+      // Laden der Pizzen
+      pizzaService
+        .getPizzas()
+        .then(function (result) {
+          // Schreibe Ergebnis auf Scope
+          $scope.pizzas = result;
+        }, function () {
+          // Error case
+        })
+        .finally(function () {
+          // Ausblenden mit Verzögerung von 2000ms
+          $timeout(function () {
+            $ionicLoading.hide();
+          }, 2000);
+        });
 
-        // Laden der Pizzen
-              pizzaService
-                  .getPizzas()
-                  .then(function (result) {
-                    // Schreibe Ergebnis auf Scope
-                      $scope.pizzas = result;
-                  }, function () {
-                      // Error case
-                  })
-                  .finally(function () {
-                    // Ausblenden mit Verzögerung von 2000ms
-                      $timeout(function () {
-                          $ionicLoading.hide();
-                      }, 2000);
-                  });
-
-              $scope.addToCart = function (pizza) {
-                  cartService.addCartItem(pizza);
-              };
-          }
-      ]);
+      $scope.addToCart = function (pizza) {
+        cartService.addCartItem(pizza);
+      };
+    }
+  ]);
+```
 
  ![Ionic Tutorial Loading Layer](medium_ionic-loading.png?v=63629399654)
 
@@ -747,56 +766,60 @@ Für unsere Beispiel-App ist der Lade-Layer ein wenig unpraktikabel, da der Nutz
 
 Der Controller-Code sieht nun so aus.
 
-    angular
-      .module('pizzaApp')
-      .controller('OrderCtrl', [
-          '$scope',
-          '$timeout',
-          'cartService',
-          'pizzaService',
-          function ($scope, $timeout, cartService, pizzaService) {
-              $scope.loading = true;
+```javascript
+angular
+  .module('pizzaApp')
+  .controller('OrderCtrl', [
+    '$scope',
+    '$timeout',
+    'cartService',
+    'pizzaService',
+    function ($scope, $timeout, cartService, pizzaService) {
+      $scope.loading = true;
 
-              pizzaService
-                  .getPizzas()
-                  .then(function (result) {
-                      $scope.pizzas = result;
-                  }, function () {
-                      // error case
-                  })
-                  .finally(function () {
-                      $timeout(function () {
-                          $scope.loading = false;
-                      }, 2000);
-                  });
+      pizzaService
+        .getPizzas()
+        .then(function (result) {
+          $scope.pizzas = result;
+        }, function () {
+          // error case
+        })
+        .finally(function () {
+          $timeout(function () {
+            $scope.loading = false;
+          }, 2000);
+        });
 
-              $scope.addToCart = function (pizza) {
-                  cartService.addCartItem(pizza);
-              };
-          }
-      ]);
+      $scope.addToCart = function (pizza) {
+        cartService.addCartItem(pizza);
+      };
+    }
+  ]);
+```
 
 Im Template richten wir den Spinner noch zentriert aus und blenden den Listeninhalt erst ein, wenn der Ladespinner ausgeblendet wurde.
 
-    <ion-view>
-      <ion-nav-title class="title">
-        Pizza App
-    </ion-nav-title>
-      <ion-content padding="true">
-          <div ng-show="loading" class="text-center padding">
-              <ion-spinner></ion-spinner>
-          </div>
-          <div class="list" ng-show="!loading">
-              <div class="item item-divider">
-                  Angebot
-              </div>
-              <div class="item item-button-right" ng-repeat="pizza in pizzas">
-                  {{pizza.name}} {{pizza.price}}
-                  <button class="button button-balanced icon ion-ios-cart" ng-click="addToCart(pizza)"></button>
-              </div>
-          </div>
-      </ion-content>
-  </ion-view>
+```html
+<ion-view>
+  <ion-nav-title class="title">
+    Pizza App
+  </ion-nav-title>
+  <ion-content padding="true">
+    <div ng-show="loading" class="text-center padding">
+      <ion-spinner></ion-spinner>
+    </div>
+    <div class="list" ng-show="!loading">
+      <div class="item item-divider">
+        Angebot
+      </div>
+      <div class="item item-button-right" ng-repeat="pizza in pizzas">
+        {{pizza.name}} {{pizza.price}}
+        <button class="button button-balanced icon ion-ios-cart" ng-click="addToCart(pizza)"></button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+```
 
 ![Ionic Tutorial Loading Spinner](medium_ionic-loading-spinner.png?v=63629399832)
 
@@ -833,64 +856,68 @@ Unsere Pizza-Liste soll nun um eine Aktualisierungfunktion erweitert werden. Dab
 
 Hier eine mögliche Umsetzung des Controller-Codes.
 
-    function loadPizzas(refresh) {
-      // do not show ionSpinner if refreshing
-        if (!refresh) {
-             $scope.loading = true;
-        }
-        return pizzaService
-            .getPizzas()
-            .then(function (result) {
-                $scope.pizzas = result;
-            }, function () {
-                // error case
-            })
-            .finally(function () {
-                // show the spinner a little bit longer
-                $timeout(function () {
-                    $scope.loading = false;
-                }, 2000);
-            });
-    }
-    // inital loading of pizzas
-    loadPizzas();
+```javascript
+function loadPizzas(refresh) {
+  // do not show ionSpinner if refreshing
+  if (!refresh) {
+        $scope.loading = true;
+  }
+  return pizzaService
+    .getPizzas()
+    .then(function (result) {
+      $scope.pizzas = result;
+    }, function () {
+      // error case
+    })
+    .finally(function () {
+      // show the spinner a little bit longer
+      $timeout(function () {
+        $scope.loading = false;
+      }, 2000);
+    });
+}
+// inital loading of pizzas
+loadPizzas();
 
-    $scope.refresh = function () {
-      // reload pizzas as refresh
-        loadPizzas(true)
-           .finally(function () {
-             $scope
-                .$broadcast('scroll.refreshComplete');
-             });
-    };
+$scope.refresh = function () {
+  // reload pizzas as refresh
+  loadPizzas(true)
+    .finally(function () {
+      $scope
+        .$broadcast('scroll.refreshComplete');
+      });
+};
 
-    $scope.addToCart = function (pizza) {
-        cartService.addCartItem(pizza);
-    };
+$scope.addToCart = function (pizza) {
+  cartService.addCartItem(pizza);
+};
+```
 
  Das Template wird um ein *ion-refresher*-Element erweitert und unsere *refresh*-Funktion gesetzt.
 
-    <ion-view>
-      <ion-nav-title class="title">Pizza App</ion-nav-title>
-      <ion-content padding="true">
-          <div ng-show="loading" class="text-center padding">
-              <ion-spinner></ion-spinner>
-          </div>
-          <ion-refresher
-              pulling-text="aktualisieren..."
-              on-refresh="refresh()">
-          </ion-refresher>
-          <div class="list" ng-show="!loading">
-              <div class="item item-divider">
-                  Angebot
-              </div>
-              <div class="item item-button-right" ng-repeat="pizza in pizzas">
-                  {{pizza.name}} {{pizza.price}}
-                  <button class="button button-balanced icon ion-ios-cart" ng-click="addToCart(pizza)"></button>
-              </div>
-          </div>
-      </ion-content>
-  </ion-view>
+```html
+<ion-view>
+  <ion-nav-title class="title">Pizza App</ion-nav-title>
+  <ion-content padding="true">
+    <div ng-show="loading" class="text-center padding">
+      <ion-spinner></ion-spinner>
+    </div>
+    <ion-refresher
+      pulling-text="aktualisieren..."
+      on-refresh="refresh()">
+    </ion-refresher>
+    <div class="list" ng-show="!loading">
+      <div class="item item-divider">
+        Angebot
+      </div>
+      <div class="item item-button-right" ng-repeat="pizza in pizzas">
+        {{pizza.name}} {{pizza.price}}
+        <button class="button button-balanced icon ion-ios-cart" ng-click="addToCart(pizza)"></button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+```
 
 ![Ionic Tutorial Refresher](ionic-refresher.gif?v=63629079934)
 
@@ -910,29 +937,31 @@ Als kleines Praxisbeispiel erhält unsere App eine Detail-View für die Pizzen, 
 
 Das dazugehörige Template sieht dann so aus.
 
-    <ion-view>
-      <ion-nav-title>
-          {{pizza.name}}
-      </ion-nav-title>
-      <ion-content>
-          <div class="list card">
-              <div class="item item-avatar item-icon-left">
-                  <i class="icon ion-pizza"></i>
-                  <h2>{{pizza.name}}</h2>
-                  <p>Ist in unserem Angebot die Nummer {{pizza.id}}</p>
-              </div>
+```html
+<ion-view>
+  <ion-nav-title>
+    {{pizza.name}}
+  </ion-nav-title>
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar item-icon-left">
+        <i class="icon ion-pizza"></i>
+        <h2>{{pizza.name}}</h2>
+        <p>Ist in unserem Angebot die Nummer {{pizza.id}}</p>
+      </div>
 
-              <div class="item item-body">
-                  <p>
-                      {{pizza.description}}
-                  </p>
-              </div>
-              <div class="item item-divider balanced text-big text-right">
-                  {{pizza.price ? (pizza.price | currency) : 'kostenlos'}}
-              </div>
-          </div>
-      </ion-content>
-  </ion-view>
+      <div class="item item-body">
+        <p>
+          {{pizza.description}}
+        </p>
+      </div>
+      <div class="item item-divider balanced text-big text-right">
+        {{pizza.price ? (pizza.price | currency) : 'kostenlos'}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+```
 
 Im entsprechenden Detail-Controller wird die anzuzeigende Pizza geladen und bereitgestellt.
 
@@ -966,20 +995,18 @@ Link zum [Quellcode](https://github.com/angularjs-de/ionic-pizza-service/tree/ma
 <hr>
 <div class="text-center">
 <div class="h3">Hat dir das Tutorial geholfen?</div>
-<div class="row mb-2">
+  <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-<p> Wir haben bereits viele Projekte mit Ionic umgesetzt - nutze unserer Projekterfahrung! Wir geben regelmäßig Schulungen zum Thema <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Ionic und TypeScript</a>, auch Inhouse. Im Kurs lernst du die Grundlagen und Konzepte des Ionic Frameworks und kannst die Fragen stellen, die dir direkt bei deiner Umsetzung helfen. </p>
-
-<p class="text-center">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-                    <button class="btn btn-danger">Jetzt weiter lernen</button>
-                </a>
-            </p>
-
-    </div>
-    <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
+      <p>Wir haben bereits viele Projekte mit Ionic umgesetzt - nutze unserer Projekterfahrung! Wir geben regelmäßig Schulungen zum Thema <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Ionic und TypeScript</a>, auch Inhouse. Im Kurs lernst du die Grundlagen und Konzepte des Ionic Frameworks und kannst die Fragen stellen, die dir direkt bei deiner Umsetzung helfen.</p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
+  </div>
+  <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
+  </div>
 </div>
 </div>
 <hr>
