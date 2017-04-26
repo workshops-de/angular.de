@@ -15,7 +15,26 @@ layout: page
       {% endif %}
       <tr>
         <td width="20">{{ chapter.number }}</td>
-        <td><a id="{{ chapter.slug }}" href="{{ chapter.url }}">{{ chapter.title }}</a></td>
+        <td>
+          <a id="{{ chapter.slug }}" href="{{ chapter.url }}">{{ chapter.title }}</a>
+          {% if chapter.noindex != true and jekyll.environment == "development" %}
+            {% if chapter.description == undefined %}
+              <span class="text-danger">
+                Meta Description missing!
+              </span>
+            {% endif %}
+            {% if chapter.description.size <= 50 %}
+              <span class="text-danger">
+                Meta Description too short. ({{chapter.description.size}} chars). Should be more than 50 chars.
+              </span>
+            {% endif %}
+            {% if chapter.description.size > 156 %}
+              <span class="text-danger">
+                Meta Description too long ({{chapter.description.size}} chars). Should be less than 156 chars.
+              </span>
+            {% endif %}
+          {% endif %}
+        </td>
         <td>
            {% if chapter.progress >= 75 %}
              <span class="badge badge-success pull-right">{{chapter.progress}}%</span>
