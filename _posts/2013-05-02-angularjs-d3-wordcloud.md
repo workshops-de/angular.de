@@ -56,7 +56,6 @@ angular.module('d3')
   }]);
 ```
 
-
 Nachdem wir dies getan haben, implementieren wir nun die eigentliche Direktive. Diese wird unter dem Namen `wordcloud` registriert und enthält eine Abhänigkeit zu dem D3-Service. Somit können wir diesen innerhalb unserer Direktive nutzen. Folgende Attribute soll die Direktive unterstützen:
 
 *   width Number
@@ -116,15 +115,15 @@ Mit der zweiten Option können die Elemente in einem “XML-konformen” Format 
 
 ```html
 <wordcloud>
-    <word>this</word>
-    <word>is</word>
-    <word>a</word>
-    <word>sub-element</word>
-    <word>test</word>
-    <word>to</word>
-    <word>demonstrate</word>
-    <word>this</word>
-    <word>feature</word>
+  <word>this</word>
+  <word>is</word>
+  <word>a</word>
+  <word>sub-element</word>
+  <word>test</word>
+  <word>to</word>
+  <word>demonstrate</word>
+  <word>this</word>
+  <word>feature</word>
 </wordcloud>
 ```
 
@@ -133,7 +132,7 @@ Mit der zweiten Option können die Elemente in einem “XML-konformen” Format 
 
 Mit der dritten Option ist es möglich, die Wörter über den Controller-Scope einzutragen und per JavaScript-Array an die Direktive zu übergeben. Über [bidirektionales Databinding](/buecher/angularjs-buch/databinding/) hat die Direktive vollen Zugriff auf dieses Array. Des Weiteren können Methoden registriert werden, welche auf `click`- bzw. `hover`-Events der Elemente reagieren und im Callback das betroffene Element übergeben bekommen.
 
-```
+```html
 <wordcloud
   words="words"
   on-click="myOnClickFunction(element)"
