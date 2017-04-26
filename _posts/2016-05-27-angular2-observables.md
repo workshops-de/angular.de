@@ -12,27 +12,24 @@ Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadu
 
 <hr>
 <div class="">
-    <div class="h3">Keine Lust zu Lesen?</div>
-    <div class="row mb-2">
-        <div class="col-xs-12 col-md-6">
-            <p>
-                Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und auch Spaß machen. Wir bieten euch auch
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+  <div class="h3">Keine Lust zu Lesen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und auch Spaß machen. Wir bieten euch auch
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
                     und TypeScript Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
-            </p>
-            <p>
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
-                    <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-                </a>
-            </p>
-
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
-                 alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-        </div>
+      </p>
+      <p>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
     </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
 </div>
 <hr>
 
@@ -43,22 +40,26 @@ Was genau bedeuted eigentlich *asynchron* und *synchron*. Vielleicht habt ihr se
 
 Synchronität zeichnet sich in der Programmierung oft dadurch aus, dass ihr das Ergebnis eines Funktionsaufrufs direkt einer Variablen zuweisen könnt, welche dann den entsprechenden Rückgabewert beinhaltet.
 
-    var count = 2; // count is 2
+```typescript
+var count = 2; // count is 2
 
-    function sum(a, b) {
-      return a + b;
-    }
-    var result = sum(1, 2); // result = 3
+function sum(a, b) {
+  return a + b;
+}
+var result = sum(1, 2); // result = 3
+```
 
 Bei Asynchronität steht das Ergebnis erst nach einer unbestimmbaren Zeit oder erst zu einem bestimmten Zeitpunkt in der Zukunft fest. Erweitern wir das obige Beispiel und starten die Berechnung einer Summe zu einem späteren Zeitpunkt.
 
-    var result = 0;
+```typescript
+var result = 0;
 
-    setTimeout(function () {
-      result = sum(1, 2);
-    }, 2000);
+setTimeout(function () {
+  result = sum(1, 2);
+}, 2000);
 
-    alert(result);
+alert(result);
+```
 
 Führen wir dieses Code-Beispiel aus, erscheint im Browser eine Hinweisbox mit dem Inhalt `0`. Die Funktion `setTimeout` startet einen asynchronen Kontext, da die Ausführung und somit das Ergebnis der Funktion erst nach mindestens zwei Sekunden feststeht. Der restliche Code wird normal (synchron) ausgeführt.
 
@@ -116,54 +117,60 @@ Aber bevor wir tiefer in die Materie einsteigen schauen wir uns ein komplettes B
 
 Im folgenden werden die einzelnen Abschnitte und Funktionen des nachstehenden Quellcodes näher erklärt.
 
-    // import observable from the reactivex lib
-    import {Observable} from 'rxjs/Observable';
+```typescript
+// import observable from the reactivex lib
+import {Observable} from 'rxjs/Observable';
 
-    // create an oberservable
-    const source = Observable.create((observer) => {
-      // random async operation
-      const deregister = asyncCall((response, error) => {
-        // in error case --> publish error
-        if (error) {
-          observer.error(error);
-          return;
-        }
-        // success --> publish values
-        observer.next(response);
-        // no other "next"-call --> complete
-        observer.complete();
-      });
+// create an oberservable
+const source = Observable.create((observer) => {
+  // random async operation
+  const deregister = asyncCall((response, error) => {
+    // in error case --> publish error
+    if (error) {
+      observer.error(error);
+      return;
+    }
+    // success --> publish values
+    observer.next(response);
+    // no other "next"-call --> complete
+    observer.complete();
+  });
 
-      // optional clean up function
-      return () => {
-        // is called on unsubcription
-        deregister();
-      };
-    });
+  // optional clean up function
+  return () => {
+    // is called on unsubcription
+    deregister();
+  };
+});
 
-    // listen on observable
-    source.subscribe((data) => {
-      // success
-    }, (errData) => {
-      // error
-    }, () => {
-      // complete
-    });
+// listen on observable
+source.subscribe((data) => {
+  // success
+}, (errData) => {
+  // error
+}, () => {
+  // complete
+});
 
-    // source.unsubscribe();
+// source.unsubscribe();
+```
 
 **Observable erzeugen**
 
 Als Ausgangspunkt benötigen wir ein Observable mit dem wir weiter arbeiten können. Dazu existiert in der `rxjs`-Bibliothek ein extra Modul mit dem Namen *Observable*. Dieses exportiert wiederum die Basis-Klasse `Observable`.
 
-    import {Observable} from 'rxjs/Observable';
+```typescript
+import {Observable} from 'rxjs/Observable';
+```
 
 Auf dem `Observable` Objekt existiert die `create`-Funktion. Sie erlaubt uns ein neues Observable-Objekt zu erzeugen und erwartet eine Callback-Funktion, die einen *Observer* als Parameter erhält. Als Rückgabewert kann eine Funktion angegeben werden.
 
-    const source = Observable.create((observer) => {
-      // optional clean up function
-      return () => {};
-    });
+```typescript
+const source = Observable.create((observer) => {
+  // optional clean up function
+  return () => {};
+});
+```
 
 Glücklicherweise müsst ihr euch in den meisten Anwendungsfälle nicht selbst um die Erzeugung eines Observables kümmern. Dazu gibts es verschiedene Hilfsfunktion oder ein externer Programmteil liefert euch direkt ein Observable. Als Beispiel ist der Rückgabewert eines Http-Requests bereits ein Observable.
 
@@ -185,19 +192,21 @@ Der Observer eines Observables kümmert sich, um das Weiterleiten von Werten und
 
 Daraus ergibts sich dann folgender, vereinfachter Observable-Code.
 
-    Observable.create((observer) => {
-      asyncCall((response, error) => {
-        // in error case --> publish error
-        if (error) {
-          observer.error(error);
-          return;
-        }
-        // success --> publish values
-        observer.next(response);
-        // no other "next"-call --> complete
-        observer.complete();
-      });
-    });
+```typescript
+Observable.create((observer) => {
+  asyncCall((response, error) => {
+    // in error case --> publish error
+    if (error) {
+      observer.error(error);
+      return;
+    }
+    // success --> publish values
+    observer.next(response);
+    // no other "next"-call --> complete
+    observer.complete();
+  });
+});
+```
 
 **Subscribe und Unsubscribe**
 
@@ -209,20 +218,24 @@ Damit uns der Observer überhaupt mitteilen kann, dass Änderungen vorliegen, m�
 
 übergeben werden.
 
-    // listen on observable
-    source.subscribe((data) => {
-      // success
-    }, (errData) => {
-      // error
-    }, () => {
-      // complete
-    });
+```typescript
+// listen on observable
+source.subscribe((data) => {
+  // success
+}, (errData) => {
+  // error
+}, () => {
+  // complete
+});
+```
 
 Möchte man nicht mehr auf Änderungen reagieren, können wir uns vom Observable auch wieder über die `unsubscribe`-Funktion abmelden.
 
-    source.unsubscribe();
+```typescript
+source.unsubscribe();
+```
 
-<div class="alert alert-info"><b>Hinweis:</b> Ihr könnt euch jederzeit von einem Observable abmelden und wieder anmelden.</div>
+<div class="alert alert-info">Hinweis: Ihr könnt euch jederzeit von einem Observable abmelden und wieder anmelden.</div>
 
 **Weitere Funktionen und Operatoren**
 
@@ -230,14 +243,18 @@ Observables bieten eine Vielzahl an weiteren Funktionen und Operatoren, die ihr 
 
 Um beispielsweise die `of` oder `from` Funktionen zur Verfügung zu haben, müsst ihr diese extra importieren.
 
-    import 'rxjs/add/observable/of';
-    import 'rxjs/add/observable/from';
+```typescript
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/from';
+```
 
 Das gleiche Spiel müsst ihr bei der Nutzung von Operatoren betreiben.
 
-    import 'rxjs/add/operator/map';
+```typescript
+import 'rxjs/add/operator/map';
+```
 
-<div class="alert alert-warning"><b>Wichtig:</b> Zusätzliche Funktionen und Operatoren müssen extra importiert werden.</div>
+<div class="alert alert-warning">Wichtig: Zusätzliche Funktionen und Operatoren müssen extra importiert werden.</div>
 
 Darüber hinaus gibt es eine Vielzahl von Operatoren, wie z.B. *zip* - Zusammenführen von Observables, *flatMap* - transformiert Werte eines Observables zu einem neuen Observable oder *map* - Transformationsfunktion für jeden Wert des Observables.
 
@@ -265,13 +282,14 @@ Es folgen noch ein paar kleine Anwendungsfälle in Angular Apps. Vielleicht habt
 
 Der Http-Servie in Angular arbeitet mit Observables.
 
-    import {Http} from '@angular/http';
+```typescript
+import {Http} from '@angular/http';
+// ...
 
-    ...
-
-    // returns an observable
-    return this.http.get(XXX);
-    ...
+// returns an observable
+return this.http.get(XXX);
+// ...
+```
 
 Mehr Informationen, wie ihr Http-Requests senden könnt, folgt in einem späteren Artikel von uns.
 
@@ -285,19 +303,21 @@ Nehmen wir an, wir wollen eine Suche realisieren. Dabei gelten folgende Bedingun
 
 Puh, das sieht jetzt aber doch nach ziemlich viel Arbeit aus. Normalerweise ja, aber ist durch Observables in wenigen Zeilen erledigt.
 
-    // searchControl = new Control();
-    searchControl
-      // react on value changes
-      .valueChanges
-      // wait 800ms after last change
-      .debounceTime(800)
-      // check if new value differs from old one
-      .distinctUntilChanged()
-      // transform value of observable to new observable -> use only response of latest change
-      // avoiding out of order results
-      .switchMap(term => this.dataService.search(term))
-      // listen on results of the search
-      .subscribe(items => this.items = items);
+```typescript
+// searchControl = new Control();
+searchControl
+  // react on value changes
+  .valueChanges
+  // wait 800ms after last change
+  .debounceTime(800)
+  // check if new value differs from old one
+  .distinctUntilChanged()
+  // transform value of observable to new observable -> use only response of latest change
+  // avoiding out of order results
+  .switchMap(term => this.dataService.search(term))
+  // listen on results of the search
+  .subscribe(items => this.items = items);
+```
 
 Was es genau mit einem *Control* auf sich hat erfahrt ihr auch bald in einem eigenen Artikel über Formulare in Angular.
 
@@ -328,21 +348,21 @@ Wir hoffen, dass wir euch die Angst vor dem Arbeiten mit asynchronen Programmtei
 
 <hr>
 <div class="text-center">
-<div class="h3">Hat dir das Tutorial geholfen?</div>
-<div class="row mb-2">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-<p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a> an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten. </p>
-
-<p class="text-center">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-                    <button class="btn btn-danger">Jetzt weiter lernen</button>
-                </a>
-            </p>
-
+      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+        </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
-</div>
+  </div>
 </div>
 <hr>
