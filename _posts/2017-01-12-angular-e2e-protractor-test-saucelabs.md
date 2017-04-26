@@ -17,29 +17,20 @@ Natürlich bestehen sowohl Vor- als auch Nachteile. Daher bedarf es die richtige
 Zudem habe ich von Projekten gehört, bei welchen die Abteilungen für die Entwicklung der E2E- und Unit Tests größer waren als die der Applikation selbst. An dieser Stelle kommt natürlich schnell die Frage auf, wie hier noch "testgetrieben" entwickelt werden kann. Ebenso stellt man dann das Testen an sich in Frage. Daher nochmal ein paar Vor- und Nachteile gegenüber gestellt:
 
 
-<div class="row">
-<div class="col-xs-6"><strong>Vorteile</strong></div>
-<div class="col-xs-6"><strong>Nachteile</strong></div>
-</div>
-<div class="row">
-<div class="col-xs-6">
- <ul>
-  <li>Echter Integrationstest der final auszuliefernden Software</li>
-  <li>Kommunikation zwischen Front- und Backend wird mit-getestet</li>
-  <li>Wie sieht der User meine Applikation?</li>
-  <li>Testen aller Funktionalitäten direkt vom Nutzer-Device(Browser) aus</li>
-  <li>Cross-Browser Testing</li>
- </ul>
-</div>
-<div class="col-xs-6">
- <ul>
-  <li>Entwicklung der E2E Tests sehr zeitintensiv</li>
-  <li>Eine Änderung innerhalb der Applikation kann eine aufwendige Änderung der Test-Suites nach sich ziehen</li>
-  <li>Je nach Größe der Applikation oder des Projektes ist personeller Aufwand erforderlich</li>
-  <li>Kosten bei Cross-Browser Testing (Sauce Labs)</li>
- </ul>
-</div>
-</div>
+**Vorteile:**
+
+* Echter Integrationstest der final auszuliefernden Software
+* Kommunikation zwischen Front- und Backend wird mit-getestet
+* Wie sieht der User meine Applikation?
+* Testen aller Funktionalitäten direkt vom Nutzer-Device(Browser) aus
+* Cross-Browser Testing
+
+**Nachteile:**
+
+* Entwicklung der E2E Tests sehr zeitintensiv
+* Eine Änderung innerhalb der Applikation kann eine aufwendige Änderung der Test-Suites nach sich ziehen
+* Je nach Größe der Applikation oder des Projektes ist personeller Aufwand erforderlich
+* Kosten bei Cross-Browser Testing (Sauce Labs)
 
 
 Trotz der mitunter gerechtfertigten Nachteile, sehe ich die Anwendung von E2E Tests als unabdingbar. Gerade bei der Entwicklung der E2E Tests in Richtung der verschiedenen Browser stellt man oft fest, dass die Browser doch nicht alle gleich ticken. Und das nicht nur zwischen den unterschiedlichen Typen, sondern auch zwischen den Versionen eines Browser. Solche unterschiedlichen Verhaltensweisen, welche auch ganz schnell zu gravierenden Bugs führen können, stellt man oft nur bei der Entwicklung solcher E2E Tests fest.
@@ -68,7 +59,7 @@ Nachdem ich euch nun mit Vor- und Nachteilen und sehr viel Theorie bombardiert h
 
 Als erstes müsst Ihr Protractor global sowie die notwendigen Dependencies installieren:
 
-```
+```shell
 npm install -g protractor
 npm i --save-dev --save-exact request moment protractor-jasmine2-screenshot-reporter jasmine-spec-reporter`
 ```
@@ -76,7 +67,8 @@ npm i --save-dev --save-exact request moment protractor-jasmine2-screenshot-repo
 Einmal werden nun zwei Command-Line Tools installiert. Protractor selbst und der Webdriver Manager. Ruft am besten mal `protractor --version` auf, um zu sehen, ob das Framework sauber installiert wurde. Zudem werden Module für den Report installiert.
 
 Anschließend updaten wir den installierten Webdrivermanager und starten diesen:
-```
+
+```shell
 webdriver-manager update
 webdriver-manager start`
 ```
@@ -99,43 +91,40 @@ Diese drei Dateien wollen wir uns nun mal im Detail ansehen. Wobei es sich stren
 
 In diesem JSON werden die zu testenden Browser definiert. Das Objekt hat insgesamt zwei Keys. Einmal `saucelab` und einmal `local`. Wie es die Namen schon sagen, werden hier die Browser definiert, welche lokal und auf SauceLabs getestet werden sollen:
 
- ```
- {
-"saucelab": [
+ ```json
+{
+  "saucelab": [
     {
-    "browserName": "chrome",
-    "platform": "Windows 10",
-    "version": "54",
-    "name": "Google Chrome",
-    "shardTestFiles": true,
-    "maxInstances": 2
+      "browserName": "chrome",
+      "platform": "Windows 10",
+      "version": "54",
+      "name": "Google Chrome",
+      "shardTestFiles": true,
+      "maxInstances": 2
     },
-
     {
-    "browserName": "firefox",
-    "platform": "Windows 7",
-    "version": "46.0",
-    "name": "Mozilla Firefox",
-    "shardTestFiles": true,
-    "maxInstances": 2
+      "browserName": "firefox",
+      "platform": "Windows 7",
+      "version": "46.0",
+      "name": "Mozilla Firefox",
+      "shardTestFiles": true,
+      "maxInstances": 2
     },
-
     {
-    "browserName": "internet explorer",
-    "platform": "Windows 10",
-    "version": "11.103",
-    "name": "Internet Explorer",
-    "shardTestFiles": true,
-    "maxInstances": 2
+      "browserName": "internet explorer",
+      "platform": "Windows 10",
+      "version": "11.103",
+      "name": "Internet Explorer",
+      "shardTestFiles": true,
+      "maxInstances": 2
     }
-],
-
-"local": [
+  ],
+  "local": [
     {
-    "browserName": "chrome"
+      "browserName": "chrome"
     }
-]
-}`
+  ]
+}
 ```
 
 Die genaue Definition für die Konfiguration der SauceLab Browser findet ihr im SauceLabs [Platform Configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/). Zudem möchte ich euch dennoch die Keys kurz erklären:
@@ -159,11 +148,11 @@ Wenn Ihr euch das Objekt anseht, erkennt Ihr das hier auf SauceLabs die Browser 
 
 Das Objekt in diesem File wurde von mir genauso wie die `browserlist.json` aus der `protractor.conf.js` heraus getrennt, um eine klarere Struktur zu erhalten. In diesem File werden die einzelnen Test-Suites definiert:
 
-```
+```json
 {
-    "template": [ "../src/app/template/**/*e2e-spec.js" ],
-    "home": [ "../src/app/pages/home/**/*e2e-spec.js" ],
-    "site1": [ "../src/app/pages/site1/**/*e2e-spec.js" ]
+  "template": [ "../src/app/template/**/*e2e-spec.js" ],
+  "home": [ "../src/app/pages/home/**/*e2e-spec.js" ],
+  "site1": [ "../src/app/pages/site1/**/*e2e-spec.js" ]
 }
 ```
 
@@ -174,13 +163,13 @@ Wenn ich die Testfälle in Suiten aufteile, habe ich anschließend auch die Mög
 ##### PROTRACTOR.CONF.JS
 
 Hier mal eine Protractor Konfigurationsdatei, welche das Testing lokal, sowie auch über SauceLabs unterstüzt. Als Testframework verwende ich hier [Jasmine](https://jasmine.github.io/). Zudem habe ich einen Testreporter mit integriert, welcher Screenshots erstellt und diese zusammen mit dem Test-Report lokal ablegt.
+
 Dieses File wollen wir uns mal Stück für Stück ansehen:
 
-```
+```javascript
 'use strict';
 
 const HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
-
 const ENV = process.env;
 const pkg = require('../package.json');
 const browserslist = require('./browserslist.json');
@@ -188,7 +177,6 @@ const testsuites = require('./testsuites.json');
 const q = require('q');
 const request = require('request');
 const moment = require('moment');
-
 const time = moment().format('DD.MM.YYYY');
 
 const reporter = new HtmlScreenshotReporter({
@@ -288,7 +276,7 @@ exports.config = {
            });
        });
      }
-}`
+}
 ```
 
 Im oberen Teil laden wir die externen Module, sowie die zwei bereits genannten JSON Files für die Browser- und der Testsuites Definitionen. Als externe Module werden hier folgende Dependencies geladen:
@@ -339,7 +327,7 @@ Wenn wir im Lifecycle `onComplete` unsere Testergebnisse, sowie eindeutige Build
 
 Diese Browsermatrix kann dann beispielsweise in der Beschreibung des GitHub Repos oder auf Promotion Seiten der Applikation mit eingebunden werden. Diese Browsermatrix wird vor allem immer mit den Ergebnissen der Tests live aktualisiert. Das bedeutet, wenn z.B. die Tests bei Firefox fehlschlagen, wird dieser automatisch rot. Einbinden lässt sich die Matrix ganz einfach per Markdown:
 
-```
+```markdown
 [![Sauce Test Status](https://saucelabs.com/buildstatus/YOUR_SAUCE_USERNAME)](https://saucelabs.com/u/YOUR_SAUCE_USERNAME)`
 ```
 
@@ -359,20 +347,21 @@ Zur Lokalisierung von Elementen im DOM
 Zur Steuerung von Protractor innerhalb eines Tests
 
 Ein einfaches Beispiel:
-```
+
+```typescript
 describe('My first Angular 2 Application...', () => {
-        beforeAll(() => browser.get('http://my.page.com'));
+  beforeAll(() => browser.get('http://my.page.com'));
 
-        it('... have the title "What a nice day"', () => {
-          expect(browser.getTitle()).toEqual('What a nice day');
-        });
+  it('... have the title "What a nice day"', () => {
+    expect(browser.getTitle()).toEqual('What a nice day');
+  });
 
-        it('... have an inputfield', () => {
-          let inputfield = element(by.tagName('input'));
+  it('... have an inputfield', () => {
+    let inputfield = element(by.tagName('input'));
 
-          expect(inputfield.isPresent()).toBe(true);
-        });
-      });`
+    expect(inputfield.isPresent()).toBe(true);
+  });
+});`
 ```
 
 In dieser Suite sind zwei Tests enthalten. Allerdings öffnen wir die Page `http://my.page.com` zuerst im beforeAll Hook. Da es sich hier um eine Aktion im Browser handelt, verwenden wir hierzu die Variable `browser`. Die Variable `browser` verwenden wir auch im ersten Test. Denn wir möchten den Titel vom Browser prüfen. Also rufen wir folglich die variable `browser` mit der Funktion `getTitle()` auf und prüfen über `expect` und `toEqual` den richtigen Inhalt.
@@ -385,13 +374,13 @@ Im zweiten Test hingegen prüfen wir, ob die Seite ein Inputfield enthält. Folg
 
 Wenn meine Tests dann fertig sind, kann ich Protractor ganz einfach mit
 
-```
+```shell
 protractor protractor.conf.js
 ```
 
 lokal mit Chrome starten. Wenn ich wie bereits o.g. meine Tests in unterschiedliche Suiten aufteile, kann ich diese separat aufrufen mit:
 
-```
+```shell
 protractor protractor.conf.js --suite mySuite`
 ```
 
@@ -399,7 +388,7 @@ Hier werden nur die Testfälle welche sich innerhalb der Suite mit dem Name `myS
 
 Wenn dann lokal die Tests alle sauber durchlaufen, kann ich die Tests gegen verschiedene Browser auf SauceLabs laufen lassen. Wie bereits genannt, wird dies über die Umgebungsvariable "saucetest" geregelt. Folglich muss ich Protractor nun wie folgt aufrufen:
 
-```
+```shell
 saucetest=true protractor protractor.conf.js
 ```
 
