@@ -1,6 +1,6 @@
 ---
 title: "Browserify und AngularJS - Dream Team für SPAs"
-description: 
+description:
 author: "Bastian Krol"
 slug: "angularjs-browserify"
 published_at: 2014-06-02 07:00:00.000000Z
@@ -36,13 +36,15 @@ Bevor wir anfangen, unsere eigene App zu implementieren, müssen wir erstmal die
 
 Um die benötigten AngularJS-Bibliotheken zu installieren, reicht folgendes npm Kommando aus:
 
-```
+```shell
 npm install --save angular angular-route
 ```
 
 Nun sind angular-core und angular-route verfügbar. Um sie in unserer App zu nutzen müssen sie nur per `require` eingebunden werden, etwa so:
 
-    var angular = require('angular');
+```javascript
+var angular = require('angular');
+```
 
 ## AngularJS und CommonJS miteinander verheiraten - ein Stück in drei Akten
 
@@ -50,31 +52,32 @@ In einem "normalen" AngularJS-Projekt (ohne Browserify) enthält üblicherweise 
 
 *app/js/controller/todo.js:*
 
-    (function() {
-      'use strict';
-       angular
-      .module('todoApp')
-      .controller('TodoCtrl', function($scope, TodoService) {
-        ...
-      });
-    })();
-
+```javascript
+(function() {
+  'use strict';
+  angular
+    .module('todoApp')
+    .controller('TodoCtrl', function($scope, TodoService) {
+      // ...
+    });
+})();
+```
 
 Im einfachsten Fall werden alle Einzeldateien dann per Script-Tag in der HTML-Datei eingebunden:
 
 *app/index.html:*
 
-    ...
-    <script src="/app/js/service/todos.js" type="text/javascript"></script>
-    <script src="/app/js/service/imprint.js" type="text/javascript"></script>
-    <script src="/app/js/controller/edit_todo.js" type="text/javascript"></script>
-    <script src="/app/js/controller/todo.js" type="text/javascript"></script>
-    <script src="/app/js/controller/todo_list.js" type="text/javascript"></script>
-    <script src="/app/js/controller/imprint.js" type="text/javascript"></script>
-    <script src="/app/js/controller/footer.js" type="text/javascript"></script>
-    // viele weitere Script-Tags
-    ...
-
+```html
+...
+<script src="/app/js/service/todos.js" type="text/javascript"></script>
+<script src="/app/js/service/imprint.js" type="text/javascript"></script>
+<script src="/app/js/controller/edit_todo.js" type="text/javascript"></script>
+<script src="/app/js/controller/todo.js" type="text/javascript"></script>
+<script src="/app/js/controller/todo_list.js" type="text/javascript"></script>
+<script src="/app/js/controller/imprint.js" type="text/javascript"></script>
+<script src="/app/js/controller/footer.js" type="text/javascript"></script>
+// ... viele weitere Script-Tags
+```
 
 ### Der naive Ansatz
 
@@ -82,18 +85,22 @@ Dies könnte man im Prinzip beim Einsatz von Browserify ähnlich handhaben. Das 
 
 *app/js/controller/todo.js:*
 
-    'use strict';
-    var angular = require('angular');
+```javascript
+'use strict';
+var angular = require('angular');
 
-    angular
-    .module('todoApp')
-    .controller('TodoCtrl', function($scope, TodoService) {
-      ...
-    });
+angular
+.module('todoApp')
+.controller('TodoCtrl', function($scope, TodoService) {
+  // ...
+});
+```
 
 Der einzige Unterschied im Controller ist, dass wir auf die [IIFE](http://en.wikipedia.org/wiki/Immediately-invoked_function_expression) verzichten können - CommonJS-Module sind per se voneinander isoliert und greifen nicht auf den globalen Scope zu. Daher benötigen wir hier das Statement
 
-`var angular = require('angular');` 
+```javascript
+var angular = require('angular');
+```
 
 Eine globale Variable `angular` gibt es im CommonJS-Kontext nicht.
 
@@ -101,19 +108,21 @@ Da Browserify aus allen CommonJS-Modulen eine einzige Datei erzeugt, werden die 
 
 *app/js/app.js:*
 
-    'use strict';
-    
-    var angular = require('angular');
-    var app = angular.module('todoApp', [ 'ngRoute' ]);
+```javascript
+'use strict';
 
-    require('./service/todos');
-    require('./service/imprint');
-    require('./controller/edit_todo');
-    require('./controller/todo');
-    require('./controller/todo_list');
-    require('./controller/imprint');
-    require('./controller/footer');
-    // ... weitere require-Statements, eins pro Datei
+var angular = require('angular');
+var app = angular.module('todoApp', [ 'ngRoute' ]);
+
+require('./service/todos');
+require('./service/imprint');
+require('./controller/edit_todo');
+require('./controller/todo');
+require('./controller/todo_list');
+require('./controller/imprint');
+require('./controller/footer');
+// ... weitere require-Statements, eins pro Datei
+```
 
 Viel gewonnen haben wir dadurch noch nicht. Das müsste doch besser gehen.
 
@@ -123,26 +132,30 @@ Der erste Schönheitsfehler, den wir beseitigen, ist die lange Liste von `requir
 
 *app/js/app.js:*
 
-    'use strict';
-    
-    var angular = require('angular');
-    var app = angular.module('todoApp', []);
+```javascript
+'use strict';
 
-    // ein require-Statement pro Unterverzeichnis statt eins pro Datei
-    require('./service');
-    require('./controller');
+var angular = require('angular');
+var app = angular.module('todoApp', []);
+
+// ein require-Statement pro Unterverzeichnis statt eins pro Datei
+require('./service');
+require('./controller');
+```
 
 Übergibt man der `require`-Funktion als Argument ein Verzeichnis statt einer Datei, wird in diesem Verzeichnis automatisch die Datei `index.js` gesucht und diese eingebunden. Wir legen also in jedem Verzeichnis eine `index.js` an, in der wir festlegen, welche Dateien aus diesem Verzeichnis inkludiert werden sollen:
 
 *app/js/controller/index.js:*
 
-    'use strict';
-    
-    require('./edit_todo');
-    require('./footer');
-    require('./todo');
-    require('./todo_list');
-    require('./imprint');
+```javascript
+'use strict';
+
+require('./edit_todo');
+require('./footer');
+require('./todo');
+require('./todo_list');
+require('./imprint');
+```
 
 Kleine Anmerkung am Rande: Über sinnvolle Ordner-Strukturen für AngularJS-Projekte wurde an vielen anderen Stelle schon ausgiebig diskutiert. Die hier gemachten Vorschläge sind unabhängig davon, ob man seine Ordner-Struktur technisch anlegt (controller, service, directive, ...) oder sich an der Fachlichkeit orientiert.
 
@@ -154,26 +167,30 @@ Unsere nächste Optimierung betrifft den üblichen AngularJS-Boilerplate-Code, u
 
 *app/js/controller/index.js:*
 
-    'use strict';
-    var app = require('angular').module('todoApp');
-    
-    app.controller('EditTodoCtrl', require('./edit_todo'));
-    app.controller('FooterCtrl', require('./footer'));
-    app.controller('TodoCtrl', require('./todo'));
-    app.controller('TodoListCtrl', require('./todo_list'));
-    app.controller('ImprintCtrl', require('./imprint'));
+```javascript
+'use strict';
+var app = require('angular').module('todoApp');
+
+app.controller('EditTodoCtrl', require('./edit_todo'));
+app.controller('FooterCtrl', require('./footer'));
+app.controller('TodoCtrl', require('./todo'));
+app.controller('TodoListCtrl', require('./todo_list'));
+app.controller('ImprintCtrl', require('./imprint'));
+```
 
 Die einzelnen CommonJS-Module für die Controller und Services kommen dann ohne AngularJS-spezifischen Code aus:
 
 *app/js/controller/todo.js:*
 
-    'use strict';
-    
-    module.exports = function($scope, TodoService) {
-      ...
-    };
+```javascript
+'use strict';
 
-Insgesamt kommt der Code jetzt schon deutlich aufgeräumter daher. Ein positiver Effekt dieses Vorgehens ist die bessere Testbarkeit der AngularJS-Entitäten (siehe nächster Abschnitt). 
+module.exports = function($scope, TodoService) {
+  // ...
+};
+```
+
+Insgesamt kommt der Code jetzt schon deutlich aufgeräumter daher. Ein positiver Effekt dieses Vorgehens ist die bessere Testbarkeit der AngularJS-Entitäten (siehe nächster Abschnitt).
 
 ## Unit-Tests
 
@@ -181,26 +198,28 @@ Dass die einzelnen CommonJS-Module nun nur noch jeweils aus einer Funktion beste
 
 *test/unit/service/todos.js:*
 
-    'use strict';
-    
-    var chai = require('chai')
-      , expect = chai.expect;
+```javascript
+'use strict';
 
-    var TodoServiceModule = require('../../../app/js/service/todos.js');
-    
-    describe('The TodoService', function() {
-      var TodoService;
-    
-      beforeEach(function() {
-    	TodoService = new TodoServiceModule();
-      });
-    
-      it('should have some todos initially', function() {
-    	var todos = TodoService.getTodos();
-    	expect(todos.length).to.equal(4);
-    	expect(todos[0].title).to.equal('Buy milk');
-      });
-    });
+var chai = require('chai');
+var expect = chai.expect;
+
+var TodoServiceModule = require('../../../app/js/service/todos.js');
+
+describe('The TodoService', function() {
+  var TodoService;
+
+  beforeEach(function() {
+    TodoService = new TodoServiceModule();
+  });
+
+  it('should have some todos initially', function() {
+    var todos = TodoService.getTodos();
+    expect(todos.length).to.equal(4);
+    expect(todos[0].title).to.equal('Buy milk');
+  });
+});
+```
 
 Diese Tests lassen sich unabhängig von AngularJS und insbesondere unabhängig vom Browser durchführen. Sie können z. B. einfach per Mocha in Node.js ausgeführt. Das erlaubt sehr schnelles Feedback und lässt sich (da es headless läuft) sehr einfach in einen CI-Build integrieren.
 
@@ -212,21 +231,29 @@ Eine weitere Möglichkeit, die Tests im Browser auszuführen ist [Karma](http://
 
 Der Code kann noch so toll strukturiert sein, wenn er nicht im Browser läuft, ist das wenig wert. Um einen Haufen CommonJS-Module für den Einsatz im Browser aufzubereiten, müssen wir diese einmal durch Browserify laufen lassen:
 
-`browserify --entry app/js/app.js --outfile app/dist/app.js`
+```shell
+browserify --entry app/js/app.js --outfile app/dist/app.js
+```
 
 Für den Entwicklungs-Workflow wäre es äußerst störend, müsste man nach jeder Änderung erst manuell Browserify aufrufen, damit man die Änderung im Browser testen kann. Dafür gibt es Watchify – Watchify läuft ständig im Hintergrund und beobachtet die Quell-Dateien. Sobald sich eine davon ändert, wird das Browserify-Bundle automatisch neu erzeugt. Der Aufruf entspricht dem von Browserify:
 
-`watchify --entry app/js/app.js --outfile app/dist/app.js`.
+```shell
+watchify --entry app/js/app.js --outfile app/dist/app.js
+```
 
 Um die Tests zu browserifien (z. B. um sie mit Karma auszuführen), kann man die folgenen Kommandos benutzen:
 
-`browserify test/unit/controller/*.js test/unit/service/*.js --outfile test/browserified/browserified_tests.js`
+```shell
+browserify test/unit/controller/*.js test/unit/service/*.js --outfile test/browserified/browserified_tests.js
+```
 
 bzw.
 
-`watchify test/unit/controller/*.js test/unit/service/*.js --outfile test/browserified/browserified_tests.js`
+```shell
+watchify test/unit/controller/*.js test/unit/service/*.js --outfile test/browserified/browserified_tests.js
+```
 
-Im Beispiel-Repository befinden sich im Verzeichnis `bin` Shell-Skripte zum Aufruf von [Browserify](https://github.com/basti1302/angular-browserify/blob/master/bin/browserify.sh) und [Watchify](https://github.com/basti1302/angular-browserify/blob/master/bin/watchify.sh). 
+Im Beispiel-Repository befinden sich im Verzeichnis `bin` Shell-Skripte zum Aufruf von [Browserify](https://github.com/basti1302/angular-browserify/blob/master/bin/browserify.sh) und [Watchify](https://github.com/basti1302/angular-browserify/blob/master/bin/watchify.sh).
 
 ## Gulp-Build, Live-Reload, Karma, Protractor und der ganze Rest
 
@@ -272,4 +299,4 @@ Dabei sind wir auf die fortgeschrittenen Möglichkeiten, die Browserify bietet, 
 
 * Cloud-basierte Cross-Browser-Tests mit [testling-ci](https://ci.testling.com/)
 
-Die Empfehlung des Tages lautet daher: Das nächste Projekt mal mit Browserify – und danach nie wieder ohne. :-) 
+Die Empfehlung des Tages lautet daher: Das nächste Projekt mal mit Browserify – und danach nie wieder ohne. :-)
