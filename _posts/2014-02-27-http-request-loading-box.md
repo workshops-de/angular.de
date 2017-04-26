@@ -1,6 +1,6 @@
 ---
 title: "Ladebalken bei HTTP-Aufruf anzeigen"
-description: 
+description:
 author: "Sascha Brink"
 slug: "http-request-loading-box"
 published_at: 2014-02-27 11:55:15.000000Z
@@ -18,7 +18,7 @@ Wir schreiben eine Direktive, die ein Element, z.B. einen Ladebalken einblendet,
 
 Hier die wichtigsten Punkte der Lösung:
 
-*   Ob ein Aufruf noch in der Schwebe ist, können wir mit `$http.pendingRequests.length > 0` überprüfen. 
+*   Ob ein Aufruf noch in der Schwebe ist, können wir mit `$http.pendingRequests.length > 0` überprüfen.
 *   Einem *Watcher* können wir in AngularJS nicht nur Variablen, sondern auch Funktionen übergeben. Watcher werden ständig aufgerufen, somit sollte die Funktion nicht komplex sein. Der Vergleich von `pendingRequests` ist einfach genug, um die Applikation nicht träge zu machen.
 
 In der Direktive überprüft der Watcher, ob noch eine Anfrage aussteht. Das Ergebnis (true/false) schreibt dieser in eine Variable `waiting`. Mit `ng-show="waiting"` blenden wir im Template den Ladebalken ein oder aus.
@@ -27,36 +27,40 @@ In der Direktive überprüft der Watcher, ob noch eine Anfrage aussteht. Das Erg
 
 **application.js**
 
-    angular.module('cookbookApp', [])
-      .directive('waitingForRequest', function($http) {
-        var pendingRequests = function() {
-          return $http.pendingRequests.length > 0;
-        };
-        return {
-          restrict: 'E',
-          scope: {},
-          template: '<div ng-show="waiting">Waiting for request to finish...</div>',
-          controller: function($scope) {
-            $scope.$watch(pendingRequests, function(value) {
-              console.log('Pending requests: '+ $http.pendingRequests.length);
-              $scope.waiting = value;
-            });
-          }
-        };
-      })
-      .controller('MainCtrl', function($scope, $http) {
-        $http.get('https://api.github.com/users/sbrink');
-      });
-    
+```javascript
+angular.module('cookbookApp', [])
+  .directive('waitingForRequest', function($http) {
+    var pendingRequests = function() {
+      return $http.pendingRequests.length > 0;
+    };
+    return {
+      restrict: 'E',
+      scope: {},
+      template: '<div ng-show="waiting">Waiting for request to finish...</div>',
+      controller: function($scope) {
+        $scope.$watch(pendingRequests, function(value) {
+          console.log('Pending requests: '+ $http.pendingRequests.length);
+          $scope.waiting = value;
+        });
+      }
+    };
+  })
+  .controller('MainCtrl', function($scope, $http) {
+    $http.get('https://api.github.com/users/sbrink');
+  });
+```
+
 
 **index.html**
 
-    <html ng-app="cookbookApp">
-    <head>
-      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
-      <script src="application.js"></script>
-    </head>
-    <body ng-controller="MainCtrl">
-      <waiting-for-request></waiting-for-request>
-    </body>
-    </html>
+```html
+<html ng-app="cookbookApp">
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+  <script src="application.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+  <waiting-for-request></waiting-for-request>
+</body>
+</html>
+```

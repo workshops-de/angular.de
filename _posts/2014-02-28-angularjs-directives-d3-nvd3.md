@@ -34,7 +34,9 @@ Aktuell hat **nvd3** folgende Direktiven:
 
 Wir nehmen als Beispiel ein einfaches Liniendiagram. Die Daten werden in einem mehrdimensionalen Array abgelegt:
 
-    values: [[ 1025409600000 , 0], [ 1028088000000 , -6.3382185140371] ... ]
+```javascript
+values: [[ 1025409600000 , 0], [ 1028088000000 , -6.3382185140371] ... ]
+```
 
 
 Dieses könnt ihr dann mit der Direktive `nvd3-line-chart` ausgeben.
@@ -45,52 +47,56 @@ Dieses könnt ihr dann mit der Direktive `nvd3-line-chart` ausgeben.
 
 **application.js**
 
-    angular.module("nvd3TestApp", ['nvd3ChartDirectives'])
-      .controller('MainCtrl', function ($scope) {
-        $scope.data = [
-          {
-            key: "Series 1",
-            values: [[ 1025409600000 , 0], [ 1028088000000 , -6.3382185140371] ... ]
-          }
-        ];
-        $scope.xAxisTickFormat = function () {
-          return function (d) {
-            return d3.time.format('%x')(new Date(d));
-          }
-        };
+```javascript
+angular.module("nvd3TestApp", ['nvd3ChartDirectives'])
+  .controller('MainCtrl', function ($scope) {
+    $scope.data = [
+      {
+        key: "Series 1",
+        values: [[ 1025409600000 , 0], [ 1028088000000 , -6.3382185140371] ... ]
+      }
+    ];
+    $scope.xAxisTickFormat = function () {
+      return function (d) {
+        return d3.time.format('%x')(new Date(d));
+      }
+    };
 
-        $scope.yAxisTickFormat = function () {
-          return function (d) {
-            return Math.round(d,10);
-          }
-        };
-    });
+    $scope.yAxisTickFormat = function () {
+      return function (d) {
+        return Math.round(d,10);
+      }
+    };
+});
+```
 
 
 **index.html**
 
-    <html ng-app="nvd3TestApp">
-    <head>
-      <script src="d3.js"></script>
-      <script src="nv.d3.js"></script>
-      <script src="angular.js"></script>
-      <script src="angularjs-nvd3-directives.js"></script>
-      <script src="application.js"></script>
-      <link rel="stylesheet" href="nv.d3.css"/>
-    </head>
-    <body ng-controller="MainCtrl">
-      <nvd3-line-chart
-        data="data"
-        id="exampleId"
-        xAxisTickFormat="xAxisTickFormat()"
-        yAxisTickFormat="yAxisTickFormat()"
-        width="550"
-        height="350"
-        showXAxis="true"
-        showYAxis="true">
-      </nvd3-line-chart>
-    </body>
-    </html>
+```html
+<html ng-app="nvd3TestApp">
+<head>
+  <script src="d3.js"></script>
+  <script src="nv.d3.js"></script>
+  <script src="angular.js"></script>
+  <script src="angularjs-nvd3-directives.js"></script>
+  <script src="application.js"></script>
+  <link rel="stylesheet" href="nv.d3.css"/>
+</head>
+<body ng-controller="MainCtrl">
+  <nvd3-line-chart
+    data="data"
+    id="exampleId"
+    xAxisTickFormat="xAxisTickFormat()"
+    yAxisTickFormat="yAxisTickFormat()"
+    width="550"
+    height="350"
+    showXAxis="true"
+    showYAxis="true">
+  </nvd3-line-chart>
+</body>
+</html>
+```
 
 
 Weitere Diagramm-Beispiele findet ihr in der [Projektdokumentation][6].

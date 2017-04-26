@@ -1,6 +1,6 @@
 ---
 title: "ng-repeat - Duplicate error vermeiden"
-description: 
+description:
 author: "Sascha Brink"
 slug: "ng-repeat-duplicates-in-repeater-are-not-allowed"
 published_at: 2014-03-03 07:45:24.000000Z
@@ -28,4 +28,6 @@ Zu Lösung benutzen wir also `track by` und brauchen nur noch einen Identifikato
 
 Unsere Lösung sieht also folgendermaßen aus:
 
-    <li ng-repeat="item in [4,4,4] track by $index">{{item}}</li> 
+```html
+<li ng-repeat="item in [4,4,4] track by $index">{{item}}</li>
+```
