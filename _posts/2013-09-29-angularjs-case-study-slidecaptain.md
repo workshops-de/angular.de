@@ -18,57 +18,59 @@ Und was hat das alles mit AngularJS zu tun? Ziemlich viel, weil das Frontend kom
 
 Eine SlideCaptain Präsentation besteht - neben ein paar Meta-Informationen - aus Kapiteln, wobei jedes Kapitel wiederum eine oder mehrere Seiten enthält. Jede Seite gliedert sich in Abschnitte, die den eigentlichen Content als reines HTML beinhalten.
 
+```json
+{
+  "__v": 26,
+  "_id": "523174a9ee4de5a816000004",
+  "author": "5138d1e49c9ae8a20e000004",
+  "meta": {
+    "lastUpdate": "2013-09-12T08:07:18.057Z",
+    "title": "AngularJS Artikel",
+    "stats": {
+      "pages": 1,
+      "sections": 1
+    },
+    "tags": ["AngularJS", "single page application", "Web app"],
+    "createdDate": "2013-09-12T08:00:41.387Z",
+    "slug": "angularjs-artikel"
+  },
+  "sections": [
     {
-      "__v": 26,
-      "_id": "523174a9ee4de5a816000004",
-      "author": "5138d1e49c9ae8a20e000004",
-      "meta": {
-        "lastUpdate": "2013-09-12T08:07:18.057Z",
-        "title": "AngularJS Artikel",
-        "stats": {
-          "pages": 1,
-          "sections": 1
-        },
-        "tags": ["AngularJS", "single page application", "Web app"],
-        "createdDate": "2013-09-12T08:00:41.387Z",
-        "slug": "angularjs-artikel"
-      },
-      "sections": [
+      "_id": "523174a9ee4de5a816000005",
+      "pages": [
         {
-          "_id": "523174a9ee4de5a816000005",
-          "pages": [
+          "_id": "523174a9ee4de5a816000006",
+          "centered": true,
+          "headline": "AngularJS Artikel",
+          "paragraphs": [
             {
-              "_id": "523174a9ee4de5a816000006",
-              "centered": true,
-              "headline": "AngularJS Artikel",
-              "paragraphs": [
-                {
-                  "content": "<h1>AngularJS Artikel</h1>",
-                  "_id": "523175b7ee4de5a81600004b"
-                }, {
-                  "content": "<p>Entwicklung einer modernen Web app am Beispiel von SlideCaptain</p>",
-                  "_id": "523175b7ee4de5a81600004a"
-                }, {
-                  "content": "<p><a href=\"http://twitter.com/hankaSch\">Hanka Schmidt</a>&nbsp;/&nbsp;<a href=\"http://twitter.com/gjungb\">Gerd Jungbluth</a></p>",
-                  "_id": "523175b7ee4de5a816000049"
-                }
-              ],
-              "background": {
-                "image": {
-                  "size": "cover"
-                }
-              }
+              "content": "<h1>AngularJS Artikel</h1>",
+              "_id": "523175b7ee4de5a81600004b"
+            }, {
+              "content": "<p>Entwicklung einer modernen Web app am Beispiel von SlideCaptain</p>",
+              "_id": "523175b7ee4de5a81600004a"
+            }, {
+              "content": "<p><a href=\"http://twitter.com/hankaSch\">Hanka Schmidt</a>&nbsp;/&nbsp;<a href=\"http://twitter.com/gjungb\">Gerd Jungbluth</a></p>",
+              "_id": "523175b7ee4de5a816000049"
             }
           ],
-          "title": "Einleitung"
+          "background": {
+            "image": {
+              "size": "cover"
+            }
+          }
         }
       ],
-      "theme": {
-        "animation": "fadeIn",
-        "color": 5,
-        "font": 4
-      }
+      "title": "Einleitung"
     }
+  ],
+  "theme": {
+    "animation": "fadeIn",
+    "color": 5,
+    "font": 4
+  }
+}
+```
 
 
 ### Server (Node.js / MongoDB)
