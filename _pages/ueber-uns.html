@@ -2,7 +2,8 @@
 title: Das Team von AngularJS.DE
 ---
 
-{% for member in site.data.team_members %}
+{% for member_hash in site.data.members %}
+  {% assign member = member_hash[1] %}
   <hr>
   <div class="row">
     <div class="col-5 col-sm-4 col-md-2 user-thumbnail text-center">
