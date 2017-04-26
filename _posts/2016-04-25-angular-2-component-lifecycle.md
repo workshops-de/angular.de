@@ -85,25 +85,27 @@ Keine Angst, falls viele Begrifflichkeiten, wie Projektion, euch noch kein Begri
 
 Aber jetzt ist erstmal interessant, wie die Nutzung der Hooks im Quellcode aussehen könnte. Dazu basteln wir uns eine kleine Komponente, die den *ngOnInit* Hook nutzt.
 
-    import { Component, OnInit } from '@angular/core';
+```typescript
+import { Component, OnInit } from '@angular/core';
 
-    @Component({
-      selector: 'name-component',
-      template: `<div>{{name}}</div>`
-    })
-    export class NameComponent implements OnInit {
-      @Input name: string;
+@Component({
+  selector: 'name-component',
+  template: `<div>{{name}}</div>`
+})
+export class NameComponent implements OnInit {
+  @Input name: string;
 
-      constructor() {
-      	// <name-component [name]="AngularJS"></name-component>
-        console.log(this.name); // undefined
-      }
+  constructor() {
+    // <name-component [name]="AngularJS"></name-component>
+    console.log(this.name); // undefined
+  }
 
-      ngOnInit() {
-      	// name is defined, if a value is set via
-        console.log(this.name);
-      }
-    }
+  ngOnInit() {
+    // name is defined, if a value is set via
+    console.log(this.name);
+  }
+}
+```
 
 Alle Interfaces können einfach über ein `import` aus *angular2/core* geladen werden. Danach müsst ihr über `implements` noch angeben, dass eure Komponente das entsprechende Interface implementiert. Nun wird die *ngOnInit*-Funktion nach dem erfolgreichen Initialisieren der Komponente ausgeführt.
 
@@ -124,28 +126,30 @@ Als Parameter erhält die Funktion ein sogenanntes Änderungsobjekt, dessen Wert
 
 Nutzen wir das obige Code-Beispiel und wandeln es so ab, dass wir den ngOnChanges Hook nutzen.
 
-    import { Component, OnChanges, SimpleChange } from '@angular/core';
+```typescript
+import { Component, OnChanges, SimpleChange } from '@angular/core';
 
-    @Component({
-      selector: 'name-component',
-      template: `<div>{{name}}</div>`
-    })
-    export class NameComponent implements OnChanges {
-      @Input name: string;
+@Component({
+  selector: 'name-component',
+  template: `<div>{{name}}</div>`
+})
+export class NameComponent implements OnChanges {
+  @Input name: string;
 
-      constructor() {
-        console.log(this.name); // undefined
-      }
+  constructor() {
+    console.log(this.name); // undefined
+  }
 
-      // changes is an object with a list of keys from type string
-      // and the values are SimpleChange objects
-      ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
-      	// name is set ==> change detected
-      	// <name-component [name]="AngularJS"></name-component>
-        console.log(this.changes.name);
-        // this.changes = { 'name': { currentValue: 'AngularJS', previousValue: {} } }
-      }
-    }
+  // changes is an object with a list of keys from type string
+  // and the values are SimpleChange objects
+  ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
+    // name is set ==> change detected
+    // <name-component [name]="AngularJS"></name-component>
+    console.log(this.changes.name);
+    // this.changes = { 'name': { currentValue: 'AngularJS', previousValue: {} } }
+  }
+}
+```
 
 Wie ihr sehen könnt, existieren auf einem SimpleChange-Objekt die Schlüssel *currentValue* und *previousValue*. Über sie bekommt ihr Zugriff auf den aktuellen - geänderten - und den vorherigen Wert der Inputs.
 
@@ -177,31 +181,33 @@ Die eigene Change Detection Funktion sollte daher sehr performant implementiert 
 
 Es folgt wieder ein kleines Beispiel. Ihr solltet damit ein wenig ausprobieren, bis euch klar ist, wann und wie oft dieser Hook ausgeführt wird!
 
-    import { Component, DoCheck } from '@angular/core';
+```typescript
+import { Component, DoCheck } from '@angular/core';
 
-    @Component({
-      selector: 'name-component',
-      template: `<div>{{name}}</div>`
-    })
-    export class NameComponent implements DoCheck {
-      @Input name: string;
+@Component({
+  selector: 'name-component',
+  template: `<div>{{name}}</div>`
+})
+export class NameComponent implements DoCheck {
+  @Input name: string;
 
-      oldName: string;
+  oldName: string;
 
-      constructor() {
-        console.log(this.name); // undefined
-      }
+  constructor() {
+    console.log(this.name); // undefined
+  }
 
-      // is executed everytime Change Detection runs
-      ngDoCheck() {
-        // check if there is a new value
-      	if (this.oldName !== this.name) {
-          this.oldName = this.name;
-          // Maybe do something special
-        }
-      }
-
+  // is executed everytime Change Detection runs
+  ngDoCheck() {
+    // check if there is a new value
+    if (this.oldName !== this.name) {
+      this.oldName = this.name;
+      // Maybe do something special
     }
+  }
+
+}
+```
 
 
 ### ngAfterContent und ngAfterView
@@ -223,21 +229,25 @@ In der ersten Version des Frameworks (AngularJS) existiert für Direktiven eine 
 
 Das Template:
 
-    <my-directive><p>Hallo</p></my-directive>
+```html
+<my-directive><p>Hallo</p></my-directive>
+```
 
 Der AngularJS Code:
 
-    // <p>Hallo</p> is inserted where ngTransclude is set
-    angular
-      .module('myApp')
-      .directive('myDirective', function () {
-        return {
-          restrict: 'E',
-          scope: {},
-          transclude: true,
-          template: '... <ng-transclude></ng-transclude> ...'
-        }
-      });
+```javascript
+// <p>Hallo</p> is inserted where ngTransclude is set
+angular
+  .module('myApp')
+  .directive('myDirective', function () {
+    return {
+      restrict: 'E',
+      scope: {},
+      transclude: true,
+      template: '... <ng-transclude></ng-transclude> ...'
+    }
+  });
+```
 
 In Angular heißt dieses Prinzip nun vielleicht ein wenig passender *Projection*. Dieses hat aber die gleiche Funktion.
 
@@ -247,17 +257,21 @@ Statt ngTransclude steht euch die Direktive mit dem passenden Namen **ngContent*
 
 Das Template:
 
-    <name-component name="AngularJS.de"><b>Hello,</b></name-component>
+```html
+<name-component name="AngularJS.de"><b>Hello,</b></name-component>
+```
 
 Die Komponente:
 
-    export @Component({
-      selector: 'name-component',
-      template: `<div><ng-content></ng-content> {{name}}</div>`
-    })
-    class NameComponent {
-      @Input name: string;
-    }
+```typescript
+export @Component({
+  selector: 'name-component',
+  template: `<div><ng-content></ng-content> {{name}}</div>`
+})
+class NameComponent {
+  @Input name: string;
+}
+```
 
 Zusätzlich kann ngContent über das Attribute *select* ein Selektor übergeben werden, um nur bestimmte Inhalte zu projizieren.
 
