@@ -1,6 +1,6 @@
 ---
 title: "ng-repeat - Der Teufel im Schafspelz"
-description: 
+description:
 author: "Philipp Tarasiewicz"
 slug: "angularjs-ng-repeat"
 published_at: 2013-06-05 14:30:20.000000Z
@@ -14,17 +14,21 @@ Als AngularJS-Entwickler kommen wir an der Direktive *ng-repeat* nicht vorbei. G
 
 Die *ng-repeat* Direktive dient dazu, JavaScript-Collections in einer View auszugeben. Dabei ist eine Collection im Sinne von JavaScript entweder ein Array oder ein Objekt, welches als Hashtable-Datenstruktur "missbraucht" wird. Der Einfachheit halber werden wir im Folgenden den Begriff "Hash" für solche Objekte benutzen. Rein technisch gesehen ist das Element (und seine Kindelemente), auf die die Direktive wirkt, selbst wieder ein Template, das beim Ausführen von *ng-repeat* mehrfach instanziiert wird. *Dabei gilt es zu beachten, dass jede Instanz ihren eigenen Scope bekommt.* Man kann nun das folgende einfache Beispiel konstruieren:
 
-    <ul>
-      <li ng-repeat="user in users">{{user.name}}</li>
-    </ul>
-    
+```html
+<ul>
+  <li ng-repeat="user in users">{{user.name}}</li>
+</ul>
+```
+
 
 Damit das obere Beispiel funktioniert, muss in dem Scope, in dem das Template lebt, die Variable `users` auf ein Array oder auf einen Hash verweisen. Darüber hinaus muss dieses Array (bzw. der Hash) User-Objekte enthalten, die zumindest ein Attribut `name` besitzen. Das Ergebnis dieses Beispiels wäre die bequeme Ausgabe dieses Arrays, welche sich im Falle einer Array-Modifikation bzw. Modifikation der einzelnen User-Objekte automatisch aktualisieren würde. Im Falle von Hashes gibt es noch eine erweiterte Syntax, mit der man auf den Schlüsselwert zugreifen kann.
 
-    <ul>
-      <li ng-repeat="(key, user) in users">{{key}} ist zugeordnet: {{user.name}}</li>
-    </ul>
-    
+```html
+<ul>
+  <li ng-repeat="(key, user) in users">{{key}} ist zugeordnet: {{user.name}}</li>
+</ul>
+```
+
 
 ## Scope-Besonderheiten
 
@@ -34,8 +38,10 @@ Wie oben bereits erwähnt, bekommt jede Instanz des durch *ng-repeat* instanziie
 
 Ein sehr nettes Feature von *ng-repeat* ist die Tatsache, dass man die zugrundeliegende Collection auch filtern kann. Dazu bietet AngularJS uns den offensichtlich benannten Filter `filter`, welcher folgendermaßen zu nutzen ist.
 
-    ng-repeat="item in items | filter: {string | Object | function()}"
-    
+```html
+ng-repeat="item in items | filter: {string | Object | function()}"
+```
+
 
 Wir können diesen Filter also auf drei verschiedene Arten nutzen, um die Ausgabe unserer Daten-Sammlungen einzuschränken:
 
@@ -47,29 +53,33 @@ Wir können diesen Filter also auf drei verschiedene Arten nutzen, um die Ausgab
 
 Für die ersten beiden Möglichkeiten gibt es [in der offiziellen AngularJS Dokumentation](http://docs.angularjs.org/api/ng.filter:filter) ein nettes Beispiel. Die dritte Möglichkeit wird in dem folgenden Beispiel nochmals veranschaulicht:
 
-    <ul>
-      <li ng-repeat="user in users | filter:isBigSpender">{{user.name}}</li>
-    </ul>
-    
+```html
+<ul>
+  <li ng-repeat="user in users | filter:isBigSpender">{{user.name}}</li>
+</ul>
+```
+
 
 JavaScript:
 
-    function UserCtrl($scope) {
-        $scope.users = [
-            {name: 'Robin', age: 47, salary: 80000},
-            {name: 'Sascha', age: 39, salary: 40000},
-            {name: 'Phil', age: 35, salary: 20000}
-        ];
-    
-        $scope.isBigSpender = function(user) {
-          if (user.age >= 40 && user.salary >= 60000) {
-            return true;
-          }
-    
-          return false;
-        };
+```javascript
+function UserCtrl($scope) {
+  $scope.users = [
+    {name: 'Robin', age: 47, salary: 80000},
+    {name: 'Sascha', age: 39, salary: 40000},
+    {name: 'Phil', age: 35, salary: 20000}
+  ];
+
+  $scope.isBigSpender = function(user) {
+    if (user.age >= 40 && user.salary >= 60000) {
+      return true;
     }
-    
+
+    return false;
+  };
+}
+```
+
 
 Wie wir erkennen können, soll das Array *users* mithilfe der Funktion *isBigSpender(…)* gefiltert werden. Als "Big Spender" gilt in diesem Beispiel jemand, der min. 40 Jahre alt ist und min. 60.000 EUR im Jahr verdient. :-) Die Logik muss entsprechend der oberen Beschreibung in einer Funktion innerhalb des Scopes des übergeordneten *UserCtrl* definiert sein. In diesem Beispiel würde also nur Robin zur Ausgabe kommen.
 
@@ -83,69 +93,77 @@ Für beide Möglichkeiten folgt jetzt noch ein Beispiel:
 
 ### Beispiel 1: Filtern von Hashes mittels Controller-Funktion
 
-    <ul>
-      <li ng-repeat="user in getBigSpenderUsers(users)">{{user.name}}</li>
-    </ul>
-    
+```html
+<ul>
+  <li ng-repeat="user in getBigSpenderUsers(users)">{{user.name}}</li>
+</ul>
+```
+
 
 JavaScript:
 
-    function UserCtrl($scope) {
-      // $scope.users ist ein Hash (und kein Array!)
-        $scope.users = {
-            one:  {name: 'Robin', age: 47, salary: 80000},
-            two:  {name: 'Sascha', age: 39, salary: 40000},
-            three:  {name: 'Phil', age: 35, salary: 20000}
-        };
-    
-        $scope.getBigSpenderUsers = function(users) {
-          var result = {};
-    
-          angular.forEach(users, function(user, key) {
-              if (user.age >= 40 && user.salary >= 60000) {
-              result[key] = user;
-            }
-          });
-    
-          return result;
-        };
-    }
-    
+```javascript
+function UserCtrl($scope) {
+  // $scope.users ist ein Hash (und kein Array!)
+  $scope.users = {
+    one:  {name: 'Robin', age: 47, salary: 80000},
+    two:  {name: 'Sascha', age: 39, salary: 40000},
+    three:  {name: 'Phil', age: 35, salary: 20000}
+  };
+
+  $scope.getBigSpenderUsers = function(users) {
+    var result = {};
+
+    angular.forEach(users, function(user, key) {
+      if (user.age >= 40 && user.salary >= 60000) {
+        result[key] = user;
+      }
+    });
+
+    return result;
+  };
+}
+```
+
 
 ### Beispiel 2: Filtern von Hashes mittels eigenem Filter
 
-    <ul>
-      <li ng-repeat="user in users | bigSpender">{{user.name}}</li>
-    </ul>
-    
+```html
+<ul>
+  <li ng-repeat="user in users | bigSpender">{{user.name}}</li>
+</ul>
+```
+
 
 JavaScript:
 
-    // Der Controller definiert hier nur die Collection
-    function UserCtrl($scope) {
-      // $scope.users ist ein Hash (und kein Array!)
-        $scope.users = {
-            one:  {name: 'Robin', age: 47, salary: 80000},
-            two:  {name: 'Sascha', age: 39, salary: 40000},
-            three:  {name: 'Phil', age: 35, salary: 20000}
-        };
-    }
-    
-    // Der 'bigSpender' Filter
-    angular.module('app').filter('bigSpender', function() {
-      return function(users) {
-        var result = {};
-    
-        angular.forEach(users, function(user, key) {
-          if (user.age >= 40 && user.salary >= 60000) {
-            result[key] = user;
-          }
-        });
-    
-        return result;
-      };
+```javascript
+// Der Controller definiert hier nur die Collection
+function UserCtrl($scope) {
+  // $scope.users ist ein Hash (und kein Array!)
+  $scope.users = {
+    one:  {name: 'Robin', age: 47, salary: 80000},
+    two:  {name: 'Sascha', age: 39, salary: 40000},
+    three:  {name: 'Phil', age: 35, salary: 20000}
+  };
+}
+
+// Der 'bigSpender' Filter
+angular.module('app').filter('bigSpender', function() {
+  return function(users) {
+    var result = {};
+
+    angular.forEach(users, function(user, key) {
+      if (user.age >= 40 && user.salary >= 60000) {
+        result[key] = user;
+      }
     });
-    
+
+    return result;
+  };
+});
+```
+
 
 ## Fazit
 
