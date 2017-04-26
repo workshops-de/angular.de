@@ -16,18 +16,23 @@ Seit **AngularJS 1.2** sind Animationen fester Bestandteil des Frameworks. Unter
 
 Die Unterstützung für Animationen befindet sich in einer separaten Datei. Der erste Schritt besteht darin, diese einzubinden und das Modul `ngAnimate` als Abhängigkeit anzugeben. In eurer HTML-Datei wäre das beispielsweise für die AngularJS-Version des Google-CDN:
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-animate.js"></script>
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-animate.js"></script>
+```
 
 
 Dazu die Modul-Deklaration im JavaScript:
 
-    angular.module('myApp', ['ngAnimate'])
+```javascript
+angular.module('myApp', ['ngAnimate'])
+```
 
 
 ## Direktiven und Ereignisse
 
 AngularJS unterstützt Animationen für die folgenden Direktiven:
+
 
 <table class="table table-condensed">
   <thead>
@@ -125,7 +130,9 @@ Von jeder Direktive können verschiedene Ereignisse animiert werden. Für `ngRep
 
 Der erste Schritt besteht immer darin, dem Element mit der Direktive eine Klasse zu geben. Dies gilt sowohl für Animation mit CSS3 als auch für Javascript.
 
-    <li ng-repeat="item in items" class="list-item">{{item}}</li>
+```html
+<li ng-repeat="item in items" class="list-item">{{item}}</li>
+```
 
 
 Ab jetzt kommt es darauf an, ob ihr CSS oder JavaScript unterstützen wollt.
@@ -134,14 +141,16 @@ Ab jetzt kommt es darauf an, ob ihr CSS oder JavaScript unterstützen wollt.
 
 Beginnen wir mit der einfachen Variante - CSS3-Animationen. Wir animieren im folgenden Beispiel das Einblenden eines neuen Elements über einen Highlight-Effekt. D.h. ein neues Element leuchtet erst gelb auf und geht dann sanft in weiß über. In Eurem CSS schreibt ihr dazu:
 
-    .list-item.ng-enter {
-      -webkit-transition:0.5s linear all;
-      transition:0.5s linear all;
-      background-color: yellow;
-    }
-    .list-item.ng-enter-active {
-      background-color: white;
-    }
+```css
+.list-item.ng-enter {
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  background-color: yellow;
+}
+.list-item.ng-enter-active {
+  background-color: white;
+}
+```
 
 
 > [Demo CSS3-Animation als JSFiddle][2]
@@ -169,25 +178,27 @@ Für Animationen mit JavaScript müsst ihr eine `animation` mit dem Klassennamen
 
 Grundsätzlicher Aufbau einer Animation mit JavaScript:
 
-    angular.module('myApp', ['ngAnimate'])
-      .animation('.list-item', function() {
-        return {
-          enter/leave/move: function(element, done) {
-            // Die eigentliche Animation wird hier gestartet.
-            // done() muss nach Beenden aufgerufen werden
-          },
+```javascript
+angular.module('myApp', ['ngAnimate'])
+  .animation('.list-item', function() {
+    return {
+      enter/leave/move: function(element, done) {
+        // Die eigentliche Animation wird hier gestartet.
+        // done() muss nach Beenden aufgerufen werden
+      },
 
-          // Animation, die vor Hinzufügen/Entfernen der Klassen
-          // ausgeführt werden soll
-          beforeAddClass: function(element, className, done) { },
-          beforeRemoveClass: function(element, className, done) { },
+      // Animation, die vor Hinzufügen/Entfernen der Klassen
+      // ausgeführt werden soll
+      beforeAddClass: function(element, className, done) { },
+      beforeRemoveClass: function(element, className, done) { },
 
-          // Animation, die nach Hinzufügen/Entfernen der Klassen
-          // ausgeführt werden soll
-          addClass: function(element, className, done) { },
-          removeClass: function(element, className, done) { }
-        };
-      });
+      // Animation, die nach Hinzufügen/Entfernen der Klassen
+      // ausgeführt werden soll
+      addClass: function(element, className, done) { },
+      removeClass: function(element, className, done) { }
+    };
+  });
+```
 
 
 > [Demo JavaScript-Animation als JSFiddle][4]

@@ -14,6 +14,8 @@ Wusstet ihr, dass ihr Elemente auch vom letzten Element aus einschränken könnt
 
 Ihr müsst dazu einfach negative Werte übergeben.
 
-    <li ng-repeat="item in items | limitTo:-2" ng-bind="item.name"></li>
+```html
+<li ng-repeat="item in items | limitTo:-2" ng-bind="item.name"></li>
+```
 
-Interessieren Euch die kleinen Teile der Dokumentation, die man schon mal übersieht? Sind sie für Euch hilfreich? 
+Interessieren Euch die kleinen Teile der Dokumentation, die man schon mal übersieht? Sind sie für Euch hilfreich?
