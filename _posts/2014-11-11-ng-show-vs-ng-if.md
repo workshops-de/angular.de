@@ -16,11 +16,13 @@ In fast jeder Webanwendung gibt es Elemente, die man zeitweise aus- oder einblen
 
 Mit einem kleinen Code-Beispiel lässt sich sehr einfach zeigen, worin sich die Direktiven grundlegend unterscheiden.
 
-    <input type="checkbox" ng-model="showMyText" ng-init="showMyText = false">
-    <label ng-show="showMyText">
-      <span ng-init="showMyText = true">Mein Text!</span>
-      <input type="checkbox" ng-model="showMyText">
-    </label>
+```html
+<input type="checkbox" ng-model="showMyText" ng-init="showMyText = false">
+<label ng-show="showMyText">
+  <span ng-init="showMyText = true">Mein Text!</span>
+  <input type="checkbox" ng-model="showMyText">
+</label>
+```
 
 <iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/klTOmQl6yvLPjhCrF69M/preview.html" style="width:100%;height:80px;border:0"></iframe>
 
@@ -38,11 +40,13 @@ Der Grund dafür ist einfach, denn `ng-show` blendet Elemente mithilfe der CSS-K
 
 Wenn wir `ng-show` mit `ng-if` ersetzen erhalten wir ein komplett anderes Verhalten.
 
-    <input type="checkbox" ng-model="showMyText" ng-init="showMyText = false">
-    <label ng-if="showMyText">
-      <span ng-init="showMyText = true">Mein Text!</span>
-      <input type="checkbox" ng-model="showMyText">
-    </label>
+```html
+<input type="checkbox" ng-model="showMyText" ng-init="showMyText = false">
+<label ng-if="showMyText">
+  <span ng-init="showMyText = true">Mein Text!</span>
+  <input type="checkbox" ng-model="showMyText">
+</label>
+```
 
 <iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/kJZ0jgyjieerZ6eEUMxb/preview.html" style="width:100%;height:80px;border:0"></iframe>
 
