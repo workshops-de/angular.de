@@ -93,7 +93,6 @@ Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, das
           <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
         </a>
       </p>
-
     </div>
     <div class="col-xs-12 col-md-6">
       <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Docker &amp; Kubernetes Intensiv Workshop/Schulung">
@@ -131,7 +130,7 @@ Um Circle CI konfigurieren zu können, muss in der Root des Projektes die ```cir
 
 Hier mal ein Beispiel aus einer Angular App:
 
-```
+```yaml
 machine:
   timezone: Europe/Berlin
   node:
