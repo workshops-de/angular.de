@@ -40,9 +40,11 @@ Das klingt doch schon mal recht vielversprechend, aber wie geht das nun genau im
 
 Zunächst bietet uns der [$http](http://docs.angularjs.org/api/ng.$http)-Service die Möglichkeit, für jeden Request einen Header zu setzen. Der \$httpProvider (das Modul, das den \$http-Service injiziert) hat ein `defaults.headers`-Objekt, das wiederum Unterobjekte für die üblichen HTTP-Verben bietet. Möchten wir den Header an alle Requests hängen, gibt es dafür das Unterobjekt `common`:
 
-    $http.post("/login", credentials).then(function(response) {
-      $httpProvider.defaults.headers.common["X-AUTH-TOKEN"] = response.data.token;
-    });
+```javascript
+$http.post("/login", credentials).then(function(response) {
+  $httpProvider.defaults.headers.common["X-AUTH-TOKEN"] = response.data.token;
+});
+```
 
 
 Da es sich aber um eine recht übliche Anforderung handelt, bringt $http einen Auth-Token-Mechanismus von Hause aus mit. Dabei muss der Server einfach nur ein Cookie namens `XSRF-TOKEN` ausliefern. AngularJS liest dieses Cookie automatisch aus und setzt den Header `X-XSRF-TOKEN`. Wird das Cookie vom Server oder Client entfernt, setzt AngularJS den Header nicht mehr. Damit ist dieser Teil erledigt.
@@ -55,35 +57,39 @@ Solange das Token gültig ist, klappt alles wunderbar. Eine ordentliche Backend-
 
 $http bietet einige Methoden um GET-, POST-, PUT-, DELETE- und HEAD-Requests bequemer auszuführen. Diese Methoden liefern nicht nur eine [Promise](/buecher/angularjs-buch/angularjs-promises/) zurück, sondern eine erweiterte Promise, die die Methoden `success(callbackFn)` und `error(callbackFn)` bietet und somit Method-Chaining (bekannt aus jQuery) erlaubt. Außerdem wird die Response schon destrukturiert.
 
-    $http.get("/users/3")
-    .success(function(data, status, headers, response) {
-      $scope.user = data;
-    })
-    .error(function(data, status) {
-      if (status == 401)
-        // Zur Login-Seite
-      else
-        // Fehlermeldung anzeigen
-    });
+```javascript
+$http.get("/users/3")
+.success(function(data, status, headers, response) {
+  $scope.user = data;
+})
+.error(function(data, status) {
+  if (status == 401)
+    // Zur Login-Seite
+  else
+    // Fehlermeldung anzeigen
+});
+```
 
 
 Nicht schlecht, aber natürlich wollen wir nicht bei jeder Anfrage abfragen, ob der Server mit 401 geantwortet hat. Auch hier bietet uns AngularJS eine Hilfestellung. Wir können beim \$httpProvider einen so genannten **HTTP-Interceptor** anmelden. Ein Interceptor fängt jede Response ab und entscheidet, ob die Response an die aufrufende Funktion weitergeleitet wird oder nicht. Ein Interceptor ist dabei nichts anderes als eine Funktion, die eine Promise übermittelt bekommt. Status-Codes im 200er-Bereich werden dabei als erfolgreiche (**resolved**) Promise übergeben, alle anderen Codes sind nicht-erfolgreich (**rejected**). Auf Basis unserer eignenen Logik können wir darauf reagieren oder sogar die Promise ändern.
 
-    var interceptor = function() {
-      // Die Promise enthält eine Response; wir müssen wieder eine Promise zurückliefern
-      return function(promise) {
-        return promise.then(
-          function(response) { return response;}, // alles ok, dabei belassen wir es
-          function(response) {
-            if (response.status == 401) {
-              // Zur Login-Seite
-            }
-            return $q.reject(response);
-          }
-        );
-      };
-    };
-    $httpProvider.responseInterceptors.push(interceptor);
+```javascript
+var interceptor = function() {
+  // Die Promise enthält eine Response; wir müssen wieder eine Promise zurückliefern
+  return function(promise) {
+    return promise.then(
+      function(response) { return response;}, // alles ok, dabei belassen wir es
+      function(response) {
+        if (response.status == 401) {
+          // Zur Login-Seite
+        }
+        return $q.reject(response);
+      }
+    );
+  };
+};
+$httpProvider.responseInterceptors.push(interceptor);
+```
 
 
 Man kann mithilfe von HTTP-Interceptoren jede Menge Nettigkeiten einbauen, um innerhalb unserer Anwendung intelligent mit Fehlern umzugehen. Beispielsweise könnten wir bei einem 401 direkt ein Login-Fenster anzeigen und nach getätigtem Login den ursprünglichen Request erneut abschicken (dies wird mit [Angular 1.2](http://www.youtube.com/watch?v=W13qDdJDHp8) und around-interceptors noch einfacher). Ein weiterer Anwendungsfall könnte sich dadurch äußern, dass wir bei einem 404 mithilfe des `Exponential Backoff`-Algorithmus Timeout-Zeiten berechnen und den Request nach Ablauf des jeweiligen Timeouts erneut stellen und im Erfolgsfall die Daten nachladen.
@@ -92,20 +98,24 @@ Man kann mithilfe von HTTP-Interceptoren jede Menge Nettigkeiten einbauen, um in
 
 Wenn man mit Routen arbeitet, bietet es sich an, schon vor dem Laden der Route abzufragen, ob der Nutzer autorisiert ist, die angeforderte Seite anzuschauen. Beim Konfigurieren der Routen kann man dazu einen weiteren Parameter `resolve` übergeben. Dieser Parameter muss mit einem Objekt gefüllt werden, das pro selbst gewähltem Key eine Funktion anbietet, die beim Laden der Route aufgerufen wird. Gibt die Funktion eine Promise zurück, so entscheidet das Ergebnis (resolve oder reject) der Promise, ob die Route geladen wird. Im folgenden Code-Beispiel pingen wir den Server einfach an, der wiederum überprüft, ob ein Token gesetzt ist und wie gehabt mit 200 oder 401 antwortet.
 
-    $routeProvider.when("/users/:id", { templateUrl:'/user.html', controller:UserCtrl, resolve:{
-        authorize:function($http) {
-          return $http.get("/ping"); // $http.get liefert eine Promise zurück
-        }
-      }
-    })
+```javascript
+$routeProvider.when("/users/:id", { templateUrl:'/user.html', controller:UserCtrl, resolve:{
+    authorize:function($http) {
+      return $http.get("/ping"); // $http.get liefert eine Promise zurück
+    }
+  }
+})
+```
 
 
 Antwortet der Server nun mit 401, wird das Event `$routeChangeError` gefeuert, auf das wir nun reagieren können. Da uns mit `nextRoute` die angeforderte Route übergeben wird, können wir uns diese merken und nach getätigtem Login wieder ansteuern.
 
-    $scope.$on("$routeChangeError", function(event, nextRoute, currentRoute) {
-      // Zur Login-Seite
-      $rootScope.nextRoute = nextRoute; // oder in einem Service speichern
-    });
+```javascript
+$scope.$on("$routeChangeError", function(event, nextRoute, currentRoute) {
+  // Zur Login-Seite
+  $rootScope.nextRoute = nextRoute; // oder in einem Service speichern
+});
+```
 
 
 ## Datei-Uploads
