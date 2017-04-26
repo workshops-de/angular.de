@@ -20,7 +20,9 @@ In einem Ionic-Projekt stehen die Icons direkt zur Verfügung. Natürlich könne
 
 In die eigene App oder Webseite eingebunden, braucht ihr nur per entsprechende CSS-Klasse das Icon auswählen.
 
-    <i class="icon ion-home"></i>
+```html
+<i class="icon ion-home"></i>
+```
 
 Dazu einfach die Klasse `icon`, gefolgt von der entsprechende Icon-Klasse, setzten.
 

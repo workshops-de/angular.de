@@ -25,26 +25,26 @@ In der ersten Version von Angular steht das __ngRoute__-Modul im Mittelpunkt der
 
 Als kleines Beispiel haben wir eine einfach App mit zwei Routen.
 
-```javascript
+```typescript
 angular
-    .module('tutorialApp', ['ngRoute'])
-    .config(function ($routeProvider) {
-        // route definition
-        $routeProvider
-            .when('/order', {
-                controller: 'ArticlesCtrl',
-                templateUrl: 'articles.html'
-            })
-            .when('/about', {
-                template: 'Über unsere Pizzeria'
-            })
-            // default route
-            .otherwise('/order');
-    })
-    .controller('ArticlesCtrl', function ($scope, $routeParams) {
-        // $routeParams: object with possible params;
-  $scope.title = 'Artikelliste';
-    });
+  .module('tutorialApp', ['ngRoute'])
+  .config(function ($routeProvider) {
+    // route definition
+    $routeProvider
+      .when('/order', {
+        controller: 'ArticlesCtrl',
+        templateUrl: 'articles.html'
+      })
+      .when('/about', {
+        template: 'Über unsere Pizzeria'
+      })
+      // default route
+      .otherwise('/order');
+  })
+  .controller('ArticlesCtrl', function ($scope, $routeParams) {
+    // $routeParams: object with possible params;
+    $scope.title = 'Artikelliste';
+  });
 ```
 
 Das Basis-Template könnte wie folgt aussehen.
@@ -65,9 +65,9 @@ In Version 1.3 und 1.4 des Frameworks wurden bereits erste Schritte getan, um di
 
 Der `controllerAs`-Syntax erlaubt es dem Entwickler über einen Alias im Template auf den Controller zuzugreifen. Ein Nebeneffekt ist, dass anstatt `$scope` direkt über `this` auf den aktuellen Kontext im Controller-Code zugegriffen werden kann.
 
-```javascript
+```typescript
 meineApp.controller('ArticlesCtrl', function () {
-    this.title = 'Artikelliste';
+  this.title = 'Artikelliste';
 });
 ```
 
@@ -75,7 +75,7 @@ Im Template wird der Controller dann wie folgt verwendet.
 
 ```html
 <div ng-controller="ArticlesCtrl as articles">
-    {{articles.title}}
+  {{articles.title}}
 </div>
 ```
 
@@ -83,36 +83,36 @@ Dadurch kann selbst bei verschachtelten Controllern eindeutig über den Namen au
 
 Der `controllerAs`-Syntax bringt jedoch ein paar Probleme mit sich. Vor allem wird das im Falle von Direktiven mit isoliertem Scope und eigenem Controller bemerkbar. Im Normalfall werden alle angegebenen Data-Bindings über ein Objekt für den Konfigurationsschlüssel `scope` in den Kontext - sprich den Scope der Direktive - übertragen.
 
-```javascript
+```typescript
 meineApp.directive('articleDirektice', function () {
-    return {
-        scope: {
-            title: '='
-        },
-        controller: function ($scope) {
-            // $scope.titel is available here
-        },
-        templateUrl: '...'
-    };
+  return {
+    scope: {
+      title: '='
+    },
+    controller: function ($scope) {
+      // $scope.titel is available here
+    },
+    templateUrl: '...'
+  };
 });
 ```
 
 Wird nun die `ControllerAs`-Syntax* benutzt, erwartet der Controller den Wert von `title` auf `this` und nicht auf dem `$scope`-Objekt. Dies kann zum Fehlverhalten im Data-Binding führen.
 Um dieses Problem zu lösen, enthält AngularJS 1.4 den zusätzlichen Konfigurationsschlüssel `bindToController`. Dieser erhält nun das Objekt, was zuvor auf `scope` übergeben wurde. `scope` erhält dafür ein leeres Objekt, um AngularJS mitzuteilen, dass die Direktive über einen gekapselten, also isolierten, Scope verfügen soll.
 
-```javascript
+```typescript
 meineApp.directive('articleDirective', function () {
-    return {
-        scope: {}, // isolated scope
-        bindToController: {
-            title: '=' // provides title
-        },
-        controller: function () {
-              // this.title is available
-        },
-        controllerAs: 'articles',
-        templateUrl: '...'
-    };
+  return {
+    scope: {}, // isolated scope
+    bindToController: {
+      title: '=' // provides title
+    },
+    controller: function () {
+      // this.title is available
+    },
+    controllerAs: 'articles',
+    templateUrl: '...'
+  };
 });
 ```
 
@@ -131,15 +131,15 @@ Im Allgemeinen sind Components (zu deutsch Komponenten) einfach eine Kombination
 
 Die Ähnlichkeit zu einer bisherigen Direktive ist auch bei der näheren Betrachtung des Konfigurationsobjektes unverkennbar.
 
-```javascript
+```typescript
 meineApp.component('articleComponent', {
-    bindings: {
-        'title': '='
-    },
-    controller: function () {
-        // this.title is available
-    },
-    templateUrl: '...'
+  bindings: {
+    'title': '='
+  },
+  controller: function () {
+    // this.title is available
+  },
+  templateUrl: '...'
 });
 ```
 
@@ -157,21 +157,21 @@ Hier setzt der Router ein. Er löst das alter und unflexible Verfahren auf Zust�
 
 Als erstes muss das **ngComponentRouter**-Modul als Abhängigkeit zu unserer Anwendung hinzugefügt werden. Danach kann der `$router`-Service in einem Basis-Controller geladen werden, um die Standardrouten zu definieren. In der Index-Datei der Anwendung wird dieser Controller verwendet und ein Element mit mit `ngOutlet` ausgestattet.
 
-```javascript
+```typescript
 angular
-    .module('tutorialApp', ['ngComponentRouter'])
-    .controller('AppCtrl', function ($router) {
-            $router
-                .config([{
-                    path: '/start',
-                    name: 'Start',
-                    component: 'articleComponent'
-                });
-        });
-    ])
-    .component('articleComponent', {
-        ...
-    });
+  .module('tutorialApp', ['ngComponentRouter'])
+  .controller('AppCtrl', function ($router) {
+          $router
+              .config([{
+                  path: '/start',
+                  name: 'Start',
+                  component: 'articleComponent'
+              });
+      });
+  ])
+  .component('articleComponent', {
+    //  ...
+  });
 ```
 
 Das Template-Schnipsel sieht dann so aus.
@@ -220,13 +220,13 @@ Eine mögliche Projektstruktur der TypeScript-Dateien könnte wie folgt aussehen
 
 Es besteht auch die Möglichkeit einfach alle Direktiven auf einmal zu importieren. Dazu muss einfach die "Konstante" `ROUTER_DIRECTIVES` geladen werden. Damit das Routing generell funktioniert, müssen die `ROUTER_PROVIDERS` als Providers in den Komponenten Metadaten gesetzt werden. Am einfachsten macht man dies einmal in der Hauptkomponente einer Anwendung.
 
-```javascript
+```typescript
 import { ROUTER_DIRECTIVES, ROUTER_DIRECTIVES } from 'angular2/router';
 ```
 
 Die Hauptkomponente mit der Definition der AngularJS 1.x Anwendung im Angular Kontext könnte dann so aussehen.
 
-```javascript
+```typescript
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
@@ -248,17 +248,16 @@ import { AboutComponent } from './about/about.component';
 }])
 
 @Component({
-    selector: 'pizza-app',
-    directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS, PizzaService],
-    template:
-    `
-    <p class="well">
+  selector: 'pizza-app',
+  directives: [ROUTER_DIRECTIVES],
+  providers: [ROUTER_PROVIDERS, PizzaService],
+  template: `
+  <p class="well">
     <a [routerLink]="['Order']">Start</a> |
     <a [routerLink]="['About']">Über</a>
-</p>
-    <router-outlet></router-outlet>
-    `
+  </p>
+  <router-outlet></router-outlet>
+  `
 })
 
 export class PizzaAppComponent {}
@@ -290,11 +289,11 @@ Um Routen im Template zu verlinken wird die `RouterLink`-Komponente zu Beginn du
 
 Natürlich kann auch programmatisch zwischen Routen gewechselt werden. Dies geschieht über den `Router`-Service. Er bietet unter anderem eine `navigate`-Methode.
 
-```javascript
+```typescript
 import { Router } from 'angular2/router';
 
 @Component({
-    ...
+  // ...
 })
 export class MyComponent {
   constructor(router: Router) {
@@ -310,7 +309,7 @@ export class MyComponent {
 
 Um mit Parametern in Routen zu arbeiten kann die `RouteParams`-Komponente genutzt werden. Dazu muss der Service importiert und dem Konstruktor der Komponente übergeben werden. Durch die **Dependency-Injection** erhalten wir nun Zugriff auf den `RouteParams`-Service und könne über die `get`-Methode bestimmte Parameter abfragen.
 
-```javascript
+```typescript
 import { RouteParams } from 'angular2/router';
 
 @Component({
@@ -325,7 +324,7 @@ export class MyComponent {
 
 Um wirklich mit Parametern arbeiten zu können, müssen auch Routen mit diesen ausgestattet werden können. Dies geschieht sehr ähnlich zu Angular 1.x.
 
-```javascript
+```typescript
 @RouteConfig([{
     path: '/test/:param1',
     ...
@@ -342,7 +341,7 @@ Im Template wird dann einfach die `routerLink`-Direktive ein wenig erweitert.
 
 Als letzten Schritt muss die Anwendung noch gestartet werden. Dies geschieht über die allgemeine `Bootstrap`-Komponente. Entweder die Hauptanwendung wird dafür erweitert oder es wird eine eigene Datei dazu angelegt. Aus persönlicher Vorliebe entscheide ich mich hier für Variante 2.
 
-```javascript
+```typescript
 import { bootstrap, provide } from 'angular2/platform/browser';
 import { LocationStrategy, HashLocationStrategy } from 'angular2/platform/common';
 
@@ -355,17 +354,15 @@ bootstrap(PizzaAppComponent, [provide(LocationStrategy, {useClass: HashLocationS
 
 Im nächsten Schritt konfigurieren wir den Router. In AngularJS 1.X Anwendungen mit ngRoute ist der *#-Mode* der Standard und man kann die Verwendung von normalen URLs (mit der HTML5 History API) konfigurieren. Bei Angular legen wir zum Start unserer App mit
 
-```javascript
+```typescript
 provide(LocationStrategy, {useClass: HashLocationStrategy])
 ```
 
-fest, dass die Hash-Methode benutzt werden soll. Dadurch entstehen die bereits aus früheren Versionen bekannten URLs, mit einem #-Symbol am Anfang der Routen.
-
-    http://xxx.xx/#/order
+fest, dass die Hash-Methode benutzt werden soll. Dadurch entstehen die bereits aus früheren Versionen bekannten URLs, mit einem #-Symbol am Anfang der Routen (`http://xxx.xx/#/order`).
 
 In Angular ist dagegen die **PathLocationStrategy** Standard, welche URLs ohne den Hash-Zeichen erstellt. Dazu sollte jedoch ein Basis-Pfad der App konfiguriert werden. Dieser ist dann sozusagen ein Ersatz für das #-Symbol, damit die fehlerfreie Ausführung der Anwendung gewährleistet werden kann.
 
-```javascript
+```typescript
 import { bootstrap, provide } from 'angular2/platform/browser';
 import { APP_BASE_HREF } from 'angular2/platform/common';
 
@@ -374,16 +371,14 @@ import { PizzaAppComponent } from './components/app.component';
 bootstrap(PizzaAppComponent, [provide(APP_BASE_HREF, {useValue: '/my/app'})]);
 ```
 
-Dadurch entstehen URLs wie:
-
-    http://xxx.xx/my/app/order
+Dadurch entstehen URLs wie: `http://xxx.xx/my/app/order`
 
 Als Kurzform kann die Standardroute auch über ein spezielles Attribut in der Routen-Konfiguration gesetzt werden. Dadurch kann die Definition einer Weiterleitungs-Route auf eine andere entfernt werden.
 
-```javascript
+```typescript
 @RouteConfig([
-    { path: '/order', name: 'Order', component: OrderComponent, useAsDefault: true },
-    { path: '/about', name: 'About', component: AboutComponent }
+  { path: '/order', name: 'Order', component: OrderComponent, useAsDefault: true },
+  { path: '/about', name: 'About', component: AboutComponent }
 ])
 ```
 
@@ -414,7 +409,7 @@ Als Beispiel bekommt die About-Route eine Child-Route, die sich darum kümmert, 
 
 Unsere Pizza-Komponente ist im Prinzip einfach eine Hülle der Kinder-Routen. Sprich wir definieren die vorhanden Kinder und bietet diesen einen eigene Einhängepunkt.
 
-```javascript
+```typescript
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
@@ -443,29 +438,26 @@ Wir ihr sehen könnt, erwartet die Detail-Route noch einen Parameter, um die Det
 
 Die `PizzaListComponent` enthält nichts aufregendes und ist der OrderComponent sehr ähnlich. Der entscheidende Unterschied ist, dass bei einem Klick auf einen Listeneintrag die entsprechende Detailseite aufgerufen werden soll.
 
-```javascript
+```typescript
 import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-
 import {PizzaService} from '../../../services/pizza.service';
-
 import {Pizza} from '../../../interfaces/pizza.interface.ts';
 
 @Component({
-    selector: 'pizzaList',
-    providers: [],
-    directives: [ROUTER_DIRECTIVES],
-    templateUrl: './app/components/pizza/list/list.component.html'
+  selector: 'pizzaList',
+  providers: [],
+  directives: [ROUTER_DIRECTIVES],
+  templateUrl: './app/components/pizza/list/list.component.html'
 })
 export class PizzaListComponent {
-    public pizzas: Pizza[];
+  public pizzas: Pizza[];
 
-    constructor(private _pizzaService: PizzaService) {
-    }
+  constructor(private _pizzaService: PizzaService) {}
 
-    ngOnInit() {
-        this._pizzaService.getPizza().subscribe(pizzas => this.pizzas = pizzas);
-    }
+  ngOnInit() {
+    this._pizzaService.getPizza().subscribe(pizzas => this.pizzas = pizzas);
+  }
 }
 ```
 
@@ -473,43 +465,29 @@ Das Template dazu könnte wie folgt aussehen.
 
 ```html
 <table class="table">
-    <thead>
-        <tr>
-            <td>
-                <b>Nummer</b>
-            </td>
-            <td>
-                <b>Name</b>
-            </td>
-            <td>
-                <b>Preis</b>
-            </td>
-            <td>
-                <b>ID</b>
-            </td>
-            <td></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let pizza of pizzas; let index=index" [routerLink]="['Detail', {'id': pizza.id}]">
-            <td>{{index + 1}}</td>
-            <td>{{pizza.name}}</td>
-            <td *ngIf="pizza.price">{{pizza.price | currency:'USD':true}}</td>
-            <td *ngIf="!pizza.price">kostenlos</td>
-            <td>{{pizza.id}}</td>
-            <td>
-                <a class="btn btn-default btn-sm">
-                    Details
-                </a>
-            </td>
-        </tr>
-    </tbody>
+  <tr>
+    <th>Nummer</th>
+    <th>Name</th>
+    <th>Preis</th>
+    <th>ID</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let pizza of pizzas; let index=index" [routerLink]="['Detail', {'id': pizza.id}]">
+    <td>{{index + 1}}</td>
+    <td>{{pizza.name}}</td>
+    <td *ngIf="pizza.price">{{pizza.price | currency:'USD':true}}</td>
+    <td *ngIf="!pizza.price">kostenlos</td>
+    <td>{{pizza.id}}</td>
+    <td>
+      <a class="btn btn-default btn-sm">Details</a>
+    </td>
+  </tr>
 </table>
 ```
 
 Wie ihr sehen könnt, sind auch Routen gekapselt, was bedeutet, dass eine Komponente nur die Routen ihres direktiven Elternteils bzw. der umschließenden Komponente kennt. Aus diesem Grund wird die Verlinkung zur Detailseite direkt durch
 
-```javascript
+```typescript
 ['Detail', {'id': pizza.id}]
 ```
 
@@ -517,42 +495,39 @@ hergestellt.
 
 Die `PizzaDetailComponent` zeigt einfach nur die gegebenen Informationen eines bestimmten Angebots an. Dies geschieht über den Routen-Parameter `id`. Zusätzlich enthält das Template einen Link zurück zur Angebots-Übersicht.
 
-```javascript
+```typescript
 import {Component, OnInit} from 'angular2/core';
 import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
-
 import {PizzaService} from '../../../services/pizza.service';
-
 import {Pizza} from '../../../interfaces/pizza.interface.ts';
 
 @Component({
-    selector: 'pizzaDetail',
-    providers: [],
-    directives: [ROUTER_DIRECTIVES],
-    templateUrl: './app/components/pizza/detail/detail.component.html'
+  selector: 'pizzaDetail',
+  providers: [],
+  directives: [ROUTER_DIRECTIVES],
+  templateUrl: './app/components/pizza/detail/detail.component.html'
 })
 export class PizzaDetailComponent {
-    public pizza: Pizza;
-    private _pizzaId: Number
-    private _getPizza(pizzas: Array<Pizza>) {
-        var i = 0;
+  public pizza: Pizza;
+  private _pizzaId: Number
+  private _getPizza(pizzas: Array<Pizza>) {
+    var i = 0;
 
-        for (i; i < pizzas.length; i = i + 1) {
-            if (pizzas[i].id === this._pizzaId) {
-                this.pizza = pizzas[i];
-
-                return;
-            }
-        }
+    for (i; i < pizzas.length; i = i + 1) {
+      if (pizzas[i].id === this._pizzaId) {
+        this.pizza = pizzas[i];
+        return;
+      }
     }
+  }
 
-    constructor(private _pizzaService: PizzaService, private _routeParams: RouteParams) {
-        this._pizzaId = parseInt(_routeParams.get('id'), 10);
-    }
+  constructor(private _pizzaService: PizzaService, private _routeParams: RouteParams) {
+    this._pizzaId = parseInt(_routeParams.get('id'), 10);
+  }
 
-    ngOnInit() {
-        this._pizzaService.getPizza().subscribe(pizzas => this._getPizza(pizzas));
-    }
+  ngOnInit() {
+    this._pizzaService.getPizza().subscribe(pizzas => this._getPizza(pizzas));
+  }
 }
 ```
 
@@ -560,16 +535,16 @@ Das entsprechende Template könnte dann so aussehen:
 
 ```html
 <div *ngIf="pizza">
-    <a [routerLink]="['List']">< zurück</a>
-    <h3>{{pizza.id}} {{pizza.name}}</h3>
-    <p *ngIf="pizza.price">{{pizza.price | currency:'USD':true}}</p>
-    <p *ngIf="!pizza.price">kostenlos</p>
+  <a [routerLink]="['List']">< zurück</a>
+  <h3>{{pizza.id}} {{pizza.name}}</h3>
+  <p *ngIf="pizza.price">{{pizza.price | currency:'USD':true}}</p>
+  <p *ngIf="!pizza.price">kostenlos</p>
 </div>
 ```
 
 Der nächste Schritt ist schnell erledigt. Damit Angular überhaupt akzeptiert, dass eine Route Child-Routen besitzt, muss die Eltern-Route mit `'/...'` enden. Die Definition unserer Pizza-Route sieht dann wie folgt aus:
 
-```javascript
+```typescript
 { path: '/pizza/...', name: 'Pizza', component: PizzaComponent }
 ```
 
@@ -607,15 +582,15 @@ Alle Funktionen erhalten zwei Parameter:
 
 Als kleines Beispiel kann in einer Komponente einfach auf die Funktionen zugegriffen werde.
 
-```javascript
+```typescript
 routerOnActivate(nextInstruction, prevInstruction) {
-    console.log(nextInstruction, prevInstruction);
+  console.log(nextInstruction, prevInstruction);
 }
 ```
 
 Zusätzlich kann einer Komponente der *Decorator* `@CanActivate` angegeben werden. Dieser erwartet eine Funktion welche einen booleschen Wert oder ein Promise-Objekt zurückgibt. Wird das Promise abgelehnt (rejected) oder `false` zurückgegeben, wird die Komponente nicht eingehangen/ausgeführt. Der Decorator übernimmt damit die Funktion der *resolve*-Eigenschaft einer Route in AngularJS 1.
 
-```javascript
+```typescript
 @CanActivate(() => {
   // if false --> OrderComponente is not executed
   return true;
