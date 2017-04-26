@@ -25,7 +25,9 @@ Was die Ionicons sind und wie ihr sie noch in anderen Projekten nutzen könnt, e
 
 In der neuen Version des Frameworks ist jedoch eine neue Komponente extra dafür hinzugekommen. Sie heißt `ionIcon` und wir haben sie in unserem Tutorial schon an manchen Stellen eingesetzt. Sie erwartet im einfachsten Fall einen Icon Namen.
 
-    <ion-icon name="pizza"></ion-icon>
+```html
+<ion-icon name="pizza"></ion-icon>
+```
 
 Dadurch sucht sich Ionic das passende Icon je nach Plattform. Eine Liste aller verfügbaren [Icon Namen](http://ionicframework.com/docs/v2/ionicons/) findet ihr in der Ionic Dokumentation.
 
@@ -33,18 +35,24 @@ Dadurch sucht sich Ionic das passende Icon je nach Plattform. Eine Liste aller v
 
 Wollt ihr selbst entscheiden, welches Icon für die Plattformen angezeigt werden, dann könnt ihr dies auch. Setzt das Icon nicht über das `name` Attribute, sondern einfach über das Plattformkürzel, z.B. `ios` oder `md`.
 
-    <ion-icon ios="logo-apple" md="logo-android"></ion-icon>
+```html
+<ion-icon ios="logo-apple" md="logo-android"></ion-icon>
+```
 
 Falls ihr die Icons dynamisch setzten wollte, können diese natürlich auch aus einer Variable oder Expression kommen.
 
-    <ion-icon [name]="myIconVar"></ion-icon>
+```html
+<ion-icon [name]="myIconVar"></ion-icon>
+```
 
 Eine erfreuliche Zusatzfunktion erhaltet ihr über das Setzen des `isActive` Attributes auf `false` bzw. wieder auf `true`. Dadurch werden automatisch im aktiven Modus gefüllte und im inaktiven leere (outline), nur mit einer Randlinie versehene Icons genutzt.
 
-    <!-- active -->
-    <ion-icon name="pizza"></ion-icon>
-    <!-- inactive -->
-    <ion-icon name="pizza" isActive="false"></ion-icon>
+```html
+<!-- active -->
+<ion-icon name="pizza"></ion-icon>
+<!-- inactive -->
+<ion-icon name="pizza" isActive="false"></ion-icon>
+```
 
 ## Theming der eigenen App
 
@@ -54,34 +62,44 @@ Das spezielle Styling bestimmter `View`s und Komponenten sollte in einer extra S
 
 In der `variables.scss` werden Standardfarben gesetzt. Dabei ist `primary` die einzig fixe. Der Rest kann auch entfernt oder umbenannt werden.
 
-    $colors: (
-      primary:    #387ef5,
-      secondary:  #32db64,
-      danger:     #f53d3d,
-      light:      #f4f4f4,
-      dark:       #222,
-      favorite:   #69BB7B
-    );
+```css
+$colors: (
+  primary:    #387ef5,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  favorite:   #69BB7B
+);
+```
 
 Ihr könnt die Farben aber nicht nur im SCSS wiederverwenden. Nutzt sie einfach im Template.
 
-    <button ion-button color="danger">Attention!</button>
+```html
+<button ion-button color="danger">Attention!</button>
+```
 
 Fügt einfach weitere Farben hinzu und spezifiziert sowohl Text- als auch Hintergrundfarbe!
 
-    $colors: (
-      ...
-      twitter:(
-        base: #55acee, // bgcolor
-        contrast: #ffffff // textcolor
-      )
-    )
+```css
+$colors: (
+  ...
+  twitter:(
+    base: #55acee, // bgcolor
+    contrast: #ffffff // textcolor
+  )
+)
+```
 
-    <button ion-button color="twitter">Blue & White!</button>
+```html
+<button ion-button color="twitter">Blue & White!</button>
+```
 
 Euch steht euch ein extra `color` Mixin zur Verfügung, um auf die Farben im SCSS zu zugreifen und auf deren Basis neue Farben zu erzeugen.
 
-    background: color($colors, twitter, contrast);
+```css
+background: color($colors, twitter, contrast);
+```
 
 Eine Liste von weiteren Funktionen und vorhanden Variablen findet ihr - wie immer - in der [Ionic Dokumentation zum Theming](http://ionicframework.com/docs/v2/theming/).
 
@@ -89,31 +107,35 @@ Eine Liste von weiteren Funktionen und vorhanden Variablen findet ihr - wie imme
 
 Falls ihr mit dem Standardverhalten eurer App noch nicht zufrieden seid oder ihr plattformspezifische Einstellungen vornehmen wollt, könnt ihr das natürlich auch in Ionic 2 tun. Dies geschieht nicht, wie in Ionic 1 über einen extra Provider ([`$ionicConfigProvider`](/artikel/ionic-tutorial-deutsch-configuration/)), sondern direkt über das `IonicModule` Modul von Ionic. Der `forRoot` Funktion in den imports des `@NgModule` Decorators könnt ihr als zweiten Parameter ein Konfigurationsobjekt übergeben. Welches alle oder bloß für bestimmte Plattformen Einstellungen vornehmen kann.
 
-    IonicModule.forRoot(PizzaAppComponent, {
-      backButtonText: 'Go Back',
-      iconMode: 'ios',
-      modalEnter: 'modal-slide-in',
-      modalLeave: 'modal-slide-out',
-      tabbarPlacement: 'bottom',
-      pageTransition: 'ios',
-    });
+```typescript
+IonicModule.forRoot(PizzaAppComponent, {
+  backButtonText: 'Go Back',
+  iconMode: 'ios',
+  modalEnter: 'modal-slide-in',
+  modalLeave: 'modal-slide-out',
+  tabbarPlacement: 'bottom',
+  pageTransition: 'ios',
+});
 
-    IonicModule.forRoot(PizzaAppComponent, {
-      tabbarPlacement: 'bottom',
-      platforms: {
-        ios: {
-          ...
-        }
-      }
-    });
+IonicModule.forRoot(PizzaAppComponent, {
+  tabbarPlacement: 'bottom',
+  platforms: {
+    ios: {
+      ...
+    }
+  }
+});
+```
 
 Ihr könnt die Einstellung auch später über die [`Config`](http://ionicframework.com/docs/v2/api/config/Config/) Instanz der App anpassen. Auf der entsprechenden Seite in der Dokumentation findet ihr auch alle möglichen Konfigurationsparameter.
 
 Eine noch speziell zu erwähnende Funktion ist das Setzen einer fixen Plattform. So erhaltet ihr, beispielsweise auch auf iOS das Aussehen einer Android App. Dazu setzt ihr den config-Schlüssel `mode` auf das entsprechende Plattformkürzel.
 
-    IonicModule.forRoot(PizzaAppComponent, {
-      mode: 'md'
-    });
+```typescript
+IonicModule.forRoot(PizzaAppComponent, {
+  mode: 'md'
+});
+```
 
 In unserer Pizza App wollen wir auf allen Plattformen nur einen Zurück-Pfeil auf Unterseiten anzeigen. Auf Android ist der Text bereits von vornherein leer.
 
@@ -121,9 +143,11 @@ In unserer Pizza App wollen wir auf allen Plattformen nur einen Zurück-Pfeil au
 
 Nun setzen wir den Back-Button Text generell auf einen Leerstring.
 
-    IonicModule.forRoot(PizzaAppComponent, {
-      backButtonText: ''
-    });
+```typescript
+IonicModule.forRoot(PizzaAppComponent, {
+  backButtonText: ''
+});
+```
 
 ![Bild](medium_ionic2-config.png?v=63631481036)
 
@@ -138,20 +162,26 @@ Als Beispiel würde die Nutzung der Geräte-Kamera wie folgt aussehen:
 
 **Kamera Plugin installieren**
 
-    ionic plugin add cordova-plugin-camera
+```shell
+ionic plugin add cordova-plugin-camera
+```
 
 **`Camera` importieren**
 
-    import { Camera } from 'ionic-native';
+```typescript
+import { Camera } from 'ionic-native';
+```
 
 **`Camera` nutzen**
 
-    Camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file   URI
-      // If it's base64:
-      let base64Image = "data:image/jpeg;base64," + imageData;
-      }, (err) => {
-    });
+```typescript
+Camera.getPicture(options).then((imageData) => {
+  // imageData is either a base64 encoded string or a file   URI
+  // If it's base64:
+  let base64Image = "data:image/jpeg;base64," + imageData;
+  }, (err) => {
+});
+```
 
 <div class="alert alert-warning"><b>Beachte:</b> Ist euer Projekt über die Ionic CLI angelegt, ist <code>ionic-native</code> bereits installiert und eingebunden. In allen anderen Fällen folgt bitte der <a href="http://ionicframework.com/docs/v2/native/" target="_blank">Anleitung in der Dokumentation</a>.</div>
 
@@ -169,20 +199,22 @@ Das Eventsystem ist intern einfach eine Liste von `Topics` an denen alle Abonnen
 
 Im Quellcode sieht das dann so aus.
 
-    import {Events} from 'ionic-angular';
+```typescript
+import {Events} from 'ionic-angular';
 
-    constructor(public events: Events) {}
+constructor(public events: Events) {}
 
-    // first page (publish an event when a user is logged in)
-    function login(user) {
-      console.log('User logged in!')
-      events.publish('user:loggedin', user);
-    }
+// first page (publish an event when a user is logged in)
+function login(user) {
+  console.log('User logged in!')
+  events.publish('user:loggedin', user);
+}
 
-    // second page (listen for the user logged in event)
-    events.subscribe('user:loggedin', (user) => {
-      console.log('Welcome', user);
-    });
+// second page (listen for the user logged in event)
+events.subscribe('user:loggedin', (user) => {
+  console.log('Welcome', user);
+});
+```
 
 Da die Identifizierung eines Events jedoch auf einfachen Strings basiert, sollte vor allem bei komplexen Anwendungen Vorsicht geboten sein. Nur allzu leicht benutzt man unwissend bereits vorhandene Events und erhält dann unter Umständen ein unerwartetes Ergebnis oder unschöne Überraschung.
 
