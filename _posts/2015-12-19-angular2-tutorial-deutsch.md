@@ -1,5 +1,5 @@
 ---
-title: "Angular Tutorial für Einsteiger"
+title: "Angular-Tutorial für Einsteiger"
 description: "Tutorial zu Angular  - die neue Version des beliebtesten Single-Page-Application Frameworks. Seid bereit und lernt die Grundlagen von Angular."
 author: "Robin Böhm"
 slug: "angular2-tutorial-deutsch"
