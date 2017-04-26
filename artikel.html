@@ -22,7 +22,7 @@ pagination:
     {% include _article.html %}
   {% endfor %}
 
-    <div class="row justify-content-xs-center">
+    <div class="row justify-content text-xs-center">
       <nav aria-label="Paginierung" class="col-auto">
         <ul class="pagination">
           {% if paginator.previous_page %}
@@ -67,7 +67,7 @@ pagination:
     </div>
   </div>
   <div class="col-md-4">
-    <form action="/suche" method="get" class="mb-4">
+    <form action="/suche" method="get" class="hidden-sm-down mb-4">
       <input type="text" class="form-control article-search" name="q" placeholder="Artikel durchsuchen">
     </form>
 
