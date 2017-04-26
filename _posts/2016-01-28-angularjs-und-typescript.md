@@ -11,54 +11,62 @@ header_image: "/artikel/header_images/angularjs-und-typescript.jpg"
 Ich möchte euch in diesem Artikel zeigen, wie man schon heute mit AngularJS 1.X  Anwendungen mit TypeScript entwickeln kann. TypeScript ist eine Sprache die von Microsoft entwickelt wurde und auf ES2015 (früher auch mal ES6 oder Harmony genannt) aufsetzt und um Typen erweitert.
 
 ## Typen in JavaScript?
+
 Dabei wird TypeScript nach JavaScript transformiert. Was im Browser ausgeführt wird ist also ganz normales JavaScript(ohne Typen). Das schöne ist, dass in TypeScript die Typen optional sind. So können wir zunächst normales JavaScript schreiben und nur die Typen ergänzen.
 
 Um TypeScript zu JavaScript zu kompilieren muss zunächst TypeScript installiert werden
 
-	$ npm install -g typescript
+```sh
+$ npm install -g typescript
+```
 
 und eine Konfiguration für das Projekt angelegt werden. Die Konfiguration ist in die Datei `tsconfig.json` zu schreiben.
 
-	{
-		"compilerOptions": {
-			"sourceMap": true
-		},
-		"exclude": [
-			"node_modules"
-		]
-	}
+```
+{
+  "compilerOptions": {
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
 
 Schauen wir uns das in einem [Beispiel](http://www.typescriptlang.org/playground/#src=var%20coolFramework%20%3D%20'AngularJS'%0Avar%20thingsILearned%20%3D%20%5BcoolFramework%2C%20'TypeScript'%2C%20'How%20to%20survive'%5D%0A) an:
 
-
-	var coolFramework = 'AngularJS'
-	var thingsILearned = [coolFramework, 'TypeScript', 'How to survive']
+```javascript
+var coolFramework = 'AngularJS'
+var thingsILearned = [coolFramework, 'TypeScript', 'How to survive']
+```
 
 Das sieht aus wie normales JavaScript, ist aber eben auch valides TypeScript. Nun fügen wir einmal Typen an. ([Zum Ausprobieren](http://www.typescriptlang.org/playground/#src=var%20coolFramework%3A%20string%20%3D%20'AngularJS'%0Avar%20thingsILearned%3A%20string%5B%5D%20%3D%20%5BcoolFramework%2C%20'TypeScript'%2C%20'How%20to%20survive'%5D%0A))
 
-	var coolFramework: string = 'AngularJS'
-	var thingsILearned: string[] = [coolFramework, 'TypeScript', 'How to survive']
+```typescript
+var coolFramework: string = 'AngularJS'
+var thingsILearned: string[] = [coolFramework, 'TypeScript', 'How to survive']
+```
 
 Damit legen wir fest, dass `coolFramework` immer vom Typ `string` sein muss. Doch Achtung, coolFramework darf auch die Werte `undefined` und `null` einnehmen. In `thingsILearned` definieren wir ein Array aus Strings.  Alternativ hätten wir auch `Array<string>` schreiben können.
 
 TypeScript erlaubt uns außerdem [Klassen](http://www.typescriptlang.org/Handbook#classes) und [Interfaces](http://www.typescriptlang.org/Handbook#interfaces) zu definieren.
 
-	interface IHuman {
-		name: string
-		size: number
-		saySomething(sentence: string): void
-	}
+  interface IHuman {
+    name: string
+    size: number
+    saySomething(sentence: string): void
+  }
 
-	class Human implements IHuman {
-		constructor(
-			public name: string,
-			public size: number
-		) {}
+  class Human implements IHuman {
+    constructor(
+      public name: string,
+      public size: number
+    ) {}
 
-		saySomething(sentence: string) {
-			console.log(sentence)
-		}
-	}
+    saySomething(sentence: string) {
+      console.log(sentence)
+    }
+  }
 
 Wenn wir aber normale JavaScript-Frameworks einbinden wollen, sind natürlich hierfür keine Typen für dieses Framework gesetzt. Dafür gibt es so genannte TypeDefinitions mit der Dateiendung *.d.ts.*. Damit wir nicht jedes mal die Definitionen von Hand neu schreiben müssen, gibt es dafür eine große Registry, [DefinitelyTyped](http://definitelytyped.org/), in der wir auch die [TypeDefinition von AngularJS](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/angularjs) und vielen anderen Frameworks finden.
 
@@ -68,22 +76,22 @@ Wir starten mit unserem [AngularJS-TypeScript-Seed auf GitHub](https://github.co
 
 Schauen wir uns die `index.html` an, sehen wir eine kleine Besonderheit. In diesem Seed setzten wir [SystemJS](https://github.com/systemjs/systemjs) als Module Loader ein um unsere Datein direkt laden zu können und im Browser vom TypeScript zu JavaScript zu übersetzten. So können wir hier auf einen Build-Prozess verzichten. Wir importieren als Startpunkt also die Datei, die in `app/app.ts` liegt. Die Dateiendung deutet auf TypeScript hin und wird von SystemJS automatisch angefügt. Schauen wir uns also die Datei mal genauer an.
 
-	import * as angular from 'angular'
-	import 'angular-route'
+  import * as angular from 'angular'
+  import 'angular-route'
 
-	import routes from './routes'
+  import routes from './routes'
 
-	import navigation from './components/navigation/navigation'
-	import booksIndex from './components/books-index/books-index'
-	import booksShow from './components/books-show/books-show'
+  import navigation from './components/navigation/navigation'
+  import booksIndex from './components/books-index/books-index'
+  import booksShow from './components/books-show/books-show'
 
-	angular.module('myApp', [
-	  'ngRoute',
-	  routes,
-	  navigation,
-	  booksIndex,
-	  booksShow
-	])
+  angular.module('myApp', [
+    'ngRoute',
+    routes,
+    navigation,
+    booksIndex,
+    booksShow
+  ])
 
 Diese Datei könnte genau so gut ein ES2015-Modul sein. Hier versteckt sich kein spezifischer TypeScript-Code
 
@@ -91,29 +99,29 @@ Diese Datei könnte genau so gut ein ES2015-Modul sein. Hier versteckt sich kein
 
 Schauen wir uns also mal die entscheiden Dateien in diesem Projekt genauer an. In der Datei `app/components/books-index/books-index.ts` finden wir zunächst eine `class` mit den Namen `BooksIndex`. Das ist unser Controller für die gleichnamige Komponente die wir mit `component(…)` definiert haben.
 
-	import * as angular from 'angular'
+  import * as angular from 'angular'
 
-	import booksApiModule, {IBook, IBooksApi} from '../../services/books-api/books-api'
+  import booksApiModule, {IBook, IBooksApi} from '../../services/books-api/books-api'
 
-	class BooksIndex {
+  class BooksIndex {
 
-	  books: IBook[]
+    books: IBook[]
 
-	  constructor (booksApi: IBooksApi) {
-		booksApi.all()
-		  .then(books => this.books = books)
-	  }
-	}
+    constructor (booksApi: IBooksApi) {
+    booksApi.all()
+      .then(books => this.books = books)
+    }
+  }
 
-	const moduleName = 'myApp.books-index'
-	export default moduleName
+  const moduleName = 'myApp.books-index'
+  export default moduleName
 
-	angular.module(moduleName, [booksApiModule])
-	  .component('booksIndex', {
-		templateUrl: 'app/components/books-index/books-index.html',
-		controller: BooksIndex,
-		controllerAs: 'booksIndex'
-	  })
+  angular.module(moduleName, [booksApiModule])
+    .component('booksIndex', {
+    templateUrl: 'app/components/books-index/books-index.html',
+    controller: BooksIndex,
+    controllerAs: 'booksIndex'
+    })
 
 In dem Controller steckt nun einiges an TypeScript. Schauen wir uns das mal Zeile für Zeile an.
 
@@ -145,16 +153,16 @@ Wir exportieren unsere Modulnamen als mit `export default` um die Abhängigkeite
 
 Beim Umgang mit Services spielt TypeScript seine großen Stärken aus. In Services implementieren wir unsere Geschäftslogik, wir laden Daten und verändern diese. Schauen wir uns unseren booksApi-Service in `app/services/books-api/books-api.ts` mal genauer an.
 
-	import * as angular from 'angular'
+  import * as angular from 'angular'
 
-	export interface IBook {
+  export interface IBook {
     title: string
     subtitle: string
     publisher: {
       name: string
       url: string
     }
-		…
+    …
    }
 
 Wir definieren hier das eben im Controller schon genutzte `IBook`, das Interface der Daten die uns der Server schickt.
