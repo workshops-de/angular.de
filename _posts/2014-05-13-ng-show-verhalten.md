@@ -16,8 +16,10 @@ Andreas Becker war so lieb und hat im [AngularJS Tutorial](/artikel/angularjs-tu
 
 Kontext: Im Tutorial geht es darum den Satz anzuzeigen, wenn man in ein Textfeld etwas eingibt ([Demo](http://angularjs-de.github.io/angularjs-tutorial-code/04-directives/)).
 
-    <input type="text" ng-model="search">
-    <p ng-show="search">Du suchst gerade nach: {{search}}</p>
+```html
+<input type="text" ng-model="search">
+<p ng-show="search">Du suchst gerade nach: {{search}}</p>
+```
 
 ## Erklärung
 
@@ -25,17 +27,19 @@ Wir haben im Quellcode nachgeforscht und folgende Erklärung gefunden: `ng-show`
 
 Die Funktion [toBoolean](https://github.com/angular/angular.js/blob/v1.2.16/src/Angular.js#L1004) sieht folgendermaßen aus:
 
-    function toBoolean(value) {
-      if (typeof value === 'function') {
-        value = true;
-      } else if (value && value.length !== 0) {
-        var v = lowercase("" + value);
-        value = !(v == 'f' || v == '0' || v == 'false' || v == 'no' || v == 'n' || v == '[]');
-      } else {
-        value = false;
-      }
-      return value;
-    }
+```javascript
+function toBoolean(value) {
+  if (typeof value === 'function') {
+    value = true;
+  } else if (value && value.length !== 0) {
+    var v = lowercase("" + value);
+    value = !(v == 'f' || v == '0' || v == 'false' || v == 'no' || v == 'n' || v == '[]');
+  } else {
+    value = false;
+  }
+  return value;
+}
+```
 
 Das bedeutet, wenn in einem String **f, 0, false, no, n oder []** steht, wird dieser als *false* gewertet.
 
@@ -43,5 +47,7 @@ Das bedeutet, wenn in einem String **f, 0, false, no, n oder []** steht, wird di
 
 Wer das "normale" Verhalten erzwingen möchte, kann einen String schon vorher mit `!!` in einen Boolean-Wert konvertieren.
 
-    <input type="text" ng-model="search">
-    <p ng-show="!!search">Du suchst gerade nach: {{search}}</p>
+```html
+<input type="text" ng-model="search">
+<p ng-show="!!search">Du suchst gerade nach: {{search}}</p>
+```

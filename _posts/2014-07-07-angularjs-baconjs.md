@@ -16,8 +16,9 @@ Wer schon Formeln in Excel verwendet hat oder Databinding in AngularJS nutzt, ka
 
 In AngularJS definieren wir Abhängigkeiten zwischen Scope (Model) und DOM (View) meist über Direktiven, z.B. *ngModel*:
 
-
-    <input ng-model="username" type="text">
+```html
+<input ng-model="username" type="text">
+```
 
 
 Damit haben wir AngularJS beigebracht, das Eingabefeld zu beobachten und alle Änderungen an den Scope weiterzuleiten und dort den `username` entsprechend aufzufrischen (ebenso in umgekehrter Richtung). Das Entscheidende dabei ist, dass es sich nicht um einen One-Night-Stand handelt, sondern um eine dauerhafte Beziehung: Jeder beobachtet den anderen und reagiert, wenn sich etwas beim Partner ändert.
@@ -26,7 +27,9 @@ Hier sind wir schon im Kern reaktiver Programmierung: Sie konzentriert sich auf 
 
 Etwas abstrakter ließe sich das obige Beispiel so schreiben:
 
-    scope.username = dom.input
+```javascript
+scope.username = dom.input
+```
 
 
 Im nicht-reaktiven Zusammenhang wäre dies eine einfache Zuweisung: "Weise der Variablen `scope.username` einmalig den aktuellen Wert der Variablen `dom.input` zu."
@@ -48,38 +51,50 @@ Wie das konkret in JavaScript aussieht, schauen wir uns am Beispiel von [Bacon.j
 
 [Bacon.js](http://baconjs.github.io/) ermöglicht Funktionale Reaktive Programmierung in JavaScript. Beginnen wir mit einem Beispiel:
 
-    var tickStream = Bacon.interval(500, 1);
+```javascript
+var tickStream = Bacon.interval(500, 1);
+```
 
 Der Wert von `tickStream` ist ein [EventStream](https://github.com/baconjs/bacon.js#eventstream), in dem alle 500 Millisekunden eine `1` erscheint.
 
-    ....1....1....1....
+```javascript
+....1....1....1....
+```
 
 Bacon.js liefert viele Funktionen, die Komposition von Strömen ermöglichen. Aus dem `tickStream` wollen wir nun einen neuen Strom erzeugen, der abwechselnd `0` und `1` enthält, statt nur `1`:
 
-    var tickStream = Bacon.interval(500, 1);
-    var aggregator = function(aggregate, tick) {
-        return aggregate !== tick ? 1 : 0
-    }
-    var ticktackStream = tickStream.scan(0, aggregator);
+```javascript
+var tickStream = Bacon.interval(500, 1);
+var aggregator = function(aggregate, tick) {
+  return aggregate !== tick ? 1 : 0
+}
+var ticktackStream = tickStream.scan(0, aggregator);
+```
 
 Die Funktion [scan](https://github.com/baconjs/bacon.js#observable-scan) aggregiert Werte eines Stroms. Dazu übergibt man ihr einen Startwert und eine Aggregierungsfunktion. Die Aggregierungsfunktion erhält als Argumente das Ergebnis ihres letzten Aufrufs (bzw. den Startwert beim ersten Aufruf) und den aktuellen Wert des Stroms. In unserem Beispiel sehen die Aufrufe von `aggregator` so aus:
 
-    (0, 1) -> 1  // Startwert von scan,         1. Wert aus tickStream
-    (1, 1) -> 0  // 1. Ergebnis von aggregator, 2. Wert aus tickStream
-    (0, 1) -> 1  // 2. Ergebnis von aggregator, 3. Wert aus tickStream
+```javascript
+(0, 1) -> 1  // Startwert von scan,         1. Wert aus tickStream
+(1, 1) -> 0  // 1. Ergebnis von aggregator, 2. Wert aus tickStream
+(0, 1) -> 1  // 2. Ergebnis von aggregator, 3. Wert aus tickStream
+```
 usw.
 
 Unsere beiden Ströme enthalten also folgende Werte:
 
+```javascript
     tickStream:      ....1....1....1....
     ticktackStream: 0....1....0....1....
+```
 
 Das Ergebnis von `scan` ist streng genommen kein *EventStream*, sondern eine *Property*. Der Unterschied ist, dass eine *Property* einen aktuellen Wert (und ggf. einen Startwert) besitzt. Sie entspricht dem Konzept der überwachten Properties im Scope und ermöglicht die leichte Integration mit AngularJS, wie wir später sehen werden.
 
 Da `ticktackStream` einen aktuellen Wert hat, benennen wir ihn um und korrigieren unser Schaubild:
 
+```javascript
     tickStream:    ....1....1....1....
     ticktackProp: 00000111110000011111
+```
 
 *EventStream* und *Property* sind lediglich unterschiedliche Sichtweisen auf veränderliche Werte. Anfangs verwirrt diese Unterscheidung eher, die jeweiligen Einsatzzwecke werden aber mit der Zeit klarer. Mit `eventStream.toProperty()` bzw. `property.changes()` können wir beruhigenderweise immer eine Sicht gegen die andere tauschen.
 
@@ -89,29 +104,33 @@ Im nächsten Abschnitt verheiraten wir Bacon.js mit AngularJS und erwecken ein l
 
 Glücklicherweise ebnet uns das Modul [angular-bacon](https://github.com/lauripiispanen/angular-bacon) einen bequemen Weg, AngularJS und Bacon.js miteinander zu verbinden:
 
-    var baconProperty = $scope.$watchAsProperty('scopePropertyName') // AngularJS -> Bacon.js
-    baconPropertyOrStream.digest($scope, 'scopePropertyName')        // Bacon.js -> AngularJS
+```javascript
+var baconProperty = $scope.$watchAsProperty('scopePropertyName') // AngularJS -> Bacon.js
+baconPropertyOrStream.digest($scope, 'scopePropertyName')        // Bacon.js -> AngularJS
+```
 
 So können wir z.B. in unseren AngularJS-Controllern Properties aus dem Scope als Bacon.js-Properties nutzen und reaktiv weiterprogrammieren. Betten wir unseren bisherigen Bacon.js-Code also in einen Controller ein und binden den aktuellen Wert von `ticktackProp` an eine Scope-Property `ticktack`:
 
+```javascript
+angular.module( 'baconDemo', ['angular-bacon'] ).controller( 'baconCtrl', function($scope) {
+    var tickStream = Bacon.interval(500, 1);
+    var aggregator = function(aggregate, tick) {
+      return aggregate !== tick ? 1 : 0
+    };
+    var ticktackProp = tickStream.scan(0, aggregator);
 
-    angular.module( 'baconDemo', ['angular-bacon'] ).controller( 'baconCtrl', function($scope) {
-        var tickStream = Bacon.interval(500, 1);
-        var aggregator = function(aggregate, tick) {
-            return aggregate !== tick ? 1 : 0
-        };
-        var ticktackProp = tickStream.scan(0, aggregator);
-
-        ticktackProp.digest($scope, 'ticktack');
-    });
+    ticktackProp.digest($scope, 'ticktack');
+});
+```
 
 
 Da `ticktack` jetzt im Scope liegt, können wir sie wie gewohnt in AngularJS nutzen:
 
-    <p ng-controller="baconCtrl">
-        Ticktack: {{ticktack}}
-    </p>
-
+```html
+<p ng-controller="baconCtrl">
+  Ticktack: {{ticktack}}
+</p>
+```
 
 <iframe src="https://embed.plnkr.co/C19tGuKws9aa2IOpPX3f/" width="100%" frameborder="0"></iframe>
 
@@ -123,40 +142,45 @@ Sogar [Google vermisst &lt;blink&gt;](https://www.google.de/search?q=blink+tag).
 
 Im ersten Schritt erzeugen wir aus unserer `ticktackProp` mundgerechte CSS-Happen für [ng-style](https://docs.angularjs.org/api/ng/directive/ngStyle) und binden sie an den Scope:
 
-    var toVisibility = function(ticktackVal) {
-        return ticktackVal ? {visibility:'visible'} : {visibility: 'hidden'};
-    };
-    var blinkProp = ticktackProp.map(toVisibility);
+```javascript
+var toVisibility = function(ticktackVal) {
+  return ticktackVal ? {visibility:'visible'} : {visibility: 'hidden'};
+};
+var blinkProp = ticktackProp.map(toVisibility);
 
-    blinkProp.digest($scope, 'blinkCss');
+blinkProp.digest($scope, 'blinkCss');
+```
 
 
 Die von [map](https://github.com/baconjs/bacon.js#observable-map) erzeugte neue Bacon.js-Property `blinkProp` enthält alle mit der Funktion `toVisibility` abgebildeten Werte aus `ticktackProp`:
 
-
-    ticktackProp: 00000111110000011111
-    blinkProp:    hhhhhvvvvvhhhhhvvvvv
-
+```javascript
+ticktackProp: 00000111110000011111
+blinkProp:    hhhhhvvvvvhhhhhvvvvv
+```
 
 Im Scope haben wir nun eine Property `blinkCss` mit CSS-Daten, die wir für unsere Direktive nutzen:
 
-
-    angular.module('baconDemo').directive( 'blink', function() {
-        return {
-            restrict: 'E',
-            transclude: true,
-            template: '<div ng-style="blinkCss" ng-transclude></div>',
-        }
-    });
+```javascript
+angular.module('baconDemo').directive( 'blink', function() {
+  return {
+    restrict: 'E',
+    transclude: true,
+    template: '<div ng-style="blinkCss" ng-transclude></div>',
+  }
+});
+```
 
 
 Jetzt steht uns nichts mehr im Weg auf unserer Reise zu den Ursprüngen der Webgestaltung:
 
-    <p ng-controller="baconCtrl">
-        <blink>This should blink</blink>
-        This shouldn't
-        <blink>This should blink, too</blink>
-    </p>
+```html
+<p ng-controller="baconCtrl">
+  <blink>This should blink</blink>
+  This shouldn't
+  <blink>This should blink, too</blink>
+</p>
+```
 
 
 <iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/YISUVli19yzmmyW3KCmf/preview.html" width="100%" frameborder="0"></iframe>
@@ -167,35 +191,37 @@ Jetzt steht uns nichts mehr im Weg auf unserer Reise zu den Ursprüngen der Webg
 
 Geben wir nun dem Nutzer die Möglichkeit, das Gezappel auf dem Bildschirm mit einem Button ab- und anzuschalten. Dazu definieren wir einen Button:
 
-
-    <p ng-controller="baconCtrl">
-        <button ng-click="shouldBlink = !shouldBlink">Blink: {{shouldBlink}}</button>
-        <blink>This should blink</blink>
-        This shouldn't
-        <blink>This should blink, too</blink>
-    </p>
+```html
+<p ng-controller="baconCtrl">
+  <button ng-click="shouldBlink = !shouldBlink">Blink: {{shouldBlink}}</button>
+  <blink>This should blink</blink>
+  This shouldn't
+  <blink>This should blink, too</blink>
+</p>
+```
 
 
 Ich habe mich hier für eine schmutzige Abkürzung entschieden und die Button-Logik gleich im [ng-click](https://docs.angularjs.org/api/ng/directive/ngClick)-Attribut implementiert. Der Button setzt also beim Klicken `shouldBlink` im Scope abwechselnd auf `true` oder `false`.
 
 Um das Blinken zu stoppen, setzen wir im ersten Versuch gleich an der Wurzel an und filtern den `tickStream`, damit er nur tickt, wenn `shouldBlink` den Wert `true` hat.
 
-
-    .controller( 'baconCtrl', function($scope) {
-        $scope.shouldBlink = true;
-        shouldBlinkProp = $scope.$watchAsProperty('shouldBlink');
-        var tickStream = Bacon.interval(500, 1).filter(shouldBlinkProp);
-        // Der Rest bleibt unverändert
-    }
+```javascript
+.controller( 'baconCtrl', function($scope) {
+  $scope.shouldBlink = true;
+  shouldBlinkProp = $scope.$watchAsProperty('shouldBlink');
+  var tickStream = Bacon.interval(500, 1).filter(shouldBlinkProp);
+  // Der Rest bleibt unverändert
+}
+```
 
 
 Mit [filter](https://github.com/baconjs/bacon.js#observable-filter) erlaubt uns Bacon.js, nur bestimmte Werte in einem Strom durchzulassen. Neben einer Filterfunktion können wir auch, wie hier, eine Property übergeben. Ist sie `true`, dürfen die Werte des Stroms passieren, sonst nicht:
 
-
-    Bacon.interval:  ....1....1....1....1....1....1
-    shouldBlinkProp: tttttttttttffffffffffftttttttt
-    tickStream:      ....1....1..............1....1
-
+```javascript
+Bacon.interval:  ....1....1....1....1....1....1
+shouldBlinkProp: tttttttttttffffffffffftttttttt
+tickStream:      ....1....1..............1....1
+```
 
 
 <iframe src="https://embed.plnkr.co/Rppkr0TbLmCMDgvDAIXd/preview" width="100%" frameborder="0"></iframe>
@@ -204,22 +230,23 @@ Mit [filter](https://github.com/baconjs/bacon.js#observable-filter) erlaubt uns 
 
 Wer mit dem Button etwas herumspielt, wird einen Fehler entdecken. Schalte ich das Blinken aus, während die blinkenden Elemente gerade nicht sichtbar sind, bleiben sie dauerhaft verborgen. Damit die blinkenden Elemente bei ausgeschaltetem Blinken immer sichtbar sind, haken wir uns an anderer Stelle im Strom ein:
 
-
-    var tickTackWithSwitch = function(latestTicktack, shouldBlinkCurrently) {
-        return shouldBlinkCurrently ? latestTicktack : 1;
-    }
-    var blinkProp = ticktackProp
-                    .combine(shouldBlinkProp, tickTackWithSwitch)
-                    .map(toVisibility);
+```javascript
+var tickTackWithSwitch = function(latestTicktack, shouldBlinkCurrently) {
+  return shouldBlinkCurrently ? latestTicktack : 1;
+}
+var blinkProp = ticktackProp
+                .combine(shouldBlinkProp, tickTackWithSwitch)
+                .map(toVisibility);
+```
 
 
 Mit [combine](https://github.com/baconjs/bacon.js#observable-combine) erzeugen wir aus 2 Strömen einen neuen. Der neue Strom entsteht durch verschmelzen der jeweils letzten Werte jedes Stroms, die wir an eine entsprechende Kombinierungsfunktion verfüttern (`tickTackWithSwitch`). In unserem Beispiel kombinieren wir `ticktackProp` mit `shouldBlinkProp`, um bei ausgeschaltetem Blinken immer eine 1 im Ergebnisstrom zu haben:
 
-
+```javascript
     ticktackProp:    000001111100000111110000011111
     shouldBlinkProp: tttttttttttffffffffffftttttttt
     combined:        000001111101111111111100011111
-
+```
 
 
 <iframe src="https://embed.plnkr.co/mFfJc56HymdAJGELJNDP/preview" width="100%" frameborder="0"></iframe>
@@ -244,36 +271,37 @@ Ein Circuit Breaker kennt 3 Zustände
 
 Wir steuern unseren Circuit Breaker über 3 Busse `sendQueue`, `successes` und `failures`. Ein [Bus](https://github.com/baconjs/bacon.js#bus) ist ein [EventStream](https://github.com/baconjs/bacon.js#eventstream), der zusätzlich eine [push](https://github.com/baconjs/bacon.js#bus-push)-Methode anbietet, um Werte in den Strom zu schieben. Um den Circuit Breaker in AngularJS zu nutzen, habe ich ihn als [$http](https://docs.angularjs.org/api/ng/service/$http)-Interceptor eingebunden:
 
+```javascript
+angular.module( 'circuitBreakerDemo', [] )
+// factory für circuitBreaker zunächst ausgelassen
 
-    angular.module( 'circuitBreakerDemo', [] )
-    // factory für circuitBreaker zunächst ausgelassen
+.factory('circuitBreakerInterceptor', function(circuitBreaker, $q, $log) {
 
-    .factory('circuitBreakerInterceptor', function(circuitBreaker, $q, $log) {
+  return {
+    request: function (config) {
+      var deferred = $q.defer();
+      circuitBreaker.sendQueue.push({deferred: deferred, config: config});
+      return deferred.promise;
+    },
 
-        return {
-            request: function (config) {
-                var deferred = $q.defer();
-                circuitBreaker.sendQueue.push({deferred: deferred, config: config});
-                return deferred.promise;
-            },
+    response: function (response) {
+      $log.info("CB", "Response", response);
+      circuitBreaker.successes.push(1);
+      return response;
+    },
 
-            response: function (response) {
-                $log.info("CB", "Response", response);
-                circuitBreaker.successes.push(1);
-                return response;
-            },
+    responseError: function (rejection) {
+      $log.error("CB", "ResponseError", rejection);
+      circuitBreaker.failures.push(1);
+      return $q.reject(rejection);
+    }
+  };
+})
 
-            responseError: function (rejection) {
-                $log.error("CB", "ResponseError", rejection);
-                circuitBreaker.failures.push(1);
-                return $q.reject(rejection);
-            }
-        };
-    })
-
-    .config(['$httpProvider', function($httpProvider) {
-        $httpProvider.interceptors.push('circuitBreakerInterceptor');
-    }]);
+.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.interceptors.push('circuitBreakerInterceptor');
+}]);
+```
 
 
 Die Funktionen `response` und `responseError` des Interceptors sind schnell erklärt: Wir signalisieren dem Circuit Breaker den Erfolg bzw. Fehlschlag einer Anfrage, indem wir eine `1` in den entsprechenden Bus schieben (`successes` bzw. `failures`).
@@ -292,55 +320,56 @@ Ich beleuchte deshalb nur die Stellen, an denen wir den neuen Funktionen [thrott
 
 Die Warteperiode, nach der wir vom offenen Zustand in den halboffenen wechseln, können wir leicht mit Bacon.js implementieren:
 
-
-    var retryPing = failures
-                    .filter(tripped)
-                    .throttle(cbConfig.waitUntilRetry)
+```javascript
+var retryPing = failures
+                .filter(tripped)
+                .throttle(cbConfig.waitUntilRetry)
+```
 
 
 Die Property `tripped`, die wir an anderer Stelle berechnen, zeigt uns an, ob die Zahl der aufeinanderfolgenden Fehler einen konfigurierbaren Grenzwert erreicht hat. [throttle](https://github.com/baconjs/bacon.js#observable-throttle) schläft für eine bestimmte Zeit, gibt den letzten Wert des Eingabestroms aus und legt sich wieder hin.
 
-
+```javascript
     failures: ..1...1.1..1..........
     tripped:  fffffffftttttttttttttt
     filter:   ........1..1..........
     throttle: .....................1
                       |___Schlaf___|
-
+```
 
 Der folgende Codeblock entscheidet, ob wir vom halboffenen Zustand in den geschlossenen wechseln:
 
+```javascript
+var halfOpenReceive = retries
+                        .map(2)
+                        .merge(successes.map(1))
+                        .merge(failures.map(3))
+                        .slidingWindow(2,2);
 
-    var halfOpenReceive = retries
-                                .map(2)
-                                .merge(successes.map(1))
-                                .merge(failures.map(3))
-                                .slidingWindow(2,2);
+var halfOpenToClosedReceive = halfOpenReceive.filter(function(v) {
+  return v[0] == 2 && v[1] == 1;
+});
 
-    var halfOpenToClosedReceive = halfOpenReceive.filter(function(v) {
-        return v[0] == 2 && v[1] == 1;
-    });
-
-    halfOpenToClosedReceive.onValue(function() {
-        $log.info("CLOSED due to successful retry.");
-        recloses.push(1);
-    });
-
+halfOpenToClosedReceive.onValue(function() {
+  $log.info("CLOSED due to successful retry.");
+  recloses.push(1);
+});
+```
 
 Der Strom `retries` enthält für jeden Verbindungsversuch im halboffenen Zustand eine `1`. Wir führen dann `retries`, `successes` und `failures` mittels [merge](https://github.com/baconjs/bacon.js#stream-merge) zusammen. Das Ergebnis ist ein Strom, in den alle Werte der zusammengeführten Ströme fließen. Da jeder dieser Ströme nur Einsen liefert, bilden wir sie zur Unterscheidung vorher auf verschiedene Werte ab.
 
-
-    retries.map(2):   ..2......2...
-    successes.map(1): ...........1.
-    merge:            ..2......2.1.
-
+```javascript
+retries.map(2):   ..2......2...
+successes.map(1): ...........1.
+merge:            ..2......2.1.
+```
 
 Um herauszufinden, ob ein Verbindungsversuch erfolgreich war, betrachten wir die letzten beiden Werte des zusammengeführten Stroms und schließen den Kreis wieder, wenn auf einen Verbindungsversuch ein Erfolg folgt. Dazu picken wir mit `slidingWindow(2,2)`mind. 2 und max. 2, also genau 2 Werte aus dem Strom und schieben sie als Array in den Ausgabestrom.
 
-
-    halfOpenReceive:         [2,3][2,3][2,1]
-    halfOpenToClosedReceive: .    .    [2,1]
-
+```javascript
+halfOpenReceive:         [2,3][2,3][2,1]
+halfOpenToClosedReceive: .    .    [2,1]
+```
 
 ## Warum so umständlich? Was habe ich davon?
 
@@ -366,25 +395,27 @@ Zum Abschluss gebe ich einige Empfehlungen, die helfen sollen, Fallstricke zu um
 
 Beim Circuit Breaker würden wir die oben vorgestellte `throttle`-Operation wie folgt kapseln:
 
-    var throttler = throttleStrategy || function(observable) {
-        return observable.throttle(cbConfig.waitUntilRetry);
-    }
+```javascript
+var throttler = throttleStrategy || function(observable) {
+  return observable.throttle(cbConfig.waitUntilRetry);
+}
 
-    var retryPing = throttler(failures.filter(tripped));
-
+var retryPing = throttler(failures.filter(tripped));
+```
 
 Übergeben wir keine `throttleStrategy`, verhält sich die `throttler`-Funktion einfach wie `throttle` aus Bacon.js. Für den Testfall können wir jetzt aber anderes Verhalten injizieren und z.B. folgende Strategie wählen:
 
+```javascript
+var output = new Bacon.Bus();
+var lastValue;
 
-    var output = new Bacon.Bus();
-    var lastValue;
-
-    var throttleStrategy = function(observable) {
-        observable.onValue(function(x) {
-            lastValue = x;
-        });
-        return output;
-    }
+var throttleStrategy = function(observable) {
+  observable.onValue(function(x) {
+    lastValue = x;
+  });
+  return output;
+}
+```
 
 Unser Testcode kann nun mit `output.push(lastValue)` das Verhalten von `throttle` steuern.
 
