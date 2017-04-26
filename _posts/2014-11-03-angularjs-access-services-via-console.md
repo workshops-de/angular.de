@@ -1,6 +1,6 @@
 ---
 title: "Angular in der Browser Konsole - Services"
-description: 
+description:
 author: "Tilman Potthof"
 slug: "angularjs-access-services-via-console"
 published_at: 2014-11-03 05:28:00.000000Z
@@ -50,22 +50,28 @@ Normalerweise werden Angular Services für andere Komponenten per Dependency Inj
 In der Konsole müssen wir dies manuell erreichen.
 Die Funktion `angular.injector()` erwartet ein Array von Modulnamen und gibt einen `injector` zurück, mit dem man Services über ihnen Namen laden kann.
 
-    // Erzeugen des Injectors
-    var $injector = angular.injector(["ng"]);
-    var $http = $injector.get("$http")
-    
+```javascript
+// Erzeugen des Injectors
+var $injector = angular.injector(["ng"]);
+var $http = $injector.get("$http")
+```
+
 Das geht auch als Einzeiler.
 
-    // Laden des Service als Einzeiler 
-    var $http = angular.injector(["ng"]).get("$http");
+```javascript
+// Laden des Service als Einzeiler
+var $http = angular.injector(["ng"]).get("$http");
+```
 
 Jetzt kann man den `http` Service verwenden und ausprobieren, wie er funktioniert.
 In der Dokumentation ist die `get()`-Methode beschrieben, die einen `HttpPromise` zurückgibt und mit dessen `then()`-Methode kann man eine Server-Antwort verarbeiten.
 Um das Ergebnis zu überprüfen, können wir `console.log()` zusammen mit dem `arguments` Objekt ([MDN – arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)) verwenden.
 
-    $http.get("/").then(function() {
-        console.log(arguments);
-    });
+```javascript
+$http.get("/").then(function() {
+  console.log(arguments);
+});
+```
 
 Als Ausgabe erhalten wir ein Array mit dem Serverergebnis als Objekt.
 Mit der Konsole können wir uns den Inhalt des Objekts ausklappen und einfach analysieren.
@@ -77,15 +83,17 @@ Mit der Konsole können wir uns den Inhalt des Objekts ausklappen und einfach an
 
 Natürlich kann man auch eigene Services laden. In der TodoMVC Anwendung können wir dafür den `todoStorage` Service nehmen. Als Abhängigkeit geben wir im `injector()` nicht `ng`, sondern `todomvc`an. Mit dem zurückgegebenen Service können wir können wir Todos laden oder neue Einträge hinzufügen.
 
-	var todoStorage = angular.injector(["todomvc"]).get("todoStorage");
-	var todos = todoStorage.get();
-	todos.push({
-	    title: "Buy some chickpeas",
-	    completed: false
-	});
-	todoStorage.put(todos);
-	
-Leider kann man keine Änderung in der Anzeige feststellen. 
+```javascript
+var todoStorage = angular.injector(["todomvc"]).get("todoStorage");
+var todos = todoStorage.get();
+todos.push({
+  title: "Buy some chickpeas",
+  completed: false
+});
+todoStorage.put(todos);
+```
+
+Leider kann man keine Änderung in der Anzeige feststellen.
 Das liegt daran, dass wir unsere Änderung außerhalb des Aktualisierungszyklus (`$digest()` cycle) gemacht haben.
 Dies ist der Mechanismus hinter dem bidirektionalen (two-way) Databinding und wenn eine Änderung außerhalb passiert, dann wird sie nicht registriert.
 Man kann diese Überprüfung über Aktionen manuell auslösen, die von Angular registriert werden, wie z.B das Wechseln zwischen den Todo Filtern *Active* und *Inactive*.
@@ -99,15 +107,17 @@ Wie man den Aktualisierungszyklus auch direkt von der Konsole auslösen kann, wi
 
 Die beiden Beispiele mit dem `$http`- und dem `todoStorage`-Service waren beide recht einfach und unproblematisch. Wenn man aber Services laden will, die von anderen Services abhängen, muss man beachten, dass alle abhängigen Module als Parameter in die `angular.injector()`-Funktion übergeben werden. Hier ein kurzes Beispiel, das zu einem Fehler führt.
 
-	angular.module("foo",[]).factory("fooService", function($http) {
-	    return {
-	        getFoo: function() {
-	            // just returns a promise
-	            return $http.get("/");
-	        }
-	    }
-	});
-	var fooService = angular.injector(["foo"]).get("fooService");
+```javascript
+angular.module("foo",[]).factory("fooService", function($http) {
+  return {
+    getFoo: function() {
+      // just returns a promise
+      return $http.get("/");
+    }
+  }
+});
+var fooService = angular.injector(["foo"]).get("fooService");
+```
 
 Der Code-Schnipsel führt zu folgendem Fehler.
 
@@ -115,13 +125,17 @@ Der Code-Schnipsel führt zu folgendem Fehler.
 
 Das Problem ist leicht zu beheben, wenn man das Modul für den `$http`-Service hinzufügt (*Tipp*: `ng`) und es zu dem Array von abhängigen Modulen hinzufügt.
 
-	var fooService = angular.injector(["ng", "foo"]).get("fooService");
+```javascript
+var fooService = angular.injector(["ng", "foo"]).get("fooService");
+```
 
 ## Probleme mit $location
 
 Ein anderes aber schwerer zu lösendes Problem macht der `$location` Service. Das Gleiche gilt für Services, die vom `$location`-Service abhängen.
 
-	var $location = angular.injector(["ng"]).get("$location");
+```javascript
+var $location = angular.injector(["ng"]).get("$location");
+```
 
 Diese Zeile funktioniert leider nicht, sondern erzeugt folgenden Fehler.
 
@@ -129,9 +143,11 @@ Diese Zeile funktioniert leider nicht, sondern erzeugt folgenden Fehler.
 
 Das Problem lässt sich leider nicht durch ein zusätzliches Modul lösen. Das benötigte `$rootElement` ist nur im Kontext einer Anwendung verfügbar, die mit `ng-app` mit dem HTML verknüpft wurde. Aber mit einigen Tricks ist es auch möglich, auf den `injector` einer existierenden Anwendung zuzugreifen. Dafür können wir wieder die TodoMVC Anwendung verwenden.
 
-	var domElement = document.querySelector("[ng-app]");
-	var $injector = angular.element(domElement).injector();
-	var $location = $injector.get("$location");
+```javascript
+var domElement = document.querySelector("[ng-app]");
+var $injector = angular.element(domElement).injector();
+var $location = $injector.get("$location");
+```
 
 Jetzt kann man ebenfalls mit dem `$location` Service experimentieren, aber auch hier gilt, dass die Änderungen keine Auswirkung haben, solange der Aktualisierungszyklus nicht ausgelöst wird.
 
@@ -142,4 +158,3 @@ Ja, und meiner Meinung nach sollten die gezeigten dynamischen Manipulationen nie
 ## Selbst ausprobieren!
 
 Viel Spaß beim Testen, Auseinandernehmen oder Zerstören eurer Angular Anwendung. Falls ihr neue Sachen herausfindet, lasst es uns wissen.
- 
