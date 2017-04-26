@@ -1,6 +1,6 @@
 ---
 title: "Parsing mit $compile, $interpolate und $parse"
-description: 
+description:
 author: "Sascha Brink"
 slug: "angularjs-compile-interpolate-parse"
 published_at: 2015-08-25 07:45:00.000000Z
@@ -18,28 +18,32 @@ Wie AngularJS ein HTML-Template verarbeitet, ist in den Tiefen des Frameworks ve
 
 Ihr habt eine eigene Direktive mit einer *link*-Funktion. In dieser erstellt ihr manuell eigene Elemente.
 
-    .directive('name', function($compile) {
-      return {
-        restrict: 'E',
-        link: function(scope, element) {
-          element.html('{{name}}');
-        }
-      }
-    });
+```javascript
+.directive('name', function($compile) {
+  return {
+    restrict: 'E',
+    link: function(scope, element) {
+      element.html('{{name}}');
+    }
+  }
+});
+```
 
-Fokussiert euren Blick kurz auf die *link*-Funktion, wo wir ein Element mit dem Inhalt `{{name}}` erstellen. Wenn ihr diese Direktive mit `<name></name>` im HTML benutzt, wäre das Ergebnis immer `{{name}}`. 
+Fokussiert euren Blick kurz auf die *link*-Funktion, wo wir ein Element mit dem Inhalt `{{name}}` erstellen. Wenn ihr diese Direktive mit `<name></name>` im HTML benutzt, wäre das Ergebnis immer `{{name}}`.
 
 Da wir aber mit AngularJS arbeiten, wollen wir normalerweise nicht `{{name}}` ausgeben, sondern den Inhalt der Variable `name`. Dafür brauchen wir in diesem Fall `$compile`.
 
-    .directive('name', function($compile) {
-      return {
-        restrict: 'E',
-        link: function(scope, element) {
-          element.html('{{name}}');
-          $compile(element.contents())(scope);
-        }
-      }
-    });
+```javascript
+.directive('name', function($compile) {
+  return {
+    restrict: 'E',
+    link: function(scope, element) {
+      element.html('{{name}}');
+      $compile(element.contents())(scope);
+    }
+  }
+});
+```
 
 Kompilieren wir den Inhalt von `element` zusätzlich mit `$compile`, verhält sich alles wie erwartet. Die Variable `name` wird per Two-Way-Databinding automatisch aktualisiert.
 
@@ -47,7 +51,7 @@ Das wäre ein Beispiel für $compile. Gehen wir die drei Services im Folgenden d
 
 ## Die Services $compile, $interpolate, $parse
 
-Das Wichtige zuerst: $compile, $interpolate und $parse folgen einer Hierarchie. 
+Das Wichtige zuerst: $compile, $interpolate und $parse folgen einer Hierarchie.
 
 Sehr einfach verständlich mit folgenden Beispielen:
 
@@ -69,9 +73,11 @@ Ergebnis: *jqLite/jQuery*-Element
 
 Beispiel:
 
-    scope.name = 'Welt';
-    $compile('<p>Hallo {{name}}</p>')(scope)
-    // => [p.ng-binding.ng-scope]
+```javascript
+scope.name = 'Welt';
+$compile('<p>Hallo {{name}}</p>')(scope)
+// => [p.ng-binding.ng-scope]
+```
 
 `$compile` ist der Service, der an oberster Stelle steht. Er unterteilt einen HTML-Tag in einzelne Tokens. Auf den Inhalt eines Tokens wird `$interplate` angewendet.
 
@@ -87,8 +93,10 @@ Ergebnis: *String*
 
 Beispiel:
 
-    $interpolate('Hallo {{name}}')({ name: 'Welt' });
-    // => Hallo Welt
+```javascript
+$interpolate('Hallo {{name}}')({ name: 'Welt' });
+// => Hallo Welt
+```
 
 `$interpolate` unterteilt die Zeichenkette wieder weiter und sucht nach Expressions ({{}}). Auf diese wird der *$parse*-Service angewendet.
 
@@ -100,8 +108,10 @@ Ergebnis: *String*
 
 Beispiel:
 
-    $parse('name | uppercase')({ name: 'Welt' });
-    // => WELT
+```javascript
+$parse('name | uppercase')({ name: 'Welt' });
+// => WELT
+```
 
 $parse verarbeitet auch Filter.
 
@@ -110,26 +120,30 @@ $parse verarbeitet auch Filter.
 Da wir uns die Services jetzt genauer angeschaut haben, können wir auch erklären, wieso wir bei manchen Direktiven magisch Variablen benutzen können.
 Ein gutes Beispiel dafür ist `ng-click`. `ng-click` fügt magisch die Variable `$event` hinzu.
 
-    <button ng-click="buttonClickFn($event)">Klick mich!</button>
+```html
+<button ng-click="buttonClickFn($event)">Klick mich!</button>
+```
 
 Wenn wir uns die Direktive dazu angucken, ist das Geheimnis schnell gelüftet:
 
 > Diese Directive ist extrem vereinfacht. Sie ist abgeleitet vom allgemeinen Fall aus [ngEventDirs.js](https://github.com/angular/angular.js/blob/master/src/ng/directive/ngEventDirs.js)
 
-    .directive('ngClick', function($parse) {
-      return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-          element.on('click', function(event) {
-            $parse(attrs.ngClick)(scope, { $event: event });
-            scope.$apply();
-          }); 
-        }
-      }
-    });
+```javascript
+.directive('ngClick', function($parse) {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      element.on('click', function(event) {
+        $parse(attrs.ngClick)(scope, { $event: event });
+        scope.$apply();
+      });
+    }
+  }
+});
+```
 
 An dieser Stelle wird `$parse` mit einer Besonderheit genutzt. Statt einfach nur einen Scope zu übergeben, kann über einen weiteren Parameter noch ein Objekt übergeben werden. Dieses Objekt wird mit dem Scope zusammengeführt.
 
 ## Abschluss
 
-Ich hoffe dieser hat euch geholfen, AngularJS etwas besser zu verstehen. Ist noch irgendwas unklar? - Dann füge ich gerne noch Beispiele hinzu. 
+Ich hoffe dieser hat euch geholfen, AngularJS etwas besser zu verstehen. Ist noch irgendwas unklar? - Dann füge ich gerne noch Beispiele hinzu.

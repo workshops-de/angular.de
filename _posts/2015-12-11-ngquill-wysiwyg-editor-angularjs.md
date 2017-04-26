@@ -21,16 +21,21 @@ Die Installation ist, wie bei den meisten Frontend-Bibliotheken denkbar einfach:
 
 __*bower:*__
 
-    $ bower install ngquill
+```shell
+$ bower install ngquill
+```
 
 oder
 
-    $ bower install ng-quill
-
+```shell
+$ bower install ng-quill
+```
 
 __*npm:*__
 
-    $ npm install ng-quill
+```shell
+$ npm install ng-quill
+```
 
 __*als ZIP:*__
 [ngQuill Releases](https://github.com/KillerCodeMonkey/ngQuill/releases)
@@ -38,17 +43,23 @@ __*als ZIP:*__
 ## Einrichtung
 Nach dem das Modul erfolgreich installiert bzw. heruntergeladen wurde, muss die Quelle in die Hauptdatei (z.B. index.html) - neben AngularJS und QuillJS - der Anwendung eingebunden werden.Wurde die npm- oder bower-Installation genutzt, sind alle Abhängigkeiten bereits mit im node_modules oder bower_components Ordner enthalten.
 
-    <script type="text/javascript" src="bower_components/quill/dist/quill.js"></script>
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="bower_components/ngQuill/src/ng-quill.min.js"></script>
+```html
+<script type="text/javascript" src="bower_components/quill/dist/quill.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/ngQuill/src/ng-quill.min.js"></script>
+```
 
 Damit auch der Editor direkt etwas hübscher aussieht, kann die CSS-Datei des Snow-Themes auch direkt im Kopfbereich der Seite eingefügt werden.
 
-    <link rel="stylesheet" href="bower_components/quill/dist/quill.snow.css">
+```html
+<link rel="stylesheet" href="bower_components/quill/dist/quill.snow.css">
+```
 
 Als letzten Schritt muss das ngQuill-Modul noch als Abhängigkeit der eigenen Anwendung geladen werden.Die Definition der AngularJS-App könnte dann wie folgt aussehen.
 
-    var myAppModule = angular.module('quillTest', ['ngQuill']);
+```javascript
+var myAppModule = angular.module('quillTest', ['ngQuill']);
+```
 
 ## Nutzung
 Ist ngQuill richtig installiert und eingebunden, stehen mehrere Komponenten zur Verfügung.
@@ -61,34 +72,38 @@ __Konfiguration über ngQuillConfigProvider__
 
 Wie in AngularJS so üblich, dienen Provider als so etwas wie konfigurierbare Services.Daher bieten sie sich an Komponenten oder Programmteile zu Beginn global zu konfigurieren, damit sie später nicht einfach überschrieben werden können. Im Falle von ngQuill können hier global die Schriftarten und Schriftgrößen definiert werden.
 
-    myAppModule.config([
-        'ngQuillConfigProvider',
-        function (ngQuillConfigProvider) {
-            // Zwei Parameter: 1. Schriftgröße, 2. Schriftart
-            ngQuillConfigProvider.set([{
-                alias: '10',
-                size: '10px'
-            }], [{
-                label: 'Arial',
-                alias: 'Arial'
-            }])
-        }]);
+```javascript
+myAppModule.config([
+  'ngQuillConfigProvider',
+  function (ngQuillConfigProvider) {
+    // Zwei Parameter: 1. Schriftgröße, 2. Schriftart
+    ngQuillConfigProvider.set([{
+      alias: '10',
+      size: '10px'
+    }], [{
+      label: 'Arial',
+      alias: 'Arial'
+    }])
+  }]);
+```
 
 __Auslesen der Konfiguration mit ngQuillConfig__
 
 Oft muss auf die Konfigurationswerte des Moduls zugegriffen werden, um beispielsweise die Übersetzung anzupassen (z.B. bei mehrsprachigen Anwendungen). Dazu kann der Provider einfach als Abhängigkeit in AngularJS-Komponenten, z.B. Controller, eingebunden werden.
 
-    myAppModule.controller('AppCtrl', [
-        'ngQuillConfig',
-        function(ngQuillConfig) {
-            /* ngQuillConfig enthält folgende Schlüssel
-            *  fontSizes --> Array von Schriftgrößen-Objekten
-            *  fontFamilies --> Array von Schriftarten-Objekten
-            *  formats --> Array von erlaube Formatierungen
-            *  translations --> Übersetzungs-Objekt
-            */
-        }
-    });
+```javascript
+myAppModule.controller('AppCtrl', [
+  'ngQuillConfig',
+  function(ngQuillConfig) {
+    /* ngQuillConfig enthält folgende Schlüssel
+    *  fontSizes --> Array von Schriftgrößen-Objekten
+    *  fontFamilies --> Array von Schriftarten-Objekten
+    *  formats --> Array von erlaube Formatierungen
+    *  translations --> Übersetzungs-Objekt
+    */
+  }
+});
+```
 
 __Den Editor einbinden mit ngQuillEditor__
 
@@ -111,18 +126,20 @@ Attribute der Direktive:
 
 Im Template sieht das dann so aus.
 
-    <ng-quill-editor
-        ng-model="message"
-        translations="translations"
-        toolbar="true" show-toolbar="showToolbar"
-        link-tooltip="true" image-tooltip="true"
-        toolbar-entries="font size bold list bullet italic underline strike align color background link image"
-        editor-required="true"
-        required=""
-        error-class="input-error"
-        fontsize-options="fontsizeOptions"
-        fontfamily-options="fontfamilyOptions">
-    </ng-quill-editor>
+```html
+<ng-quill-editor
+    ng-model="message"
+    translations="translations"
+    toolbar="true" show-toolbar="showToolbar"
+    link-tooltip="true" image-tooltip="true"
+    toolbar-entries="font size bold list bullet italic underline strike align color background link image"
+    editor-required="true"
+    required=""
+    error-class="input-error"
+    fontsize-options="fontsizeOptions"
+    fontfamily-options="fontfamilyOptions">
+</ng-quill-editor>
+```
 
 Ein komplettes Beispiel findet Ihr hier:
 [Demo-Code]
@@ -131,9 +148,11 @@ __Die Editor-Instanz__
 
 Oft reicht der Einsatz der Direktive nicht aus und der Zugriff auf die QuillJS-API benötigt. Aus diesem Grund wird das ngQuill-Modul ein Event *editorCreated* sobald ein Editor erzeugt wurde. Dieses erhält die neue Editor-Instanz als Parameter.
 
-    $scope.$on('editorCreated', function (event, editor) {
-        // editor enthält die QuillJS-Editor Instanz
-    });
+```javascript
+$scope.$on('editorCreated', function (event, editor) {
+  // editor enthält die QuillJS-Editor Instanz
+});
+```
 
 __Übersetzungen__
 Anbei eine kleine Liste mit den möglichen Übersetzungsschlüsseln und den daszugehörigen Standardübersetzungen.
@@ -175,4 +194,3 @@ Das Modul ist aus einem kleinen Projekt entstanden, als ich eine schlichten, ein
    [ngQuillReleases]: <https://github.com/KillerCodeMonkey/ngQuill/releases>
    [ngQuill]: <https://github.com/KillerCodeMonkey/ngQuill>
    [Demo-Code]: <https://github.com/KillerCodeMonkey/ngQuill/blob/master/demo.html>
- 
