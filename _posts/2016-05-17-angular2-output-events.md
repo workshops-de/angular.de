@@ -14,38 +14,42 @@ Für das Verständnis dieses Artikels solltet ihr euch zurvor mit den Grundlagen
 
 Jedem JavaScript-Entwickler sind sicher schon einmal Events über den Weg gelaufen. Sei es beim Einsatz von jQuery, um auf bestimmte DOM-Events (beispielsweise einem Klick) zu reagieren oder die direkte Nutzung nativer Events, um einen Fehler abzufangen. Als kleines Code-Beispiel hören wir auf einen Button-Klick und zeigen eine Meldung an.
 
-    <html>
-      <head>
-        <script type="text/javascript">
-          function showAlert() {
-            alert('Hello');
-          }
-        </script>
-      </head>
-      <body>
-        <button onclick="showAlert()">Say: Hello</button>
-      </body>
-    </html>
+```html
+<html>
+  <head>
+    <script type="text/javascript">
+      function showAlert() {
+        alert('Hello');
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="showAlert()">Say: Hello</button>
+  </body>
+</html>
+```
 
 Eine andere Möglichkeit ist den Event-Listener selbst per JavaScript auf das Element zu setzen. Dadurch entfällt das `onclick` am button-Tag.
 
-    <html>
-      <head>
-        <script type="text/javascript">
-          function addListener() {
-            var buttonEl = document.querySelector('button');
-            // or buttonEl.addEventListener('click', showAlert);
-            buttonEl.onclick = showAlert;
-          }
-          function showAlert() {
-            alert('Hello');
-          }
-        </script>
-      </head>
-      <body onload="addListener()">
-        <button>Say: Hello</button>
-      </body>
-    </html>
+```html
+<html>
+  <head>
+    <script type="text/javascript">
+      function addListener() {
+        var buttonEl = document.querySelector('button');
+        // or buttonEl.addEventListener('click', showAlert);
+        buttonEl.onclick = showAlert;
+      }
+      function showAlert() {
+        alert('Hello');
+      }
+    </script>
+  </head>
+  <body onload="addListener()">
+    <button>Say: Hello</button>
+  </body>
+</html>
+```
 
 > Events werden immer dann benutzt, wenn wir andere Code-Bestandteile über das Eintreten eines bestimmten Ereignisses informieren wollen. Dabei kann dies auch irgendwann in der Zukunft geschehen.
 
@@ -57,17 +61,19 @@ Es besteht auch die Möglichkeit eigene Events zu erzeugen, diese auszuführen u
 
 In Angular können Standart-DOM-Events sehr einfach genutzt werden. Dazu schreibt ihr das Event, was abgefangen werden soll, in die bereits aus dem Einführungsartikel bekannten `()` (Output) Klammern. Als Wert setzt ihr eine Expression, worunter auch Funktionsaufrufe zählen.
 
-    @Component({
-      selector: 'my-click-class',
-      template: `
-        <button (click)="showAlert()">Say: Hello</button>
-      `
-    })
-    export class MyClickClass {
-      showAlert() {
-        window.alert('hello');
-      }
-    }
+```javascript
+@Component({
+  selector: 'my-click-class',
+  template: `
+    <button (click)="showAlert()">Say: Hello</button>
+  `
+})
+export class MyClickClass {
+  showAlert() {
+    window.alert('hello');
+  }
+}
+```
 
 Darüber hinaus lassen sich auch eigene Events - in Angular Ouputs genannt - erzeugen. Diese werdet ihr später hauptsächlich benötigen, um Daten aus einer Komponente an ihre Elternkomponente weiterzureichen. Ein Anwendungsbeispiele dafür sind sogenannte *Dummy*-Komponenten/Direktiven, welche sich vor allem für Formulare anbieten. Die eigentliche Komponente nutzt eine weitere Komponente, die sich nur um das Formular an sich kümmert. Sie hält das Formular-Template, die Validierungslogik und gibt der Elternkomponente bescheid wann und was am Ende abgeschickt werden soll.
 
@@ -81,40 +87,43 @@ Zur Vereinfachung nehmen wir einfach unser bisheriges `click`-Beispiel und wande
 
 Beginnen wir mit der Basis-Komponente.
 
-    @Component({
-      selector: 'base-component',
-      directives: [ClickComponent],
-      template: `
-      	Base-Component
-        <click-component (showMsg)="handleMsg($event)"></click-component>
-      `
-    })
-    export class MyParentComponent {
+```javascript
+@Component({
+  selector: 'base-component',
+  directives: [ClickComponent],
+  template: `
+    Base-Component
+    <click-component (showMsg)="handleMsg($event)"></click-component>
+  `
+})
+export class MyParentComponent {
 
-      handleMsg(msg) {
-        window.alert(msg);
-      }
+  handleMsg(msg) {
+    window.alert(msg);
+  }
 
-    }
+}
+```
 
 Unsere Basis-Komponente bindet als Abhängigkeit die `ClickComponent` ein, damit diese im Template benutzt werden kann. Dort fügt sie einen Listener auf das Event mit dem Name `showMsg` hinzu. Wird das Event ausgeführt, rufen wir die Funktion `handleMsg` mit einem Parameter `$event` auf. Ihr werden recht häufig auf die von Angular reservierte Variable `$event` stoßen. Sie steht im Grunde immer für das Event-Objekt, des aktuellen Ereignisses.
 
 Daraus erhalten wir schon ein paar Vorgaben für unsere `ClickComponent`.
 
+```javascript
+@Component({
+  selector: 'click-component',
+  template: `
+    <button (click)="triggerEvent()">Say: Hello</button>
+  `
+})
+export class ClickComponent {
+  @Output() showMsg = new EventEmitter<string>();
 
-    @Component({
-      selector: 'click-component',
-      template: `
-        <button (click)="triggerEvent()">Say: Hello</button>
-      `
-    })
-    export class ClickComponent {
-      @Output() showMsg = new EventEmitter<string>();
-
-      triggerEvent() {
-        this.showMsg.emit('Hello');
-      }
-    }
+  triggerEvent() {
+    this.showMsg.emit('Hello');
+  }
+}
+```
 
 Das Template der Click-Komponente besteht nur aus unserer Schaltfläche. Auf das bereits vorhandene `Click-Event` kann einfach so gehört werden. Wir definieren uns zusätzlich in der Component ein eigenes `Output` über den dafür vorgesehenen gleichnamigen Decorator. Als Name setzen wir `showMsg` und initialisieren ihn mit einem neuen eigenen Event vom Typ `String`.
 
@@ -130,40 +139,44 @@ In der Regel werden Services - oder auch *Injectables* genannt - dazu genutzt Fu
 
 Als Beispiel haben wir einen `CartService`, der alle Warenkorbeinträge hält. Er besitzt ein `cartChanged`-Event und eine `addCartItem`-Funktion. Nach dem Hinzufügen eines Items soll das Event die neuen Daten verteilen.
 
-    import {EventEmitter, Injectable} from '@angular/core';
+```javascript
+import {EventEmitter, Injectable} from '@angular/core';
 
-    @Injectable()
-    export class CartService {
-      cart = [];
-      public cartChanged = new EventEmitter<Object>();
+@Injectable()
+export class CartService {
+  cart = [];
+  public cartChanged = new EventEmitter<Object>();
 
-      getCart() {
-        return this.cart;
-      };
+  getCart() {
+    return this.cart;
+  };
 
-      addCartItem(item): void {
-        this.cart.push(item);
-        this.cartChanged.emit(this.cart);
-      };
+  addCartItem(item): void {
+    this.cart.push(item);
+    this.cartChanged.emit(this.cart);
+  };
 
-    }
+}
+```
 
 Eine Komponente könnte dann wie folgt ein Event abonnieren.
 
-    @Component({
-      ...
-    })
-    export class ProductComponent implements OnInit {
-      constructor(private cartService: CartService) {}
+```javascript
+@Component({
+  ...
+})
+export class ProductComponent implements OnInit {
+  constructor(private cartService: CartService) {}
 
-      ngOnInit() {
-        this.cartService
-          .cartChanged
-          .subscribe(updatedCart => {
-            // update data in component
-          });
-      }
-    }
+  ngOnInit() {
+    this.cartService
+      .cartChanged
+      .subscribe(updatedCart => {
+        // update data in component
+      });
+  }
+}
+```
 
 Was das Interface `OnInit` und die `ngOnInit` Funktion bedeuten, könnt ihr in unseren Artikel über den [Component-Lifecycle](/artikel/angular-2-component-lifecycle/) nachlesen.
 
