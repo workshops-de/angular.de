@@ -94,11 +94,15 @@ Es gibt im Prinzip zwei Möglichkeiten eine Ionic-App zu entwickeln.
 **Ionic CLI**
 Im ersten Fall muss zuvor Cordova und danach das Ionic CLI über die nachstehende Code-Zeile installiert werden.
 
-    npm install -g ionic
+```shell
+npm install -g ionic
+```
 
 Der folgende Befehl erstellt dann ein neues Projekt.
 
-    ionic start pizzaApp [template]
+```shell
+ionic start pizzaApp [template]
+```
 
 Jetzt finden sich die Projektdateien in einem neuen Ordner mit dem Namen *pizzaApp* wieder. Der Parameter *template* ist optional und gibt an, welches der angebotenen Starter-Templates genutzt wird.
 
@@ -114,11 +118,15 @@ Im `www`-Verzeichnis befinden sich jetzt die eigentlichen Anwendungsquellen, die
 
 Über den Befehl
 
-    ionic serve
+```shell
+ionic serve
+```
 
 wird ein lokaler Dateiserver gestartet, sodass die Anwendung ohne Einschränkungen ausgeführt werden kann. Wird der Befehl mit dem Parameter `--lab` gestartet, erhalten wir eine parallele Ansicht der App auf iOS und Android.
 
-    ionic serve --lab
+```shell
+ionic serve --lab
+```
 
 ![Beispiel eines ionic serve --lab](02-ionic-serve-lab.png)
 
@@ -141,25 +149,26 @@ Allgemein besteht das Framework aus AngularJS, der AngularJS-Erweiterungen von I
 
 Im einfachsten Fall sieht die Definition einer Ionic-Anwendung folgendermaßen aus.
 
-    <html ng-app="pizzaApp" strict-di>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1,   maximum-scale=1, user-scalable=no, width=device-width">
+```html
+<html ng-app="pizzaApp" strict-di>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,   maximum-scale=1, user-scalable=no, width=device-width">
 
-        <title>Pizza-App</title>
-        <!-- Load ionic sources over cdn -->
-        <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-        <script type="text/javascript">
-          angular.module('pizzaApp', ['ionic']);
-        </script>
-      </head>
+    <title>Pizza-App</title>
+    <!-- Load ionic sources over cdn -->
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <script type="text/javascript">
+      angular.module('pizzaApp', ['ionic']);
+    </script>
+  </head>
 
-      <body>
-        <!-- HTML content of the app -->
-      </body>
-    </html>
-
+  <body>
+    <!-- HTML content of the app -->
+  </body>
+</html>
+```
 
 ### Routing mit UI-Router
 
@@ -180,21 +189,23 @@ Unsere JavaScript-Code unserer Tutorial-App, die wir im vorherigem Abschnitt ang
 
 Der config-Block sieht im einfachsten Fall wie folgt aus:
 
-    .config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider
-            .otherwise('/order');
+```javascript
+.config(function ($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider
+    .otherwise('/order');
 
-        $stateProvider
-            .state('order', {
-                url: '/order',
-                templateUrl: 'app/templates/order.html',
-                controller: 'OrderCtrl'
-            })
-            .state('about', {
-                url: '/about',
-                templateUrl: 'app/templates/about.html'
-            });
+  $stateProvider
+    .state('order', {
+      url: '/order',
+      templateUrl: 'app/templates/order.html',
+      controller: 'OrderCtrl'
+    })
+    .state('about', {
+      url: '/about',
+      templateUrl: 'app/templates/about.html'
     });
+});
+```
 
 Als erstes laden wir beide Provider. Danach werden die beiden Zustände über die `state`-Methode des __`$stateProvider`__ mit einem Namen und einem Konfigurationsobjekt erstellt. Das Objekt beinhaltet die zu füllenden Views mit Angabe von Template und dem Controller sowie die zu verknüpfende URL. Mit den __`$urlRouterProvider`__ kann eine Fallback-URL angegeben werden, die genutzt wird falls ein nicht vorhandener Zustand aufgerufen wird.
 
@@ -206,44 +217,56 @@ Der UI-Router bringt weiterhin eigene Direktiven mit.
 
 Der Inhalt unserer `index.html` könnte unter Verwendung der vorgestellten Direktiven, wie folgt aussehen.
 
-    <body>
-      <a ui-sref="order" ui-sref-active="active">Start</a>
-      <a ui-sref="about" ui-sref-active="active">Über Uns</a>
-      <ui-view></ui-view>
-    </body>
+```html
+<body>
+  <a ui-sref="order" ui-sref-active="active">Start</a>
+  <a ui-sref="about" ui-sref-active="active">Über Uns</a>
+  <ui-view></ui-view>
+</body>
+```
 
 Unsere App hat nun ein Einhängepunkt in dem Inhalte eingefügt werden, sowie zwei Verlinkungen. Falls ein Zustand aktiv ist, wird am Element die Klasse `active` gesetzt. Werden nun noch die fehlenden Templates und der Controller angelegt, lässt sich die Anwendung fehlerfrei ausführen.
 
 Wird der `uiView` ein Name zugewiesen:
 
-    <ui-view name="content"></ui-view>
+```html
+<ui-view name="content"></ui-view>
+```
 
 oder
 
-	<div ui-view="content"></div>
+```html
+<div ui-view="content"></div>
+```
 
 Sieht eine Zustandsdefinition so aus:
 
-    .state('order', {
-        url: '/order',
-        views: {
-            'content@': {
-                templateUrl: 'app/templates/order.html',
-                controller: 'OrderCtrl'
-            }
-        }
-    })
+```javascript
+.state('order', {
+  url: '/order',
+  views: {
+    'content@': {
+      templateUrl: 'app/templates/order.html',
+      controller: 'OrderCtrl'
+    }
+  }
+})
+```
 
 Das Konfigurationsobjekt erhält den Schlüssel **`views`**. Dieser hält wieder ein Objekt aus *`uiViewName@zustandDerUiViewDefinition`* als Schlüssel und als Wert ein Objekt mit Template, Controller, usw..
 
 ### Parameter
 Natürlich kann ein Zustand auch Parameter erhalten. Dazu muss einfach der Name des Parameters mit einem ':' als Prefix in die URL eingepflegt werden.
 
-    /order/:id
+```javascript
+/order/:id
+```
 
 Alternativ kann die '{}'-Schreibweise genutzt und optional sogar der Datentyp festgelegt werden. Das spart möglicherweise unnötiges Parsen der Daten.
 
-    /order/{id:int}
+```javascript
+/order/{id:int}
+```
 
 Einen vollständigen Überblick erhaltet ihr im dazugehörigen Abschnitt des [UI-Router-Wikis](https://github.com/angular-ui/ui-router/wiki/url-routing#url-parameters).
 
@@ -255,31 +278,33 @@ Ein weiterer Vorteil vom UI-Router ist die Möglichkeit State-Hierarchien aufzub
 
 Als Beispiel erhält unsere Anwendung nun einen Basis-Zustand, der das Basis-Template beinhaltet. Alle Kind-Zustände erhalten diesen als Eltern-Zustand.
 
-    .config(function ($stateProvider, $urlRouterProvider) {
+```javascript
+.config(function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider
-            .otherwise('/order');
+  $urlRouterProvider
+    .otherwise('/order');
 
-        $stateProvider
-            .state('base', {
-                url: '/',
-                views: {
-                    'base': {
-                        templateUrl: 'app/templates/base.html'
-                    }
-                }
-            })
-            .state('base.order', {
-                url: 'order',
-                templateUrl: 'app/templates/order.html',
-                controller: 'OrderCtrl'
-            })
-            .state('about', {
-                parent: 'base',
-                url: 'about',
-                templateUrl: 'app/templates/about.html'
-            });
+  $stateProvider
+    .state('base', {
+      url: '/',
+      views: {
+          'base': {
+              templateUrl: 'app/templates/base.html'
+          }
+      }
+    })
+    .state('base.order', {
+      url: 'order',
+      templateUrl: 'app/templates/order.html',
+      controller: 'OrderCtrl'
+    })
+    .state('about', {
+      parent: 'base',
+      url: 'about',
+      templateUrl: 'app/templates/about.html'
     });
+});
+```
 
 Es gibt mehrere Möglichkeiten einen Eltern-Zustand zuzuweisen.
 
@@ -301,8 +326,8 @@ Das ist so ähnlich wie in der OOP mit abstrakten Klassen. Man kann sie verwende
 Ähnlich zum Standard-Router bietet der UI-Router ein paar Services und Events, um flexible in das Routing einzugreifen. Wichtige Services sind dabei:
 
  - `$state` - enthält Methoden zum programmatischem Routen
-	 - `transitionTo()`
-	 - `go(stateName, paramsObject)` (nutzt intern transitionTo)
+   - `transitionTo()`
+   - `go(stateName, paramsObject)` (nutzt intern transitionTo)
  - `$stateParams` - Zugriff auf die Parameter eines Zustands
 
 Mit Hilfe dieser AngularJS-Events könnt ihr auf das Navigieren reagieren:
@@ -334,27 +359,29 @@ Als Basis einer Ionic-App stehen drei Komponenten zur Verfügung:
 
 Wir benutzen nun die Komponenten in unserem Basis-Layout. Die Navigationslinks werden Inhalt einer `ionHeaderBar` und die `uiView` wird in ein `ionContent`-Element verschoben.
 
-    <ion-header-bar class="bar-positive">
-      <div class="buttons">
-        <a ui-sref="base.order" ui-sref-active="active" class="button">Start</a>
-      </div>
-      <h1 class="title">Pizza App</h1>
-      <div class="buttons">
-        <a ui-sref="about" ui-sref-active="active" class="button">Über Uns</a>
-      </div>
-    </ion-header-bar>
-    <ion-content>
-      <ui-view></ui-view>
-    </ion-content>
+```html
+<ion-header-bar class="bar-positive">
+  <div class="buttons">
+    <a ui-sref="base.order" ui-sref-active="active" class="button">Start</a>
+  </div>
+  <h1 class="title">Pizza App</h1>
+  <div class="buttons">
+    <a ui-sref="about" ui-sref-active="active" class="button">Über Uns</a>
+  </div>
+</ion-header-bar>
+<ion-content>
+  <ui-view></ui-view>
+</ion-content>
+```
 
 Beim Aufruf fällt sofort auf, dass bei Einhaltung der Struktur, die Links direkt als Schaltflächen dargestellt und der aktive Zustand hervorgehoben wird. Dazu sollte sich an die vorgegebene Struktur gehalten werden:
 
  - `div` mit Klasse `buttons`
-	 - enthält Buttons links
+   - enthält Buttons links
  - `h1` mit Klasse `title`
-	 - enthält Seitentitel
+   - enthält Seitentitel
  - `div` mit Klasse `buttons`
-	 - enthält Buttons rechts
+   - enthält Buttons rechts
 
 Des Weiteren lässt sich der Inhaltsbereich scrollen. Dazu können eine Vielzahl von Einstellungen getroffen werden. Unter anderem lässt sich JavaScript-Scrollen aktivieren, dass für manche Ionic-Funktionen wichtig ist aber auch die Performance der Anwendung minimieren kann oder auch ein Standard-Padding einfügt werden.
 
@@ -384,24 +411,28 @@ Als erstes ersetzen wir jede `uiView` mit `ionNavView`. Danach wird die `ionHead
 
 Wir könnten jetzt innerhalb der Navigationsleiste die Buttons mit der `ionNavButtons`-Komponente konfigurieren. Jedoch sollten wir überlegen, ob wir diese jetzt überhaupt noch brauchen. Unser Startzustand ist der `order`-State. Von diesem aus müssen wir irgendwie zur *Über Uns*-Seite gelangen von wo aus nur die Möglichkeit besteht wieder zurückzugehen. Aus diesem Grund erhält nun jedes View-Template einen eigenen `ionContent`, dieser wird nun von einer `ionView` umschlossen. Dadurch können wir nun dort im order-State den Navigationsbutton setzen.
 
-    <ion-view>
-      <ion-nav-buttons side="right">
-        <a ui-sref="about" ui-sref-active="active" class="button">Über Uns</a>
-      </ion-nav-buttons>
-      <ion-content padding="true">
-        <div ng-repeat="pizza in pizzas">
-          {{pizza.name}} {{pizza.price}}
-        </div>
-      </ion-content>
-    </ion-view>
+```html
+<ion-view>
+  <ion-nav-buttons side="right">
+    <a ui-sref="about" ui-sref-active="active" class="button">Über Uns</a>
+  </ion-nav-buttons>
+  <ion-content padding="true">
+    <div ng-repeat="pizza in pizzas">
+      {{pizza.name}} {{pizza.price}}
+    </div>
+  </ion-content>
+</ion-view>
+```
 
 Zusätzlich erhält die Navigationsleiste im Basis-Template einen `ionNavBackButton` und setzt den App-Titel über die `ionNavTitle`-Komponente.
 
-    <ion-nav-bar class="bar-positive">
-      <ion-nav-back-button></ion-nav-back-button>
-      <ion-nav-title class="title">Pizza App</ion-nav-title>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
+```html
+<ion-nav-bar class="bar-positive">
+  <ion-nav-back-button></ion-nav-back-button>
+  <ion-nav-title class="title">Pizza App</ion-nav-title>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+```
 
 Klicken wir nun auf *Über Uns* erscheint sofort der Zurück-Button in der Navigationsleiste.
 
@@ -434,34 +465,36 @@ Unsere Pizza-App soll nun um ein Seitenmenü ergänzt werden. Dazu schauen wir u
 
 Wir erstellen nun im Basis-Template unserer App ein Seitenmenü auf der linken Seite. Zusätzlich erhält das Menü zwei Links, einen zur Bestellseite und einen zur „Über Uns“-Seite.
 
-    <ion-side-menus>
+```html
+<ion-side-menus>
 
-        <ion-side-menu side="left">
-            <ion-header-bar class="bar-assertive">
-                <h1 class="title">Menü</h1>
-            </ion-header-bar>
-            <ion-content scroll="false">
-                <div class="list">
-                    <a ui-sref="base.order" ui-sref-active="active">
-                        Bestellen
-                    </a>
-                    <a ui-sref="about" ui-sref-active="active">
-                        Über Uns
-                    </a>
-                </div>
-            </ion-content>
-        </ion-side-menu>
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-assertive">
+      <h1 class="title">Menü</h1>
+    </ion-header-bar>
+    <ion-content scroll="false">
+      <div class="list">
+        <a ui-sref="base.order" ui-sref-active="active">
+          Bestellen
+        </a>
+        <a ui-sref="about" ui-sref-active="active">
+          Über Uns
+        </a>
+      </div>
+    </ion-content>
+  </ion-side-menu>
 
-        <ion-side-menu-content>
-            <ion-nav-bar class="bar-positive">
-                <ion-nav-back-button>
-                </ion-nav-back-button>
-                <ion-nav-title class="title">Pizza App</ion-nav-title>
-            </ion-nav-bar>
-            <ion-nav-view></ion-nav-view>
-        </ion-side-menu-content>
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-title class="title">Pizza App</ion-nav-title>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+  </ion-side-menu-content>
 
-    </ion-side-menus>
+</ion-side-menus>
+```
 
 Über `ionSideMenus` sagen wir, dass unsere App Seitenmenüs verwendet. Danach folgt die Definition unseres Sidemenus durch `ionSideMenu` unter der Angabe von `side="left“`. Die entsprechenden Links legen wir als Inhalt des Menüs an. Alles übrige vom vorherigen Code wird in das `ionSideMenuContent`-Element verschoben.
 
@@ -561,11 +594,11 @@ Aus meiner Erfahrung als Ionic-Entwickler weiß ich, dass Listeneinträge oft gr
 Nach dem gleichen Prinzip können auch Buttons oder Bilder ausgerichtet und angepasst werden.
 
  - Buttons
-	 - CSS-Klassen: item-button-left, item-button-right
+   - CSS-Klassen: item-button-left, item-button-right
  - Bilder
-	 - CSS-Klassen: item-avatar, item-thumbnail-left, item-thumbnail-right
-	 - Avatar: zeigt automatisch einen runden Bildauschnitt
-	 - Thumbnail: kleine Vorschauansicht
+   - CSS-Klassen: item-avatar, item-thumbnail-left, item-thumbnail-right
+   - Avatar: zeigt automatisch einen runden Bildauschnitt
+   - Thumbnail: kleine Vorschauansicht
 
  Eine vollständige Dokumentation dazu findet ihr in den [Ionic-Docs](http://ionicframework.com/docs/components/#list).
 
@@ -642,28 +675,28 @@ Bei der Programmierung von Anwendungen ist es wichtig dem Nutzer Feedback zu geb
 Für diese beiden Anwendungsfälle stellt Ionic zwei Komponenten zur Verfügung.
 
  - $ionicLoading
-	 - Service
-	 - Overlay über die ganze View
-	 - Blockierung von Nutzerinteraktionen
-	 - möglicher Hinweistext
+   - Service
+   - Overlay über die ganze View
+   - Blockierung von Nutzerinteraktionen
+   - möglicher Hinweistext
  - ionSpinner
-	 - Ladekringel-Direktive
-	 - Indikator, dass Daten geladen werden, z.B. API-Request läuft und noch keine Daten vorhanden
+   - Ladekringel-Direktive
+   - Indikator, dass Daten geladen werden, z.B. API-Request läuft und noch keine Daten vorhanden
 
 Um einen Ladelayer über die aktive View zu legen, muss der **$ionicLoading**-Service einfach im Controller als Abhängigkeit geladen werden. Danach stehen uns zwei Funktionen zur Verfügung.
 
  - show([options])
-	 - Einblenden des Ladelayers
-	 - Optionen:
-		 - template (String) - Template als String
-		 - templateUrl (String) - Pfad zu einer Templatedatei
-		 - noBackdrop (Boolean) - versteckt Backdrop, um Inhalt der View voll sichtbar zu lassen
-		 - scope (Scope-Objekt) - eigner Scope, um Template zu füllen (Standardwert: `$rootScope.$new()`)
-		 - hideOnStateChange (Boolean) - automatisch beim Verlassen des States verstecken
-		 - delay (Zahl als ms) - Einblenden mit einer Verzögerung
-		 - duration (Zahl als ms) - automatisches Ausblenden nach x ms
+   - Einblenden des Ladelayers
+   - Optionen:
+     - template (String) - Template als String
+     - templateUrl (String) - Pfad zu einer Templatedatei
+     - noBackdrop (Boolean) - versteckt Backdrop, um Inhalt der View voll sichtbar zu lassen
+     - scope (Scope-Objekt) - eigner Scope, um Template zu füllen (Standardwert: `$rootScope.$new()`)
+     - hideOnStateChange (Boolean) - automatisch beim Verlassen des States verstecken
+     - delay (Zahl als ms) - Einblenden mit einer Verzögerung
+     - duration (Zahl als ms) - automatisches Ausblenden nach x ms
  - hide()
-	 - Ausblenden des Ladelayers
+   - Ausblenden des Ladelayers
 
 Beide Funktionen liefern ein `Promise` zurück, welches erfolgreich aufgelöst wird, wenn der Ladelayer angezeigt bzw. ausgeblendet wurde. Dadurch habt ihr die Möglichkeit mit der Ausführung bestimmter Code-Abschnitte auf das tatsächliche Anzeigen/Verschwinden zu warten.
 
@@ -672,41 +705,41 @@ In einer Ionic-Anwendung gibt es nur einen einzigen Ladelayer. Wird `$ionicLoadi
 Als kleine Übung bauen wir unsere Startseite der Pizza-App so um, dass die Pizzen aus einer eigenen Datei mit einer $http-Anfrage geladen werden. Während dieser Zeit blenden wir ein Ladeoverlay ein, das mindestens 2000ms zu sehen ist. Das Absenden des Requests übernimmt ein eigener Pizza-Service.
 
     angular
-	    .module('pizzaApp')
-	    .controller('OrderCtrl', [
-	        '$scope',
-	        '$timeout',
-	        '$ionicLoading',
-	        'cartService',
-	        'pizzaService',
-	        function ($scope, $timeout, $ionicLoading, cartService, pizzaService) {
+      .module('pizzaApp')
+      .controller('OrderCtrl', [
+          '$scope',
+          '$timeout',
+          '$ionicLoading',
+          'cartService',
+          'pizzaService',
+          function ($scope, $timeout, $ionicLoading, cartService, pizzaService) {
 
-				// Einblenden des Layers
-	            $ionicLoading.show({
-	                template: 'Bitte warten...'
-	            });
+        // Einblenden des Layers
+              $ionicLoading.show({
+                  template: 'Bitte warten...'
+              });
 
-				// Laden der Pizzen
-	            pizzaService
-	                .getPizzas()
-	                .then(function (result) {
-		                // Schreibe Ergebnis auf Scope
-	                    $scope.pizzas = result;
-	                }, function () {
-	                    // Error case
-	                })
-	                .finally(function () {
-		                // Ausblenden mit Verzögerung von 2000ms
-	                    $timeout(function () {
-	                        $ionicLoading.hide();
-	                    }, 2000);
-	                });
+        // Laden der Pizzen
+              pizzaService
+                  .getPizzas()
+                  .then(function (result) {
+                    // Schreibe Ergebnis auf Scope
+                      $scope.pizzas = result;
+                  }, function () {
+                      // Error case
+                  })
+                  .finally(function () {
+                    // Ausblenden mit Verzögerung von 2000ms
+                      $timeout(function () {
+                          $ionicLoading.hide();
+                      }, 2000);
+                  });
 
-	            $scope.addToCart = function (pizza) {
-	                cartService.addCartItem(pizza);
-	            };
-	        }
-	    ]);
+              $scope.addToCart = function (pizza) {
+                  cartService.addCartItem(pizza);
+              };
+          }
+      ]);
 
  ![Ionic Tutorial Loading Layer](medium_ionic-loading.png?v=63629399654)
 
@@ -715,55 +748,55 @@ Für unsere Beispiel-App ist der Lade-Layer ein wenig unpraktikabel, da der Nutz
 Der Controller-Code sieht nun so aus.
 
     angular
-	    .module('pizzaApp')
-	    .controller('OrderCtrl', [
-	        '$scope',
-	        '$timeout',
-	        'cartService',
-	        'pizzaService',
-	        function ($scope, $timeout, cartService, pizzaService) {
-	            $scope.loading = true;
+      .module('pizzaApp')
+      .controller('OrderCtrl', [
+          '$scope',
+          '$timeout',
+          'cartService',
+          'pizzaService',
+          function ($scope, $timeout, cartService, pizzaService) {
+              $scope.loading = true;
 
-	            pizzaService
-	                .getPizzas()
-	                .then(function (result) {
-	                    $scope.pizzas = result;
-	                }, function () {
-	                    // error case
-	                })
-	                .finally(function () {
-	                    $timeout(function () {
-	                        $scope.loading = false;
-	                    }, 2000);
-	                });
+              pizzaService
+                  .getPizzas()
+                  .then(function (result) {
+                      $scope.pizzas = result;
+                  }, function () {
+                      // error case
+                  })
+                  .finally(function () {
+                      $timeout(function () {
+                          $scope.loading = false;
+                      }, 2000);
+                  });
 
-	            $scope.addToCart = function (pizza) {
-	                cartService.addCartItem(pizza);
-	            };
-	        }
-	    ]);
+              $scope.addToCart = function (pizza) {
+                  cartService.addCartItem(pizza);
+              };
+          }
+      ]);
 
 Im Template richten wir den Spinner noch zentriert aus und blenden den Listeninhalt erst ein, wenn der Ladespinner ausgeblendet wurde.
 
     <ion-view>
-	    <ion-nav-title class="title">
-		    Pizza App
-		</ion-nav-title>
-	    <ion-content padding="true">
-	        <div ng-show="loading" class="text-center padding">
-	            <ion-spinner></ion-spinner>
-	        </div>
-	        <div class="list" ng-show="!loading">
-	            <div class="item item-divider">
-	                Angebot
-	            </div>
-	            <div class="item item-button-right" ng-repeat="pizza in pizzas">
-	                {{pizza.name}} {{pizza.price}}
-	                <button class="button button-balanced icon ion-ios-cart" ng-click="addToCart(pizza)"></button>
-	            </div>
-	        </div>
-	    </ion-content>
-	</ion-view>
+      <ion-nav-title class="title">
+        Pizza App
+    </ion-nav-title>
+      <ion-content padding="true">
+          <div ng-show="loading" class="text-center padding">
+              <ion-spinner></ion-spinner>
+          </div>
+          <div class="list" ng-show="!loading">
+              <div class="item item-divider">
+                  Angebot
+              </div>
+              <div class="item item-button-right" ng-repeat="pizza in pizzas">
+                  {{pizza.name}} {{pizza.price}}
+                  <button class="button button-balanced icon ion-ios-cart" ng-click="addToCart(pizza)"></button>
+              </div>
+          </div>
+      </ion-content>
+  </ion-view>
 
 ![Ionic Tutorial Loading Spinner](medium_ionic-loading-spinner.png?v=63629399832)
 
@@ -801,7 +834,7 @@ Unsere Pizza-Liste soll nun um eine Aktualisierungfunktion erweitert werden. Dab
 Hier eine mögliche Umsetzung des Controller-Codes.
 
     function loadPizzas(refresh) {
-	    // do not show ionSpinner if refreshing
+      // do not show ionSpinner if refreshing
         if (!refresh) {
              $scope.loading = true;
         }
@@ -823,11 +856,11 @@ Hier eine mögliche Umsetzung des Controller-Codes.
     loadPizzas();
 
     $scope.refresh = function () {
-	    // reload pizzas as refresh
+      // reload pizzas as refresh
         loadPizzas(true)
-	         .finally(function () {
-		         $scope
-		            .$broadcast('scroll.refreshComplete');
+           .finally(function () {
+             $scope
+                .$broadcast('scroll.refreshComplete');
              });
     };
 
@@ -838,26 +871,26 @@ Hier eine mögliche Umsetzung des Controller-Codes.
  Das Template wird um ein *ion-refresher*-Element erweitert und unsere *refresh*-Funktion gesetzt.
 
     <ion-view>
-	    <ion-nav-title class="title">Pizza App</ion-nav-title>
-	    <ion-content padding="true">
-	        <div ng-show="loading" class="text-center padding">
-	            <ion-spinner></ion-spinner>
-	        </div>
-	        <ion-refresher
-	            pulling-text="aktualisieren..."
-	            on-refresh="refresh()">
-	        </ion-refresher>
-	        <div class="list" ng-show="!loading">
-	            <div class="item item-divider">
-	                Angebot
-	            </div>
-	            <div class="item item-button-right" ng-repeat="pizza in pizzas">
-	                {{pizza.name}} {{pizza.price}}
-	                <button class="button button-balanced icon ion-ios-cart" ng-click="addToCart(pizza)"></button>
-	            </div>
-	        </div>
-	    </ion-content>
-	</ion-view>
+      <ion-nav-title class="title">Pizza App</ion-nav-title>
+      <ion-content padding="true">
+          <div ng-show="loading" class="text-center padding">
+              <ion-spinner></ion-spinner>
+          </div>
+          <ion-refresher
+              pulling-text="aktualisieren..."
+              on-refresh="refresh()">
+          </ion-refresher>
+          <div class="list" ng-show="!loading">
+              <div class="item item-divider">
+                  Angebot
+              </div>
+              <div class="item item-button-right" ng-repeat="pizza in pizzas">
+                  {{pizza.name}} {{pizza.price}}
+                  <button class="button button-balanced icon ion-ios-cart" ng-click="addToCart(pizza)"></button>
+              </div>
+          </div>
+      </ion-content>
+  </ion-view>
 
 ![Ionic Tutorial Refresher](ionic-refresher.gif?v=63629079934)
 
@@ -878,28 +911,28 @@ Als kleines Praxisbeispiel erhält unsere App eine Detail-View für die Pizzen, 
 Das dazugehörige Template sieht dann so aus.
 
     <ion-view>
-	    <ion-nav-title>
-	        {{pizza.name}}
-	    </ion-nav-title>
-	    <ion-content>
-	        <div class="list card">
-	            <div class="item item-avatar item-icon-left">
-	                <i class="icon ion-pizza"></i>
-	                <h2>{{pizza.name}}</h2>
-	                <p>Ist in unserem Angebot die Nummer {{pizza.id}}</p>
-	            </div>
+      <ion-nav-title>
+          {{pizza.name}}
+      </ion-nav-title>
+      <ion-content>
+          <div class="list card">
+              <div class="item item-avatar item-icon-left">
+                  <i class="icon ion-pizza"></i>
+                  <h2>{{pizza.name}}</h2>
+                  <p>Ist in unserem Angebot die Nummer {{pizza.id}}</p>
+              </div>
 
-	            <div class="item item-body">
-	                <p>
-	                    {{pizza.description}}
-	                </p>
-	            </div>
-	            <div class="item item-divider balanced text-big text-right">
-	                {{pizza.price ? (pizza.price | currency) : 'kostenlos'}}
-	            </div>
-	        </div>
-	    </ion-content>
-	</ion-view>
+              <div class="item item-body">
+                  <p>
+                      {{pizza.description}}
+                  </p>
+              </div>
+              <div class="item item-divider balanced text-big text-right">
+                  {{pizza.price ? (pizza.price | currency) : 'kostenlos'}}
+              </div>
+          </div>
+      </ion-content>
+  </ion-view>
 
 Im entsprechenden Detail-Controller wird die anzuzeigende Pizza geladen und bereitgestellt.
 
