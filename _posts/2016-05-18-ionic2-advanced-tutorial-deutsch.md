@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/ionic2-advanced-tutorial-deutsch.jpg"
 ---
 
-Im letzten Teil unseres Ionic 2 Tutorials schauen wir uns ein paar besondere Bestandteile und Funktionen des Frameworks an. Dabei legen wir auch ein letztes Mal Hand an unsere Pizza-App, die wir in [Teil 1](https://angularjs.de/artikel/ionic2-tutorial-deutsch) und [Teil 2](https://angularjs.de/artikel/ionic2-content-tutorial-deutsch) schon von Grund auf entwickelt haben.
+Im letzten Teil unseres Ionic 2 Tutorials schauen wir uns ein paar besondere Bestandteile und Funktionen des Frameworks an. Dabei legen wir auch ein letztes Mal Hand an unsere Pizza-App, die wir in [Teil 1](/artikel/ionic2-tutorial-deutsch/) und [Teil 2](/artikel/ionic2-content-tutorial-deutsch/) schon von Grund auf entwickelt haben.
 
 Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pizza-service "Quellcode Ionic 2 Pizza App") der in diesem Tutorial entwickelten App findet unter unserem GitHub-Account. Außerdem gibt es auch eine [Live-Vorschau](http://angularjs-de.github.io/ionic2-pizza-service/www/ "Ionic 2 Pizza App") der App.
 
@@ -21,7 +21,7 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
 
 ## Nutzung der Ionicons
 
-Was die Ionicons sind und wie ihr sie noch in anderen Projekten nutzen könnt, erfahrt ihr in unserem Tutorial zu den [Ionicons in Ionic 1](https://angularjs.de/artikel/ionic-tutorial-deutsch-ionicons).
+Was die Ionicons sind und wie ihr sie noch in anderen Projekten nutzen könnt, erfahrt ihr in unserem Tutorial zu den [Ionicons in Ionic 1](/artikel/ionic-tutorial-deutsch-ionicons/).
 
 In der neuen Version des Frameworks ist jedoch eine neue Komponente extra dafür hinzugekommen. Sie heißt `ionIcon` und wir haben sie in unserem Tutorial schon an manchen Stellen eingesetzt. Sie erwartet im einfachsten Fall einen Icon Namen.
 
@@ -87,7 +87,7 @@ Eine Liste von weiteren Funktionen und vorhanden Variablen findet ihr - wie imme
 
 ## Konfiguration eurer App
 
-Falls ihr mit dem Standardverhalten eurer App noch nicht zufrieden seid oder ihr plattformspezifische Einstellungen vornehmen wollt, könnt ihr das natürlich auch in Ionic 2 tun. Dies geschieht nicht, wie in Ionic 1 über einen extra Provider ([`$ionicConfigProvider`](https://angularjs.de/artikel/ionic-tutorial-deutsch-configuration)), sondern direkt über das `IonicModule` Modul von Ionic. Der `forRoot` Funktion in den imports des `@NgModule` Decorators könnt ihr als zweiten Parameter ein Konfigurationsobjekt übergeben. Welches alle oder bloß für bestimmte Plattformen Einstellungen vornehmen kann.
+Falls ihr mit dem Standardverhalten eurer App noch nicht zufrieden seid oder ihr plattformspezifische Einstellungen vornehmen wollt, könnt ihr das natürlich auch in Ionic 2 tun. Dies geschieht nicht, wie in Ionic 1 über einen extra Provider ([`$ionicConfigProvider`](/artikel/ionic-tutorial-deutsch-configuration/)), sondern direkt über das `IonicModule` Modul von Ionic. Der `forRoot` Funktion in den imports des `@NgModule` Decorators könnt ihr als zweiten Parameter ein Konfigurationsobjekt übergeben. Welches alle oder bloß für bestimmte Plattformen Einstellungen vornehmen kann.
 
     IonicModule.forRoot(PizzaAppComponent, {
       backButtonText: 'Go Back',

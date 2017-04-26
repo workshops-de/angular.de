@@ -8,9 +8,9 @@ categories: tutorial angular2 angular angular4 featured
 header_image: "/artikel/header_images/ionic2-tutorial-deutsch.jpg"
 ---
 
-Nach unserem [Ionic 1 Tutorial](https://angularjs.de/artikel/ionic-tutorial-deutsch "Ionic 1 Tutorial") über **Ionic 1** und das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") wird es Zeit , sich die neue Version des beliebten Frameworks zur Erstellung von mobilen hybriden Apps anzusehen.
+Nach unserem [Ionic 1 Tutorial](/artikel/ionic-tutorial-deutsch/ "Ionic 1 Tutorial") über **Ionic 1** und das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") wird es Zeit , sich die neue Version des beliebten Frameworks zur Erstellung von mobilen hybriden Apps anzusehen.
 
-Dabei setzt das Ionic-Team natürlich auf Angular und benutzt daher auch vieles aus diesem neuen Universum. Daher bietet es sich an vorher unsere Artikel über Angular 2 zu lesen oder zumindest einen Blick in unser [Angular Einführungstutorial](https://angularjs.de/artikel/angular2-tutorial-deutsch "Angular Einführungstutorial") zu werfen.
+Dabei setzt das Ionic-Team natürlich auf Angular und benutzt daher auch vieles aus diesem neuen Universum. Daher bietet es sich an vorher unsere Artikel über Angular 2 zu lesen oder zumindest einen Blick in unser [Angular Einführungstutorial](/artikel/angular2-tutorial-deutsch/ "Angular Einführungstutorial") zu werfen.
 
 Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1. Dadurch könnt ihr vergleichen, was anders oder besser funktioniert. Außerdem findet ihr dort auch alle allgemeinen Grundlagen und Informationen, was Ionic genau ist, worauf es basiert und was ihr damit machen könnt. Daher sparen wir uns diese Punkte hier und steigen direkt bei der Entwicklung ein. Unser Tutorial ist in drei Abschnitte aufgeteilt.
 
@@ -22,7 +22,7 @@ Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1
 5. Elegante und einfache Navigation - `NavController`, `ionNav` und `ionNavBar`
 6. Nutzung von Seitenmenüs über `ionMenu`
 
-**Teil 2: [Strukturierung von Inhalten](https://angularjs.de/artikel/ionic2-content-tutorial-deutsch)**
+**Teil 2: [Strukturierung von Inhalten](/artikel/ionic2-content-tutorial-deutsch/)**
 1. Einfache und komplexe Listen - `ionList`, `ionItem` und `ionItemSliding`
 2. Ladehandling - Ladelayer und - spinner mit `Loading` und `ionSpinner`
 3. Aktualisierung von Inhalten durch den `ionRefresher`
@@ -31,7 +31,7 @@ Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1
 6. Realisierung von Hinweisen und kurzer Nutzerabfragen durch `Alert`s
 7. Statusmeldungen über `Toast`s
 
-**Teil 3: [Weitere und besondere Bestandteile des Frameworks](https://angularjs.de/artikel/ionic2-advanced-tutorial-deutsch)**
+**Teil 3: [Weitere und besondere Bestandteile des Frameworks](/artikel/ionic2-advanced-tutorial-deutsch/)**
 1. Nutzung der Ionicons über `ionIcon`
 2. Theming der eigenen App
 3. Konfiguration eurer App
@@ -606,8 +606,8 @@ Als nächsten füllen wir unser Seitenmenü mit einer einfachen Liste von Links 
 
 Wir sind jedoch noch nicht annähernd am Ende mit der Entwicklung unserer Pizza-Service App. Seht wie es weiter geht:
 
-**Teil 2:** [Strukturierung von Inhalten](https://angularjs.de/artikel/ionic2-content-tutorial-deutsch)
-**Teil 3:** [Weitere und besondere Funktionen](https://angularjs.de/artikel/ionic2-advanced-tutorial-deutsch)
+**Teil 2:** [Strukturierung von Inhalten](/artikel/ionic2-content-tutorial-deutsch/)
+**Teil 3:** [Weitere und besondere Funktionen](/artikel/ionic2-advanced-tutorial-deutsch/)
 
 ## Fazit
 

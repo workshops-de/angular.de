@@ -18,7 +18,7 @@ Viele werden sich sicherlich Fragen, wie es überhaupt zu der Version 4 gekommen
 
 Mit der Version 4 führt Angular die semantische Versionierung (SEMVER) ein. Damit dient die Versionsnummer nicht nur zur Identifizierung einer neuen Version, sondern ist maßgeblich für Entwickler interessant. Mit der neuen Versionsnummer kann abgewägt werden, inwieweit Neuerungen die eigene Applikation beeinflussen und es womöglich programmatische Anpassungen erfordert.
 
-Wieso es direkt Version 4 wurde, hat den ganz einfachen Grund, dass der Angular Router bereits in der Version 3 entwickelt war, die restlichen Module aber noch in der Version 2 vorlagen. Da es sich hier um ein Breaking Change handelt, wurde somit die Major Version von 2 auf 4 angehoben. Somit waren alle Module wieder auf dem gleichen Major Version und es konnte eine saubere SEMVER-Einführung gewährleistet werden. Die nächste Major Version ist somit natürlich Version 5. Noch mehr Informationen findet ihr auch im folgenden [Artikel](https://angularjs.de/artikel/angular-4-semver).
+Wieso es direkt Version 4 wurde, hat den ganz einfachen Grund, dass der Angular Router bereits in der Version 3 entwickelt war, die restlichen Module aber noch in der Version 2 vorlagen. Da es sich hier um ein Breaking Change handelt, wurde somit die Major Version von 2 auf 4 angehoben. Somit waren alle Module wieder auf dem gleichen Major Version und es konnte eine saubere SEMVER-Einführung gewährleistet werden. Die nächste Major Version ist somit natürlich Version 5. Noch mehr Informationen findet ihr auch im folgenden [Artikel](/artikel/angular-4-semver/).
 
 ### Die wichtigsten Neuerungen: Angular v4 im Überblick
 

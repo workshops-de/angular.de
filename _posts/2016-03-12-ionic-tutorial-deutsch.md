@@ -905,11 +905,11 @@ Im entsprechenden Detail-Controller wird die anzuzeigende Pizza geladen und bere
 
 ### Wie geht es weiter?
 
- - [Modals](https://angularjs.de/artikel/ionic-tutorial-deutsch-modals)
- - [Popups](https://angularjs.de/artikel/ionic-tutorial-deutsch-popups)
- - [Ionicons](https://angularjs.de/artikel/ionic-tutorial-deutsch-ionicons)
- - [Styling mit SCSS](https://angularjs.de/artikel/ionic-tutorial-deutsch-scss)
- - [Konfiguration mit $ionicConfigProvider](https://angularjs.de/artikel/ionic-tutorial-deutsch-configuration)
+ - [Modals](/artikel/ionic-tutorial-deutsch-modals/)
+ - [Popups](/artikel/ionic-tutorial-deutsch-popups/)
+ - [Ionicons](/artikel/ionic-tutorial-deutsch-ionicons/)
+ - [Styling mit SCSS](/artikel/ionic-tutorial-deutsch-scss/)
+ - [Konfiguration mit $ionicConfigProvider](/artikel/ionic-tutorial-deutsch-configuration/)
 
 ### Abschluss
 
@@ -920,7 +920,7 @@ Leider haben nicht alle Komponenten im Tutorial und in unserer App ihren Platz g
  - Popover - Overlay, welches sich teilweise über die View legt, wird an einem DOM-Element ausgerichtet, z.B. Button in Kopfzeile öffnet Popover mit Liste an weiteren Navigationspunkten oder Einstellungen
  - ActionSheet - Schiebt sich von unten über die View, bedeckt diese nur teilweise, Auswahl an Funktionen und Aktionen
  - Tabs - Grundlegends Navigationskonzept, jeder Tab hat eigene Navigationshistorie
- - Slidebox - Galerie von Inhalten, z.B. Bildergalerie, **ab v1.2. sollte [ionSlides](https://angularjs.de/artikel/ionic-framework-new-slider "ionSlides") benutzt werden!!!**
+ - Slidebox - Galerie von Inhalten, z.B. Bildergalerie, **ab v1.2. sollte [ionSlides](/artikel/ionic-framework-new-slider/ "ionSlides") benutzt werden!!!**
 
 Hinzu kommen noch zahlreiche Services und Funktionen, die euch vor dem Kentern bewahren oder euch zumindest erstmal über Wasser halten.
 

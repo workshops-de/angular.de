@@ -10,7 +10,7 @@ header_image: "/artikel/header_images/ionic-tutorial-deutsch-modals.jpg"
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/11-Modals) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/11-Modals/#/order)
 
-**Voraussetzung**: Ihr solltet generell mit dem Framework und dem Aufbau einer Ionic-App vertraut sein. Einen Überblick dazu erhaltet ihr in unserem  [Ionic Framework Einführungstutorial](https://angularjs.de/artikel/ionic-tutorial-deutsch).
+**Voraussetzung**: Ihr solltet generell mit dem Framework und dem Aufbau einer Ionic-App vertraut sein. Einen Überblick dazu erhaltet ihr in unserem  [Ionic Framework Einführungstutorial](/artikel/ionic-tutorial-deutsch/).
 
 Auf mobilen Geräten ist der Platz sehr beschränkt, um Informationen zu präsentieren. Oft müssen jedoch viele Funktionen und Details auf einer View untergebracht werden. Eine Lösung dieses Dilemmas bieten Modals. Sie legen sich über die gerade geöffnete View und bedecken diese komplett oder nur teilweise. Dies hat den Vorteil, dass der Nutzer immer noch weiß, dass sich die Inhalte des Modals noch auf die darunter liegende View und daher auch auf den gleichen Kontext beziehen.
 

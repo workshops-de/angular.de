@@ -62,7 +62,7 @@ Wir haben die Artikelreihe in verschiedene Teile aufgeteilt.
 
 Die Beispiele in diesem Tutorial haben wir in TypeScript geschrieben. Da viele Entwickler mit ES2015 und TypeScript nicht vertraut sind, werden wir zu neuen Funktionalitäten eine kurze Erklärung einstreuen. Ihr könnt auch eure AngularJS 1 Anwendung mit diesem Stack schreiben und euer Projekt somit sehr nah an Angular anlehnen. Dies macht eine potentielle Portierung so sehr viel angenehmer. Die ersten Vorteile von diesem Stack sehen wir bereits in unser initialen [Index-Datei](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/index.html). Anstatt riesigen Listen von `<script src="...">`, wie wir sie heutzutage in fast jeder Single-Page-Application(SPA) sehen, kümmert sich unser Build-Prozess selber um die nötigen Imports.
 
-Weiter brauchen wir noch ein Einstiegspunkt unserer Anwendung. In Angular 1.X haben wir dies immer mit der [ng-app Direktive](https://angularjs.de/artikel/angularjs-tutorial-deutsch#ng-app---der-anfang-jeder-angularjs-applikation) gelöst. Nun definieren wir ein Angular Modul indem wir eine (meist leere) Klasse um den `@NgModule`-Decorator erweitern.
+Weiter brauchen wir noch ein Einstiegspunkt unserer Anwendung. In Angular 1.X haben wir dies immer mit der [ng-app Direktive](/artikel/angularjs-tutorial-deutsch/#ng-app---der-anfang-jeder-angularjs-applikation) gelöst. Nun definieren wir ein Angular Modul indem wir eine (meist leere) Klasse um den `@NgModule`-Decorator erweitern.
 
 > **Klassen** wurden in ES2015 eingeführt, um Konzepte wie unter anderem Vererbung und Konstruktoren nicht mehr über Prototypen abbilden zu müssen. Diese können nun über eine einfache und saubere Syntax erstellt werden.
 
@@ -241,7 +241,7 @@ Es sollte jedoch trotzdem beachtet werden, dass komplexe Logik nichts im Templat
 Mit der Einführung von Direktiven im Jahr 2009 war AngularJS eines der ersten Frameworks, die den Gedanken eigener HTML-Elemente (Direktiven) so weit gedacht und sehr gut umgesetzt haben.
 Das Angular Framework führt nun dazu noch den `Begriff der Components` ein. Unter Komponenten versteht man Elemente, welche einen eigenen Sub-Dom-Tree aufbauen. Hierbei können wir optional entschieden, ob wir hierfür einen echten Shadow-DOM aufbauen wollen.
 
-> Wenn Ihr eure AngularJS 1 Anwendung heute schon näher an die Component Architektur anlehnen wollt und so für eine Migration näher an Angular Code zu sein, solltet Ihr euch meinen Artikel über den [AngularJS Component-Helper](https://angularjs.de/artikel/angularjs-component-helper) ansehen.
+> Wenn Ihr eure AngularJS 1 Anwendung heute schon näher an die Component Architektur anlehnen wollt und so für eine Migration näher an Angular Code zu sein, solltet Ihr euch meinen Artikel über den [AngularJS Component-Helper](/artikel/angularjs-component-helper/) ansehen.
 
 
 Grundsächlich kann man die HTML-Erweiterungen in Angular in drei Kategorien aufteilen:
@@ -572,7 +572,7 @@ Um ein Observable zu abonnieren, muss dessen subscribe-Funktion aufgerufen werde
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/09-http/src/app/app.component.ts#L18-L20) zur Nutzung von Observables
 
 Wenn du mehr über das Thema erfahren möchtest schau dir doch mal diesen Artikel an:
-[Angular - Asynchronität von Callbacks zu Observables](https://angularjs.de/artikel/angular2-observables).
+[Angular - Asynchronität von Callbacks zu Observables](/artikel/angular2-observables/).
 
 
 ## Component Lifecycle
@@ -617,7 +617,7 @@ Unser Beispiel zur Verwendung des Http-Services wird nun so erweitert, dass die 
 Für jeden Hook existiert ein Interface, welches die Komponentenklasse implementieren sollte. Der Name der Hook-Funktion setzt sich dann aus *ng* und *Interface-Name* zusammen.
 
 
-Wenn Ihr weitere Informationen zu [LifeCycles in Angular2](https://angularjs.de/artikel/angular-2-component-lifecycle) wollt, haben wir hierzu auch einen ganzen Artikel für euch.
+Wenn Ihr weitere Informationen zu [LifeCycles in Angular2](/artikel/angular-2-component-lifecycle/) wollt, haben wir hierzu auch einen ganzen Artikel für euch.
 
 ## Interfaces
 

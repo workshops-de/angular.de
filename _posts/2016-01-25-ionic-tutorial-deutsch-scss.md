@@ -8,12 +8,12 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-scss.jpg"
 ---
 
-Für den geübten Webentwickler sind die Erweiterungssprachen Less und SASS/SCSS nicht mehr wegzudenken. Variablen und Mixins lassen - sagen wir mal fast - kinderleicht komplexe Layouts realisieren und redundanter CSS-Code sollte damit der Vergangenheit angehören. 
+Für den geübten Webentwickler sind die Erweiterungssprachen Less und SASS/SCSS nicht mehr wegzudenken. Variablen und Mixins lassen - sagen wir mal fast - kinderleicht komplexe Layouts realisieren und redundanter CSS-Code sollte damit der Vergangenheit angehören.
 
 Wie schöne wäre es, wenn das auch in Ionic-Projekten ginge.
 **ES GEHT!**
 
-Falls ihr noch eine kleine Einführung in das Thema Ionic und das Framework braucht, empfehle ich euch unser [Ionic-Einführungstutorial](https://angularjs.de/artikel/ionic-tutorial-deutsch "Einführung in Ionic").
+Falls ihr noch eine kleine Einführung in das Thema Ionic und das Framework braucht, empfehle ich euch unser [Ionic-Einführungstutorial](/artikel/ionic-tutorial-deutsch/ "Einführung in Ionic").
 
 ## SCSS in CLI-Projekten
 
@@ -42,9 +42,9 @@ Der letzte Schritt startet bei diversen CLI-Befehlen, wie `ionic serve` automati
 
 Durch Services, wie PhoneGap-Build ist man nicht immer auf das CLI angewiesen. Auch hier lässt sich recht simpel mit den SCSS-Quellen Arbeiten.
 
-Dazu ladet ihr entweder die Quellen aus dem [Ionic-Bower-Repository](https://github.com/driftyco/ionic-bower "Ionic-Bower Repository") herunter oder installiert das Framework direkt über bower mit `bower install driftyco/ionic-bower#master`. 
+Dazu ladet ihr entweder die Quellen aus dem [Ionic-Bower-Repository](https://github.com/driftyco/ionic-bower "Ionic-Bower Repository") herunter oder installiert das Framework direkt über bower mit `bower install driftyco/ionic-bower#master`.
 
-Nach dem Installieren findet ihr im Ionic-Verzeichnis unter *scss* eine Reihe von Dateien. Die wichtigste davon ist die **ionic.scss**. Diese müsst ihr in eure eigene scss-Datei importieren. 
+Nach dem Installieren findet ihr im Ionic-Verzeichnis unter *scss* eine Reihe von Dateien. Die wichtigste davon ist die **ionic.scss**. Diese müsst ihr in eure eigene scss-Datei importieren.
 
 Danach könnt ihr euch zum Einrichten des Watchern, zum Kompilieren der Datei, an dem Gulpfile von einem Ionic-CLI-Projekt orientieren.
 

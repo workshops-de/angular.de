@@ -12,7 +12,7 @@ Für eine stylische App dürfen auch passende Icons nicht fehlen. Bei Ionic hat 
 
 ![Bild](medium_ionicons.png?v=63629400558)
 
-Die in unserem [Einführungsartikel](https://angularjs.de/artikel/ionic-tutorial-deutsch "Ionic Framework Tutorial") entwickelte Pizza-Service-App nutzt die Icon-Font, um sie ein wenig "aufzupeppen" (wenn das überhaupt noch irgendwie geht ;) ).
+Die in unserem [Einführungsartikel](/artikel/ionic-tutorial-deutsch/ "Ionic Framework Tutorial") entwickelte Pizza-Service-App nutzt die Icon-Font, um sie ein wenig "aufzupeppen" (wenn das überhaupt noch irgendwie geht ;) ).
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-pizza-service/tree/master) und [Live-Demo](https://angularjs-de.github.io/ionic-pizza-service/#/order)
 

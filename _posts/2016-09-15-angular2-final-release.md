@@ -18,17 +18,17 @@ Wir haben natürlich unsere Ressourcen für euch auf die Version 2.0 upgedatet!
 Wir empfehlen euch folgende Artikel für den Einstieg:
 
 
-[Angular 2 Einsteiger Tutorial](https://angularjs.de/artikel/angular2-tutorial-deutsch)
+[Angular 2 Einsteiger Tutorial](/artikel/angular2-tutorial-deutsch/)
 
-[Webinar - Einführung in Angular2 mit Robin Böhm](https://angularjs.de/artikel/angular2-typescript-webinar)
+[Webinar - Einführung in Angular2 mit Robin Böhm](/artikel/angular2-typescript-webinar/)
 
-[Angular 2 - Asynchronität von Callbacks zu Observables](https://angularjs.de/artikel/angular2-observables)
+[Angular 2 - Asynchronität von Callbacks zu Observables](/artikel/angular2-observables/)
 
-[Angular 2 - Outputs, Events und EventEmitter](https://angularjs.de/artikel/angular2-output-events)
+[Angular 2 - Outputs, Events und EventEmitter](/artikel/angular2-output-events/)
 
-[Angular 2 - Der Component Lifecycle](https://angularjs.de/artikel/angular-2-component-lifecycle)
+[Angular 2 - Der Component Lifecycle](/artikel/angular-2-component-lifecycle/)
 
-[Video - Migration von AngularJS zu Angular 2](https://angularjs.de/artikel/migration-angularjs-angular2)
+[Video - Migration von AngularJS zu Angular 2](/artikel/migration-angularjs-angular2/)
 
 [Video - Bootstrap SASS 4 mit Angular2 in wenigen Sekunden:](/artikel/angular2-bootstrap-scss-angular-cli)
 

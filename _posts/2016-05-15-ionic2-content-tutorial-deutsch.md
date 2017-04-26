@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/ionic2-content-tutorial-deutsch.jpg"
 ---
 
-Aufbauend auf dem [ersten Teil](https://angularjs.de/artikel/ionic2-tutorial-deutsch) unseres Ionic 2 Tutorials wollen wir uns nun anschauen, wie ihr in Ionic 2 eure Inhalt ansprechend präsentieren und vor allem strukturieren könnt.
+Aufbauend auf dem [ersten Teil](/artikel/ionic2-tutorial-deutsch/) unseres Ionic 2 Tutorials wollen wir uns nun anschauen, wie ihr in Ionic 2 eure Inhalt ansprechend präsentieren und vor allem strukturieren könnt.
 
 Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pizza-service "Quellcode Ionic 2 Pizza App") der in diesem Tutorial entwickelten App findet unter unserem GitHub-Account. Außerdem gibt es auch eine [Live-Vorschau](http://angularjs-de.github.io/ionic2-pizza-service/www/ "Ionic 2 Pizza App") der App.
 
@@ -674,4 +674,4 @@ Generell müsst ihr einfach folgende Schritte zum Erstellen von Komponenten, die
 
 Auch in Ionic 2 stehen euch viele Möglichkeiten zur Verfügung eure Inhalte zu strukturieren und anzuzeigen. Hier hat das Ionic Team an vielen Stellschrauben gedreht und sogar neue Features eingebaut. Dabei erkennt man schnell das Grundkonzept der meisten Komponenten, da ihre Nutzung im Code doch recht ähnlich ist.
 
-Im [letzten Teil](https://angularjs.de/artikel/ionic2-advanced-tutorial-deutsch) unseres Ionic 2 Tutorials erfahrt ihr noch mehr über spezielle bzw. besondere Bestandteile des Frameworks.
+Im [letzten Teil](/artikel/ionic2-advanced-tutorial-deutsch/) unseres Ionic 2 Tutorials erfahrt ihr noch mehr über spezielle bzw. besondere Bestandteile des Frameworks.

@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-configuration.jpg"
 ---
 
-Wie wir im [Einführungsartikel](https://angularjs.de/artikel/ionic-tutorial-deutsch) zu Ionic erfahren haben, bringt das Framework eine Reihe von Funktionen und Komponenten mit. Viele von diesen sind über eigene Services konfigurierbar und lassen sich so spielend leicht den eigenen Vorstellungen anpassen. Für die grundlegenden Einstellungen des Frameworks bietet Ionic einen eigenen Provider mit dem Namen **$ionicConfigProvider** an.
+Wie wir im [Einführungsartikel](/artikel/ionic-tutorial-deutsch/) zu Ionic erfahren haben, bringt das Framework eine Reihe von Funktionen und Komponenten mit. Viele von diesen sind über eigene Services konfigurierbar und lassen sich so spielend leicht den eigenen Vorstellungen anpassen. Für die grundlegenden Einstellungen des Frameworks bietet Ionic einen eigenen Provider mit dem Namen **$ionicConfigProvider** an.
 
 Hier wurde mit Absicht der Typ Provider gewählt, da diese Einstellungen vor dem Start der Anwendung bzw. nicht nachträglich gesetzt werden sollen, da sie für den generellen App-Betrieb und das -Aussehen verantwortlich sind.
 
@@ -16,7 +16,7 @@ Für uns bedeutet das, dass wir zusätzlich zu den Zustandsdefinitionen auch Ion
 
 Danach stehen uns eine Vielzahl von Funktionen zur Verfügung. Es sei erwähnt, dass die Funktionen Setter, als Getter sind. Übergebt ihr ihnen keinen Wert, erhaltet ihr die aktuelle Konfiguration zurück.
 
-Des Weiteren könnt ihr auch plattform-spezifisch alle Funktionen aufrufen und so eure App, je nach Betriebssystem anpassen. Dazu ruft ihr alle nachfolgend vorgestellten Funktionen über `platform.NAME` auf. Als Beispiel würde das Setzten der zu cachenden Views unter Android folgendermaßen aussehen. 
+Des Weiteren könnt ihr auch plattform-spezifisch alle Funktionen aufrufen und so eure App, je nach Betriebssystem anpassen. Dazu ruft ihr alle nachfolgend vorgestellten Funktionen über `platform.NAME` auf. Als Beispiel würde das Setzten der zu cachenden Views unter Android folgendermaßen aussehen.
 
 `$ionicConfigProvider.platform.android.views.maxCache(5);`
 
@@ -97,7 +97,7 @@ Damit könnt ihr die Anzahl der Template setzen, die vorgeladen werden sollen. W
 
 ## Anpassen der Navigationsleiste
 
-Ja, auch bei den Kopf- bzw. Navigationsleisten unterscheiden sich die Plattformen und Geschmäcker enorm. 
+Ja, auch bei den Kopf- bzw. Navigationsleisten unterscheiden sich die Plattformen und Geschmäcker enorm.
 
 **$ionicConfigProvider.navBar.alignTitle(value)**
 
@@ -126,4 +126,4 @@ Ein weiterer Unterschied, welche Seite für die App die Primär- bzw. Sekundärs
 
 Als klitzekleines Beispiel setzen wir die Beschriftung des Zurück-Buttons in der Ionic-Pizza-App auf einen Leerstring.
 
-Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/15-configProvider) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/15-configProvider/#/order) 
+Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/15-configProvider) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/15-configProvider/#/order)

@@ -25,7 +25,7 @@ Jedem JavaScript-Entwickler sind sicher schon einmal Events über den Weg gelauf
       <body>
         <button onclick="showAlert()">Say: Hello</button>
       </body>
-    </html> 
+    </html>
 
 Eine andere Möglichkeit ist den Event-Listener selbst per JavaScript auf das Element zu setzen. Dadurch entfällt das `onclick` am button-Tag.
 
@@ -45,7 +45,7 @@ Eine andere Möglichkeit ist den Event-Listener selbst per JavaScript auf das El
       <body onload="addListener()">
         <button>Say: Hello</button>
       </body>
-    </html> 
+    </html>
 
 > Events werden immer dann benutzt, wenn wir andere Code-Bestandteile über das Eintreten eines bestimmten Ereignisses informieren wollen. Dabei kann dies auch irgendwann in der Zukunft geschehen.
 
@@ -79,7 +79,7 @@ Zur Vereinfachung nehmen wir einfach unser bisheriges `click`-Beispiel und wande
 2. **Click-Komponente** - enthält Button, gibt Nachricht beim Klick and Basis-Komponente
 
 
-Beginnen wir mit der Basis-Komponente. 
+Beginnen wir mit der Basis-Komponente.
 
     @Component({
       selector: 'base-component',
@@ -90,11 +90,11 @@ Beginnen wir mit der Basis-Komponente.
       `
     })
     export class MyParentComponent {
-    
+
       handleMsg(msg) {
         window.alert(msg);
       }
-    
+
     }
 
 Unsere Basis-Komponente bindet als Abhängigkeit die `ClickComponent` ein, damit diese im Template benutzt werden kann. Dort fügt sie einen Listener auf das Event mit dem Name `showMsg` hinzu. Wird das Event ausgeführt, rufen wir die Funktion `handleMsg` mit einem Parameter `$event` auf. Ihr werden recht häufig auf die von Angular reservierte Variable `$event` stoßen. Sie steht im Grunde immer für das Event-Objekt, des aktuellen Ereignisses.
@@ -110,7 +110,7 @@ Daraus erhalten wir schon ein paar Vorgaben für unsere `ClickComponent`.
     })
     export class ClickComponent {
       @Output() showMsg = new EventEmitter<string>();
-      
+
       triggerEvent() {
         this.showMsg.emit('Hello');
       }
@@ -145,9 +145,9 @@ Als Beispiel haben wir einen `CartService`, der alle Warenkorbeinträge hält. E
         this.cart.push(item);
         this.cartChanged.emit(this.cart);
       };
-      
+
     }
-    
+
 Eine Komponente könnte dann wie folgt ein Event abonnieren.
 
     @Component({
@@ -155,7 +155,7 @@ Eine Komponente könnte dann wie folgt ein Event abonnieren.
     })
     export class ProductComponent implements OnInit {
       constructor(private cartService: CartService) {}
-      
+
       ngOnInit() {
         this.cartService
           .cartChanged
@@ -164,8 +164,8 @@ Eine Komponente könnte dann wie folgt ein Event abonnieren.
           });
       }
     }
-    
-Was das Interface `OnInit` und die `ngOnInit` Funktion bedeuten, könnt ihr in unseren Artikel über den [Component-Lifecycle](https://angularjs.de/artikel/angular-2-component-lifecycle) nachlesen.
+
+Was das Interface `OnInit` und die `ngOnInit` Funktion bedeuten, könnt ihr in unseren Artikel über den [Component-Lifecycle](/artikel/angular-2-component-lifecycle/) nachlesen.
 
 Wer jetzt denkt, dass alles sieht jetzt doch schon irgendwie nach Observables aus. Ja, ihr habt recht, denn intern arbeitet der EventEmitter auch mit Observables.
 

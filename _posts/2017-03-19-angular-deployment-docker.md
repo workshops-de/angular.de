@@ -182,7 +182,7 @@ Mehr hierzu findet Ihr unter der Doc vom [Circle CI](https://circleci.com/docs/n
 
 [SauceLabs](https://saucelabs.com/) ist ein Clouddienst, welcher es ermöglicht cross-browser-testing innerhalb der Cloud durchzuführen. Als Framework in Zusammenhang mit Angular empfiehlt sich hier [Protractor](http://www.protractortest.org/#/) im Zusammenspiel mit [Jasmine](https://jasmine.github.io/). Der Vorteil ist, dass man hier sämtliche Betriebssysteme und Browser auf Abruf erhält und dort seine Tests laufen lassen kann.
 
-Falls euch dieses Thema tiefer interessieren sollte, empfehle ich euch meinen Artikel [Angular E2E Tests mit Protractor und Sauce Labs](https://angularjs.de/artikel/angular-e2e-protractor-test-saucelabs). Hier beschreibe ich Schritt für Schritt die Anwendung von SauceLabs.
+Falls euch dieses Thema tiefer interessieren sollte, empfehle ich euch meinen Artikel [Angular E2E Tests mit Protractor und Sauce Labs](/artikel/angular-e2e-protractor-test-saucelabs/). Hier beschreibe ich Schritt für Schritt die Anwendung von SauceLabs.
 
 ### 4. Dockercloud als Continuous Delivery Umgebung
 

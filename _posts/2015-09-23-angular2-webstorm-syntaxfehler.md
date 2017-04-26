@@ -18,6 +18,6 @@ Es gibt aber Hoffnung! Im JetBrains Blog ist  ein offizieller Support für das A
 
 ![WebStorm ES6 Annotations](JavaScript_Next_Plugin.png)
 
-Nach der Installation des Plugins könnt ihr die Annotations und andere ES7 Features problemlos benutzen. Zwar unterstützen aktuelle Browser diese Features noch nicht alle, jedoch könnt ihr mit Hilfe von Babel oder auch Traceur diese Features heute schon nutzen und in älteren Browsern lauffähig machen. Ich habe dazu ebenfalls ein Artikel über [ES6 mit Browserify](https://angularjs.de/artikel/angularjs-es6-browserify-babel-module-laden) geschrieben.
+Nach der Installation des Plugins könnt ihr die Annotations und andere ES7 Features problemlos benutzen. Zwar unterstützen aktuelle Browser diese Features noch nicht alle, jedoch könnt ihr mit Hilfe von Babel oder auch Traceur diese Features heute schon nutzen und in älteren Browsern lauffähig machen. Ich habe dazu ebenfalls ein Artikel über [ES6 mit Browserify](/artikel/angularjs-es6-browserify-babel-module-laden/) geschrieben.
 
 ![WebStorm ES7 Annotations](ES7_Annotations.png)

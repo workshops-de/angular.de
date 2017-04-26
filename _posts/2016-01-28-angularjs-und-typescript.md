@@ -145,7 +145,7 @@ Innerhalb des `.then()` nutzen wir eine weitere ES2015-Technik: [Die Arrow-Funct
     }
 
 
-Wir exportieren unsere Modulnamen als mit `export default` um die Abhängigkeiten einfacher Verwalten zu können. Außerdem registrieren wir eine neue [`component`](https://angularjs.de/artikel/angularjs-component-helper) mit Hilfe von `.component()`. Da wir die Type Definitions nutzen, ist die Methode `component()` bekannt und wir bekommen je nach Editor oder IDE sogar eine Code Completion.
+Wir exportieren unsere Modulnamen als mit `export default` um die Abhängigkeiten einfacher Verwalten zu können. Außerdem registrieren wir eine neue [`component`](/artikel/angularjs-component-helper/) mit Hilfe von `.component()`. Da wir die Type Definitions nutzen, ist die Methode `component()` bekannt und wir bekommen je nach Editor oder IDE sogar eine Code Completion.
 
 ![Code Completion mit Code](vs-code-typescript.png)
 
