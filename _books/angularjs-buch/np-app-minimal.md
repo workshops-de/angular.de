@@ -21,7 +21,7 @@ Im HTML-Template findest du drei Erweiterungen, die von AngularJS stammen. `ng-a
 
 Mit `ng-app` startet die Magie von AngularJS. Intern wartet AngularJS bis der DOM geladen ist und sucht dann nach dem Attribut `ng-app`. Dabei kann es an jeder beliebigen Stelle stehen und muss sich nicht im Tag `<html>` befinden. Statt einer Main-Methode, sorgt `ng-app` für die Initialisierung.
 
-![AngularJS - Root Scope](images/figures/scope-root.png)
+![AngularJS - Root Scope](../images/figures/scope-root.png)
 
 Zusammen mit der Initialisierung wird etwas erzeugt, was sich Scope nennt. In unserem Fall das erste Scope und somit `$rootScope` genannt. Scopes dienen als Vermittlungsschicht zwischen View und Controller. Wenn Variablen auf dem Scope erzeugt/verändert werden, wird dies den Elementen auf dem View des Scopes mitgeteilt. An dieser Stelle siehst du, was bidirektionales Databinding konkret bedeutet.
 

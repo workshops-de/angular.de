@@ -7,7 +7,7 @@ progress: 80
 ---
 Im der traditionellen JavaScript-Programmierung werden Änderungen direkt im DOM von einem Event-Handler ausgeführt. Bei bidirektionalem ändert man nur das Model. Änderungen vom Model werden vom Framework in den DOM übertragen. Dies sorgt für eine klare Trennung und verständlicheren Code.
 
-![AngularJS Binding im Vergleich](images/figures/binding-types.png)
+![AngularJS Binding im Vergleich](../images/figures/binding-types.png)
 
 ### Einfaches Databinding (One-Way)
 Die meisten Entwickler aus der klassischen Webentwicklung werden mit dem einfachen Databinding bestens vertraut sein. Es gibt ein Model, welches die Daten bereitstellt und ein Template, welches das Aussehen liefert. Diese werden verschmolzen und als View an den Benutzer geschickt.
@@ -19,4 +19,4 @@ Beim bidirektionalen wird eine Verknüpfung zwischen Elementen im *View* und Dat
 
 Der Vorteil dürfte offensichtlich sein. Die manuelle Synchronisation fällt weg und damit auch eine Menge Arbeit und fehleranfälliger Code.
 
-![AngularJS Data Binding](images/figures/data-binding.png)
+![AngularJS Data Binding](../images/figures/data-binding.png)

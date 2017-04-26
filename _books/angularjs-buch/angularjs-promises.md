@@ -152,7 +152,7 @@ Der Aufruf unserer Promise-Funktion sieht schon mal ganz annehmbar aus. Doch was
 
 <div class="alert alert-info"><b>Hinweis:</b> Verkettet Promises, um Verschachteltungen von asynchronen Programmteilen zu verhindern</div>
 
-![Promises-Composable](images/figures/promises-composable-1.png)
+![Promises-Composable](../images/figures/promises-composable-1.png)
 
 Übertragen wir dies wieder auf unsere verschachtelten HTTP-Anfragen mit jQuery. Mit dem `$http`-Service und Promises sieht das in AngularJS folgendermaßen aus.
 
@@ -214,7 +214,7 @@ Spätestens hier sollten sich bei euch die Nackenhaare aufstellen. Natürlich ka
 
 Wir wir schon gesehen haben akzeptiert jedes `then` eine Fehlerfunktion. Das bedeutet, wir können in jedem Schritt auf mögliche Probleme reagieren. Aber ein Promise kann sogar noch viel mehr. Bei einem Fehler wird der erste Fehler-Callback genutzt der in einer Verkettung gefunden wird. Besitzt ein `then` keine eigene Error-Funktion, dann wird so lange zum nächsten gesprungen, bis eine geeignete gefunden wird.
 
-![Promises-Error-Handling](images/figures/promises-error.png)
+![Promises-Error-Handling](../images/figures/promises-error.png)
 
 
     asyncFn()
@@ -249,7 +249,7 @@ Zur Vereinfachung besitzt ein $q-Promise auch eine `catch`-Funktion mit der ihr 
 
 Durch die Verkettung und Error-Funktionen ist es auch möglich Fehler zu korrigieren!
 
-![Promises-Error-Correction](images/figures/promises-error-correction-1.png)
+![Promises-Error-Correction](../images/figures/promises-error-correction-1.png)
 
 Nun stellen wir unser äußert unschönes Beispiel mit gespiegelten Schnittstellen und Callbacks auf Promises um.
 
