@@ -58,7 +58,9 @@ Außerdem ist ZenQuery nunmal letztendlich ein Datenbanktool und für Java gibt 
 
 Mittels [Yeoman](http://yeoman.io/) lässt sich die Grundstruktur einer AngularJS Anwendung schnell und einfach via Kommandozeile erzeugen:
 
-	yo angular
+```shell
+yo angular
+```
 
 Yeoman legt eine vorgegebene Ordnerstruktur mit eindeutigen Orten für [Models, Views, ViewModels](http://en.wikipedia.org/wiki/Model_View_ViewModel) und Co. an, so dass man direkt mit der Entwicklung loslegen kann.
 
@@ -66,64 +68,72 @@ ZenQuery besteht im Wesentlichen aus 2 Controllern: Einem für Datenbankverbindu
 
 Der eigentlich ‘spannende’ Teil passiert in eben diesen Model-Objekten. Bei diesen handelt es sich um Service-Factories für jede Entität im Backend, z.B. für die Datenbankverbindungen:
 
-    zenQueryServices.factory('DatabaseConnection', function($resource, configuration) {
-      return $resource(configuration.apiRootURL +
-        'api/v1/databaseConnections/:databaseConnectionId',
-        {},
-        {
-          findAll: {
-            method: 'GET',
-            params: { databaseConnectionId: 'findAll' },
-            isArray: true
-          },
-          get: {
-            method: 'GET'
-          },
-          create: {
-            method: 'POST'
-          },
-          update: {
-            params: { databaseConnectionId: '@id' },
-            method: 'PUT'
-          },
-          delete: {
-            method: 'DELETE'
-          }
-        }
-      );
-    });
+```javascript
+zenQueryServices.factory('DatabaseConnection', function($resource, configuration) {
+  return $resource(configuration.apiRootURL +
+    'api/v1/databaseConnections/:databaseConnectionId',
+    {},
+    {
+      findAll: {
+        method: 'GET',
+        params: { databaseConnectionId: 'findAll' },
+        isArray: true
+      },
+      get: {
+        method: 'GET'
+      },
+      create: {
+        method: 'POST'
+      },
+      update: {
+        params: { databaseConnectionId: '@id' },
+        method: 'PUT'
+      },
+      delete: {
+        method: 'DELETE'
+      }
+    }
+  );
+});
+```
 
 
 Diese Services rufen mittels *[ngResource](https://docs.angularjs.org/api/ngResource/service/$resource)* (über Dependency Injection im Service verfügbar) URLs im Backend auf, die via REST die entsprechenden Daten als JSON zurückgeben. Hier werden verschiedenen CRUD Operationen auf HTTP Verben und Parameter abgebildet. Diese Operationen können dann im Controller wie folgt aufgerufen werden:
 
-	$scope.databaseConnections = DatabaseConnection.findAll(
-		function(databaseConnections) {
-			$scope.total = databaseConnections.length;
-			filter(databaseConnections);
-		}
-	);
+```javascript
+$scope.databaseConnections = DatabaseConnection.findAll(
+  function(databaseConnections) {
+    $scope.total = databaseConnections.length;
+    filter(databaseConnections);
+  }
+);
+```
 
 Dieses Codestück ruft die *findAll()* Funktion im oben definierten Service auf und sobald dieser Aufruf erfolgreich war, wird das zurückgegebene Array der Datenbankverbindungen an eine Funktion übergeben. Hier wird dann die Gesamtzahl der Datenbankverbindungen im *$scope* des Controllers gesetzt und die Datenbankverbindungen für die Paginierung gefiltert.
 
 Ein weiterer Aufruf für einzelne Datenbankverbindungen sieht so aus:
 
-	$scope.databaseConnection = DatabaseConnection.get({
-		databaseConnectionId: databaseConnectionId
-	});
+```javascript
+$scope.databaseConnection = DatabaseConnection.get({
+  databaseConnectionId: databaseConnectionId
+});
+```
 
 Hier wird eine einzelne Datenbankverbindung aus dem Backend geladen. Dazu wird dem Aufruf der *get()* Funktion des Service die ID der Datenbankverbindung als Argument übergeben.
 
 Die Definition der Service-Factory enthält ein weiteres interessantes Detail:
 
-	zenQueryServices.factory('DatabaseConnection', function($resource, configuration) {
-		return $resource(configuration.apiRootURL +
-			'api/v1/databaseConnections/:databaseConnectionId',
-			{ },
-			{
-				...
-			}
-		);
-	});
+```javascript
+zenQueryServices.factory('DatabaseConnection', function($resource, configuration) {
+  return $resource(configuration.apiRootURL +
+    'api/v1/databaseConnections/:databaseConnectionId',
+    { },
+    {
+      ...
+    }
+  );
+});
+```
 
 Hier wird über Dependency Injection ein *configuration* Objekt genutzt, um die URL des Backends je nach Umgebung individuell setzen zu können. Dies ist nötig, weil die AngularJS App während der Entwicklung über einen eigenen Grunt-Prozess unter Port 9000 gestartet wird, während sie in Produktion im Kontext der Java-Anwendung unter ihrem Port laufen wird. Um eine umgebungsspezifische Konfiguration umzusetzen, habe ich [Simon Baileys env-config Yeoman Generator](http://newtriks.com/2013/11/29/environment-specific-configuration-in-angularjs-using-grunt/) verwendet. Sehr nützliches Tool!
 
@@ -131,18 +141,20 @@ Hier wird über Dependency Injection ein *configuration* Objekt genutzt, um die 
 
 Parallel zum Frontend wurde das Backend entwickelt. Dieses enthält einige Logik zum zeitgleichen dynamischen Ansteuern verschiedener Datenbankserver und -systeme. Die Kommunikation von Backend und Frontend geschieht über Controller, die über die *@Controller* Spring-Annotationen definiert werden. Der Begriff Controller ist hier nicht mit AngularJS Controllern zu verwechseln. Spring Web MVC ist, wie der Name sagt, ein klassisches MVC Framework. Über weitere Annotationen werden Adressen, zulässige Request-Methoden und Rückgabeformate definiert:
 
-	@Controller
-	@RequestMapping("/api/v1/resultSetForQuery")
-	public class ResultSetController {
-		@RequestMapping(
-			value = "/{id}",
-			method = RequestMethod.GET,
-			produces = { "application/json; charset=utf-8" })
-		public @ResponseBody List<Map<String, Object>> currentQuery(@PathVariable Integer id) {
-			List<Map<String, Object>> rows = getRows(id, null, null);
-			return rows;
-		}
-	}
+```javascript
+@Controller
+@RequestMapping("/api/v1/resultSetForQuery")
+public class ResultSetController {
+  @RequestMapping(
+    value = "/{id}",
+    method = RequestMethod.GET,
+    produces = { "application/json; charset=utf-8" })
+  public @ResponseBody List<Map<String, Object>> currentQuery(@PathVariable Integer id) {
+    List<Map<String, Object>> rows = getRows(id, null, null);
+    return rows;
+  }
+}
+```
 
 Die so erstellten Controller können wie weiter oben beschrieben direkt mittels *ngResource* in AngularJS verwendet werden. Da sowohl Spring Web MVC, als auch AngularJS standardmäßig JSON als Datenaustauschformat nutzen, muss man sich um so lästige Aspekte wie Objektserialisierung und Marshalling nicht selber kümmern, sondern kann direkt auf die einzelnen Objekte und ihre Attribute zugreifen.
 
@@ -152,20 +164,22 @@ Die so erstellten Controller können wie weiter oben beschrieben direkt mittels 
 
 Für den Browser sind dies 2 verschiedene Origins, die nur dann miteinander kommunizieren können, wenn beide entsprechende HTTP Header schicken. AngularJS tut dies automatisch. Bei Spring Web MVC ist hier zusätzlich noch die Einbindung eines [CORS Filters](https://spring.io/guides/gs/rest-service-cors/) nötig:
 
-	@Component
-	public class CORSFilter implements Filter {
-		public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
-			HttpServletResponse response = (HttpServletResponse) servletResponse;
-			response.setHeader("Access-Control-Allow-Origin", "*");
-			response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
-			response.setHeader("Access-Control-Max-Age", "3600");
-			response.setHeader("Access-Control-Allow-Headers", "Content-Type, x-requested-with");
-			chain.doFilter(servletRequest, servletResponse);
-		}
+```javascript
+@Component
+public class CORSFilter implements Filter {
+  public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
+    HttpServletResponse response = (HttpServletResponse) servletResponse;
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
+    response.setHeader("Access-Control-Max-Age", "3600");
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type, x-requested-with");
+    chain.doFilter(servletRequest, servletResponse);
+  }
 
-		public void init(FilterConfig filterConfig) {}
-		public void destroy() {}
-	}
+  public void init(FilterConfig filterConfig) {}
+  public void destroy() {}
+}
+```
 
 ## Ready to rumble
 
