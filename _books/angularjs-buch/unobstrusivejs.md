@@ -7,9 +7,9 @@ progress: 95
 
 Seit Jahren wird Unobtrusive JavaScript als Heilmittel für komplizierte Applikationen propagiert. Die Idee, Logik aus dem Template zu entfernen, ist gut und richtig. Da die Ereignis-Handler in AngularJS wieder stark an alte Zeiten erinnern, möchten wir auf dieses Thema hier kurz eingehen. Nehmen wir als Beispiel `ng-click`:
 
-~~~html
+```html
 <button ng-click="createTask()">Aufgabe erstellen</button>
-~~~
+```
 
 Im ersten Moment sieht die letzte Zeile wie das `onclick`-Ereignis von mit einem anderen Namen aus. Machen wir also wieder einen Rückschritt?
 

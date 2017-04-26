@@ -7,6 +7,7 @@ progress: 80
 ---
 
 ### Code-Reduktion
+
 AngularJS macht einen Großteil des Codes, den man normalerweise schreibt, überflüssig. Wer bisher mit jQuery gearbeitet hat, staunt häufig, wie viel kleiner der Quelltext wird. Die Reduktion des Codes begründet sich durch die Automatisierung von Standardaufgaben.
 
 Viel Arbeit investiert man in die manuelle DOM-Selektion, DOM-Manipulation und Event-Behandlung. Um z.B. ein Element im DOM verändern, muss man es referenzieren können. Das macht man normalerweise über die Vergabe einer ID/Class und benutzt einen Selektor, wie `$('#mein-element').`. Hat man es selektiert, schreibt man explizit, was mit dem Element gemacht werden soll, z.B. `$('#mein-element').addClass('active')`. Es gibt auch die Möglichkeit auf ein Ereignis zu reagieren, wie z.B. das Bewegen der Maus. In diesem Fall würde man normalerweise einen Event-Listener mit einem Callback setzen.

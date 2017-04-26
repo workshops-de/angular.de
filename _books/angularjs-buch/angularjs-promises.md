@@ -17,9 +17,11 @@ Diese Umschreibung trifft auch schon genau den Grund, warum ihr Promises nutzen 
 
 Hier wird mit jQuery ein Ajax-Request abgesendet und auf den Erfolgs- und Fehlerfall reagiert.
 
-    $.get('/meine/api.json')
-      .done(function(){ ... })
-      .fail(function(){ ... });
+```javascript
+$.get('/meine/api.json')
+  .done(function(){ ... })
+  .fail(function(){ ... });
+```
 
 Das sieht an sich ja schon ganz ordentlich aus. Wozu brauchen wir dann Callbacks 2.0?
 
@@ -53,39 +55,49 @@ Gehen wir alle Punkte nun Schritt für Schritt durch.
 
 Der $q-Service wird ganz normal als Abhängigkeit in den gewünschten Bestandteil der AngularJS-Anwendung injiziert. Danach könnt ihr Promises einfach über den Aufruf folgenden Code-Schnipsels erzeugen.
 
-    $q()
+```javascript
+$q()
+```
 
 Soll nun eine asynchrone Funktion ein Promise zurückgeben, geschieht dies einfach durch das erzeugte Promise.
 
-    function asyncFn() {
-      return $q();
-    }
+```javascript
+function asyncFn() {
+  return $q();
+}
+```
 
 **Promise-Funktion aufrufen**
 
 Nun folgt ein noch simplerer Teil. Die eben erstelle Promise-Funktion muss natürlich auch aufgerufen werden. Ihr könnt die Funktion, wie einen ganz normalen Funktionsaufruf betrachten.
 
-    asyncFn();
+```javascript
+asyncFn();
+```
 
 **Promise resolve und reject**
 
 Jetzt muss unsere Funktion natürlich auch noch etwas asynchrones machen und dann das Versprechen halten oder nicht. Dazu müsst ihr der Promise-Erzeugung eine Funktion übergeben, die automatisch zwei Funktionen als Parameter erhält. Dabei handelt es sich beim ersten um die *resolve*- und beim zweiten *reject*-Funktion.
 
-    function asyncFn() {
-      return $q(function (resolve, reject) {
-      	// async code here
-      });
-    }
+```javascript
+function asyncFn() {
+  return $q(function (resolve, reject) {
+    // async code here
+  });
+}
+```
 
 Als Beispiel führen wir mit setTimeout verzögert eine Funktion aus und resolven danach unser Promise.
 
-    function asyncFn() {
-      return $q(function (resolve, reject) {
-      	setTimeout(function () {
-      	  resolve('Hello');
-      	}, 2000);
-      });
-    }
+```javascript
+function asyncFn() {
+  return $q(function (resolve, reject) {
+    setTimeout(function () {
+      resolve('Hello');
+    }, 2000);
+  });
+}
+```
 
 Das Ablehnen erfolgt äquivalent. Mit reject und resolve könnt ihr zusätzlich Daten als primitiven Datentyp, Objekt oder Array zurückgeben.
 
@@ -97,11 +109,13 @@ Diese then-function kann mit zwei Callback-Funktionen umgehen. Die erste für de
 
 Unser Aufruf von `asyncFn` sieht nun wie folgt aus.
 
-    asyncFn().then(function (data) {
-      // success
-    }, function (errData) {
-      // error
-    });
+```javascript
+asyncFn().then(function (data) {
+  // success
+}, function (errData) {
+  // error
+});
+```
 
 Das war im Grunde schon die ganze Magie hinter Promises und wie man sie im einfachsten Fall verwendet.
 
@@ -109,10 +123,12 @@ Das war im Grunde schon die ganze Magie hinter Promises und wie man sie im einfa
 
 Wie bereits erwähnt ist das Senden von HTTP-Anfragen auch ein asynchroner Bestandteil einer Anwendung. Das AngularJS-Team hat natürlich mitgedacht und so bietet der `$http`-Service bereits von Haus aus die Möglichkeit mit Promises zu arbeiten. Dabei liefert ein $http-Aufruf immer ein Promise zurück.
 
-    $http.get('/meine/api.json').then(
-      function(response){ ... },
-      function(error){ ... }
-    );
+```javascript
+$http.get('/meine/api.json').then(
+  function(response){ ... },
+  function(error){ ... }
+);
+```
 
 Im Vergleich zu unserem Beispiel mit jQuery sehen die Code-Ausschnitte doch recht ähnlich aus. Trotzdem werden wir gleich sehen, dass der Funktionsumfang und somit die Einsatzmöglichkeiten von Promises doch die von simplen Callback bei weiten übertreffen.
 
@@ -128,27 +144,31 @@ Wenn wir mehrere asynchrone Aufrufe mit Callbacks verschachteln, wird es sehr sc
 
 Nehmen wir das vorherige - noch übersichtliche - Beispiel eines Requests mit jQuery und senden in Abhängigkeit dazu weitere Anfragen. Der Fehlerfall wird hierbei vernachlässigt.
 
-    $.get('/api1').done(function(data) {
-      $.get('/api2').done(function(data) {
-        $.get('/api3').done(function(data) {
-          ...
-        });
-      });
+```javascript
+$.get('/api1').done(function(data) {
+  $.get('/api2').done(function(data) {
+    $.get('/api3').done(function(data) {
+      ...
     });
+  });
+});
+```
 
 **Lösung**
 
 Der Aufruf unserer Promise-Funktion sieht schon mal ganz annehmbar aus. Doch was passiert, wenn wir aufeinander aufbauende Funktionalitäten haben, die bei Callbacks zu einer tiefen Verschachtelung führten. Hier können wir uns eine der wichtigsten Eigenschaften eines Promises zu nutzen machen. Promises sind verkettbar, sprich sie können per *Dot*-Notation hintereinander geschrieben werden, denn als Rückgabewert eines Promise könnt ihr entweder wieder ein Promise oder einen ganz normalen Wert zurückgeben. Im nächsten `then` stehen uns die Rückgabewerte wieder zur Verfügung.
 
-    asyncFn()
-      .then(function (data) {
-        // success
-        return asyncCode();
-      })
-      .then(function (data) {
-        // success
-        return true;
-      });
+```javascript
+asyncFn()
+  .then(function (data) {
+    // success
+    return asyncCode();
+  })
+  .then(function (data) {
+    // success
+    return true;
+  });
+```
 
 <div class="alert alert-info"><b>Hinweis:</b> Verkettet Promises, um Verschachteltungen von asynchronen Programmteilen zu verhindern</div>
 
@@ -156,18 +176,20 @@ Der Aufruf unserer Promise-Funktion sieht schon mal ganz annehmbar aus. Doch was
 
 Übertragen wir dies wieder auf unsere verschachtelten HTTP-Anfragen mit jQuery. Mit dem `$http`-Service und Promises sieht das in AngularJS folgendermaßen aus.
 
-    $http.get('/api1')
-      .then(function (data1) {
-        // do something with data1
-        // send another request
-	    return $http.get('/api2');
-	  })
-	  .then(function (data2) {
-		return $http.get('/api3');
-	  })
-	  .then(function (data3) {
-		...
-	  });
+```javascript
+$http.get('/api1')
+  .then(function (data1) {
+    // do something with data1
+    // send another request
+  return $http.get('/api2');
+})
+.then(function (data2) {
+  return $http.get('/api3');
+})
+.then(function (data3) {
+...
+});
+```
 
 #### Fehlerbehandlung und Fehlerkorrektur
 
@@ -175,12 +197,14 @@ Der Aufruf unserer Promise-Funktion sieht schon mal ganz annehmbar aus. Doch was
 
 Bei verschachtelten Callbacks ist nicht definiert, wie wir mit Fehlern umgehen. Nehmen wir wieder unser letztes Beispiel dazu: Wir rufen die drei verschachtelten Callbacks aus dem letzten jQuery-Code-Schnipsel erneut auf. Die letzte API-Anfrage an `/api3` schlägt nun fehl. Wie gehen wir damit um? Was heißt das generell für die Fehlerbehandlung mit Callbacks?
 
-    $.get('/api1').done(function(data) {
-      $.get('/api2').done(function(data) {
-        $.get('/api3').done(function(data) {
-        }).fail(function(err){ ... });
-      }).fail(function(err){ ... });
+```javascript
+$.get('/api1').done(function(data) {
+  $.get('/api2').done(function(data) {
+    $.get('/api3').done(function(data) {
     }).fail(function(err){ ... });
+  }).fail(function(err){ ... });
+}).fail(function(err){ ... });
+```
 
 Jeder Fehler muss extra behandelt werden. Oft geschieht jedoch in den meisten Fällen im Fehlerfall das gleiche.
 
@@ -188,25 +212,27 @@ Schön wäre es, wenn wir in diesen Situationen die Fehlerbehandlung an einer St
 
 Jetzt tritt der Fall ein, dass wir die Möglichkeit haben fehlgeschlagene Requests nochmals gegen andere APIs zu senden, um mögliche Fehler zu korrigieren. Ihr könnt euch sicher bereits vorstellen, wie komplex unser Quellcode dazu aussehen wird. Es folgt die Umsetzung, in der wir Spiegelungen von `/api2` und `/api3` unter `/api2b` und `/api3b` zur Verfügung haben.
 
-    $.get('/api1').done(function(data) {
-      $.get('/api2').done(function(data) {
-        $.get('/api3').done(function(data) {
-        }).fail(function(err){
-          // retry with api3b
-          $.get('/api3b').done(function(data) {
-	      }).fail(function(err){ ... });
-        });
-      }).fail(function(err){
-        // retry with api2b and after that the whole api3 block
-        $.get('/api2b').done(function(data) {
-          $.get('/api3').done(function(data) {
-          }).fail(function(err){
-            $.get('/api3b').done(function(data) {
-	        }).fail(function(err){ ... });
-          });
-        }).fail(function(err){ ... });;
-      });
+```javascript
+$.get('/api1').done(function(data) {
+  $.get('/api2').done(function(data) {
+    $.get('/api3').done(function(data) {
+    }).fail(function(err){
+      // retry with api3b
+      $.get('/api3b').done(function(data) {
     }).fail(function(err){ ... });
+    });
+  }).fail(function(err){
+    // retry with api2b and after that the whole api3 block
+    $.get('/api2b').done(function(data) {
+      $.get('/api3').done(function(data) {
+      }).fail(function(err){
+        $.get('/api3b').done(function(data) {
+      }).fail(function(err){ ... });
+      });
+    }).fail(function(err){ ... });;
+  });
+}).fail(function(err){ ... });
+```
 
 Spätestens hier sollten sich bei euch die Nackenhaare aufstellen. Natürlich kann jetzt der ausgefuchste Entwickler anfangen alles schön in einzelne Funktionen aufzudröseln. Macht den reinen Quelltext der Ausgangsfunktion leserlicher und übersichtlicher, aber der Umgang mit Fehlern und Fehlerkorrektur nicht besser.
 
@@ -216,12 +242,13 @@ Wir wir schon gesehen haben akzeptiert jedes `then` eine Fehlerfunktion. Das bed
 
 ![Promises-Error-Handling](../images/figures/promises-error.png)
 
-
-    asyncFn()
-      .then(successFn)
-      .then(successFn, function (err) {
-        // error
-      });
+```javascript
+asyncFn()
+  .then(successFn)
+  .then(successFn, function (err) {
+    // error
+  });
+```
 
 Schlägt in obigen Code der Aufruf von `asyncFn` fehl, dann wird automatisch die Fehlerfunktion des zweiten `then`s aufgerufen.
 
@@ -229,18 +256,20 @@ Schlägt in obigen Code der Aufruf von `asyncFn` fehl, dann wird automatisch die
 
 Schauen wir uns nun einmal die Lösung für eine einheitliche Fehlerbehandlung mehrerer Anfragen an.
 
-    $http.get('/api1')
-      .then(function (data1) {
-        return $http.get('/api2');
-      })
-      .then(function (data2) {
-        return $http.get('/api3');
-      })
-      .then(function (data3) {
-        return data3;
-      }, function (err) {
-        // an error happens somewhere in the promise-chain
-      });
+```javascript
+$http.get('/api1')
+  .then(function (data1) {
+    return $http.get('/api2');
+  })
+  .then(function (data2) {
+    return $http.get('/api3');
+  })
+  .then(function (data3) {
+    return data3;
+  }, function (err) {
+    // an error happens somewhere in the promise-chain
+  });
+```
 
 Zur Vereinfachung besitzt ein $q-Promise auch eine `catch`-Funktion mit der ihr eine elegant eine finale Fehlerbehandlung implementieren könnt. Mit `finally` könnt ihr sogar Logik implementieren, die immer ausgeführt werden soll, egal ob Fehler- oder Erfolgsfall. Das bietet sich vor allem an, wenn ihr eine Prozessanzeige abschließen oder einen Ladeindikator ausblenden wollt.
 
@@ -253,25 +282,27 @@ Durch die Verkettung und Error-Funktionen ist es auch möglich Fehler zu korrigi
 
 Nun stellen wir unser äußert unschönes Beispiel mit gespiegelten Schnittstellen und Callbacks auf Promises um.
 
-    $http.get('/api1')
-      .then(function (data1) {
-	    return $http.get('/api2')
-		  .catch(function (err) {
-		    return $http.get('/api2b');
-		  });
-	  })
-	  .then(function (data2) {
-		return $http.get('/api3')
-		  .catch(function (err) {
-		    return $http.get('/api3');
-		  });
-	  })
-	  .then(function (data3) {
-		return data3;
-	  })
-	  .catch(function (err) {
-	    // an error happens somewhere else in the chain
+```javascript
+$http.get('/api1')
+  .then(function (data1) {
+    return $http.get('/api2')
+      .catch(function (err) {
+        return $http.get('/api2b');
       });
+  })
+  .then(function (data2) {
+    return $http.get('/api3')
+      .catch(function (err) {
+        return $http.get('/api3');
+      });
+  })
+  .then(function (data3) {
+    return data3;
+  })
+  .catch(function (err) {
+    // an error happens somewhere else in the chain
+  });
+```
 
 Wie ihr sehen könnt, ist die gesamte Funktionalität pro Schnittstelle gekapselt. Dadurch gilt die Fehlerbehandlung für `/api2` und `/api3` nur in ihrem jeweiligen Block und die eigentliche (äußere) Promise-Kette bleibt stabil. Die finale `catch`-Funktion also nur ausgeführt, falls `/api1`, `/api2b` oder `/api3b` fehlschlägt.
 
@@ -285,9 +316,11 @@ Stellen wir uns vor, wir haben einen Programmteil, der gleichzeitig mehrere Schn
 
 Beispiel paralleler Anfragen mit jQuery:
 
-    $.get('/api1').done(function(data){ result1 = data; });
-    $.get('/api2').done(function(data){ result2 = data; });
-    $.get('/api3').done(function(data){ result3 = data; });
+```javascript
+$.get('/api1').done(function(data){ result1 = data; });
+$.get('/api2').done(function(data){ result2 = data; });
+$.get('/api3').done(function(data){ result3 = data; });
+```
 
 Wie können wir jetzt an dieser Stelle auf feststellen, dass alle 3 APIs ihre Daten erfolgreich zurückgeliefert haben? - Wir müssten in jedem Callback überprüfen, ob die anderen APIs schon fertig sind. Damit wir das prüfen können, müssen wir noch ein zusätzliches Array erstellen, wo wir die Status der APIs zwischenspeichern. Möglich, aber nicht besonders elegant für ein Standard-Problem. Vor allen Dingen, wenn es eine gute Abstraktion dafür gibt. Dazu kommt vielleicht noch mehr Logik, da ja auch auf mögliche Fehler reagiert werden muss. Aber dazu später mehr.
 
@@ -295,8 +328,10 @@ Wie können wir jetzt an dieser Stelle auf feststellen, dass alle 3 APIs ihre Da
 
 Auch dieses Problem lässt sich mit Promises spielend leicht lösen. Mit Hilfe von `$q` können nicht nur neue Promise-Objekte erzeugt werden. Ihr findet darauf außerdem ein paar hilfreiche Funktionen. Für unser Problem ist jedoch vor allem eine davon interessant. Über `$q.all` könnt ihr mehrere Promise-Funktionen gleichzeitig ausführen und auf ihre Fertigstellung warten bzw. reagieren.
 
-    $q.all([asyncFn(), anotherAsyncFn()])
-      .then(successFn, errorFn);
+```javascript
+$q.all([asyncFn(), anotherAsyncFn()])
+  .then(successFn, errorFn);
+```
 
 Dabei wird der Erfolgs-Callback ausgeführt, wenn alle Promises erfüllt wurden und die Fehlerfunktion, wenn ein Promise fehlschlägt. Als Parameter erhält der Erfolgs-Callback ein Array mit den Ergebnisse der Promise-Funktionen und der Fehler-Callback in der Regel ein Error-Objekt.
 
@@ -304,14 +339,16 @@ Wie wir im obigen Problembeispiel gesehen haben, ist das Synchronisieren von Cal
 
 Beispiel paralleler Anfragen mit `$http`:
 
-    var api1 = $http.get('/api1');
-    var api2 = $http.get('/api2');
-    var api3 = $http.get('/api3');
+```javascript
+var api1 = $http.get('/api1');
+var api2 = $http.get('/api2');
+var api3 = $http.get('/api3');
 
-    $q.all([api1, api2, api3])
-      .then(function(responsesArray) {
-        // responsesArray = [resApi1, resApi2, resApi2]
-      });
+$q.all([api1, api2, api3])
+  .then(function(responsesArray) {
+    // responsesArray = [resApi1, resApi2, resApi2]
+  });
+```
 
 #### Vermischung von Verantwortlichkeiten
 
@@ -321,10 +358,12 @@ In der Informatik gibt es das Prinzip der *Aufteilung nach Verantwortlichkeiten*
 
 Nehmen wir wieder einen Standard-Callback als Beispiel:
 
-    $.get('/meine/api.json', function(data) {
-      updateView(data);
-      processData(data);
-    });
+```javascript
+$.get('/meine/api.json', function(data) {
+  updateView(data);
+  processData(data);
+});
+```
 
  Wenn die unsere API abgerufen wurde, möchten wir etwas in der View aktualisieren mit `updateView()` und gleichzeitig die Daten weiterverarbeiten, mit `processData()`. Wir können uns sicher darauf einigen, dass das 2 sehr verschiedene Aufgaben sind.
 
@@ -334,10 +373,12 @@ Ein Promise-Objekt oder ein Aufruf einer Promise-Funktion kann ganz einfach eine
 
 Schauen wir uns die Lösung des Problems im Quellcode an.
 
-    var apiPromise = $http.get('/meine/api.json');
+```javascript
+var apiPromise = $http.get('/meine/api.json');
 
-    apiPromise.then(updateView);
-    apiPromise.then(processData);
+apiPromise.then(updateView);
+apiPromise.then(processData);
+```
 
 Die Funktionen `updateView` und `processData` können direkt als Funktionsreferenzen übergeben werden, da sie die gleiche Struktur, wie ein normal Callback für `$http`-Anfragen besitzen.
 

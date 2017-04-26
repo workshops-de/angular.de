@@ -43,15 +43,15 @@ In AngularJS wird die Anweisung, etwas zu wiederholen, direkt in den Tag geschri
 
 Die Zuweisung für das erste Listenelement würde intern so aussehen:
 
-~~~javascript
+```javascript
 $scope.framework = { name: 'AngularJS', url: 'angularjs.org' }
-~~~
+```
 
 Arrays können natürlich über mehrere Ebenen zu verschachtelt werden, um somit z.B. hierarchische Menüs darzustellen.
 
 
-
 ## ngClick, ngChange, ngMouse...
+
 > API:
   [ngClick](http://docs.angularjs.org/api/ng.directive:ngClick) |
   [ngDblclick](http://docs.angularjs.org/api/ng.directive:ngDblclick) |

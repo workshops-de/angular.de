@@ -21,6 +21,8 @@ Fangen wir bei der Betrachtung mit dem eigentlichen Problem bei der Suchmaschine
 
 ### AngularJS-Konfiguration
 
+```javascript
 angular.module('HashBangURLs', []).config(['$locationProvider', function($location) {
   $location.hashPrefix('!');
 }]);
+```

@@ -13,11 +13,13 @@ Der Grund ist recht einfach: Da das Framework mit einem Dirty Checking Algorithm
 
 Ein kleines Beispiel:
 
-    element.on('click', function(event, touchend) {
-          scope.$apply(function() {
-            clickHandler(scope, {$event: (touchend || event)});
-          });
-        });
+```javascript
+element.on('click', function(event, touchend) {
+      scope.$apply(function() {
+        clickHandler(scope, {$event: (touchend || event)});
+      });
+    });
+```
 
 Hierbei registrieren wir einen EventListener auf ein Klick-Ereignis eines DOM-Elements. Wird dieses ausgelöst, führen wir eine Funktion aus, die den Scope verändert. Damit der Rest der Anwendung dies mitbekommt und sich updated, wrappen wir diesen Funktionsaufruf in einen Aufruf mit *scope.$apply*. Damit wird der Dirty-Checking-Mechanismus gestartet und überprüft, ob sich Elemente in der View aktualisieren müssen. Und warum brauchen wir das nicht bei normalen Aufrufen wie z.B. mit ng-click? Brauchen wir doch! Allerdings hat das Framework diese Standard-Fälle für uns bereits abgedeckt. Der oben verwendete Beispiel-Code stammt direkt aus der ngClick Direktive!
 

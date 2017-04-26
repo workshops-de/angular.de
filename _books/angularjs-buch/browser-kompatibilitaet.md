@@ -18,14 +18,14 @@ Ein bekannter Polyfill ist [JSON3](http://bestiejs.github.com/json3/). Diesen pl
 
 ACHTUNG: JSON3 muss vor AngularJS geladen werden.
 
-~~~html
+```html
 <head>
   <!--[if lte IE 8]>
     <script src="/javascripts/json3.min.js"></script>
   <![endif]-->
   <script src="/javascripts/angular.min.js"></script>
 </head>
-~~~
+```
 
 ### HTML-Elemente (IE6-8)
 
@@ -33,7 +33,7 @@ Im HTML-Bereich krankt die Unterstützung für AngularJS an den gleichen Problem
 
 Jedes einzelne Element, was später verwendet werden soll, muss im Head-Bereich definiert werden. Dabei sind sowohl die Elemente gemeint, die von AngularJS mitgeliefert werden als auch Elemente, die durch eigene Direktiven entstehen. Erzeugst du z.B. eine neue Direktive, die als Element `<tabs>` benutzt, musst du im Head `document.createElement('tabs')` schreiben.
 
-~~~html
+```html
 <head>
 <!--[if lte IE 8]>
   <script>
@@ -43,6 +43,6 @@ Jedes einzelne Element, was später verwendet werden soll, muss im Head-Bereich 
   </script>
 <![endif]-->
 </head>
-~~~
+```
 
 Erweiterungen in Form von Attributen `<li ng-repeat="..."></li>` werden gleich erkannt und müssen nicht gesondert behandelt werden.

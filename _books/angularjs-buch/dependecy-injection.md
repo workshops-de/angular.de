@@ -11,12 +11,12 @@ progress: 90
 
 Klassisch kümmert sich eine Funktion selber um das instanziieren von weiteren Objekten. Gucken wir uns folgende Funktion an:
 
-~~~ javascript
+```javascript
 function findUser(user){
   var db = new Database(...);
   db.find('users', user);
 }
-~~~
+```
 
 Die Funtkion `findUser` sucht einen Benutzer aus einer Datebank-Tabelle heraus. Dazu muss eine Verbindung zu einer Datenbank hergestellt werden. `findUser` kümmert sich selber darum, das ensprechende Objekt `Database` zu instanziieren. Die Kontrolle, Objekte zu erstellen liegt somit bei der Funktion selbst.
 
@@ -25,11 +25,11 @@ Die Funtkion `findUser` sucht einen Benutzer aus einer Datebank-Tabelle heraus. 
 
 Mit *Dependency Injection* wird die Kontrolle über das Instanziieren der Funktion entzogen. Die Kontrolle hat jetzt eine zentrale Stelle, die diese Arbeit erledigt. Diese zentrale Stelle nennen wir Injektor. Die Funktion muss nicht wissen, woher `db` kommt und wie `db` instanziiert wird. Wir könnten also Folgendes schreiben:
 
-~~~ javascript
+```javascript
 function findUser(db){
   db.find('users', user);
 }
-~~~
+```
 
 ### Der Injektion und die richtige Reihenfolge
 
@@ -39,14 +39,14 @@ Der Injektor kann nicht nur Instanzen zu erzeugen, sondern kümmert sich auch da
 
 Als Pseudo-JavaScript würden wir die Servies folgendermaßen erzeugen:
 
-~~~ javascript
+```javascript
 service 'S1', function(S2, S5, S6)
 service 'S2', function(S3, S4, S5)
 service 'S3', function(S6)
 service 'S4', function(S3, S5)
 service 'S5', function()
 service 'S6', function()
-~~~
+```
 
 Der Injektor von AngularJS löst den Baum von Abhängigkeiten korrekt auf und sorgt für die richtige Reihenfolge beim Instanziieren: `S6`, `S3`, `S5`, `S4`, `S2`, `S1`.
 
@@ -61,11 +61,11 @@ Der Injektor von AngularJS löst den Baum von Abhängigkeiten korrekt auf und so
 
 Der Injektor von AngularJS erkennt die benutzten Services anhand der Parameternamen. Im Folgenden werden Database `DBUsername` und `DBPassword` übergeben. Der Injektor sucht dementsprechend nach Services mit den Namen `DBUsername` und `DBPassword`.
 
-~~~ javascript
+```javascript
 app.value('DBUsername', 'root');
 app.value('DBPassword', 'secret');
 app.factory('Database', function(DBUsername, DBPassword) { ... });
-~~~
+```
 
 Diese Konvention ist sinnvoll, um sich zusätzliche Konfigurationsdateien zu sparen. Alternativ müsste nämlich eine Mapping-Datei erstellt werden, die Funktionsnamen mit entsprechenden Abhängigkeiten enthält.
 

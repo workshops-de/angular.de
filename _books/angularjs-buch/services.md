@@ -17,7 +17,6 @@ Constant macht dabei genau das, was der Name vermuten lässt - eine Konstante de
 
 ![AngularJS - Root Scope](../images/figures/services.png)
 
-
 ### Provider
 
 > Wir benutzen Provider, wenn wir einen Service zum Applikationsstart konfigurieren möchten.
@@ -26,7 +25,7 @@ Provider ist eine Singeleton-Funktion mit $get-Methode und grundlegend für alle
 
 Beispiel:
 
-~~~javascript
+```javascript
 app.provider('helloWorld', function() {
   this.setName = function(name) { this.name = name; };
 
@@ -41,7 +40,7 @@ app.provider('helloWorld', function() {
 app.config(function(helloWorldProvider){
   helloWorldProvider.setName('World');
 });
-~~~
+```
 
 
 ### Factory
@@ -50,19 +49,19 @@ app.config(function(helloWorldProvider){
 
 Eine Factory nutzt [Provider](#provider) als Ausgangsbasis und bietet ein vereinfachtes Interface an. Wenn wir uns einen Ausschnitt aus dem Quellcode anschauen, sehen wir, dass Factory nichts anderes macht, als die Funktion, die wir als Parameter übergeben, an die  `$get`-Methode von Provider zu delegieren.
 
-~~~javascript
+```javascript
 function factory(name, factoryFn) { return provider(name, { $get: factoryFn }); }
-~~~
+```
 
 Beispiel:
 
-~~~javascript
+```javascript
 app.factory('helloWorldFromFactory', function() {
   return {
     sayHello: function() { return "Hello, World!"; }
   };
 });
-~~~
+```
 
 
 ### Service
@@ -71,11 +70,11 @@ Ein Service ist einer [Factory](#factory) sehr ähnlich. Im Unterschied zu Facto
 
 Beispiel:
 
-~~~javascript
+```javascript
 app.service('helloWorldFromService', function() {
   this.sayHello = function() { return "Hello, World!"; };
 });
-~~~
+```
 
 
 ### Value
@@ -84,16 +83,15 @@ app.service('helloWorldFromService', function() {
 
 Ein Value ist eine weitere Vereinfachung einer [Factory](#factory). Einem Value kann man direkt einen String, Integer, Boolean übergeben, ohne sich die Mühe zu machen, einen Funktion mit einem Rückgabewert zu übergeben. In diesem Fall ist es aber nicht möglich, andere Services zu injizieren. Der Quellcode sieht ungefähr folgendermaßen aus:
 
-~~~javascript
+```javascript
 function value(name, value) { return factory(name, function() {return value;}); }
-~~~
-
+```
 
 Beispiel:
 
-~~~javascript
+```javascript
 app.value('helloWorldFromService', "Hello World!");
-~~~
+```
 
 
 ### Constant
@@ -107,8 +105,8 @@ Die Konstante verhält sich anders als die anderen Services. Nachdem einer Konst
 
 Beispiel:
 
-~~~javascript
+```javascript
 app.constant('pi', 3.14159265359);
-~~~
+```
 
 
