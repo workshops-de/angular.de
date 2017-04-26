@@ -18,53 +18,51 @@ pagination:
 
 <div class="row">
   <div class="col-md-8">
-  {% for post in paginator.posts %}
-    {% include _article.html %}
-  {% endfor %}
+    {% for post in paginator.posts %}
+      {% include _article.html %}
+    {% endfor %}
 
-    <div class="row text-center">
-      <nav aria-label="Paginierung" class="col-auto">
-        <ul class="pagination">
-          {% if paginator.previous_page %}
-            <li class="page-item">
-              <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Zurück">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Zurück</span>
-              </a>
+    <nav aria-label="Paginierung">
+      <ul class="pagination justify-content-center">
+        {% if paginator.previous_page %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Zurück">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Zurück</span>
+            </a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Zurück">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Zurück</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if paginator.page_trail %}
+          {% for trail in paginator.page_trail %}
+            <li class="page-item {% if page.url == trail.path %}disabled{% endif %}">
+              <a class="page-link" href="{{ trail.path | prepend: site.baseurl | replace: '/index.html', '/' }}" title="{{trail.title}}">{{ trail.num }}</a>
             </li>
-            {% else %}
-            <li class="page-item disabled">
-              <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Zurück">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Zurück</span>
-              </a>
-            </li>
-          {% endif %}
-          {% if paginator.page_trail %}
-            {% for trail in paginator.page_trail %}
-              <li class="page-item {% if page.url == trail.path %}disabled{% endif %}">
-                <a class="page-link" href="{{ trail.path | prepend: site.baseurl | replace: '/index.html', '/' }}" title="{{trail.title}}">{{ trail.num }}</a>
-              </li>
-            {% endfor %}
-          {% endif %}
-          {% if paginator.next_page %}
-            <li class="page-item">
-              <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Weiter">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Weiter</span>
-              </a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-              <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Weiter">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Weiter</span>
-              </a>
-            </li>
-          {% endif %}
-        </ul>
-      </nav>
-    </div>
+          {% endfor %}
+        {% endif %}
+        {% if paginator.next_page %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Weiter">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Weiter</span>
+            </a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Weiter">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Weiter</span>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
   </div>
   <div class="col-md-4">
     <form action="/suche" method="get" class="hidden-sm-down mb-4">
