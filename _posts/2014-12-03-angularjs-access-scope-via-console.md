@@ -49,23 +49,29 @@ Wie man sehen kann, hat das Section-Element die ID `todoapp`, mit der wir es aus
 Häufig nimmt man dafür jQuery, und viele Angular Anwendungen werden zusammen mit jQuery verwendet, allerdings funktioniert Angular auch ohne jQuery.
 Aus diesem Grund hat die originale TodoMVC Anwendung kein jQuery und ich zeige euch den Zugriff mit und ohne jQuery.
 
-	var todoappDomElement = document.querySelector("#todoapp");
-	var todoappAngularElement = angular.element(todoappDomElement);
-	var $scope = todoappAngularElement.scope();
+```javascript
+var todoappDomElement = document.querySelector("#todoapp");
+var todoappAngularElement = angular.element(todoappDomElement);
+var $scope = todoappAngularElement.scope();
+```
 
 Jetzt noch mal mit jQuery. Das Beispiel funktioniert mit meiner selbst-gehosteten Variante von `TodoMVC`, da ich für diesen Artikel jQuery eingebunden habe.
 
-	var $todoappElement = jQuery("#todoapp");
-	var $scope = $todoappElement.scope();
+```javascript
+var $todoappElement = jQuery("#todoapp");
+var $scope = $todoappElement.scope();
+```
 
 
 Das Ganze noch mal als Einzeiler.
 
-	 // native
-	var $scope = angular.element(document.querySelector("#todoapp")).scope();
+```javascript
+// native
+var $scope = angular.element(document.querySelector("#todoapp")).scope();
 
-	// jQuery
-	var $scopeFromJQuery = jQuery("#todoapp").scope();
+// jQuery
+var $scopeFromJQuery = jQuery("#todoapp").scope();
+```
 
 ### Die $0 Variable
 
@@ -102,16 +108,20 @@ Die einzelnen Watcher werden entweder von der `$scope.$watch` Methode (ebenfalls
 
 Man kann einfach überprüfen, wie die Watcher von Angular verwendet werden, indem man einen Watcher hinzufügt und danach die Länge des Watcher-Arrays überprüft.
 
-	console.log("$scope.$$watchers.length: " + $scope.$$watchers.length);
-	$scope.$watchCollection("todos", function () {
-	 console.log(arguments);
-	});
-	console.log("$scope.$$watchers.length: " + $scope.$$watchers.length);
+```javascript
+console.log("$scope.$$watchers.length: " + $scope.$$watchers.length);
+$scope.$watchCollection("todos", function () {
+  console.log(arguments);
+});
+console.log("$scope.$$watchers.length: " + $scope.$$watchers.length);
+```
 
 Als weiteres, aber etwas destruktiveres Experiment, kann man die Watcher mit einem leeren Array ersetzen.
 Danach wird nichts mehr in dem betroffenen Element aktualisiert.
 
-	$scope.$$watchers = [];
+```javascript
+$scope.$$watchers = [];
+```
 
 ### Zählen der `$$watchers`
 
@@ -119,48 +129,53 @@ Kürzlich habe ich ein interessantes Beispiel gefunden, in dem das `$$watchers` 
 Ich habe das Original-Beispiel noch etwas aufgeräumt und funktional umgestaltet.
 Auf jeden Fall bekommt man einen guten Eindruck, wie man die internen Attribute zur tieferen Analyse einer Anwendung einsetzen kann.
 
-	// fetch all elements with ng-scope class
-	var scopeElements = Array.prototype.slice.apply(document.querySelectorAll(".ng-scope"));
-	// map elements to scopes
-	var scopes = scopeElements.map(function (element) {
-	    return angular.element(element).scope();
-	});
-	// filter duplicated scopes created by ng-view
-	var scopesById = {};
-	var uniqueScopes = [];
-	scopes.forEach(function (scope) {
-	    if (scopesById[scope.$id] === undefined) {
-	        scopesById[scope.$id] = scope;
-	        uniqueScopes.push(scope);
-	    }
-	});
-	// map uniqueScopes to watchers
-	var watchers = uniqueScopes.map(function (scope) {
-	    return scope.$$watchers;
-	});
-	// extract the length
-	var watchersLengths = watchers.map(function (watcher) {
-	    return watcher.length;
-	})
-	// sum up the length with reduce
-	var watchersCount = watchersLengths.reduce(function(a,b) {
-	    return a + b;
-	});
-	console.log("watchersCount: " + watchersCount);
-
+```javascript
+// fetch all elements with ng-scope class
+var scopeElements = Array.prototype.slice.apply(document.querySelectorAll(".ng-scope"));
+// map elements to scopes
+var scopes = scopeElements.map(function (element) {
+  return angular.element(element).scope();
+});
+// filter duplicated scopes created by ng-view
+var scopesById = {};
+var uniqueScopes = [];
+scopes.forEach(function (scope) {
+  if (scopesById[scope.$id] === undefined) {
+    scopesById[scope.$id] = scope;
+    uniqueScopes.push(scope);
+  }
+});
+// map uniqueScopes to watchers
+var watchers = uniqueScopes.map(function (scope) {
+  return scope.$$watchers;
+});
+// extract the length
+var watchersLengths = watchers.map(function (watcher) {
+  return watcher.length;
+})
+// sum up the length with reduce
+var watchersCount = watchersLengths.reduce(function(a,b) {
+  return a + b;
+});
+console.log("watchersCount: " + watchersCount);
+```
 
 ## Manipulieren des Scopes
 
 Nachdem wir genau wissen, wie wir auf das Scope-Objekt zugreifen können, machen wir uns ans Manipulieren.
 Zum Beispiel können wir das Model verändern, das mit dem Todo-Eingabefeld verbunden ist `$scope.newTodo`.
 
-	var $scope = angular.element(document.querySelector("#todoapp")).scope();
-	$scope.newTodo = "Write a blog post";
+```javascript
+var $scope = angular.element(document.querySelector("#todoapp")).scope();
+$scope.newTodo = "Write a blog post";
+```
 
 Wie im letzten Artikel haben wir das Model geändert, aber können immer noch keine Änderung in der Anzeige feststellen.
 Die Änderung hat wieder außerhalb des `$digest()` Aktualisierungszyklus stattgefunden, aber da wir Zugriff auf das Scope-Objekt haben können wir jetzt die `$apply()` Methode verwenden, um die Aktualisierung manuell zu starten.
 
-	$scope.$apply();
+```javascript
+$scope.$apply();
+```
 
 Damit erreichen wir dann die gewünschte Aktualisierung der Anzeige.
 
@@ -168,8 +183,10 @@ Damit erreichen wir dann die gewünschte Aktualisierung der Anzeige.
 
 Wir können über den Scope ebenfalls den neuen Todo-Eintrag der Liste hinzufügen.
 
-	$scope.addTodo();
-	$scope.$apply();
+```javascript
+$scope.addTodo();
+$scope.$apply();
+```
 
 ![Hinzugefügtes Todo](todomvc-added-todo.png)
 
@@ -187,26 +204,34 @@ Scope-Objekte haben gegebenenfalls eine begrenzte Lebenszeit und können ungült
 Auch wenn man weiterhin Zugriff auf eine bereits geladene `$scope` Variable hat und man sie immer noch manipulieren kann, führt die `$apply` Methode in so einem Fall zu keiner Änderung.
 Welche Scopes noch auf der Seite vorhanden sind, kann man mit folgender Funktion über die IDs recht gut unterscheiden.
 
-	function scopeIds() {
-	 var scopeElements = Array.prototype.slice.apply(document.querySelectorAll(".ng-scope"));
-	 return scopeElements.map(function (element) {
-	 return angular.element(element).scope().$id;
-	 });
-	}
-	console.log(scopeIds());
+```javascript
+function scopeIds() {
+  var scopeElements = Array.prototype.slice.apply(document.querySelectorAll(".ng-scope"));
+  return scopeElements.map(function (element) {
+  return angular.element(element).scope().$id;
+  });
+}
+console.log(scopeIds());
+```
 
 Wenn man alle Todos löscht und die Seite neu lädt, dann sollte `scopeIds()` folgende IDs ausgeben.
 
-     ["001", "002", "002", "002"]
+```javascript
+["001", "002", "002", "002"]
+```
 
 Zum einen hat man den Root-Scope (`"001"`) und den Scope, der von `ng-view` erzeugt wird (`"002"`), wobei dieser auch noch für die Kind-Elemente (`section#todoapp`, `footer#info`) auftaucht.
 Wenn man jetzt ein Todo hinzufügt, dann erzeugt `ng-repeat` einen weiteren Scope (`"003"`).
 
-	["001", "002", "002", "003", "002"]
+```javascript
+["001", "002", "002", "003", "002"]
+```
 
 Anschließend wählen wir den Todo-Filter *Active* aus und erhalten eine andere Ausgabe für `scopeIds()`, da wir einen View-Wechsel ausgelöst haben und der `ng-view` Scope (`"004"`) und alle seine Kind-Elemente (`"005"`) neu erzeugt wurden.
 
-	["001", "004", "004", "005", "004"]
+```javascript
+["001", "004", "004", "005", "004"]
+```
 
 ## Fazit
 
