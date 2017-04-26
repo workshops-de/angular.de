@@ -18,18 +18,22 @@ Seit der Definition des [Manifests für Agile Softwareentwicklung](http://agilem
 
 Um die Tests für AngularJS zu definieren, wurde in diesem Fall das BDD-Framework [Jasmine](http://jasmine.github.io/) eingesetzt. Es nutzt eine klare und sehr einfach verständliche Syntax, die Dir das Schreiben von Tests sehr intuitiv ermöglicht. Als erstes definierst du mit der `describe(…)` Methode eine Gruppe zusammenhängender Tests. Diese Funktion nimmt zwei Parameter entgegen: Der erste Parameter ist ein String und beschreibt in natürlicher Sprache die beinhaltenden Tests. Der zweite Parameter ist eine Funktion, die alle Spezifikationen zu den Tests beinhaltet. Innerhalb dieser kann die `it(…)` Funktion genutzt werden, um die spezifische Test-Logik zu implementieren. Schauen wir uns folgendes Beispiel an:
 
-    describe('A suite', function() {
-      it('contains spec with an expectation', function() {
-        expect(true).toBe(true);
-      });
-    });
+```javascript
+describe('A suite', function() {
+  it('contains spec with an expectation', function() {
+    expect(true).toBe(true);
+  });
+});
+```
 
 
 In CoffeeScript lässt es sich noch einfacher lesen. Innerhalb dieses Artikels wird aber weiter mit JavaScript gearbeitet. Wenn Du mehr über CoffeeScript in Verbindung mit AngularJS erfahren möchtest, kannst Du das in unserem [Artikel über AngularJS in Verbindung mit CoffeeScript](/artikel/angularjs-mit-coffeescript/) nachlesen.
 
-    describe 'A suite', ->
-      it 'contains spec with an expectation', ->
-        expect(true).toBe true
+```javascript
+describe 'A suite', ->
+  it 'contains spec with an expectation', ->
+    expect(true).toBe true
+```
 
 
 ## Matcher
@@ -46,17 +50,19 @@ Jasmine bringt eine Reihe von sogenannten Matchern mit, die genutzt werden könn
 
 Wie auch in anderen XUnit Test-Frameworks bekannt, ermögtlicht uns Jasmine `setup` und `teardown` Funktionen zu definieren, die vor bzw. nach jedem Test der aktuellen Test-Suite ausgeführt werden können. Sie sind über die Methoden `beforeEach` und `afterEach` zu definieren.
 
-    describe('A suite', function() {
-      var testMe;
+```javascript
+describe('A suite', function() {
+  var testMe;
 
-      beforeEach(function() {
-        testMe = true;
-      };
+  beforeEach(function() {
+    testMe = true;
+  };
 
-      it('should be true', function() {
-        expect(testMe).toBe(true);
-      });
-    });
+  it('should be true', function() {
+    expect(testMe).toBe(true);
+  });
+});
+```
 
 
 Du kannst beliebig viele `describe(…)` Aufrufe schachteln und somit auch `setup` und `teardown` Funktionen für ganze Suites definieren.
@@ -69,71 +75,79 @@ Du kannst beliebig viele `describe(…)` Aufrufe schachteln und somit auch `setu
 
 Oft kommt es vor, dass eine Methode ein anderes Objekt über ein Interface anspricht. Nicht immer ist es gewollt oder gar möglich eine reale Implementierung des Objekts direkt zu nutzen.
 
-    function MyController($scope, restService) {
-      var authSuccessful= restService.auth('login','pass');
+```javascript
+function MyController($scope, restService) {
+  var authSuccessful= restService.auth('login','pass');
 
-      if (authSuccessful) {
-        $scope.xxx = 'yyy'
-      }
-    }
+  if (authSuccessful) {
+    $scope.xxx = 'yyy'
+  }
+}
+```
 
 
 Wollen wir die Logik dieses Controllers isoliert testen, ohne die Implementierung des *restService* indirekt mit einzubeziehen, benötigen wir ein Stub- oder Mock-Objekt. Sogenannte Stubs sind Objekte, die lediglich das Interface anbieten, jedoch keine wirkliche Implementierung beinhalten. Mocks sind Objekte, die das Verhalten eines Objektes in einem ganz bestimmten Zustand simulieren. Diese strikte Trennung von anderen Komponenten ist durchaus sinnvoll und beabsichtigt, da somit der Test komplett isoliert den einzelnen atomaren Funktionsteil testet und keine Abhängigkeiten zu der Korrektheit einer speziellen Implementierung hat. Der Mechanismus, den uns Jasmine hier anbietet, nennt sich Spies (Spione). Mit Jasmine kann man sehr einfache solche Spies erstellen. Gehen wir davon aus, dass wir ein einfaches Funktions-Objekt mit dem Namen ‘restService’ in unserem Scope haben. Wir wollen nun herausfinden, ob unsere Methode wirklich, wie wir es erwarten, die Methode C aufruft. Somit erstellen wir einen Spy auf diese Methode.
 
 ![RestService](angularjs-test-restservice-1.png)
 
-    describe('A spy', function() {
-      var foo, bar = null;
+```javascript
+describe('A spy', function() {
+  var foo, bar = null;
 
-      beforeEach(function() {
-        restService = {
-          'get': function(valueObject) {
-            return {status:200};
-          },
-          'post': function(valueObject) {
-            return {status:201};
-          },
-          'auth': function(name,password) {
-            return true;
-          }
-        };
-      });
+  beforeEach(function() {
+    restService = {
+      'get': function(valueObject) {
+        return {status:200};
+      },
+      'post': function(valueObject) {
+        return {status:201};
+      },
+      'auth': function(name,password) {
+        return true;
+      }
+    };
+  });
 
-      it('auth was called', function() {
-        spyOn(restService, 'auth');
-        restService.auth('login','password');
-        expect(restService.auth).toHaveBeenCalled();
-      });
-    });
+  it('auth was called', function() {
+    spyOn(restService, 'auth');
+    restService.auth('login','password');
+    expect(restService.auth).toHaveBeenCalled();
+  });
+});
+```
 
 
 ![RestService mit spyOn](angularjs-test-restservice-2.png)
 
 Falls wir die Aufrufe der reale Implementierung überwachen wollen, können wir dies mit `.andCallThrough()` einleiten.
 
-    it('auth was called', function() {
-      spyOn(restService, 'auth').andCallThrough();
-      var return = restService.auth('login','password');
-      expect(restService.auth).toHaveBeenCalled();
-      expect(restService.auth.calls.length).toEqual(1);
-      expect(return).toEqual(true);
-    });
+```javascript
+it('auth was called', function() {
+  spyOn(restService, 'auth').andCallThrough();
+  var return = restService.auth('login','password');
+  expect(restService.auth).toHaveBeenCalled();
+  expect(restService.auth.calls.length).toEqual(1);
+  expect(return).toEqual(true);
+});
+```
 
 
 ![RestService mit .andCallThrough()](angularjs-test-restservice-3.png)
 
 Wollen wir den Test isoliert ausführen, können wir die Implementierung der auth-Funktion simulieren und die erwartete Rückgabe definieren.
 
-    it('auth was called', function() {
-      //spyOn(restService, auth).andReturn(true);
-      spyOn(restService, 'auth').andCallFake(function(login,pass) {
-        return (login=='login' && pass=='password');
-      });
-      var return = restService.auth('login','wrongPassword');
-      expect(restService.auth).toHaveBeenCalled();
-      expect(restService.auth.calls.length).toEqual(1);
-      expect(return).toEqual(false);
-    });
+```javascript
+it('auth was called', function() {
+  //spyOn(restService, auth).andReturn(true);
+  spyOn(restService, 'auth').andCallFake(function(login,pass) {
+    return (login=='login' && pass=='password');
+  });
+  var return = restService.auth('login','wrongPassword');
+  expect(restService.auth).toHaveBeenCalled();
+  expect(restService.auth.calls.length).toEqual(1);
+  expect(return).toEqual(false);
+});
+```
 
 
 ![RestService mit .andCallFake()](angularjs-test-restservice-4.png)
@@ -142,54 +156,64 @@ Wollen wir den Test isoliert ausführen, können wir die Implementierung der aut
 
 Nun sind wir in der Lage mit Jasmine Tests zu definieren. Aber wie schaffen wir es, dass unsere Module innerhalb der Test-Funktionen nutzbar sind? Hier können wir die bereits am Anfang erwähnten Vorteile der Dependency Injection nutzen. Wir können über die `beforeEach`-Funktion unser Modul initialisieren und dann mit Hilfe der `inject`-Methode auf die gewünschten Komponenten zugreifen. Für die folgenden Test-Beispiele gehen wir von folgendem Modul aus.
 
-    angular.module('angularjsDE', [])
-      .factory('restService', function ($http) {
-        return {
-          auth: function (login,password) {
-            return (login=='login' && pass=='password');
-          },
-          get: function () {
-            return $http.get('/user');
-          }
-        }
-      });
+```javascript
+angular.module('angularjsDE', [])
+  .factory('restService', function ($http) {
+    return {
+      auth: function (login,password) {
+        return (login=='login' && pass=='password');
+      },
+      get: function () {
+        return $http.get('/user');
+      }
+    }
+  });
+```
 
 
 Wir können nun testen, ob wir unseren Service über den Inject-Mechanismus übergeben bekommen.
 
-    beforeEach(module('angularjsDE'));
+```javascript
+beforeEach(module('angularjsDE'));
 
-    it('should exist', inject(function (restService) {
-      expect(restService).toBeDefined();
-    }));
+it('should exist', inject(function (restService) {
+  expect(restService).toBeDefined();
+}));
+```
 
 
 In einem nächsten Test überprüfen wir, ob der Service die Schnittstelle `auth` korrekt implementiert.
 
-    it('should implementent a auth function', inject(function (restService) {
-      expect(restService.auth).toBeDefined();
-      expect(restService.auth('login','password')).toEqual(true);
-    }));
+```javascript
+it('should implementent a auth function', inject(function (restService) {
+  expect(restService.auth).toBeDefined();
+  expect(restService.auth('login','password')).toEqual(true);
+}));
+```
 
 
 Wir können einen Spy nutzen, um zu überprüfen, ob unsere auth-Funktion wirklich die get-Methode des $http Services aufruft. Wir erzeugen mit SpyOn + andCallThrough() einen Wrapper um die $http.get-Methode und können dann die bereits erwähnte Methode toHaveBeenCalled() nutzen. Zusätzlich müssen wir einen Spy auf unser $http registrieren.
 
-    it('should call $http.get in get', inject(function (restService,$http) {
-      spyOn($http,'get');
-      restService.get();
-      expect($http.get).toHaveBeenCalled();
-    }));
+```javascript
+it('should call $http.get in get', inject(function (restService,$http) {
+  spyOn($http,'get');
+  restService.get();
+  expect($http.get).toHaveBeenCalled();
+}));
+```
 
 
 ## Stub/Mock Objekte
 
 Möchtest Du überprüfen, ob auch tatsächlich ein GET-Request abgesendet wurde, kannst Du dies über das Mock-Objekt $httpBackend überprüfen.
 
-    it('should call $http.get in auth', inject(function (restService, $httpBackend) {
-      $httpBackend.expectGET('/user');
-      restService.get();
-      $httpBackend.flush();
-    }));
+```javascript
+it('should call $http.get in auth', inject(function (restService, $httpBackend) {
+  $httpBackend.expectGET('/user');
+  restService.get();
+  $httpBackend.flush();
+}));
+```
 
 
 Folgende Objekte sind in dem Modul *ngMock* derzeitig implementiert.
