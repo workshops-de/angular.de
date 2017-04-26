@@ -21,7 +21,9 @@ Ist euer Ionic-CLI-Projekt fertig eingerichtet, seid ihr nur ein paar kleine Sch
 
 Einfach in der Kommandozeile folgenden Befehl abfeuern:
 
-    ionic setup sass
+```shell
+ionic setup sass
+```
 
 Dieser sollte euer Projekt nun so umbauen, dass automatisch alles funktioniert :).
 
@@ -67,7 +69,7 @@ Die wohl wichtigste Datei für euch ist die *_variables.scss*. Dort sind alle Gr
 
 ### Beispiel einer SCSS-Datei
 
-```
+```css
 /*
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.

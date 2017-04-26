@@ -14,27 +14,24 @@ Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories:
 
 <hr>
 <div class="">
-    <div class="h3">Keine Lust zu Lesen?</div>
-    <div class="row mb-2">
-        <div class="col-xs-12 col-md-6">
-            <p>
-                Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und Spaß machen. Wir bieten euch auch
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+  <div class="h3">Keine Lust zu Lesen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und Spaß machen. Wir bieten euch auch
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
                     und TypeScript Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
-            </p>
-            <p class="">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
-                    <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-                </a>
-            </p>
-
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
-                 alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-        </div>
+      </p>
+      <p class="">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
     </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
 </div>
 <hr>
 
@@ -68,43 +65,49 @@ Weiter brauchen wir noch ein Einstiegspunkt unserer Anwendung. In Angular 1.X ha
 
 > **Decorator** sind strukturierte Meta-Daten einer Klasse. Ihr kennt diese vielleicht aus anderen Programmiersprachen wie z.B. Java. Das eigentliche fachliche Verhalten der Komponente bilden wir innerhalb der Klasse mit Methoden ab. Somit haben wir das Model und die Anzeige-Logik der Komponente sehr sauber getrennt.
 
-
-    @NgModule({
-      declarations: [
-        AppComponent
-      ],
-      imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule
-      ],
-      providers: [],
-      bootstrap: [AppComponent]
-    })
-    export class AppModule { }
-
+```typescript
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
 In diesem Modul definieren wir potentielle Abhängigkeiten zu anderen Modulen und die Haupt-Komponente unserer Anwendung die `AppComponent`. Angular lehnt sich deutlich mehr an die offiziellen Web-Components an und wird zu diesen kompatibel sein. Deshalb liegt es auf der Hand, dass wir einfach ein neues HTML-Element einführen welches unsere Anwendung an dieser Stelle für uns generiert. In unserem Fall unsere Pizza-Anwendung.
 
-    <pizza-root>Lädt...</pizza-root>
+```html
+<pizza-root>Lädt...</pizza-root>
+```
 
 Unsere PizzaApp-Komponente übernimmt die komplette Komposition der Anwendung. Die Basis von diesem Element ist unsere PizzaApp Klasse.
 
-    class PizzaApp {
-    }
+```typescript
+class PizzaApp {
+}
+```
 
 Unsere Komponente soll im ersten Schritt nichts weiter tun als einen `<h1>`-Tag zu erzeugen. Hierzu erweitern wir die Klasse `AppComponent` mit dem `@Component`-Decorator. Diese müssen wir jedoch erst mit einem [Import-Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) laden. Dies ist ebenfalls eine ES2015 Erweiterung welche es uns nun endlich die Modularisierung auf Sprachebene ermöglicht.
 
-    import {Component} from '@angular/core';
-    import {bootstrap} from '@angular/platform-browser-dynamic';
+```typescript
+import {Component} from '@angular/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
 
-    @Component({
-      template : `<h1>
-                      Willkommen zum
-                      Angular2 Tutorial von
-                      AngularJS.DE
-                  </h1>`
-    })
+@Component({
+  template : `<h1>
+      Willkommen zum
+      Angular2 Tutorial von
+      AngularJS.DE
+    </h1>`
+})
+```
 
 
 Um unser Template zu definieren können wir die Eigenschaft `template`nutzen. Hierzu benutzen wir ein weiteres ES2015 Feature mit dem Namen `Template Strings`.
@@ -115,28 +118,30 @@ Es es natürlich auch in Angular Möglich `templateUrl` zu benutzen, um eine HTM
 
 Als nächsten müssen wir die Meta-Daten der eigentlichen Komponente definieren. Hierbei können wir über die Eigenschaft `selector` mit Hilfe einer CSS-Selektor-Regel definieren, wann unsere Komponente angewendet werden soll.
 
+```typescript
+import {Component} from '@angular/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
 
-    import {Component} from '@angular/core';
-    import {bootstrap} from '@angular/platform-browser-dynamic';
-
-    @Component({
-      selector: 'pizza-root',
-      template : `<h1>
-                      Willkommen zum
-                      Angular2 Tutorial von
-                      AngularJS.DE
-                  </h1>`
-    })
-    export class AppComponent {
-    }
-
+@Component({
+  selector: 'pizza-root',
+  template : `<h1>
+      Willkommen zum
+      Angular2 Tutorial von
+      AngularJS.DE
+    </h1>`
+})
+export class AppComponent {
+}
+```
 
 Nun haben wir unsere [minimale Komponente](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/app/app.component.ts) bereits fast komplett fertig definiert. Was uns jetzt noch fehlt ist eine kleine Helper-Funktion die Angular uns mitliefert: Die `bootstrap` Funktion. Mit Hilfe dieser Funktion stoßen wir die Initialisierung des Modules an.
 
-    import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-    import { AppModule } from './app/';
+```typescript
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/';
 
-    platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
 
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/app/app.component.ts) app.component.ts<br>
@@ -156,25 +161,26 @@ Da sich Angular hierbei direkt an die nativen Events der DOM-Elemente hängt, k�
 So können wir mit `[style.background-color]` auf die Hintergrundfarbe eines Elements Einfluss nehmen. Diesen Wert können wir sowohl statisch als auch über dynamisch Variablen setzen. Um auf `input-Events` zu reagieren, können wir hierbei einen Listener direkt mit einer Expression erstellen.
 Wir bekommen hierbei eine Referenz auf das native Event an die Hand.
 
-    import {Component} from '@angular/core';
+```typescript
+import {Component} from '@angular/core';
 
-    @Component({
-        selector: 'pizza-root',
-        template: `
+@Component({
+  selector: 'pizza-root',
+  template: `
     <input
-        type="text"
-        (keyup)="onKeyUp()"
-        (input)="color=$event.target.value"
-        [style.background-color]="color"
-        >`
-    })
-    export class AppComponent {
-        public color: string;
-        onKeyUp() {
-            console.log('keyup: ' +
-            this.color)
-        }
-    }
+      type="text"
+      (keyup)="onKeyUp()"
+      (input)="color=$event.target.value"
+      [style.background-color]="color"
+      >`
+})
+export class AppComponent {
+  public color: string;
+  onKeyUp() {
+    console.log('keyup: ' + this.color)
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/03a-event-property-bindings/src/app/app.component.ts) für die Verwendung von Property- und Eventbinding
 
@@ -183,6 +189,7 @@ Wir können natürlich auch jedes andere Event wie keyup benutzen und die Method
 > Die Syntax `[()]` (also eckige UND runde Klammern) ist einfach nur ein Indikator, dass diese Direktive die übergebene Eigenschaft liest und ebenso schreibt. Wir werden diese im nächsten Kapitel innerhalb der Form-Direktiven verwenden. Eselsbrücken zum Merken sind `banana in a box` oder für die Fußball-Begeisterten: `Das Runde muss in das Eckige` :)
 
 ## Zwei-Wege-Datenbindung
+
 <strike>
 Möchten wir nun mit Formularen arbeiten und dort auf die bereits definierten Direktiven des Frameworks zurück greifen, haben wir die Möglichkeit diese zu importieren.
 Mit Hilfe der Eigenschaft *directives* an unser `@ComponentAnnotation` unser Komponente zur Verfügung zu stellen. Wir benutzen hierbei das Sub-Modul `FORM_DIRECTIVES`, welches uns den einzelnen Import aller Form-Direktiven deutlich vereinfacht.
@@ -190,26 +197,26 @@ Mit Hilfe der Eigenschaft *directives* an unser `@ComponentAnnotation` unser Kom
 
 Dies ist seit der Einführung von `@NgModules` nicht mehr notwendig und wird hier über den Import des `FormsModule` in unserem [AppModule](https://github.com/angularjs-de/angular2-tutorial/blob/master/03b-two-way-data-binding/src/app/app.module.ts#L14) sehr vereinfacht. Mit dem import von FormsMoule sind alle dort exportierten Direktiven direkt verfügbar.
 
+```typescript
+import {Component} from 'angular2/core';
 
-    import {Component} from 'angular2/core';
-
-    @Component({
-        selector: 'pizza-root',
-        template : `
-        <h1>
-            Angular2 Tutorial von
-            AngularJS.DE</h1>
-            <input
-               type="text"
-               [(ngModel)]="search" >
-         <p>
-             Du suchst gerade nach:
-             {{search}}
-         </p>
-    `
-    })
-    export class AppComponent {
-    }
+@Component({
+  selector: 'pizza-root',
+  template : `
+    <h1>
+        Angular2 Tutorial von
+        AngularJS.DE</h1>
+        <input
+            type="text"
+            [(ngModel)]="search" >
+      <p>
+          Du suchst gerade nach:
+          {{search}}
+      </p>`
+})
+export class AppComponent {
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/03b-two-way-data-binding/src/app/app.component.ts) zur Nutzung von ngModel
 
@@ -219,18 +226,24 @@ Unser *template* erweitern wir um ein kleines Formular, in dem wir eine Input-Bo
 
 Expressions sind viel mächtiger, als sie im ersten Moment erscheinen. Expressions erlauben uns sowohl einfache Variablen auszugeben, als auch komplexere Ausdrücke zu bilden.
 
-    {{search.toUpperCase() + "!"}}
-    {{1 + 2 + 3}}
+```html
+{{search.toUpperCase() + "!"}}
+{{1 + 2 + 3}}
+```
 
 In diesem Fall wird z.B. der Inhalt von search immer direkt in Großbuchstaben umgewandelt und ein Ausrufezeichen angehängt.
 
 Ein eleganter Anwendungsfall ist die Nutzung des ternären Operators. So kann eine abhängige Ausgabe ohne die Nutzung von *ngIf oder DOM-Manipulation geregelt werden.
 
-    {{search.length === 3 ? "ausgebucht" : "noch frei"}}
+```html
+{{search.length === 3 ? "ausgebucht" : "noch frei"}}
+```
 
 Ein anderes Beispiel ist der logische ODER-Operator.
 
-    {{search.length || 0}}
+```html
+{{search.length || 0}}
+```
 
 Es sollte jedoch trotzdem beachtet werden, dass komplexe Logik nichts im Template zu suchen hat! Wir nutzen dies hier nur um die Möglichkeiten darzustellen.
 
@@ -253,32 +266,38 @@ Grundsächlich kann man die HTML-Erweiterungen in Angular in drei Kategorien auf
 ### Components
 Das Herzstück einer Angular-Anwendung. Eine Komponente verknüpft ein Template mit einer JavaScript-Klasse über ein eigenes Element.
 
-    import {Component} from '@angular/core';
+```typescript
+import {Component} from '@angular/core';
 
-    @Component({
-        selector: 'pizza-root',
-        template: `
-        Inhalt der Komponente
-        `
-    })
-    export class AppComponent {
-        // Logic here
-    }
+@Component({
+  selector: 'pizza-root',
+  template: `
+    Inhalt der Komponente
+  `
+})
+export class AppComponent {
+  // Logic here
+}
+```
 
 Die Eigenschaft `selector` stellt den zur Komponente gehörenden HTML-Tag als CSS-Selektorregel dar. Dieser muss in den HTML-Quelltext eingebunden werden, um die Komponente auszuführen.
 
-    <body>
-      <div class="container">
-        <pizza-root>
-        </pizza-root>
-      </div>
-    </body>
+```html
+<body>
+  <div class="container">
+    <pizza-root>
+    </pizza-root>
+  </div>
+</body>
+```
 
 ### Strukturelle Template Direktiven
 Wie schon erklärt sollten strukturelle Direktiven immer dann verwendet werden, wenn der DOM verändert wird, sprich Elemente hinzugefügt oder entfernt werden sollen. Ein Beispiel dafür ist die `ngIf-Direktive`.
 
-    <button (click)="isVisible = !isVisible">anzeigen | verstecken</button>
-    <div *ngIf="isVisible">Wir sind Ihr Pizza-Dienstleister!</div>
+```html
+<button (click)="isVisible = !isVisible">anzeigen | verstecken</button>
+<div *ngIf="isVisible">Wir sind Ihr Pizza-Dienstleister!</div>
+```
 
 Die Variable `isVisible` wird als Boolean-Wert interpretiert. Falls diese auf `true` bzw `truthy` steht, wird der div-Knoten in den DOM eingehangen, andernfalls entfernt.
 
@@ -288,7 +307,9 @@ Wie wir bereits gelernt haben, gibt es Event- und Property-Bindings in Angular. 
 
 Das Asterisk-Zeichen stellt die Kurzschreibweise einer strukturellen Direktive dar. Sie stellt auch automatisch das Data-Binding her.
 
-    <pizza-list-item *ngFor="let pizza of menu"></pizza-list-item>
+```html
+<pizza-list-item *ngFor="let pizza of menu"></pizza-list-item>
+```
 
 Strukturelle Direktiven würden im erweiterten Syntax den eigenen Quellcode sehr aufblähen. Das template-Tag gibt an, dass nachfolgend ein Angular-Template folgt, welches über die Bedingung entfernt oder hinzugefügt wird.
 
@@ -297,26 +318,32 @@ Intern wandelt Angular jedoch immer die Kurzschreibweise in die ausführliche um
 ### Attribut-Direktive
 Wie der Name schon sagt, werden diese Direktiven als Attribut an ein DOM-Element geschrieben und können dessen Aussehen und/oder Verhalten verändern. Als einfaches Beispiel setzen wir die Schriftfarbe eines Elementes via einer Attribut-Direktive.
 
-    <div [style.color]="'red'">Wir sind Ihr Pizza-Dienstleister!</div>
+```html
+<div [style.color]="'red'">Wir sind Ihr Pizza-Dienstleister!</div>
+```
 
 **Tip**: Die eingebaute Direktive `ngStyle` sollte erst benutzt werden, wenn mehrere Style-Attribute gesetzt werden. Unser Beispiel würde jedoch mit ngStyle, wie folgt aussehen.
 
-    <div [ngStyle]="{'color': 'red'}">Wir sind Ihr Pizza-Dienstleister!</div>
+```html
+<div [ngStyle]="{'color': 'red'}">Wir sind Ihr Pizza-Dienstleister!</div>
+```
 
 #### Eigene Attribut-Direktive
 Als kleines Beispiel schreiben wir nun für das Ändern der Schriftfarbe eine eigene Direktive.
 
-    import {Directive, ElementRef, Renderer} from '@angular/core';
+```typescript
+import {Directive, ElementRef, Renderer} from '@angular/core';
 
-    @Directive({
-        selector: '[redFont]'
-    })
-    export class RedFontDirective {
-        constructor(el: ElementRef, renderer: Renderer) {
-            // el.nativeElement.style.color = 'red';
-            renderer.setElementStyle(el.nativeElement, 'color', 'red');
-        }
-    }
+@Directive({
+  selector: '[redFont]'
+})
+export class RedFontDirective {
+  constructor(el: ElementRef, renderer: Renderer) {
+    // el.nativeElement.style.color = 'red';
+    renderer.setElementStyle(el.nativeElement, 'color', 'red');
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/05-directives/src/app/shared/red-font.directive.ts) zur Definition einer eigenen Direktive
 
@@ -333,17 +360,18 @@ Eine Direktive wird über den Decorator `@Directive` definiert. Als wichtigste M
 
 Damit eine Direktive oder Komponente überhaupt in einem Teil unser Anwendung genutzt werden kann, muss diese dem entsprechenden Modul, indem sie benutzt werden soll, bekannt gemacht werden. Hierzu importieren wir die Direktive via `import` und übergeben über die Eigenschaft `declarations` ein Array von Direktiven-Definitionen. Somit kann eine klare Abgrenzung geschaffen werden, welche Direktive wo benutzt werden kann und auch Naming-Kollisionen vermieden oder geschickt als Konfiguration genutzt werden.
 
-    import { RedFontDirective } from './shared/red-font.directive';
+```typescript
+import { RedFontDirective } from './shared/red-font.directive';
 
-    @NgModule({
-      declarations: [
-        AppComponent,
-        RedFontDirective
-      ],
-      // ...
-    })
-    export class AppModule { }
-
+@NgModule({
+  declarations: [
+    AppComponent,
+    RedFontDirective
+  ],
+  // ...
+})
+export class AppModule { }
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/05-directives/src/app/app.module.ts#L12) für die Verwendung von Direktiven in einem Modul
 
@@ -353,35 +381,43 @@ Am Ende packen wir die Direktive - mit Hilfe des festgelegten Attributsnamen - a
 
 Wie bereits erfahren, existiert in Angular natürlich eine Direktive, die das Wiederholen von DOM-Elementen erlaubt. Im Gegensatz zu AngularJS 1 heißt diese nicht `ngRepeat`, sondern `ngFor`. Als strukturelle Direktive wird diese an einen bestehenden DOM-Knoten, wie folgt gebunden.
 
-    <div *ngFor="let number of [1, 5, 34, 47]">
-        Aktuelle Zahl ist: {{number}}
-    </div>
+```html
+<div *ngFor="let number of [1, 5, 34, 47]">
+  Aktuelle Zahl ist: {{number}}
+</div>
+```
 
 Das *-Symbol gibt an, dass es sich um eine strukturelle Direktive handelt. Das aktuelle Element der Schleife wird auf eine neue lokale Variable `number` geschrieben. Die Definition einer Variable wird über das #-Symbol ausgezeichnet. Die Liste an Elementen kann dabei natürlich auch aus einer Variable kommen.
 
-
 Ebenso, wie in AngularJS, kann auch in der zweiten Version des Frameworks auf den aktuellen Index der Schleife zugegriffen werden. Dazu erweitern wir unsere Quellcode ein wenig.
 
-    <div *ngFor="let number of [1, 5, 34, 47]; let currentIndex=index">
-        Aktuelle Zahl ist: {{number}} ({{currentIndex}})
-    </div>
+```html
+<div *ngFor="let number of [1, 5, 34, 47]; let currentIndex=index">
+  Aktuelle Zahl ist: {{number}} ({{currentIndex}})
+</div>
+```
 
 Nach der Angabe der Liste kann der aktuelle Index auf eine eigene Variable geschrieben werden, um auf sie zugreifen zu können.
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/06-loops/src/app/app.component.ts) einer Schleife im Template
 
 ## Pipes (ehemals Filter)
+
 In der neuen Angular-Version heißen Filter nun `Pipes`. Sie erlauben das Transformieren von Daten in Expressions. Pipe bedeutet im Deutschen Rohr bzw. Leitung. Viele kennen die Pipe als Operator aus der Unix-Shell, um Ausgabewerte zur weiteren Verarbeitung, Filterung oder Transformationen weiterzuleiten. Dabei können mehrere so genannter Pipes hintereinander ausgeführt werden. Wobei die Ausgabe einer Pipe die Eingabe der nächsten darstellt. In diesem Sinne trifft die neue Bezeichnung viel besser auf die eigentliche Funktionalität zu.
 
 Wie in AngularJS, gibt es auch in der Version 2 schon ein paar vordefinierte Pipes, z.B. `CurrencyPipe` zur Währungsformatierung und `DatePipe` zur Datumsformatierung.
 
 Als Beispiel wird eine Zahl im Template mit Hilfe der `CurrencyPipe` formatiert.
 
-    <span>{{10.99 | currency}}</span>
+```html
+<span>{{10.99 | currency}}</span>
+```
 
 Pipes erhalten als Eingabe den Wert vor dem `|-Symbol` und können eine Liste von weiteren Parametern entgegennehmen. Die `CurrencyPipe` kann dadurch den zu formatierenden Wert in verschiedenen Währungen, mit oder ohne Währungssymbol transformieren. Das Beispiel formatiert die Zahl nun als Euro und zeigt statt des Währungskürzels das €-Symbol.
 
-    <span>{{10.99 | currency:'EUR':true}}</span>
+```html
+<span>{{10.99 | currency:'EUR':true}}</span>
+```
 
 ### Eigene Pipes
 
@@ -389,30 +425,34 @@ Die Erstellung einer eigenen Pipe ist denkbar einfach. Ähnlich wie andere Besta
 
 Diese Pipe mit dem Namen *addTwo* addiert zur Eingabe die Zahl 2.
 
-    import {Pipe, PipeTransform} from '@angular/core';
+```typescript
+import {Pipe, PipeTransform} from '@angular/core';
 
-    @Pipe({name: 'addTwo'})
-    export class AddTwoPipe implements PipeTransform {
-        transform(number:number) : any {
-            return number + 2;
-        }
-    }
+@Pipe({name: 'addTwo'})
+export class AddTwoPipe implements PipeTransform {
+  transform(number:number) : any {
+    return number + 2;
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/07-pipes/src/app/shared/add-two.pipe.ts) zur Defintion eigener Pipes.
 
 Um unsere Pipe benutzen zu können, müssen wir diese wieder unserem Modul hinzufügen. Also die entsprechende Klasse importieren und bei `declrations` anfügen.
 
-    import { AddTwoPipe } from './shared/add-two.pipe';
+```typescript
+import { AddTwoPipe } from './shared/add-two.pipe';
 
-    @NgModule({
-      declarations: [
-        AppComponent,
-        RedFontDirective,
-        AddTwoPipe
-      ],
-      // ...
-    })
-    export class AppModule { }
+@NgModule({
+  declarations: [
+    AppComponent,
+    RedFontDirective,
+    AddTwoPipe
+  ],
+  // ...
+})
+export class AppModule { }
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/07-pipes/src/app/app.module.ts#L12) zur Nutzung von Pipes.
 
@@ -429,53 +469,57 @@ Somit können wir, ähnlich wie in AngularJS, Logik in plain JavaScript schreibe
 
 Damit die Typ-Informationen des Constructors, welche wir gleich für die Injection von anderen Services benötigen, beim der Kompilierung nicht verloren gehen, können wir mit dem Decorator `@Injectable` die Generierung dieser Metadaten erzwingen. Somit können wir auch später in der ES5 Version sicherstelle, dass wir den HTTP-Service anhand des Typs korrekt einbinden können.
 
-    import {Injectable} from '@angular/core';
+```typescript
+import {Injectable} from '@angular/core';
 
-    @Injectable()
-    export class PizzaService {
-        getPizza() {
-            return [{
-                "id": 1,
-                "name": "Pizza Vegetaria",
-                "price": 5.99
-            }, {
-                "id": 2,
-                "name": "Pizza Salami",
-                "price": 10.99
-            }, {
-                "id": 3,
-                "name": "Pizza Thunfisch",
-                "price": 7.99
-            }, {
-                "id": 4,
-                "name": "Aktueller Flyer",
-                "price": 0
-            }]
-        }
-    }
+@Injectable()
+export class PizzaService {
+  getPizza() {
+    return [{
+      "id": 1,
+      "name": "Pizza Vegetaria",
+      "price": 5.99
+    }, {
+      "id": 2,
+      "name": "Pizza Salami",
+      "price": 10.99
+    }, {
+      "id": 3,
+      "name": "Pizza Thunfisch",
+      "price": 7.99
+    }, {
+      "id": 4,
+      "name": "Aktueller Flyer",
+      "price": 0
+    }]
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/08-services/src/app/shared/pizza.service.ts) zur Defintion eines Services
 
 Als nächstes kann der Service in einer Komponente importiert und genutzt werden. Danach werden Abhängigkeiten von Services über die `providers`-Eigenschaft von `@Component` bekannt gemacht. Jetzt kann der Service in die Klasse über die `Dependency-Injection` geladen werden.
 
-    import {Component} from '@angular/core';
+```typescript
+import {Component} from '@angular/core';
 
-    import {PizzaService} from './shared/index';
+import {PizzaService} from './shared/index';
 
-    @Component({
-        selector: 'pizza-root',
-        providers: [PizzaService],
-        template: `
-        <span>Anzahl an Pizzen: {{pizzas.length}}</span>
-        `
-    })
-    export class AppComponent {
-        public pizzas = [];
+@Component({
+  selector: 'pizza-root',
+  providers: [PizzaService],
+  template: `
+    <span>Anzahl an Pizzen: {{pizzas.length}}</span>
+  `
+})
+export class AppComponent {
+  public pizzas = [];
 
-        constructor(private pizzaService: PizzaService) {
-            this.pizzas = this.pizzaService.getPizza();
-        }
-    }
+  constructor(private pizzaService: PizzaService) {
+    this.pizzas = this.pizzaService.getPizza();
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/08-services/src/app/app.component.ts) für das Importieren und Injecten eines Services
 
@@ -483,14 +527,16 @@ Durch die Angabe des Services als Provider der Component, wird beim Erstellen de
 
 Soll ein Service global - sprich anwendungsweit - verfügbar sein, kann dieser in unserem Hauptmodul der Anwendung geladen und verfügbar gemacht werden.
 
-    import { PizzaService } from './shared/pizza.service';
+```typescript
+import { PizzaService } from './shared/pizza.service';
 
-    @NgModule({
-    // ..
-      providers: [PizzaService],
-    // ...
-    })
-    export class AppModule { }
+@NgModule({
+  // ..
+  providers: [PizzaService],
+  // ...
+})
+export class AppModule { }
+```
 
 <div class="alert alert-info">Hinweis: In Angular sollte die Nutzung eines Prefixes, wie *_*, zum Visualisieren einer privaten Funktion oder Variable vermieden werden.</div>
 
@@ -499,42 +545,43 @@ Soll ein Service global - sprich anwendungsweit - verfügbar sein, kann dieser i
 
 Ein wichtiger Bestandteil von Web-Anwendungen ist die Kommunikation mit Schnittstellen. Typischerweise basieren diese Schnittstellen auf dem HTTP-Protokoll. Für diesen Zweck existiert ein `HTTP-Service` innerhalb des Angular-HTTP Modules. Dieses können wir von `@angular/http` importieren unserem AppModule hinzufügen.
 
-    import { HttpModule } from '@angular/http';
+```typescript
+import { HttpModule } from '@angular/http';
 
-    @NgModule({
-
-      // ...
-
-      imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule
-      ]
-
-      // ...
-    })
-    export class AppModule { }
+@NgModule({
+  // ...
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ]
+  // ...
+})
+export class AppModule { }
+```
 
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/09-http/src/app/app.module.ts#L16) für das benutzen des HttpModule.
 
 Für die Kommunikation mit einer Schnittstelle sollte ein eigener Service angelegt werden. Aus diesem Grund wandeln wir nun unseren Pizza-Service so ab, dass er die Angebots-Daten aus einer JSON-Datei abfragt. Diese wird über eine GET-Anfrage abgerufen. Die dann in das JSON-Format umgewandelt, um damit in der Anwendung umgehen zu können.
 
-    import {Http, Response} from '@angular/http';
-    import {Injectable} from '@angular/core';
-    import {Observable} from 'rxjs/Observable';
-    import 'rxjs/add/operator/map'; // add map function to observable
+```typescript
+import {Http, Response} from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map'; // add map function to observable
 
-    @Injectable()
-    export class PizzaService {
-        constructor(private http: Http) {
-        }
+@Injectable()
+export class PizzaService {
+  constructor(private http: Http) {
+  }
 
-        getPizza() {
-            return this.http.get('assets/pizza.json')
-                .map((res: Response) => res.json());
-        }
-    }
+  getPizza() {
+    return this.http.get('assets/pizza.json')
+      .map((res: Response) => res.json());
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/09-http/src/app/shared/pizza.service.ts) für das Senden von Http-Anfragen
 
@@ -546,28 +593,30 @@ Ein Observable ist mit [JavaScript-Promises](/buecher/angularjs-buch/angularjs-p
 
 Um ein Observable zu abonnieren, muss dessen subscribe-Funktion aufgerufen werden. Als Callback erhält diese eine Funktion, welche wiederum als Parameter geänderte oder neue Daten erhält. In unserem Fall sind das, die Pizzen aus der JSON-Datei.
 
-    import {Component} from '@angular/core';
-    import {PizzaService} from './shared/index';
+```typescript
+import {Component} from '@angular/core';
+import {PizzaService} from './shared/index';
 
-    @Component({
-        selector: 'pizza-root',
-        template: `
-        <span>Anzahl an Pizzen: {{pizzas.length}}</span>
-        `
-    })
-    export class AppComponent {
-        public pizzas = <Object>[];
+@Component({
+  selector: 'pizza-root',
+  template: `
+    <span>Anzahl an Pizzen: {{pizzas.length}}</span>
+  `
+})
+export class AppComponent {
+  public pizzas = <Object>[];
 
-        constructor(private pizzaService: PizzaService) {
-            this.loadData();
-        }
+  constructor(private pizzaService: PizzaService) {
+    this.loadData();
+  }
 
-        loadData() {
-            this.pizzaService
-                .getPizza()
-                .subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
-        }
-    }
+  loadData() {
+    this.pizzaService
+      .getPizza()
+      .subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/09-http/src/app/app.component.ts#L18-L20) zur Nutzung von Observables
 
@@ -590,27 +639,29 @@ Eine Komponente in Angular durchläuft verschiedene Zustände während der Ausf�
 
 Unser Beispiel zur Verwendung des Http-Services wird nun so erweitert, dass die Pizzen nicht direkt im Konstruktor der AppComponent abgerufen werden, sondern erst wenn die Komponente initialisiert wurde.
 
-    import {Component, OnInit} from '@angular/core';
-    import {PizzaService} from './shared/index';
+```typescript
+import {Component, OnInit} from '@angular/core';
+import {PizzaService} from './shared/index';
 
-    @Component({
-        selector: 'pizza-root',
-        template: `
-        <span>Anzahl an Pizzen: {{pizzas.length}}</span>
-        `
-    })
-    export class AppComponent implements OnInit {
-        public pizzas = <Object>[];
+@Component({
+  selector: 'pizza-root',
+  template: `
+    <span>Anzahl an Pizzen: {{pizzas.length}}</span>
+  `
+})
+export class AppComponent implements OnInit {
+  public pizzas = <Object>[];
 
-        constructor(private pizzaService: PizzaService) {
-        }
+  constructor(private pizzaService: PizzaService) {
+  }
 
-        ngOnInit() {
-            this.pizzaService
-              .getPizza()
-              .subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
-        }
-    }
+  ngOnInit() {
+    this.pizzaService
+      .getPizza()
+      .subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/10-component-lifecycle/src/app/app.component.ts) zur Implementierung eines Lifecycle-Hooks
 
@@ -625,11 +676,13 @@ Wenn Ihr weitere Informationen zu [LifeCycles in Angular2](/artikel/angular-2-co
 
 Ein Interface wird dazu meist in einer eigenen Datei über das Schlüsselwort *interface* definiert.
 
-    export interface Pizza {
-        id: number;
-        name: string;
-        price: number;
-    }
+```typescript
+export interface Pizza {
+  id: number;
+  name: string;
+  price: number;
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/11-interfaces/src/app/shared/pizza.ts) zur Definition eines Interfaces
 
@@ -637,27 +690,29 @@ Nach dem gleichen Prinzip können auch Funktionendefintionen angegeben werden. E
 
 Über das vordefinierte Wort `implements` könnt ihr in einer Klassen-Definition ein oder mehrere Interfaces angeben, die hier implementiert werden **müssen**.
 
-    import {Component} from '@angular/core';
-    import {Pizza, PizzaService} from './shared/index';
+```typescript
+import {Component} from '@angular/core';
+import {Pizza, PizzaService} from './shared/index';
 
-    @Component({
-        selector: 'pizza-root',
-        template: `
-        <span>Anzahl an Pizzen: {{pizzas?.length || 0}}</span>
-        `
-    })
-    export class AppComponent {
-        public pizzas: Pizza[];
+@Component({
+  selector: 'pizza-root',
+  template: `
+    <span>Anzahl an Pizzen: {{pizzas?.length || 0}}</span>
+  `
+})
+export class AppComponent {
+  public pizzas: Pizza[];
 
-        constructor(private pizzaService: PizzaService) {
-        }
+  constructor(private pizzaService: PizzaService) {
+  }
 
-        ngOnInit() {
-            this.pizzaService
-                .getPizza()
-                .subscribe((pizzas: Pizza[]) => this.pizzas = pizzas);
-        }
-    }
+  ngOnInit() {
+    this.pizzaService
+      .getPizza()
+      .subscribe((pizzas: Pizza[]) => this.pizzas = pizzas);
+  }
+}
+```
 
 [Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/11-interfaces/src/app/app.component.ts) zur Nutzung von Interfaces
 
@@ -672,21 +727,21 @@ Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Sl
 
 <hr>
 <div class="text-center">
-<div class="h3">Hat dir das Tutorial geholfen?</div>
-<div class="row mb-2">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-<p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a> an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten. </p>
-
-<p class="text-center">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-                    <button class="btn btn-danger">Jetzt weiter lernen</button>
-                </a>
-            </p>
-
+      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+      </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
-</div>
+  </div>
 </div>
 <hr>

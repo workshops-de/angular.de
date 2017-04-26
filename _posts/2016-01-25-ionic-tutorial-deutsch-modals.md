@@ -26,16 +26,16 @@ Ein Modal in Ionic besteht aus zwei Teilen.
 
 Damit Ionic die zusätzlichen Funktionen für den späteren Modal erzeugen kann, muss das Template des Modal von der *ionicModalView*-Direktive umschlossen werden. Danach kann ganz normal der Inhalt eingefügt werden. Dabei stehen euch alle Grundstrukturierungselemente zur Verfügung. Das bedeutet eine Header- oder Footerbar ist kein Problem. Der eigentliche scrollbare Inhalt sollte jedoch in einen *ionContent* gepackt werden.
 
-```
+```html
 <script id="myModal.html" type="text/ng-template">
-    <ion-modal-view>
-        <ion-header-bar>
-            <h1 class="title">Modal-Titel</h1>
-        </ion-header-bar>
-        <ion-content>
-            Huhu!
-        </ion-content>
-    </ion-modal-view>
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Modal-Titel</h1>
+    </ion-header-bar>
+    <ion-content>
+      Huhu!
+    </ion-content>
+  </ion-modal-view>
 </script>
 ```
 
@@ -56,12 +56,12 @@ Beide Funktionen erwarten zwei Parameter, wobei der letztere ein Konfigations-/O
 
 Als Rückgabewert liefern beide ein Promise zurück, welches mit der Modal-Instanz resolved wird, wenn der Modal erfolgreich erstellt wurde.
 
-```
+```javascript
 $ionicModal.fromTemplateUrl('myModal.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
+  scope: $scope,
+  animation: 'slide-in-up'
 }).then(function(modal) {
-    $scope.modal = modal;
+  $scope.modal = modal;
 });
 ```
 
@@ -80,29 +80,29 @@ Nun haben wir das nötige Rüstzeug, um Modals in unserer Pizza-Service-App zu v
 
 Dazu wird aus dem aboutUs-Template ein aboutUsModal-Template.
 
-```
+```html
 <ion-modal-view>
-    <ion-header-bar>
-        <div class="buttons">
-            <button class="button button-clear icon ion-android-close" ng-click="aboutModal.hide()">
-            </button>
-        </div>
-        <h1 class="title">Über uns</h1>
-    </ion-header-bar>
-    <ion-content class="padding">
-        <div>
-            Wir sind Ihr Lieferdienst, wenn es um PIZZA* geht! Dafür stehen wir mit unserem Namen.
-        </div>
-    </ion-content>
-    <ion-footer-bar>
-        <small>*ohne Ananas!</small>
-    </ion-footer-bar>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear icon ion-android-close" ng-click="aboutModal.hide()">
+      </button>
+    </div>
+    <h1 class="title">Über uns</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div>
+      Wir sind Ihr Lieferdienst, wenn es um PIZZA* geht! Dafür stehen wir mit unserem Namen.
+    </div>
+  </ion-content>
+  <ion-footer-bar>
+    <small>*ohne Ananas!</small>
+  </ion-footer-bar>
 </ion-modal-view>
 ```
 
 Als nächstes erstellen für unseren Bases-State einen eigenen Controller names **baseCtrl*** in dem wir den Modal erzeugen.
 
-```
+```javascript
 $ionicModal.fromTemplateUrl('app/templates/aboutModal.html', {
     scope: $scope
 }).then(function (modal) {
@@ -112,10 +112,10 @@ $ionicModal.fromTemplateUrl('app/templates/aboutModal.html', {
 
 Wir stellen dem baseCtrl-Scope unseren Modal zur Verfügung. Dadurch können wir direkt im Template auf die Funktionen des Modals zugreifen. Dazu tauschen wir den bisherigen Menü-Eintrag im Seitenmenü aus.
 
-```
+```html
 <a ng-click="aboutModal.show()" class="item item-icon-left" menu-close>
-    <i class="icon ion-ios-people"></i>
-    Über Uns
+  <i class="icon ion-ios-people"></i>
+  Über Uns
 </a>
 ```
 
