@@ -58,40 +58,46 @@ Für einfache Listen hat sich im Vergleich zu Ionic 1 nicht viel verändert. Es 
 
 Sind alle Dateien an Ort und Stelle laden wir unser Angebot in der `OrderComponent`. Wir wollen den `PizzaService` und die Daten in unserer gesamten App nutzen. In einer reinen Angular2 Anwendung würden wir aus diesem Grund die `providers` Eigenschaft des  `@NgModule` Decorators nutzen.
 
-    @NgModule({
-      ...
-      providers: [PizzaService]
-    })
+```javascript
+@NgModule({
+  ...
+  providers: [PizzaService]
+})
+```
 
 Danach können wir diese eine Service Instanz in jeder anderen Seite/Komponente einfach per Dependency Injection erhalten.
 
-    @Component({
-      templateUrl: 'order.component.html'
-    })
-    export class OrderComponent implements OnInit {
-      pizzas: Pizza[] = [];
+```javascript
+@Component({
+  templateUrl: 'order.component.html'
+})
+export class OrderComponent implements OnInit {
+  pizzas: Pizza[] = [];
 
-      constructor(
-        private pizzaService: PizzaService
-      ) {}
+  constructor(
+    private pizzaService: PizzaService
+  ) {}
 
-      ngOnInit() {
-        this.pizzaService.getPizzas().subscribe(pizzas => {
-          this.pizzas = pizzas;
-        });
-      }
-    }
+  ngOnInit() {
+    this.pizzaService.getPizzas().subscribe(pizzas => {
+      this.pizzas = pizzas;
+    });
+  }
+}
+```
 
 
 Im Template greifen wir nun auf unser `pizzas` Array zu. Wir definieren eine Liste mit `ionList` und für jede Pizza erzeugen wir einen Listeneintrag über `ionItem`.
 
-    <ion-content class="order">
-      <ion-list>
-        <ion-item *ngFor="let pizza of pizzas">
-          {{pizza.name}}
-        </ion-item>
-      </ion-list>
-    </ion-content>
+```html
+<ion-content class="order">
+  <ion-list>
+    <ion-item *ngFor="let pizza of pizzas">
+      {{pizza.name}}
+    </ion-item>
+  </ion-list>
+</ion-content>
+```
 
 ![Bild](medium_ionic2-simple-list.png?v=63630686993)
 
@@ -100,18 +106,20 @@ Im Template greifen wir nun auf unser `pizzas` Array zu. Wir definieren eine Lis
 
 Wir können natürlich auch ein paar Informationen zu unserer Pizza ausgeben. Dazu brauche wir nur den Inhalt des `ion-item` Tags anpassen. Als nächsten möchten wir unserer Liste noch einen Titel *Angebot* geben. Dazu nutzen wir einfach die `ionListHeader` Komponente in unserer `ionList`.
 
-    <ion-content class="order">
-      <ion-list>
-        <ion-list-header>
-          Angebot
-        </ion-list-header>
-        <ion-item *ngFor="let pizza of pizzas">
-          <span item-left text-left>{{pizza.id}}</span>
-          <h2>{{pizza.name}}</h2>
-          <p>{{pizza.price | currency:'EUR'}}</p>
-        </ion-item>
-      </ion-list>
-    </ion-content>
+```html
+<ion-content class="order">
+  <ion-list>
+    <ion-list-header>
+      Angebot
+    </ion-list-header>
+    <ion-item *ngFor="let pizza of pizzas">
+      <span item-left text-left>{{pizza.id}}</span>
+      <h2>{{pizza.name}}</h2>
+      <p>{{pizza.price | currency:'EUR'}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+```
 
 ![Bild](medium_ionic2-simple-list-header.png?v=63630703972)
 
@@ -121,14 +129,16 @@ Als nächste Funktion erweitern wir unsere App um einen [Warenkorb](https://gith
 
 In Ionic 2 wird die Positionierung von Elementen in den meisten Fällen mit `Flexbox` erledigt. Zur einfacheren Nutzung stellt das Framework Positionierungs Direktiven bereit. So könnt ihr unter anderem Schaltflächen in `ionItems` einfach durch die Attributdirektiven `item-right` und  `item-left` ausrichten.
 
-    <ion-item *ngFor="let pizza of pizzas">
-      <span item-left text-left>{{pizza.id}}</span>
-      <h2>{{pizza.name}}</h2>
-      <p>{{pizza.price | currency:'EUR'}}</p>
-      <button item-right ion-button icon-only (click)="addToCart($event, pizza)" default>
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-item>
+```html
+<ion-item *ngFor="let pizza of pizzas">
+  <span item-left text-left>{{pizza.id}}</span>
+  <h2>{{pizza.name}}</h2>
+  <p>{{pizza.price | currency:'EUR'}}</p>
+  <button item-right ion-button icon-only (click)="addToCart($event, pizza)" default>
+    <ion-icon name="cart"></ion-icon>
+  </button>
+</ion-item>
+```
 
 ![Bild](medium_ionic2-list-button.png?v=63630707241)
 
@@ -140,20 +150,22 @@ Im Warenkorb bauen wir eine Liste von Warenkorbeinträgen auf. Jeder Einträg so
 
 Ein Listeneintrag wird *slidebar* in dem wir das `ionItem` mit der `ionItemSliding` Komponente umschließen. Als Geschwisterknoten bekommt das `ionItem` nun die `ionItemOptions` Komponente. Sie kann wiederum eine Liste von Schaltflächen enthalten.
 
-    <ion-list *ngIf="cart.length">
-      <ion-item-sliding *ngFor="let item of cart; let index=index">
-        <ion-item>
-          <h2>{{item.name}}</h2>
-          <p>{{item.price | currency:'EUR'}}</p>
-        </ion-item>
-        <ion-item-options>
-          <button (click)="removeFromCart(index)" danger default ion-button icon-left>
-            <ion-icon name="trash"></ion-icon>
-            Delete
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-list>
+```html
+<ion-list *ngIf="cart.length">
+  <ion-item-sliding *ngFor="let item of cart; let index=index">
+    <ion-item>
+      <h2>{{item.name}}</h2>
+      <p>{{item.price | currency:'EUR'}}</p>
+    </ion-item>
+    <ion-item-options>
+      <button (click)="removeFromCart(index)" danger default ion-button icon-left>
+        <ion-icon name="trash"></ion-icon>
+        Delete
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+```
 
 ![Bild](medium_ionic2-list-advanced.png?v=63630707325)
 
@@ -188,38 +200,48 @@ Als Optionen können folgende Eigenschaften gesetzt werden.
 
 Im Code könnte ein Layer so erzeugt werden.
 
-    import {LoadingController} from 'ionic-angular';
-    ...
-		constructor(private loadingCtrl: LoadingController) {...}
+```javascript
+import {LoadingController} from 'ionic-angular';
+...
+constructor(private loadingCtrl: LoadingController) {...}
 
-    let loading = this.loadingCtrl.create({
-      content: 'Loading...',
-      dismissOnPageChange: true
-    });
+let loading = this.loadingCtrl.create({
+  content: 'Loading...',
+  dismissOnPageChange: true
+});
+```
 
 Damit dieser auch sichtbar wird, muss er noch über die aktuelle Seite gelegt werden. Dies geschieht über die `present` Funktion auf dem entsprechenden Overlay-Element - hier ein Loading Overlay.
 
-    loading.present();
+```javascript
+loading.present();
+```
 
 ![Bild](medium_ionic2-loading.png?v=63631401587)
 
 Ausblenden könnt ihr das Overlay über die `dismiss` Funktion.
 
-    loading.dismiss();
+```javascript
+loading.dismiss();
+```
 
 Wollt ihr beim Ausblenden noch speziellen Programmcode ausführen, dann könnt ihr dies über den `onDidDismiss` Hook tun.
 
-    loading.onDidDismiss(() => {
-	    console.log('Dismissed loading');
-	  });
+```javascript
+loading.onDidDismiss(() => {
+  console.log('Dismissed loading');
+});
 
-    loading.dismiss();
+loading.dismiss();
+```
 
 ### `ionSpinner`
 
 Zu dieser Komponente gibt es im Prinzip nicht viel zu erzählen. Wird sie ins Template geschrieben, erscheint an der entsprechenden Stelle der plattformspezifische Ladekringel.
 
-    <ion-spinner></ion-spinner>
+```html
+<ion-spinner></ion-spinner>
+```
 
 Sie kann über drei Attribute konfiguriert werden.
 
@@ -231,28 +253,32 @@ In unserem Fall wollen wir über eine `isLoading` Variable unsere Angebotsliste 
 
 Unsere OrderComponent class.
 
-    export class OrderComponent implements OnInit {
-      pizzas: Pizza[] = [];
-      isLoading = true;
-      ...
-      ngOnInit() {
-        this.pizzaService.getPizzas().subscribe(pizzas => {
-          this.pizzas = pizzas;
-          this.isLoading = false;
-        });
-      }
-    }
+```javascript
+export class OrderComponent implements OnInit {
+  pizzas: Pizza[] = [];
+  isLoading = true;
+  ...
+  ngOnInit() {
+    this.pizzaService.getPizzas().subscribe(pizzas => {
+      this.pizzas = pizzas;
+      this.isLoading = false;
+    });
+  }
+}
+```
 
 Ausschnitte des Templates und das Resultat.
 
-	<ion-content>
-	  <div text-center padding [hidden]="!isLoading">
-	    <ion-spinner></ion-spinner>
-	  </div>
-	  <ion-list [hidden]="isLoading">
-	    ...
-	  </ion-list>
-	</ion-content>
+```html
+<ion-content>
+  <div text-center padding [hidden]="!isLoading">
+    <ion-spinner></ion-spinner>
+  </div>
+  <ion-list [hidden]="isLoading">
+    ...
+  </ion-list>
+</ion-content>
+```
 
 ![Bild](medium_ionic2-spinner.png?v=63631402698)
 
@@ -286,7 +312,9 @@ Im Template wird ein Refresher über die `ionRefresher` Komponente eingebunden. 
   - **snapbackDuration** - Dauer in Millisekunden bis Refresher wieder zum Refreshing Zustand springt, default: 280
   - **enabled** - aktiviert/deaktiviert Refresher, sollte anstatt `*ngIf` genutzt werden, default: `true`
 
-    <ion-refresher></ion-refresher>
+```html
+<ion-refresher></ion-refresher>
+```
 
 Zusätzlich könnt ihr auch noch auf Zustandsänderungen reagieren (Outputs) und in bestimmten Situationen Code ausführen lassen.
 
@@ -307,12 +335,14 @@ Ein `ionRefresher` benötigt als Kind eine `ionRefresherContent` Komponente. Sie
 
 Jetzt sieht unserer Refresher schon mal nach etwas aus.
 
-    <ion-refresher>
-      <ion-refresher-content
-      pullingText="aktualisieren..."
-    >
-      </ion-refresher-content>
-    </ion-refresher>
+```html
+<ion-refresher>
+  <ion-refresher-content
+  pullingText="aktualisieren..."
+>
+  </ion-refresher-content>
+</ion-refresher>
+```
 
 Es fehlt nur noch unsere Aktualisierungslogik.
 
@@ -320,28 +350,34 @@ Es fehlt nur noch unsere Aktualisierungslogik.
 
 Um Zugriff auf den aktuellen Refresher auf einer Seite erhalten, müsst ihr für die Typisierung die `Refresher` Komponente aus Ionic importieren und im Constructor der `@Component` injizieren.
 
-    import {Refresher} from 'ionic-angular';
+```javascript
+import {Refresher} from 'ionic-angular';
+```
 
 Als nächstes benötigen wir noch eine Funktion, die unsere Daten aktualisiert und am Ende müssen wir dem Refresher Bescheid geben, dass der Aktualisierungsprozess abgeschlossen ist. Dies machen wir über die schon mehrfach erwähnte `complete` Funktion. Zugriff auf die aktuelle Refresher Instanz erhalten wir über das `$event` Objekt eines Outputs.
 
-    doRefresh(refresher: Refresher) {
-      const subscription = this.pizzaService
-        .getPizzas()
-        .subscribe(pizzas => {
-          this.pizzas = pizzas;
-          refresher.complete();
-          subscription.unsubscribe();
-      });
-    }
+```javascript
+doRefresh(refresher: Refresher) {
+  const subscription = this.pizzaService
+    .getPizzas()
+    .subscribe(pizzas => {
+      this.pizzas = pizzas;
+      refresher.complete();
+      subscription.unsubscribe();
+  });
+}
+```
 
 Im Template sieht der Aufruf der `doRefresh` folgendermaßen aus.
 
-    <ion-refresher (refresh)="doRefresh($event)">
-      <ion-refresher-content
-        pullingText="aktualisieren..."
-      >
-      </ion-refresher-content>
-    </ion-refresher>
+```html
+<ion-refresher (refresh)="doRefresh($event)">
+  <ion-refresher-content
+    pullingText="aktualisieren..."
+  >
+  </ion-refresher-content>
+</ion-refresher>
+```
 
 ![Bild](medium_ionic2-refresher.png?v=63631410058)
 
@@ -354,26 +390,32 @@ Wir wollen Cards auf den Detailseiten zu unseren Angeboten nutzen. Dazu nutzen w
 
 Jetzt müssen wir noch eine `DetailComponent` mit einem entsprechendem Template anlegen. Beim Klick auf ein Angebot soll sich ihre Detailseite anhand der `ID`  öffnen. Dort wird das entsprechende Angebot geladen und angezeigt. Die Funktion zum Navigieren in unserer Bestellseite könnte wie folgt aussehen.
 
-    openPizza(id: number) {
-      this.nav.push(DetailComponent, {
-        id: id
-      });
-    }
+```javascript
+openPizza(id: number) {
+  this.nav.push(DetailComponent, {
+    id: id
+  });
+}
+```
 
 
 Nun schauen wir uns die verschiedene Möglichkeiten an Cards zu nutzen. Eine Card wird in Ionic immer über die `ionCard` Komponente im Template genutzt.
 
-    <ion-card></ion-card>
+```html
+<ion-card></ion-card>
+```
 
 
 Im einfachsten Fall enthält eine Card nur reinen Text. Damit dieser automatisch richtig angezeigt wird, existiert die `ionCardContent` Komponente. Sie umschließt den eigentlichen Inhalt einer Card. Auf unsere Detailseite angewandt, könnte der HTML-Code ungefähr so aussehen.
 
-    <ion-card>
-      <ion-card-content>
-        <h2>{{pizza?.name}}</h2>
-        <p>Ist in unserem Angebot die Nummer {{pizza?.id}}</p>
-      </ion-card-content>
-    </ion-card>
+```html
+<ion-card>
+  <ion-card-content>
+    <h2>{{pizza?.name}}</h2>
+    <p>Ist in unserem Angebot die Nummer {{pizza?.id}}</p>
+  </ion-card-content>
+</ion-card>
+```
 
 Und das Ergebnis sieht schon mal gar nicht so schlecht aus.
 
@@ -386,25 +428,29 @@ Zum expliziten Auszeichnen eines Card-Titels stehen uns zwei Möglichkeiten zur 
 
 Wir schauen uns den jeweiligen Quellcode und das damit verbundene visuelle Resultat an. Wir beginnen mit dem `ionCardTitle`.
 
-    <ion-card>
-      <ion-card-content>
-        <ion-card-title>{{pizza?.name}}</ion-card-title>
-        <p>Ist in unserem Angebot die Nummer {{pizza?.id}}</p>
-      </ion-card-content>
-    </ion-card>
+```html
+<ion-card>
+  <ion-card-content>
+    <ion-card-title>{{pizza?.name}}</ion-card-title>
+    <p>Ist in unserem Angebot die Nummer {{pizza?.id}}</p>
+  </ion-card-content>
+</ion-card>
+```
 
 ![Bild](medium_ionic2-card-title.png?v=63631465355)
 
 Und im Vergleich dazu die Lösung mit `ionCardHeader`.
 
-    <ion-card>
-      <ion-card-header>
-        {{pizza?.name}}
-      </ion-card-header>
-      <ion-card-content>
-        <p>Ist in unserem Angebot die Nummer {{pizza?.id}}</p>
-      </ion-card-content>
-    </ion-card>
+```html
+<ion-card>
+  <ion-card-header>
+    {{pizza?.name}}
+  </ion-card-header>
+  <ion-card-content>
+    <p>Ist in unserem Angebot die Nummer {{pizza?.id}}</p>
+  </ion-card-content>
+</ion-card>
+```
 
 ![Bild](medium_ionic2-card-header.png?v=63631465403)
 
@@ -419,24 +465,26 @@ Lasst euch von ein paar Ideen aus der Ionic Dokumentation inspirieren. Gerade da
 
 Eine etwas komplexere Card für unser Angebot könnte dann so aussehen.
 
-    <ion-card *ngIf="pizza">
-      <ion-item>
-        <ion-icon name="pizza" item-left large></ion-icon>
-        <h2>{{pizza.name}}</h2>
-        <p>Ist in unserem Angebot die Nummer {{pizza.id}}</p>
-      </ion-item>
+```html
+<ion-card *ngIf="pizza">
+  <ion-item>
+    <ion-icon name="pizza" item-left large></ion-icon>
+    <h2>{{pizza.name}}</h2>
+    <p>Ist in unserem Angebot die Nummer {{pizza.id}}</p>
+  </ion-item>
 
-      <ion-card-content>
-        {{pizza.description}}
-      </ion-card-content>
+  <ion-card-content>
+    {{pizza.description}}
+  </ion-card-content>
 
-      <ion-item>
-        <span primary clear item-right>
-          <ion-icon balanced></ion-icon>
-          {{pizza.price ? (pizza.price | currency:'EUR') : 'kostenlos'}}
-        </span>
-      </ion-item>
-    </ion-card>
+  <ion-item>
+    <span primary clear item-right>
+      <ion-icon balanced></ion-icon>
+      {{pizza.price ? (pizza.price | currency:'EUR') : 'kostenlos'}}
+    </span>
+  </ion-item>
+</ion-card>
+```
 
 ![Bild](medium_ionic2-card-complex.png?v=63631466010)
 
@@ -454,37 +502,45 @@ Dort wo der Modal aufgerufen wird, erzeugen wir aus der `Component` einen Modal 
 
 Ziel dieses Abschnittes ist es aus unserer Über Uns Seite einen Modal zu machen, welcher sich beim Klick auf den Eintrag im Seitenmenü öffnet. Wir benennen deshalb die Component und die dazugehörigen Dateien um.
 
-    // about/about-modal.component.ts
-    @Component({ ... })
-    export class AboutModalComponent { ... }
+```javascript
+// about/about-modal.component.ts
+@Component({ ... })
+export class AboutModalComponent { ... }
+```
 
 Im Template ersetzen wir die `ionNavBar` mit einer ganz normalen `ionToolbar`.
 
-    // about/about-modal.component.html
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Über Uns</ion-title>
-      </ion-toolbar>
-    </ion-header>
+```html
+// about/about-modal.component.html
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Über Uns</ion-title>
+  </ion-toolbar>
+</ion-header>
+```
 
 Als nächsten Schritt müssen wir in unserer App-Klasse, die Logik zum Öffnen des Dialogs einbauen.
 
-    import {ModalController, ...} from 'ionic-angular';
-    ...
-		constructor(private modalCtrl: ModalController) {...}
-    openAboutModal() {
-      // create modal
-      const modal = this.modalCtrl.create(AboutModalComponent);
-      // open modal
-      modal.present();
-    }
+```javascript
+import {ModalController, ...} from 'ionic-angular';
+...
+constructor(private modalCtrl: ModalController) {...}
+openAboutModal() {
+  // create modal
+  const modal = this.modalCtrl.create(AboutModalComponent);
+  // open modal
+  modal.present();
+}
+```
 
 Im Template weisen wir dem Klick-Event des Über Uns Eintrags die `openAboutModal` Funktion zu.
 
-    <button ion-item menuClose (click)="openAboutModal()">
-      <ion-icon name="people"></ion-icon>
-      Über Uns
-    </button>
+```html
+<button ion-item menuClose (click)="openAboutModal()">
+  <ion-icon name="people"></ion-icon>
+  Über Uns
+</button>
+```
 
 Das Ergebnis ist schon gar nicht mal so schlecht.
 
@@ -497,30 +553,34 @@ Wir können einfach unsere `NavController` Instanz nutzen und führen ein `pop` 
 
 Es gibt aber noch eine andere Möglichkeit, die uns sogar erlaubt noch zusätzlich Daten beim Schließen aus dem Modal heraus zu übertragen. Dazu nutzen wir die `dismiss` Funktion des zum Modal gehörenden `ViewController`s. Jede Seite besitzt einen ViewController, welcher Informationen und zusätzliche Funktionen zur aktuellen View bereitstellt. Bei einem Modal nutzen wir die `dismiss` Funktion, die die View schließt und entfernt.
 
-    import {Component} from '@angular/core';
-    import {ViewController} from 'ionic-angular';
+```javascript
+import {Component} from '@angular/core';
+import {ViewController} from 'ionic-angular';
 
-    @Component({
-      templateUrl: 'about-modal.component.html'
-    })
-    export class AboutModalComponent {
-      constructor(private viewCtrl: ViewController) {}
+@Component({
+  templateUrl: 'about-modal.component.html'
+})
+export class AboutModalComponent {
+  constructor(private viewCtrl: ViewController) {}
 
-      closeModal(): void {
-        this.viewCtrl.dismiss();
-      }
-    }
+  closeModal(): void {
+    this.viewCtrl.dismiss();
+  }
+}
+```
 
 Der Schließen-Knopf könnte dann im Template so eingebaut werden:
 
-    <ion-toolbar>
-      <ion-buttons start>
-        <button (click)="closeModal()" ion-button ion-icon>
-          <ion-icon name="close"></ion-icon>
-        </button>
-      </ion-buttons>
-      <ion-title>Über Uns</ion-title>
-    </ion-toolbar>
+```html
+<ion-toolbar>
+  <ion-buttons start>
+    <button (click)="closeModal()" ion-button ion-icon>
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-title>Über Uns</ion-title>
+</ion-toolbar>
+```
 
 ![Bild](medium_ionic2-modal-close.png?v=63631469478)
 
@@ -528,21 +588,27 @@ Der Schließen-Knopf könnte dann im Template so eingebaut werden:
 
 Vorteil dabei ist, dass `dismiss` ein optionales Objekt an Daten entgegennimmt. Auf dieses kann dann auf der `Modal` Instanz über den `onDidDismiss` Hook zugegriffen werden. Es folgt ein kleines Beispiel.
 
-    modal.onDidDismiss(data => {
-      console.log(data);
-    });
+```javascript
+modal.onDidDismiss(data => {
+  console.log(data);
+});
+```
 
 ### Daten an den Modal übergeben
 
 Jetzt werden einige denken: "Toll, ich kann Daten aus dem Modal nach außen geben, aber wie bekomme ich Daten von außen in den Modal?". Nichts leichteres als dass. `this.modalCtrl.ceate()` kann mit einem optionalen zweiten Parameter ausgestattet werden. Dabei handelt es sich um ein Parameter-Objekt.
 
-    const modal = this.modalCtrl.create(AboutModalComponent, { data: 123 });
+```javascript
+const modal = this.modalCtrl.create(AboutModalComponent, { data: 123 });
+```
 
 Die Klasse unseres Modal erhält die Daten dann als Navigationsparameter, welche über die Dependency Injection geladen werden können.
 
-    constructor(params: NavParams) {
-      console.log('data', params.get('data'));
-    }
+```javascript
+constructor(params: NavParams) {
+  console.log('data', params.get('data'));
+}
+```
 
 
 ## Realisierung von Hinweisen und kurzer Nutzerabfragen
@@ -581,21 +647,23 @@ In unserer App wollen wir, wenn der Warenkorb leer ist und er aufgerufen wird, e
 
 Dazu müssen wir einmal einen `Alert` über `create()` erzeugen, ihn dann auf die aktuelle Seite legen (`Alert Instanz`, `present()`). Um den passenden Moment abzuwarten und keine störenden Effekte zu erzeugen, warten wir bis die Transition abgeschlossen ist. Dazu bietet sich der `ionicView` Lifecycle Hook `onIonicViewDidEnter` an.
 
-    import {AlertController, ...} from 'ionic-angular';
-	  ...
-		constructor(private alertCtrl: AlertController) {...}
-    ionViewDidEnter(): void {
-      if (this.cart.length) {
-        return;
-      }
+```javascript
+import {AlertController, ...} from 'ionic-angular';
+...
+constructor(private alertCtrl: AlertController) {...}
+ionViewDidEnter(): void {
+  if (this.cart.length) {
+    return;
+  }
 
-      const alert = this.alertCtrl.create({
-        title: '<b>Dein Warenkorb ist leer!</b>',
-        subTitle: 'Füge zuerst Produkte aus Unserem Angebot zu Deinem Warenkorb hinzu.',
-        buttons: ['OK']
-      });
-      alert.present();
-    }
+  const alert = this.alertCtrl.create({
+    title: '<b>Dein Warenkorb ist leer!</b>',
+    subTitle: 'Füge zuerst Produkte aus Unserem Angebot zu Deinem Warenkorb hinzu.',
+    buttons: ['OK']
+  });
+  alert.present();
+}
+```
 
 Ein Button kann auch nur über seinen Text definiert werden. Dadurch sparen wir uns Schreibarbeit.
 
@@ -607,7 +675,9 @@ Im Normalfall wird das Alert automatisch beim Klick auf einen definierten Button
 
 Eine `Alert` Instanz besitzt zusätzlich auch eine  `dismiss` Funktion, die einfach aufgerufen werden kann.
 
-    alert.dismiss();
+```javascript
+alert.dismiss();
+```
 
 ### Weitere Funktionen
 
@@ -638,17 +708,19 @@ Hier müssen wir eigentlich nicht mehr viel sagen. Es funktioniert genauso einfa
 
 In unserer App wollen wir nun beim Hinzufügen und Löschen eines Warenkorbeintrags eine `Toast` Nachricht anzeigen. Im folgenden zeigen wir dies nur an dem Beispiel des Hinzufügens. Dazu erweitern wir unsere `addToCart` Funktion in unserer `OrderComponent`.
 
-    addToCart($event, pizza: Pizza) {
-      $event.stopPropagation();
+```javascript
+addToCart($event, pizza: Pizza) {
+  $event.stopPropagation();
 
-      this.cartService.addCartItem(pizza);
-      const toast = this.toastCtrl.create({
-        message: 'Erfolgreich hinzugefügt',
-        duration: 500
-      });
+  this.cartService.addCartItem(pizza);
+  const toast = this.toastCtrl.create({
+    message: 'Erfolgreich hinzugefügt',
+    duration: 500
+  });
 
-      toast.present();
-    }
+  toast.present();
+}
+```
 
 ![Bild](medium_ionic2-toast.png?v=63631473726)
 
@@ -656,10 +728,12 @@ In unserer App wollen wir nun beim Hinzufügen und Löschen eines Warenkorbeintr
 
 Wenn keine `duration` für das automatisch Ausblenden oder kein Schließen-Button angezeigt wird, passiert das Schließen wieder ganz einfach über die `dismiss` Funktion auf dem Toast. Auch hier habt ihr die Möglichkeit auf das Schließen über den `onDidDismiss` Hook zu reagieren.
 
-    toast.onDidDismiss(() => {
-      console.log('Toast closed');
-    });
-    toast.dismiss();
+```javascript
+toast.onDidDismiss(() => {
+  console.log('Toast closed');
+});
+toast.dismiss();
+```
 
 <div class="alert alert-info"><b>Hinweis:</b> Wollt ihr schon darauf reagieren, dass ein Overlay-Element gleich geschlossen wird, gibt es auch den <code>onWillDismiss</code> Hook.</div>
 
