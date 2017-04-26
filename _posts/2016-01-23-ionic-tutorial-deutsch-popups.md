@@ -17,43 +17,43 @@ Hier bieten sich Popups gerade zu an. Sie legen sich, wie schon die vorherigen v
 In Ionic heißt die Popup-Komponente **$ionicPopup**, und ist ein Service der mit Hilfe verschiedenen Funktionen auch unterschiedliche Arten von Popups erzeugen kann.
 
  - $ionicPopup.*alert*(options)
-	 - simple Meldung mit Button zum Schließen des Popups
-	 - options:
-		 - title (String) - Titel des Popups
-		 - subTitle (String) - zweiter (Unter) Titel des Popups
-		 - cssClass (String) - CSS-Klasse für eigenes Styling
-		 - template (String) - Template als Zeichenkette
-		 - templateUrl (String) - Template aus Templatedatei/cache
-		 - okText (String) - Text der bestätigen Schaltfläche, standardmäßig "OK"
-		 - okType (String) - Button-CSS-Klasse, standardmäßig "button-positive"
+   - simple Meldung mit Button zum Schließen des Popups
+   - options:
+     - title (String) - Titel des Popups
+     - subTitle (String) - zweiter (Unter) Titel des Popups
+     - cssClass (String) - CSS-Klasse für eigenes Styling
+     - template (String) - Template als Zeichenkette
+     - templateUrl (String) - Template aus Templatedatei/cache
+     - okText (String) - Text der bestätigen Schaltfläche, standardmäßig "OK"
+     - okType (String) - Button-CSS-Klasse, standardmäßig "button-positive"
  - $ionicPopup.*confirm*(options)
-	 - simple Meldung mit Button zum Bestätigen und Schließen, und einen zum Abbrechen bzw. nur Schließen
-	 - options:
-		 - siehe *alert*
-		 - cancelText (String) - Text des Abbrechen-Buttons, standardmäßig "Cancel"
-		 - cancelType (String) - Button-CSS-Klasse, standardmäßig "button-default"
+   - simple Meldung mit Button zum Bestätigen und Schließen, und einen zum Abbrechen bzw. nur Schließen
+   - options:
+     - siehe *alert*
+     - cancelText (String) - Text des Abbrechen-Buttons, standardmäßig "Cancel"
+     - cancelType (String) - Button-CSS-Klasse, standardmäßig "button-default"
  - $ionicPopup.*prompt*(options)
-	 - simple Meldung mit Bestätigen und Schließen Button, und einem Eingabefeld
-	 - options:
-		 - siehe *confirm*
-		 - inputType (String) - Typ des Eingabefelds, standardmäßig "text"
-		 - defaultText (String) - Standartwert des Eingabfelds
-		 - inputPlaceholder (String) - Platzhaltertext, falls Typ "text"
-		 - maxLength (Integer) - maximale Länge der Zeichenkette, setzt maxlength-Attribute
+   - simple Meldung mit Bestätigen und Schließen Button, und einem Eingabefeld
+   - options:
+     - siehe *confirm*
+     - inputType (String) - Typ des Eingabefelds, standardmäßig "text"
+     - defaultText (String) - Standartwert des Eingabfelds
+     - inputPlaceholder (String) - Platzhaltertext, falls Typ "text"
+     - maxLength (Integer) - maximale Länge der Zeichenkette, setzt maxlength-Attribute
  - $ionicPopup.*show*(options)
-	 - Basisfunktion aller anderen Popup-Typen
-	 - Erstellung komplexer Popups
-	 - options:
-		 - title (String) - Titel des Popups
-		 - subTitle (String) - zweiter (Unter) Titel des Popups
-		 - cssClass (String) - CSS-Klasse für eigenes Styling
-		 - template (String) - Template als Zeichenkette
-		 - templateUrl (String) - Template aus Templatedatei/cache
-		 - scope (Object) - verlinktes Scope-Objekt
-		 - buttons (Array.Object)
-			 - Liste von Button-Objekten
-			 - Schlüssel sind *text* (String - Buttonbeschriftung), *type* (String - Button-CSS-Klasse), *onTap* (Function - Callback-Funktion, wenn Button angeklickt wurde, erhält als Parameter das Event)
-			 - soll ein Popup beim Button-Klick nicht geschlossen werden, muss in der Callback-Funktion `e.preventDefault()` ausgeführt werden!
+   - Basisfunktion aller anderen Popup-Typen
+   - Erstellung komplexer Popups
+   - options:
+     - title (String) - Titel des Popups
+     - subTitle (String) - zweiter (Unter) Titel des Popups
+     - cssClass (String) - CSS-Klasse für eigenes Styling
+     - template (String) - Template als Zeichenkette
+     - templateUrl (String) - Template aus Templatedatei/cache
+     - scope (Object) - verlinktes Scope-Objekt
+     - buttons (Array.Object)
+       - Liste von Button-Objekten
+       - Schlüssel sind *text* (String - Buttonbeschriftung), *type* (String - Button-CSS-Klasse), *onTap* (Function - Callback-Funktion, wenn Button angeklickt wurde, erhält als Parameter das Event)
+       - soll ein Popup beim Button-Klick nicht geschlossen werden, muss in der Callback-Funktion `e.preventDefault()` ausgeführt werden!
 
 Als Rückgabewert liefern alle Funktionen ein Promise. Dieses Promise hat eine zusätzliche Funktion *close()*, um das Popup programmatisch zu schließen. Generell wird das Promise resolved, wenn das Popup geschlossen wird. Durch die verschiedenen Typen erhält die Resolve-Funktion auch verschiedene Werte.
 
@@ -67,18 +67,18 @@ Dazu wird unser Cart-Controller ein wenig umgebaut, denn wir müssen jedes Mal, 
 
 Der daraus resultierende Code sieht dann wie folgt aus.
 
-```
+```javascript
 $scope.$on('$ionicView.beforeEnter', function () {
-    $scope.cart = cartService.getCart();
+  $scope.cart = cartService.getCart();
 });
 
 $scope.$on('$ionicView.enter', function () {
-    if (!$scope.cart.length) {
-        $ionicPopup.alert({
-            title: '<b>Dein Warenkorb ist leer!</b>',
-            template: 'Füge zuerst Produkte aus Unserem Angebot zu Deinem Warenkorb hinzu.'
-        });
-    }
+  if (!$scope.cart.length) {
+    $ionicPopup.alert({
+      title: '<b>Dein Warenkorb ist leer!</b>',
+      template: 'Füge zuerst Produkte aus Unserem Angebot zu Deinem Warenkorb hinzu.'
+    });
+  }
 });
 ```
 
