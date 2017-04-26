@@ -59,7 +59,7 @@ Bisher haben wir das auf “Gut Glück” nebenbei gemacht wenn wir mal was geh�
                target="_blank">
             <div class="img-wrapper">
                 <img class="img-fluid rounded"
-                     src="/artikel/angular-projekte-entwickler-finden/medium_jwimshwif14-jeff-sheldon.jpg?v=63653693977">
+                     src="medium_jwimshwif14-jeff-sheldon.jpg?v=63653693977">
             </div>
             <div class="caption">
                 <p>Projekte finden</p>
@@ -73,7 +73,7 @@ Bisher haben wir das auf “Gut Glück” nebenbei gemacht wenn wir mal was geh�
                target="_blank">
             <div class="img-wrapper">
                 <img class="img-fluid rounded"
-                     src="/artikel/angular-projekte-entwickler-finden/medium_i8ohou-wlo4-tirza-van-dijk.jpg?v=63653694269">
+                     src="medium_i8ohou-wlo4-tirza-van-dijk.jpg?v=63653694269">
             </div>
             <div class="caption">
                 <p>Entwickler finden</p>

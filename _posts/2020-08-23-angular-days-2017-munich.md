@@ -16,7 +16,7 @@ Hier eine kleine Vorschau, was euch erwartet:
 <br/><br/>
 
 <center>
-<img src="/artikel/angular-days-2016-berlin/medium_Screen-Shot-2016-09-30-at-15.08.26.png?v=63642460229"/>
+<img src="medium_Screen-Shot-2016-09-30-at-15.08.26.png?v=63642460229"/>
 </center>
 
 <br/><br/>
