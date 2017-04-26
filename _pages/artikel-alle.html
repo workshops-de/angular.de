@@ -1,14 +1,31 @@
 ---
 title: Artikelübersicht
 permalink: /artikel/alle/
+noindex: true
 ---
-
-
 
 {% for post in site.posts %}
   <li>
     <a href="{{ post.url }}">{{ post.title }}</a>
-    <span class="text-muted">von {{post.author}}</span>
+    <span class="text-muted">von {{ post.author }}</span>
+    {% if post.noindex != true and jekyll.environment == "development" %}
+      {% if post.description == undefined %}
+        <span class="text-danger">
+          Meta Description missing!
+        </span>
+      {% endif %}
+      {% if post.description.size <= 50 %}
+        <span class="text-danger">
+          Meta Description too short. ({{post.description.size}} chars). Should be more than 50 chars.
+        </span>
+      {% endif %}
+
+      {% if post.description.size > 156 %}
+        <span class="text-danger">
+          Meta Description too long ({{post.description.size}} chars). Should be less than 156 chars.
+        </span>
+      {% endif %}
+    {% endif %}
   </li>
 {% endfor %}
 
