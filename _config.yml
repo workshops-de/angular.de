@@ -8,8 +8,6 @@ permalink: /artikel/:slug/
 repository_url: "https://github.com/workshops-de/angularjs.de"
 ws_course_id: 4
 
-include: ["_posts/banners"]
-
 collections:
   books:
     output: true

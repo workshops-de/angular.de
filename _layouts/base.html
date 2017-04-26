@@ -17,7 +17,7 @@
   {% if page.noindex %}
   <meta name="robots" content="noindex, follow">
   {% else %}
-  <link rel="canonical" href="{{ site.url }}{{ page.url | split:'/' | join:'/'}}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url}}">
   {% endif %}
 
   <link rel="stylesheet" href="/assets/css/app.css">
