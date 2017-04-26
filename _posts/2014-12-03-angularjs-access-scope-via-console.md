@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/angularjs-access-scope-via-console.jpg"
 ---
 
-Dieser Artikel ist eine Fortsetzung von ["Angular in der Browser Konsole: Services"](/artikel/angularjs-access-services-via-console), in dem erklärt wurde wie man auf Angular Services in der Browser Konsole zugreift und eine Anwendung interaktiv manipulieren kann.
+Dieser Artikel ist eine Fortsetzung von ["Angular in der Browser Konsole: Services"](/artikel/angularjs-access-services-via-console/), in dem erklärt wurde wie man auf Angular Services in der Browser Konsole zugreift und eine Anwendung interaktiv manipulieren kann.
 Allerdings konnte man auch sehen, dass Änderungen an den Model-Objekten nicht direkt zu einer Aktualisierung der Anzeige geführt haben, da diese Änderungen außerhalb des `$digest()` Aktualierungszyklus vorgenommen wurden.
 Um trotzdem die Änderungen zu sehen, haben wir diesen Mechanismus von Hand ausgelöst, in dem wir andere Elemente angeklickt haben, die ebenfalls eine Aktualisierung bewirken.
 In diesem Artikel zeige ich euch, wie ihr das Scope-Objekt direkt manipulieren könnt und ihr die `$digest()` Aktualisierung von der Konsole aus auslöst.

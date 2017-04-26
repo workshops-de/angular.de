@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/angularjs-cookbook-free.jpg"
 ---
 
-[Sascha Brink](/entwickler/saschabrink) hat sein [AngularJS CookBook](https://leanpub.com/angularjs-cookbook) komplett frei zur Verfügung gestellt!
+[Sascha Brink](https://twitter.com/sascha_brink) hat sein [AngularJS CookBook](https://leanpub.com/angularjs-cookbook) komplett frei zur Verfügung gestellt!
 
 [![Sascha Brink - AngularJS Cookbook](large.jpeg)](https://leanpub.com/angularjs-cookbook)
 

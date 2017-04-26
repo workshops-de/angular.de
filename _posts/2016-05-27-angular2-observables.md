@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/angular2-observables.jpg"
 ---
 
-Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadurch von Asynchronität. Sei es nur ein Tap/Klick, oder das Abschnicken einer Anfrage an eine Schnittstelle. In unserem [Angular Einsteigertutorials](/artikel/angular2-tutorial-deutsch) sind wir schon kurz auf wichtige Punkte bezüglich der Asynchonität in Angular Anwendungen eingegangen. Natürlich steckt hinter diesem Begriff noch viel mehr, was erklärt werden kann und sollte. Daher folgt nun dieser Artikel, in dem wir uns ausschließlich mit Fragen und Problemen rundum das Thema Asynchronität beschäftigen.
+Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadurch von Asynchronität. Sei es nur ein Tap/Klick, oder das Abschnicken einer Anfrage an eine Schnittstelle. In unserem [Angular Einsteigertutorials](/artikel/angular2-tutorial-deutsch/) sind wir schon kurz auf wichtige Punkte bezüglich der Asynchonität in Angular Anwendungen eingegangen. Natürlich steckt hinter diesem Begriff noch viel mehr, was erklärt werden kann und sollte. Daher folgt nun dieser Artikel, in dem wir uns ausschließlich mit Fragen und Problemen rundum das Thema Asynchronität beschäftigen.
 
 <hr>
 <div class="">
@@ -67,7 +67,7 @@ Asynchron bedeuetet daher auch nicht blockierend, sonst würde zwei Sekunden lan
 Wie eingangs erwähnt, müssen wir uns früher oder später auch mit Asynchonronitäten in einer Angular Anwendung beschäftigen. Dabei gibt es verschiedene Möglichkeiten diese zu Erzeugen bzw. mit diesen umzugehen. Hier stoßen wir - nicht nur im Angular Kontext - auf folgende Schlagworte.
 
 - **Callback** - Funktion, die einer anderen Funktion übergeben und von dieser aus aufgerufen wird
-- **Event** - Interaktion des Nutzers (z.B. `click`), [Kommunikation zwischen Komponenten](/artikel/angular2-output-events) (`EventEmitter`)
+- **Event** - Interaktion des Nutzers (z.B. `click`), [Kommunikation zwischen Komponenten](/artikel/angular2-output-events/) (`EventEmitter`)
 - **Promise** - kapselt Asynchrone Code-Blöcke, kann erfolgreich sein oder fehlschlagen
 - **Observable** - Stream, wichtiger Bestandteil der reaktiven Programmierung
 

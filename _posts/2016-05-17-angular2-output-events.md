@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/angular2-output-events.jpg"
 ---
 
-Für das Verständnis dieses Artikels solltet ihr euch zurvor mit den Grundlagen der Angular Entwicklung befassen. Dazu bietet sich unser [Angular-Einführungstutorial](/artikel/angular2-tutorial-deutsch) an.
+Für das Verständnis dieses Artikels solltet ihr euch zurvor mit den Grundlagen der Angular Entwicklung befassen. Dazu bietet sich unser [Angular-Einführungstutorial](/artikel/angular2-tutorial-deutsch/) an.
 
 ## Events in JavaScript
 

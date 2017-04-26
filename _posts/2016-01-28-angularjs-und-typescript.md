@@ -132,7 +132,7 @@ Wir definieren eine Klasse mit dem Namen `BooksIndex`, in der es ein Attribut mi
 
       constructor (booksApi: IBooksApi) {
 
-Als nächstes folgt der `constructor()`, der automatisch aufgerufen wird wenn die Klasse instanziert wird. In den Parametern finden wir unseren Service wieder. Wir nutzen hier natürlich auch hier die [Dependency Injection](/buecher/angularjs-buch/dependecy-injection) von AngularJS. Da TypeScript den Typen aber nicht ableiten kann und `booksApi` standardmäßig vom Typ `any` wäre geben wir hier die Klasse als den Typ `IBooksApi` an. Generell werden Typen immer mit einem Nachgestellten Doppelpunkt angegeben. Im `constructor()` laden wir alle Bücher und speichern sie im eben definierten Attribute `books`.
+Als nächstes folgt der `constructor()`, der automatisch aufgerufen wird wenn die Klasse instanziert wird. In den Parametern finden wir unseren Service wieder. Wir nutzen hier natürlich auch hier die [Dependency Injection](/buecher/angularjs-buch/dependecy-injection/) von AngularJS. Da TypeScript den Typen aber nicht ableiten kann und `booksApi` standardmäßig vom Typ `any` wäre geben wir hier die Klasse als den Typ `IBooksApi` an. Generell werden Typen immer mit einem Nachgestellten Doppelpunkt angegeben. Im `constructor()` laden wir alle Bücher und speichern sie im eben definierten Attribute `books`.
 
         booksApi.all()
           .then(books => this.books = books)

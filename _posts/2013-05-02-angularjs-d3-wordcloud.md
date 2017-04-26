@@ -119,7 +119,7 @@ Mit der zweiten Option können die Elemente in einem “XML-konformen” Format 
 
 ### Option 3: Nutzung des Controller Scopes
 
-Mit der dritten Option ist es möglich, die Wörter über den Controller-Scope einzutragen und per JavaScript-Array an die Direktive zu übergeben. Über [bidirektionales Databinding](/buecher/angularjs-buch/databinding) hat die Direktive vollen Zugriff auf dieses Array. Des Weiteren können Methoden registriert werden, welche auf `click`- bzw. `hover`-Events der Elemente reagieren und im Callback das betroffene Element übergeben bekommen.
+Mit der dritten Option ist es möglich, die Wörter über den Controller-Scope einzutragen und per JavaScript-Array an die Direktive zu übergeben. Über [bidirektionales Databinding](/buecher/angularjs-buch/databinding/) hat die Direktive vollen Zugriff auf dieses Array. Des Weiteren können Methoden registriert werden, welche auf `click`- bzw. `hover`-Events der Elemente reagieren und im Callback das betroffene Element übergeben bekommen.
 
     <wordcloud
         words="words"
@@ -130,7 +130,7 @@ Mit der dritten Option ist es möglich, die Wörter über den Controller-Scope e
 
 ## Testbarkeit
 
-Aufgrund der Tatsache, dass D3 einfache SVG-Elemente nutzt, um die Visualisierungen zu erzeugen, lassen sich diese sehr angenehm testen. AngularJS bietet die globale Funktion `angular.element` an, welche eine Submenge von jQuery implementiert. Diese Submenge nennt sich [jqLite](/buecher/angularjs-buch/jquery-kompatibilitaet). Mit dieser Methode ist es sehr einfach auf Elemente im DOM über Selektoren zuzugreifen, was für die meisten Web-Entwickler eine vertraute Art der DOM-Selektion ist. Des Weiteren können die Attribute dieser Elemente abgefragt werden, um innerhalb eines Tests deren Korrektheit zu überprüfen. Um die Dependency Injection Mechanismen ebenfalls im Test nutzen zu können, bietet AngularJS uns die `inject`-Methode an. Diese erlaubt es die übergebenen Referenzen aufzulösen und die verschiedenen Services einzubinden. Hier siehst Du Auszüge aus der Test-Suite der WorldCloud Direktive:
+Aufgrund der Tatsache, dass D3 einfache SVG-Elemente nutzt, um die Visualisierungen zu erzeugen, lassen sich diese sehr angenehm testen. AngularJS bietet die globale Funktion `angular.element` an, welche eine Submenge von jQuery implementiert. Diese Submenge nennt sich [jqLite](/buecher/angularjs-buch/jquery-kompatibilitaet/). Mit dieser Methode ist es sehr einfach auf Elemente im DOM über Selektoren zuzugreifen, was für die meisten Web-Entwickler eine vertraute Art der DOM-Selektion ist. Des Weiteren können die Attribute dieser Elemente abgefragt werden, um innerhalb eines Tests deren Korrektheit zu überprüfen. Um die Dependency Injection Mechanismen ebenfalls im Test nutzen zu können, bietet AngularJS uns die `inject`-Methode an. Diese erlaubt es die übergebenen Referenzen aufzulösen und die verschiedenen Services einzubinden. Hier siehst Du Auszüge aus der Test-Suite der WorldCloud Direktive:
 
     it('should not create a svg on an empty words definition',
       inject(function ($rootScope, $compile) {

@@ -8,7 +8,7 @@ categories: "angular2 angular angular4"
 header_image: "/artikel/header_images/angular2-typescript-webinar.jpg"
 ---
 
-Als Erweiterung unserer Workshops setzen wir nun vermehrt auf Wissensvermittlung via Webinar, um das Workshop-Erlebnis unserer Teilnehmer noch weiter zu verbessern! Wir haben gemerkt, dass es so viele interessante und relevante Themen gibt und hierzu 3 Tage meist fast schon zu kurz sind. Darum gibt es nun die Möglichkeit, sich vor unseren [Workshops](/workshops/angular-intensiv) schon einiges an Vorwissen anzueignen, um dann im Workshop die richtigen Fragen stellen zu können!
+Als Erweiterung unserer Workshops setzen wir nun vermehrt auf Wissensvermittlung via Webinar, um das Workshop-Erlebnis unserer Teilnehmer noch weiter zu verbessern! Wir haben gemerkt, dass es so viele interessante und relevante Themen gibt und hierzu 3 Tage meist fast schon zu kurz sind. Darum gibt es nun die Möglichkeit, sich vor unseren [Workshops](/workshops/angular-intensiv/) schon einiges an Vorwissen anzueignen, um dann im Workshop die richtigen Fragen stellen zu können!
 
 <link href="//app.webinarjam.net/assets/css/register_button.css" rel="stylesheet">
 

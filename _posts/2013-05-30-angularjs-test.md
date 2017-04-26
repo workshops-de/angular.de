@@ -25,7 +25,7 @@ Um die Tests für AngularJS zu definieren, wurde in diesem Fall das BDD-Framewor
     });
 
 
-In CoffeeScript lässt es sich noch einfacher lesen. Innerhalb dieses Artikels wird aber weiter mit JavaScript gearbeitet. Wenn Du mehr über CoffeeScript in Verbindung mit AngularJS erfahren möchtest, kannst Du das in unserem [Artikel über AngularJS in Verbindung mit CoffeeScript](/artikel/angularjs-mit-coffeescript) nachlesen.
+In CoffeeScript lässt es sich noch einfacher lesen. Innerhalb dieses Artikels wird aber weiter mit JavaScript gearbeitet. Wenn Du mehr über CoffeeScript in Verbindung mit AngularJS erfahren möchtest, kannst Du das in unserem [Artikel über AngularJS in Verbindung mit CoffeeScript](/artikel/angularjs-mit-coffeescript/) nachlesen.
 
     describe 'A suite', ->
       it 'contains spec with an expectation', ->

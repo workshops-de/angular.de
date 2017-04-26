@@ -181,7 +181,7 @@ Wir sind davon überzeugt (und erzählen das auch gerne jedem, der es hören mö
  [11]: http://ace.c9.io
  [12]: https://github.com/angular-ui/ui-sortable
  [13]: http://angular-translate.github.io/
- [14]: /artikel/angularjs-i18n-ng-translate
+ [14]: /artikel/angularjs-i18n-ng-translate/
  [15]: http://lodash.com/
  [17]: http://momentjs.com/
  [18]: http://www.mathjax.org/
