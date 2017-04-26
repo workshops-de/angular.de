@@ -6,7 +6,7 @@ description: Lerne, was ngController ist und erstelle eine erste Liste mit ngRep
 progress: 20
 ---
 
-> **API**: [ng-controller](http://docs.angularjs.org/api/ng.directive:ngController)
+> API: [ng-controller](http://docs.angularjs.org/api/ng.directive:ngController)
 
 Applikationen, die nur in einer einzigen HTML-Datei bestehen, sind nicht sonderlich spannend. Wir erweitern unsere Applikation um einen JavaScript-Teil und fügen eine Datei `application.js` hinzu.
 
@@ -29,7 +29,7 @@ Das Bild oberhalb verdeutlicht noch einmal die Kommunikation zwischen Variablen 
 
 ## ngRepeat
 
-> **API**: [ng-repeat](http://docs.angularjs.org/api/ng.directive:ngRepeat)
+> API: [ng-repeat](http://docs.angularjs.org/api/ng.directive:ngRepeat)
 
 In echten Applikationen haben wir nicht nur einzelne Werte, sondern strukturierte Daten, häufig in Form von Listen - und Listen sind eine Stärke von AngularJS.
 
@@ -52,7 +52,7 @@ Arrays können natürlich über mehrere Ebenen zu verschachtelt werden, um somit
 
 
 ## ngClick, ngChange, ngMouse...
-> **API**:
+> API:
   [ngClick](http://docs.angularjs.org/api/ng.directive:ngClick) |
   [ngDblclick](http://docs.angularjs.org/api/ng.directive:ngDblclick) |
   [ngMouseup](http://docs.angularjs.org/api/ng.directive:ngMouseup) |
@@ -69,7 +69,7 @@ Arrays können natürlich über mehrere Ebenen zu verschachtelt werden, um somit
 <<(code/ng-click/application.js)
 
 ## Input...
-**API**:
+API:
 [ngChange](http://docs.angularjs.org/api/ng.directive:ngChange) /
 
 ngModel + ng-trim="false"

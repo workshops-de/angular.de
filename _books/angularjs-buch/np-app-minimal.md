@@ -5,7 +5,7 @@ part: Basisapplikation
 progress: 80
 ---
 
-> **API**:
+> API:
   [ng-app](http://docs.angularjs.org/api/ng.directive:ngApp) |
   [ng-model](http://docs.angularjs.org/api/ng.directive:ngModel)
 
