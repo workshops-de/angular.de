@@ -42,6 +42,7 @@ In diesem Artikel behandeln wir zunächst den 1. Teil und schauen uns den Grunda
 
 Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pizza-service "Quellcode Ionic 2 Pizza App") der in diesem Tutorial entwickelten App findet unter unserem GitHub-Account. Außerdem gibt es auch eine [Live-Vorschau](http://angularjs-de.github.io/ionic2-pizza-service/www/ "Ionic 2 Pizza App") der App.
 
+
 <hr>
 <div class="">
   <div class="h3">Keine Lust zu Lesen?</div>
@@ -49,16 +50,14 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
     <div class="col-xs-12 col-md-6">
       <p>
         Du möchtest dich oder dein ganzen Team schnellstmöglich produktive Ionic Anwendung entwickeln lassen? Dann nutze unsere
-        <a
-          target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Ionic und TypeScript Schulungen</a>. Wir haben die Konzepte des Frameworks und unsere Projekterfahrung für euch in
-          einen interaktiven Kurs gegossen.
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Ionic und TypeScript Schulungen</a>.
+        Wir haben die Konzepte des Frameworks und unsere Projekterfahrung für euch in einen interaktiven Kurs gegossen.
       </p>
       <p class="">
         <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
           <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
         </a>
       </p>
-
     </div>
     <div class="col-xs-12 col-md-6">
       <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
@@ -85,7 +84,9 @@ Wie in Ionic 1 können wir im Befehl auch noch ein vordefiniertes Template angeb
 
 Unter der Angabe des Projektnamens `ionic2-pizza-service` erzeugen wir mit diesem Kommando ein neues Ionic 2 Projekt in TypeScript.
 
-    ionic start ionic2-pizza-service blank --v2
+```shell
+ionic start ionic2-pizza-service blank --v2
+```
 
 Im Prinzip war es das auch schon. Ihr werden euch vielleicht über die im Tutorial gewählte Ordnerstruktur wundern, aber wir haben versucht uns an den [Angular 2 Style-Guide](https://angular.io/styleguide "Angular 2 Style-Guide") zu halten.
 
@@ -93,7 +94,9 @@ Im Prinzip war es das auch schon. Ihr werden euch vielleicht über die im Tutori
 
 Über den `serve`-Befehl könnt ihr die App in einem neuen Browserfenster starten. Ändert ihr eine Datei, wird dieses immer automatisch aktualisiert nachdem die Anwendung neu gebaut wurde.
 
-    ionic serve --lab
+```shell
+ionic serve --lab
+```
 
 Durch den `--lab` Parameter erhaltet ihr eine Gegenüberstellung vom Layout eurer App auf iOS und Android.
 
@@ -112,16 +115,17 @@ Die reine Ionic Entwicklung findet im `src` Verzeichnis statt. Dort werden wir u
 
 Werfen wir also den ersten Blick in das `src/app`-Verzeichnis. In diesem Kapitel ist für uns auch nur eine Datei - die `app.component.ts` interessant. Diese sollte jetzt ungefähr so aussehen. Wir haben alles Uninteressante erstmal entfernt.
 
-    import {Component} from '@angular/core';
-    ...
+```typescript
+import {Component} from '@angular/core';
 
-    @Component({
-      template: `...`,
-      ...
-    })
-    export class PizzaAppComponent {
-      ...
-    }
+@Component({
+  template: `...`,
+  // ...
+})
+export class PizzaAppComponent {
+  // ...
+}
+```
 
 So wie generell in TypeScript und Angular 2 kann ein Modul Abhängigkeiten zu anderen Modulen haben. In diesem Fall bietet uns Ionic über `ionic-angular` einen Werkzeugkasten mit allen Dingen, die wir so brauchen könnten. In unserem Falle benutzt Ionic 2 jedoch den normalen Component *Decorator*.  Diesen nutzen wir um eine Klasse als unsere Anwendung auszuzeichnen. Er nimmt Optionen entgegen, um unsere Komponente zu konfigurieren. Als Beispiel benötigt die Anwendung häufig ein Basis-Template.
 
@@ -131,24 +135,27 @@ Damit weiß Ionic jedoch noch nicht, wo es die Anwendung starten soll. Warum fun
 
 Da wir ja alles von Anfang an selbst erarbeiten wollen, ersetzen wir den gesamten Inhalt der `app.component.ts` mit einem minimalen *Hello World!* Beispiel.
 
-    import {Component} from '@angular/core';
+```typescript
+import {Component} from '@angular/core';
 
-
-    @Component({
-      template: 'Hello World!'
-    })
-    export class PizzaAppComponent {}
+@Component({
+  template: 'Hello World!'
+})
+export class PizzaAppComponent {}
+```
 
 Das ist natürlich noch nicht alles. Wir müssen unsere `PizzaAppComponent` auch beim Aufruf der Anwendung starten, damit Ionic unsere Komponente dort einhängen kann. Dazu wechseln wir in die `app.module.ts`, wo über `ionic-angular` das spezielle `IonicModule` Methode geladen werden kann. Es wird dann wie folgt in unserem Modul als import angegeben und aufgerufen.
 
-    @NgModule({
-      declarations: [...],
-      imports: [
-        IonicModule.forRoot(PizzaAppComponent)
-      ],
-      bootstrap: [IonicApp],
-      entryComponents: [...]
-    })
+```typescript
+@NgModule({
+  declarations: [...],
+  imports: [
+    IonicModule.forRoot(PizzaAppComponent)
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [...]
+})
+```
 
 Wir starten unsere Anwendung nun unter der Angabe unserer `PizzaAppComponent`.
 
@@ -162,45 +169,47 @@ So wie die App ist auch jede View in der Ionic 2 Welt eine simple Angular2 Compo
 
 Standardmäßig existiert - auch in unserem Projekt - neben dem `app` Verzeichnis ein Ordner mit dem Namen `pages`. Hier liegen alle bereits vordefinierten Seiten.
 
-  - Entfernt die Inhalte des `pages` Ordner
+- Entfernt die Inhalte des `pages` Ordner
 
 Als nächstes definieren wir unsere zukünftige Startseite der Anwendung im `pages` Ordner. Sie wird später die Bestell-View werden. Dazu legen wir einen neuen Ordner mit dem Namen `order` an. In `pages` liegen alle Routen, die später nicht von uns manuell, sondern automatisch von Ionic 2 angezeigt werden. Wir laden diese sozusagen nicht selbst im Template, sondern das übernimmt für uns später vorgestellte Navigation.
 
-<div class="alert alert-info"><b>Hinweis:</b> Eine Seite in Ionic2 ist einfach eine Angular2 <code>@Component</code>.</div>
+<div class="alert alert-info">Hinweis: Eine Seite in Ionic2 ist einfach eine Angular2 <code>@Component</code>.</div>
 
 In unserem neuen Ordner erstellen wir eine Datei  mit dem Namen `order.component.ts`. Ein Dateiname sollte eindeutig sein. Aus diesem Grund folgt nach dem eigentlichen Namen noch der Typ, des darin enthaltenen Inhalts.
 
 Fügt den nun folgenden Code in unsere `order.component.ts` ein.
 
-    import {Component} from '@angular/core';
+```typescript
+import {Component} from '@angular/core';
 
-
-    @Component({
-      template: `<ion-content><b>Hello</b> World!</ion-content>`
-    })
-    export class OrderComponent {}
+@Component({
+  template: `<ion-content><b>Hello</b> World!</ion-content>`
+})
+export class OrderComponent {}
+```
 
 Das war auch schon alles. `Component` erhaltet ihr wieder über einen Import aus `@angular/core`. Danach setzt ihr den Decorator über eure Klasse. Dabei sollte der Name der Klasse dem Vorbild des Dateinamens folgen und wird aus eigentlichem Namen + Typ zusammengesetzt.
 
-<div class="alert alert-info"><b>Beachte:</b> Schreibt Dateinamen immer klein. Habt ihr einen längeren Namen in camelCase/PascalCase, dann schreibt alles klein und trennt die Worte durch einen Bindestrich (<i>kebap-case</i>).</div>
+<div class="alert alert-info">Beachte: Schreibt Dateinamen immer klein. Habt ihr einen längeren Namen in camelCase/PascalCase, dann schreibt alles klein und trennt die Worte durch einen Bindestrich (<i>kebap-case</i>).</div>
 
-<div class="alert alert-info"><b>Beachte:</b> Alle `Pages` müssen im `@NgModule` als `entryComponents` registriert werden.</div>
+<div class="alert alert-info">Beachte: Alle `Pages` müssen im `@NgModule` als `entryComponents` registriert werden.</div>
 
 Unsere Seite hat als Template einfach nur die Zeichenkette "_**Hello** World!!_" und wird von einer Ionic-Direktive umschlossen, die euch im nächsten Kapitel näher erklärt wird. Damit sind wir aber noch nicht am Ende. Bisher weiß unsere App ja gar nichts von der neuen Seite.
 
 Wir müssen diese der App bekannt machen und als Startseite setzen. Dazu gehen wir in unsere `app.component.ts` und ersetzen ihren Inhalt mit folgenden Zeilen.
 
-    ...
+```typescript
+//...
 
-    import {OrderComponent} from '../pages/order/order.component';
+import {OrderComponent} from '../pages/order/order.component';
 
-
-    @Component({
-      template: '<ion-nav [root]="rootPage"></ion-nav>'
-    })
-    export class PizzaAppComponent {
-      rootPage: any = OrderComponent;
-    }
+@Component({
+  template: '<ion-nav [root]="rootPage"></ion-nav>'
+})
+export class PizzaAppComponent {
+  rootPage: any = OrderComponent;
+}
+```
 
 Zusätzlich zum `Component` Decorator importieren wir jetzt unsere Seite. Außerdem schaffen wir im Template über `ionNav` einen Einstiegspunkt in unsere zukünftige Navigation. Über das Attribute `root` setzen wir sozusagen die Wurzel und somit unsere Startseite. Damit unsere `OrderComponent` genutzt wird, speichern wir die Klasse auf eine im Template verfügbare Variable.
 
@@ -223,34 +232,35 @@ Im vorherigen Abschnitt haben wir bereits die `ionContent` Komponente benutzt. S
 
 Wir erweitern unsere Startseite nun so, dass wir unseren Inhalt scrollen können. Am Ende und am Anfang bauen wir eine Schaltfläche ein, die nach oben bzw. nach unten scrollt.
 
-    import {Component, ViewChild} from '@angular/core';
-    import {Content} from 'ionic-angular';
+```typescript
+import {Component, ViewChild} from '@angular/core';
+import {Content} from 'ionic-angular';
 
+@Component({
+  template: `
+  <ion-content>
+    <button ion-button (click)="scrollToBottom()">To Bottom</button>
+    <div style="height: 2000px;">
+      <b>Hello</b> World!
+    </div>
+    <b>on bottom</b>
+    <button ion-button (click)="scrollToTop()">To Top</button>
+  </ion-content>`
+})
+export class OrderComponent {
+  @ViewChild(Content) content: Content;
 
-    @Component({
-      template: `
-      <ion-content>
-        <button ion-button (click)="scrollToBottom()">To Bottom</button>
-        <div style="height: 2000px;">
-          <b>Hello</b> World!
-        </div>
-        <b>on bottom</b>
-        <button ion-button (click)="scrollToTop()">To Top</button>
-      </ion-content>`
-    })
-    export class OrderComponent {
-      @ViewChild(Content) content: Content;
+  scrollToTop() {
+    this.content.scrollToTop();
+  }
 
-      scrollToTop() {
-        this.content.scrollToTop();
-      }
+  scrollToBottom() {
+    this.content.scrollToBottom();
+  }
+}
+```
 
-      scrollToBottom() {
-        this.content.scrollToBottom();
-      }
-    }
-
-![Bild](medium_ionic2-scroll.png?v=63630618004)
+![Bild](medium_ionic2-scroll.png)
 
 Auf unserem `content` Objekt stehen neben den Scroll-Funktionen noch weitere zur Verfügung, die wir hier kurz auflisten. Ihre genaue Anwendung findet ihr in der Ionic 2 Dokumentation.
 
@@ -274,37 +284,43 @@ Als Inhalt kann eine Toolbar eine Vielzahl verschiedener Informationen und Funkt
 
 Damit unsere Klasse nicht zu aufgebläht wird, lagern wir unser Template in eine extra Datei mit dem Namen *order.component.html* aus und ersetzen im `@Component` `template` mit `templateUrl`. Der Pfad zeigt dann auf die gebaute Variante der App.
 
-    @Component({
-      templateUrl: 'order.component.html'
-    })
+```typescript
+@Component({
+  templateUrl: 'order.component.html'
+})
 
-	...
+//...
+```
 
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Pizza App</ion-title>
-      </ion-toolbar>
-      <ion-toolbar position="top">
-        <ion-searchbar></ion-searchbar>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content padding>
-      <b>Hello</b> World!
-    </ion-content>`
+```html
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pizza App</ion-title>
+  </ion-toolbar>
+  <ion-toolbar position="top">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <b>Hello</b> World!
+</ion-content>`
+```
 
 ![Bild](medium_ionic2-toolbar.png?v=63630617952)
 
 Ein wichtiger Anwendungsfall ist das Ausrichten von Schaltflächen. Dies funktioniert ähnlich zu Ionic 1. Über die Komponente `ionButtons` lassen sich diese unter Angabe der Position anordnen. Damit aus einem normalen Link oder einer Schaltfläche ein Ionic-Button wird, sollten wir die Direktive `ion-button` an die Schaltflächen schreiben.
 
-    <ion-toolbar>
-      <ion-buttons start>
-        <button ion-button>Left</button>
-      </ion-buttons>
-      <ion-title>Pizza App</ion-title>
-      <ion-buttons end>
-        <button ion-button>Right</button>
-      </ion-buttons>
-    </ion-toolbar>
+```html
+<ion-toolbar>
+  <ion-buttons start>
+    <button ion-button>Left</button>
+  </ion-buttons>
+  <ion-title>Pizza App</ion-title>
+  <ion-buttons end>
+    <button ion-button>Right</button>
+  </ion-buttons>
+</ion-toolbar>
+```
 
 Mit Ionic 2 ist es auch möglich, dass der Inhalt des `ionContent` hinter der Kopfzeile entlang scrollt. Dies macht vor allem mit einer transparenten Kopfzeile etwas her. Dazu setzt ihr am `ionContent` einfach das Attribut `fullscreen` auf true.
 
@@ -316,15 +332,16 @@ Das Herzstück eine App ist ihre Navigation. Sie sollte gut durchdacht und einfa
 
 Auch er ist wieder über `ionic-angular` verfügbar. Per Abhängigkeit kann die aktuelle Instanz von diesem in eine Seiten `Component` injiziert werden.
 
-    import {NavController} from 'ionic-angular';
+```typescript
+import {NavController} from 'ionic-angular';
 
-
-    @Component({
-      templateUrl: 'order.component.html'
-    })
-    export class OrderComponent {
-      constructor (private nav: NavController) {}
-    }
+@Component({
+  templateUrl: 'order.component.html'
+})
+export class OrderComponent {
+  constructor (private nav: NavController) {}
+}
+```
 
 Dieser `NavController` erlaubt uns mittels den Funktionen:
 
@@ -335,117 +352,138 @@ Dieser `NavController` erlaubt uns mittels den Funktionen:
 
 den Navigations-Stack zu manipulieren. Alle weiteren Funktionen findet ihr in der [NavController Dokumentation](http://ionicframework.com/docs/v2/api/components/nav/NavController/#setRoot "NavController Dokumentation").
 
-<div class="alert alert-danger"><b>Achtung:</b> Falls ihr den NavController auch in eurer <code>App Component</code> Klasse benötigt, ist dieser erst nach dem Initialisieren verfügbar und kann nicht einfach per Dependency Injection geladen werden! Nutzt als Alternative <code>@ViewChild</code> aus Angular2 und <code>Nav</code> aus *ionic-angular*</div>
+<div class="alert alert-danger">Achtung: Falls ihr den NavController auch in eurer <code>App Component</code> Klasse benötigt, ist dieser erst nach dem Initialisieren verfügbar und kann nicht einfach per Dependency Injection geladen werden! Nutzt als Alternative <code>@ViewChild</code> aus Angular2 und <code>Nav</code> aus *ionic-angular*</div>
 
 Benötigt ihr den NavController bereits in der App-Definition/Klasse ist es nicht ganz so einfach. Denn erst nach dem Initialisieren der Anwendung und ihrer Kind-Komponenten ist die Navigation bereit. Damit ihr trotzdem Zugriff darauf bekommt, könnt ihr euch einen Angular 2 Decorator zu Nutze machen. Über `@ViewChild` bekommt ihr Zugriff auf eine Kind-Komponente. Da die Navigation eine besondere Kind-Komponente unser App ist, können wir diese laden.
 
 Zur Typisierung stellt Ionic die Navigation-Komponente über `Nav` bereit.
 
-    import {Nav} from 'ionic-angular';
+```typescript
+import {Nav} from 'ionic-angular';
 
-    @Component({
-      template: '<ion-nav id="my-nav" [root]="rootPage"></ion-nav>'
-    })
-    export class PizzaServiceComponent implements AfterViewInit {
-      @ViewChild(Nav) nav: Nav;
+@Component({
+  template: '<ion-nav id="my-nav" [root]="rootPage"></ion-nav>'
+})
+export class PizzaServiceComponent implements AfterViewInit {
+  @ViewChild(Nav) nav: Nav;
 
-      constructor(private app: App) {}
-    }
+  constructor(private app: App) {}
+}
+```
 
 
 ### Einhangspunkte für Inhalte und Seiten
 
 Damit überhaupt navigiert werden kann, müssen wir einen Einhangspunkt in unserer App definieren. Dort wird der Inhalt beim Seitenwechsel ausgetauscht. Wir schauen uns dazu unsere `app.component.ts` nochmals an. Im Template finden wir bereits die `ionNav` Komponente. Sie erlaubt uns dies und lässt uns auch die Startseite über das *Input* `root` setzen.
 
-    @Component({
-      template: '<ion-nav [root]="rootPage"></ion-nav>'
-    })
-    export class PizzaServiceApp {
-      rootPage: any = OrderComponent;
-    }
+```typescript
+@Component({
+  template: '<ion-nav [root]="rootPage"></ion-nav>'
+})
+export class PizzaServiceApp {
+  rootPage: any = OrderComponent;
+}
+```
 
 ### Definition einer Navigationsleiste
 
 Als letzten Schritt zeichnen wir die oberste Toolbar in unserer `OrderComponent` als `NavBar` aus. Sie ist eine Erweiterung zur Nutzung eines automatisch eingeblendeten Zurück-Knopfes und des speziellen Verhaltens beim Seitenwechsels pro Plattform.
 
-    <ion-header>
-      <ion-navbar>
-        <ion-title>Pizza App</ion-title>
-      </ion-navbar>
-    </ion-header>
+```html
+<ion-header>
+  <ion-navbar>
+    <ion-title>Pizza App</ion-title>
+  </ion-navbar>
+</ion-header>
+```
 
 ### Navigieren innerhalb der App
 
 Damit wir auch sicher gehen können, dass alles richtig funktioniert, erstellen wir eine weitere Datei in einem neuen Verzeichnis `about` mit dem Namen `about.component.ts`. Sie enthält eine Seite nur mit einem Template, welches wiederum Information zu unserem Pizza Service beinhalten soll.
 
-    import {Component} from '@angular/core';
+```typescript
+import {Component} from '@angular/core';
 
-    @Component({
-      templateUrl: 'about.component.html'
-    })
-    export class AboutComponent {
-      constructor() {}
-    }
+@Component({
+  templateUrl: 'about.component.html'
+})
+export class AboutComponent {
+  constructor() {}
+}
+```
 
 Das Template könnte wie folgt aussehen.
 
-    <ion-header>
-      <ion-navbar>
-        <ion-title>Über Uns</ion-title>
-      </ion-navbar>
-    </ion-header>
+```html
+<ion-header>
+  <ion-navbar>
+    <ion-title>Über Uns</ion-title>
+  </ion-navbar>
+</ion-header>
 
-    <ion-content padding>
-      Wir sind Ihr Lieferdienst, wenn es um PIZZA* geht! Dafür stehen wir mit unserem Namen.
-    </ion-content>
+<ion-content padding>
+  Wir sind Ihr Lieferdienst, wenn es um PIZZA* geht! Dafür stehen wir mit unserem Namen.
+</ion-content>
 
-    <ion-footer>
-      <ion-toolbar>
-        <small>*ohne Ananas!</small>
-      </ion-toolbar>
-    </ion-footer>
+<ion-footer>
+  <ion-toolbar>
+    <small>*ohne Ananas!</small>
+  </ion-toolbar>
+</ion-footer>
+```
 
 An dieser Stelle wollen wir auch `barrels` nutzen. Dadurch werden alle Exporte in einem Verzeichnis in einer Datei gesammelt. Dazu erstellen wir im `about` Ordner eine `index.ts`, die unsere `AboutComponent` exportiert.
 
-    export {AboutComponent} from './about.component.ts';
+```typescript
+export {AboutComponent} from './about.component.ts';
+```
 
 Nun importieren wir die Seite in unsere `OrderComponent`.
 
-    import {AboutComponent} from '../about/index';
+```typescript
+import {AboutComponent} from '../about/index';
+```
 
 Jetzt nutzen wir diese, um mittels einer Schaltfläche zu ihr zu navigieren. Dabei können wir den `NavController` nutzen oder Ionics `navPush` Direktive. Sie nimmt eine `Component` Klasse entgegen, um zu dieser zu navigieren.
 Zunächst machen wir die `AboutComponent` in der `OrderComponent` verfügbar.
 
-    // OrderComponent class
-    import {AboutComponent} from '../about/index';
+```typescript
+// OrderComponent class
+import {AboutComponent} from '../about/index';
 
-    @Component(...)
-    export class OrderComponent {
-      aboutComponent = AboutComponent;
+@Component(...)
+export class OrderComponent {
+  aboutComponent = AboutComponent;
 
-      constructor(...) {...}
-      ...
-    }
+  constructor(...) {...}
+}
+```
 
 Jetzt können wir `aboutComponent` im Template nutzen.
 
-    <button [navPush]="aboutComponent">Über Uns</button>
+```html
+<button [navPush]="aboutComponent">Über Uns</button>
+```
 
 Mit der `navParams` Direktive können auch mögliche Seitenparameter gesetzt werden.
 
-    <button [navPush]="aboutComponent" [navParams]="optionalParams">Über Uns</button>
+```html
+<button [navPush]="aboutComponent" [navParams]="optionalParams">Über Uns</button>
+```
 
 Natürlich existiert als Gegenstück auch eine `navPop` Direktive, um einfach selbst einen Zurückknopf zu definieren.
 
 Wir entscheiden uns aber hier für den programmatischen Weg und navigieren mittels `NavController` zu unserer *Über Uns* Seite.
 
-    export class OrderComponent {
-      constructor(private nav: NavController) {}
+```typescript
+export class OrderComponent {
+  constructor(private nav: NavController) {}
 
-      openAbout() {
-        this.nav.push(AboutComponent);
-      }
-    }
+  openAbout() {
+    this.nav.push(AboutComponent);
+  }
+}
+```
 
 ![Bild](medium_ionic2-nav1.png?v=63630617647)
 
@@ -455,31 +493,35 @@ Wir ihr sicher gemerkt habt, findet der Seitenwechsel mit der von der Plattform 
 
 In manchen Fällen müsst ihr darauf warten, dass der Seitenwechsel bzw. das Navigieren zu einer Seite abgeschlossen wurde. Als Beispiel habt ihr gerade ein Modal geöffnet. Nun wird dieses beim Klick auf eine Schaltfläche geschlossen. Zusätzlich wollt ihr jedoch auch noch zu einer anderen Seite navigieren. Hier könnt ihr euch zu nutze machen, dass viele Funktionen des `NavControllers`, wie `push`, `setRoot`, `present`, `pop`, Promises zurückgeben. Diese werden dann aufgelöst, wenn die Navigationsoperation abgeschlossen ist.
 
-    // begin the first transition
-    let navTransition = this.nav.push(SomeComponent);
+```typescript
+// begin the first transition
+let navTransition = this.nav.push(SomeComponent);
 
-    // do something else - like api calls
-    someAsyncOperation().then(() => {
-      // if operation is faster than transition --> wait!
-      navTransition.then(() => {
-        this.nav.push(AnotherComponent);
-      });
-    });
+// do something else - like api calls
+someAsyncOperation().then(() => {
+  // if operation is faster than transition --> wait!
+  navTransition.then(() => {
+    this.nav.push(AnotherComponent);
+  });
+});
+```
 
 ### Navigation mit Parametern
 
 Programmatischen Zugriff auf die übergebenen Navigationsparameter erhaltet ihr über den `NavParams` Service. Einmal eingebunden, könnt ihr über seine `get` Funktion und unter der Angabe des Parameters den Wert abfragen.
 
-    import {NavParams, ...} from 'ionic-angular';
+```typescript
+import {NavParams, ...} from 'ionic-angular';
 
-    ...
-    export class MyComponent {
-      constructor(params: NavParams){
-        this.params = params;
-        // id is a number in navigation parameters
-        this.params.get('id');
-      }
-    }
+...
+export class MyComponent {
+  constructor(params: NavParams){
+    this.params = params;
+    // id is a number in navigation parameters
+    this.params.get('id');
+  }
+}
+```
 
 Dies werden wir später benötigen, wenn wir eine Detailansicht für unser Pizza-Angebot bauen.
 
@@ -508,37 +550,40 @@ In vielen Apps reichen Tabs als Grundnavigationselement nicht aus. Sei es aufgru
 
 Hauptbestandteil des ganzen ist dabei die `ionMenu` Komponente. Sie zeichnet die Definition unseres Seitenmenüs im Template aus. Sein Inhalt wird weiterhin von einer `ionContent` Komponente umschlossen. Es ist natürlich auch möglich über `ionToolbar` Komponenten zusätzliche Kopf- und Fußzeilen einzufügen.
 
-    <ion-menu>
-      <ion-header>
-	      <ion-toolbar>
-  	      <ion-title>Menü</ion-title>
-        </ion-toolbar>
-      </ion-header>
+```html
+<ion-menu>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menü</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-      <ion-content>
-      </ion-content>
-
-    </ion-menu>
+  <ion-content>
+  </ion-content>
+</ion-menu>
+```
 
 Damit das Menü aber funktionieren kann, muss es neben unserer `ionNav` liegen. Es ist eng mit der Navigation verbunden, wodurch es sogar noch unseren `ionNav` Knoten benötigt, um sich daran auszurichten und zusätzliche Funktionen, wie das Öffnen bzw. Schließen des Menüs durch das Ziehen bzw. Schieben am normalen App Inhalt bereitzustellen. Dafür müssen wir das `content` @Input von `ionMenu` setzen. Mittels einer lokalen Template-Variablen können wir uns das `ionNav` Element zwischenspeichern und `content` zuweisen.
 
 Das Template unserer Anwendung sieht dann wie folgt aus.
 
-    <ion-menu [content]="content">
+```html
+<ion-menu [content]="content">
 
-      <ion-header>
-	      <ion-toolbar>
-  	      <ion-title>Menü</ion-title>
-        </ion-toolbar>
-      </ion-header>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menü</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-      <ion-content>
-      </ion-content>
+  <ion-content>
+  </ion-content>
 
-    </ion-menu>
+</ion-menu>
 
-    <ion-nav [root]="rootPage" #content>
-    </ion-nav>
+<ion-nav [root]="rootPage" #content>
+</ion-nav>
+```
 
 Zieht ihr jetzt am Inhalt der Startseite, sollte sich langsam auf der linken Seite das Menü auffahren.
 
@@ -552,9 +597,11 @@ Standardmäßig wird ein Menü auf der linken Seite eingefügt. Es spricht aber 
 
 Jetzt wäre es ja doch auch schön, wenn wir über ein Menü-Icon in der Kopfzeile unserer Startseite das Menü öffnen und schließen könnten. Dazu gehen wir in das Template der Bestellseite und fügen in die Navigationsleiste eine Schaltfläche ein und setzen an ihr die Direktive `menuToggle`. Sie sucht sich, wenn nicht weiter spezifiziert, das passende Menü und öffnet bzw. schließt es.
 
-    <button menuToggle ion-button icon-only>
-      <ion-icon name='menu'></ion-icon>
-    </button>
+```html
+<button menuToggle ion-button icon-only>
+  <ion-icon name='menu'></ion-icon>
+</button>
+```
 
 Falls ihr mehrere Seitenmenüs habt, könnt ihr `menuToggle` noch einen Wert mitgeben, der entweder für die gesetzt `side` oder `id` eines Menüs steht.
 
@@ -574,13 +621,15 @@ Neben der `menuToggle` existiert auch noch die `menuClose` Direktive. Benutzt ih
 
 Als letztes müssen wir nur noch klären, wie wir auch programmatischen Zugriff auf Menüs bekommen. Nicht allzu selten müssen wir ein Menü programmatisch schließen oder öffnen, deaktivieren bzw. aktivieren oder mit mehreren Menüs umgehen. Für diese Zwecke stellt uns Ionic den `MenuController` zur Verfügung.
 
-    import { MenuController} from 'ionic-angular';
+```typescript
+import { MenuController} from 'ionic-angular';
+```
 
 Dieser besitzt folgende Funktionen. Der `[id]` Parameter ist optional und wird nur benötigt, wenn ihr mehrere Seitenmenüs habt. In solchen Fällen könnt ihr die am `ionMenu` gesetzte `id` nutzen, um Zugriff auf ein bestimmtes Zugriff zu bekommen.
 
   - open([id])
     - öffnet ein Menü
-	  - gibt Promise zurück, wenn Menü geöffnet wurde
+    - gibt Promise zurück, wenn Menü geöffnet wurde
   - close([id])
     - schließt ein Menü
     - gibt Promise zurück, wenn Menü geschlossen wurde
@@ -626,21 +675,21 @@ Viel Spaß beim Ausprobieren und Entwickeln der eigenen App!
 
 <hr>
 <div class="text-center">
-<div class="h3">Hat dir das Tutorial geholfen?</div>
-<div class="row mb-2">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-<p> Noch schneller lernen geht nur in unseren <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Ionic und TypeScript Schulungen</a>. In kleinen Gruppen bieten wir öffentliche und Inhouse Schulungen an, um dich möglichst effektiv in das Thema Ionic zu begleiten. </p>
-
-<p class="text-center">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-                    <button class="btn btn-danger">Jetzt weiter lernen</button>
-                </a>
-            </p>
-
+      <p> Noch schneller lernen geht nur in unseren <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Ionic und TypeScript Schulungen</a>.
+        In kleinen Gruppen bieten wir öffentliche und Inhouse Schulungen an, um dich möglichst effektiv in das Thema Ionic
+        zu begleiten. </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
-</div>
+  </div>
 </div>
 <hr>
