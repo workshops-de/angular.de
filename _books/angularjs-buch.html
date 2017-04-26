@@ -16,7 +16,15 @@ layout: page
       <tr>
         <td width="20">{{ chapter.number }}</td>
         <td><a id="{{ chapter.slug }}" href="{{ chapter.url }}">{{ chapter.title }}</a></td>
-        <td><span class="badge badge-primary float-right">{{ chapter.status }}</span></td>
+        <td>
+           {% if chapter.progress >= 75 %}
+             <span class="badge badge-success pull-right">{{chapter.progress}}%</span>
+           {% elsif chapter.progress >= 50 %}
+             <span class="badge badge-warning pull-right">{{chapter.progress}}%</span>
+           {% else %}
+             <span class="badge badge-danger pull-right">{{chapter.progress}}%</span>
+           {% endif %}
+         </td>
       </tr>
     {% endif %}
     {% assign last_part = chapter.part %}
