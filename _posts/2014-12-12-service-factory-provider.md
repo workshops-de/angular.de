@@ -61,15 +61,15 @@ Dadurch, dass wir die Liste in der `users()` Methode als flache Kopie zurückgeb
 
 ```javascript
 angular.module("myApp").factory("userService", function () {
-    var privateUserList = [];
-    return {
-      users: function () {
-        return [].concat(privateUserList);
-      },
-      addUser: function (username, email) {
-        privateUserList.push({username: username, email: email});
-      }
-    };
+  var privateUserList = [];
+  return {
+    users: function () {
+      return [].concat(privateUserList);
+    },
+    addUser: function (username, email) {
+      privateUserList.push({username: username, email: email});
+    }
+  };
 });
 ```
 
@@ -94,18 +94,18 @@ In einem Template können wir beide Controller unanhängig voneinander einsetzen
 
 ```html
 <body>
-<form ng-controller="formController">
-  <input type="text"  ng-model="username" placeholder="Benutzername"/>
-  <input type="text"  ng-model="email" placeholder="E-Mail"/>
-  <button ng-click="addUser()">Benutzer hinzufügen</button>
-</form>
-<hr/>
-<ul ng-controller="userListController">
-  <li ng-repeat="user in users() track by user.username">
-    {{ user.username }}
-    ({{ user.email }})
-  </li>
-</ul>
+  <form ng-controller="formController">
+    <input type="text"  ng-model="username" placeholder="Benutzername"/>
+    <input type="text"  ng-model="email" placeholder="E-Mail"/>
+    <button ng-click="addUser()">Benutzer hinzufügen</button>
+  </form>
+  <hr/>
+  <ul ng-controller="userListController">
+    <li ng-repeat="user in users() track by user.username">
+      {{ user.username }}
+      ({{ user.email }})
+    </li>
+  </ul>
 </body>
 ```
 
@@ -121,13 +121,13 @@ Achtung, aber auch hier wird das Service-Objekt nur einmal als Singleton erzeugt
 
 ```javascript
 angular.module("myApp").service("userSerivce", function () {
-    var privateUserList = [];
-    this.users = function () {
-        return angular.copy(privateUserList);
-    };
-    this.addUser = function (username, email) {
-        privateUserList.push({username: username, email: email});
-    };
+  var privateUserList = [];
+  this.users = function () {
+    return angular.copy(privateUserList);
+  };
+  this.addUser = function (username, email) {
+    privateUserList.push({username: username, email: email});
+  };
 });
 ```
 

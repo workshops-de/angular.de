@@ -51,12 +51,12 @@ var base = new BaseController();
 Wenn man mehrere Controller verschachtelt, kann man über Controller-As-Syntax eine eindeutige und lesbare Zuordnung zwischen Variable und Controller erreichen.
 
 ```javascript
-	angular.module('myApp').controller('BaseController', function () {
-	  this.headline = 'Basis Controller';
-	});
-	angular.module('myApp').controller('AnotherController', function () {
-	  this.headline = 'Weiterer Controller';
-	});
+  angular.module('myApp').controller('BaseController', function () {
+    this.headline = 'Basis Controller';
+  });
+  angular.module('myApp').controller('AnotherController', function () {
+    this.headline = 'Weiterer Controller';
+  });
 ```
 
 Im Template erhalten beide Controller-Instanzen eigene Variablennamen.
