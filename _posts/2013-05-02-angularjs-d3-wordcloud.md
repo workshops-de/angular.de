@@ -18,37 +18,43 @@ D3 steht für Data-Driven-Documents und ist eine JavaScript-Bibliothek, die von 
 
 Zuerst wird die Methode `angular.factory` genutzt, um die D3-Bibliothek innerhalb der Welt von AngularJS als Service bereit zu stellen. Somit können wir D3 innerhalb von AngularJS z.B in einer Direktive zu nutzen.
 
-    angular.module('d3')
-      .factory('d3',[function () {
-        var d3;
-        //d3 code...
-        return d3;
-      }]);
+```javascript
+angular.module('d3')
+  .factory('d3',[function () {
+    var d3;
+    //d3 code...
+    return d3;
+  }]);
+```
 
 
 Nach diesem Schritt können wir in einer eigenen Applikation D3 verwenden, indem wir es als Abhänigkeit in dem sogenannten Dependency-Array einer Modul-Definition angeben. In dem folgenden Code-Snippet siehst du, wie das aussehen könnte:
 
-    angular.module('exampleApp', ['d3']);
+```javascript
+angular.module('exampleApp', ['d3']);
 
-    angular.module('exampleApp').directive('example',
-      function (d3){
-      // use d3 to implement some fancy directive
-    });
+angular.module('exampleApp').directive('example',
+  function (d3){
+  // use d3 to implement some fancy directive
+});
+```
 
 
 Um die WordCloud Direktive möglichst einfach nutzen zu können, müssen wir der D3 Bibliothek als erstes die benötigte Funktionalität hinzufügen. AngularJS bietet hierzu einen Mechanismus, der es uns erlaubt, bereits registrierte Services zu erweitern. Dies wird mit dem Decorator-Pattern realisiert.
 
-    angular.module('d3')
-      .config( ['$provide', function ($provide) {
+```javascript
+angular.module('d3')
+  .config( ['$provide', function ($provide) {
 
-        var d3WorldCloudDecorator = function($delegate){
-          var d3 = $delegate;
-          ... // word cloud layout definition
-          return d3;
-        };
+    var d3WorldCloudDecorator = function($delegate){
+      var d3 = $delegate;
+      ... // word cloud layout definition
+      return d3;
+    };
 
-        $provide.decorator('d3', d3WorldCloudDecorator);
-      }]);
+    $provide.decorator('d3', d3WorldCloudDecorator);
+  }]);
+```
 
 
 Nachdem wir dies getan haben, implementieren wir nun die eigentliche Direktive. Diese wird unter dem Namen `wordcloud` registriert und enthält eine Abhänigkeit zu dem D3-Service. Somit können wir diesen innerhalb unserer Direktive nutzen. Folgende Attribute soll die Direktive unterstützen:
@@ -61,34 +67,36 @@ Nachdem wir dies getan haben, implementieren wir nun die eigentliche Direktive. 
 
 Um dies zu erreichen, wird ein neuer isolierter Scope erstellt, der einige Parameter zur Konfiguration entgegen nimmt. Der isolierte Scope eignet sich in diesem Fall, um die Wiederverwendbarkeit der Direktive herzustellen und die Abhängigkeit zu einem äußeren Scope zu vermeiden. Des Weiteren gibt es die Möglichkeit für das `click`- bzw. `hover`-Event entsprechende Callback-Funktionen zu definieren.
 
-    angular.module('d3')
-      .directive('wordcloud', ['d3',function (d3) {
-        return {
-          restrict : 'E',
-          // isolated scope
-          scope : {
-            // attributes
-            width : "@",
-              height: "@",
-            fontFamily : "@",
-            fontSize: "@",
-            // bindings
-            words: "=",
-            // event callbacks
-            onClick: "&",
-            onHover: "&"
-          },
-          link : function postLink(scope, element, attrs) {
-              ...
-              var cloudFactory = function(words){
-                  // Keep the anonym functions here for readability
-                  d3.layout.cloud().size([width, height])
-              ...
-              // Execute
-              cloudFactory(words);
-          }
-        };
-      }]);
+```javascript
+angular.module('d3')
+  .directive('wordcloud', ['d3',function (d3) {
+    return {
+      restrict : 'E',
+      // isolated scope
+      scope : {
+        // attributes
+        width : "@",
+          height: "@",
+        fontFamily : "@",
+        fontSize: "@",
+        // bindings
+        words: "=",
+        // event callbacks
+        onClick: "&",
+        onHover: "&"
+      },
+      link : function postLink(scope, element, attrs) {
+        ...
+        var cloudFactory = function(words){
+          // Keep the anonym functions here for readability
+          d3.layout.cloud().size([width, height])
+        ...
+        // Execute
+        cloudFactory(words);
+      }
+    };
+  }]);
+```
 
 
 ## Wie verwende ich die Direktive?
@@ -97,48 +105,55 @@ Um dies zu erreichen, wird ein neuer isolierter Scope erstellt, der einige Param
 
 Es gibt drei verschiedene Möglichkeiten, die Direktive zu benutzen. Die Erste und wahrscheinlich einfachste Möglichkeit, ist die Erstellung einer WordCloud mit einer festen Anzahl von Wörtern, die mittels einer kommaseparierten Liste definiert werden.
 
-    <wordcloud>this,is,a,test,with,strings</wordcloud>
+```html
+<wordcloud>this,is,a,test,with,strings</wordcloud>
+```
 
 
 ### Option 2: XML “konformes” Template
 
 Mit der zweiten Option können die Elemente in einem “XML-konformen” Format angegeben werden. Dies hat einen weiteren Vorteil: Elemente können explizit mit weiteren Attributen, wie Farbe, Schriftart oder auch speziellen Klick-Ereignissen, definiert werden. Die Eigenschaften sind zum aktuellen Zeitpunkt jedoch noch nicht komplett implementiert.
 
-    <wordcloud>
-        <word>this</word>
-        <word>is</word>
-        <word>a</word>
-        <word>sub-element</word>
-        <word>test</word>
-        <word>to</word>
-        <word>demonstrate</word>
-        <word>this</word>
-        <word>feature</word>
-    </wordcloud>
+```html
+<wordcloud>
+    <word>this</word>
+    <word>is</word>
+    <word>a</word>
+    <word>sub-element</word>
+    <word>test</word>
+    <word>to</word>
+    <word>demonstrate</word>
+    <word>this</word>
+    <word>feature</word>
+</wordcloud>
+```
 
 
 ### Option 3: Nutzung des Controller Scopes
 
 Mit der dritten Option ist es möglich, die Wörter über den Controller-Scope einzutragen und per JavaScript-Array an die Direktive zu übergeben. Über [bidirektionales Databinding](/buecher/angularjs-buch/databinding/) hat die Direktive vollen Zugriff auf dieses Array. Des Weiteren können Methoden registriert werden, welche auf `click`- bzw. `hover`-Events der Elemente reagieren und im Callback das betroffene Element übergeben bekommen.
 
-    <wordcloud
-        words="words"
-        on-click="myOnClickFunction(element)"
-        on-hover="myOnHoverFunction(element)">
-    </wordcloud>
+```
+<wordcloud
+  words="words"
+  on-click="myOnClickFunction(element)"
+  on-hover="myOnHoverFunction(element)">
+</wordcloud>
+```
 
 
 ## Testbarkeit
 
 Aufgrund der Tatsache, dass D3 einfache SVG-Elemente nutzt, um die Visualisierungen zu erzeugen, lassen sich diese sehr angenehm testen. AngularJS bietet die globale Funktion `angular.element` an, welche eine Submenge von jQuery implementiert. Diese Submenge nennt sich [jqLite](/buecher/angularjs-buch/jquery-kompatibilitaet/). Mit dieser Methode ist es sehr einfach auf Elemente im DOM über Selektoren zuzugreifen, was für die meisten Web-Entwickler eine vertraute Art der DOM-Selektion ist. Des Weiteren können die Attribute dieser Elemente abgefragt werden, um innerhalb eines Tests deren Korrektheit zu überprüfen. Um die Dependency Injection Mechanismen ebenfalls im Test nutzen zu können, bietet AngularJS uns die `inject`-Methode an. Diese erlaubt es die übergebenen Referenzen aufzulösen und die verschiedenen Services einzubinden. Hier siehst Du Auszüge aus der Test-Suite der WorldCloud Direktive:
 
-    it('should not create a svg on an empty words definition',
-      inject(function ($rootScope, $compile) {
-        element = angular.element('<wordcloud></wordcloud>');
-        element = $compile(element)($rootScope);
-        expect(element.children().children().length).toBe(0);
-    }));
-
+```javascript
+it('should not create a svg on an empty words definition',
+  inject(function ($rootScope, $compile) {
+    element = angular.element('<wordcloud></wordcloud>');
+    element = $compile(element)($rootScope);
+    expect(element.children().children().length).toBe(0);
+}));
+```
 
 Die komplette Test-Suite ist auf GitHub zu finden.
 
