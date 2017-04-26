@@ -22,27 +22,25 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
 
 <hr>
 <div class="">
-    <div class="h3">Keine Lust zu Lesen?</div>
-    <div class="row mb-2">
-        <div class="col-xs-12 col-md-6">
-            <p>
-                Du lernst lieber interaktiv und möchtest Fragen an Experten stellen? Wir bieten euch auch
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+  <div class="h3">Keine Lust zu Lesen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Du lernst lieber interaktiv und möchtest Fragen an Experten stellen? Wir bieten euch auch
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
                     und TypeScript Schulungen</a> an. Hier kannst du in kleinen Gruppen deine Lernkurve maximieren.
-            </p>
-            <p class="">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
-                    <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-                </a>
-            </p>
+      </p>
+      <p class="">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
 
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png"
-                 alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-        </div>
     </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
 </div>
 <hr>
 
@@ -68,16 +66,18 @@ Diese Teile wirst du von AngularJS kennenlernen:
 
 Wir beginnen mit einer einfachen HTML-Datei, die zu Beginn AngularJS und [Bootstrap](http://getbootstrap.com) enthält.
 
-    <html ng-app>
-    <head>
-      <meta charset="utf8mb4" />
-      <title>AngularJS Tutorial</title>
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    </head>
-    <body>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
-    </body>
-    </html>
+```html
+<html ng-app>
+<head>
+  <meta charset="utf8mb4" />
+  <title>AngularJS Tutorial</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+</body>
+</html>
+```
 
 Die Datei `angular.js` ist die Einzige, die wir für eine lauffähige AngularJS-Applikation benötigen. Wir benutzen hier die Online-Version, die Google über ihr CDN verteilt. Alternativ kannst du die Datei von [angularjs.org](http://angularjs.org) herunterladen und lokal einbinden.
 
@@ -90,8 +90,10 @@ Durch das Attribut `ng-app` im *html*-Tag erkennt AngularJS unsere Seite nun als
 
 Das erste, was Leute erstaunt, wenn sie AngularJS zum ersten Mal sehen, ist die Zwei-Wege-Datenbindung. Ergänzen wir unser Beispiel um folgende Zeilen innerhalb des *body*-Tags, um es zu veranschaulichen.
 
-	<input type="text" ng-model="search">
-	<p>Du suchst gerade nach: {{search}}</p>
+```html
+<input type="text" ng-model="search">
+<p>Du suchst gerade nach: {{search}}</p>
+```
 
 Wenn ihr etwas in das Eingabefeld eingebt, wird der Text an der Stelle ausgegeben, wo `{{search}}` steht. Dies funktioniert durch die Zwei-Wege-Datenbindung.
 
@@ -99,13 +101,16 @@ Durch `ng-model="search"` reagiert AngularJS, sobald Du den Wert des Eingabefeld
 
 Der Ausdruck `{{search}}` ist ein Beispiel für eine Expression. AngularJS sorgt dafür, dass  die View bei einer Änderung der Variable automatisch aktualisiert wird.
 
+
 ## Expressions
 
 > Link zum [Code](https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/03-expressions) / [Demo](http://angularjs-de.github.io/angularjs-tutorial-code/03-expressions)
 
 Expressions sind viel mächtiger, als sie im ersten Moment erscheinen. Expressions erlauben uns, Daten zu manipulieren und zu kombinieren.
 
-	{{search.toUpperCase() + "!"}} oder {{1 + 2 + 3}}
+```html
+{{search.toUpperCase() + "!"}} oder {{1 + 2 + 3}}
+```
 
 In diesem Fall wird z.B. der Inhalt von `search` immer direkt in Großbuchstaben umgewandelt und ein Ausrufezeichen angehängt. Expressions kannst du mit mit der [eval()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)-Funktion von JavaScript vergleichen - jedoch mit eingeschränkten Möglichkeiten.
 
@@ -118,7 +123,9 @@ Wie wir bereits in der Einleitung erwähnten, hat AngularJS spezielle Tags wie `
 
 Probieren wir eine weitere, einfache Direktive aus und ändern dazu die Zeile mit dem Suchergebnis leicht ab:
 
-    <p ng-show="search">Du suchst gerade nach: {{search}}</p>
+```html
+<p ng-show="search">Du suchst gerade nach: {{search}}</p>
+```
 
 Der Paragraph wird nun erst sichtbar, wenn wir anfangen, etwas in das Eingabefeld zu tippen. `ng-show` ist eine Direktive, die Elemente nur einblendet, wenn die übergebene Variable einen Wert enthält.
 
@@ -129,21 +136,27 @@ Der Paragraph wird nun erst sichtbar, wenn wir anfangen, etwas in das Eingabefel
 
 Bevor wir später unsere eigene Direktive schreiben, schauen wir uns die wahrscheinlich meistgenutzte Direktive in AngularJS an: `ng-repeat`. Dieser Direktive können wir ein Array übergeben und darüber iterieren. `ng-repeat` können wir dabei mit einer *forEach*-Schleife für DOM-Elemente vergleichen. Fügen wir also folgenden Code ein:
 
-	<table class="table">
-	  <tr ng-repeat="article in ['Pizza Margherita', 'Pizza Tonno']">
-	    <td>{{article}}</td>
-	  </tr>
-	</table>
+```html
+<table class="table">
+  <tr ng-repeat="article in ['Pizza Margherita', 'Pizza Tonno']">
+    <td>{{article}}</td>
+  </tr>
+</table>
+```
 
 Was passiert dabei? AngularJS hält sich intern eine Kopie vom `<tr>`-Element vor und kopiert dieses für jedes Element aus unserem Array. Für eine Kopie wird das Element in die Variable `article` geschrieben, welche wir dann benutzen können. In unserem Beispiel hat `article` in der ersten Kopie den Wert *Pizza Margherita*, in der zweiten Kopie den Wert *Pizza Tonno*.
 
 Natürlich können wir auch mit Variablen anstatt von fest programmierten Arrays arbeiten. In unserem Beispiel tauschen wir das Array durch eine Variable names `articles` aus:
 
-	<tr ng-repeat="article in articles">
+```html
+<tr ng-repeat="article in articles">
+```
 
 Bevor wir die Artikel später dynamisch laden lassen, initialisieren wir sie im *body*-Tag über eine weitere Direktive: `ng-init`.
 
-	<body ng-init="articles = ['Pizza Margherita', 'Pizza Tonno']">
+```html
+<body ng-init="articles = ['Pizza Margherita', 'Pizza Tonno']">
+```
 
 Wir haben also bisher eine Liste von Pizzen und eine nicht funktionierende Suchbox. Zeit, Beides zu kombinieren.
 
@@ -154,7 +167,9 @@ Wir haben also bisher eine Liste von Pizzen und eine nicht funktionierende Suchb
 
 Um die Suche funktionstüchtig zu machen, müssen wir nur die Zeile mit `ng-repeat` abändern:
 
-    <tr ng-repeat="article in articles | filter:search">
+```html
+<tr ng-repeat="article in articles | filter:search">
+```
 
 Das war's - probiert es aus! Wir haben hier einen Filter benutzt - einen Filter mit dem Namen *filter*. Generell benutzen wir Filter, indem wir eine Pipe (`|`) einfügen und danach den Namen des Filters angeben. Der benutzte Filter ist also der *filter*-Filter.
 
@@ -169,7 +184,9 @@ Filter können auch Argumente entgegennehmen (filter:`search`), die wir durch ei
 
 Auch wenn wir bisher ohne eine Zeile JavaScript-Code ausgekommen sind, kommt doch irgendwann der Punkt, wo es nicht mehr ohne geht. Deshalb kann AngularJS natürlich auch mit JavaScript-Code "reden". Das Erste, was wir dazu tun müssen, ist, ein `Modul` zu erstellen. In diesem Fall legen wir eine neue Datei `app.js` an und fügen folgende Zeile hinzu:
 
-    angular.module('tutorialApp', []);
+```javascript
+angular.module('tutorialApp', []);
+```
 
 Ein Modul ist eine Sammlung von Controllern, Services, Filtern und Direktiven. Module können dabei von anderen Modulen abhängig sein. Diese tragen wir in das Array hinter dem Modulnamen ein.
 
@@ -177,11 +194,15 @@ Das leere Array hinter `tutorialApp` bedeutet in diesem Fall, dass wir noch kein
 
 Um dieses Modul nutzen zu können, müssen wir eine kleine Änderung am HTML-Code vornehmen. Wir erweitern das Attribut `ng-app` um den Namen unseres Moduls.
 
-    <html ng-app="tutorialApp">
+```html
+<html ng-app="tutorialApp">
+```
 
 Vergesst nicht, das Skript einzubinden!
 
-    <script src="app.js"></script>
+```html
+<script src="app.js"></script>
+```
 
 ## Scopes & Controller
 
@@ -189,24 +210,28 @@ Vergesst nicht, das Skript einzubinden!
 
 Einfach nur ein leeres Modul zu erstellen, hilft uns nicht viel weiter. Also fügen wir unseren ersten Controller hinzu. Controller werden wie alle anderen AngularJS-Komponenten auch *in* einem Modul definiert. Die Konvention hat sich eingebürgert, die Abkürzung `Ctrl` an ihren Namen anzuhängen. Den JavaScript-Code in der `app.js` ersetzen wir durch folgenden Code.
 
-    angular.module('tutorialApp', [])
-      .controller('ArticlesCtrl', function($scope){
-        $scope.articles = [
-          { id: 1, name: "Pizza Vegetaria", price: 5 },
-          { id: 2, name: "Pizza Salami",    price: 5.5 },
-          { id: 3, name: "Pizza Thunfisch", price: 6 }
-        ];
-      });
+```javascript
+angular.module('tutorialApp', [])
+  .controller('ArticlesCtrl', function($scope){
+    $scope.articles = [
+      { id: 1, name: "Pizza Vegetaria", price: 5 },
+      { id: 2, name: "Pizza Salami",    price: 5.5 },
+      { id: 3, name: "Pizza Thunfisch", price: 6 }
+    ];
+  });
+```
 
 Wie wir sehen, können wir nicht nur einfache Arrays mit primitiven Datentypen sondern auch Arrays von Objekten erstellen. Dementsprechend ändern wir unsere Tabelle im HTML-Code auch leicht ab:
 
-    <table class="table" ng-controller="ArticlesCtrl">
-      <tr ng-repeat="article in articles | filter:search">
-        <td>{{article.id}}</td>
-        <td>{{article.name}}</td>
-        <td>{{article.price}}</td>
-      </tr>
-    </table>
+```html
+<table class="table" ng-controller="ArticlesCtrl">
+  <tr ng-repeat="article in articles | filter:search">
+    <td>{{article.id}}</td>
+    <td>{{article.name}}</td>
+    <td>{{article.price}}</td>
+  </tr>
+</table>
+```
 
 An dieser Stelle lernen wir zwei neue Dinge kennen: *Controller* und *Scopes*. In einem Scope werden die Variablen gespeichert, die View- und JavaScript-Code miteinander verbinden. Mit dem *Controller* mappen wir einen Teil des DOMs zum entsprechenden JavaScript-Code.
 
@@ -231,25 +256,31 @@ Wiederverwendbare und komplexere Logik definieren wir in AngularJS mithilfe von 
 
 Da wir an dieser Stelle keinen Server implementieren möchten, erstellen wir eine Datei `articles.json` im gleichen Verzeichnis und füllen sie mit einem JSON-Objekt:
 
-    [
-      {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
-      {"id": "2", "name": "Pizza Salami",    "price": 5.5 },
-      {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
-      {"id": "4", "name": "Aktueller Flyer", "price": 0 }
-    ]
+```json
+[
+  {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
+  {"id": "2", "name": "Pizza Salami",    "price": 5.5 },
+  {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
+  {"id": "4", "name": "Aktueller Flyer", "price": 0 }
+]
+```
 
 Die Daten in euren Controller zu laden ist ganz leicht. Zunächst müsst ihr `$http` als Parameter in der Funktions-Deklaration hinzufügen, um den Service überhaupt nutzen zu können:
 
-	.controller('ArticlesCtrl', function($scope, $http){
+```javascript
+.controller('ArticlesCtrl', function($scope, $http){
+```
 
 Als nächstes müsst ihr die statische Zuweisung von `$scope.articles` in der `app.js` ersetzen. An dieser Stelle benutzen wir den `$http`-Service. Somit ergibt sich:
 
-    angular.module('tutorialApp', [])
-      .controller('ArticlesCtrl', function($scope, $http){
-        $http.get('articles.json').then(function(articlesResponse) {
-          $scope.articles = articlesResponse.data;
-        });
-      });
+```javascript
+angular.module('tutorialApp', [])
+  .controller('ArticlesCtrl', function($scope, $http){
+    $http.get('articles.json').then(function(articlesResponse) {
+      $scope.articles = articlesResponse.data;
+    });
+  });
+```
 
 Was der $http-Service zurückliefert, nennen wir ein [Promise](http://en.wikipedia.org/wiki/Futures_and_promises). Promises ähneln Callbacks und können asynchrone Aufrufe stark vereinfachen.
 
@@ -267,23 +298,25 @@ Services sind Singletons. Es existiert also immer nur eine Instanz jedes Service
 
 Fügen wir folgenden Code nach der Moduldefinition und vor `.controller` in die `app.js` ein ([Code](https://github.com/angularjs-de/angularjs-tutorial-code/blob/gh-pages/10-services-cart/app.js)):
 
-    angular.module('tutorialApp', [])
-      .factory('Cart', function() {
-        var items = [];
-        return {
-          getItems: function() {
-            return items;
-          },
-          addArticle: function(article) {
-            items.push(article);
-          },
-          sum: function() {
-            return items.reduce(function(total, article) {
-              return total + article.price;
-            }, 0);
-          }
-        };
-      })
+```javascript
+angular.module('tutorialApp', [])
+  .factory('Cart', function() {
+    var items = [];
+    return {
+      getItems: function() {
+        return items;
+      },
+      addArticle: function(article) {
+        items.push(article);
+      },
+      sum: function() {
+        return items.reduce(function(total, article) {
+          return total + article.price;
+        }, 0);
+      }
+    };
+  })
+```
 
 In der `Cart`-Factory definieren wir 3 Funktionen:
 
@@ -295,36 +328,45 @@ Die Artikel selber halten wir in einem Array `items` vor.
 
 Um unsere `Cart`-Factory als Service nutzen zu können, müssen wir sie dem Controller bekannt machen. Genau wie `$http` fügen wir sie nach `$scope` in die Parameterliste ein. Danach weisen wir den Service noch einer Variable auf dem Scope zu. Ansonsten könnten wir den Warenkorb nicht im Template verwenden.
 
-    .controller('ArticlesCtrl', function($scope, $http, Cart){
-      $scope.cart = Cart;
-      // ... usw.
+```javascript
+.controller('ArticlesCtrl', function($scope, $http, Cart){
+  $scope.cart = Cart;
+  // ... usw.
+});
+```
 
 Damit können wir die Funktionen des Services jetzt nutzen. Die Artikelliste erweitern wir um eine Schaltfläche zum Hinzufügen. Dazu nutzen wir eine weitere Direktive `ng-click`.  Diese, wie der Name es vermuten lässt, reagiert auf einen Klick. Wir übergeben `ng-click` die `addArticle`-Funktion mit dem aktuellen Artikel.
 
-    <td><a href class="btn btn-default btn-sm" ng-click="cart.addArticle(article);">Hinzufügen</a></td>
+```html
+<td><a href class="btn btn-default btn-sm" ng-click="cart.addArticle(article);">Hinzufügen</a></td>
+```
 
 Wir können nun Artikel in den Warenkorb legen. Aber natürlich fehlt an dieser Stelle noch die Anzeige des Warenkorbes. Wir legen dazu einen zweiten Controller für unseren Warenkorb an:
 
-    .controller('CartCtrl', function($scope, Cart){
-      $scope.cart = Cart;
-    });
+```javascript
+.controller('CartCtrl', function($scope, Cart){
+  $scope.cart = Cart;
+});
+```
 
 Mit der zugehörigen Änderung im Template:
 
-    <div ng-controller="CartCtrl">
-      <div ng-hide="cart.getItems().length" class="alert alert-warning">Ihr Warenkorb ist noch leer.</div>
-      <table ng-show="cart.getItems().length" class="table">
-        <tr ng-repeat="item in cart.getItems() track by $index">
-          <td>{{item.name}}</td>
-          <td>{{item.price | currency}}</td>
-        </tr>
-        <tr>
-          <td>{{cart.getItems().length}} Artikel</td>
-          <td>{{cart.sum() | currency}}</td>
-          <td></td>
-        </tr>
-      </table>
-    </div>
+```html
+<div ng-controller="CartCtrl">
+  <div ng-hide="cart.getItems().length" class="alert alert-warning">Ihr Warenkorb ist noch leer.</div>
+  <table ng-show="cart.getItems().length" class="table">
+    <tr ng-repeat="item in cart.getItems() track by $index">
+      <td>{{item.name}}</td>
+      <td>{{item.price | currency}}</td>
+    </tr>
+    <tr>
+      <td>{{cart.getItems().length}} Artikel</td>
+      <td>{{cart.sum() | currency}}</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+```
 
 > Zur Erinnerung: Der *Cart*-Service ist ein Singleton und somit gibt es insgesamt nur eine Instanz dieses Services in einer Applikation. Mithilfe von Services kommunizieren wir auch zwischen Controllern, wenn diese nicht verschachtelt, sondern Geschwister sind.
 
@@ -338,11 +380,15 @@ Um auch visuell ein wenig etwas zu bieten, werden wir uns als nächstes um Anima
 
 Animationen wurden von den AngularJS-Entwicklern in ein separates Modul mit dem Namen *ngAnimate* ausgelagert. Deshalb müssen wir dieses Modul erst einmal mithilfe eines *script*-Tags in unsere `index.html` (vor der `app.js`) einfügen. Dazu nutzen wir erneut die Version, die uns Google über sein CDN bereitstellt.
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+```html
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+```
 
 Als wir unser Module `tutorialApp` definiert hatten, ließen wir das Array für die Abhängigkeiten noch leer. In dieses Array fügen wir nun das Modul `ngAnimate` als Abhängigkeit ein, um die Animationen nutzen zu können.
 
-	angular.module('tutorialApp', ['ngAnimate'])
+```javascript
+angular.module('tutorialApp', ['ngAnimate'])
+```
 
 Hiernach haben wir unsere Arbeiten auf der Code-Seite abgeschlossen und können jetzt Direktiven von AngularJS animieren. Alle weiteren Einstellungen laufen über CSS-Klassen, mit denen wir festlegen können, wann welche Animation ausgeführt werden soll.
 
@@ -350,14 +396,16 @@ Direktiven haben verschiedene Ereignisse, die wir animieren können. Nehmen wir 
 
 Zum praktischen Schritt. Neue Artikel im Warenkorb wollen wir kurz aufblinken lassen. Dazu weisen wir unserer Tabellenzeile `<tr>` zuerst die CSS-Klasse `cart-item` zu. In einer zusätzlichen CSS-Datei `style.css` müssen wir lediglich noch zwei zusätzliche CSS-Klassen `.cart-item.ng-enter` und `.cart-item.ng-enter-active` definieren:
 
-    .cart-item.ng-enter {
-      -webkit-transition:0.5s linear all;
-      transition:0.5s linear all;
-      background-color: yellow;
-    }
-    .cart-item.ng-enter-active {
-      background-color: white;
-    }
+```css
+.cart-item.ng-enter {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  background-color: yellow;
+}
+.cart-item.ng-enter-active {
+  background-color: white;
+}
+```
 
 Die zwei CSS-Klassen bestimmen Start- und Endzustand. In `ng-enter` werden die Startfarbe *gelb* und die CSS3-Transition festgelegt. Diese Klasse wird zuerst hinzugefügt. Unmittelbar danach wird die zweite Klasse mit dem Endzustand der Farbe *weiß* hinzugefügt. Ist die Animation durchgelaufen, werden beide entfernt. Im Folgenden sehen wir graphisch, was passiert:
 
@@ -373,20 +421,22 @@ Wir haben im Laufe des Tutorials einige Direktiven von AngularJS kennengelernt. 
 
 Beispielsweise werden wir die Preisausgabe etwas schöner gestalten. Statt einfach *0* auszugeben, machen wir es besser und geben *kostenlos*  aus. Die Direktiven bisher, wie `ng-app` oder `ng-repeat`, waren nur Attribute. Wir können aber auch Tags benutzen. Schön wäre es, etwas in der Art zu haben:
 
-	<price value="article.price" />
+  <price value="article.price" />
 
 Wenn wir dies mit AngularJS umsetzen möchten, können wir dazu ganz einfach eine Direktive schreiben in Form eines neuen Tags `<price />`.
 
-    .directive('price', function(){
-      return {
-        restrict: 'E',
-        scope: {
-          value: '='
-        },
-        template: '<span ng-show="value == 0">kostenlos</span>' +
-          '<span ng-show="value > 0">{{value | currency}}</span>'
-      }
-    })
+```javascript
+.directive('price', function(){
+  return {
+    restrict: 'E',
+    scope: {
+      value: '='
+    },
+    template: '<span ng-show="value == 0">kostenlos</span>' +
+      '<span ng-show="value > 0">{{value | currency}}</span>'
+  }
+})
+```
 
 Gehen wir die einzelnen Bestandteile der Direktive durch:
 
@@ -396,9 +446,11 @@ Eine Direktive erstellen wir ganz offensichtlich mit dem Keyword `directive`. Di
 
 Mit *restrict* legen wir die Art der Direktive fest. D.h. wird die Direktive durch Tag, Attribut oder Klasse aufgerufen. E steht in dem Fall für Element und meint Tag. Hier wären Beispiele für die anderen Möglichkeiten:
 
-    <price value="article.price" /><!-- E für Element -->
-    <span price value="article.price"> <!-- A für Attribute -->
-    <span value="article.price" class="price"><!-- C für Class -->
+```html
+<price value="article.price" /><!-- E für Element -->
+<span price value="article.price"> <!-- A für Attribute -->
+<span value="article.price" class="price"><!-- C für Class -->
+```
 
 ### scope
 
@@ -422,29 +474,37 @@ Bisher bestand bei uns alles nur aus einer einzigen Seite. Wenn wir eine richtig
 
 Wir laden zuerst das Extra-Modul und fügen es in unsere `index.html` ein (oberhalb von `app.js`):
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+```
 
 Wie bei den Animationen müssen wie das Modul unserer Applikation bekannt machen.
 
-	angular.module('tutorialApp', ['ngAnimate', 'ngRoute'])
+```javascript
+angular.module('tutorialApp', ['ngAnimate', 'ngRoute'])
+```
 
 Als nächstes kopieren wir alles, was innerhalb der Klasse `.container` steht in eine neue Datei *articles.html* und ersetzen den Inhalt durch:
 
-    <p class="well">
-      <a href="#/">Start</a> | <a href="#/about">Über</a>
-    </p>
-    <div ng-view></div>
+```html
+<p class="well">
+  <a href="#/">Start</a> | <a href="#/about">Über</a>
+</p>
+<div ng-view></div>
+```
 
 `ng-view` ist der Container für alle Unterseiten, die Teil unserer Anwendung sind. Damit werden nur noch Seiten-Inhalte nachgeladen, ohne Skript- und CSS-Dateien erneut vom Server zu holen. AngularJS löst zudem bei einem Seitenwechsel die Scopes der aktuellen Seite auf. Dies sorgt dafür, dass der Speicher nicht unnötig belegt wird.
 
 Auch wenn wir jetzt Seiten laden könnten, brauchen wir noch eine Verknüpfung zu URLs. Diese können wir in einem Konfigurationsblock von AngularJS angeben. Die `config()`-Blöcke werden einmal am Anfang der Applikation ausgewertet. Um die Routen in diesem zu konfigurieren, müssen wir den `$routeProvider` in dessen Funktions-Parameter übergeben.
 
-	.config(function($routeProvider) {
-	  $routeProvider
-	    .when('/', { templateUrl: 'articles.html' })
-	    .when('/about', { template: 'Über unsere Pizzeria' })
-	    .otherwise({ redirectTo: '/' });
-	})
+```javascript
+.config(function($routeProvider) {
+  $routeProvider
+    .when('/', { templateUrl: 'articles.html' })
+    .when('/about', { template: 'Über unsere Pizzeria' })
+    .otherwise({ redirectTo: '/' });
+})
+```
 
 Der `$routeProvider` hat zwei Methoden: `.when` und `.otherwise`. Mit when könnt ihr die Route, inkl. Konfigurations-Objekt übergeben. Wie ihr seht, könnt ihr *template* oder *templateUrl* wie in den Direktiven verwenden. Mit `.otherweise` könnt ihr festlegen, was passiert, wenn keine der Routen ausgewählt wurde.
 
@@ -463,21 +523,23 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
 
 <hr>
 <div class="text-center">
-<div class="h3">Hat dir das Tutorial geholfen?</div>
-<div class="row mb-2">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-<p> Maximaler Lernerfolg um direkt in deinem Projekt durchzustarten? Überpring die "Anfängerfehler" und nutze lieber unsere jahrelange Erfahrung. Komm in unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>. Hier lernst du die Konzepte, Features und Fallstricke des Frameworks und kannst uns direkt spezifisch zu Herrausforderungen in deinem nächsten Projekt zu rat ziehen. </p>
-
-<p class="text-center">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-                    <button class="btn btn-danger">Jetzt weiter lernen</button>
-                </a>
-            </p>
-
+      <p> Maximaler Lernerfolg um direkt in deinem Projekt durchzustarten? Überpring die "Anfängerfehler" und nutze lieber unsere
+        jahrelange Erfahrung. Komm in unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>.
+        Hier lernst du die Konzepte, Features und Fallstricke des Frameworks und kannst uns direkt spezifisch zu Herrausforderungen
+        in deinem nächsten Projekt zu rat ziehen.
+      </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
-</div>
+  </div>
 </div>
 <hr>
