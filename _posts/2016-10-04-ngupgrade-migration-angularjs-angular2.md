@@ -25,11 +25,11 @@ Ab der AngularJS 1.5 Version können Components  erstellt werden, die maßgeblic
 
 ```javascript
 .component('bookTitle', {
-    templateUrl: 'book/book-title.component.html',
-    bindings: { 'font': '<' }
-    controller: function () {
-      this.title = 'An awesome book';
-    }
+  templateUrl: 'book/book-title.component.html',
+  bindings: { 'font': '<' }
+  controller: function () {
+    this.title = 'An awesome book';
+  }
 }
 ```
 
@@ -41,10 +41,10 @@ Factorys waren zudem in AngularJS früher eine sehr beliebtes Konzept. Einfach u
 ```typescript
 .service('bookService',
    class BookService {
-    	getTitle () {
-     		return 'An awesome book';
-		}
-	}
+      getTitle () {
+         return 'An awesome book';
+    }
+  }
 );
 ```
 

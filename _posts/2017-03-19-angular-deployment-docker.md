@@ -34,7 +34,7 @@ Nach der Installation auf einem System eurer Wahl steht euch die Docker-CLI zur 
 
 Wie bereits genannt, kann der Aufbau unseres Dockercontainers sehr flexibel gestaltet werden. Die Gestaltung eines solchen Containers wird im Dockerfile vorgenommen. Dieses File, welches von der Engine in der Root des Projekts auffindbar sein muss, wird beim Build-Prozess ausgelesen und danach Zeile für Zeile abgearbeitet. Hier ein Dockerfile, mit welchem eine Angular App ausgeliefert werden kann:
 
-```
+```dockerfile
 FROM node:7.2.0-wheezy
 MAINTAINER MWIESMUELLER <martin@fa-wiesmueller.de>
 
@@ -60,51 +60,47 @@ EXPOSE 80
 
 Hier mal eine Erklärung der Tags, welche ich in diesem Dockerfile anwende:
 
-- ```FROM```: Mit diesem Tag definiert ihr das Basis-Image für euer Projekt. Dies kann auf [Dockerhub](https://hub.docker.com) sowohl in public als auch in private Repos gehostet werden. Mehr zu diesem Thema findet ihr weiter unten. In meinem Beispiel installiere ich ein Image, welches gleich Node mit Version 7.2 mit sich bringt.
+- `FROM`: Mit diesem Tag definiert ihr das Basis-Image für euer Projekt. Dies kann auf [Dockerhub](https://hub.docker.com) sowohl in public als auch in private Repos gehostet werden. Mehr zu diesem Thema findet ihr weiter unten. In meinem Beispiel installiere ich ein Image, welches gleich Node mit Version 7.2 mit sich bringt.
 
-- ```MAINTAINER```: Hiermit definiert Ihr den Urheber des Images. Hier kann Name und / oder E-Mailadresse angegeben werden.
+- `MAINTAINER`: Hiermit definiert Ihr den Urheber des Images. Hier kann Name und / oder E-Mailadresse angegeben werden.
 
-- ```COPY```: Mit diesem Befehl könnt Ihr Daten während des Build Prozesses von euerem lokalen System in den Dockercontainer kopieren. In diesem Beispiel kopiere ich das komplette Projekt in den Container. Dies hat den Vorteil, dass man dadurch den kompletten Build der Applikation innerhalb des Containers laufen lassen kann. Etwas weiter unten kopiere ich noch die Konfigurationsdatei von nginx in den jeweiligen Pfad, an welchem [nginx](https://www.nginx.com/) diese Datei erwartet.
+- `COPY`: Mit diesem Befehl könnt Ihr Daten während des Build Prozesses von euerem lokalen System in den Dockercontainer kopieren. In diesem Beispiel kopiere ich das komplette Projekt in den Container. Dies hat den Vorteil, dass man dadurch den kompletten Build der Applikation innerhalb des Containers laufen lassen kann. Etwas weiter unten kopiere ich noch die Konfigurationsdatei von nginx in den jeweiligen Pfad, an welchem [nginx](https://www.nginx.com/) diese Datei erwartet.
 
-- ```WORKDIR```: Hiermit gebt Ihr den Pfad des Arbeitsverzeichnisses innerhalb des Containers an. Folglich werden alle künftigen Befehle innerhalb dieses Pfades stattfindenden.
+- `WORKDIR`: Hiermit gebt Ihr den Pfad des Arbeitsverzeichnisses innerhalb des Containers an. Folglich werden alle künftigen Befehle innerhalb dieses Pfades stattfindenden.
 
-- ```RUN```: Mit diesem Aufruf könnt Ihr Befehle innerhalb des Build Prozesses im Containers ausführen. In meinem Beispiel führe ich ein Update des Betriebssystems durch und installiere anschließend zusätzlich nginx als Webservice zum ausliefern meiner Angular Applikation. Als nächstes installiere ich alle notwendigen Dependencies über [npm](https://www.npmjs.com/). Anschließend lege ich ein Shell Skript an, in welchem ich als erstes den Build-Prozess meiner Angular App durchführe und letztlich den Webservice starte.
+- `RUN`: Mit diesem Aufruf könnt Ihr Befehle innerhalb des Build Prozesses im Containers ausführen. In meinem Beispiel führe ich ein Update des Betriebssystems durch und installiere anschließend zusätzlich nginx als Webservice zum ausliefern meiner Angular Applikation. Als nächstes installiere ich alle notwendigen Dependencies über [npm](https://www.npmjs.com/). Anschließend lege ich ein Shell Skript an, in welchem ich als erstes den Build-Prozess meiner Angular App durchführe und letztlich den Webservice starte.
 
-- ```CMD```: Dieser Tag führt einen Befehl beim Starten des Containers aus. In meinem Fall führe ich das zuvor mit ```RUN``` angelegte Skript aus.
+- `CMD`: Dieser Tag führt einen Befehl beim Starten des Containers aus. In meinem Fall führe ich das zuvor mit `RUN` angelegte Skript aus.
 
-- ```ÈXPOSE```: Mit diesem Tag definiert Ihr, welcher Port von außen erreichbar sein soll.
+- `ÈXPOSE`: Mit diesem Tag definiert Ihr, welcher Port von außen erreichbar sein soll.
 
-Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, dass man in diesem ```Dockerfile``` seinen kompletten Build Prozess definiert. Und genau das ist unser Ziel. Ähnlich als würde man im Supermarkt seine Produkte in den Einkaufswagen legen, die man benötigt, um anschließend nach seinem Rezept kochen zu können.
+Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, dass man in diesem `Dockerfile` seinen kompletten Build Prozess definiert. Und genau das ist unser Ziel. Ähnlich als würde man im Supermarkt seine Produkte in den Einkaufswagen legen, die man benötigt, um anschließend nach seinem Rezept kochen zu können.
 
 ##### Tipp!
 - Ihr kennt bestimmt das File ```.gitignore``` zum Ignorieren von Dateien beim Check-In auf Github. Die gleiche Funktion steht uns auch mit dem File ```.dockerignore``` zur Verfügung. Hier könnt ihr Files / Folders Ignorieren, z.b. gibt es keinen Grund die Testfiles aus dem Repo in Dockerhub mit hoch zu laden.
 
-
 <hr>
 <div class="">
-    <div class="h3">Keine Lust zu Lesen?</div>
-    <div class="row mb-2">
-        <div class="col-xs-12 col-md-6">
-            <p>
-                Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und auch Spaß machen. Wir bieten euch auch
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=article&utm_medium=link&utm_content=text-top">Docker Schulungen</a> an, falls du tiefer in die Thematik einsteigen willst.
-            </p>
-            <p class="">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=article&utm_medium=button&utm_content=text-top">
-                    <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-                </a>
-            </p>
+  <div class="h3">Keine Lust zu Lesen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und auch Spaß machen. Wir bieten euch auch
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=article&utm_medium=link&utm_content=text-top">Docker Schulungen</a>        an, falls du tiefer in die Thematik einsteigen willst.
+      </p>
+      <p class="">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=article&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
 
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <img class="img-fluid img-rounded"
-                 src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
-                 alt="Teilnehmer in der Veranstaltung Docker &amp; Kubernetes Intensiv Workshop/Schulung">
-        </div>
     </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Docker &amp; Kubernetes Intensiv Workshop/Schulung">
+    </div>
+  </div>
 </div>
 <hr>
-
 
 #### Dockerhub
 
@@ -241,7 +237,6 @@ Wie ihr erkennen könnt, gibt es zwei Auslöser, welche die Automatismen anwerfe
 - Der Scheduler setzt an Circle CI einen Webhook ab, und informiert diesen darüber das es sich um einen Nightly Build handelt.
 - Circle CI führt die Unit-Tests sowie die durch den Nightly-Build angegebenen Frontend-Tests durch.
 - Sind alle Tests erfolgreich abgeschlossen, wird Dockercloud wieder von Circle CI informiert. Diesmal allerdings, wird der Container im Staging Stack auf den neuesten Stand gebracht.
--
 
 #### Production Stack
 
@@ -253,21 +248,22 @@ Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche
 
 <hr>
 <div class="text-center">
-<div class="h3">Hat dir das Tutorial geholfen?</div>
-<div class="row mb-2">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-<p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Docker Schulungen</a> an um dich möglichst effektiv in das Thema zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht googlen kannst, z.B. “Beste Weg, um meine Container zu strukturieren”. Wir können sie Dir beantworten. </p>
+      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Docker Schulungen</a> an um dich möglichst effektiv in das Thema zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht
+        googlen kannst, z.B. “Beste Weg, um meine Container zu strukturieren”. Wir können sie Dir beantworten. </p>
 
-<p class="text-center">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-                    <button class="btn btn-danger">Jetzt weiter lernen</button>
-                </a>
-            </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
 
     </div>
     <div class="col-xs-12 col-md-6">
-        <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
-</div>
+  </div>
 </div>
 <hr>

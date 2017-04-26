@@ -34,10 +34,10 @@ ngIF hat endlich eine else-Condition erhalten und wir sparen uns die Negation ei
 
 ```html
 <div *ngIf="valueObservable | async as value; else loading">
-	{{value.property}}
+  {{value.property}}
 </div>
 <ng-template #loading>
-	value is loading, Please wait...
+  value is loading, Please wait...
 </ng-template>
 ```
 
@@ -45,9 +45,9 @@ Genau wie ngIF kann ngFor auch auf lokale Variablen zugreifen. Dies spart nicht 
 
 ```html
 <ul>
-	<li *ngFor="let prop of valueObservable | async as value; index as i">
-		{{prop.name}} {{i}}/{{value.length}}
-	</li>
+  <li *ngFor="let prop of valueObservable | async as value; index as i">
+    {{prop.name}} {{i}}/{{value.length}}
+  </li>
 </ul>
 ```
 
@@ -97,7 +97,7 @@ Da das Update, von Angular 2 auf Angular v4, ein Major Change darstellt, müssen
 
 3. Die Implementierung von Lifecycle Events über Klassen, dürfen nicht mehr über die Vererbungen implementiert werden, sondern müssen direkt über das Interface integriert werden.
 
-```
+```typescript
 class XY extends OnInit {} --> class XY implements OnInit {}
 ```
 
@@ -111,15 +111,13 @@ class XY extends OnInit {} --> class XY implements OnInit {}
   <h3>Update unserer Schulungsmaterialien</h3>
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <p> Das Update unserer Schulungsmaterialien lief auch ohne Probleme. Alle Teilnehmer die bereits einen Angular Kurs ab
+      <p>Das Update unserer Schulungsmaterialien lief auch ohne Probleme. Alle Teilnehmer die bereits einen Angular Kurs ab
         Version 2 bei uns besucht haben, haben automatisch Zugriff auf die Updates der Materialien über unser virtuelles
         Klassenzimmer(Classroom).
       </p>
-
     </div>
     <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418"
-        alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="medium_Screen-Shot-2017-03-19-at-11.52.54.png?v=63657140418" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
   </div>
   <div class="row">
@@ -134,11 +132,8 @@ class XY extends OnInit {} --> class XY implements OnInit {}
         </a>
       </p>
     </div>
-
   </div>
 </div>
-
-
 
 ### Das Fazit zu Angular v4
 
