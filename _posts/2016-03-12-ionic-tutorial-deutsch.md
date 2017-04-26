@@ -21,11 +21,11 @@ Der erste Teil des Tutorials befasst sich mit folgenden Themen:
  - Basiselemente - ionHeader, ionContent, ionFooter
  - Navigation - ionNavView, ionView
  - Nutzung von Sidemenus
- - [Modals](/artikel/ionic-tutorial-deutsch-modals)
- - [Popups](/artikel/ionic-tutorial-deutsch-popups)
- - [Ionicons](/artikel/ionic-tutorial-deutsch-ionicons)
- - [Styling mit SCSS](/artikel/ionic-tutorial-deutsch-scss)
- - [Konfiguration mit $ionicConfigProvider](/artikel/ionic-tutorial-deutsch-configuration)
+ - [Modals](/artikel/ionic-tutorial-deutsch-modals/)
+ - [Popups](/artikel/ionic-tutorial-deutsch-popups/)
+ - [Ionicons](/artikel/ionic-tutorial-deutsch-ionicons/)
+ - [Styling mit SCSS](/artikel/ionic-tutorial-deutsch-scss/)
+ - [Konfiguration mit $ionicConfigProvider](/artikel/ionic-tutorial-deutsch-configuration/)
 
 **Voraussetzung**
 

@@ -53,7 +53,7 @@ Eine kleine Anmerkung am Rande: Die Dokumentation erwähnt, dass das Cookie nach
 
 Solange das Token gültig ist, klappt alles wunderbar. Eine ordentliche Backend-Implementierung sollte eine bestehende Nutzer-Session jedoch nach einer bestimmten inaktiven Zeit invalidieren. Was passiert also, wenn das Token abläuft?
 
-$http bietet einige Methoden um GET-, POST-, PUT-, DELETE- und HEAD-Requests bequemer auszuführen. Diese Methoden liefern nicht nur eine [Promise](https://angularjs.de/buecher/angularjs-buch/angularjs-promises) zurück, sondern eine erweiterte Promise, die die Methoden `success(callbackFn)` und `error(callbackFn)` bietet und somit Method-Chaining (bekannt aus jQuery) erlaubt. Außerdem wird die Response schon destrukturiert.
+$http bietet einige Methoden um GET-, POST-, PUT-, DELETE- und HEAD-Requests bequemer auszuführen. Diese Methoden liefern nicht nur eine [Promise](/buecher/angularjs-buch/angularjs-promises/) zurück, sondern eine erweiterte Promise, die die Methoden `success(callbackFn)` und `error(callbackFn)` bietet und somit Method-Chaining (bekannt aus jQuery) erlaubt. Außerdem wird die Response schon destrukturiert.
 
     $http.get("/users/3")
     .success(function(data, status, headers, response) {

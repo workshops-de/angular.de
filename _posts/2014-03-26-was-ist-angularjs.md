@@ -46,4 +46,4 @@ Der ursprüngliche Autor, Miško Hevery, hat großen Wert auf **Testbarkeit gele
 
 Eine Sache unterscheidet AngularJS erheblich von anderen Frameworks. In AngularJS  kann man als Datenstruktur normale JavaScript-Objekte (POJO) nutzen. Dies macht es sehr leicht, fremde Bibliotheken einzubinden. In anderen Framework, wie zum Beispiel Ember.js müssen dazu erst extra Model-Klassen erstellt werden, die die Bibliotheken wrappen.
 
-**Lust auf AngularJS bekommen?** - Dann starte mit unserem [Einsteiger-Tutorial](/artikel/angularjs-tutorial-deutsch)
+**Lust auf AngularJS bekommen?** - Dann starte mit unserem [Einsteiger-Tutorial](/artikel/angularjs-tutorial-deutsch/)

@@ -261,7 +261,7 @@ Im derzeitigen Zustand ist unsere Tabelle beim Start der Applikation leer. Sobal
 
 Wir können nicht nur bestehende Services von AngularJS nutzen, sondern auch unsere Eigenen schreiben. Wenn wir einen kleinen Shop programmieren, darf natürlich der Warenkorb nicht fehlen. Wir wollen euch nur grundsätzlich zeigen, wie Services funktionieren und werden hier deshalb nur einen kleinen Teil der Funktionalität implementieren, nämlich das Hinzufügen von Artikeln und die Berechnung der Summe.
 
-Wir können Services auf verschiedene Arten definieren. An dieser Stelle stellen wir die wahrscheinlich am häufigsten verwendete Methode vor: der [Factory-Service](/buecher/angularjs-buch/services).
+Wir können Services auf verschiedene Arten definieren. An dieser Stelle stellen wir die wahrscheinlich am häufigsten verwendete Methode vor: der [Factory-Service](/buecher/angularjs-buch/services/).
 
 Services sind Singletons. Es existiert also immer nur eine Instanz jedes Services. Die Definition erfolgt wie beim Controller mithilfe einer Modulfunktion. In diesem Fall heißt diese Funktion factory().
 
@@ -361,13 +361,7 @@ Zum praktischen Schritt. Neue Artikel im Warenkorb wollen wir kurz aufblinken la
 
 Die zwei CSS-Klassen bestimmen Start- und Endzustand. In `ng-enter` werden die Startfarbe *gelb* und die CSS3-Transition festgelegt. Diese Klasse wird zuerst hinzugefügt. Unmittelbar danach wird die zweite Klasse mit dem Endzustand der Farbe *weiß* hinzugefügt. Ist die Animation durchgelaufen, werden beide entfernt. Im Folgenden sehen wir graphisch, was passiert:
 
-<<<<<<< HEAD
-![Animation](/artikel/angularjs-tutorial-deutsch/angularjs-tutorial-deutsch-ng-animate.png)
-||||||| 91481df... image links in posts are now absolute
-![Animation](/artikel/angularjs-tuorial-deutsch/angularjs-tutorial-deutsch-ng-animate.png)
-=======
 ![Animation](angularjs-tutorial-deutsch-ng-animate.png)
->>>>>>> parent of 91481df... image links in posts are now absolute
 
 Mit minimalem Aufwand könnt ihr dadurch sehr schöne Effekte erzielen. AngularJS kümmert sich dabei vollständig um das richtige Timing. Animationen über JavaScript-Frameworks sind auch möglich, sprengen aber den Rahmen dieses Tutorials.
 

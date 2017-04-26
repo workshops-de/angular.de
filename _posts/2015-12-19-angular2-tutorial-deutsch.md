@@ -8,7 +8,7 @@ categories: tutorial angular2 angular angular4 featured
 header_image: "/artikel/header_images/angular2-tutorial-deutsch.jpg"
 ---
 
-Dieses Tutorial baut auf dem selben Code-Beispiel wie unser [AngularJS 1 Tutorial](/artikel/angularjs-tutorial-deutsch) auf - so können die Implementierungen leicht verglichen werden. Es ist aber nicht erforderlich das Angular 1 Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Als Beispiel werden wir wieder eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von Angular kennenlernen. Da wir das selbe Szenario benutzen, könnt Ihr die Lösungen in AngularJS 1 und Angular direkt miteinander vergleichen.
+Dieses Tutorial baut auf dem selben Code-Beispiel wie unser [AngularJS 1 Tutorial](/artikel/angularjs-tutorial-deutsch/) auf - so können die Implementierungen leicht verglichen werden. Es ist aber nicht erforderlich das Angular 1 Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Als Beispiel werden wir wieder eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von Angular kennenlernen. Da wir das selbe Szenario benutzen, könnt Ihr die Lösungen in AngularJS 1 und Angular direkt miteinander vergleichen.
 
 Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
 
@@ -52,9 +52,9 @@ Wir haben die Artikelreihe in verschiedene Teile aufgeteilt.
 * Services
 * HTTP
 * Observables
-* Component-Lifecycle + [extra Artikel](/artikel/angular-2-component-lifecycle)
+* Component-Lifecycle + [extra Artikel](/artikel/angular-2-component-lifecycle/)
 * Interfaces
-* [Routing mit Angular](/artikel/angular2-routing-tutorial-deutsch)
+* [Routing mit Angular](/artikel/angular2-routing-tutorial-deutsch/)
 
 <div class="alert alert-info">Hinweis: Das Tutorial orientiert sich stark am <a href="https://angular.io/docs/ts/latest/guide/style-guide.html" target="_blank">Style-Guide</a> für Angular Anwendungen.</div>
 
@@ -542,7 +542,7 @@ Zuerst wird der Http-Service von Angular importiert und dann über die Dependenc
 
 
 ### Observables in Angular
-Ein Observable ist mit [JavaScript-Promises](https://angularjs.de/buecher/angularjs-buch/angularjs-promises) vergleichbar. Ist der Programmcode des Observable abgeschlossen, wird allen Abonnenten Bescheid gegeben. Auf diesen Observables basiert auch das Event-System von Angular (Stichwort EventEmitter).
+Ein Observable ist mit [JavaScript-Promises](/buecher/angularjs-buch/angularjs-promises/) vergleichbar. Ist der Programmcode des Observable abgeschlossen, wird allen Abonnenten Bescheid gegeben. Auf diesen Observables basiert auch das Event-System von Angular (Stichwort EventEmitter).
 
 Um ein Observable zu abonnieren, muss dessen subscribe-Funktion aufgerufen werden. Als Callback erhält diese eine Funktion, welche wiederum als Parameter geänderte oder neue Daten erhält. In unserem Fall sind das, die Pizzen aus der JSON-Datei.
 

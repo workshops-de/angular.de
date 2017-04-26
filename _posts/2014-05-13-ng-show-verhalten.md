@@ -1,6 +1,6 @@
 ---
 title: "Das merkwürdige Verhalten von ng-show"
-description: 
+description:
 author: "Sascha Brink"
 slug: "ng-show-verhalten"
 published_at: 2014-05-13 10:43:00.000000Z
@@ -10,7 +10,7 @@ header_image: "/artikel/header_images/ng-show-verhalten.jpg"
 
 > Hinweis: Das merkwürdige Verhalten wurde in AngularJS 1.3 [behoben](https://github.com/angular/angular.js/commit/bdfc9c02d021e08babfbc966a007c71b4946d69d).
 
-Andreas Becker war so lieb und hat im [AngularJS Tutorial](/artikel/angularjs-tutorial-deutsch) auf das merkwürdige Verhalten von *ng-show* hingewiesen:
+Andreas Becker war so lieb und hat im [AngularJS Tutorial](/artikel/angularjs-tutorial-deutsch/) auf das merkwürdige Verhalten von *ng-show* hingewiesen:
 
 > Im Beispiel erscheint nach der Eingabe eines Buchstabens der Satz "Du suchst gerade nach:" mit dem entsprechenden Zeichen dahinter. Tippe ich allerdings n oder f ein, erscheint dieser Satz nicht.  Hast du dafür eine Erklärung?
 
@@ -44,4 +44,4 @@ Das bedeutet, wenn in einem String **f, 0, false, no, n oder []** steht, wird di
 Wer das "normale" Verhalten erzwingen möchte, kann einen String schon vorher mit `!!` in einen Boolean-Wert konvertieren.
 
     <input type="text" ng-model="search">
-    <p ng-show="!!search">Du suchst gerade nach: {{search}}</p> 
+    <p ng-show="!!search">Du suchst gerade nach: {{search}}</p>

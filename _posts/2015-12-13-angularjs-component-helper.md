@@ -15,7 +15,7 @@ In diesem Artikel stelle ich euch den neuen Component-Helper vor. Wie uns der ak
       bindings: { name: '=' }
     });
 
-Ihr könnt die komplette Diskussion zu diesem Feature Request im Github [Issue] nachlesen. In folgender Tabelle sehr ihr eine Übersicht der wichtigsten Konfigurationen. Die komplette Beschreibung könnt ihr in der [API Doc] nachlesen. 
+Ihr könnt die komplette Diskussion zu diesem Feature Request im Github [Issue] nachlesen. In folgender Tabelle sehr ihr eine Übersicht der wichtigsten Konfigurationen. Die komplette Beschreibung könnt ihr in der [API Doc] nachlesen.
 
 
  Name | Description | Default
@@ -29,7 +29,7 @@ controllerAs | An identifier name for a reference to the controller. | $ctrl
 
 <br/>
 
-Der Component-Helper bietet euch hierbei einen einfachen Wrapper für mit der Zeit recht komplex gewordene `.directive(...)` Funktion. Er ist ist also so ähnlich zu verstehen wie die Factory-, Service-, Value-Helper für die `.provider(...)` Funktion. Ihr könnt dieses Thema in unserem [Buch](/buecher/angularjs-buch/services) nachlesen falls Ihr noch nicht wisst worüber ich rede.
+Der Component-Helper bietet euch hierbei einen einfachen Wrapper für mit der Zeit recht komplex gewordene `.directive(...)` Funktion. Er ist ist also so ähnlich zu verstehen wie die Factory-, Service-, Value-Helper für die `.provider(...)` Funktion. Ihr könnt dieses Thema in unserem [Buch](/buecher/angularjs-buch/services/) nachlesen falls Ihr noch nicht wisst worüber ich rede.
 
 Neben der Reduzierung von Komplexität ermöglicht uns der Helper ebenfalls das einfache Einhalten von **Best Practices** und nährt sich der Definition von Direktiven und Komponenten von Angular2 an. *Direktiven* sind hierbei generelle HTML-Erweiterung, welche Verhalten kapseln. *Komponenten* sind eine spezielle Art von Direktiven, welche ein eigenen (Shadow-)DOM besitzen und UI Widgets oder Anwendungs-Komponenten darstellen. Somit ist dies ein weiterer Schritt zur immer sanfter werdenden Migration zu Angular2.
 
@@ -56,14 +56,14 @@ Neben der Reduzierung von Komplexität ermöglicht uns der Helper ebenfalls das 
             data: '='
           }
         });
-        
+
 
 
 Die beiden hier gezeigten Varianten erstellen eine identische Komponente. Wir müssen allerdings nichtmehr den ganzen *Boilerplate-Code* schreiben der mittlerweile eigentlich bei 90% der in AngularJS erstellten Direktiven immer wieder kopiert wurde. Und genau DAS ist was AngularJS meiner Meinung nach groß gemacht hat. Löse deine fachlichen Anforderungen ohne dich ständig durch Copy&Paste Kämpfen zu müssen und konzentriere dich auf das wesentliche. Die Einführung der `.component(...)` Funktion ist hierbei wieder ein Schritt in die richtige Richtung.
 
 ## Tip für TypeScript Nutzer
 
-Ihr könnt euch nun sehr einfach ein eigenen Decorator schreiben, mit dem Ihr heute schon nahezu die Angular2 Syntax in euren AngularJS Anwendungen benutzen könnt. In unseren Projekten sieht das z.B. so aus: 
+Ihr könnt euch nun sehr einfach ein eigenen Decorator schreiben, mit dem Ihr heute schon nahezu die Angular2 Syntax in euren AngularJS Anwendungen benutzen könnt. In unseren Projekten sieht das z.B. so aus:
 
     @Component({
       selector: 'group-overview',

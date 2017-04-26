@@ -1,6 +1,6 @@
 ---
 title: "Neue Optionen für ngModel in AngularJS 1.3"
-description: 
+description:
 author: "Tilman Potthof"
 slug: "ng-model-options"
 published_at: 2014-11-27 09:04:00.000000Z
@@ -9,7 +9,7 @@ header_image: "/artikel/header_images/ng-model-options.jpg"
 ---
 
 AngularJS ist bekannt für sein einfaches bidirektionales Databinding.
-Praktisch jedes Einsteiger-Tutorial beginnt damit, dass man ein Text-Eingabefeld mit der `ng-model` Direktive verbindet und die verbundene Variable wieder ausgibt (auch unser [Einsteiger-Tutorial](/artikel/angularjs-tutorial-deutsch)).
+Praktisch jedes Einsteiger-Tutorial beginnt damit, dass man ein Text-Eingabefeld mit der `ng-model` Direktive verbindet und die verbundene Variable wieder ausgibt (auch unser [Einsteiger-Tutorial](/artikel/angularjs-tutorial-deutsch/)).
 
     <input type="text" ng-model="search">
     <p>Du suchst gerade nach: {{search}}</p>
@@ -61,7 +61,7 @@ Im zugehörigen Controller sind die beiden `getterSetter`-Funktionen so implemen
 Anschließend werden beide Werte geprüft, umgerechnet und im Feld `temperature.celsiusValue` gespeichert und wieder gerundet zurückgegeben.
 Die Fahrenheit-Funktion liefert wieder einen umgerechneten Wert zurück.
 Die alleinige Datenquelle bleibt in beiden Fällen aber der Wert in `temperature.celsiusValue`.
-    
+
     // app.js
 	angular.module('ngModelOptionsDemo').controller('baseController', function($scope, $timeout) {
 	  function fahrenheitToCelsius(fahrenheit) {
@@ -96,7 +96,7 @@ Die alleinige Datenquelle bleibt in beiden Fällen aber der Wert in `temperature
 
 
 <iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/FUF0jNAE4ce1guOqWolI/preview.html" style="width:100%;height:400px;border:0"></iframe>
-    
+
 **Hinweis:** Das Initialisieren der Eingabefelder über die getterSetter-Funktion funktioniert erst ab 1.3.4 korrekt. Vorher werden Eingabefelder leider immer leer initialisiert.
 
 ## Interaktives Beispiel
@@ -106,4 +106,3 @@ Zum Abschluss dieses Blog-Posts gibt es noch ein interaktives Beispiel zum Bearb
 **Tipp:** Die Optionen `updateOn` und `debounce` lassen sich kombinieren.
 
 <iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/ygc28XaPL8s0XaL11tEX/preview.html" style="width:100%;height:540px;border:0"></iframe>
- 
