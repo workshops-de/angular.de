@@ -1,0 +1,21 @@
+<!-- author info -->
+<div class="row mb-2">
+  <div class="col-4 col-sm-3 col-md-2">
+    <span>
+      <img alt="{{ author.name }}" class="rounded-circle" height="80" width="80" src="//www.gravatar.com/avatar/{{ author.gravatar_uid }}?s=160">
+    </span>
+  </div>
+  <div class="col-8 col-sm-9 col-md-10">
+    <p class="h5 text-truncate">
+      {{ author.name }}
+    </p>
+    <div>
+      {% if author.github %}
+        <a href="https://github.com/{{ author.github }}" class="btn btn-sm btn-outline-primary" target="_blank">Github</a>
+      {% endif %}
+      {% if author.twitter %}
+        <a href="https://twitter.com/{{ author.twitter }}" class="btn btn-sm btn-outline-info" target="_blank">Twitter</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -2,12 +2,18 @@
 layout: base
 ---
 
+{% for user_hash in site.data.users %}
+  {% if page.author == user_hash[1].name %}
+    {% assign author = user_hash[1] %}
+  {% endif %}
+{% endfor %}
+
 <div class="header header-post background-gradient-overlay">
   <div class="header header-post hidden-print"
        style="background-image: url('{{page.header_image}}');"></div>
   <div class="container text-wrapper" style="text-align: center;">
     <h1 class="header-post-title">{{ page.title }}</h1>
-    <div class="header-post-author">von {{ page.author }}</div>
+    <div class="header-post-author">von {{ author.name }}</div>
   </div>
 </div>
 
@@ -17,6 +23,9 @@ layout: base
     <div class="row justify-content-md-center">
       <div class="col-md-12 col-lg-8">
         {{ content }}
+        <br>
+        {% include _author.html %}
+        <br>
         <p>
           <a href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">Diesen Artikel auf GitHub verbessern</a>
         </p>
