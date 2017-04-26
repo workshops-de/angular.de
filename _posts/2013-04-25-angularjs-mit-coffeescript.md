@@ -23,16 +23,18 @@ AngularJS kann nicht eleganter werden? Kein Problem, denken viele. Schon falsch.
 
 Wir müssen also etwas beachten? - Ja. Die meisten Beispiele, die wir von AngularJS kennen, benutzen den globalen Namespace und provozieren einige Probleme. CoffeeScript nutzt das Konzept der [IIFE](http://en.wikipedia.org/wiki/Immediately-invoked_function_expression) (Immediately Invoked Function Expression), um den geschriebenen Quelltext in eine eigene Funktion zu hüllen und somit den globalen Namespace sauber zu halten. Das heißt, wenn wir einen Controller definieren, wie wir es kennen:
 
-    MainController = ($scope, Names) ->
-
+```coffeescript
+MainController = ($scope, Names) ->
+```
 
 ergibt das folgenden JavaScript-Code:
 
-    (function() {
-      var MainController;
-      MainController = function($scope, Names) {};
-    }).call(this);
-
+```javascript
+(function() {
+  var MainController;
+  MainController = function($scope, Names) {};
+}).call(this);
+```
 
 MainController ist keine globale Variable, wie wir es gewohnt sind. Das Problem ist auf zwei Arten lösbar:
 
@@ -40,13 +42,14 @@ MainController ist keine globale Variable, wie wir es gewohnt sind. Das Problem 
 
 Der einfachste Weg ist es natürlich, auf andere Weise eine globale Variable zu erstellen. CoffeeScript macht dies schwer, aber nicht unmöglich. Global ist alles, was man explizit window zuweist, also window.MainController. Das sieht nicht ansprechend aus und wirkt falsch, ja. Wir haben noch eine Alternative. Um den gleichen Effekt zu erzielen, können wir auch @ benutzen. Beispiel:
 
-    app = angular.module "TestApp", []
+```coffeescript
+app = angular.module "TestApp", []
 
-    app.value "Names", ["Sascha", "Robin", "Phil"]
+app.value "Names", ["Sascha", "Robin", "Phil"]
 
-    @MainController = ($scope, Names) ->
-      $scope.names = Names
-
+@MainController = ($scope, Names) ->
+  $scope.names = Names
+```
 
 #### Wieso funktioniert das?
 
@@ -54,16 +57,19 @@ Das `@`-Zeichen übersetzt CoffeeScript in `this` von JavaScript. Die IIFE erhä
 
 Verwirrend? Nochmal langsam. `call` führt die Funktion aus. Der erste Parameter ist `this`, was auf oberster Ebene in JavaScript `window` ist. Der Aufruf ist also gleichbedeutend mit:
 
-    (function() {
-      //...
-    }).call(window);
-
+```javascript
+(function() {
+  //...
+}).call(window);
+```
 
 Der erste Parameter von `call` (in diesem Fall `window`) gibt an, welchen Wert `this` innerhalb der Funktion zugewiesen bekommt.
 
-    (function() {
-      // hier ist this = window
-    }).call(window);
+```javascript
+(function() {
+  // hier ist this = window
+}).call(window);
+```
 
 
 Schon besser, aber...! Wer den globalen Namespace nicht verschmutzen möchte, geht folgendermaßen vor:
@@ -72,13 +78,14 @@ Schon besser, aber...! Wer den globalen Namespace nicht verschmutzen möchte, ge
 
 AngularJS bietet eine Methode an, um einen Controller explizit einem Modul zu registrieren:
 
-    app = angular.module "TestApp", []
+```coffeescript
+app = angular.module "TestApp", []
 
-    app.value "Names", ["Sascha", "Robin", "Phil"]
+app.value "Names", ["Sascha", "Robin", "Phil"]
 
-    app.controller 'MainController', ($scope, Names) ->
-      $scope.names = Names
-
+app.controller 'MainController', ($scope, Names) ->
+  $scope.names = Names
+```
 
 Lösung 2 solltest du natürlich Lösung 1 vorziehen. Der globale Namespace bleibt dadurch sauber und du provozierst keine Konflikte mit andere Modulen, die gleichnamige Controller enthalten.
 
@@ -88,20 +95,18 @@ Wer sich schon immer gefragt hat, wann es günstig ist, *service* statt *factory
 
 CoffeeScript bildet Klassen in JavaScript nach. Objekte von Klassen werden in CoffeeScript mit `new` instanziiert, AngularJS ruft Funktionen von `service` mit `new` auf - perfekte Kombination, genau! Somit können wir `service` direkt eine Klasse von CoffeeScript übergeben übergeben. Ein Beispiel dazu:
 
-    app = angular.module "TestApp", []
+```coffeescript
+app = angular.module "TestApp", []
 
-    class People
-      names: ["Sascha", "Robin", "Phil"]
+class People
+  names: ["Sascha", "Robin", "Phil"]
 
-    # app.value "NameService", new People
-    # app.factory "NameService", -> new People
-    app.service "NameService", People
+# app.value "NameService", new People
+# app.factory "NameService", -> new People
+app.service "NameService", People
 
-    app.controller 'MainController', ($scope, NameService) ->
-      $scope.names = NameService.names
+app.controller 'MainController', ($scope, NameService) ->
+  $scope.names = NameService.names
+```
 
-
-Wer mehr über die Konzepte von [factory und service][1] erfahren möchte, kann sein Wissen zu diesen Themen gerne vertiefen.
-
-
- [1]: /buecher/angularjs-buch/services/
+Wer mehr über die Konzepte von [Factory und Service](/buecher/angularjs-buch/services/) erfahren möchte, kann sein Wissen zu diesen Themen gerne vertiefen.
