@@ -49,7 +49,7 @@ permalink: /
     <div class="row mt-4">
       <div class="col-md-8">
         {% for post in site.posts limit:4 %}
-          {% include _article.html %}
+          {% include _article.html footer=true %}
         {% endfor %}
         <a class="btn btn-block btn-secondary text-muted hidden-sm-up" href="/artikel/">weitere Artikel</a>      <br class="hidden-sm-up">
         <br class="hidden-sm-up">

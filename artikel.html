@@ -19,7 +19,7 @@ pagination:
 <div class="row">
   <div class="col-md-8">
     {% for post in paginator.posts %}
-      {% include _article.html %}
+      {% include _article.html footer=true %}
     {% endfor %}
 
     <nav aria-label="Paginierung">
