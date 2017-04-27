@@ -2,6 +2,7 @@
 title: Artikelübersicht
 permalink: /artikel/alle/
 noindex: true
+sitemap: false
 ---
 
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
