@@ -10,7 +10,7 @@ header_image: "/artikel/header_images/angularjs-web-worker.jpg"
 
 Web Worker ist eine relative neue Spezifikation, um Multi-Threading im Browser zu ermöglichen. Über eine JavaScript-API können zusätzlich zum Haupt- oder UI-Thread einer HTML-Seite weitere Threads gestartet und über eine nachrichtenbasierte Schnittstelle angesprochen werden. Der Einsatz von Web Workern hat zwei entscheidende Vorteile:
 
-Zum einen können Prozesse parallelisiert werden, indem eine Gesamtaufgabe in kleinere Aufgaben heruntergebrochen wird. Diese können gleichzeitig ausgeführt werden. Ressourcen lassen sich so besser ausnutzen, was insbesondere bei Multi-Code-Prozessoren zugute kommt. Ob eine parallelisierte Aufgabe schneller ausgeführt wird, kann jedoch nicht pauschal beantwortet werden. Das ist abhängig von der Aufgabe und dem Gerät bzw. Browser, auf dem der Code ausgeführt wird.
+Zum einen können Prozesse parallelisiert werden, indem eine Gesamtaufgabe in kleinere Aufgaben heruntergebrochen wird. Diese können gleichzeitig ausgeführt werden. Ressourcen lassen sich so besser ausnutzen, was insbesondere bei Multi-Core-Prozessoren zugute kommt. Ob eine parallelisierte Aufgabe schneller ausgeführt wird, kann jedoch nicht pauschal beantwortet werden. Das ist abhängig von der Aufgabe und dem Gerät bzw. Browser, auf dem der Code ausgeführt wird.
 
 Zum anderen kann bei rechenintensiven Operationen der Haupt-Thread entlastet werden. Dies ist insbesondere deshalb wichtig, um das Benutzerinterface nicht zu blockieren. Alternativ müsste man nämlich als Entwickler manuell schedulen. Das heißt komplexe Operationen immer wieder über ein setTimeout() unterbrechen, um Zeit für das Rendern des Interfaces zu schaffen.
 
