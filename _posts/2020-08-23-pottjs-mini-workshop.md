@@ -1,10 +1,10 @@
 ---
 title: "PottJS Angular 2 Mini Workshop"
-description: 
+description:
 author: "Robin Böhm"
 slug: "pottjs-mini-workshop"
 published_at: 2020-08-23 10:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4"
 header_image: "/artikel/header_images/pottjs-mini-workshop.jpg"
 ---
 
@@ -13,7 +13,7 @@ Einladung zum Mini-Mitmach-Workshop! Wie bereits angekündigt, werde ich diesmal
 
 ## Anmeldung zum Classroom
 
-Falls Ihr im Classroom dabei seinen wollt: Ihr könnt euch hier eintragen und bekommt den Link zum Classroom direkt nach der Bestätigung euerer Mail-Adresse zugesendet. 
+Falls Ihr im Classroom dabei seinen wollt: Ihr könnt euch hier eintragen und bekommt den Link zum Classroom direkt nach der Bestätigung euerer Mail-Adresse zugesendet.
 
 <br/><br/>
 
@@ -27,7 +27,7 @@ Falls Ihr im Classroom dabei seinen wollt: Ihr könnt euch hier eintragen und be
             </div>
           </div>
         </form>
-        
+
 <br/><br/>
 
 Wir optimieren unsere Workshops immer weiter und ich bin sehr gespannt, ob dieses Format auch in einem kleinen Einführungs-Abend funktioniert! Das Schlimmste was passieren kann: Ihr bekommt ein normalen Talk mit Hands-On-Beispielen von mir. Im optimalen Fall kann ich euch aber ein deutlichen Mehrwert geben und ein geführtes Beispiel zum selber ausprobieren anbieten!

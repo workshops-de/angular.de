@@ -4,7 +4,7 @@ description: "Texte formatieren leicht gemacht. Der Rich-Text Editor QuillJS jet
 author: "Bengt Weiße"
 slug: "ngquill-wysiwyg-editor-angularjs"
 published_at: 2015-12-11 08:37:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/ngquill-wysiwyg-editor-angularjs.jpg"
 ---
 

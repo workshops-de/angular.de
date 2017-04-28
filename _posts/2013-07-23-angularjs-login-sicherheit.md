@@ -4,7 +4,7 @@ description:
 author: "Marius Soutier"
 slug: "angularjs-login-sicherheit"
 published_at: 2013-07-23 16:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs security authentication"
 header_image: "/artikel/header_images/angularjs-login-sicherheit.jpg"
 ---
 

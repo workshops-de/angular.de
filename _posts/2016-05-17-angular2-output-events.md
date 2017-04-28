@@ -4,7 +4,7 @@ description: "Lasst eure Komponenten miteinander schnell und einfach über Event
 author: "Bengt Weiße"
 slug: "angular2-output-events"
 published_at: 2016-05-17 12:12:12.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4"
 header_image: "/artikel/header_images/angular2-output-events.jpg"
 ---
 

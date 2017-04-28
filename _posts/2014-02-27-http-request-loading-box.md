@@ -4,7 +4,7 @@ description:
 author: "Sascha Brink"
 slug: "http-request-loading-box"
 published_at: 2014-02-27 11:55:15.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/http-request-loading-box.jpg"
 ---
 

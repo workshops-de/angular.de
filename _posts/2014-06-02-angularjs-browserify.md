@@ -4,7 +4,7 @@ description:
 author: "Bastian Krol"
 slug: "angularjs-browserify"
 published_at: 2014-06-02 07:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-browserify.jpg"
 ---
 

@@ -4,7 +4,7 @@ description: "Es rückt näher und näher! Brad Green hat in einem Tweet den Mil
 author: "Robin Böhm"
 slug: "angular-2-release-candidate"
 published_at: 2016-03-16 11:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4 news beta rc"
 header_image: "/artikel/header_images/angular-2-release-candidate.jpg"
 ---
 

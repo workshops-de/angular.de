@@ -4,7 +4,7 @@ description: "Lerne, was die Controller-As-Syntax in AngularJS ist und wie du da
 author: "Tilman Potthof"
 slug: "controller-as-syntax"
 published_at: 2015-01-05 09:01:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/controller-as-syntax.jpg"
 ---
 

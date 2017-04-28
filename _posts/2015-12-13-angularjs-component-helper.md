@@ -4,7 +4,7 @@ description: "In der AngularJS Version 1.5 wurden die Components eingeführt. Le
 author: "Robin Böhm"
 slug: "angularjs-component-helper"
 published_at: 2015-12-13 19:58:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-component-helper.jpg"
 ---
 

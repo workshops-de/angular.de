@@ -4,7 +4,7 @@ description: "Migration mit ngUpgrade leichtgemacht. Eine Zusammenfassung über 
 author: "Jonathan Schneider"
 slug: "ngupgrade-migration-angularjs-angular2"
 published_at: 2016-10-04 00:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs angular angular2 angular4 migration"
 header_image: "/artikel/header_images/ngupgrade-migration-angularjs-angular2.jpg"
 ---
 

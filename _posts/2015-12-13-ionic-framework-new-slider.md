@@ -4,7 +4,7 @@ description: "Ihr habt Probleme mit der eingebauten Slideshow von Ionic? Die Ent
 author: "Bengt Weiße"
 slug: "ionic-framework-new-slider"
 published_at: 2015-12-13 18:16:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs ionic"
 header_image: "/artikel/header_images/ionic-framework-new-slider.jpg"
 ---
 

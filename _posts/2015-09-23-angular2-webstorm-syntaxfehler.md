@@ -4,7 +4,7 @@ description: "Eine Anleitung wie ihr eure WebStorm IDE mit  Angular2 so konfigur
 author: "Robin Böhm"
 slug: "angular2-webstorm-syntaxfehler"
 published_at: 2015-09-23 07:01:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4"
 header_image: "/artikel/header_images/angular2-webstorm-syntaxfehler.jpg"
 ---
 

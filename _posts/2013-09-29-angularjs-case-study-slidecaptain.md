@@ -4,7 +4,7 @@ description:
 author: "Gerd Jungbluth"
 slug: "angularjs-case-study-slidecaptain"
 published_at: 2013-09-29 17:00:40.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-case-study-slidecaptain.jpg"
 ---
 

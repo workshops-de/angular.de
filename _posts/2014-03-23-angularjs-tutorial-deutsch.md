@@ -4,7 +4,7 @@ description: "Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anh
 author: "Sascha Brink"
 slug: "angularjs-tutorial-deutsch"
 published_at: 2014-03-23 12:12:00.000000Z
-categories: tutorial angular2 angular angular4
+categories: "tutorial angularjs"
 header_image: "/artikel/header_images/angularjs-tutorial-deutsch.jpg"
 ---
 

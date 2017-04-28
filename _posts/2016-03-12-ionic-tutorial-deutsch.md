@@ -4,7 +4,7 @@ description: "Unser Einführungstutorial zu Ionic erklärt euch alle wichtigen K
 author: "Bengt Weiße"
 slug: "ionic-tutorial-deutsch"
 published_at: 2016-03-12 08:29:00.000000Z
-categories: tutorial angular2 angular angular4
+categories: "tutorial ionic angularjs"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch.jpg"
 ---
 

@@ -4,7 +4,7 @@ description:
 author: "Tilman Potthof"
 slug: "angularjs-access-scope-via-console"
 published_at: 2014-12-03 07:57:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-access-scope-via-console.jpg"
 ---
 

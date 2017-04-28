@@ -4,7 +4,7 @@ description:
 author: "Sascha Brink"
 slug: "angularjs-svg-clock"
 published_at: 2014-02-21 11:48:13.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-svg-clock.jpg"
 ---
 

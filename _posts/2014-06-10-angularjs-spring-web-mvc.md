@@ -4,7 +4,7 @@ description:
 author: "Björn Wilmsmann"
 slug: "angularjs-spring-web-mvc"
 published_at: 2014-06-10 07:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-spring-web-mvc.jpg"
 ---
 

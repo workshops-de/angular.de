@@ -4,7 +4,7 @@ description: "Tutorial zu Continuous Deployment mit Docker und CircleCI für dei
 author: "Martin Wiesmüller"
 slug: "angular-deployment-docker"
 published_at: 2017-03-19 00:00:01.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4 docker deployment"
 header_image: "/artikel/header_images/angular-deployment-docker.jpg"
 ---
 

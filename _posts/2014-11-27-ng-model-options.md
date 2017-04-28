@@ -4,7 +4,7 @@ description:
 author: "Tilman Potthof"
 slug: "ng-model-options"
 published_at: 2014-11-27 09:04:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs 1.3"
 header_image: "/artikel/header_images/ng-model-options.jpg"
 ---
 

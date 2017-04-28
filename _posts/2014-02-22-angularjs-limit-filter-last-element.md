@@ -4,7 +4,7 @@ description: "Lernt mit einem einfachen Trick, wie ihr aus einer Liste das letzt
 author: "Sascha Brink"
 slug: "angularjs-limit-filter-last-element"
 published_at: 2014-02-22 10:32:12.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-limit-filter-last-element.jpg"
 ---
 

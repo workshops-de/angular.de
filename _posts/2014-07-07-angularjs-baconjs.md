@@ -4,7 +4,7 @@ description:
 author: "Ramy Hardan"
 slug: "angularjs-baconjs"
 published_at: 2014-07-07 07:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs reactive observables"
 header_image: "/artikel/header_images/angularjs-baconjs.jpg"
 ---
 

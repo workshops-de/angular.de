@@ -4,7 +4,7 @@ description:
 author: "Sascha Brink"
 slug: "ng-repeat-duplicates-in-repeater-are-not-allowed"
 published_at: 2014-03-03 07:45:24.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/ng-repeat-duplicates-in-repeater-are-not-allowed.jpg"
 ---
 

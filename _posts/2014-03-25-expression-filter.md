@@ -4,7 +4,7 @@ description:
 author: "Philipp Tarasiewicz"
 slug: "expression-filter"
 published_at: 2014-03-25 12:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/expression-filter.jpg"
 ---
 

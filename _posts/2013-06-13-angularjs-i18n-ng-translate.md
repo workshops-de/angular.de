@@ -4,7 +4,7 @@ description:
 author: "Pascal Precht"
 slug: "angularjs-i18n-ng-translate"
 published_at: 2013-06-13 00:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-i18n-ng-translate.jpg"
 ---
 

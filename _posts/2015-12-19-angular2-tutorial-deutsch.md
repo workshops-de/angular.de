@@ -4,7 +4,7 @@ description: "Tutorial zu Angular  - die neue Version des beliebtesten Single-Pa
 author: "Robin Böhm"
 slug: "angular2-tutorial-deutsch"
 published_at: 2015-12-19 08:00:00.000000Z
-categories: tutorial angular2 angular angular4 featured
+categories: "tutorial angular angular2 angular4"
 header_image: "/artikel/header_images/angular2-tutorial-deutsch.jpg"
 ---
 

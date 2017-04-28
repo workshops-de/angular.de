@@ -4,7 +4,7 @@ description:
 author: "Robin Böhm"
 slug: "angularjs-directives-d3-nvd3"
 published_at: 2014-02-28 14:12:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-directives-d3-nvd3.jpg"
 ---
 

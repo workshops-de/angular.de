@@ -4,7 +4,7 @@ description: "Bei dem heutigen Meetup im Google HQ wurde die Version Angular 2.0
 author: "Robin Böhm"
 slug: "angular2-final-release"
 published_at: 2016-09-15 07:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4 final release"
 header_image: "/artikel/header_images/angular2-final-release.jpg"
 ---
 

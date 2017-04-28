@@ -4,7 +4,7 @@ description: "Nutzt alle Features von ES2015 und eine strikte Typisierung schon 
 author: "Sascha Brink"
 slug: "angularjs-und-typescript"
 published_at: 2016-01-28 16:32:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs typescript"
 header_image: "/artikel/header_images/angularjs-und-typescript.jpg"
 ---
 

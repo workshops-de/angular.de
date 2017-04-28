@@ -4,7 +4,7 @@ description: "Moderne Web-Awendungen leben von mehr Interaktion. Hier erfahrt ih
 author: "Bengt Weiße"
 slug: "angular2-observables"
 published_at: 2016-05-27 10:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4 observables"
 header_image: "/artikel/header_images/angular2-observables.jpg"
 ---
 

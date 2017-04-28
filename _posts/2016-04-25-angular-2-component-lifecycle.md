@@ -4,7 +4,7 @@ description: "Angular-Anwendungen bestehen aus Components. Diese durchleben vers
 author: "Bengt Weiße"
 slug: "angular-2-component-lifecycle"
 published_at: 2016-04-25 12:12:12.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4"
 header_image: "/artikel/header_images/angular-2-component-lifecycle.jpg"
 ---
 

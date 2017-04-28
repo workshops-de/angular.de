@@ -4,7 +4,7 @@ description: "Der nächste Teil unseres Ionic Tutorials beschäftigt sich mit Di
 author: "Bengt Weiße"
 slug: "ionic-tutorial-deutsch-modals"
 published_at: 2016-01-25 08:29:00.000000Z
-categories: "angular2 angular angular4"
+categories: "ionic angularjs"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-modals.jpg"
 ---
 

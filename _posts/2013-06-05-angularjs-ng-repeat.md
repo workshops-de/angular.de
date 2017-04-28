@@ -4,7 +4,7 @@ description:
 author: "Philipp Tarasiewicz"
 slug: "angularjs-ng-repeat"
 published_at: 2013-06-05 14:30:20.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-ng-repeat.jpg"
 ---
 

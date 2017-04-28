@@ -4,7 +4,7 @@ description: "Einführung in E2E Tests mit Protractor und Sauce Labs - Die unive
 author: "Martin Wiesmüller"
 slug: "angular-e2e-protractor-test-saucelabs"
 published_at: 2017-01-12 08:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4 testing testen"
 header_image: "/artikel/header_images/angular-e2e-protractor-test-saucelabs.jpg"
 ---
 

@@ -4,7 +4,7 @@ description: "Als Erweiterung unserer Workshops setzen wir nun zusätzlich auf d
 author: "Robin Böhm"
 slug: "angular2-typescript-webinar"
 published_at: 2016-08-23 10:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4 typescript webinar"
 header_image: "/artikel/header_images/angular2-typescript-webinar.jpg"
 ---
 

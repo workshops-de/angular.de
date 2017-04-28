@@ -4,7 +4,7 @@ description: "Lerne, wie du AngularJS mit der Bibliothek D3 verwenden kannst, um
 author: "Robin Böhm"
 slug: "angularjs-d3-wordcloud"
 published_at: 2013-05-02 16:00:28.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-d3-wordcloud.jpg"
 ---
 

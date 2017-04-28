@@ -4,7 +4,7 @@ description: "Ionic 2 ist der Nachfolger des beliebten Frameworks Ionic für die
 author: "Bengt Weiße"
 slug: "ionic2-tutorial-deutsch"
 published_at: 2016-06-03 06:12:12.000000Z
-categories: tutorial angular2 angular angular4 featured
+categories: "tutorial ionic2 angular angular2 angular4"
 header_image: "/artikel/header_images/ionic2-tutorial-deutsch.jpg"
 ---
 

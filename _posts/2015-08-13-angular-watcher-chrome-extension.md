@@ -4,7 +4,7 @@ description:
 author: "Robin Böhm"
 slug: "angular-watcher-chrome-extension"
 published_at: 2015-08-13 05:57:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angular-watcher-chrome-extension.jpg"
 ---
 

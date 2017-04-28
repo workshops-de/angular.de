@@ -4,7 +4,7 @@ description:
 author: "Sascha Brink"
 slug: "angularjs-animationen-ng-animate"
 published_at: 2014-02-24 13:38:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-animationen-ng-animate.jpg"
 ---
 

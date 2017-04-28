@@ -4,7 +4,7 @@ description: "Im letzten Teil unserer Ionic Tutorialreihe zeigen wir euch, wie i
 author: "Bengt Weiße"
 slug: "ionic-tutorial-deutsch-configuration"
 published_at: 2016-01-27 08:29:00.000000Z
-categories: "angular2 angular angular4"
+categories: "ionic angularjs"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-configuration.jpg"
 ---
 

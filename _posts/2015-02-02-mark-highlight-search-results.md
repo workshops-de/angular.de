@@ -4,7 +4,7 @@ description:
 author: "Tilman Potthof"
 slug: "mark-highlight-search-results"
 published_at: 2015-02-02 09:49:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/mark-highlight-search-results.jpg"
 ---
 

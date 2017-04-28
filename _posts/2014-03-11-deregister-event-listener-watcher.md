@@ -4,7 +4,7 @@ description:
 author: "Sascha Brink"
 slug: "deregister-event-listener-watcher"
 published_at: 2014-03-11 07:45:04.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs tipps"
 header_image: "/artikel/header_images/deregister-event-listener-watcher.jpg"
 ---
 

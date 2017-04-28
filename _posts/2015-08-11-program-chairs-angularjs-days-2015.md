@@ -4,7 +4,7 @@ description:
 author: "Robin Böhm"
 slug: "program-chairs-angularjs-days-2015"
 published_at: 2015-08-11 05:35:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs event"
 header_image: "/artikel/header_images/program-chairs-angularjs-days-2015.jpg"
 ---
 

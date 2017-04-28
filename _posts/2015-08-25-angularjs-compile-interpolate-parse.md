@@ -4,7 +4,7 @@ description:
 author: "Sascha Brink"
 slug: "angularjs-compile-interpolate-parse"
 published_at: 2015-08-25 07:45:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-compile-interpolate-parse.jpg"
 ---
 

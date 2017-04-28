@@ -4,7 +4,7 @@ description: "Lernt, wie ihr beim Testen von Direktiven den Fehler \"Unexpected 
 author: "Robin Böhm"
 slug: "test-directive-templateurl"
 published_at: 2014-04-09 07:23:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/test-directive-templateurl.jpg"
 ---
 

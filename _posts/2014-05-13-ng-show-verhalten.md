@@ -4,7 +4,7 @@ description:
 author: "Sascha Brink"
 slug: "ng-show-verhalten"
 published_at: 2014-05-13 10:43:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/ng-show-verhalten.jpg"
 ---
 

@@ -4,7 +4,7 @@ description:
 author: "Sascha Brink"
 slug: "service-decorator-erstellen"
 published_at: 2014-03-12 13:13:54.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs services decorator"
 header_image: "/artikel/header_images/service-decorator-erstellen.jpg"
 ---
 

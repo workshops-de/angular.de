@@ -4,7 +4,7 @@ description:
 author: "Tilman Potthof"
 slug: "service-factory-provider"
 published_at: 2014-12-12 14:07:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs services"
 header_image: "/artikel/header_images/service-factory-provider.jpg"
 ---
 

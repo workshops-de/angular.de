@@ -4,7 +4,7 @@ description: "Die Ionic Framework eigene Icon-Font im Detail erklärt. Auch auß
 author: "Bengt Weiße"
 slug: "ionic-tutorial-deutsch-ionicons"
 published_at: 2016-02-25 08:29:00.000000Z
-categories: "angular2 angular angular4"
+categories: "ionic angularjs"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-ionicons.jpg"
 ---
 

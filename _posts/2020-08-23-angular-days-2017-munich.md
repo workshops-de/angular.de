@@ -4,7 +4,7 @@ description:
 author: "David Müllerchen"
 slug: "angular-days-2017-munich"
 published_at: 2020-08-23 10:00:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular2 angular4"
 header_image: "/artikel/header_images/angular-days-2017-munich.jpg"
 ---
 

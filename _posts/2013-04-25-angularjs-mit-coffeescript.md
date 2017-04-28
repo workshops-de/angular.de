@@ -4,7 +4,7 @@ description: "Lernt alles über die Programmierung von AngularJS mit CoffeeScrip
 author: "Sascha Brink"
 slug: "angularjs-mit-coffeescript"
 published_at: 2013-04-25 22:17:46.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-mit-coffeescript.jpg"
 ---
 

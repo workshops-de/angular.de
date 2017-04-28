@@ -4,7 +4,7 @@ description:
 author: "Tilman Potthof"
 slug: "ng-show-vs-ng-if"
 published_at: 2014-11-11 08:10:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/ng-show-vs-ng-if.jpg"
 ---
 

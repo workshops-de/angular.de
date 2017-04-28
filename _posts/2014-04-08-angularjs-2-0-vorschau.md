@@ -1,10 +1,10 @@
 ---
 title: "7 Neuerungen, die uns in Angular 2 erwarten"
-description: 
+description:
 author: "Robin Böhm"
 slug: "angularjs-2-0-vorschau"
 published_at: 2014-04-08 13:16:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angular2 news"
 header_image: "/artikel/header_images/angularjs-2-0-vorschau.jpg"
 ---
 
@@ -16,11 +16,11 @@ Mitte März 2014 gab das Angular-Team via [Blog](http://blog.angularjs.org/2014/
 * Weitere Modularisierung
 * Optimierung der Change Detection
 * Einführung eines Persistenz-Layers
-* Erweitertes Routing, Autorisierung und Authentifizierung 
+* Erweitertes Routing, Autorisierung und Authentifizierung
 
 ## Streichung der Unterstürzung für ältere Versionen des Internet-Explorers
 
-AngularJS 2.0 will einen mutigen Weg, den nur wenige Frameworks bisher gewagt haben - Die Unterstützung von alten Versionen des Internet Explorers wird gestrichen. Zielplattform sollen also primär moderne Browser sein. Der Internet Explorer soll nur noch ab Version 10 untererstützt werden. Mit dieser Entscheidung will das Team die Entwicklung des Frameworks und der Anwendungen mit AngularJS 2.0 vereinfachen. 
+AngularJS 2.0 will einen mutigen Weg, den nur wenige Frameworks bisher gewagt haben - Die Unterstützung von alten Versionen des Internet Explorers wird gestrichen. Zielplattform sollen also primär moderne Browser sein. Der Internet Explorer soll nur noch ab Version 10 untererstützt werden. Mit dieser Entscheidung will das Team die Entwicklung des Frameworks und der Anwendungen mit AngularJS 2.0 vereinfachen.
 
 [Quelle](http://blog.angularjs.org/2014/03/angular-20.html)
 
@@ -36,7 +36,7 @@ Mobile Endgeräte und vor allem touch-fähige Geräte sollen besser vom Core-Fra
 
 Die Implementierung von AngularJS 2 wird komplett in ES6 geschrieben. Somit können mächtige Features wie Object.observe() oder auch das neue Klassen-System der Sprache genutzt werden. Da ES6 derzeit noch in keinem Browser lauffähig ist, nutzt das Projekt den Traceur-Compiler. Dieser generiert aus dem ES6 Quellcode lauffähigen ES5 Quellcode.
 
-[Quelle](https://docs.google.com/document/d/1uhs-a41dp2z0NLs-QiXYY-rqLGhgjmTf4iwBad2myzY/edit) 
+[Quelle](https://docs.google.com/document/d/1uhs-a41dp2z0NLs-QiXYY-rqLGhgjmTf4iwBad2myzY/edit)
 
 ## Weitere Modularisierung
 
@@ -63,7 +63,7 @@ Die Services `$http` und `$resource` bieten bereits eine sehr gute Abstraktion �
 
 ## Erweitertes Routing, Autorisierung und Authentifizierung
 
-Der Standard Router in AngularJS 1.x liefert sehr begrenzte Möglichkeiten, Routen abzubilden. Dies war auch einer der Gründe, warum das Team sich dazu entschieden hat, das Modul aus dem Core zu entkoppeln. Somit haben wir die Möglichkeit, andere Routing-Module einzubinden, welche diese Aufgabe übernehmen. 
+Der Standard Router in AngularJS 1.x liefert sehr begrenzte Möglichkeiten, Routen abzubilden. Dies war auch einer der Gründe, warum das Team sich dazu entschieden hat, das Modul aus dem Core zu entkoppeln. Somit haben wir die Möglichkeit, andere Routing-Module einzubinden, welche diese Aufgabe übernehmen.
 Die nächste Version des Routers soll nun um einiges mächtiger werden und ein Großteil der Standard-Anwendungen abdecken können. Unter anderen werden folgende Fälle abgedeckt:
 
 State-basiertes Routing
@@ -74,4 +74,3 @@ Intelligentes Vorladen von Views
 Es werden hierfür unter anderem Konzepte und Stärken des [EmberJS Routers](http://emberjs.com/guides/routing/) wieder verwendet. Für die Autorisierung wird eine eine direkte Schnittstelle für die Node.js Middleware [passport.js](http://passportjs.org/) angeboten.
 
 Die Gedanken und Diskusionen hierzu könnt ihr euch [hier](https://docs.google.com/document/d/1I3UC0RrgCh9CKrLxeE4sxwmNSBl3oSXQGt9g3KZnTJI/edit) anschauen.
- 

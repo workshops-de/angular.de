@@ -4,7 +4,7 @@ description:
 author: "Robin Böhm"
 slug: "angularjs-book-review"
 published_at: 2014-11-13 05:16:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs buch"
 header_image: "/artikel/header_images/angularjs-book-review.jpg"
 ---
 

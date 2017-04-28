@@ -4,7 +4,7 @@ description: "Am 23.03.2017 ist die finale Version von Angular 4 erschienen und 
 author: "Robin Böhm"
 slug: "angular-4-neuerungen"
 published_at: 2017-04-03 08:00:01.000000Z
-categories: "angular2 angular angular4"
+categories: "angular angular4"
 header_image: "/artikel/header_images/angular-4-neuerungen.jpg"
 ---
 

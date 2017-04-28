@@ -4,7 +4,7 @@ description:
 author: "Robin Böhm"
 slug: "angularjs-es6-browserify-babel-module-laden"
 published_at: 2015-08-20 08:58:00.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-es6-browserify-babel-module-laden.jpg"
 ---
 

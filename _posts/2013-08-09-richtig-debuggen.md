@@ -4,7 +4,7 @@ description:
 author: "Robin Böhm"
 slug: "richtig-debuggen"
 published_at: 2013-08-09 16:00:39.000000Z
-categories: "angular2 angular angular4"
+categories: "angularjs debugging"
 header_image: "/artikel/header_images/richtig-debuggen.jpg"
 ---
 
