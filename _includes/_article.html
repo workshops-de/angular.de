@@ -13,14 +13,12 @@
     <p>
       <small><a class="text-muted" href="{{ post.url }}">Weiterlesen...</a></small>
     </p>
-    {% if content.footer %}
-      <small>
-        <span class="text-muted">{% include _reading_time.html %}</span>
-        <span class="float-right">
-          <span class="text-muted">von {{post.author}}</span>
-        </span>
-      </small>
-      <div class="clearfix"></div>
-    {% endif %}
+    <small>
+      <span class="text-muted">{% include _reading_time.html %}</span>
+      <span class="float-right">
+        <span class="text-muted">von {{post.author}}</span>
+      </span>
+    </small>
+    <div class="clearfix"></div>
   </div>
 </article>
