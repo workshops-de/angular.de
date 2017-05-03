@@ -5,7 +5,7 @@ part: Konzepte und Hintergründe
 progress: 90
 ---
 
-*Dependecy Injection* ist auch unter dem Namen *Inversion of control* bekannt. Bevor wir zeigen, welche Kontrolle diese umgekehrt und welche Vorteile sich daraus ergeben, zeigen wir zuerst den klassischen Weg.
+*Dependecy Injection* ist auch unter dem Namen *Inversion of control* bekannt. Bevor wir zeigen, welche Kontrolle dies umkehrt und welche Vorteile sich daraus ergeben, zeigen wir zuerst den klassischen Weg.
 
 ### Der klassische Weg
 
@@ -31,13 +31,13 @@ function findUser(db){
 }
 ```
 
-### Der Injektion und die richtige Reihenfolge
+### Der Injektor und die richtige Reihenfolge
 
-Der Injektor kann nicht nur Instanzen zu erzeugen, sondern kümmert sich auch darum, diese in die richtige Reihenfolge zu setzen. Nehmen wir ein Beispiel mit untereinander abhängigen Services:
+Der Injektor kann nicht nur Instanzen erzeugen, sondern kümmert sich auch darum, diese in die richtige Reihenfolge zu setzen. Nehmen wir ein Beispiel mit untereinander abhängigen Services:
 
 ![AngularJS - Injektor](../images/figures/angularjs-injector.png)
 
-Als Pseudo-JavaScript würden wir die Servies folgendermaßen erzeugen:
+Als Pseudo-JavaScript würden wir die Services folgendermaßen erzeugen:
 
 ```javascript
 service 'S1', function(S2, S5, S6)
