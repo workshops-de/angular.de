@@ -69,7 +69,4 @@ Mit der zweiten Major Version des Angular Frameworks werden viele grundlegende A
 
 Dieser Workshop knüpft direkt an den ersten an und behandelt einige Features des Frameworks im genaueren Detail. Wir nehmen die Anwendung aus dem ersten Workshop genauer unter die Lupe und diskutieren, warum viele Dinge so sind wie sie sind. Dazu gehören die neue Template-Syntax, der Element Injector, sowie die neue Change Detection. Außerdem schauen wir uns andere Direktiven-Typen und dynamische Components an. Nach dem Workshop haben alle Teilnehmer ein tieferes Verständnis für die wichtigsten Features des Frameworks.
 
-
-Die Liste inklusive der Räume ist auf der [offiziellen Webseite der AngularJS Days](http://angularjs-days.de/2015fall/zeitplaner) einzusehen.
-
 Wir hoffen das Programm gefällt euch, falls Ihr Anmerkungen, Kritik oder auch Ideen habt was wir verbessern können - immer her damit! :)
