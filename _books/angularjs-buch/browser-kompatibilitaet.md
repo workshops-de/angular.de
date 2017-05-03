@@ -14,7 +14,7 @@ Die Kompatibilität mit älteren Versionen des Internet Explorers bricht an zwei
 
 AngularJS benötigt JSON.stringify. Da JSON erst ab dem Internet Explorer 8 [unterstützt](http://blogs.msdn.com/b/ie/archive/2008/09/10/native-json-in-ie8.aspx) unterstützt wird, müssen wir ältere Versionen mit so genannten Polyfills nachrüsten. Dies sind Bibliotheken, die Funktionen in JavaScript implementieren, welche in neueren Browsern nativ vorhanden sind.
 
-Ein bekannter Polyfill ist [JSON3](http://bestiejs.github.com/json3/). Diesen platzieren wir konditional im Head des HTML-Dokumentes.
+Ein bekannter Polyfill ist [JSON3](http://bestiejs.github.io/json3/). Diesen platzieren wir konditional im Head des HTML-Dokumentes.
 
 ACHTUNG: JSON3 muss vor AngularJS geladen werden.
 
