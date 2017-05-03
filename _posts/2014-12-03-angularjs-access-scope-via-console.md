@@ -24,7 +24,7 @@ Hier noch mal die Übersicht:
    * [Chrome – Öffnen der Konsole](https://developers.google.com/web/tools/chrome-devtools/console/#opening_the_console)
    * [Firefox – Öffnen der Konsole](https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Opening_the_Web_Console)
 * Eine Angular Anwendung zum experimentieren
-   * [Angular TodoMVC](http://programmingisart.com/todomvc-angularjs/#/)
+   * [Angular TodoMVC](http://todomvc.com/examples/angularjs/#/)
    * Irgendeine andere Angular Anwendung
 
 ## Zugriff auf Scopes
