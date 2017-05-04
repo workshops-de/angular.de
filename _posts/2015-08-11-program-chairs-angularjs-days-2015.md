@@ -9,7 +9,7 @@ header_image: "/artikel/header_images/program-chairs-angularjs-days-2015.jpg"
 ---
 
 Es ist endlich wieder so weit! Vom 05. bis zum 07. Oktober 2015 veranstaltet der Software & Support Verlag die nächste Ausgabe der AngularJS Days!
-Diesmal ist das Event im Best Western Hotel Moa Berlin, Mitte. Tickets gibt es [hier](http://angularjs-days.de/2015fall/preise-anmeldung). Wir hatten mal wieder die Ehre für euch die Speaker und Tracks der Veranstaltung auszuwählen!
+Wir hatten mal wieder die Ehre für euch die Speaker und Tracks der Veranstaltung auszuwählen!
 
 ***TIP***
 Ihr habt hierbei die Chance 15% zu sparen! Nutz hierfür einfach folgenden **Rabattcode: angularjs2971**.
