@@ -40,3 +40,11 @@ footer {
 
   .fa-inverse { color: $footer-background-color; }
 }
+
+.footer-copyright {
+  color: $text-muted;
+
+  a {
+    color: $text-muted;
+  }
+}
