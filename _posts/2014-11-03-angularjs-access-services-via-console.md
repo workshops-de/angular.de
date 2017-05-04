@@ -45,7 +45,7 @@ In diesem Artikel beschränken wir uns auf Services.
 ## Services Laden
 
 Jetzt haben wir alles zusammen, um loszulegen.
-Man muss nur die [TodoMVC](http://programmingisart.com/todomvc-angularjs/#/) Anwendung öffnen, sowie die Browser Konsole auf der Seite.
+Man muss nur die [TodoMVC](http://todomvc.com/examples/angularjs/#/) Anwendung öffnen, sowie die Browser Konsole auf der Seite.
 Normalerweise werden Angular Services für andere Komponenten per Dependency Injection bereitgestellt.
 In der Konsole müssen wir dies manuell erreichen.
 Die Funktion `angular.injector()` erwartet ein Array von Modulnamen und gibt einen `injector` zurück, mit dem man Services über ihnen Namen laden kann.
