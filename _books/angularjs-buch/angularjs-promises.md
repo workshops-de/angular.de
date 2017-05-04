@@ -1,6 +1,6 @@
 ---
 number: 6.60
-title: Promises
+title: Promises (Callbacks 2.0)
 part: Konzepte und Hintergründe
 progress: 100
 ---
