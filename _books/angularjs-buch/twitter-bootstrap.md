@@ -18,7 +18,7 @@ UI Bootstrap ist Bestandteil des bekannten Projektes *Angular UI*, welches oft g
 
 *Links:*
 
-* Homepage: [UI Bootstrap](http://angular-ui.github.com/bootstrap/)
+* Homepage: [UI Bootstrap](https://angular-ui.github.com/bootstrap/)
 * Github: [Quellcode](https://github.com/angular-ui/bootstrap) (MIT-Lizenz)
 
 ### AngularStrap
@@ -35,5 +35,5 @@ Somit sind jQuery und die *bootstrap.js* eine unbedingte Voraussetzung. Die Konf
 
 *Links:*
 
-* Homepage: [AngularStrap](http://mgcrea.github.com/angular-strap/)
+* Homepage: [AngularStrap](https://angular-ui.github.io/bootstrap/)
 * Github: [Quellcode](https://github.com/mgcrea/angular-strap) (MIT-Lizenz)
