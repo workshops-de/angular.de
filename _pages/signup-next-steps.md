@@ -1,10 +1,8 @@
 ---
 title: "Deine Anmeldung ist fast fertig ..."
-description:
-author: "Robin Böhm"
-slug: "signup-next-steps"
-published_at: 2020-08-23 10:00:00.000000Z
-categories: "angular angular2 angular4"
+layout: post
+sitemap: false
+noindex: true
 header_image: "/artikel/header_images/signup-next-steps.jpg"
 ---
 

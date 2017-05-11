@@ -1,10 +1,8 @@
 ---
 title: "Vielen Dank für deine Anmeldung"
-description:
-author: "Robin Böhm"
-slug: "signup-thank-you"
-published_at: 2020-08-23 10:00:00.000000Z
-categories: "angular angular2 angular4"
+layout: post
+noindex: true
+sitemap: false
 header_image: "/artikel/header_images/signup-thank-you.jpg"
 ---
 
@@ -16,7 +14,7 @@ header_image: "/artikel/header_images/signup-thank-you.jpg"
   <div class="row">
     {% for post in site.posts %}
       {% if post.categories contains 'tutorial' %}
-        <div class="col-12 col-md-4 mb-2">
+        <div class="col-12 col-md-6 mb-2">
           {% include _article.html %}
         </div>
       {% endif %}
@@ -24,7 +22,7 @@ header_image: "/artikel/header_images/signup-thank-you.jpg"
   </div>
 </div>
 
-<h4>Falls Du bereits weiter im Thema bist könnten dich folgende Artikel interessieren:</h4>
+<h4>Falls Du bereits weiter im Thema bist, könnten dich folgende Artikel interessieren:</h4>
 
 <div class="card-deck-wrapper">
   <div class="row">
@@ -32,7 +30,7 @@ header_image: "/artikel/header_images/signup-thank-you.jpg"
       {% if post.categories contains 'tutorial' %}
       {% else %}
         {% if post.categories contains 'angular' %}
-        <div class="col-12 col-md-4 mb-2">
+        <div class="col-12 col-md-6 mb-2">
           {% include _article.html %}
         </div>
         {% endif %}
