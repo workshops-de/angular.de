@@ -4,7 +4,7 @@ description: "Das Routing durchläuft gerade in der 1er  und 2er Version des Fra
 author: "Bengt Weiße"
 slug: "angular2-routing-tutorial-deutsch"
 published_at: 2016-02-18 10:30:00.000000Z
-categories: "angular angular2 angular4"
+categories: "angular angular2 angular4 tutorial"
 header_image: "/artikel/header_images/angular2-routing-tutorial-deutsch.jpg"
 ---
 
