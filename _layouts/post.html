@@ -13,7 +13,17 @@ layout: base
        style="background-image: url('{{page.header_image}}');"></div>
   <div class="container text-wrapper" style="text-align: center;">
     <h1 class="header-post-title">{{ page.title }}</h1>
-    <div class="header-post-author">von {{ author.name }}</div>
+    <div class="header-post-author">
+      {% if page.author %}
+      von {{ author.name }}
+      {% endif %}
+    </div>
+    <p>
+      <a class="btn btn-sm btn-info" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
+        <i class="fa fa-github" aria-hidden="true"></i>
+          Diesen Artikel auf GitHub verbessern
+      </a>
+    </p>
   </div>
 </div>
 
@@ -21,15 +31,22 @@ layout: base
   <main role="main">
 
     <div class="row justify-content-md-center">
-      <div class="col-md-12 col-lg-8">
+      <div class="col-md-12 col-lg-8 mb-2">
         {{ content }}
-        <br>
-        {% include _author.html %}
-        <br>
-        <p>
-          <a href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">Diesen Artikel auf GitHub verbessern</a>
-        </p>
 
+        <div class="row">
+          <div class="col-sm-12 col-md-6 mb-2">
+            {% include _author.html %}
+          </div>
+          <div class="col-sm-12 col-md-6 mb-2">
+            <p>
+              <a class="btn btn-sm btn-info" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
+              <i class="fa fa-github" aria-hidden="true"></i>
+                Diesen Artikel auf GitHub verbessern
+                </a>
+            </p>
+          </div>
+        </div>
         <br>
 
         <div class="hidden-print">
