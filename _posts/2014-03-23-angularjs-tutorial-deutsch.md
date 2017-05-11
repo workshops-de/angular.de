@@ -119,7 +119,7 @@ In diesem Fall wird z.B. der Inhalt von `search` immer direkt in Großbuchstaben
 
 > Link zum [Code](https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/04-directives) / [Demo](http://angularjs-de.github.io/angularjs-tutorial-code/04-directives)
 
-Wie wir bereits in der Einleitung erwähnten, hat AngularJS spezielle Tags wie `ng-app`, die wir Direktiven nennen.  Diese erweitern den Sprachumfang von HTML. Direktiven von AngularJS erkennst du an dem Präfix `ng-`. Die Direktiven helfen dir, große Teile eine Applikation ohne eine Zeile Code zu schreiben.
+Wie wir bereits in der Einleitung erwähnten, hat AngularJS spezielle Tags wie `ng-app`, die wir Direktiven nennen.  Diese erweitern den Sprachumfang von HTML. Direktiven von AngularJS erkennst du an dem Präfix `ng-`. Die Direktiven helfen dir, große Teile einer Applikation ohne eine Zeile Code zu schreiben.
 
 Probieren wir eine weitere, einfache Direktive aus und ändern dazu die Zeile mit dem Suchergebnis leicht ab:
 
