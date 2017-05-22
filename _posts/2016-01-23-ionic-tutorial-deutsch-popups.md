@@ -4,7 +4,7 @@ description: "Ihr wollt kurze Hinweistexte oder kurze Benutzerabfragen in eurer 
 author: "Bengt Weiße"
 slug: "ionic-tutorial-deutsch-popups"
 published_at: 2016-01-23 08:29:00.000000Z
-categories: "ionic angularjs"
+categories: "ionic angularjs turorial"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-popups.jpg"
 ---
 

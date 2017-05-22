@@ -4,7 +4,7 @@ description: "In diesem Teil unserer Ionic 2 Einführung zeigen wir, wie ihr eur
 author: "Bengt Weiße"
 slug: "ionic2-content-tutorial-deutsch"
 published_at: 2016-05-15 06:12:12.000000Z
-categories: "ionic2 angular angular2 angular4"
+categories: "ionic2 angular angular2 angular4 tutorial"
 header_image: "/artikel/header_images/ionic2-content-tutorial-deutsch.jpg"
 ---
 

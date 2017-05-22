@@ -6,6 +6,7 @@ slug: "angular2-tutorial-deutsch"
 published_at: 2015-12-19 08:00:00.000000Z
 categories: "tutorial angular angular2 angular4"
 header_image: "/artikel/header_images/angular2-tutorial-deutsch.jpg"
+tutorial_page_order: '1'
 ---
 
 Dieses Tutorial baut auf dem selben Code-Beispiel wie unser [AngularJS 1 Tutorial](/artikel/angularjs-tutorial-deutsch/) auf - so können die Implementierungen leicht verglichen werden. Es ist aber nicht erforderlich das Angular 1 Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Als Beispiel werden wir wieder eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von Angular kennenlernen. Da wir das selbe Szenario benutzen, könnt Ihr die Lösungen in AngularJS 1 und Angular direkt miteinander vergleichen.

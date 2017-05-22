@@ -4,7 +4,7 @@ description: "Im letzte Teil unseres Ionic 2 Tutorials betrachten wir noch einig
 author: "Bengt Weiße"
 slug: "ionic2-advanced-tutorial-deutsch"
 published_at: 2016-05-18 12:12:12.000000Z
-categories: "ionic2 angular angular2 angular4"
+categories: "ionic2 angular angular2 angular4 tutorial"
 header_image: "/artikel/header_images/ionic2-advanced-tutorial-deutsch.jpg"
 ---
 

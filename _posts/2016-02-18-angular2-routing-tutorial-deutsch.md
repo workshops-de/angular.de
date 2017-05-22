@@ -6,6 +6,7 @@ slug: "angular2-routing-tutorial-deutsch"
 published_at: 2016-02-18 10:30:00.000000Z
 categories: "angular angular2 angular4 tutorial"
 header_image: "/artikel/header_images/angular2-routing-tutorial-deutsch.jpg"
+tutorial_page_order: '4'
 ---
 
 ## Routing im Überblick

@@ -6,6 +6,7 @@ slug: "ionic2-tutorial-deutsch"
 published_at: 2016-06-03 06:12:12.000000Z
 categories: "tutorial ionic2 angular angular2 angular4"
 header_image: "/artikel/header_images/ionic2-tutorial-deutsch.jpg"
+tutorial_page_order: '2'
 ---
 
 Nach unserem [Ionic 1 Tutorial](/artikel/ionic-tutorial-deutsch/ "Ionic 1 Tutorial") über **Ionic 1** und das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") wird es Zeit , sich die neue Version des beliebten Frameworks zur Erstellung von mobilen hybriden Apps anzusehen.
