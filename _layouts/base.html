@@ -19,8 +19,12 @@
   {% endif %}
 
   <!-- Facebook Tags -->
-  <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:site_name" content="AngularJS.DE" />
+
+  {% if page.layout == "post" %}
+    <meta name="og:title" content="{{ page.title }} - AngularJS.DE">
+  {% else %}
+    <meta name="og:title" content="AngularJS.DE → {{ page.title }}">
+  {% endif %}
 
   {% if page.description %}
     <meta property="og:description" content="{{ page.description }}">
@@ -41,7 +45,13 @@
 
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AngularJS.DE">
+
+  {% if page.layout == "post" %}
+    <meta name="twitter:title" content="{{ page.title }} - AngularJS.DE">
+  {% else %}
+    <meta name="twitter:title" content="AngularJS.DE → {{ page.title }}">
+  {% endif %}
+
   <meta name="twitter:site" content="@angularjs_de">
   <meta name="twitter:creator" content="@angularjs_de">
   {% if page.description %}
