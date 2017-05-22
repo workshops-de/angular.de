@@ -12,14 +12,48 @@
   <meta name="description" content="{{ page.description }}">
   {% endif %}
 
-  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
-
   {% if page.noindex %}
   <meta name="robots" content="noindex, follow">
   {% else %}
   <link rel="canonical" href="{{ site.url }}{{ page.url}}">
   {% endif %}
 
+  <!-- Facebook Tags -->
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:site_name" content="AngularJS.DE" />
+
+  {% if page.description %}
+    <meta property="og:description" content="{{ page.description }}">
+  {% endif %}
+
+  <meta property="og:url" content="{{ site.url }}{{ page.url}}" />
+  {% if page.layout == "post" %}
+    <meta property="og:type" content="article" />
+  {% else %}
+    <meta property="og:type" content="website" />
+  {% endif %}
+
+  {% if page.header_image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.header_image }}" />
+  {% else %}
+    <meta property="og:image" content="{{ site.url }}/assets/img/facebook-share.png" />
+  {% endif %}
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AngularJS.DE">
+  <meta name="twitter:site" content="@angularjs_de">
+  <meta name="twitter:creator" content="@angularjs_de">
+  {% if page.description %}
+    <meta name="twitter:description" content="{{ page.description }}">
+  {% endif %}
+  {% if page.header_image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.header_image }}">
+  {% else %}
+    <meta property="twitter:image" content="{{ site.url }}/assets/img/facebook-share.png" />
+  {% endif %}
+
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/assets/css/app.css">
   {% include _ga.html %}
 </head>
