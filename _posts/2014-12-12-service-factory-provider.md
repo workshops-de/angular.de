@@ -39,7 +39,7 @@ Natürlich lohnt sich ein Service weniger für einzelne Werte, sondern vor allem
 
 ## Was sind die Vorteile?
 
-Das Konzept von Services in AngularJS ist unterlässlich, wenn man eine große Anwendung in viele kleine sinnvolle Einheiten aufteilen möchte.
+Das Konzept von Services in AngularJS ist unerlässlich, wenn man eine große Anwendung in viele kleine sinnvolle Einheiten aufteilen möchte.
 Im besten Fall erreicht man damit, dass eine komplexe und weiter wachsende Anwendung trotzdem erweiterbar und wartbar bleibt, ohne dass sich jede Änderung anfühlt, wie das Herausziehen eines Bausteins aus einem Jenga-Turm.
 Vor allem sehr große Controller-Methoden sind ein Warnzeichen für zu unzureichende Strukturierung der Anwendungslogik.
 
