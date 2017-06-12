@@ -39,7 +39,7 @@ In diesem Artikel beschränken wir uns auf Services.
    * [Chrome – Öffnen der Konsole](https://developers.google.com/web/tools/chrome-devtools/console/#opening-the-console)
    * [Firefox – Öffnen der Konsole](https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Opening_the_Web_Console)
 * Eine Angular Anwendung zum experimentieren
-   * [Angular TodoMVC](http://programmingisart.com/todomvc-angularjs/#/)
+   * [Angular TodoMVC](http://todomvc.com/examples/angularjs/#/)
    * Irgendeine andere Angular Anwendung
 
 ## Services Laden
