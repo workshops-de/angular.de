@@ -18,7 +18,7 @@ UI Bootstrap ist Bestandteil des bekannten Projektes *Angular UI*, welches oft g
 
 *Links:*
 
-* Homepage: [UI Bootstrap](https://angular-ui.github.com/bootstrap/)
+* Homepage: [UI Bootstrap](https://angular-ui.github.io/bootstrap/)
 * Github: [Quellcode](https://github.com/angular-ui/bootstrap) (MIT-Lizenz)
 
 ### AngularStrap
