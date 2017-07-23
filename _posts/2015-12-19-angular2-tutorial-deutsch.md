@@ -1,6 +1,6 @@
 ---
 title: "Angular-Tutorial für Einsteiger"
-description: "Tutorial zu Angular  - die neue Version des beliebtesten Single-Page-Application Frameworks. Seid bereit und lernt die Grundlagen von Angular."
+description: "Tutorial zu Angular - die neue Version des beliebtesten Single-Page-Application Frameworks. Wir gehen Schritt für Schritt die Konzepte und Grundlagen des Frameworks anhand eines Beispielprojektes durch."
 author: "Robin Böhm"
 slug: "angular2-tutorial-deutsch"
 published_at: 2015-12-19 08:00:00.000000Z
@@ -9,7 +9,8 @@ header_image: "/artikel/header_images/angular2-tutorial-deutsch.jpg"
 tutorial_page_order: '1'
 ---
 
-Dieses Tutorial baut auf dem selben Code-Beispiel wie unser [AngularJS 1 Tutorial](/artikel/angularjs-tutorial-deutsch/) auf - so können die Implementierungen leicht verglichen werden. Es ist aber nicht erforderlich das Angular 1 Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Als Beispiel werden wir wieder eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von Angular kennenlernen. Da wir das selbe Szenario benutzen, könnt Ihr die Lösungen in AngularJS 1 und Angular direkt miteinander vergleichen.
+Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular. Wir behandelt hierbei Angular in der Version 2 und höher. Bewusst wird hierbei aber die Versionsnummer weggelassen, da das Framework nun semantische Versionierung benutzt. Was genau dahinter steckt könnt ihr in unserem Artikel (Angular 4 kommt mit einem Versionssprung)[https://angularjs.de/artikel/angular-4-semver/] nachlesen. Kurz gesagt: Es ist einfach Angular.
+Weiterhin baut dieses Tutorial auf dem selben Code-Beispiel wie unser [AngularJS 1 Tutorial](/artikel/angularjs-tutorial-deutsch/) auf - so können die Implementierungen leicht verglichen werden. Es ist aber nicht erforderlich das Angular 1 Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Als Beispiel werden wir wieder eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von Angular kennenlernen. Da wir das selbe Szenario benutzen, könnt Ihr die Lösungen in AngularJS 1 und Angular direkt miteinander vergleichen.
 
 Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
 
