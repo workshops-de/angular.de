@@ -38,7 +38,7 @@ Wie ihr im folgenden Video sehen könnt, haben wir uns dafür schon mit guter Au
 <br/>
 <br/>
 
-<div style="margin:auto;width:300px;"><div class="embedded-joinwebinar-button"><button type="button" class="btn btn-default css3button" title="regpopbox_29858_c4d47b81b2"><span>Nächste Termine oder letztes Replay anzeigen</span></button></div></div></script>
+<div style="margin:auto;width:300px;"><div class="embedded-joinwebinar-button"><button type="button" class="btn btn-default css3button" title="regpopbox_29858_c4d47b81b2"><span>Nächste Termine oder letztes Replay anzeigen</span></button></div></div>
 
 <br/>
 <br/>
