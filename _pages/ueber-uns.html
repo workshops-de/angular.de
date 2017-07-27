@@ -4,18 +4,20 @@ title: Das Team von AngularJS.DE
 
 {% for user_hash in site.data.users %}
   {% assign user = user_hash[1] %}
-  <hr>
-  <div class="row">
-    <div class="col-5 col-sm-4 col-md-2 user-thumbnail text-center">
-      <img alt="{{ user.name }}" class="rounded-circle" height="150" src="//www.gravatar.com/avatar/{{ user.gravatar_uid }}?s=300" width="150">
-    </div>
-    <div class="col-7 col-sm-8 col-md-6">
-      <h2>{{ user.name }}</h2>
-    </div>
-    <div class="col-12 col-sm-12 col-md-6">
-      <p>{{ user.bio }}</p>
-    </div>
-    <div class="col-sm-12 col-md-3 offset-lg-1">
-    </div>
-  </div>
+    {% if user.team %}
+      <hr>
+      <div class="row">
+        <div class="col-5 col-sm-4 col-md-2 user-thumbnail text-center">
+          <img alt="{{ user.name }}" class="rounded-circle" height="150" src="//www.gravatar.com/avatar/{{ user.gravatar_uid }}?s=300" width="150">
+        </div>
+        <div class="col-7 col-sm-8 col-md-6">
+          <h2>{{ user.name }}</h2>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6">
+          <p>{{ user.bio }}</p>
+        </div>
+        <div class="col-sm-12 col-md-3 offset-lg-1">
+        </div>
+      </div>
+    {% endif %}
 {% endfor %}
