@@ -12,7 +12,7 @@ header_image: "/artikel/header_images/angular-redux-header.png"
 
 State Verwaltung in komplexen Anwendungen kann schnell zu einem Problem werden. 
 Autonome und wiederverwendbare Komponenten, auch "Dump Components" genannt, kommunizieren über `@Input` und `@Output`.
-Dies ist auch vollommen richtig so, allerdings hat jede Anwendung auch Komponenten die unsee Orchestrierung unserer eigentlich Fachlogik vornehmen, auch "Smart Components" genannt.
+Dies ist auch vollommen richtig so, allerdings hat jede Anwendung auch Komponenten die unsere Orchestrierung unserer eigentlich Fachlogik übernehmen, auch "Smart Components" genannt.
 Um den Zustand der kompletten Anwendung wartbar und nach einer klaren Struktur aufzubauen, bieten sich Pattern wie das Flux-Pattern an.
 Redux ist die bekannteste und beliebste Implementierung von diesem Pattern.
 
