@@ -226,7 +226,7 @@ export class AddTodo {
 
 ```
 
-Im Template (Zeilen 4-8) verwenden wir eine [lokale Template-Variable](https://angular.io/guide/template-syntax#!#local-vars) #***todo*** (inpht HTML Element, Zeile 6) und übergeben deren Referenz auf das Button-Klickereignis (Zeile 7). Auf dem Konstruktor haben wir ***appStore*** und ***todoActions*** in die Komponente (Zeilen 11-17) als private Eigenschaften injiziert. Wenn der Benutzer eine Beschreibung eingibt und auf ***‘Add Todo’*** klickt, wird eine Aktion (Zeile 20) wie die unten abgegeben und den Eingabeinhalt löschen.
+Im Template (Zeilen 4-8) verwenden wir eine [lokale Template-Variable](https://angular.io/guide/template-syntax#!#local-vars) #***todo*** (inline HTML Element, Zeile 6) und übergeben deren Referenz auf das Button-Klickereignis (Zeile 7). Auf dem Konstruktor haben wir ***appStore*** und ***todoActions*** in die Komponente (Zeilen 11-17) als private Eigenschaften injiziert. Wenn der Benutzer eine Beschreibung eingibt und auf ***‘Add Todo’*** klickt, wird eine Aktion (Zeile 20) wie die unten abgegeben und den Eingabeinhalt löschen.
 
 
 ```javascript
