@@ -71,7 +71,7 @@ Diese Action-Creator helfen uns dabei die Objekte einfacher zusammen zu bauen un
 Die fertige Action beschreibt dann was in unserer Anwendung passiert ist und gibt diese Information weiter an die *Reducers*.
 
 ### Reducers
-*Reducers*geben an, wie sich der Zustand in Reaktion auf eine *Action* ändert.
+*Reducers* geben an, wie sich der Zustand in Reaktion auf eine *Action* ändert.
 Alle *Reducers* müssen **[reine Funktionen](https://en.wikipedia.org/wiki/Pure_function)** sein, das bedeutet:
 
 * Sie produzieren die gleiche Ausgabe bei gleicher Eingabe
