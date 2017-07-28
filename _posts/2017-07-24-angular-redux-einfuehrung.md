@@ -12,21 +12,21 @@ header_image: "/artikel/header_images/angular-redux-header.png"
 
 State Verwaltung in komplexen Anwendungen kann schnell zu einem Problem werden. 
 Autonome und wiederverwendbare Komponenten, auch "Dump Components" genannt, kommunizieren über `@Input` und `@Output`.
-Dies ist auch vollommen richtig so, allerdings hat jede Anwendung auch Komponenten die unsere Orchestrierung unserer eigentlich Fachlogik übernehmen, auch "Smart Components" genannt.
+Dies ist auch vollkommen richtig so, allerdings hat jede Anwendung auch Komponenten die unsere Orchestrierung unserer eigentlich Fachlogik übernehmen, auch "Smart Components" genannt.
 Um den Zustand der kompletten Anwendung wartbar und nach einer klaren Struktur aufzubauen, bieten sich Pattern wie das Flux-Pattern an.
 Redux ist die bekannteste und beliebste Implementierung von diesem Pattern.
 
 ## Was ist Redux?
 
 Version 3 von [Redux](https://github.com/rackt/redux) gibt es seit weniger als einem Jahr, aber es hat sich bereits als sehr erfolgreich erwiesen.
-Inspiriert von [Flux](https://facebook.github.io/flux/) und [Elm](http://elm-lang.org/) wird es verwendet um den Anwendungsstatus zu händeln und es effektiv an die Benutzeroberfläche zu binden.
+Inspiriert von [Flux](https://facebook.github.io/flux/) und [Elm](http://elm-lang.org/) wird es verwendet, um den Anwendungsstatus zu händeln und es effektiv an die Benutzeroberfläche zu binden.
 Redux ermöglicht außerdem mit wenig Aufwand Features wie *hot reloading* oder *time travel*.
 Redux wird oft zusammen mit React verwendet, ist aber nicht an ein bestimmtes Framework gebunden.
 
-Redux baut auf Flux-Pattern auf, für dieses Tutorial baucht ihr aber keine Erfahrung. 
+Redux baut auf Flux-Pattern auf. Für dieses Tutorial braucht ihr aber keine Erfahrung. 
 Wir werden alle Grundlagen hiermit behandeln. 
 
-In diesem Artikel werden wir ein **Todo-Listen-Beispiel** aus React verwenden, welches aus dem neusten Redux-Videokurs von [Dan Albramov](https://medium.com/@dan_abramov) stammt.
+In diesem Artikel werden wir ein **Todo-Listen-Beispiel** aus React verwenden, welches aus dem neusten Redux-Videokurs von [Dan Abramov](https://medium.com/@dan_abramov) stammt.
 
 
 ## Warum nutzen wir nicht ngRX, die Standard-Implementierung in Angular für Redux?
@@ -65,21 +65,21 @@ Hier ein Beispiel für eine sehr simple Action:
 ```
 
 Um diese Action-Objekte zu erzeugen werden auch meist *Action Creators* genutzt.
-Diese sind Komponenten welche Helfer-Methoden enthalten um spezifische Aktionen erstellen.
+Diese sind Komponenten, welche Helfer-Methoden enthalten, um spezifische Aktionen erstellen.
 Diese Action-Creator helfen uns dabei die Objekte einfacher zusammen zu bauen und schützen uns vor Struktur- und Tipp-Fehler. 
  
-Die fertige Action beschreibt dann was in unserer Anwendung passiert ist und gibt diese Information weiter an die *Reducers*.
+Die fertige Action beschreibt das, was in unserer Anwendung passiert ist und gibt diese Information weiter an die *Reducers*.
 
 ### Reducers
-*Reducers*geben an, wie sich der Zustand in Reaktion auf eine *Action* ändert.
+*Reducers* geben an, wie sich der Zustand in Reaktion auf eine *Action* ändert.
 Alle *Reducers* müssen **[reine Funktionen](https://en.wikipedia.org/wiki/Pure_function)** sein, das bedeutet:
 
 * Sie produzieren die gleiche Ausgabe bei gleicher Eingabe
 * Sie produzieren keine *side effects* (z.B.: mutierter Zustand, Anrufe zum Backend)
 
-Reducers erschaffen bei Änderungen immer einen neues State-Objekt, um Nebenwirkungen zu vermeiden. 
+Reducers erschaffen bei Änderungen immer ein neues State-Objekt, um Nebenwirkungen zu vermeiden. 
 Eine erweiterte Option ist, eine Bibliothek wie [immutable.js](https://facebook.github.io/immutable-js/) zu verwenden.
-Somit können Komponenten die auf diesen State zugreifen anhand der Object-Referenz entscheiden, ob sie neu rendern oder nicht.
+Somit können Komponenten, die auf diesen State zugreifen, anhand der Object-Referenz entscheiden, ob sie neu rendern oder nicht.
 Denn nur wenn der State durch ein neues Object dargestellt wird, hat sich der State verändert.
 
 ```javascript
@@ -98,7 +98,7 @@ function rootReducer(state = initialState, action){
 Es ist gängige Praxis, die ***initialState*** als Standartparameter (Zeile 1) zu definieren und jede Aktion mit einer [switch](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch)-Anweisung zu behandeln.
 
 ### ApplicationStore
-Redux verwendet einen einzelnen Stores, der den *Application-State* als ein einfaches JavaScript-Objekt enthält.
+Redux verwendet einen einzelnen Store, der den *Application-State* als ein einfaches JavaScript-Objekt enthält.
 
 Der ***Application-Store*** ist zentral für Redux und bietet eine API, um
 
@@ -130,7 +130,7 @@ In Angular beginnen wir mit der Gestaltung unserer Anwendungen mit einem ***comp
 ## Initialisierung von Redux
 
 Initial müssen wir Redux in unserer Anwendung anmelden und starten.
-Dies machen wir, indem wir indem wir ein Store erstellen und diesen als Service anmelden.
+Dies machen wir, indem wir ein Store erstellen und diesen als Service anmelden.
 
 
 ```javascript
@@ -173,7 +173,7 @@ Schlussendlich haben wir die normale Angular ***bootstrap***  Methode mit unsere
 *Du kannst bei [Angular Modulen](https://angular.io/guide/ngmodule) (angular.io) mehr darüber lesen, wie **nGModules** funktionieren*
 
 
-Wir melden unseren Store in diesem simples Beispiel über ein String Token an.
+Wir melden unseren Store in diesem simplen Beispiel über ein String Token an.
 Beachte, dass wir bei der Verwendung eines String-Tokens @Inject(‘AppStore’) innerhalb unserer Komponenten benutzen müssen.
 Wir werden das in den folgenden Code-Beispielen genauer ansehen. 
 
@@ -226,7 +226,7 @@ export class AddTodo {
 
 ```
 
-Im Template (Zeilen 4-8) verwenden wir eine [lokale Template-Variable](https://angular.io/guide/template-syntax#!#local-vars) #***todo*** (inpht HTML Element, Zeile 6) und übergeben deren Referenz auf das Button-Klickereignis (Zeile 7). Auf dem Konstruktor haben wir ***appStore*** und ***todoActions*** in die Komponente (Zeilen 11-17) als private Eigenschaften injiziert. Wenn der Benutzer eine Beschreibung eingibt und auf ***‘Add Todo’*** klickt, wird eine Aktion (Zeile 20) wie die unten abgegeben und den Eingabeinhalt löschen.
+Im Template (Zeilen 4-8) verwenden wir eine [lokale Template-Variable](https://angular.io/guide/template-syntax#!#local-vars) #***todo*** (inpht HTML Element, Zeile 6) und übergeben deren Referenz auf das Button-Klickereignis (Zeile 7). Auf dem Konstruktor haben wir ***appStore*** und ***todoActions*** in die Komponente (Zeilen 11-17) als private Eigenschaften injiziert. Wenn der Benutzer eine Beschreibung eingibt und auf ***‘Add Todo’*** klickt, wird eine Aktion (Zeile 20) wie die unten angegeben und den Eingabeinhalt löschen.
 
 
 ```javascript
@@ -432,7 +432,7 @@ Wir verwenden eine untergeordnete Komponente  ***todo***, um ein einzelnes Todo 
 
 ```
 
-Wir verwenden ***[ngFor](https://angular.io/api/common/NgFor-directive)***, um über die ***todos*** Array (Zeile 3) zu iterieren. Für jedes Todo geben wir die Information mit einer *[local template variable](https://angular.io/guide/template-syntax#!#local-vars)* ***Todo***.
+Wir verwenden ***[ngFor](https://angular.io/api/common/NgFor-directive)***, um über den ***todos*** Array (Zeile 3) zu iterieren. Für jedes Todo geben wir die Information mit einer *[local template variable](https://angular.io/guide/template-syntax#!#local-vars)* ***Todo***.
 
 Im Folgenden siehst du einen Auszug aus der ***TodoList*** Komponente.
 
