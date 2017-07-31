@@ -70,7 +70,9 @@ Redux folgt drei Grundprinzipien:
 Durch diese Grundsätze können wir ein vorhersagbares und reproduzierbares Anwendungsverhalten erreichen. 
 Das nächste Diagramm zeigt eine Übersicht der verschiedenen Komponenten von Redux, welche wir nun Schritt für Schritt erklären werden. 
 
-![Redux Overview](/artikel/angular-redux-einfuehrung/redux-overview.png)
+<div class="text-center"> 
+    <img src="/artikel/angular-redux-einfuehrung/redux-overview.png" alt="Redux Overview" />
+</div>
 
 ### Actions
 Dies sind tatsächliche Aktionen oder auch Ereignisse in unserer Anwendung, welche potentiell den State bearbeiten. 
@@ -134,7 +136,9 @@ Der ***Application-Store*** ist zentral für Redux und bietet eine API, um
 
 Wir werden eine **Todo Listen** Anwendung erkunden, um zu erfahren, wie wir Redux mit Angular integrieren können. Dies ist eine grundlegende Implementierung, wo wir neue Todos hinzufügen können, sie als abgeschlossen markieren und filtern.
 
-![Redux Todo Example](/artikel/angular-redux-einfuehrung/redux-todo-example.gif)
+<div class="text-center"> 
+    <img src="/artikel/angular-redux-einfuehrung/redux-todo-example.gif" alt="Redux Todo Example" />
+</div>
 
 ## Anwendungs-Design
 In Angular beginnen wir mit der Gestaltung unserer Anwendungen mit einem ***component tree*** und gehen von einer ***root*** Komponente aus. Unten siehst du eine schematische Pseudo-HTML mit allen UI Komponenten: add-todo, todo-list (Child Komponenten: todo), Filter (Chile Componenten_ filter-link).
