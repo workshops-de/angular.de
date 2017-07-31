@@ -36,6 +36,30 @@ Falls ihr mit Redux in euer Angular Anwendung arbeiten wollt, empfehle ich euch 
 Allerdings zielt dieser Artikel auf die Kommunikation der Konzepte, wofür sich diese simple Version von Redux mehr eignet.
 ngRx enthält noch Erweiterungen wie `Observbables`, welche die Beispiele an dieser Stelle unnötig komplex machen würden.
 
+
+<hr>
+<div class="">
+  <div class="h3">Lieber gemeinsam ausprobieren und diskutieren?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Du möchtest Angular und Redux in deinem Projekt einsetzen, bist dir aber unsicher ob und wie du das am besten schaffst? Wir behandeln das Thema Redux mit ngRX intensiv in unserer 
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-advanced?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+                    Advanced Schulung</a> und entwickeln mit dir gemeinsam Beispiele, die du direkt in deinem Projekt einsetzen kannst.  
+      </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-advanced?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="/assets/img/workshops/teilnehmer-workshop.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
+</div>
+<hr>
+
 ## Einführung in Redux
 Redux folgt drei Grundprinzipien:
 
@@ -468,6 +492,27 @@ Lass uns überprüfen, wie sich eine Redux-Anwendung in verschiedenen Stadien ve
 **Komponenten-Zerstörung**: Komponenten, die Daten anzeigen,***unsubscribe*** zum ***appStore***, um Ressourcen zu bereinigen.
 **Benutzerinteraktionen**: Jede Benutzerinteraktion löst eine abschließende Versandaktion aus. Dies führt den ***RootReducer*** aus, der einen neuen Zustand erzeugt. Der AppStore benachrichtigt dann alle abonnierten Benutzer, die entsprechend aktualisiert werden.
 **Bei vom Server initiierten Aktionen**: Manche Anwendungen können Aktionen in Reaktion auf serverseitig initiierte Ereignisse versenden. Zum Beispiel: WebSockets. Diese Aktionen nach dem ordnungsgemäßen Setup folgen dem gleichen Fluss wie Benutzerinteraktionen.
+<hr>
+<div class="">
+  <div class="h3">Puh - das muss ich mir genauer ansehen!</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Gute Idee - vielleicht ist ja unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-advanced?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+                                       Advanced Schulung</a> für dich das Richtige. Hier erstellen wir gemeinsam eine Beispiel-Anwendung mit ngRX und können individuell auf deine Anforderungen im Projekt eingehen.
+      </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-advanced?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="/assets/img/workshops/teilnehmer-workshop.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
+</div>
+<hr>
 
 Wir haben behandelt, wie man eine grundlegende Angular Anwendung mit Redux baut. 
 
