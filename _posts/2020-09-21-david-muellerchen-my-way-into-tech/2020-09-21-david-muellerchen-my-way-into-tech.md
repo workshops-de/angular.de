@@ -1,6 +1,6 @@
 ---
 title: David's way into tech
-description: Why is community so important? How could you find your way into tech? 
+description: Why is community so important? How could you find your way into tech?
 author: "David Müllerchen"
 published_at: 2020-09-21 15:00:00
 header_source: https://unsplash.com/photos/UVMPVIRCF5w
