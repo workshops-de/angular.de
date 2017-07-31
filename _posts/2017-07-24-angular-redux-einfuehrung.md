@@ -491,11 +491,13 @@ export class TodoList implements OnDestroy {
 ## Redux Lebenszyklus Review
 Lass uns überprüfen, wie sich eine Redux-Anwendung in verschiedenen Stadien verhält.
 
-**Application bootstrap**: Wir initialisieren den ***appStore***, der den ***rootReducer*** übergibt. Dadurch wird die interne Inbetriebnahme von ***appStore*** ausgelöst. Normalerweise führt das zu ***intitialState***
-**Komponentenerstellung**: Wir injizieren ***appStore*** und ***TodoActions*** auf dem Konstruktor je nach Bedarf. Die Komponenten, die Daten anzeigen, subscriben zum ***appStore***  und lesen ihn durch Aufruf von ***[appStore.getState](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#getState) ().Komponenten, die den Zustand mutieren, bereiten den Versandcode für die entsprechende Aktion vor, die alle erforderlichen Daten übergibt. 
-**Komponenten-Zerstörung**: Komponenten, die Daten anzeigen,***unsubscribe*** zum ***appStore***, um Ressourcen zu bereinigen.
-**Benutzerinteraktionen**: Jede Benutzerinteraktion löst eine abschließende Versandaktion aus. Dies führt den ***RootReducer*** aus, der einen neuen Zustand erzeugt. Der AppStore benachrichtigt dann alle abonnierten Benutzer, die entsprechend aktualisiert werden.
-**Bei vom Server initiierten Aktionen**: Manche Anwendungen können Aktionen in Reaktion auf serverseitig initiierte Ereignisse versenden. Zum Beispiel: WebSockets. Diese Aktionen nach dem ordnungsgemäßen Setup folgen dem gleichen Fluss wie Benutzerinteraktionen.
+- **Application bootstrap**: Wir initialisieren den ***appStore***, der den ***rootReducer*** übergibt. Dadurch wird die interne Inbetriebnahme von ***appStore*** ausgelöst. Normalerweise führt das zu ***intitialState***
+- **Komponentenerstellung**: Wir injizieren ***appStore*** und ***TodoActions*** auf dem Konstruktor je nach Bedarf. Die Komponenten, die Daten anzeigen, subscriben zum ***appStore***  und lesen ihn durch Aufruf von [appStore.getState](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#getState)().Komponenten, die den Zustand mutieren, bereiten den Versandcode für die entsprechende Aktion vor, die alle erforderlichen Daten übergibt. 
+- **Komponenten-Zerstörung**: Komponenten, die Daten anzeigen,***unsubscribe*** zum ***appStore***, um Ressourcen zu bereinigen.
+- **Benutzerinteraktionen**: Jede Benutzerinteraktion löst eine abschließende Versandaktion aus. Dies führt den ***RootReducer*** aus, der einen neuen Zustand erzeugt. Der AppStore benachrichtigt dann alle abonnierten Benutzer, die entsprechend aktualisiert werden.
+- **Bei vom Server initiierten Aktionen**: Manche Anwendungen können Aktionen in Reaktion auf serverseitig initiierte Ereignisse versenden. Zum Beispiel: WebSockets. Diese Aktionen nach dem ordnungsgemäßen Setup folgen dem gleichen Fluss wie Benutzerinteraktionen. 
+
+
 <hr>
 <div class="">
   <div class="h3">Puh - das muss ich mir genauer ansehen!</div>
@@ -518,7 +520,6 @@ Lass uns überprüfen, wie sich eine Redux-Anwendung in verschiedenen Stadien ve
 </div>
 <hr>
 
-Wir haben behandelt, wie man eine grundlegende Angular Anwendung mit Redux baut. 
 
 
 Dies ist eine Übersetzung und Überarbeitung von Gerard's großartigem Artikel [Angular — Introduction to Redux](https://medium.com/google-developer-experts/angular-2-introduction-to-redux-1cf18af27e6e)
