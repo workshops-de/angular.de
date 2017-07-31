@@ -1,6 +1,6 @@
 ---
 title: "Einführung Angular Redux - Konzepte und Begrifflichkeiten"
-description: "Redux ist eine Implementierung des Flux Patterns. Es ist dafür da, die Verwaltung von euerm ApplicationState in eine klare und wartbare Struktur zu bringen. Wir erklären euch die grundgegenden Begriffe und Konzepte."
+description: "Redux ist eine Implementierung des Flux Patterns. Es ist dafür da, die Verwaltung von euerm ApplicationState in eine klare und wartbare Struktur zu bringen."
 author: "Gerard Sans"
 slug: "angular-redux-einfuehrung"
 published_at: 2017-07-24 08:22:01.000000Z
