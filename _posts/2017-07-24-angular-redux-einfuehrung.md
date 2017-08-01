@@ -11,7 +11,7 @@ header_image: "/artikel/header_images/angular-redux-header.png"
 ## Warum brauch ich Redux?
 
 State Verwaltung in komplexen Anwendungen kann schnell zu einem Problem werden. 
-Autonome und wiederverwendbare Komponenten, auch "Dump Components" genannt, kommunizieren über `@Input` und `@Output`.
+Autonome und wiederverwendbare Komponenten, auch "Dumb Components" genannt, kommunizieren über `@Input` und `@Output`.
 Dies ist auch vollkommen richtig so, allerdings hat jede Anwendung auch Komponenten die unsere Orchestrierung unserer eigentlich Fachlogik übernehmen, auch "Smart Components" genannt.
 Um den Zustand der kompletten Anwendung wartbar und nach einer klaren Struktur aufzubauen, bieten sich Pattern wie das Flux-Pattern an.
 Redux ist die bekannteste und beliebste Implementierung von diesem Pattern.
