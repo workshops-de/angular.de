@@ -25,7 +25,6 @@ Redux wird oft zusammen mit React verwendet, ist aber nicht an ein bestimmtes Fr
 
 Redux baut auf Flux-Pattern auf. Für dieses Tutorial braucht ihr aber keine Erfahrung. 
 Wir werden alle Grundlagen hiermit behandeln. 
-
 In diesem Artikel werden wir ein **Todo-Listen-Beispiel** aus React verwenden, welches aus dem neusten Redux-Videokurs von [Dan Abramov](https://medium.com/@dan_abramov) stammt.
 
 
@@ -198,7 +197,7 @@ Wir haben Abhängigkeiten importiert (Zeilen 2-5) und realisieren dann ***appSto
 Schlussendlich haben wir die normale Angular ***bootstrap***  Methode mit unserem Modul ***AppModule(Zeile 21) verwendet.
 
 
-*Du kannst bei [Angular Modulen](https://angular.io/guide/ngmodule) (angular.io) mehr darüber lesen, wie **nGModules** funktionieren*
+*Du kannst bei [Angular Modulen](https://angular.io/guide/ngmodule) (angular.io) mehr darüber lesen, wie **ngModules** funktionieren*
 
 
 Wir melden unseren Store in diesem simplen Beispiel über ein String Token an.
