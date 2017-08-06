@@ -7,8 +7,6 @@ published_at: 2017-08-04 15:25:01.000000Z
 categories: "angular testing advanced"
 header_image: "/artikel/header_images/angular-testing.png"
 ---
-# Angular – Testen Guide (v4+)
-
 In diesem Artikel wollen wir die **gängigsten Unit-Tests für Angular Anwendungen**, wie zum Beispiel Komponenten, Services, Http und Pipes abdecken.
 Wir werden aber auch weniger bekannte Bereiche, wie Directives, Routes und Testen von Observables behandeln.
 Als Referenz und Basis für deine eigenen Tests stellen wir euch kleine Beispiele vor.
