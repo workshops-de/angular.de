@@ -25,7 +25,7 @@ Wir werden folgendes behandeln:
 - CSS-Styles-Spezifität und Ausführungsreihenfolge
 
 
-Du kannst den finalen Code Code mit diesem [Plunker](https://plnkr.co/edit/WUjoC897CXuybWvL9qt1?p=preview) erkunden.
+Du kannst den finalen Code mit diesem [Plunker](https://plnkr.co/edit/WUjoC897CXuybWvL9qt1?p=preview) erkunden.
 
 
 ## Einführung
