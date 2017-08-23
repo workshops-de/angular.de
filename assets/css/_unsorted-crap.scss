@@ -122,3 +122,16 @@ $lineHeight: ($circleWidth / 2) + 15;
   background-size: cover;
   background-position: center;
 }
+
+
+.newspaper {
+  // padding: $spacer;
+  column-count: 1;
+  column-gap: $spacer*2;
+  // column-rule: $hr-border-width solid $hr-border-color;
+}
+@include media-breakpoint-up(sm) {
+  .newspaper {
+    column-count: 2;
+  }
+}
