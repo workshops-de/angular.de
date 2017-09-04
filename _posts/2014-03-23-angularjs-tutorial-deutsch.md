@@ -190,7 +190,7 @@ angular.module('tutorialApp', []);
 
 Ein Modul ist eine Sammlung von Controllern, Services, Filtern und Direktiven. Module können dabei von anderen Modulen abhängig sein. Diese tragen wir in das Array hinter dem Modulnamen ein.
 
-Das leere Array hinter `tutorialApp` bedeutet in diesem Fall, dass wir noch keine Abhängigkeit haben. Wenn wir eine Abhängigkeit hätte, könnte die Moduldefinition z.B. so aussehen: `angular.module('tutorialApp', ['ng-animate']);`.
+Das leere Array hinter `tutorialApp` bedeutet in diesem Fall, dass wir noch keine Abhängigkeit haben. Wenn wir eine Abhängigkeit hätten, könnte die Moduldefinition z.B. so aussehen: `angular.module('tutorialApp', ['ng-animate']);`.
 
 Um dieses Modul nutzen zu können, müssen wir eine kleine Änderung am HTML-Code vornehmen. Wir erweitern das Attribut `ng-app` um den Namen unseres Moduls.
 
