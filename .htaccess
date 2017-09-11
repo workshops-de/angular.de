@@ -1,3 +1,5 @@
+Header set X-Robots-Tag "noindex, nofollow"
+
 RedirectMatch 301 ^/feed$ /feed.xml
 RedirectMatch 301 ^/chat(.*)$ https://slack.angularjs.de/
 
