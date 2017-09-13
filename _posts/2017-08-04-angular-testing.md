@@ -1,18 +1,19 @@
 ---
-title: "Angular – Testen Guide"
-description: "Wie teste ich meine Angular Anwendung? Wir zeigen euch in neun leicht zu befolgende Beispielen wie ihr mit Helpern wie TestBed, fixtures, async und fakeAsync/tick umgeht."
+title: "Tests in Angular - Diese 9 Beispiele zeigen dir wie"
+subtitle: "Test"
+description: "Wie teste ich meine Angular Anwendung? Wir zeigen dir in 9 leicht zu befolgenden Beispielen wie ihr Services, Komponenten und alle weiteren Konzepte testet."
 author: "Gerard Sans"
 slug: "angular-testing"
-published_at: 2017-08-04 15:25:01.000000Z
+published_at: 2017-09-13 08:25:01.000000Z
 categories: "angular testing advanced"
 header_image: "/artikel/header_images/angular-testing.png"
 ---
 In diesem Artikel wollen wir die **gängigsten Unit-Tests für Angular Anwendungen**, wie zum Beispiel Komponenten, Services, Http und Pipes abdecken.
 Wir werden aber auch weniger bekannte Bereiche, wie Directives, Routes und Testen von Observables behandeln.
-Als Referenz und Basis für deine eigenen Tests stellen wir euch kleine Beispiele vor.
+Als Referenz und Basis für deine eigenen Tests stellen wir dir kleine Beispiele vor.
 Weiterhin haben wir eine **Testing-Checkliste**, um bei der Erstellung deiner eigenen Tests ein einfachen Leitfaden zu bieten.
 
-Testen wurde von ReleaseCandidate(RC) bis zur ersten Final ziemlich stark verbessert.
+Testen wurde von ReleaseCandidate(RC) von Angular Version 2 bis zur ersten Final ziemlich stark verbessert.
 Durch den Umstieg auf NgModule haben sich weiterhin viele Sachen im Bereich testen vereinfacht.
 Das CoreTeam von Angular hat hart gearbeitet, um Boilerplate-Code zu reduzieren und neben Jasmine auch andere Test-Frameworks wie Mocha zu unterstützen.
 
@@ -51,7 +52,7 @@ Matchers – sind vordefinierte Helfer für gemeinsame Expectations. z.B.: ***to
 
 Machmal haben wir eine Summe von Tests, welche gleichen oder ähnliche Vorbedingungen haben z.B. ein bestimmten Zustand unser Directive oder eines Services.
 
-Jasmine bietet euch vier Handler an, um unseren Setup- und Teardown-Code für Tests zu definieren:
+Jasmine bietet dir vier Handler an, um unseren Setup- und Teardown-Code für Tests zu definieren:
 - ***beforeEach, afterEach*** einmal pro Spec (`it`)
 - ***beforeAll, afterAll*** einmal pro Test-Suite (`describe`)
 
@@ -65,7 +66,7 @@ Schauen wir uns diese Datei also einmal an.
 
 *„Dieses Setup ist nur als Referenz anzusehen und wird nur mit Plunker funktionieren“*
 
-```typescript
+```html
 <!-- Jasmine dependencies -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.js"></script>
@@ -120,7 +121,7 @@ Diese Informationen werden dann verwendet, um alle Abhängigkeiten für unseren 
 
 Unten sehen wir ein Beispiel:
 
-```javascript
+```typescript
 @NgModule({
   declarations: [ ComponentToTest ]
   providers: [ MyService ]
@@ -235,11 +236,11 @@ Wir können *[async](https://angular.io/api/core/testing/index/async-function)* 
 
 - **Sync oder Async?** Macht dein Test asynchrone Aufrufe?  Benutzt XHR, Promises, Obervables, etc. Benutzt die Komponente TemplateUrl oder styleURls oder inline? Stelle sicher, dass du die entsprechenden APIs verwendest.
 
-## Testen Beispiele
+## Testen in Angular
 
-### Eine Komponente testen
+### 1. Eine Komponente testen
 
-Nehmen wir eine einfache Komponente, die eine Begrüßungsnachricht mit einer*[@Input()](https://angular.io/api/core/Input-var)* - Eigenschaft rendert.
+Nehmen wir eine einfache Komponente, die eine Begrüßungsnachricht mit einer *[@Input()](https://angular.io/api/core/Input-var)* - Eigenschaft rendert.
 
 ```javascript
 // Usage:    <greeter name="Joe"></greeter>
@@ -307,7 +308,7 @@ Wir haben die *name*-Eigenschaft benutzt, um einen Wert einzurichten, die Änder
 
 *„Weitere Abfragen für debugElement sind: Query(By.all())query(by.directive(MyDirective))“*
 
-### Einen Service testen
+### 2. Einen Service testen
 
 *LanguageService* hat nur eine Methode, welche ein Array von verfügbaren Sprachen für die Anwendung zurückgibt.
 
@@ -346,7 +347,7 @@ describe('Service: LanguagesService', () => {
 });
 
 ```
-### Testen mit Http
+### 3. Testen mit Http
 
 Wir wollen normalerweise keine HTTP-Anrufe während unserer Tests machen, aber wir werden es jetzt als Referenz trotzdem zeigen. Wir haben unseren Erstdienst *LanguageService* für *LanguageServiceHttp*.
 
@@ -397,7 +398,7 @@ describe('Service: LanguagesServiceHttp', () => {
 
 *Http.get()* gibt ein Observavble zurück, welches wir abonnieren können. Wir werden Observables später noch ausführlicher abdecken.
 
-## Testen mit MockBackend
+## 4. Testen mit MockBackend
 
 Ein Ansatz, der sinnvoller erscheint, ist das Ersetzen von HTTP-Anrufen durch einen MockBackend. Um dies zu tun, können wir die Bereitstellung (Zeile 10) verwenden. Dies wid uns ermöglichen, unsere Antworten zu mocken und damit zu vermeiden, das echte Backend zu „hitten“ und damit unsere Testergebnisse zu steigern.
 
@@ -442,7 +443,7 @@ Auf unserem Test bauen wir unsere gemockte Antwort (Zeilen 23-25), also wenn wir
 
 *„Beachte: Wir müssen async nicht benutzen, weil MockBackend sich synchron verhält. Danke an [Pascal Precht](https://medium.com/@pascalprecht), der das erwähnt hat.“*
 
-### Eine Directive testen
+### 5. Eine Directive testen
 
 Directives in Angular sind eine spezifische Art von Komponente mit in der Regel keiner begleitenden Ansicht. Wir verwenden eine [AttributDirective](https://angular.io/guide/attribute-directives), *logClicks*, die protokoliieren, wie viele Klicks wir auf dem ***host element*** machen, damit du deine Idee erfassen kannst.
 
@@ -523,7 +524,7 @@ In diesem Test haben wir **fakeAsync** und **tick** verwendet. Mit **fakeAsync**
 *„Mit fakeAsync/tick bekommen wir eine bessere Kontrolle über den asynchronen Code, obwohl er nicht mit XHR verwendet werden kann.“*
 
 
-### Ein Pipe testen
+### 6. Ein Pipe testen
 
 Pipes sind Funktionen, die Eingabedaten in ein vom Benutzer lesbares Format umwandeln können. Wir schreiben eine benutzerdefinierte Pipe *capitalise* mit dem Standard *[String.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)*. Das ist der Einfachheit halber, da Angular eine eigene [UpperCasePipe](https://angular.io/api/common/UpperCasePipe-class)-Implementierung hat.
 
@@ -581,7 +582,7 @@ Um unsere Pipes zu testen, haben wir die üblichen Fälle überprüft: Sie sollt
 
 *„Beachte: Wir benutzen eine Pfeilfunktion, um Ausnahmen in expect zu erfassen. “*
 
-### Routes testen
+### 7. Routes testen
 
 Routen werden manchmal ausgelassen, aber werden für gewöhnlich als eine gute Praxis für doppelte Buchführung gesehen. In unserem Beispiel verwenden wir eine einfache Routenkonfiguration mit nur wenigen Routes und einer anderen Route, die nach Hause führt.
 
@@ -668,7 +669,7 @@ Wir haben **RouterTestingModule.withRoutes(routes)** importiert, um die Routerin
 
 
 
-## Observables testen
+## 8. Observables testen
 
 Observables sind optimal, um asynchrone Aufgaben zu meistern. Sie werden an wenigen Stellen in Angular, wie *Http*, Form controls, validations oder hinter *EventEmitter* verwendet. Wir werden das *Observable* unten verwenden, um zu zeigen, wie wir ihr Verhalten testen können.
 
@@ -705,7 +706,7 @@ describe('Observable: basic observable', () => {
 
 Wir haben eine *Observable* geschaffen, welche 1,2,3 aussendet und abschließt. Um zu testen, richten wir die nächsten ein, error und complete die Rückrufe auf Abonnieren. Während der nächste Rückrufe einige Male aufgerufen wird, müssen wir unsere Erwartungen dynamisch setzen.
 
-### EventEmitters testen
+### 9. EventEmitters testen
 
 **EventEmitters** werden in Angular verwendet, um Ereignisse zwischen Komponenten zu kommunizieren. Wir haben eine Gegenkomponente namens **Counter**, die es uns erlaubt, einen Anfangswert von Null zu erhöhen oder vermindern. Jedes Mal, wenn wir das tun, wird der neue Wert mit einem *EventEmitter* als *changes* offengelegt.
 
