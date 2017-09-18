@@ -506,7 +506,7 @@ Auch wenn wir jetzt Seiten laden könnten, brauchen wir noch eine Verknüpfung z
 })
 ```
 
-Der `$routeProvider` hat zwei Methoden: `.when` und `.otherwise`. Mit when könnt ihr die Route, inkl. Konfigurations-Objekt übergeben. Wie ihr seht, könnt ihr *template* oder *templateUrl* wie in den Direktiven verwenden. Mit `.otherweise` könnt ihr festlegen, was passiert, wenn keine der Routen ausgewählt wurde.
+Der `$routeProvider` hat zwei Methoden: `.when` und `.otherwise`. Mit when könnt ihr die Route, inkl. Konfigurations-Objekt übergeben. Wie ihr seht, könnt ihr *template* oder *templateUrl* wie in den Direktiven verwenden. Mit `.otherwise` könnt ihr festlegen, was passiert, wenn keine der Routen ausgewählt wurde.
 
 Über die Links ganz oben könnt ihr nun zwischen zwei Seiten wechseln.
 
