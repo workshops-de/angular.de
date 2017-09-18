@@ -18,7 +18,7 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
 
 > **<i class="fa fa-cloud-download fa-fw"></i> [Download als ZIP](https://github.com/angularjs-de/angularjs-tutorial-code/archive/gh-pages.zip) / [Code auf GitHub](https://github.com/angularjs-de/angularjs-tutorial-code)**
 
-**Wichtig**: Den Code müsst ihr lokal auf einem beliebigen Webserver starten, da ihr sonst Probleme mit der *[Same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)* bekommt. Ob ihr Apache, den eingebauten Webserver von WebStorm oder sonstigen Webserver nutzt, ist egal. Habt ihr Python installiert, funktioniert z.B.: `python -m SimpleHTTPServer`. Eine weitere Möglichkeit ist das Installieren von Node.js - die Installation liefert euch zugleich den Paketmanager npm. Mit diesem könnt ihr dann global einen HTTP-Server über den folgenden Befehl installieren: `npm installl -g http-server`. Und dann ist es möglich einfach in eurem Projektverzeichniss den HTTP-Server auszuführen mit `http-server -o`. 
+**Wichtig**: Den Code müsst ihr lokal auf einem beliebigen Webserver starten, da ihr sonst Probleme mit der *[Same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)* bekommt. Ob ihr Apache, den eingebauten Webserver von WebStorm oder sonstigen Webserver nutzt, ist egal. Habt ihr Python installiert, funktioniert z.B.: `python -m SimpleHTTPServer`. Eine weitere Möglichkeit ist es Node.js zu installieren - die Installation liefert euch zugleich den Paketmanager npm. Mit diesem könnt ihr dann global einen HTTP-Server über den folgenden Befehl installieren: `npm install -g http-server`. Und danach ist es möglich in eurem Projektverzeichniss den HTTP-Server auszuführen mit `http-server -o`. 
 
 <hr>
 <div class="">
