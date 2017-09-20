@@ -41,7 +41,7 @@ footer {
 li code,
 p code {
   background-color: #fafafa;
-  border: 1px solid darken($gray-lighter, 10%);
+  border: 1px solid darken($gray-300, 10%);
   border-radius: 3px;
   color: #000;
   font-size: 12px;
@@ -95,7 +95,7 @@ $lineHeight: ($circleWidth / 2) + 15;
 
 .circled-logo-wrapper {
   border-radius: 50%;
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-300;
   line-height: $lineHeight + px;
   background-color: #fbfbfb;
   width: $circleWidth + px;
