@@ -44,7 +44,7 @@
   font-weight: normal;
   text-decoration: inherit;
 
-  &:focus {
+  &:focus, &:not(:placeholder-shown) {
     background-color: rgba(#000, 0.1);
     font-family: inherit;
     width: 15em;
