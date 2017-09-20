@@ -1,5 +1,4 @@
 footer {
-  border-top: 3px solid #eee;
   color: #888;
   margin-top: 10px;
 
@@ -30,15 +29,13 @@ footer {
   color: #b0b0b0
 }
 
-
 .info-footer {
-  $footer-background-color: #333;
-  background-color: $footer-background-color;
+  background-color: $gray-200;
   padding: 20px 0;
 
   li a { font-size: 13px; }
 
-  .fa-inverse { color: $footer-background-color; }
+  .fa-inverse { color: $gray-200; }
 }
 
 .footer-copyright {
