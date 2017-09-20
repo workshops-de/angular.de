@@ -4,15 +4,25 @@
 }
 
 .form-inline .navbar-search {
-  background-color: rgba(#000, 0.1);
-  width: 8em;
+  width: 2.5em;
   border: 0;
   border-radius: 9999px;
   transition: all 0.2s;
 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+
 
   &:focus {
+    background-color: rgba(#000, 0.1);
+    font-family: inherit;
     width: 15em;
+
+    &::placeholder {
+      color: transparent;
+    }
   }
 
 }
