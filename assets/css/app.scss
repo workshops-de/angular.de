@@ -5,6 +5,8 @@
 //
 $font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+$navbar-brand-font-size: 1rem;
+
 $border-radius: 0;
 $border-radius-sm: 0;
 $border-radius-lg: 0;
@@ -23,6 +25,7 @@ $brand-info:            #5bc0de;
 
 @import "bootstrap";
 @import "mixins";
+@import "visibility";
 @import "font-source-sans";
 @import 'font-playfair';
 @import "font-awesome";
