@@ -1,13 +1,10 @@
-<nav data-headroom-top="" class="navbar navbar-light navbar-expand-lg fixed-top headroom headroom--top headroom--not-bottom" style="background-color: #fff">
+<nav data-headroom-top="" class="navbar navbar-light navbar-ajs navbar-expand-lg fixed-top headroom headroom--top headroom--not-bottom">
   <div class="container">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/">
-      angularjs.de
-    </a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav">
         <li class="nav-item {% if page.url contains '/artikel' %}active{% endif %}">
           <a class="nav-link" href="/artikel/">Artikel</a>
         </li>
@@ -18,6 +15,9 @@
           <a class="nav-link" href="/workshops/angular-intensiv/">Schulung</a>
         </li>
       </ul>
+      <form class="form-inline mr-auto" action="/suche/" method="GET">
+        <input name="q" class="form-control navbar-search" type="text" placeholder="Suche">
+      </form>
 
       <ul class="navbar-nav mr-2">
         <li class="nav-item">
@@ -26,9 +26,9 @@
           </a>
         </li>
       </ul>
-      <form class="form-inline" action="/suche/" method="GET">
-        <input name="q" class="form-control navbar-search" type="text" placeholder="Suche">
-      </form>
     </div>
-  </div>
+    <a class="navbar-brand" href="/">
+      angular<span class="text-muted">js.de</span>
+    </a>
+  </div><!-- .container -->
 </nav>

@@ -1,0 +1,18 @@
+.navbar-ajs {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.form-inline .navbar-search {
+  background-color: rgba(#000, 0.1);
+  width: 8em;
+  border: 0;
+  border-radius: 9999px;
+  transition: all 0.2s;
+
+
+  &:focus {
+    width: 15em;
+  }
+
+}
