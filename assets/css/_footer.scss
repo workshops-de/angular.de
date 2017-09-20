@@ -1,6 +1,12 @@
 footer {
   color: #888;
-  margin-top: 10px;
+  padding: $spacer*3 0 $spacer*4;
+  background: $gray-200 url('/assets/img/footer-bg.png') top left no-repeat;
+
+
+  li a { font-size: 13px; }
+
+  .fa-inverse { color: $gray-200; }
 
   a {
     color: #888;
@@ -21,28 +27,19 @@ footer {
     text-align: center;
     font-size: 85%;
   }
-}
 
-.newsletter-footer {
-  background-color: #f1f1f1;
-  padding: 40px 0;
-  color: #b0b0b0
-}
+  .footer-divider {
+    border-top: 2px solid $gray-100;
+  }
 
-.info-footer {
-  padding: 20px 0;
-  background: $gray-200 url('/assets/img/footer-bg.png') top left no-repeat;
-
-
-  li a { font-size: 13px; }
-
-  .fa-inverse { color: $gray-200; }
-}
-
-.footer-copyright {
-  color: $text-muted;
-
-  a {
+  .footer-copyright {
     color: $text-muted;
+
+    a {
+      color: $text-muted;
+    }
   }
 }
+
+
+

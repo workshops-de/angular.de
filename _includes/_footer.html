@@ -1,43 +1,22 @@
 <footer>
-  {% include _newsletter.html %}
+  <div class="container">
 
-  <div class="info-footer">
-    <div class="container text-center">
-      <ul class="list-inline pull-md-right hidden-print">
-        <li>
-          <a href="/feed.xml" target="_blank" track-ga-event="navigation;top;@href">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-rss fa-stack-0-85x fa-inverse"></i>
-            </span>
-          </a>
-          <a href="https://twitter.com/angularjs_de" target="_blank">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-          <a href="https://github.com/angularjs-de" target="_blank">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-          <a href="https://www.facebook.com/angularjs.de" target="_blank">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-          <a href="mailto:info@workshops.de">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-envelope fa-stack-0-85x fa-inverse"></i>
-            </span>
-          </a>
-        </li>
-      </ul>
-      <div class="text-md-left pull-xs-center pull-md-left">
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="h3">
+          <span class="text-danger">angular</span><span class="text-muted">js.de</span>
+        </p>
+      </div>
+      <div class="col-sm-6 text-md-right">
+        <a href="/inhouse-workshop/" class="btn btn-outline-secondary">Anfrage Inhouse-Schulung</a>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-md-6">
         <ul class="list-inline text-uppercase">
           <li class="list-inline-item"><a href="/workshops/angular-intensiv/">Schulung / Seminar</a></li>
           <li class="list-inline-item"><a href="/inhouse-workshop/">Inhouse</a></li>
@@ -46,13 +25,51 @@
           <li class="list-inline-item"><a href="/impressum/">Impressum</a></li>
           <li class="list-inline-item"><a href="/datenschutz/">Datenschutz</a></li>
         </ul>
-        <small class="footer-copyright">
-          Copyright © {{ site.time | date: '%Y' }}
-          <a href="https://workshops.de" target="_blank">Workshops Europe GmbH</a>.
-          Alle Rechte vorbehalten.
-        </small>
       </div>
-      <div class="clearfix"></div>
+      <div class="col-md-6 text-md-right">
+        <ul class="list-inline hidden-print">
+          <li>
+            <a href="/feed.xml" target="_blank" track-ga-event="navigation;top;@href">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-0-85x fa-inverse"></i>
+              </span>
+            </a>
+            <a href="https://twitter.com/angularjs_de" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+            <a href="https://github.com/angularjs-de" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+            <a href="https://www.facebook.com/angularjs.de" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+            <a href="mailto:info@workshops.de">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-0-85x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+
+    <hr class="footer-divider">
+
+    <small class="footer-copyright">
+      Copyright © {{ site.time | date: '%Y' }}
+      <a href="https://workshops.de" target="_blank">Workshops Europe GmbH</a>.
+      Alle Rechte vorbehalten.
+    </small>
   </div>
 </footer>
