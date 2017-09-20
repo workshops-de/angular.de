@@ -2,7 +2,7 @@
 layout: base
 ---
 
-{% assign sorted_chapters = (site.books | sort: 'number') %}
+{% assign sorted_chapters = site.books | sort: 'number' %}
 
 {% for links in sorted_chapters  %}
 {% if forloop.first %}
