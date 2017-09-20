@@ -30,8 +30,9 @@ footer {
 }
 
 .info-footer {
-  background-color: $gray-200;
   padding: 20px 0;
+  background: $gray-200 url('/assets/img/footer-bg.png') top left no-repeat;
+
 
   li a { font-size: 13px; }
 
