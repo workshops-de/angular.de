@@ -14,15 +14,14 @@ $line-height-base: 1.618;
 $headings-margin-bottom: 1.1rem;
 $card-cap-bg: #fff;
 
-$brand-primary:         #0386c9;
-$brand-success:         #43ac6a;
-$brand-warning:         #e99002;
-$brand-danger:          #f04124;
-$brand-info:            #5bc0de;
+$blue:   #0386c9;
+$green:  #43ac6a;
+$orange: #e99002;
+$red:    #f04124;
+$teal:   #5bc0de;
 
 // Imports
 //
-
 @import "fonts/font-source-sans";
 @import "fonts/font-awesome";
 @import "bootstrap";

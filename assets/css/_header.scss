@@ -53,6 +53,19 @@
     color: #333;
     padding: 80px 0 40px;
   }
+
+  &.header-gradient-overlay {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom, transparent, #333);
+      opacity: .4;
+    }
+  }
 }
 
 @include media-breakpoint-up(sm) {

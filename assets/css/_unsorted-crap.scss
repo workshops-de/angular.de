@@ -48,46 +48,11 @@ p code {
   padding: 2px;
 }
 
-.profile-info {
-  font-weight: 300;
-  i { color: #8a8a8a; margin-right: 5px; }
-}
-
-// Blockquotes
-//==================================================
-blockquote {
-  background-color: #f9f9f9;
-  border: 0;
-  color: #222;
-  font-size: $font-size-base;
-  margin-bottom: 10px;
-  padding: 10px 10px;
-  position: relative;
-
-  p { color: #000; margin: 0; }
-}
-
 .body-grey {
   background-color: #f8f8f8; //#fbfbfb;
 }
 
-.logo {
-  display: block;
-  margin-top: 5px;
-}
 
-.background-gradient-overlay {
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to bottom, transparent, #333);
-    opacity: .4;
-  }
-}
 
 
 $circleWidth: 200;
