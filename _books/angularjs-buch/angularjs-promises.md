@@ -69,7 +69,7 @@ function asyncFn() {
 
 **Promise-Funktion aufrufen**
 
-Nun folgt ein noch simplerer Teil. Die eben erstelle Promise-Funktion muss natürlich auch aufgerufen werden. Ihr könnt die Funktion, wie einen ganz normalen Funktionsaufruf betrachten.
+Nun folgt ein noch simplerer Teil. Die eben erstellte Promise-Funktion muss natürlich auch aufgerufen werden. Ihr könnt die Funktion, wie einen ganz normalen Funktionsaufruf betrachten.
 
 ```javascript
 asyncFn();
