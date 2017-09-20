@@ -10,6 +10,7 @@ RedirectMatch 301 ^/inhouse-workshop-anfrage$ /inhouse-workshop/
 RedirectMatch 301 ^/veranstaltungen(.*)$ /workshops/angular-intensiv/
 RedirectMatch 301 ^/entwickler(.*)$ /
 RedirectMatch 301 ^/consulting(.*)$ /
+RedirectMatch 301 ^/projekte(.*)$ /
 
 RedirectMatch 301 ^/classroom/(.*)$ https://workshops.de/classroom/$1
 RedirectMatch 301 ^/buch/(.*)$ /buecher/angularjs-buch/$1
