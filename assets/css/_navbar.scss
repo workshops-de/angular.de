@@ -1,6 +1,6 @@
 .navbar-ajs {
   background-color: #fff;
-  // border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 
   .nav-link {
     position: relative;
@@ -10,7 +10,7 @@
       position: absolute;
       width: 100%;
       height: 2px;
-      bottom: 4px;
+      bottom: 6px;
       left: 0;
       background-color: $navbar-light-hover-color;
       visibility: hidden;
@@ -26,7 +26,7 @@
 
   .nav-item.active {
     .nav-link:before {
-      background-color: $red;
+      // background-color: $red;
       visibility: visible;
       transform: scaleX(0.8);
     }
