@@ -44,7 +44,7 @@ markdown: kramdown
 sass:
   style: :compressed
   sass_dir: assets/css
-gems:
+plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate-v2
