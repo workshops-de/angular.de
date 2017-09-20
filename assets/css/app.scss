@@ -23,11 +23,11 @@ $brand-info:            #5bc0de;
 // Imports
 //
 
+@import "fonts/font-source-sans";
+@import "fonts/font-awesome";
 @import "bootstrap";
 @import "mixins";
 @import "visibility";
-@import "font-source-sans";
-@import "font-awesome";
 @import "inputs";
 @import "image-loader";
 @import "navigation";
