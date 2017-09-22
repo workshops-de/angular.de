@@ -9,6 +9,7 @@ description: Sie möchten Ihre Entwickler in 3 Tagen fit für Angular machen? Bu
 permalink: /inhouse-workshop/
 ---
 
+
 {% if jekyll.environment == "production" %}
   <script src="https://workshops.de/js/embed.js"></script>
 {% else %}
@@ -16,4 +17,6 @@ permalink: /inhouse-workshop/
   <script src="https://beta.workshops.de/js/embed.js"></script>
 {% endif %}
 
-<div class="ws-issue" data-course-id="{{ site.ws_course_id }}" data-agenda="true"></div>
+<div class="container">
+  <div class="ws-issue" data-course-id="{{ site.ws_course_id }}" data-agenda="true"></div>
+</div>
