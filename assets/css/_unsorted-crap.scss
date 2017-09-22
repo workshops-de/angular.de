@@ -57,9 +57,9 @@ $lineHeight: ($circleWidth / 2) + 15;
 
 .circled-logo-wrapper {
   border-radius: 50%;
-  border: 1px solid $gray-300;
+  // border: 1px solid $gray-300;
   line-height: $lineHeight + px;
-  background-color: #fbfbfb;
+  // background-color: #fbfbfb;
   width: $circleWidth + px;
   height: $circleWidth + px;
   text-align: center;
