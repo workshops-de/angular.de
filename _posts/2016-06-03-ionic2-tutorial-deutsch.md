@@ -11,7 +11,7 @@ tutorial_page_order: '2'
 
 Nach unserem [Ionic 1 Tutorial](/artikel/ionic-tutorial-deutsch/ "Ionic 1 Tutorial") über **Ionic 1** und das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") wird es Zeit , sich die neue Version des beliebten Frameworks zur Erstellung von mobilen hybriden Apps anzusehen.
 
-Dabei setzt das Ionic-Team natürlich auf Angular und benutzt daher auch vieles aus diesem neuen Universum. Daher bietet es sich an vorher unsere Artikel über Angular 2 zu lesen oder zumindest einen Blick in unser [Angular Einführungstutorial](/artikel/angular2-tutorial-deutsch/ "Angular Einführungstutorial") zu werfen.
+Dabei setzt das Ionic-Team natürlich auf Angular und benutzt daher auch vieles aus diesem neuen Universum. Daher bietet es sich an vorher unsere Artikel über Angular 2 zu lesen oder zumindest einen Blick in unser [Angular Einführungstutorial](/artikel/angular-tutorial-deutsch/ "Angular Einführungstutorial") zu werfen.
 
 Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1. Dadurch könnt ihr vergleichen, was anders oder besser funktioniert. Außerdem findet ihr dort auch alle allgemeinen Grundlagen und Informationen, was Ionic genau ist, worauf es basiert und was ihr damit machen könnt. Daher sparen wir uns diese Punkte hier und steigen direkt bei der Entwicklung ein. Unser Tutorial ist in drei Abschnitte aufgeteilt.
 

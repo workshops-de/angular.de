@@ -18,7 +18,7 @@ Wir haben natürlich unsere Ressourcen für euch auf die Version 2.0 upgedatet!
 Wir empfehlen euch folgende Artikel für den Einstieg:
 
 
-[Angular 2 Einsteiger Tutorial](/artikel/angular2-tutorial-deutsch/)
+[Angular 2 Einsteiger Tutorial](/artikel/angular-tutorial-deutsch/)
 
 [Webinar - Einführung in Angular2 mit Robin Böhm](/artikel/angular2-typescript-webinar/)
 

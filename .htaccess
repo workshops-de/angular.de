@@ -17,3 +17,4 @@ RedirectMatch 301 ^/buch/(.*)$ /buecher/angularjs-buch/$1
 RedirectMatch 301 ^/blog/(.*)$ /artikel/$1
 
 RedirectMatch 301 ^/artikel/angular2-bootstrap-scss-angular-cli(.*)$ /artikel/angular-bootstrap-scss-angular-cli/
+RedirectMatch 301 ^/artikel/angular2-tutorial-deutsch(.*)$ /artikel/angular-tutorial-deutsch/
