@@ -6,7 +6,7 @@
     <a class="navbar-brand d-none d-md-block img-grayscale-100" href="/">
       <img alt="AngularJS.DE" src="/assets/img/angularjs-de-logo.svg" width="22">
     </a>
-    <div class="collapse navbar-collapse order-12" id="navbarNav">
+    <div class="collapse navbar-collapse order-10" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item {% if page.url contains '/artikel' %}active{% endif %}">
           <a class="nav-link" href="/artikel/">Artikel</a>
@@ -21,14 +21,11 @@
       <form class="form-inline mr-auto" action="/suche/" method="GET">
         <input name="q" class="form-control navbar-search" type="text" placeholder="&#xF002;">
       </form>
-
-      <ul class="navbar-nav mr-2">
-        <li class="nav-item">
-          <a class="nav-link" href="https://slack.angularjs.de" alt="Slack">
-            <img src="https://slack.angularjs.de/badge.svg" alt="Angular Slack" />
-          </a>
-        </li>
-      </ul>
+    </div>
+    <div class="mx-md-auto pr-md-2 order-md-11">
+        <a href="https://slack.angularjs.de" alt="Slack">
+          <img src="https://slack.angularjs.de/badge.svg" alt="Angular Slack" />
+        </a>
     </div>
     <a class="navbar-brand order-md-12" href="/">
       angular<span class="text-muted">js.de</span>
