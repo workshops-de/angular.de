@@ -50,7 +50,7 @@ Matchers – sind vordefinierte Helfer für gemeinsame Expectations. z.B.: ***to
 
 ### Setup und Teardown
 
-Machmal haben wir eine Summe von Tests, welche gleichen oder ähnliche Vorbedingungen haben z.B. ein bestimmten Zustand unser Directive oder eines Services.
+Manchmal haben wir eine Summe von Tests, welche gleichen oder ähnliche Vorbedingungen haben z.B. ein bestimmten Zustand unser Directive oder eines Services.
 
 Jasmine bietet dir vier Handler an, um unseren Setup- und Teardown-Code für Tests zu definieren:
 - ***beforeEach, afterEach*** einmal pro Spec (`it`)
