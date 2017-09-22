@@ -3,6 +3,7 @@ number: 4.40
 title: SEO / Suchmaschinenoptimierung
 part: Erweiterungen der Applikation
 progress: 5
+noindex: true
 ---
 
 > Zuallererst: AngularJS ist für die Erstellung von Webapplikationen und weniger für die Erstellung von normalen Webseiten und dem damit verbundenen Wunsch nach Suchmaschinenoptimierung ausgelegt.
