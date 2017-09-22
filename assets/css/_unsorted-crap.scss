@@ -52,9 +52,6 @@ p code {
   background-color: #f8f8f8; //#fbfbfb;
 }
 
-
-
-
 $circleWidth: 200;
 $lineHeight: ($circleWidth / 2) + 15;
 
@@ -110,4 +107,12 @@ $lineHeight: ($circleWidth / 2) + 15;
 
 .workshop-hint {
   font-size: 1rem;
+}
+
+
+blockquote {
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-left: .25rem solid #eceeef;
 }

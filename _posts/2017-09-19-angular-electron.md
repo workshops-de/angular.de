@@ -219,7 +219,7 @@ Hier wird als erstes der vorher beschriebene Befehl **build-electron** ausgefüh
 Anschließend wird Electron aufgerufen (Hast Du installiert), und als Parameter der Build-Ordner **dist** übergeben.
 Speichere die Änderungen ab.
 
-#### Vorsicht: Die Pfade der oben beschriebenen Befehle funktionieren so nicht in einer Windows Umgebung. In so einem Falle müssen alle "/" mit "\\\\" ersetzt werden.
+> Vorsicht: Die Pfade der oben beschriebenen Befehle funktionieren so nicht in einer Windows Umgebung. In so einem Falle müssen alle "/" mit "\\\\" ersetzt werden.
 
 Electron wird deine App jetzt leider noch nicht anzeigen/laden.
 Es fehlen noch ein paar Einstellungen an der Applikation.
@@ -421,7 +421,7 @@ Das hat außerdem zur Folge, dass deine Start-Skripte nicht mehr funktionieren.
 **ng serve** zum Beispiel.
 Das kannst Du aber leicht beheben.
 
-#### Vorsicht: Diesen Schritt kann man nicht rückgängig machen!
+> Vorsicht: Diesen Schritt kann man nicht rückgängig machen!
 
 Öffne eine Konsole im Hauptverzeichnis und gebe ein:
 
