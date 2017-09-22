@@ -30,7 +30,7 @@ Wir empfehlen euch folgende Artikel für den Einstieg:
 
 [Video - Migration von AngularJS zu Angular 2](/artikel/migration-angularjs-angular2/)
 
-[Video - Bootstrap SASS 4 mit Angular2 in wenigen Sekunden:](/artikel/angular2-bootstrap-scss-angular-cli/)
+[Video - Bootstrap SASS 4 mit Angular2 in wenigen Sekunden:](/artikel/angular-bootstrap-scss-angular-cli/)
 
 
 

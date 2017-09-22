@@ -5,7 +5,7 @@ author: "Robin Böhm"
 slug: "angular-bootstrap-scss-angular-cli"
 published_at: 2016-09-01 10:00:00.000000Z
 categories: "angular bootstrap scss cli"
-header_image: "/artikel/header_images/angular2-bootstrap-scss-angular-cli.jpg"
+header_image: "/artikel/header_images/angular-bootstrap-scss-angular-cli.jpg"
 ---
 
 ## Warum brauche ich Bootstrap in meinem Angular Projekt?

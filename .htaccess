@@ -15,3 +15,5 @@ RedirectMatch 301 ^/projekte(.*)$ /
 RedirectMatch 301 ^/classroom/(.*)$ https://workshops.de/classroom/$1
 RedirectMatch 301 ^/buch/(.*)$ /buecher/angularjs-buch/$1
 RedirectMatch 301 ^/blog/(.*)$ /artikel/$1
+
+RedirectMatch 301 ^/artikel/angular2-bootstrap-scss-angular-cli$ /artikel/angular-bootstrap-scss-angular-cli/
