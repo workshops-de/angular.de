@@ -35,8 +35,6 @@ NodeJS v7.10.1
 NPM 4.2.0
 ```
 
-Das Repository für diese Anleitung findest Du [hier](https://github.com/EsSpricht/AngularElectron).
-
 ## Vorbereitung
 Um ein neues Angular Projekt zu erstellen, benötigst Du nicht zwingend die **Angular-CLI**.
 Ich würde aber stets empfehlen sie zu benutzen.
@@ -456,5 +454,6 @@ Starte die App und schaue Dir die Ausgabe auf der Konsole an, dort sollte jetzt 
 
 Deine App ist jetzt von Electron umgeben und Du kannst auf das Betriebssystem zugreifen, wie in einer richtigen Desktop Applikation.
 Ich hoffe Dir hat die Anleitung Spaß gemacht und vor allem, dass sie Dir etwas gebracht hat.
+Das Repository für diese Anleitung findest Du [hier](https://github.com/EsSpricht/AngularElectron).
 
 Viel Spaß mit Angular und Electron.
