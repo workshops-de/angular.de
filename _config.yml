@@ -54,3 +54,7 @@ exclude:
   - Dockerfile
   - .gitignore
   - nginx.conf
+
+# webrick:
+#   headers:
+#     Content-Security-Policy: "style-src 'self'"
