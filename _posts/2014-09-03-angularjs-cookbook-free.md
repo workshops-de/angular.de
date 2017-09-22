@@ -6,6 +6,7 @@ slug: "angularjs-cookbook-free"
 published_at: 2014-09-03 13:43:00.000000Z
 categories: "angularjs buch"
 header_image: "/artikel/header_images/angularjs-cookbook-free.jpg"
+noindex: true
 ---
 
 [Sascha Brink](https://twitter.com/sascha_brink) hat sein [AngularJS CookBook](https://leanpub.com/angularjs-cookbook) komplett frei zur Verfügung gestellt!
