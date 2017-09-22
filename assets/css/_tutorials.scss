@@ -1,7 +1,7 @@
 .tutorial-pattern {
   background: #ff0000;
   width: 150px;
-  height: 180px;
+  min-height: 180px;
 
   &.pattern-1 {
     background: url('/assets/img/tutorials/pat1.png');
