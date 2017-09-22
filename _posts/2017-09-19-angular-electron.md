@@ -261,7 +261,7 @@ Deswegen musst Du den Zugriff auf Electron in deine App “biegen”.
 
 >Der folgende Weg ist ein Workaround und eher schmuddelig!
 
-Thorsten Hans hat ein [Projekt](https://medium.com/thorstens-thoughts/integrating-angular-and-electron-using-ngx-electron-9c36affca25e) entwickelt, um angenehm auf Electron zuzugreifen.
+Thorsten Hans hat ein [Projekt](https://thorsten-hans.com/integrating-angular-and-electron-using-ngx-electron-9c36affca25e) entwickelt, um angenehm auf Electron zuzugreifen.
 Das Ganze mit TypeScript, wodurch man alle Vorteile von TS behält.
 Ich hatte leider noch keine Zeit es zu testen, aber es wäre mal einen Versuch wert.
 
