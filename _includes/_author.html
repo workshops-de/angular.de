@@ -2,7 +2,14 @@
 <div class="row mb-2">
   <div class="col-4 col-sm-3 col-md-4">
     <span>
-      <img alt="{{ author.name }}" class="rounded-circle img-fluid" src="//www.gravatar.com/avatar/{{ author.gravatar_uid }}?s=160">
+      <img alt="{{ author.name }}" class="rounded-circle img-fluid"
+      {% if author.gravatar_uid %}
+      src="//www.gravatar.com/avatar/{{ author.gravatar_uid }}?s=160"
+      {% endif %}
+      {% if author.image_url %}
+      src="{{author.image_url}}"
+      {% endif %}
+      >
     </span>
   </div>
   <div class="col-8 col-sm-9 col-md-8">
