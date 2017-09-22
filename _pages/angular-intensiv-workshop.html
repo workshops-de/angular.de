@@ -9,6 +9,8 @@ description: Du möchtest Angular in nur 3 Tagen lernen? Angular ist der Nachfol
 permalink: /workshops/angular-intensiv/
 ---
 
+{% include_relative workshop/_intro.html %}
+
 {% include_relative workshop/_what.html %}
 
 {% include_relative workshop/_clients.html %}
@@ -17,76 +19,12 @@ permalink: /workshops/angular-intensiv/
 
 {% include_relative workshop/_testimonials.html %}
 
-{% include_relative workshop/_trainer.html %}
+{% include_relative workshop/_dev-trainer.html %}
 
 {% include_relative workshop/_agenda.html %}
 
-<hr>
+{% include_relative workshop/_requirements.html %}
 
+{% include_relative workshop/_questions.html %}
 
-
-<hr>
-
-<h3>Voraussetzungen</h3>
-
-<div class="row">
-  <div class="col-lg-10">
-    <p>
-      Voraussetzung sind Grundlagenkenntnisse in JavaScript und HTML.
-      Innerhalb des Workshops gehen wir auf die individuelle Situation der Gruppe ein und passen sowohl den Fokus als auch die Geschwindigkeit an.
-      Somit können dann z.B. Grundlagen noch einmal wiederholt oder auch übersprungen werden.
-    </p>
-
-    <p>Technische Voraussetzung für den Workshop ist ein Notebook mit Windows, Linux oder MacOSX.
-      Weiterhin wird NodeJS mit einigen Paketen benötigt, du bekommst hierzu eine Schritt-für-Schritt Anleitung nach deiner Anmeldung zu diesem Workshop.</p>
-  </div>
-</div>
-
-<hr>
-
-<p class="post-content">
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <h3>Sind noch Fragen offen?</h3>
-      Dann schreib' uns einfach eine E-Mail an <a href="mailto:info@angularjs.de" target="_blank">info@angularjs.de</a>.
-      Wenn du einen persöhnlicheren Kontakt vorziehst, freuen wir uns auch über ein Anruf von dir!
-      Wir sind werktags von 8 bis 13 Uhr telefonisch unter <a href="tel:+4920187535773">+49 201 / 87535773</a> erreichbar.
-    </div>
-    <div class="col-12 col-md-6 text-center">
-      <h3>Kontakt</h3>
-    <div>
-    <img alt="Britta Lenzen Image" class="rounded-circle img-thumbnail mb-1" height="101" src="//www.gravatar.com/avatar/ef9aef2ffd895abd5f75bdfe5c26dfe1?s=202" width="101">        </div>
-      <div>
-        <div>Britta Lenzen</div>
-        <div class="text-muted">Office Management</div>
-      </div>
-    </div>
-  </div>
-</p>
-
-
-<br>
-
-<hr>
-
-<h3>Schulungszeiten</h3>
-
-<div class="row">
-  <div class="col-md-9">
-    <p>
-      Die Start- und Endzeiten findet ihr, wenn ihr auf einen Termin klickt. Im Normalfall beginnen unsere Schulungen
-  am ersten Tag um 9:00 Uhr und enden am letzten Tag um 16:30 Uhr.
-    </p>
-  </div>
-</div>
-<br>
-
-{% if jekyll.environment == "production" %}
-  <script src="https://workshops.de/js/embed.js"></script>
-{% else %}
-  <script>window.wsEmbedBaseUrl = "https://beta.workshops.de/embed";</script>
-  <script src="https://beta.workshops.de/js/embed.js"></script>
-{% endif %}
-
-<div class="ws-event-json-ld" data-course-id="{{ site.ws_course_id }}"></div>
-<div class="ws-event" data-course-id="{{ site.ws_course_id }}"></div>
+{% include_relative workshop/_training-schedule.html %}

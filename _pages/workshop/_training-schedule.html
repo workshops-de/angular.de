@@ -1,0 +1,37 @@
+{% if jekyll.environment == "production" %}
+<script src="https://workshops.de/js/embed.js"></script>
+{% else %}
+<script>window.wsEmbedBaseUrl = "https://beta.workshops.de/embed";</script>
+<script src="https://beta.workshops.de/js/embed.js"></script>
+{% endif %}
+
+<section class="" style="padding: 40px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3>Schulungszeiten</h3>
+      </div>
+      <!-- /.col~ -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-12">
+        <p>
+          Die Start- und Endzeiten findet ihr, wenn ihr auf einen Termin klickt. Im Normalfall beginnen unsere Schulungen am ersten
+          Tag um 9:00 Uhr und enden am letzten Tag um 16:30 Uhr.
+        </p>
+      </div>
+      <!-- /.col~ -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-12">
+        <div class="ws-event-json-ld" data-course-id="{{ site.ws_course_id }}"></div>
+        <div class="ws-event" data-course-id="{{ site.ws_course_id }}"></div>
+      </div>
+      <!-- /.col~ -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>
