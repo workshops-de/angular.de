@@ -3,6 +3,7 @@ number: 3.05
 title: Ein erstes Programm
 part: Basisapplikation
 progress: 80
+noindex: true
 ---
 
 > API:
