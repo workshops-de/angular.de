@@ -45,7 +45,7 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
 
 
 <hr>
-<div class="">
+<div class="workshop-hint">
   <div class="h3">Keine Lust zu Lesen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
@@ -675,7 +675,7 @@ Wir hoffen das Tutorial hat euch gefallen und ihr konntet das eine oder andere H
 Viel Spaß beim Ausprobieren und Entwickeln der eigenen App!
 
 <hr>
-<div class="text-center">
+<div class="workshop-hint text-center">
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">

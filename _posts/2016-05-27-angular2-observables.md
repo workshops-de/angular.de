@@ -11,7 +11,7 @@ header_image: "/artikel/header_images/angular2-observables.jpg"
 Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadurch von Asynchronität. Sei es nur ein Tap/Klick, oder das Abschnicken einer Anfrage an eine Schnittstelle. In unserem [Angular Einsteigertutorials](/artikel/angular2-tutorial-deutsch/) sind wir schon kurz auf wichtige Punkte bezüglich der Asynchonität in Angular Anwendungen eingegangen. Natürlich steckt hinter diesem Begriff noch viel mehr, was erklärt werden kann und sollte. Daher folgt nun dieser Artikel, in dem wir uns ausschließlich mit Fragen und Problemen rundum das Thema Asynchronität beschäftigen.
 
 <hr>
-<div class="">
+<div class="workshop-hint">
   <div class="h3">Keine Lust zu Lesen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
@@ -347,7 +347,7 @@ Angular setzt schon an den richtigen Stellen auf die aktuellste und flexibelste 
 Wir hoffen, dass wir euch die Angst vor dem Arbeiten mit asynchronen Programmteilen genommen haben und ihr nun das Rüstzeug besitzt, um eure Probleme elegant und einfach zu lösen.
 
 <hr>
-<div class="text-center">
+<div class="workshop-hint text-center">
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">

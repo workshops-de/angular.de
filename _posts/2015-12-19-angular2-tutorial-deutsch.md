@@ -15,7 +15,7 @@ Weiterhin baut dieses Tutorial auf dem selben Code-Beispiel wie unser [AngularJS
 Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
 
 <hr>
-<div class="">
+<div class="workshop-hint">
   <div class="h3">Keine Lust zu Lesen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
@@ -728,7 +728,7 @@ Mit Angular ist vieles neu und bekannte Dinge funktionieren doch ein wenig ander
 Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](https://angularjs.de/chat)!
 
 <hr>
-<div class="text-center">
+<div class="workshop-hint text-center">
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">

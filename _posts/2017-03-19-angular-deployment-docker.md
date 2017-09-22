@@ -80,7 +80,7 @@ Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, das
 - Ihr kennt bestimmt das File ```.gitignore``` zum Ignorieren von Dateien beim Check-In auf Github. Die gleiche Funktion steht uns auch mit dem File ```.dockerignore``` zur Verfügung. Hier könnt ihr Files / Folders Ignorieren, z.b. gibt es keinen Grund die Testfiles aus dem Repo in Dockerhub mit hoch zu laden.
 
 <hr>
-<div class="">
+<div class="workshop-hint">
   <div class="h3">Keine Lust zu Lesen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
@@ -246,7 +246,7 @@ Nun kommt es etwas zu einem Glaubenskrieg. Sicherlich ist es möglich, auch hier
 Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche Arbeit erleichtern. Allerdings haben wir es in einer solchen Pipe mit sehr vielen unterschiedlichen Systemen und Oberflächen zu tun. In diesem Artikel konnte ich nur grob erklären, was es mit den einzelnen Bausteinen auf sich hat. Daher - falls ich euer Interesse geweckt habe, kann ich euch nur empfehlen, sich mit den einzelnen Bausteinen intensiv auseinander zu setzen.
 
 <hr>
-<div class="text-center">
+<div class="workshop-hint text-center">
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">

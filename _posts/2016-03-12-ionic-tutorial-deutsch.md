@@ -34,7 +34,7 @@ Zum Verständnis des Tutorials sollten die Grundlagen von AngularJS bekannt und 
 Alle Quelltexte findet ihr auf [GitHub](https://github.com/angularjs-de/ionic-tutorial) oder ladet euch alles als [ZIP-Archiv](https://github.com/angularjs-de/ionic-tutorial/archive/master.zip) herunter. In jedem Abschnitt ist natürlich auch eine Live-Demo verlinkt.
 
 <hr>
-<div class="">
+<div class="workshop-hint">
     <div class="h3">Keine Lust zu Lesen?</div>
     <div class="row mb-2">
         <div class="col-xs-12 col-md-6">
@@ -993,7 +993,7 @@ Zum Abschluss haben wir die App noch ein wenig gepimpt - aber seht einfach selbs
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-pizza-service/tree/master) und [Live-Demo](https://angularjs-de.github.io/ionic-pizza-service/#/order)
 
 <hr>
-<div class="text-center">
+<div class="workshop-hint text-center">
 <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">

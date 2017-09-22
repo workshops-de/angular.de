@@ -21,7 +21,7 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
 **Wichtig**: Den Code müsst ihr lokal auf einem beliebigen Webserver starten, da ihr sonst Probleme mit der *[Same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)* bekommt. Ob ihr Apache, den eingebauten Webserver von WebStorm oder sonstigen Webserver nutzt, ist egal. Habt ihr Python installiert, funktioniert z.B.: `python -m SimpleHTTPServer`. Eine weitere Möglichkeit ist es Node.js zu installieren - die Installation liefert euch zugleich den Paketmanager npm. Mit diesem könnt ihr dann global einen HTTP-Server über den folgenden Befehl installieren: `npm install -g http-server`. Und danach ist es möglich in eurem Projektverzeichniss den HTTP-Server auszuführen mit `http-server -o`.
 
 <hr>
-<div class="">
+<div class="workshop-hint">
   <div class="h3">Keine Lust zu Lesen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
@@ -522,7 +522,7 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
 
 
 <hr>
-<div class="text-center">
+<div class="workshop-hint text-center">
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
