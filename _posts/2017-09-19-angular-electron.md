@@ -22,7 +22,7 @@ Wir haben dazu auch einen Artikel [Einführung in Angular-CLI](https://angularjs
 ## Voraussetzungen
 Ich setze nicht voraus, dass Du die Angular-CLI installiert hast.
 Jedoch sollte NodeJS und NPM bereits in einer nicht zu alten Version(>=6.0) installiert sein.
-Bei mir finden sich folgende Versionen:
+Ich habe zum Zeitpunkt dieses Artikels folgende Versionen installiert:
 
 ```bash
 NodeJS v7.10.1
