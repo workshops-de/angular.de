@@ -49,6 +49,7 @@ Um die **Angular-CLI** zu installieren öffne eine Konsole und gebe folgenden Be
 ```bash
 npm install -g @angular/cli
 ```
+
 [Die Angular-CLI](https://cli.angular.io) wird global auf deinem System installiert.
 Navigiere in den Ordner, in dem Du deine App erstellen willst.
 Bei mir ist das **~/repo/private/**.
