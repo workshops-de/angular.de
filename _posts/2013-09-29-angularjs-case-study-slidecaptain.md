@@ -194,5 +194,5 @@ Wir sind davon überzeugt (und erzählen das auch gerne jedem, der es hören mö
  [23]: http://backbonejs.org/
  [24]: http://knockoutjs.com/
  [25]: http://www.sitepoint.com/10-reasons-use-angularjs/
- [26]: http://flowtime-js.marcolago.com/
+ [26]: https://marcolago.github.io/flowtime.js/
  [27]: https://developer.mozilla.org/en/docs/Rich-Text_Editing_in_Mozilla
