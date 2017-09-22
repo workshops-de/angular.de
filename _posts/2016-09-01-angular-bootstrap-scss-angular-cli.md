@@ -16,7 +16,7 @@ Gerade beim Start eines Projektes lassen sich hiermit Layouts und Designs einfac
 
 ## Was hat Bootstrap SCSS für Vorteile?
 
-SCSS ist eine Syntax-Erweiterung für CSS, welche euch ermöglicht verschiedene Konstrukte zu benutzen die CSS sonst nicht unterstürzt. Nützlich sind z.B. die Definition von Variablen und Funktionen. Dies erleichtert die Erstellung und vorallem die Wartbarkeit von Styles in eurem Projekt.
+SCSS ist eine Syntax-Erweiterung für CSS, welche euch ermöglicht verschiedene Konstrukte zu benutzen die CSS sonst nicht unterstürzt. Nützlich sind z.B. die Definition von Variablen und Funktionen. Dies erleichtert die Erstellung und vor allem die Wartbarkeit von Styles in eurem Projekt.
 
 ## Wie binde ich Bootstrap in mein Angular-CLI-Projekt ein?
 
