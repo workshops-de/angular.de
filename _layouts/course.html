@@ -2,16 +2,53 @@
 layout: base
 ---
 
-<br>
-<br>
+<style>
+  div.header-workshop {
+
+    /*
+    background: url(/assets/img/temp/image12.jpg);
+    background-size: cover;
+    background-position: center center;
+    */
+
+    /* background-color: #ecedee !important; */
+    background: linear-gradient(135deg, rgba(236,237,238,1) 1%,rgba(58,66,77,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    margin-top: 57px;
+  }
+
+  div.header-workshop::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(69, 77, 89, 0.75); */
+    background-color: rgba(236, 237, 238, 0.9);
+    z-index: 1;
+  }
+
+  div.header-workshop > .container {
+    position: relative;
+    z-index: 10;
+    height: 300px;
+  }
+</style>
 
 <div class="header header-workshop">
-  <div class="container text-center">
-    <h1 class="mt-4">
-      <img alt="{{ page.course.topic }} {{ page.course.subtitle }}" src="{{ page.course.image_url }}" title="{{ page.course.topic }} {{ page.course.subtitle }}" width="300">
-      <br>{{ page.course.topic }}<br>
-      <small>{{ page.course.subtitle }}</small>
-    </h1>
+  <div class="container">
+      <div class="row h-100">
+        <div class="col-4 d-flex">
+          <img class="align-self-center" alt="{{ page.course.topic }} {{ page.course.subtitle }}" src="{{ page.course.image_url }}" title="{{ page.course.topic }} {{ page.course.subtitle }}" width="300">
+        </div>
+        <div class="col-8 d-flex">
+            <h1 class="align-self-center display-4">
+                {{ page.course.topic }}<br>
+                <small style="font-weight: 600">{{ page.course.subtitle }}</small>
+            </h1>
+        </div>
+      </div>
+
   </div>
 </div>
 

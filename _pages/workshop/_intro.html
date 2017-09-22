@@ -3,13 +3,21 @@
     content: '';
     position: absolute;
     width: 50%;
+    max-width: 860px;
+    min-height: 540px;
     height: 50%;
-    left: 50%;
+    right: 0;
     top: 345px; /* 358 */
     background: url(/assets/img/temp/teaser1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right center;
+  }
+
+  @media (max-width: 768px) {
+    #_84098::after {
+      display: none;
+    }
   }
 </style>
 
