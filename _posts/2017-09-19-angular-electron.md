@@ -1,5 +1,5 @@
 ---
-title: "Angular und Electron - Der Weg zur Desktopanwendung"
+title: "Mit Angular und Electron zur Desktopanwendung"
 description: "Anwendungen wie Spotify machen es vor: Desktop-Anwendungen werden immer öfter mit Webtechnologien erstellt. Wir helfen dir und erklären die Grundlagen."
 author: "Michael Berrezak"
 slug: "angular-electron"
