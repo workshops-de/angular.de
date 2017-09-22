@@ -1,5 +1,5 @@
 ---
-title: "AngularJS Days 2015 - Wir sind die Program Chairs"
+title: "Wir sind die Program Chairs der AngularJS Days 2015"
 description:
 author: "Robin Böhm"
 slug: "program-chairs-angularjs-days-2015"
