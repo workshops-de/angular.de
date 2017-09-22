@@ -1,0 +1,43 @@
+---
+header: Unsere Einsteiger Tutorials
+title: Unsere Einsteiger Tutorials
+permalink: /tutorials/
+noindex: true
+sitemap: false
+---
+
+<div class="list-group mb-5">
+  {% include_relative _tutorial.html
+     title="<strong>Angular</strong> Grundlagen"
+     description="Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application."
+     logo="angular"
+     pattern="1"
+  %}
+  {% include_relative _tutorial.html
+     title="<strong>Ionic 2</strong> Grundlagen"
+     description="Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application."
+     logo="ionic"
+     pattern="2"
+  %}
+  {% include_relative _tutorial.html
+     title="<strong>Redux</strong> Grundlagen"
+     description="Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application."
+     logo="redux"
+     pattern="3"
+  %}
+</div>
+
+<!--
+<div class="card-deck-wrapper">
+  <div class="row">
+    {% assign sorted_posts = site.posts | sort: 'date' | sort: 'tutorial_page_order', 'last' %}
+    {% for post in sorted_posts %}
+      {% if post.categories contains 'tutorial' %}
+        <div class="col-12 col-md-6 mb-2">
+          {% include _article.html %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+-->

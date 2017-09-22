@@ -1,0 +1,17 @@
+.tutorial-pattern {
+  background: #ff0000;
+  width: 150px;
+  height: 180px;
+
+  &.pattern-1 {
+    background: url('/assets/img/tutorials/pat1.png');
+  }
+
+  &.pattern-2 {
+    background: url('/assets/img/tutorials/pat2.png');
+  }
+
+  &.pattern-3 {
+    background: url('/assets/img/tutorials/pat3.png');
+  }
+}

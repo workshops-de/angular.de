@@ -1,6 +1,6 @@
 ---
 title: "AngularJS-Tutorial für Einsteiger"
-description: "Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application.  "
+description: "Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application."
 author: "Sascha Brink"
 slug: "angularjs-tutorial-deutsch"
 published_at: 2014-03-23 12:12:00.000000Z
@@ -18,7 +18,7 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
 
 > **<i class="fa fa-cloud-download fa-fw"></i> [Download als ZIP](https://github.com/angularjs-de/angularjs-tutorial-code/archive/gh-pages.zip) / [Code auf GitHub](https://github.com/angularjs-de/angularjs-tutorial-code)**
 
-**Wichtig**: Den Code müsst ihr lokal auf einem beliebigen Webserver starten, da ihr sonst Probleme mit der *[Same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)* bekommt. Ob ihr Apache, den eingebauten Webserver von WebStorm oder sonstigen Webserver nutzt, ist egal. Habt ihr Python installiert, funktioniert z.B.: `python -m SimpleHTTPServer`. Eine weitere Möglichkeit ist es Node.js zu installieren - die Installation liefert euch zugleich den Paketmanager npm. Mit diesem könnt ihr dann global einen HTTP-Server über den folgenden Befehl installieren: `npm install -g http-server`. Und danach ist es möglich in eurem Projektverzeichniss den HTTP-Server auszuführen mit `http-server -o`. 
+**Wichtig**: Den Code müsst ihr lokal auf einem beliebigen Webserver starten, da ihr sonst Probleme mit der *[Same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)* bekommt. Ob ihr Apache, den eingebauten Webserver von WebStorm oder sonstigen Webserver nutzt, ist egal. Habt ihr Python installiert, funktioniert z.B.: `python -m SimpleHTTPServer`. Eine weitere Möglichkeit ist es Node.js zu installieren - die Installation liefert euch zugleich den Paketmanager npm. Mit diesem könnt ihr dann global einen HTTP-Server über den folgenden Befehl installieren: `npm install -g http-server`. Und danach ist es möglich in eurem Projektverzeichniss den HTTP-Server auszuführen mit `http-server -o`.
 
 <hr>
 <div class="">
