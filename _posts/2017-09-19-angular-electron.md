@@ -29,7 +29,7 @@ NodeJS v7.10.1
 NPM 4.2.0
 ```
 
-Das Repository für diese Anleitung findest Du [hier](https://github.com/EsSpricht/Angularelectron).
+Das Repository für diese Anleitung findest Du [hier](https://github.com/EsSpricht/AngularElectron).
 
 ## Vorbereitung
 Um ein neues Angular Projekt zu erstellen, benötigst Du nicht zwingend die **Angular-CLI**.
@@ -53,20 +53,20 @@ Ich gebe meine Pfade immer an, damit Du logisch nachvollziehen kannst was ich ge
 Die neue App erstellst Du jetzt in deinem Ordner wie folgt:
 
 ```bash
-~/repo/private$ ng new Angularelectron
+~/repo/private$ ng new AngularElectron
 ```
 **ng new** erstellt die App mitsamt der Abhängigkeiten und verdrahtet alles logisch miteinander.
-Der Name der App ist jetzt **Angularelectron**, Du kannst aber ruhig etwas anderes nehmen.
+Der Name der App ist jetzt **AngularElectron**, Du kannst aber ruhig etwas anderes nehmen.
 Leider fehlt mir gerade die Fantasie für einen cooleren Namen.
 
-In deinem Ordner **~/repo/private** befindet sich nun ein neuer Ordner **Angularelectron**.
+In deinem Ordner **~/repo/private** befindet sich nun ein neuer Ordner **AngularElectron**.
 Öffne den Ordner und schaue einmal drüber.
 Ich werde jetzt nicht auf die einzelnen Dateien eingehen, da das kein Angular Tutorial ist.
 Dennoch solltest Du testen ob alles funktioniert.
 Das kannst Du durch folgenden Befehl im neuen Ordner testen:
 
 ```bash
-~/repo/private/Angularelectron$ ng serve
+~/repo/private/AngularElectron$ ng serve
 ```
 Der Output sollte dann in etwa so aussehen:
 
@@ -81,7 +81,7 @@ Als nächstes zeige ich Dir, was getan werden muss um *Electron* zu integrieren.
 ## Electron Einrichten
 Installiere das Electron Framework bitte im Projektordner:
 ```bash
-~/repo/private/Angularelectron$ npm install electron --save-dev
+~/repo/private/AngularElectron$ npm install electron --save-dev
 ```
 >Es ist auch möglich Electron global zu installieren. Da globale Installationen aber oft mit Rechten verbunden sind, vermeide ich diese wo es nur geht
 
@@ -90,7 +90,7 @@ Du musst noch ein paar Dateien und Ordner erstellen.
 Also die eigentliche Konfiguration.
 Fange mit dem **electron** Ordner an:
 
-**~/repo/private/Angularelectron/src/electron**
+**~/repo/private/AngularElectron/src/electron**
 
 In diesem Ordner landet deine Electron Konfiguration.
 Die erste Konfigurationsdatei die Du erstellst, nennst Du **package.json** und gibst ihr folgenden Inhalt:
@@ -174,16 +174,16 @@ Für mehr Details solltest Du Dir die [Electron Doku](https://electron.atom.io) 
 
 Hier noch mal (als Übersicht) die neuen Dateien, die Du eben erstellt hast:
 
-1. **~/repo/private/Angularelectron/src/electron**
-2. **~/repo/private/Angularelectron/src/electron/main.js**
-3. **~/repo/private/Angularelectron/src/electron/package.json**
+1. **~/repo/private/AngularElectron/src/electron**
+2. **~/repo/private/AngularElectron/src/electron/main.js**
+3. **~/repo/private/AngularElectron/src/electron/package.json**
 
 ## Electron Integrieren
 Prinzipiell ist Electron jetzt lauffähig.
 Dummerweise weiß dein Projekt aber noch nicht, dass es Electron gibt.
 Dazu musst Du erst die entsprechenden Build-Scripts anlegen.
 Öffne die Datei **package.json**, die sich im Hauptverzeichnis befindet (nicht die Neue!).
-Zur Übersicht, hier der komplette Pfad: **~/repo/private/Angularelectron/package.json**
+Zur Übersicht, hier der komplette Pfad: **~/repo/private/AngularElectron/package.json**
 
 Navigiere zu dem Tag **scripts** und füge das hinzu:
 
@@ -218,12 +218,12 @@ Speichere die Änderungen ab.
 
 Electron wird deine App jetzt leider noch nicht anzeigen/laden.
 Es fehlen noch ein paar Einstellungen an der Applikation.
-Öffne die Datei **~/repo/private/Angularelectron/src/index.html** und ändere sie so ab:
+Öffne die Datei **~/repo/private/AngularElectron/src/index.html** und ändere sie so ab:
 ```html
 <base href="./">
 ```
 Aus **"/"** wird also **"./"** weil Electron wie schon erwähnt auf Dateiebene operiert.
-Als nächstes bitte noch **~/repo/private/Angularelectron/src/polyfill.js** editieren.
+Als nächstes bitte noch **~/repo/private/AngularElectron/src/polyfill.js** editieren.
 Ändere folgenden Import ab:
 
 ```javascript
@@ -241,7 +241,7 @@ Das sind erst mal alle Einstellungen die Du benötigst, um deine App starten zu 
 Teste es doch einfach mal mit:
 
 ```bash
-~/repo/private/Angularelectron$ npm run electron
+~/repo/private/AngularElectron$ npm run electron
 ```
 Es sollte ein waschechtes OS Fenster aufgehen, mit dem Inhalt deiner Angular App.
 
@@ -260,7 +260,7 @@ Thorsten Hans hat ein [Projekt](https://medium.com/thorstens-thoughts/integratin
 Das Ganze mit TypeScript, wodurch man alle Vorteile von TS behält.
 Ich hatte leider noch keine Zeit es zu testen, aber es wäre mal einen Versuch wert.
 
-Öffne die Datei **~/repo/private/Angularelectron/src/index.html** und füge ihr folgendes Script hinzu:
+Öffne die Datei **~/repo/private/AngularElectron/src/index.html** und füge ihr folgendes Script hinzu:
 
 ```html
 <head>
@@ -279,7 +279,7 @@ Ich hatte leider noch keine Zeit es zu testen, aber es wäre mal einen Versuch w
 Du benutzt an dieser Stelle die **require()** Methode, welche von **NodeJS** zur Verfügung gestellt wird, um Module zu laden.
 Diesen Trick benötigst Du, da Electron **commonJS** nutzt um Module aufzulösen, dein Code wird aber schon mit **Webpack** kompiliert.
 JavaScript kennt jetzt zwar die Variable **electron**, das bringt Dir aber nichts, da Du ja TypeScript benutzt.
-Deshalb öffne doch mal die Datei **~/repo/private/Angularelectron/src/typings.d.ts** und mache mit folgenden Einstellungen **TypeScript** mit **Electron** bekannt:
+Deshalb öffne doch mal die Datei **~/repo/private/AngularElectron/src/typings.d.ts** und mache mit folgenden Einstellungen **TypeScript** mit **Electron** bekannt:
 
 ```typescript
 /* SystemJS module definition */
@@ -292,7 +292,7 @@ interface NodeModule {
 ```
 
 Du kannst jetzt global auf die Variable **electron** zugreifen.
-Teste das doch einfach mal, indem Du den Titel in **~/repo/private/Angularelectron/src/app/app.component.ts** änderst:
+Teste das doch einfach mal, indem Du den Titel in **~/repo/private/AngularElectron/src/app/app.component.ts** änderst:
 
 ```typescript
 import { Component } from '@angular/core';
@@ -315,7 +315,7 @@ Das war's auch schon, Du greifst jetzt direkt über die global definierte **elec
 Starte die App, um deine Änderungen zu testen.
 
 ```bash
-~/repo/private/Angularelectron$ npm run electron
+~/repo/private/AngularElectron$ npm run electron
 ```
 
 Solltest Du jetzt anstelle von **app** den Pfad zu deiner App sehen.
@@ -323,7 +323,7 @@ Solltest Du jetzt anstelle von **app** den Pfad zu deiner App sehen.
 ![alt text](/artikel/angular-electron/electron_window2.png "Electron Zugriff")
 
 Du kannst jetzt auch eigene Funktionen innerhalb der **Electron Umgebung** definieren.
-Das solltest Du auch gleich mal ausprobieren! Öffne die Datei **~/repo/private/Angularelectron/src/electron/main.js** und füge ihr am Ende eine neue Methode hinzu:
+Das solltest Du auch gleich mal ausprobieren! Öffne die Datei **~/repo/private/AngularElectron/src/electron/main.js** und füge ihr am Ende eine neue Methode hinzu:
 
 ```javascript
 app.beiDerMachtVon = function () {
@@ -331,7 +331,7 @@ app.beiDerMachtVon = function () {
 }
 ```
 
-Rufe diese Methode in der Komponente **~/repo/private/Angularelectron/src/app.component.ts** auf:
+Rufe diese Methode in der Komponente **~/repo/private/AngularElectron/src/app.component.ts** auf:
 
 ```typescript
 constructor(){
@@ -343,7 +343,7 @@ constructor(){
 Ob das geklappt hat, siehst Du in der Konsole deiner App, die Du mit **``<STRG>+<SHIFT>+I``** öffnen kannst, nachdem Du die App erneut gebaut hast natürlich.
 
 ```bash
-~/repo/private/Angularelectron$ npm run electron
+~/repo/private/AngularElectron$ npm run electron
 ```
 ![alt text](/artikel/angular-electron/electron_window3.png "Electron App Method")
 
@@ -357,10 +357,10 @@ Außerdem wird die Visual Studio Code Intelli-Sense um die neuen TypeScript Befe
 Installiere die **node types**, indem Du eine Konsole im Hauptverzeichnis deiner App öffnest und diesen Befehl eingibst:
 
 ```bash
-~/repo/private/Angularelectron/$ npm install --save @types/node
+~/repo/private/AngularElectron/$ npm install --save @types/node
 ```
 
-Füge die neuen Types zu deinen **TypeScript Kompiler-Optionen** hinzu, indem Du die Datei **~/repo/private/Angularelectron/src/tsconfig.app.json** erweiterst:
+Füge die neuen Types zu deinen **TypeScript Kompiler-Optionen** hinzu, indem Du die Datei **~/repo/private/AngularElectron/src/tsconfig.app.json** erweiterst:
 
 ```javascript
 "compilerOptions": {
@@ -373,7 +373,7 @@ Füge die neuen Types zu deinen **TypeScript Kompiler-Optionen** hinzu, indem Du
 },
 ```
 
-Teste die neuen Erweiterungen und baue folgenden Befehl in deine **~/repo/private/Angularelectron/src/app.component.ts** ein:
+Teste die neuen Erweiterungen und baue folgenden Befehl in deine **~/repo/private/AngularElectron/src/app.component.ts** ein:
 
 ```typescript
 constructor(){
@@ -421,7 +421,7 @@ Das kannst Du aber leicht beheben.
 Öffne eine Konsole im Hauptverzeichnis und gebe ein:
 
 ```bash
-~/repo/private/Angularelectron/$ ng eject
+~/repo/private/AngularElectron/$ ng eject
 ```
 
 ![alt text](/artikel/angular-electron/ngeject.png "NG EJECT")
