@@ -82,6 +82,7 @@
 @include media-breakpoint-down(sm) {
   .header {
     &.header-post {
+      min-height: 300px;
       .text-wrapper {
         position: absolute; bottom: 0; left: 0; right: 0;
 
