@@ -5,7 +5,7 @@ author: "Michael Berrezak"
 slug: "angular-electron"
 published_at: 2017-09-22 8:25:01.000000Z
 categories: "angular electron desktop advanced"
-header_image: "/artikel/header_images/angular-testing.png"
+header_image: "/artikel/header_images/angular-electron.png"
 ---
 
 ## Warum solltest du die Electron ansehen?
