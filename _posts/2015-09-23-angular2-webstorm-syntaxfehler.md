@@ -33,7 +33,7 @@ Nach der Installation des Plugins könnt ihr die Annotations und andere ES7 Feat
 **Update 2017/09:**
 
 Jetbrains hat Stark an der Angular Unterstützung für WebStorm gearbeitet.
-Anfang 2017 hat das Unternehmen ein Video veröffentlich wo Victor Savkin, einer der Core-Entwickler von Angular, die Features und seine persönliche Konfiguration der IDE vorstellt.
+Anfang 2017 hat das Unternehmen ein Video veröffentlicht wo Victor Savkin, einer der Core-Entwickler von Angular, die Features und seine persönliche Konfiguration der IDE vorstellt.
 Es werden Shortcuts, Settings und Plugins besprochen welche euch helfen eurer Webstorm optimal zu konfigurieren!
 
 
