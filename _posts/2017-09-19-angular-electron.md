@@ -8,7 +8,7 @@ categories: "angular electron desktop advanced"
 header_image: "/artikel/header_images/angular-electron.png"
 ---
 
-## Warum solltest du die Electron ansehen?
+## Warum solltest du dir Electron ansehen?
 
 Die Entwickler vom Elektron Framework fangen ihre Produktbeschreibung mit folgendem Slogan an:
 
