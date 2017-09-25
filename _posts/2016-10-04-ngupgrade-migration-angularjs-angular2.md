@@ -1,6 +1,6 @@
 ---
 title: "Migration AngularJS zu Angular"
-description: "Migration mit ngUpgrade leichtgemacht. Eine Zusammenfassung über alle wichtigen Schritte, wie ihr eure AngularJS App zu einer Angular2 App migrieren könnt."
+description: "Migration mit ngUpgrade leichtgemacht. Eine Zusammenfassung über alle wichtigen Schritte, wie ihr eure AngularJS App zu einer Angular App migrieren könnt."
 author: "Jonathan Schneider"
 slug: "ngupgrade-migration-angularjs-angular"
 published_at: 2016-10-04 00:00:00.000000Z
@@ -8,16 +8,16 @@ categories: "angularjs angular angular2 angular4 migration"
 header_image: "/artikel/header_images/ngupgrade-migration-angularjs-angular2.jpg"
 ---
 
-Die Migration einer AngularJS- zu einer Angular2-Anwendung wurde in der Vergangenheit oftmals als großes Problem und Schwierigkeit bezeichnet. Code müsste weggeschmissen werden, alles wäre anders und TypeScript wird noch oben drauf gesetzt. Panisch zu reagieren und das Schlimmste zu befürchten ist aber nicht der beste Weg. Wie schauen uns im folgenden Artikel an, wieso wir keine Angst vor der Migration haben müssen und wieso es doch viel einfacher funktioniert, als vorher gedacht.
+Die Migration einer AngularJS- zu einer Angular-Anwendung wurde in der Vergangenheit oftmals als großes Problem und Schwierigkeit bezeichnet. Code müsste weggeschmissen werden, alles wäre anders und TypeScript wird noch oben drauf gesetzt. Panisch zu reagieren und das Schlimmste zu befürchten ist aber nicht der beste Weg. Wie schauen uns im folgenden Artikel an, wieso wir keine Angst vor der Migration haben müssen und wieso es doch viel einfacher funktioniert, als vorher gedacht.
 
 ## Voraussetzung für ein Upgrade
 
 Eine Migration muss natürlich immer gut geplant werden und es müssen zuvor die benötigten Mindestvoraussetzungen geschaffen werden. Damit ihr einen Überblick erhaltet, schauen wir uns nun diese an.
 
-Um eine Migration starten zu können, müssen wir unsere AngularJS-Anwendung zuvor auf die Version 1.5 oder höher upgraden. Dies ist elementar wichtig, da nicht nur Angular2 weiterentwickelt wird, sondern auch viele Konzepte noch in AngularJS einfließen, die für die Migration benötigt werden.
+Um eine Migration starten zu können, müssen wir unsere AngularJS-Anwendung zuvor auf die Version 1.5 oder höher upgraden. Dies ist elementar wichtig, da nicht nur Angular weiterentwickelt wird, sondern auch viele Konzepte noch in AngularJS einfließen, die für die Migration benötigt werden.
 
 ### Unterschiede mit Components
-Der Kernunterschied von Angular2 zu AngularJS ist, dass die ganze Applikation in Components aufgeschlüsselt wird und es dabei keine eigenständige Controller oder Directives mit Template mehr gibt. Diese werden in Angular2 durch Components ersetzt. Components können wiederum Child-Components enthalten und erlauben uns somit die Funktionalität in kleine wartbare und wiederverwendbare Container zu verschachteln.
+Der Kernunterschied von Angular zu AngularJS ist, dass die ganze Applikation in Components aufgeschlüsselt wird und es dabei keine eigenständige Controller oder Directives mit Template mehr gibt. Diese werden in Angular durch Components ersetzt. Components können wiederum Child-Components enthalten und erlauben uns somit die Funktionalität in kleine wartbare und wiederverwendbare Container zu verschachteln.
 
 ![Component Struktur](medium_Screen-Shot-2016-09-11-at-15.42.31.png?v=63640820603)
 
@@ -36,7 +36,7 @@ Ab der AngularJS 1.5 Version können Components  erstellt werden, die maßgeblic
 So werden alle Direktiven mit einem eigenen Template zu Components und ein Controller wird zu einer Component mit einem entsprechenden Template.
 
 ### Unterschiede mit Services
-Factorys waren zudem in AngularJS früher eine sehr beliebtes Konzept. Einfach und schnell konnten wir Service generieren und diese benutzen. Mit TypeScript und Angular2 rückt dies aber immer mehr in den Hintergrund und alle Factorys sollten direkt als Service bereitgestellt werden. Dies hat den Hintergrund, dass wir in Angular2 mit TypeScript nur noch Services erstellen, die Klassen zurückgeben und wir uns den Umweg über die Factorys sparen können.
+Factorys waren zudem in AngularJS früher eine sehr beliebtes Konzept. Einfach und schnell konnten wir Service generieren und diese benutzen. Mit TypeScript und Angular rückt dies aber immer mehr in den Hintergrund und alle Factorys sollten direkt als Service bereitgestellt werden. Dies hat den Hintergrund, dass wir in Angular mit TypeScript nur noch Services erstellen, die Klassen zurückgeben und wir uns den Umweg über die Factorys sparen können.
 
 ```typescript
 .service('bookService',
@@ -48,7 +48,7 @@ Factorys waren zudem in AngularJS früher eine sehr beliebtes Konzept. Einfach u
 );
 ```
 
-Zusätzlich, zu dem Verzicht von Directives, Controller und Factorys, sollte auch der neue Component-Router bereits integriert sein. Dieser löst viele Probleme vom alten ngRouter und vereinfacht wiedermal die Migration von AngularJS auf Angular2. Früher wurde global der ngRouter definiert und erhielt  einzeln jeden Path. Wurde eine Route geändert, musste der Path händisch in jedem View geändert werden. Mit dem neuen Component-Router, wird innerhalb der Component der Router definiert und über den ng-link auf den Path zugegriffen. Damit kann sich der Path jederzeit ändern – solange der Name (Identifikator) gleichbeleibt.
+Zusätzlich, zu dem Verzicht von Directives, Controller und Factorys, sollte auch der neue Component-Router bereits integriert sein. Dieser löst viele Probleme vom alten ngRouter und vereinfacht wiedermal die Migration von AngularJS auf Angular. Früher wurde global der ngRouter definiert und erhielt  einzeln jeden Path. Wurde eine Route geändert, musste der Path händisch in jedem View geändert werden. Mit dem neuen Component-Router, wird innerhalb der Component der Router definiert und über den ng-link auf den Path zugegriffen. Damit kann sich der Path jederzeit ändern – solange der Name (Identifikator) gleichbeleibt.
 
 ```javascript
 .component('Books', {
@@ -62,21 +62,21 @@ Zusätzlich, zu dem Verzicht von Directives, Controller und Factorys, sollte auc
 });
 ```
 
-Was sicherlich auch immer hilfreich ist, sich den [Style-Guide](https://angular.io/), von dem Angular2-Core-Team, anzuschauen. Natürlich bezieht sich der Style-Guide auf Angular2, trotzdem können viele Prinzipien auch für AngularJS übernommen werden – der Migration kann es nur helfen.
+Was sicherlich auch immer hilfreich ist, sich den [Style-Guide](https://angular.io/), von dem Angular-Core-Team, anzuschauen. Natürlich bezieht sich der Style-Guide auf Angular, trotzdem können viele Prinzipien auch für AngularJS übernommen werden – der Migration kann es nur helfen.
 
 ## Die Migration: Big-Bang oder Baby-Steps
 
-Bevor wir beginnen, muss man sich natürlich Gedanken machen, ob sich eine Migration lohnt. Besitzen wir nur eine kleine Applikation und hätten sogar Spaß daran, alles neu in Angular2 zu programmieren, muss es nicht immer eine Migration sein. Hier sollten wir lieber die Big-Bang-Strategie verfolgen.
+Bevor wir beginnen, muss man sich natürlich Gedanken machen, ob sich eine Migration lohnt. Besitzen wir nur eine kleine Applikation und hätten sogar Spaß daran, alles neu in Angular zu programmieren, muss es nicht immer eine Migration sein. Hier sollten wir lieber die Big-Bang-Strategie verfolgen.
 
 Ist unsere Applikation aber sehr komplex, sollte wir tendenziell eher zur Baby-Steps-Strategie greifen und eine Migration vorziehen.
 
 Für die Big-Bang-Strategie gibt es keine weitere Erläuterung. Der Code wird weggeschmissen und wir fangen von vorne an.
 
-Hingegen die Baby-Steps-Strategie ihren Namen erhalten hat, da wir die Applikation in kleinen einfachen Schritten immer weiter migrieren. Grundsätzlich kann gesagt werden, was mit AngularJS funktioniert hat, lässt sich auch mit Angular2 bewerkstelligen.
+Hingegen die Baby-Steps-Strategie ihren Namen erhalten hat, da wir die Applikation in kleinen einfachen Schritten immer weiter migrieren. Grundsätzlich kann gesagt werden, was mit AngularJS funktioniert hat, lässt sich auch mit Angular bewerkstelligen.
 
 ![AngularJS to Angular 2 Migration Process](medium_Screen-Shot-2016-09-11-at-15.36.50.png?v=63640820242)
 
-Um die Migration zu starten, müssen wir zuvor Angular2 in unsere AngularJS integrieren und das Modul ngUpgrade installieren.
+Um die Migration zu starten, müssen wir zuvor Angular in unsere AngularJS integrieren und das Modul ngUpgrade installieren.
 
 ```javascript
 import { UpgradeAdapter } from '@angular/upgrade';
@@ -84,11 +84,11 @@ const upgradeAdapter = new UpgradeAdapter();
 ```
 
 ### Migration von Components
-Nach und nach können nun unsere AngularJS-Components in neue Angular2-Components migrieren.
+Nach und nach können nun unsere AngularJS-Components in neue Angular-Components migrieren.
 
 ![Migration AngularJS Components zu Angular 2](medium_Screen-Shot-2016-09-11-at-15.47.44.png?v=63640820915)
 
-Der große Vorteil: Sobald wir eine Component übersetzt haben, können wir die Angular2-Component wieder mit Hilfe des ngUpgrade-Moduls in unserer AngularJS-Applikation lauffähig machen.
+Der große Vorteil: Sobald wir eine Component übersetzt haben, können wir die Angular-Component wieder mit Hilfe des ngUpgrade-Moduls in unserer AngularJS-Applikation lauffähig machen.
 
 ```javascript
 import { HeroDetailComponent } from './hero-detail.component';
@@ -99,7 +99,7 @@ angular
  );
 ```
 
-Es kann natürlich auch mal passieren, dass wir eine neue Angular2-Component erstellt haben, die noch alte Abhängigkeiten besitzt und auf eine AngularJS-Component zugreift - Stichwort Child-Components. Mit dem ngUpgrade-Modul können wir ganz einfach ein Upgrade durchführen, um unsere alte AngularJS-Component in der neuen Angular2-Component nutzen zu können.
+Es kann natürlich auch mal passieren, dass wir eine neue Angular-Component erstellt haben, die noch alte Abhängigkeiten besitzt und auf eine AngularJS-Component zugreift - Stichwort Child-Components. Mit dem ngUpgrade-Modul können wir ganz einfach ein Upgrade durchführen, um unsere alte AngularJS-Component in der neuen Angular-Component nutzen zu können.
 
 ```javascript
 const HeroDetail = upgradeAdapter.upgradeNg1Component('heroDetail');
@@ -113,7 +113,7 @@ const HeroDetail = upgradeAdapter.upgradeNg1Component('heroDetail');
 
 ### Migration von Services
 Somit hätten wir jetzt für die View die Kompatibilität hergestellt und müssen noch für die Services dies bereitstellen.
-Hierfür wird der neu erstellte Angular2-Service einfach als downgrade mit einer AngularJS-Factory initialisiert.
+Hierfür wird der neu erstellte Angular-Service einfach als downgrade mit einer AngularJS-Factory initialisiert.
 
 ```javascript
 upgradeAdapter.addProvider(Heroes);
@@ -121,7 +121,7 @@ upgradeAdapter.addProvider(Heroes);
 angular.module('heroApp', []) .factory('heroes', upgradeAdapter.downgradeNg2Provider(Heroes))
 ```
 
-Natürlich funktioniert dies auch andersherum, um einen AngularJS-Service in Angular2 bereitzustellen.
+Natürlich funktioniert dies auch andersherum, um einen AngularJS-Service in Angular bereitzustellen.
 
 ```javascript
 angular.module('heroApp', []).service('heroes', HeroesService)
