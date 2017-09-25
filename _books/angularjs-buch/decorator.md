@@ -1,6 +1,6 @@
 ---
 number: 6.12
-title: Decorator
+title: Decorator zum Erweitern von Services
 part: Konzepte und Hintergründe
 progress: 80
 ---
