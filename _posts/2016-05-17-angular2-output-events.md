@@ -77,12 +77,12 @@ export class MyClickClass {
 
 Darüber hinaus lassen sich auch eigene Events - in Angular Ouputs genannt - erzeugen. Diese werdet ihr später hauptsächlich benötigen, um Daten aus einer Komponente an ihre Elternkomponente weiterzureichen. Ein Anwendungsbeispiele dafür sind sogenannte *Dummy*-Komponenten/Direktiven, welche sich vor allem für Formulare anbieten. Die eigentliche Komponente nutzt eine weitere Komponente, die sich nur um das Formular an sich kümmert. Sie hält das Formular-Template, die Validierungslogik und gibt der Elternkomponente bescheid wann und was am Ende abgeschickt werden soll.
 
-<div class="alert alert-info"><b>Hinweis:</b> Erstellt eigene <code>Outputs</code>, um Daten an Elternkomponenten weiterzugeben.</div>
+*Hinweis: Erstellt eigene `Outputs`, um Daten an Elternkomponenten weiterzugeben.*
 
 Zur Vereinfachung nehmen wir einfach unser bisheriges `click`-Beispiel und wandeln dieses so ab, dass wir folgenden Aufbau erhalten.
 
-1. **Basis-Komponente** - reagiert auf ein eigenes Event der Click-Komponente
-2. **Click-Komponente** - enthält Button, gibt Nachricht beim Klick and Basis-Komponente
+1. `Basis-Komponente` - reagiert auf ein eigenes Event der Click-Komponente
+2. `Click-Komponente` - enthält Button, gibt Nachricht beim Klick and Basis-Komponente
 
 
 Beginnen wir mit der Basis-Komponente.
@@ -135,7 +135,7 @@ Unsere Basis-Komponente hört auf unser Event und zeigt daraufhin, wie erwartet,
 
 In der Regel werden Services - oder auch *Injectables* genannt - dazu genutzt Funktionalitäten oder Daten zwischen mehreren Anwendungsabschnitten zu teilen. Nehmen wir dazu an, dass sich zwei Components einen DataService teilen. Beide können Daten im Service ändern. Beide Komponenten müssen natürlich die eigenen Daten aktualisieren, wenn sich der DataService ändert. Die Lösung dazu nennt sich *Service-Events*. Ein Service erstellt dazu einen neuen und öffentlichen `EventEmitter`. Alle Funktionen im Service, die Daten des Services ändern, können das Event dann nutzen, um allen Interessenten über die neuen Daten zu informieren.
 
-<div class="alert alert-info"><b>Hinweis:</b> Nutzt Service-Events, um Änderungen an gemeinsam genutzten Daten anwendungsweit zu verteilen.</div>
+*Hinweis: Nutzt Service-Events, um Änderungen an gemeinsam genutzten Daten anwendungsweit zu verteilen.*
 
 Als Beispiel haben wir einen `CartService`, der alle Warenkorbeinträge hält. Er besitzt ein `cartChanged`-Event und eine `addCartItem`-Funktion. Nach dem Hinzufügen eines Items soll das Event die neuen Daten verteilen.
 
@@ -182,7 +182,7 @@ Was das Interface `OnInit` und die `ngOnInit` Funktion bedeuten, könnt ihr in u
 
 Wer jetzt denkt, dass alles sieht jetzt doch schon irgendwie nach Observables aus. Ja, ihr habt recht, denn intern arbeitet der EventEmitter auch mit Observables.
 
-<div class="alert alert-info"><b>Hinweis:</b> Der EventEmitter in Angular basiert intern auf Observables!</div>
+*Hinweis: Der EventEmitter in Angular basiert intern auf Observables!*
 
 ## Fazit
 
