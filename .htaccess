@@ -1,4 +1,4 @@
-RewriteCond %{HTTP_HOST}   !^angularjs\.de [NC]
+RewriteCond %{HTTP_HOST}   ^beta\.angularjs\.de [NC]
 Header set X-Robots-Tag "noindex, nofollow"
 
 RedirectMatch 301 ^/feed$ /feed.xml
