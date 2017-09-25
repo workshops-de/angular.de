@@ -5,7 +5,7 @@ part: Konzepte und Hintergründe
 progress: 15
 ---
 
-### Angular Performance Tip 1 - $apply und $digest
+## Angular Performance Tip 1 - $apply und $digest
 
 Kennt Ihr den Unterschied zwischen der $apply- und $digest-Funktion?
 In der Dokumentation von AngularJS wird beschrieben, dass die $apply Funktion genutzt werden soll, um hiermit Expressions in Angular auszuführen, die von "außen" kommen.

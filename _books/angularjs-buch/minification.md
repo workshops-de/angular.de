@@ -17,7 +17,7 @@ Nach der Minifizierung könnte der Code folgendermaßen aussehen:
 app.controller('MeinController', function(a, b) { ... }
 ```
 
-### Steuerung über $inject
+## Steuerung über $inject
 
 Hier wird das Problem offensichtlich. Da nun `a` und `b` Funktionswerte übergeben werden, versucht der Injektor Instanzen von `a` und `b` statt von `$scope` und `MeinService` zu erzeugen. Um dieses Problem zu umgehen, müssen wir den Injektor in diesen Fällen direkt steuern. Die direkte Steuerung des Injektors erfolgt über  ein Arrays von Strings:
 
@@ -30,7 +30,7 @@ MeinController.$inject = ['$scope', 'MeinService'];
 
 Wie man sieht, haben wir den Erzeugung der Funktion leicht verändern müssen und eine temporäre Variable eingefügt. Außerdem müssen wir bei der Veränderung des Funktionsaufrufs unbedingt die Steuerung des Injektors nachziehen. Für Controller benutzen wir diese Art der Steuerung.
 
-### Steuerung über inline-Annotation
+## Steuerung über inline-Annotation
 
 Wenn wir Funktionen übergeben, die den Injektor benutzen, wird die Art der Steuerung, wie wir sie gerade kennengelernt haben, unbequem. Aus
 
@@ -54,7 +54,7 @@ app.factory('todo', ['$http', function($http) {
 }]);
 ```
 
-### Alternative
+## Alternative
 
 > TODO
 
@@ -62,8 +62,6 @@ Die längere Alternative für den Injektor besteht nicht nur aus mehr Zeichen, s
 
 https://github.com/btford/ngmin
 
-
-
-### Zusammenfassung
+## Zusammenfassung
 
 Keine der beiden Schreibweisen hat Vorteile gegenüber der Anderen - sie sind gleichwertig. Soweit Minification benutzt wird, müssen sie überall eingesetzt werden, wo der Injektor verwendet wird.

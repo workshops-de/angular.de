@@ -17,7 +17,7 @@ Constant macht dabei genau das, was der Name vermuten lässt - eine Konstante de
 
 ![AngularJS - Root Scope](../images/figures/services.png)
 
-### Provider
+## Provider
 
 > Wir benutzen Provider, wenn wir einen Service zum Applikationsstart konfigurieren möchten.
 
@@ -43,7 +43,7 @@ app.config(function(helloWorldProvider){
 ```
 
 
-### Factory
+## Factory
 
 > Wir benutzen eine Factory, wenn wir Funktionen injizieren möchten. Wenn du dir unsicher bist, ob du Factory oder Service nutzen sollst - wähle eine *Factory*.
 
@@ -64,7 +64,7 @@ app.factory('helloWorldFromFactory', function() {
 ```
 
 
-### Service
+## Service
 
 Ein Service ist einer [Factory](#factory) sehr ähnlich. Im Unterschied zu Factory wird die übergebene Funktion mit `new` konstruiert. Historisch wurde die Vereinfachung für Coffeescript eingeführt. Coffeescript unterstützt [Pseudoklassen](http://coffeescript.org/#classes), die nur mit `new` verwendet werden können. In den meisten Fällen solltest du eine Factory verwenden.
 
@@ -77,7 +77,7 @@ app.service('helloWorldFromService', function() {
 ```
 
 
-### Value
+## Value
 
 > Wir benutzen Values, wenn wir einfache Werte (oder Funktionen) übergeben möchten und dabei keine weiteren Services injizieren wollen.
 
@@ -94,7 +94,7 @@ app.value('helloWorldFromService', "Hello World!");
 ```
 
 
-### Constant
+## Constant
 
 > Constant benutzen wir, wenn ein Wert sich später nicht mehr ändern darf.
 
