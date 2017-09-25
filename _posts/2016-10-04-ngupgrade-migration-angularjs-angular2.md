@@ -16,7 +16,7 @@ Eine Migration muss natürlich immer gut geplant werden und es müssen zuvor die
 
 Um eine Migration starten zu können, müssen wir unsere AngularJS-Anwendung zuvor auf die Version 1.5 oder höher upgraden. Dies ist elementar wichtig, da nicht nur Angular2 weiterentwickelt wird, sondern auch viele Konzepte noch in AngularJS einfließen, die für die Migration benötigt werden.
 
-### Components
+### Unterschiede mit Components
 Der Kernunterschied von Angular2 zu AngularJS ist, dass die ganze Applikation in Components aufgeschlüsselt wird und es dabei keine eigenständige Controller oder Directives mit Template mehr gibt. Diese werden in Angular2 durch Components ersetzt. Components können wiederum Child-Components enthalten und erlauben uns somit die Funktionalität in kleine wartbare und wiederverwendbare Container zu verschachteln.
 
 ![Component Struktur](medium_Screen-Shot-2016-09-11-at-15.42.31.png?v=63640820603)
@@ -35,7 +35,7 @@ Ab der AngularJS 1.5 Version können Components  erstellt werden, die maßgeblic
 
 So werden alle Direktiven mit einem eigenen Template zu Components und ein Controller wird zu einer Component mit einem entsprechenden Template.
 
-### Services
+### Unterschiede mit Services
 Factorys waren zudem in AngularJS früher eine sehr beliebtes Konzept. Einfach und schnell konnten wir Service generieren und diese benutzen. Mit TypeScript und Angular2 rückt dies aber immer mehr in den Hintergrund und alle Factorys sollten direkt als Service bereitgestellt werden. Dies hat den Hintergrund, dass wir in Angular2 mit TypeScript nur noch Services erstellen, die Klassen zurückgeben und wir uns den Umweg über die Factorys sparen können.
 
 ```typescript
@@ -83,7 +83,7 @@ import { UpgradeAdapter } from '@angular/upgrade';
 const upgradeAdapter = new UpgradeAdapter();
 ```
 
-### Components
+### Migration von Components
 Nach und nach können nun unsere AngularJS-Components in neue Angular2-Components migrieren.
 
 ![Migration AngularJS Components zu Angular 2](medium_Screen-Shot-2016-09-11-at-15.47.44.png?v=63640820915)
@@ -111,7 +111,7 @@ const HeroDetail = upgradeAdapter.upgradeNg1Component('heroDetail');
 })
 ```
 
-### Services
+### Migration von Services
 Somit hätten wir jetzt für die View die Kompatibilität hergestellt und müssen noch für die Services dies bereitstellen.
 Hierfür wird der neu erstellte Angular2-Service einfach als downgrade mit einer AngularJS-Factory initialisiert.
 
@@ -139,7 +139,9 @@ export class HeroDetailComponent {
 
 ### Change Detection
 
-View & Logic sind zwischen den Schnittstellen verknüpft, aber wie löst man das Problem der Change-Detection - ohne auf den alten $scope zuzugreifen? Kein Problem für ngZone, welches sich zwischen dem Browser-Event-Handler und der Applikation als Zwischenschicht legt. Hier werden alle Events abgefangen, die in  AngularJS und Angular2 benutzt werden können.
+View & Logic sind zwischen den Schnittstellen verknüpft, aber wie löst man das Problem der Change-Detection - ohne auf den alten $scope zuzugreifen? 
+Kein Problem für ngZone, welches sich zwischen dem Browser-Event-Handler und der Applikation als Zwischenschicht legt. 
+Hier werden alle Events abgefangen, die in  AngularJS und Angular benutzt werden können.
 
 ![Change-Detection mit ngZone](medium_Screen-Shot-2016-09-11-at-15.53.02.png?v=63640821222)
 
