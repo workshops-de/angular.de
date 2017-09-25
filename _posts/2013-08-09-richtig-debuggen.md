@@ -25,7 +25,7 @@ Folgende Hotkeys erleichtern uns hierbei das Leben:
 *   F11 - In den nächsten Funktionsaufruf springen
 *   Shift + F11 - Aus dem aktuellen Funktionsaufruf heraus springen
 
-Ein weiteres Werkzeug, das sich in diesem Kontext sehr gut eignet und aktuell eine verbreitete Entwicklungsumgebung im Bereich JavaScript ist, ist *[IDEA IntelliJ](http://www.jetbrains.com/webstorm/)*. Wir können hier eine *JavaScript Remote Debug* Konfiguration für unser Projekt erstellen. Dazu ist lediglich eine Basis-URL anzugeben und das lokale Mapping auf unsere Projekt-Struktur zu definieren. Ein Beispiel hierfür ist in dem folgenden Screenshot dargestellt:
+Ein weiteres Werkzeug, das sich in diesem Kontext sehr gut eignet und aktuell eine verbreitete Entwicklungsumgebung im Bereich JavaScript ist, ist *[WebStorm](http://www.jetbrains.com/webstorm/)*. Wir können hier eine *JavaScript Remote Debug* Konfiguration für unser Projekt erstellen. Dazu ist lediglich eine Basis-URL anzugeben und das lokale Mapping auf unsere Projekt-Struktur zu definieren. Ein Beispiel hierfür ist in dem folgenden Screenshot dargestellt:
 
 ![Chrome Developer Tools](richtig-debuggen-idea-config.png)
 
