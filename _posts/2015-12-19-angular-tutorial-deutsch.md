@@ -53,7 +53,7 @@ Wir haben die Artikelreihe in verschiedene Teile aufgeteilt.
 * Observables
 * Component-Lifecycle + [extra Artikel](/artikel/angular-2-component-lifecycle/)
 * Interfaces
-* [Routing mit Angular](/artikel/angular2-routing-tutorial-deutsch/)
+* [Routing mit Angular](/artikel/angular-routing-tutorial-deutsch/)
 
 <div class="alert alert-info">Hinweis: Das Tutorial orientiert sich stark am <a href="https://angular.io/docs/ts/latest/guide/style-guide.html" target="_blank">Style-Guide</a> für Angular Anwendungen.</div>
 
