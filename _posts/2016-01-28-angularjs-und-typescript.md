@@ -1,6 +1,6 @@
 ---
 title: "Wie man TypeScript mit AngularJS nutzt"
-description: "Nutzt alle Features von ES2015 und eine strikte Typisierung schon heute in eurer AngularJS Anwendung. Microsofts JavaScript Superset TypeScript bietet euch all das und seid damit gewappnet für Angular!"
+description: "Nutzt alle Features von ES2015 und eine strikte Typisierung schon heute in eurer AngularJS Anwendung. Microsofts JavaScript Superset TypeScript bietet euch all das!"
 author: "Sascha Brink"
 slug: "angularjs-und-typescript"
 published_at: 2016-01-28 16:32:00.000000Z
