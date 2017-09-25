@@ -1,6 +1,6 @@
 ---
 title: "Angular Routing Tutorial für Einsteiger"
-description: "Das Routing durchläuft gerade in der 1er und 2er Version des Frameworks einen gewaltigen Wandel. Wie das aktuelle Routing im Vergleich zu AngularJS funktioniert, erfahrt ihr hier."
+description: "Routing ist ein fester Bestandteil fast jeder Web-Anwendung. Wie das aktuelle Routing im Vergleich zu AngularJS funktioniert, erfahrt ihr hier."
 author: "Bengt Weiße"
 slug: "angular-routing-tutorial-deutsch"
 published_at: 2016-02-18 10:30:00.000000Z
