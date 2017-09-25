@@ -1,6 +1,6 @@
 ---
 title: "Neue Optionen für ngModel in AngularJS 1.3"
-description:
+description: "Die Direktive ngModelOptions ermöglicht euch das Verhalten von ng-model zu konfigurieren. Welche Möglichkeiten ihr dabei habt zeigen wir euch in diesem Artikel."
 author: "Tilman Potthof"
 slug: "ng-model-options"
 published_at: 2014-11-27 09:04:00.000000Z
