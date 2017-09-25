@@ -116,9 +116,9 @@ Die Kommunikation mit der Außenwelt wird selbstverständlich über Services abg
 
 Das besonders Schöne an AngularJS ist zweifellos die Möglichkeit, eigene Direktiven zu entwickeln. Deren wesentlichen Vorteile sehen wir in:
 
-*   Kapseln von Code: eine Direktive übernimmt **eine** klar umrissene Aufgabe und der dazu nötige Code ist in der Direktive gekapselt.
+*   Kapseln von Code: eine Direktive übernimmt eine klar umrissene Aufgabe und der dazu nötige Code ist in der Direktive gekapselt.
 *   Manipulation des DOMs: diese soll ausschließlich in Direktiven erfolgen, denn sie verbinden ja `$element` und `$scope` miteinander.
-*   Wiederverwendbarkeit: weil eine Direktive **eine** Aufgabe übernimmt, kann sie natürlich auch an mehreren Stellen eingesetzt werden.
+*   Wiederverwendbarkeit: weil eine Direktive eine Aufgabe übernimmt, kann sie natürlich auch an mehreren Stellen eingesetzt werden.
 *   Lesbarkeit der HTML-Templates: da die Direktiven unmittelbar ins HTML eingebunden werden, ist für den Leser des Templates klar ersichtlich, welche Funktionalität zu erwarten ist.
 
 Wir haben derzeit etwa 30 eigene Direktiven im Einsatz, von denen wir Euch ein paar kurz vorstellen möchten.
