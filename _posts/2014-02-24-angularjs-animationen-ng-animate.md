@@ -8,7 +8,7 @@ categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-animationen-ng-animate.jpg"
 ---
 
-Seit **AngularJS 1.2** sind Animationen fester Bestandteil des Frameworks. Unterstützt werden Animationen mit CSS3 und JavaScript.
+Seit **AngularJS 1.2** sind Animationen mit `ng-animate` fester Bestandteil des Frameworks. Unterstützt werden Animationen mit CSS3 und JavaScript.
 
 <!--more-->
 
