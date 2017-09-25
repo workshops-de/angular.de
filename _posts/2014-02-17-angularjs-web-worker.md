@@ -1,6 +1,6 @@
 ---
 title: "Die JavaScript Web Worker API mit AngularJS"
-description:
+description: Lerne, wie du Web Worker zusammen mit AngularJS einsetzen kannst und wie du damit deine Applikations-Performance extrem erhöhen kannst.
 author: "Björn Weinbrenner"
 slug: "angularjs-web-worker"
 published_at: 2014-02-17 10:30:00.000000Z

@@ -1,6 +1,6 @@
 ---
 title: "I18n in AngularJS Anwendungen einfach gemacht"
-description:
+description: Lerne, wie du mit ng-translate deine Anwendung mehrsprachig machst.
 author: "Pascal Precht"
 slug: "angularjs-i18n-ng-translate"
 published_at: 2013-06-13 00:00:00.000000Z

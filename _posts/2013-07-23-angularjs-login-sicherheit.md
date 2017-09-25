@@ -1,6 +1,6 @@
 ---
 title: "Login & Sicherheit in AngularJS"
-description:
+description: Lerne, wie Authentifizierung in Single-Page-Applikationen funktioniert und was du in Bezug auf Sicherheit beachten musst.
 author: "Marius Soutier"
 slug: "angularjs-login-sicherheit"
 published_at: 2013-07-23 16:00:00.000000Z
@@ -8,7 +8,7 @@ categories: "angularjs security authentication"
 header_image: "/artikel/header_images/angularjs-login-sicherheit.jpg"
 ---
 
-Authentisierung ist ein Thema, das so gut wie jede größere Webanwendung betrifft. Da HTTP ein zustandsloses Protokoll ist, und damit keine Sessions kennt, muss bei jeder Anfrage eine Authentisierungsinformation mitgeschickt werden. Damit sich ein Benutzer nur ein mal pro Session anmelden muss, soll diese Information erhalten bleiben und automatisch bei jedem Request mitgeschickt werden.
+Authentifizierung ist ein Thema, das so gut wie jede größere Webanwendung betrifft. Da HTTP ein zustandsloses Protokoll ist, und damit keine Sessions kennt, muss bei jeder Anfrage eine Authentifizierungsinformation mitgeschickt werden. Damit sich ein Benutzer nur ein mal pro Session anmelden muss, soll diese Information erhalten bleiben und automatisch bei jedem Request mitgeschickt werden.
 
 Konkret heißt das: Der Benutzer meldet sich bei der Webanwendung an und der Server ordnet dem authentifizierten Benutzer ein Sicherheitstoken zu (z.B. eine UUID), das auf Serverseite gespeichert wird. Das Token wird dem Client übermittelt, der sich dieses nun "merken" muss, um es bei jeder weiteren Anfrage mitzuschicken. Der Server kann dann überprüfen, ob das Token gültig ist.
 
