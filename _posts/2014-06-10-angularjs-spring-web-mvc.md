@@ -1,6 +1,6 @@
 ---
 title: "Spring Web MVC mit AngularJS - Eine Fallstudie"
-description:
+description: "In diesem Artikel möchte ich euch anhand eines Enterprise Software Produktes zeigen, wie man AngularJS mit Spring Web MVC als Backend einsetzen kann."
 author: "Björn Wilmsmann"
 slug: "angularjs-spring-web-mvc"
 published_at: 2014-06-10 07:00:00.000000Z
