@@ -1,6 +1,6 @@
 ---
 title: "Eigene Filter implementieren und testen"
-description:
+description: Lerne, wie du einen eigenen Expression-Fillter erstellen kannst. Als Beispiel benutzen wir einen truncate-Filter zum Kürzen von Zeichenketten.
 author: "Philipp Tarasiewicz"
 slug: "expression-filter"
 published_at: 2014-03-25 12:00:00.000000Z

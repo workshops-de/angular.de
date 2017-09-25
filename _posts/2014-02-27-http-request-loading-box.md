@@ -1,6 +1,6 @@
 ---
 title: "Ladebalken bei HTTP-Aufruf anzeigen"
-description:
+description: Lerne, wie du dem Benutzer signalisieren kannst, dass ein Http-Aufruf gerade noch im Gange ist. Wir demonstrieren dies mit einem kurzen Beispiel.
 author: "Sascha Brink"
 slug: "http-request-loading-box"
 published_at: 2014-02-27 11:55:15.000000Z

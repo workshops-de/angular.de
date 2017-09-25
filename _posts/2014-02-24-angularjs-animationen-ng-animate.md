@@ -1,6 +1,6 @@
 ---
 title: "Animationen mit ng-animate in AngularJS 1.2"
-description:
+description: Lerne, wie du Animationen mit ng-animate einsetzt, um z.B. Elemente in Tabellen ein- und auszublenden.
 author: "Sascha Brink"
 slug: "angularjs-animationen-ng-animate"
 published_at: 2014-02-24 13:38:00.000000Z

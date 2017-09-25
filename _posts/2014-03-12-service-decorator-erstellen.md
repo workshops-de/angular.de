@@ -1,6 +1,6 @@
 ---
 title: "Service-Ergebnisse veränderen mit Decorators"
-description:
+description: Lerne, wie du mit einem Decorator die Ausgabe eines Services verändern kannst. Hier zeigen wir, wie du den $log-Service verbessern kannst.
 author: "Sascha Brink"
 slug: "service-decorator-erstellen"
 published_at: 2014-03-12 13:13:54.000000Z

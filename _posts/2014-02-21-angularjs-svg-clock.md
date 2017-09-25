@@ -1,6 +1,6 @@
 ---
 title: "Wie ihr SVG mit AngularJS nutzen könnt"
-description:
+description: Lerne, wie du AngularJS und SVG kombinieren kannst, um dynamische Grafiken zu erzeugen.
 author: "Sascha Brink"
 slug: "angularjs-svg-clock"
 published_at: 2014-02-21 11:48:13.000000Z
