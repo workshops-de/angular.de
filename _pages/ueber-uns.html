@@ -1,24 +1,26 @@
 ---
 title: Das Team von AngularJS.DE
+description: Wir sind ein Team aus Angular-Enthusiasten. Lerne uns hier kennen!
 ---
+
 <div class="row">
-    {% for user_hash in site.data.users %}
+  {% for user_hash in site.data.users %}
     {% assign user = user_hash[1] %}
     {% if user.team %}
     <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="row">
-            <div class="col-6 user-thumbnail text-center">
-                <img alt="{{ user.name }}" class="rounded-circle" height="150"
-                     src="//www.gravatar.com/avatar/{{ user.gravatar_uid }}?s=300" width="150">
-            </div>
-            <div class="col-6">
-                <h2>{{ user.name }}</h2>
-            </div>
-            <div class="col-12">
-                <p>{{ user.bio }}</p>
-            </div>
+      <div class="row">
+        <div class="col-6 user-thumbnail text-center">
+          <img alt="{{ user.name }}" class="rounded-circle" height="150"
+                  src="//www.gravatar.com/avatar/{{ user.gravatar_uid }}?s=300" width="150">
         </div>
+        <div class="col-6">
+          <h2>{{ user.name }}</h2>
+        </div>
+        <div class="col-12">
+          <p>{{ user.bio }}</p>
+        </div>
+      </div>
     </div>
     {% endif %}
-    {% endfor %}
+  {% endfor %}
 </div>
