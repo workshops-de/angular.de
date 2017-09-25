@@ -6,6 +6,7 @@ slug: "program-chairs-angularjs-days-2015"
 published_at: 2015-08-11 05:35:00.000000Z
 categories: "angularjs event"
 header_image: "/artikel/header_images/program-chairs-angularjs-days-2015.jpg"
+noindex: true
 ---
 
 Es ist endlich wieder so weit! Vom 05. bis zum 07. Oktober 2015 veranstaltet der Software & Support Verlag die nächste Ausgabe der AngularJS Days!
