@@ -14,13 +14,13 @@ Hattet ihr in Verbindung mit `ng-repeat` schon einmal folgenden Fehler?
 
 Diesen Fehler bekommt ihr seit AngularJS 1.2, wenn ihr doppelte Elemente in eurem Array habt.
 
-#### Woher kommt der Fehler?
+## Woher kommt der Fehler?
 
 Seit Verison 1.2 unterstützt AngularJS offiziell Animationen. Wenn man jetzt z.B. ein Element innerhalb des Arrays verschieben möchte, muss AngularJS das Element genau identifizieren können, um die Animation darauf anwenden zu können.
 
 Standardmäßig wird dabei das ganze Element aus dem Array als eindeutiger Identifikator benutzt. Wenn nun zwei oder mehr Elemente den gleichen Identifikator haben, gibt es eine Mehrdeutigkeit und dieser Fehler tritt auf.
 
-#### Wie behebt man ihn?
+## Wie behebt man ihn?
 
 Natürlich ist es nicht immer gewollt, das ganze Element als eindeutigen Identifikator zu benutzen. Deshalb kann man diesen über eine extra Option `track by` steuern.
 
