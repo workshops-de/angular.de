@@ -1,6 +1,6 @@
 ---
 title: "Filtern und Highlighting von Suchergebnissen"
-description: "Das Durchsuchen von Tabellen lässt sich in Angular spielend lösen. Dieser Artikel zeigt euch, wie ihr mithilfe der `ui.utils` von `angular-ui`, die Suchbegriffe in den Ergebnissen markiert."
+description: "Das Durchsuchen von Tabellen lässt sich in Angular spielend lösen. Dieser Artikel zeigt euch, wie ihr Suchbegriffe in den Ergebnissen markiert."
 author: "Tilman Potthof"
 slug: "mark-highlight-search-results"
 published_at: 2015-02-02 09:49:00.000000Z

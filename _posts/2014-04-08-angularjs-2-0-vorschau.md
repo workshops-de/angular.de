@@ -1,6 +1,6 @@
 ---
 title: "7 Neuerungen, die uns in Angular 2 erwarten"
-description:
+description: Lerne, was sich in Angular 2 ändern wird. Wir besprechen Punkte wie ES6, Module, Change Detection und Routing.
 author: "Robin Böhm"
 slug: "angularjs-2-0-vorschau"
 published_at: 2014-04-08 13:16:00.000000Z

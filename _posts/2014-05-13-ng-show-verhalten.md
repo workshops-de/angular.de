@@ -1,6 +1,6 @@
 ---
 title: "Das merkwürdige Verhalten von ng-show"
-description:
+description: Lerne, wieso sich ng-show vor AngularJS 1.3 mehrwürdig verhalten hat.
 author: "Sascha Brink"
 slug: "ng-show-verhalten"
 published_at: 2014-05-13 10:43:00.000000Z
