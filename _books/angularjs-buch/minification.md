@@ -1,6 +1,7 @@
 ---
 number: 6.30
 title: Verwendung von Minifiern
+description: Lerne, auf was du beim Minifizieren deines AngularJS-Codes aufpassen musst und wie du nie wieder einen Gedanken daran verschwenden musst.
 part: Konzepte und Hintergründe
 progress: 75
 ---

@@ -1,6 +1,7 @@
 ---
 number: 4.50
 title: Erweiterungen für Twitter Bootstrap
+description: Lerne mehr über die Plugins, um Twitter Bootstrap sehr einfach in deine Applikation zu integrieren.
 part: Erweiterungen der Applikation
 progress: 99
 ---

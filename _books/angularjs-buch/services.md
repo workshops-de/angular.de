@@ -1,6 +1,7 @@
 ---
 number: 6.11
 title: Factory, Service und Provider
+description: Lerne, was die Unterschiede zwischen den verschiedenen Service-Typen sind und wann du welchen einsetzen solltest.
 part: Konzepte und Hintergründe
 progress: 80
 ---

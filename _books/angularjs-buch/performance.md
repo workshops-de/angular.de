@@ -1,6 +1,7 @@
 ---
 number: 6.90
-title: Performance
+title: Performance - Der Digest-Zyklus
+description: Lerne mehr über den internen Update-Mechanismus von AngularJS kennen, damit du in keine Performance-Fallen läufst.
 part: Konzepte und Hintergründe
 progress: 15
 ---
