@@ -16,7 +16,7 @@ In diesem Artikel spreche ich von einer Angular Applikation. Allerdings ist es l
 
 Bevor wir jedoch in das Gesamtkonstrukt eintauchen, müssen wir uns die einzelnen Bausteine ansehen:
 
-### 1. Docker - Was hat es auf sich mit dem Walfisch
+## 1. Einführung in Docker
 
 Mit Docker wurde eine Engine geschaffen, welche es ermöglicht eine Anwendung zusammen mit allen notwendigen Umgebungen in einen Container einzusperren und zu starten. Dieser Container ist eine Art leichtgewichtige virtuelle Maschine, die alles mitbringt, um die Applikation laufen zu lassen. Dies hat den Vorteil, dass das Problem "Is running on my machine" nahezu völlig ausgeschlossen wird.
 
@@ -30,7 +30,7 @@ Auch für Windows-User besteht die Möglichkeit Docker zu installieren. Ich selb
 
 Nach der Installation auf einem System eurer Wahl steht euch die Docker-CLI zur Verfügung. Anhand dessen könnt ihr im Anschluss mit `docker --version` testen, ob die Engine verfügbar ist.
 
-#### Dockerfile
+### Was ist ein Dockerfile?
 
 Wie bereits genannt, kann der Aufbau unseres Dockercontainers sehr flexibel gestaltet werden. Die Gestaltung eines solchen Containers wird im Dockerfile vorgenommen. Dieses File, welches von der Engine in der Root des Projekts auffindbar sein muss, wird beim Build-Prozess ausgelesen und danach Zeile für Zeile abgearbeitet. Hier ein Dockerfile, mit welchem eine Angular App ausgeliefert werden kann:
 
@@ -76,8 +76,7 @@ Hier mal eine Erklärung der Tags, welche ich in diesem Dockerfile anwende:
 
 Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, dass man in diesem `Dockerfile` seinen kompletten Build Prozess definiert. Und genau das ist unser Ziel. Ähnlich als würde man im Supermarkt seine Produkte in den Einkaufswagen legen, die man benötigt, um anschließend nach seinem Rezept kochen zu können.
 
-##### Tipp!
-- Ihr kennt bestimmt das File ```.gitignore``` zum Ignorieren von Dateien beim Check-In auf Github. Die gleiche Funktion steht uns auch mit dem File ```.dockerignore``` zur Verfügung. Hier könnt ihr Files / Folders Ignorieren, z.b. gibt es keinen Grund die Testfiles aus dem Repo in Dockerhub mit hoch zu laden.
+Ihr kennt bestimmt das File ```.gitignore``` zum Ignorieren von Dateien beim Check-In auf Github. Die gleiche Funktion steht uns auch mit dem File ```.dockerignore``` zur Verfügung. Hier könnt ihr Files / Folders Ignorieren, z.b. gibt es keinen Grund die Testfiles aus dem Repo in Dockerhub mit hoch zu laden.*
 
 <hr>
 <div class="workshop-hint">
@@ -101,7 +100,7 @@ Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, das
 </div>
 <hr>
 
-#### Dockerhub
+### Was ist Dockerhub?
 
 Mit Dockerhub hat Docker ein Ökosystem geschaffen, in welchem Images gespeichert werden können. Nachdem man sich einen Account auf Dockerhub angelegt hat, besteht entweder die Möglichkeit fertige Images über ```docker push``` im lokalen CLI hochzuladen, oder dies automatisiert per Webhook über Github / Bitbucket durchlaufen zu lassen.
 
@@ -111,12 +110,13 @@ Also wählen wir folglich die Variante per Webhook bei Check-In. Nachdem wir uns
 
 Dockerhub bietet die Möglichkeit sowohl public, als auch kostenpflichtige private Repos anzulegen. Die public Repos sind für alle frei zugänglich, die private Repos hingegen können nur nach Autorisierung erreicht werden.
 
-##### Tipp!
-- Schaut euch die [Dokumentation von Docker](https://docs.docker.com) an. In diesem Artikel konnte ich das Thema "Docker" leider nur kurz anschneiden. Denn mit dieser Engine ist noch weit aus mehr möglich.
+Schaut euch die [Dokumentation von Docker](https://docs.docker.com) an.
+In diesem Artikel konnte ich das Thema "Docker" leider nur kurz anschneiden. 
+Denn mit dieser Engine ist noch weit aus mehr möglich.
+Der Build-Prozess auf Dockerhub kann je nach Tageszeit mehrere Minuten dauern. 
+Daher empfehle ich, vor allem bei Änderungen am Build Prozess selbst, den Container mit ```docker build``` vorab lokal zu bauen. Somit lässt sich überprüfen, ob der Prozess fehlerfrei durchläuft. Sollten Fehler im Build Prozess auftreten, ist es immer sehr ärgerlich wenn auf Dockerhub sinnlos gewartet hat.*
 
-- Der Build-Prozess auf Dockerhub kann je nach Tageszeit mehrere Minuten dauern. Daher empfehle ich, vor allem bei Änderungen am Build Prozess selbst, den Container mit ```docker build``` vorab lokal zu bauen. Somit lässt sich überprüfen, ob der Prozess fehlerfrei durchläuft. Sollten Fehler im Build Prozess auftreten, ist es immer sehr ärgerlich wenn auf Dockerhub sinnlos gewartet hat.
-
-### 2. Circle CI als Continuous Integration Umgebung
+## 2. Circle CI als Continuous Integration Umgebung
 
 [Circle CI](https://circleci.com) ist ein mächtiges Tool, welches uns ermöglicht alle Tests automatisiert in der Cloud durchzuführen. Anschließend hat man die Möglichkeit, je nach Ergebnis der Tests, weitere Aktionen (z.B. Deploy) anzustoßen.
 
@@ -124,7 +124,7 @@ Um Circle CI verwenden zu können, muss man sich genauso wie bei Docker einen Ac
 
 Ihr könnt hierfür natürlich auch andere CI Umgebungen nutzen die mit diesem Stack funktionieren.
 
-#### Konfigurationsfile für Circle CI
+### Das Konfigurationsfile für Circle CI
 
 Um Circle CI konfigurieren zu können, muss in der Root des Projektes die ```circle.yml``` zu Verfügung stehen.
 
@@ -165,7 +165,7 @@ deployment:
 
 - ```deployment```: Sind alle Tests erfolgreich durchgelaufen, können hier Skripte ausgeführt werden, welche einen Redeploy auslösen und die Version erneuern.
 
-#### Nightly Builds
+### Nightly Builds mit Circle CI
 
 Mit Circle CI besteht auch die Möglichkeit sogenannte Nightly-Builds durchzuführen. Dies ist vor allem dann sinnvoll, wenn man sehr aufwendige E2E Tests beispielsweise über [SauceLabs](https://saucelabs.com/) durchführen möchte.
 
@@ -173,17 +173,17 @@ Um dies zu realisieren, muss die API von Circle CI z.B. per Scheduler angetrigge
 
 Mehr hierzu findet Ihr unter der Doc vom [Circle CI](https://circleci.com/docs/nightly-builds/)
 
-### 3. Sauce Labs für eure E2E Tests
+## 3. Sauce Labs für eure E2E Tests
 
 [SauceLabs](https://saucelabs.com/) ist ein Clouddienst, welcher es ermöglicht cross-browser-testing innerhalb der Cloud durchzuführen. Als Framework in Zusammenhang mit Angular empfiehlt sich hier [Protractor](http://www.protractortest.org/#/) im Zusammenspiel mit [Jasmine](https://jasmine.github.io/). Der Vorteil ist, dass man hier sämtliche Betriebssysteme und Browser auf Abruf erhält und dort seine Tests laufen lassen kann.
 
 Falls euch dieses Thema tiefer interessieren sollte, empfehle ich euch meinen Artikel [Angular E2E Tests mit Protractor und Sauce Labs](/artikel/angular-e2e-protractor-test-saucelabs/). Hier beschreibe ich Schritt für Schritt die Anwendung von SauceLabs.
 
-### 4. Dockercloud als Continuous Delivery Umgebung
+## 4. Dockercloud als Continuous Delivery Umgebung
 
 Mit [Dockercloud](https://cloud.docker.com) (ehemals Tutum) hat Docker eine Umgebung geschaffen, in welcher sich diese Dockercontainer mit ihren Applikationen sehr einfach von Dockerhub herunterladen, starten und veröffentlichen lassen. Als Basis lassen sich Machinedroplets von Digital Ocean, AWS o.ä. als Node in Dockercloud verlinken.
 
-#### Arbeiten mit unterschiedlichen Stacks
+### Arbeiten mit unterschiedlichen Stacks
 
 Ein Stack ist die Zusammenführung von verschiedenen Systemen (Containern), welches die gesamte Architektur abbilden kann. Aber dennoch ist die Definiton eines Stacks flexibel. Es besteht ebenso die Möglichkeit, verschiedene Aufgaben in Stacks zusammenzufassen. (Datenbanken, Proxyserver etc.)
 
@@ -197,7 +197,7 @@ In diesem Stack wird immer die Zielversion, welche kurz vor einem Deployment zu 
 *   Production
 Hier wird, wie der Name es schon sagt, die produktive Version der App veröffentlicht.
 
-### 5. Konfiguration der einzelnen Komponenten für euer automatisiertes Deployment
+## 5. Konfiguration der einzelnen Komponenten für euer automatisiertes Deployment
 
 Nachdem wir nun die einzelnen Baustene kennen lernen durften, müssen wir uns damit befassen diese zusammen zu bauen.
 
@@ -211,7 +211,7 @@ Aber wie bekommen wir das hin? Das Schlüsselwort hierfür lautet ```Webhooks```
 
 Wie bereits beschrieben, kann man mit Hilfe von Webhooks einem anderem System etwas mitteilen. Zum Beispiel wird ```Dockerhub``` mitgeteilt, dass Code eingecheckt wurde. Github bzw. das System in welchem euer Code verwaltet wird muss diese Information senden.
 
-#### Übersicht der Continuous Deployment Pipeline
+### Übersicht der Continuous Deployment Pipeline
 
 Nun kennt Ihr alle Bausteine, aus welchem das Gesamtkonstrukt gebaut werden soll. Ich habe euch eine Schemazeichnung erstellt, in welcher euch der Gesamtprozess bildlich dargestellt werden soll:
 
@@ -219,7 +219,7 @@ Nun kennt Ihr alle Bausteine, aus welchem das Gesamtkonstrukt gebaut werden soll
 
 Wie ihr erkennen könnt, gibt es zwei Auslöser, welche die Automatismen anwerfen können. Zum einem Check-In von Code, zum anderen per Scheduler (Nightly Build).
 
-##### Ablauf bei Code Check-In
+### Ablauf bei einem Code Check-In via WebHook
 
 - Der Entwickler checkt auf Github neuen Code ein. Github informiert in diesen Moment Circle CI per Webhook.
 - Circle CI führt alle Unit-Tests durch. Sind diese erfolgreich durchgelaufen, wird Dockerhub per Webhook informiert.
@@ -228,22 +228,20 @@ Wie ihr erkennen könnt, gibt es zwei Auslöser, welche die Automatismen anwerfe
 
 => Ziel erreicht: Die Codeänderung ist sofort im Developmentstack verfügbar, sofern die Tests dies zugelassen haben.
 
-##### Tipp!
-- Ihr könnt direkt beim Check-In abfangen, dass nur dann eingecheckt werden kann, wenn alle Test erfolgreich waren. Hierfür gibt es das NPM Modul [pre-commit](https://www.npmjs.com/package/pre-commit). Dieses Modul lässt erst dann den Commit zu, wenn die in der ```package.json```definierten pre-commits ohne Fehler durchlaufen sind.
+Ihr könnt direkt beim Check-In abfangen, dass nur dann eingecheckt werden kann, wenn alle Test erfolgreich waren. Hierfür gibt es das NPM Modul [pre-commit](https://www.npmjs.com/package/pre-commit). Dieses Modul lässt erst dann den Commit zu, wenn die in der ```package.json```definierten pre-commits ohne Fehler durchlaufen sind.
 
-#### Ablauf Scheduler
+### Ablauf beim zeitgesteuerten Build via Scheduler
 
 - Der Scheduler setzt an Circle CI einen Webhook ab, und informiert diesen darüber das es sich um einen Nightly Build handelt.
 - Circle CI führt die Unit-Tests sowie die durch den Nightly-Build angegebenen Frontend-Tests durch.
 - Sind alle Tests erfolgreich abgeschlossen, wird Dockercloud wieder von Circle CI informiert. Diesmal allerdings, wird der Container im Staging Stack auf den neuesten Stand gebracht.
 
-#### Production Stack
+## Fazit
 
-Nun kommt es etwas zu einem Glaubenskrieg. Sicherlich ist es möglich, auch hier einen Automatismus zu entwerfen. Ich persönlich bin aber der Meinung, dass ein Produktivsystem nicht automatisiert veröffentlicht werden sollte. Man sollte sowohl eine gute automatisierte Testabdeckung anstreben, als auch gut durchdachte Human Tests. Ist beides in einer Version gewährleistet, kann ein System Produktiv von Hand ausgerollt werden.
-
-### Fazit
-
-Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche Arbeit erleichtern. Allerdings haben wir es in einer solchen Pipe mit sehr vielen unterschiedlichen Systemen und Oberflächen zu tun. In diesem Artikel konnte ich nur grob erklären, was es mit den einzelnen Bausteinen auf sich hat. Daher - falls ich euer Interesse geweckt habe, kann ich euch nur empfehlen, sich mit den einzelnen Bausteinen intensiv auseinander zu setzen.
+Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche Arbeit erleichtern. 
+Allerdings haben wir es in einer solchen Pipe mit sehr vielen unterschiedlichen Systemen und Oberflächen zu tun.
+In diesem Artikel konnte ich nur grob erklären, was es mit den einzelnen Bausteinen auf sich hat.
+Daher - falls ich euer Interesse geweckt habe, kann ich euch nur empfehlen, sich mit den einzelnen Bausteinen intensiv auseinander zu setzen.
 
 <hr>
 <div class="workshop-hint text-center">
