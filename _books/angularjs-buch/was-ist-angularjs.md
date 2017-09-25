@@ -1,6 +1,6 @@
 ---
 number: 2.1
-title: Was ist Angular und AngularJS?
+title: Was sind Angular und AngularJS?
 part: Grundlagen
 progress: 100
 noindex: true
