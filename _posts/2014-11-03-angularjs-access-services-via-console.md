@@ -1,6 +1,6 @@
 ---
 title: "Angular in der Browser Konsole - Services"
-description:
+description: "Ihr wollt eure AngularJS Anwendung in der Browserkonsole analysieren und auf Services zugreifen? Dieser Artikel zeigt euch wie ihr mit dem $injector an die Services kommt."
 author: "Tilman Potthof"
 slug: "angularjs-access-services-via-console"
 published_at: 2014-11-03 05:28:00.000000Z
