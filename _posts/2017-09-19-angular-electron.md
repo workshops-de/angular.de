@@ -1,5 +1,5 @@
 ---
-title: "Mit Angular und Electron zur Desktopanwendung"
+title: "Mit Angular und Electron zur Desktop-Anwendung"
 description: "Anwendungen wie Spotify machen es vor: Desktop-Anwendungen werden immer öfter mit Webtechnologien erstellt. Wir helfen dir und erklären die Grundlagen."
 author: "Michael Berrezak"
 slug: "angular-electron"
@@ -14,7 +14,7 @@ Die Entwickler vom Elektron Framework fangen ihre Produktbeschreibung mit folgen
 
 >"if you can build a website, you can build a desktop app".
 
-Ich denke, dem ist nichts hinzuzufügen, außer dieser Anleitung, die Dir zeigt, wie Du eine Angular Webapp mit Electron in eine plattformunabhängige Desktop Applikation verwandelst.
+Ich denke, dem ist nichts hinzuzufügen, außer dieser Anleitung, die Dir zeigt, wie Du eine Angular Webapp mit Electron in eine plattformunabhängige Desktop-Anwendung verwandelst.
 
 Zum Erstellen und Verwalten der APP, werde ich die beliebte Angular-CLI benutzen.
 Wir haben dazu auch einen Artikel [Einführung in Angular-CLI](https://angularjs.de/artikel/angular-cli-einfuehrung/).
