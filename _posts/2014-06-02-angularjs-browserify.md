@@ -1,6 +1,6 @@
 ---
 title: "Browserify und AngularJS - Dream Team für SPAs"
-description:
+description: "Browserify ist eine sehr interessante Alternative zu anderen gängigen Projekt-Setups. Der größte Mehrwert ist die Modularisierung des Codes und das einfache Einbinden von npm Paketen."
 author: "Bastian Krol"
 slug: "angularjs-browserify"
 published_at: 2014-06-02 07:00:00.000000Z
