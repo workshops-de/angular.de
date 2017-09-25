@@ -1,6 +1,6 @@
 ---
 title: "ng-repeat - Der Teufel im Schafspelz"
-description:
+description: Lerne, was du beim Verwenden von ng-repeat beachten musst. Insbesondere, wenn du Objekte übergibst.
 author: "Philipp Tarasiewicz"
 slug: "angularjs-ng-repeat"
 published_at: 2013-06-05 14:30:20.000000Z
