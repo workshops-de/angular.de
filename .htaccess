@@ -1,4 +1,7 @@
+{% if jekyll.environment != "production" %}
 Header set X-Robots-Tag "noindex, nofollow"
+{% endif %}
+
 
 RedirectMatch 301 ^/feed$ /feed.xml
 RedirectMatch 301 ^/chat(.*)$ https://slack.angularjs.de/
