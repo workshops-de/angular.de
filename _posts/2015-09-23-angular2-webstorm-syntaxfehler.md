@@ -11,12 +11,9 @@ header_image: "/artikel/header_images/angular2-webstorm-syntaxfehler.jpg"
 In diesem kleinen Artikel beschreibe ich, wie ihr eure WebStorm IDE so konfiguriert, dass ihr auch schon heute ohne Syntaxfehler Angular2 Code mit z.B. Decorators schreiben könnt.
 
 
-
-**Update 2017/09:** Mittlerweile können die neuen Version von WebStorm Angular ohne Probleme.
+**Update 2017/08:** Mittlerweile können die neuen Version von WebStorm Angular ohne Probleme.
 Ich hab weiter unten im Artikel ein Video von Jetbrains mit Victor Savkin angehangen, in welchem er euch seine Konfiguration von Webstorm vorstellt.
 Außerdem ist der Editor Visual Studio Code mittlerweile auch ein ernstzunehmendes Produkt für Entwickler und ist somit am Ende dieses Artikels nun auch erwähnt.
-
-
 
 Ihr habt vielleicht schon unseren [Angular2 Tutorial Code](https://github.com/angularjs-de/angular2-tutorial-code-es6) oder ein anderes Angular2 Projekt geladen und diesen in der IDE euer Wahl geöffnet. Falls diese IDE WebStorm ist bekommt ihr sofort Syntax Fehler wie diese um die Ohren geworfen:
 ![WebStorm ES6 Annotations](ES6_Errors_on_Annotations.png)
