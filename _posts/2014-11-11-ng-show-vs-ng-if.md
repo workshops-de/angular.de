@@ -1,6 +1,6 @@
 ---
 title: "ng-show vs. ng-if in AngularJS"
-description:
+description: "In fast jeder Webanwendung gibt es Elemente, die man zeitweise aus- oder einblenden möchte. Hierfür bietet AngularJS die Direktiven ngShow, ngHide und ngIf."
 author: "Tilman Potthof"
 slug: "ng-show-vs-ng-if"
 published_at: 2014-11-11 08:10:00.000000Z
