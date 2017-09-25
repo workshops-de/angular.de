@@ -1,6 +1,6 @@
 ---
 title: "Fabelhafte Formulare"
-description:
+description: "Das Modul ng-fab-form erleichtert die Erstellung von Formularen in AngularJS. Wir zeigen euch welche Vorteile ihr damit habt."
 author: "Johannes Millan"
 slug: "form-handling-via-ng-fab-form"
 published_at: 2015-01-07 15:43:00.000000Z
