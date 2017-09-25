@@ -1,7 +1,5 @@
-{% if jekyll.environment != "production" %}
+RewriteCond %{HTTP_HOST}   !^angularjs\.de [NC]
 Header set X-Robots-Tag "noindex, nofollow"
-{% endif %}
-
 
 RedirectMatch 301 ^/feed$ /feed.xml
 RedirectMatch 301 ^/chat(.*)$ https://slack.angularjs.de/
