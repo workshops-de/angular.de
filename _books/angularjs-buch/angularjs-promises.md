@@ -7,14 +7,14 @@ progress: 100
 ---
 ## Promises - Was ist das und was können sie?
 
-Um Promises verständlich zu machen, fangen wir mit einer groben Umschreibung an und gehen dann auf Details und konkrete Anwendungen ein. Wenn ihr euch zunächst unter dem Begriff **Promise** nichts vorstellen könnt, seid ihr nicht allein. Promises sind so etwas wie Callbacks 2.0.
+Um Promises verständlich zu machen, fangen wir mit einer groben Umschreibung an und gehen dann auf Details und konkrete Anwendungen ein. Wenn ihr euch zunächst unter dem Begriff `Promise` nichts vorstellen könnt, seid ihr nicht allein. Promises sind so etwas wie Callbacks 2.0.
 Diese Umschreibung trifft auch schon genau den Grund, warum ihr Promises nutzen solltet. Dazu machen wir kurz noch einen Ausflug und frischen unser Wissen über Callbacks auf.
 
-### Callbacks
+## Was sind Callbacks?
 
-> **Callbacks** sind schlicht und einfach Funktionen die anderen Funktionen übergeben werden, welche sich danach um ihr Ausführung kümmert. Dabei kann diese Ausführung auch irgendwann in der Zukunft stattfinden.
+> `Callbacks` sind schlicht und einfach Funktionen die anderen Funktionen übergeben werden, welche sich danach um ihr Ausführung kümmert. Dabei kann diese Ausführung auch irgendwann in der Zukunft stattfinden.
 
-**Beispiel von Callbacks**
+### Beispiel von Callbacks
 
 Hier wird mit jQuery ein Ajax-Request abgesendet und auf den Erfolgs- und Fehlerfall reagiert.
 
@@ -28,7 +28,7 @@ Das sieht an sich ja schon ganz ordentlich aus. Wozu brauchen wir dann Callbacks
 
 Dafür müssen wir ein Stück weiter denken.  Das Senden von HTTP-Anfragen ist dazu schon ein sehr gutes Beispiel. Es folgt eine Liste von Problemen bzw. Anwendungsfällen, die mit Callbacks nur schlecht, gar nicht oder nicht gerade elegant zu lösen sind.
 
-**Callback Probleme**
+### Callback Probleme
 
   - Übersichtlichkeit - Pyramids of Doom
   - Fehlerbehandlung - Abfangen und Korrektur von Fehlern
@@ -37,7 +37,7 @@ Dafür müssen wir ein Stück weiter denken.  Das Senden von HTTP-Anfragen ist d
 
 Während der Erklärung von Promises werden wir uns die Probleme nochmals genauer anschauen und mögliche Lösungen erarbeiten.
 
-### Promises
+## Was sind Promises?
 
 Promise ist das englische Wort für *Versprechen*, was eine ziemlich treffende Benamung ist. Gibt eine asynchrone Funktion ein Promise zurück, dann gibt sie dir ein Versprechen, dass dieser Programmteil ausgeführt wird. Entweder dies geschieht erfolgreich und das Versprechen wird gehalten (`resolve`) oder nicht (`reject`). Dadurch haben wir von vornherein die Möglichkeit einfach auf eine erfolgreiche oder fehlerhafte Ausführung zu reagieren.
 
@@ -52,7 +52,7 @@ Für das Arbeiten mit Promises gibt es einen simplen und einfachen Ablaufplan.
 
 Gehen wir alle Punkte nun Schritt für Schritt durch.
 
-**Promise erzeugen**
+### Promise erzeugen
 
 Der $q-Service wird ganz normal als Abhängigkeit in den gewünschten Bestandteil der AngularJS-Anwendung injiziert. Danach könnt ihr Promises einfach über den Aufruf folgenden Code-Schnipsels erzeugen.
 
@@ -68,7 +68,7 @@ function asyncFn() {
 }
 ```
 
-**Promise-Funktion aufrufen**
+### Promise-Funktion aufrufen
 
 Nun folgt ein noch simplerer Teil. Die eben erstellte Promise-Funktion muss natürlich auch aufgerufen werden. Ihr könnt die Funktion, wie einen ganz normalen Funktionsaufruf betrachten.
 
@@ -76,7 +76,7 @@ Nun folgt ein noch simplerer Teil. Die eben erstellte Promise-Funktion muss nat�
 asyncFn();
 ```
 
-**Promise resolve und reject**
+### Promise resolve und reject
 
 Jetzt muss unsere Funktion natürlich auch noch etwas asynchrones machen und dann das Versprechen halten oder nicht. Dazu müsst ihr der Promise-Erzeugung eine Funktion übergeben, die automatisch zwei Funktionen als Parameter erhält. Dabei handelt es sich beim ersten um die *resolve*- und beim zweiten *reject*-Funktion.
 
@@ -102,7 +102,7 @@ function asyncFn() {
 
 Das Ablehnen erfolgt äquivalent. Mit reject und resolve könnt ihr zusätzlich Daten als primitiven Datentyp, Objekt oder Array zurückgeben.
 
-**Promise wird aufgelöst**
+### Promise wird aufgelöst
 
 Doch wie reagieren wir jetzt auf ein `resolve` oder ein `reject`? Dazu besitzt ein jedes Promise-Objekt eine `then`-Funktion, was soviel heißt wie: Wenn die Asynchronität beendet ist bzw. das Promise aufgelöst wurde (durch `resolve` oder `reject`), dann führe aus. Aus diesem Grund werden Promises auch oft *thenables* genannt.
 
@@ -120,7 +120,7 @@ asyncFn().then(function (data) {
 
 Das war im Grunde schon die ganze Magie hinter Promises und wie man sie im einfachsten Fall verwendet.
 
-**Beispiel mit $http**
+### Beispiel mit $http
 
 Wie bereits erwähnt ist das Senden von HTTP-Anfragen auch ein asynchroner Bestandteil einer Anwendung. Das AngularJS-Team hat natürlich mitgedacht und so bietet der `$http`-Service bereits von Haus aus die Möglichkeit mit Promises zu arbeiten. Dabei liefert ein $http-Aufruf immer ein Promise zurück.
 
@@ -133,13 +133,12 @@ $http.get('/meine/api.json').then(
 
 Im Vergleich zu unserem Beispiel mit jQuery sehen die Code-Ausschnitte doch recht ähnlich aus. Trotzdem werden wir gleich sehen, dass der Funktionsumfang und somit die Einsatzmöglichkeiten von Promises doch die von simplen Callback bei weiten übertreffen.
 
-### Lösung der Callback Probleme?
+## Lösung der Callback Probleme?
 
-Hier erfahrt ihr noch mehr über Promises und ihre Funktionen. Wir werden erkennen und verstehen, wie die am Anfang des Kapitels beschriebenen Probleme von Callbacks einfach gelöst werden können.
+Hier erfahrt ihr noch mehr über Promises und ihre Funktionen. 
+Wir werden erkennen und verstehen, wie die am Anfang des Kapitels beschriebenen Probleme von Callbacks einfach gelöst werden können.
 
-#### Übersichtlichkeit - Pyramid of Doom
-
-**Problem**
+### Übersichtlichkeit - Pyramid of Doom
 
 Wenn wir mehrere asynchrone Aufrufe mit Callbacks verschachteln, wird es sehr schnell unübersichtlich. Leider lässt sich dies oft nicht vermeiden, da asynchrone Programmteile voneinander anhängig sein können. Dieses Probleme der Übersichtlichkeit ist so massiv, dass es sogar einen eigenen Namen bekommen hat: **Pyramid of Doom**.
 
@@ -154,8 +153,6 @@ $.get('/api1').done(function(data) {
   });
 });
 ```
-
-**Lösung**
 
 Der Aufruf unserer Promise-Funktion sieht schon mal ganz annehmbar aus. Doch was passiert, wenn wir aufeinander aufbauende Funktionalitäten haben, die bei Callbacks zu einer tiefen Verschachtelung führten. Hier können wir uns eine der wichtigsten Eigenschaften eines Promises zu nutzen machen. Promises sind verkettbar, sprich sie können per *Dot*-Notation hintereinander geschrieben werden, denn als Rückgabewert eines Promise könnt ihr entweder wieder ein Promise oder einen ganz normalen Wert zurückgeben. Im nächsten `then` stehen uns die Rückgabewerte wieder zur Verfügung.
 
@@ -192,9 +189,7 @@ $http.get('/api1')
 });
 ```
 
-#### Fehlerbehandlung und Fehlerkorrektur
-
-**Problem**
+### Fehlerbehandlung und Fehlerkorrektur
 
 Bei verschachtelten Callbacks ist nicht definiert, wie wir mit Fehlern umgehen. Nehmen wir wieder unser letztes Beispiel dazu: Wir rufen die drei verschachtelten Callbacks aus dem letzten jQuery-Code-Schnipsel erneut auf. Die letzte API-Anfrage an `/api3` schlägt nun fehl. Wie gehen wir damit um? Was heißt das generell für die Fehlerbehandlung mit Callbacks?
 
@@ -236,8 +231,6 @@ $.get('/api1').done(function(data) {
 ```
 
 Spätestens hier sollten sich bei euch die Nackenhaare aufstellen. Natürlich kann jetzt der ausgefuchste Entwickler anfangen alles schön in einzelne Funktionen aufzudröseln. Macht den reinen Quelltext der Ausgangsfunktion leserlicher und übersichtlicher, aber der Umgang mit Fehlern und Fehlerkorrektur nicht besser.
-
-**Lösung**
 
 Wir wir schon gesehen haben akzeptiert jedes `then` eine Fehlerfunktion. Das bedeutet, wir können in jedem Schritt auf mögliche Probleme reagieren. Aber ein Promise kann sogar noch viel mehr. Bei einem Fehler wird der erste Fehler-Callback genutzt der in einer Verkettung gefunden wird. Besitzt ein `then` keine eigene Error-Funktion, dann wird so lange zum nächsten gesprungen, bis eine geeignete gefunden wird.
 
@@ -309,9 +302,7 @@ Wie ihr sehen könnt, ist die gesamte Funktionalität pro Schnittstelle gekapsel
 
 <div class="alert alert-danger"><b>Achtung:</b> Fehler in asynchronen Kontexten sollten immer abgefangen werden! Ansonsten begegnet euch vielleicht schon bald: <code>Uncaught error ...</code>.</div>
 
-#### Parallelität - Synchronisation mehrerer Asynchronitäten
-
-**Problem**
+### Parallelität - Synchronisation mehrerer Asynchronitäten
 
 Stellen wir uns vor, wir haben einen Programmteil, der gleichzeitig mehrere Schnittstellen abfragen möchten. Die Ergebnisse der APIs kommen in beliebiger Reihenfolge zurück. Natürlich müssen wir darauf reagieren wenn alle fertig sind, damit wir gebündelt mit den Daten weiterarbeiten können. Dies ist rein mit Callbacks ein sehr aufwändig Unterfangen.
 
@@ -324,8 +315,6 @@ $.get('/api3').done(function(data){ result3 = data; });
 ```
 
 Wie können wir jetzt an dieser Stelle auf feststellen, dass alle 3 APIs ihre Daten erfolgreich zurückgeliefert haben? - Wir müssten in jedem Callback überprüfen, ob die anderen APIs schon fertig sind. Damit wir das prüfen können, müssen wir noch ein zusätzliches Array erstellen, wo wir die Status der APIs zwischenspeichern. Möglich, aber nicht besonders elegant für ein Standard-Problem. Vor allen Dingen, wenn es eine gute Abstraktion dafür gibt. Dazu kommt vielleicht noch mehr Logik, da ja auch auf mögliche Fehler reagiert werden muss. Aber dazu später mehr.
-
-**Lösung**
 
 Auch dieses Problem lässt sich mit Promises spielend leicht lösen. Mit Hilfe von `$q` können nicht nur neue Promise-Objekte erzeugt werden. Ihr findet darauf außerdem ein paar hilfreiche Funktionen. Für unser Problem ist jedoch vor allem eine davon interessant. Über `$q.all` könnt ihr mehrere Promise-Funktionen gleichzeitig ausführen und auf ihre Fertigstellung warten bzw. reagieren.
 
@@ -351,9 +340,7 @@ $q.all([api1, api2, api3])
   });
 ```
 
-#### Vermischung von Verantwortlichkeiten
-
-**Problem**
+### Vermischung von Verantwortlichkeiten
 
 In der Informatik gibt es das Prinzip der *Aufteilung nach Verantwortlichkeiten* ([Separation of concerns](http://en.wikipedia.org/wiki/Separation_of_concerns)). Dies dient dazu Programmcode übersichtlich zu halten. Jeder Abschnitt and Code oder auch jede Funktion sollte sich - soweit möglich - nur um eine Aufgabe bzw. Aufgabentyp kümmern.
 
@@ -368,8 +355,6 @@ $.get('/meine/api.json', function(data) {
 
  Wenn die unsere API abgerufen wurde, möchten wir etwas in der View aktualisieren mit `updateView()` und gleichzeitig die Daten weiterverarbeiten, mit `processData()`. Wir können uns sicher darauf einigen, dass das 2 sehr verschiedene Aufgaben sind.
 
-**Lösung**
-
 Ein Promise-Objekt oder ein Aufruf einer Promise-Funktion kann ganz einfach einer normalen Variable zugewiesen werden. Dudurch wird dieses wiederverwendbar. Das Promise-Objekt hält den Status der Asynchronität und somit auch alle wichtigen Informationen, die wir brauchen. Dadurch können wir das Promise an andere Funktionen übergeben.
 
 Schauen wir uns die Lösung des Problems im Quellcode an.
@@ -383,6 +368,6 @@ apiPromise.then(processData);
 
 Die Funktionen `updateView` und `processData` können direkt als Funktionsreferenzen übergeben werden, da sie die gleiche Struktur, wie ein normal Callback für `$http`-Anfragen besitzen.
 
-### Fazit
+## Fazit
 
 Mit Promises könnt ihr in vielen Fällen viel Code und Nerven sparen. Trotzdem haben natürlich reine Callback-Lösungen auch weiterhin ihre Daseinsberechtigungen. Gerade in Webanwendungen, die oft gleichzeitig an mehreren Schnittstellen angebunden sind, macht es Sinn Promises zu nutzen. Mit dem $q und dem $http-Service gibt euch AngularJS bereits alle nötigen Werkzeuge dafür in die Hand.
