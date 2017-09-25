@@ -111,7 +111,7 @@ Informationen zu unserem Plunker-Test-Setup:
 
 Dies sollte uns aber an dieser Stelle nicht weiter interessieren und nur als kurze Erklärung dienen.
 
-## Testen in Angular
+## Kurzerklärung: Testen in Angular
 
 ### Testen mit Dependency Injection (DI)
 
@@ -236,7 +236,7 @@ Wir können *[async](https://angular.io/api/core/testing/index/async-function)* 
 
 - **Sync oder Async?** Macht dein Test asynchrone Aufrufe?  Benutzt XHR, Promises, Obervables, etc. Benutzt die Komponente TemplateUrl oder styleURls oder inline? Stelle sicher, dass du die entsprechenden APIs verwendest.
 
-## Testen in Angular
+## Code-Beispiele für Testen in Angular
 
 ### 1. Eine Komponente testen
 
