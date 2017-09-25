@@ -8,26 +8,26 @@ published_at: 2017-09-13 08:25:01.000000Z
 categories: "angular testing advanced"
 header_image: "/artikel/header_images/angular-testing.png"
 ---
-In diesem Artikel wollen wir die **gängigsten Unit-Tests für Angular Anwendungen**, wie zum Beispiel Komponenten, Services, Http und Pipes abdecken.
-Wir werden aber auch weniger bekannte Bereiche, wie Directives, Routes und Testen von Observables behandeln.
+In diesem Artikel wollen wir die gängigsten Unit-Tests für Angular Anwendungen, wie zum Beispiel Komponenten, Services, Http und Pipes abdecken.
+Wir werden aber auch weniger bekannte Bereiche, wie `Directives`, `Routes` und `Testen` von `Observables` behandeln.
 Als Referenz und Basis für deine eigenen Tests stellen wir dir kleine Beispiele vor.
-Weiterhin haben wir eine **Testing-Checkliste**, um bei der Erstellung deiner eigenen Tests ein einfachen Leitfaden zu bieten.
+Weiterhin haben wir eine Testing-Checkliste, um bei der Erstellung deiner eigenen Tests ein einfachen Leitfaden zu bieten.
 
 Testen wurde von ReleaseCandidate(RC) von Angular Version 2 bis zur ersten Final ziemlich stark verbessert.
-Durch den Umstieg auf NgModule haben sich weiterhin viele Sachen im Bereich testen vereinfacht.
+Durch den Umstieg auf `NgModule` haben sich weiterhin viele Sachen im Bereich testen vereinfacht.
 Das CoreTeam von Angular hat hart gearbeitet, um Boilerplate-Code zu reduzieren und neben Jasmine auch andere Test-Frameworks wie Mocha zu unterstützen.
 
 In diesem Artikel werden wir folgendes abdecken:
 
-- **Einführung in Jasmin**: suites, specs, exprectations, und matchers(),...
+- Einführung in Jasmin: `suites`, `specs`, `exprectations` und `matchers`...
 
-- **Testen in Angular**: setup, dependency injection, und testing checklist
+- Testen in Angular: `setup`, `dependency injection` und testing checklist
 
-- **Testing-Utilities**: TestBed, inject, fixtures, async, fakeAsync/tick, und jasmine.done().
+- Testing-Utilities: `TestBed`, `inject`, `fixtures`, `async`, `fakeAsync/tick` und `jasmine.done()`.
 
-- **Testbeispiele**: Components, Services, Http+MockBackend, Directives, Pipes, Routes, Observables, und EventEmitter.
+- Testbeispiele: `Components`, `Services`, `Http+MockBackend`, `Directives`, `Pipes`, `Routes`, `Observables` und `EventEmitter`.
 
-Alle 26 **Test-Specs** zum selber ausprobieren und ändern findest du in diesem [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
+Alle 26 Test-Specs zum selber ausprobieren und ändern findest du in diesem [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
 
 *„Wir haben in diesem Beispielen [Jasmin](https://jasmine.github.io/) verwendet, es ist aber problemlos Möglich auch andere Test-Frameworks wie [Mocha](https://mochajs.org/) zu verwenden.*
 
@@ -38,23 +38,23 @@ Die verwendete DSL(domain specific language) verfolgt die Grundsätze des behavi
 
 ### Generelle Konzepte der Jasmine-DSL
 
-Suites – ***describe(String, function)*** - Eine Suite definiert ein logischen Abschnitt von Spezifikationen. Sie wird mit einem Titel und einer Funktion aufgerufen, welche Spezifikationen oder auch weitere Suits enthalten kann.
+**Suites** – `describe(String, function)` - Eine Suite definiert ein logischen Abschnitt von Spezifikationen. Sie wird mit einem Titel und einer Funktion aufgerufen, welche Spezifikationen oder auch weitere Suits enthalten kann.
 
-Specs – ***it(string,funktion)*** Eine Spec wird mit `it` eingeleitet. Auch hier definieren wir ein Titel über den ersten Parameter. Der zweite Parameter erwartet eine Funktion welche dann die tatsächlichen technischen Erwartungen(Expectations) enthält.
+**Specs** – `it(string, function)` Eine Spec wird mit `it` eingeleitet. Auch hier definieren wir ein Titel über den ersten Parameter. Der zweite Parameter erwartet eine Funktion welche dann die tatsächlichen technischen Erwartungen(Expectations) enthält.
 
-Expectations ***expect(actual).toBe(expected)*** – Eine Expectation(Erwartung) ist die technische Implementierung deines Tests, die letztendlich einfach nach *true* oder *false* auswertet.
+**Expectations** `expect(actual).toBe(expected)` – Eine Expectation(Erwartung) ist die technische Implementierung deines Tests, die letztendlich einfach nach `true` oder `false` auswertet.
 
-Matchers – sind vordefinierte Helfer für gemeinsame Expectations. z.B.: ***toBe(expected), toEqual(expected).*** [Hier](https://github.com/JamieMason/Jasmine-Matchers) findest du die komplette Liste.
+**Matchers** – sind vordefinierte Helfer für gemeinsame Expectations. z.B.: `toBe(expected)`, `toEqual(expected).` [Hier](https://github.com/JamieMason/Jasmine-Matchers) findest du die komplette Liste.
 
-*“Beachte, dass ***toEqual()*** einen tiefen Objekt-Match macht, hier wird also der Inhalt von zwei Objekten verglichen. Die Funktion **.toBe()** prüft auf Referenzgleichheit. Also: Ist `actual` und `expected` das gleiche Objekt*
+*“Beachte, dass `toEqual()` einen tiefen Objekt-Match macht, hier wird also der Inhalt von zwei Objekten verglichen. Die Funktion `.toBe()` prüft auf Referenzgleichheit. Also: Ist `actual` und `expected` das gleiche Objekt*
 
 ### Setup und Teardown
 
 Manchmal haben wir eine Summe von Tests, welche gleichen oder ähnliche Vorbedingungen haben z.B. ein bestimmten Zustand unser Directive oder eines Services.
 
 Jasmine bietet dir vier Handler an, um unseren Setup- und Teardown-Code für Tests zu definieren:
-- ***beforeEach, afterEach*** einmal pro Spec (`it`)
-- ***beforeAll, afterAll*** einmal pro Test-Suite (`describe`)
+- `beforeEach`, `afterEach` einmal pro Spec (`it`)
+- `beforeAll`, `afterAll` einmal pro Test-Suite (`describe`)
 
 ### Testen Einrichtung
 
@@ -105,9 +105,9 @@ Schauen wir uns diese Datei also einmal an.
 Informationen zu unserem Plunker-Test-Setup:
 
 - Laden von Jasmine-Abhängigkeiten gefolgt von Angular-Abhängigkeiten.
-- Wir verwenden ein **System.js** und **TypeScript** Setup.
+- Wir verwenden ein `System.js` und `TypeScript` Setup.
 - Wir laden über `System.import` unsere Tests
-- Mit *Promise.all()* lösen wir den Jasmine-Test-Runner manuell aus, indem  wir **onload** aufrufen.
+- Mit `Promise.all()` lösen wir den Jasmine-Test-Runner manuell aus, indem  wir `onload` aufrufen.
 
 Dies sollte uns aber an dieser Stelle nicht weiter interessieren und nur als kurze Erklärung dienen.
 
@@ -115,7 +115,7 @@ Dies sollte uns aber an dieser Stelle nicht weiter interessieren und nur als kur
 
 ### Testen mit Dependency Injection (DI)
 
-**TestBed** hilft uns ähnlich wie @NgModule die Abhängigkeiten für unsere Tests einzurichten.
+`TestBed` hilft uns ähnlich wie @NgModule die Abhängigkeiten für unsere Tests einzurichten.
 Wir rufen `TestBed.configureTestingModule` mit unserer Konfiguration auf.
 Diese Informationen werden dann verwendet, um alle Abhängigkeiten für unseren Test aufzulöse.
 
@@ -136,7 +136,7 @@ let service = TestBed.get(MyService);
 
 ```
 
-**inject** erlaubt es uns Abhängigkeiten auf der TestBed Ebene zu bekommen.
+`inject` erlaubt es uns Abhängigkeiten auf der TestBed Ebene zu bekommen.
 
 
 ```javascript
@@ -146,7 +146,7 @@ it('should return ...', inject([MyService], service => {
 
 ```
 
-**Component injector** ermöglicht es uns eine Abhängigkeit auf der Komponentenebene zu erhalten.
+`Component injector` ermöglicht es uns eine Abhängigkeit auf der Komponentenebene zu erhalten.
 
 
 ```javascript
@@ -161,7 +161,7 @@ let service = fixture.debugElement.injector.get(MyService);
 
 Für Abhängigkeiten, die auf der Komponenten-Ebene definiert sind, müssen wir den Component injector wie oben gezeigt benutzen.
 
-Lass uns mal sehen, wie wir **TestBed** mit der *LanguagesService* Komponente verwenden würden:
+Lass uns mal sehen, wie wir `TestBed` mit der `LanguagesService` Komponente verwenden würden:
 
 
 ```javascript
@@ -177,7 +177,7 @@ describe('Service: LanguagesService', () => {
 
 ```
 
-Zuerst laden wir die für unsere Tests benötigten Abhängigkeiten mit **TestBed.configureTestingModule**. Dann benutzen wir *[inject](https://angular.io/api/testing/inject-function)* auf auf unsere Spezifikation, um automatisch jede Abhängigkeit zu instanziieren.
+Zuerst laden wir die für unsere Tests benötigten Abhängigkeiten mit `TestBed.configureTestingModule`. Dann benutzen wir *[inject](https://angular.io/api/testing/inject-function)* auf auf unsere Spezifikation, um automatisch jede Abhängigkeit zu instanziieren.
 
 Wir können jetzt die Injektion umgestalten, damit wir das nicht für jede Spezifikation wiederholen brauchen.
 
@@ -201,7 +201,7 @@ describe('Service: LanguagesService', () => {
 
 ```
 
-Lass uns mal zwei Beispiele für die Instanziierung einer Komponente anschauen. Das erste Beispiel ist synchron und erstellt eine Vorrichtung mit einer Instanz von **MyTestComponent**.
+Lass uns mal zwei Beispiele für die Instanziierung einer Komponente anschauen. Das erste Beispiel ist synchron und erstellt eine Vorrichtung mit einer Instanz von `MyTestComponent`.
 
 
 ```javascript
@@ -230,11 +230,11 @@ Wir können *[async](https://angular.io/api/core/testing/index/async-function)* 
 
 ### Testen Checkliste
 
-- **Welche Art von Test?** [Isolated](https://angular.io/guide/testing#!#isolated-unit-tests), [shallow](https://angular.io/guide/testing#!#shallow-component-test) oder [integration Test](https://vsavkin.com/three-ways-to-test-angular-2-components-dcea8e90bd8d).
+- Welche Art von Test? [Isolated](https://angular.io/guide/testing#!#isolated-unit-tests), [shallow](https://angular.io/guide/testing#!#shallow-component-test) oder [integration Test](https://vsavkin.com/three-ways-to-test-angular-2-components-dcea8e90bd8d).
 
-- **Kann ich Mocks, Stubs oder Spies benutzen?** Abhängigkeiten sollten durch eigene Tests abgedeckt werden. Mit ihnen kannst du deine Tests boosten, ohne an Wirksamkeit zu verlieren.
+- Kann ich Mocks, Stubs oder Spies benutzen? Abhängigkeiten sollten durch eigene Tests abgedeckt werden. Mit ihnen kannst du deine Tests boosten, ohne an Wirksamkeit zu verlieren.
 
-- **Sync oder Async?** Macht dein Test asynchrone Aufrufe?  Benutzt XHR, Promises, Obervables, etc. Benutzt die Komponente TemplateUrl oder styleURls oder inline? Stelle sicher, dass du die entsprechenden APIs verwendest.
+- Sync oder Async? Macht dein Test asynchrone Aufrufe?  Benutzt XHR, Promises, Obervables, etc. Benutzt die Komponente TemplateUrl oder styleURls oder inline? Stelle sicher, dass du die entsprechenden APIs verwendest.
 
 ## Code-Beispiele für Testen in Angular
 
@@ -255,11 +255,11 @@ export class Greeter {
 
 ```
 
-Um diese Komponente zu testen, verwenden wir eine gemeinsames Setup mit *TestBed*.
+Um diese Komponente zu testen, verwenden wir eine gemeinsames Setup mit `TestBed`.
 
 *„Benutze TestBed, um die entsprechenden Abhängigkeiten zu laden, damit sie während deiner Tests verfügbar sind.“*
 
-Es ist eine gängige Praxis *beforeEach* zu verwenden, um unsere Tests umzusetzen. Wenn wir das tun, dann vermeiden wir, dass wir für jeden Tests einen Code wiederholen müssen. Dies vereinfacht auch unsere Spezifikation.
+Es ist eine gängige Praxis `beforeEach` zu verwenden, um unsere Tests umzusetzen. Wenn wir das tun, dann vermeiden wir, dass wir für jeden Tests einen Code wiederholen müssen. Dies vereinfacht auch unsere Spezifikation.
 
 
 ```javascript
@@ -292,7 +292,7 @@ describe('Component: Greeter', () => {
 
 ```
 
-Wir haben *TestBed.create.Component* verwendet, um eine Instanz unserer *Greeter*-Komponente zu erstellen. Die Komponenteninstanz wird innerhalb einer [fixture](https://github.com/angular/angular/blob/a7e9bc97f6a19a2b47b962bd021cb91346a44baa/modules/angular2/src/testing/test_component_builder.ts#L31) zugänglich sein. Das ist die Haupt-API:
+Wir haben `TestBed.create.Component` verwendet, um eine Instanz unserer `Greeter`-Komponente zu erstellen. Die Komponenteninstanz wird innerhalb einer [fixture](https://github.com/angular/angular/blob/a7e9bc97f6a19a2b47b962bd021cb91346a44baa/modules/angular2/src/testing/test_component_builder.ts#L31) zugänglich sein. Das ist die Haupt-API:
 
 
 ```javascript
@@ -304,13 +304,13 @@ abstract class ComponentFixture {
 }
 
 ```
-Wir haben die *name*-Eigenschaft benutzt, um einen Wert einzurichten, die Änderungserkennung mit **detectChanges** einzurichten und das erwartet Ergebnis zu überprüfen, wenn alle asynchronen Anrufe mit **whenStable** beendet wurden. Um auf den gerenderten Text zuzugreifen, verwendeten wir zwei verschiedene APIs, welche durch einen CSS-Selektor (Zeilen 22-23) gefiltert wurden.
+Wir haben die `name`-Eigenschaft benutzt, um einen Wert einzurichten, die Änderungserkennung mit `detectChanges` einzurichten und das erwartet Ergebnis zu überprüfen, wenn alle asynchronen Anrufe mit `whenStable` beendet wurden. Um auf den gerenderten Text zuzugreifen, verwendeten wir zwei verschiedene APIs, welche durch einen CSS-Selektor (Zeilen 22-23) gefiltert wurden.
 
 *„Weitere Abfragen für debugElement sind: Query(By.all())query(by.directive(MyDirective))“*
 
 ### 2. Einen Service testen
 
-*LanguageService* hat nur eine Methode, welche ein Array von verfügbaren Sprachen für die Anwendung zurückgibt.
+`LanguageService` hat nur eine Methode, welche ein Array von verfügbaren Sprachen für die Anwendung zurückgibt.
 
 ```javascript
 //a simple service
@@ -349,7 +349,7 @@ describe('Service: LanguagesService', () => {
 ```
 ### 3. Testen mit Http
 
-Wir wollen normalerweise keine HTTP-Anrufe während unserer Tests machen, aber wir werden es jetzt als Referenz trotzdem zeigen. Wir haben unseren Erstdienst *LanguageService* für *LanguageServiceHttp*.
+Wir wollen normalerweise keine HTTP-Anrufe während unserer Tests machen, aber wir werden es jetzt als Referenz trotzdem zeigen. Wir haben unseren Erstdienst `LanguageService` für `LanguageServiceHttp`.
 
 ```javascript
 export class LanguagesServiceHttp {
@@ -363,7 +363,7 @@ export class LanguagesServiceHttp {
 
 ```
 
-In diesem Fall verwendet es *http.get(), um eine JSON-Datei zu lesen. Danach haben wir *[Observable.map](https://github.com/ReactiveX/RxJS/blob/master/src/operator/map.ts)* verwendet, um die Antwort in das Endergebins mit *json()* umzuwandeln.
+In diesem Fall verwendet es `http.get()`, um eine JSON-Datei zu lesen. Danach haben wir *[Observable.map](https://github.com/ReactiveX/RxJS/blob/master/src/operator/map.ts)* verwendet, um die Antwort in das Endergebins mit `json()` umzuwandeln.
 
 Unser Test sieht dem vorherigen ziemlich ähnlich. Der Hauptunterschied besteht in der Verwendung eines asynchronen Tests, wie wir es mit der Komponente aufgrund des Abonnements gemacht haben.
 
@@ -396,7 +396,7 @@ describe('Service: LanguagesServiceHttp', () => {
 ```
 *„Beachte, dass fakeAsync nicht verwendet werden kann, wenn es XHR-Anrufe gibt. Wegen dem [Design](https://github.com/angular/angular/issues/8280).“*
 
-*Http.get()* gibt ein Observavble zurück, welches wir abonnieren können. Wir werden Observables später noch ausführlicher abdecken.
+`Http.get()` gibt ein Observavble zurück, welches wir abonnieren können. Wir werden Observables später noch ausführlicher abdecken.
 
 ## 4. Testen mit MockBackend
 
@@ -445,7 +445,7 @@ Auf unserem Test bauen wir unsere gemockte Antwort (Zeilen 23-25), also wenn wir
 
 ### 5. Eine Directive testen
 
-Directives in Angular sind eine spezifische Art von Komponente mit in der Regel keiner begleitenden Ansicht. Wir verwenden eine [AttributDirective](https://angular.io/guide/attribute-directives), *logClicks*, die protokoliieren, wie viele Klicks wir auf dem ***host element*** machen, damit du deine Idee erfassen kannst.
+Directives in Angular sind eine spezifische Art von Komponente mit in der Regel keiner begleitenden Ansicht. Wir verwenden eine [AttributDirective](https://angular.io/guide/attribute-directives), `logClicks`, die protokoliieren, wie viele Klicks wir auf dem `host element` machen, damit du deine Idee erfassen kannst.
 
 ```javascript
 // Example: <div log-clicks></div>
@@ -515,18 +515,18 @@ describe('Directive: logClicks', () => {
 
 ```
 
-Wir haben *beforeEach* verwendet, um die Logik für die Erstellung der Komponente aus den Tests zu trennen. Dieser Teil kann nun für alle Spezifikationen verwendet werden.
+Wir haben `beforeEach` verwendet, um die Logik für die Erstellung der Komponente aus den Tests zu trennen. Dieser Teil kann nun für alle Spezifikationen verwendet werden.
 
-Um den **click** auf den Container auszulösen, haben wir die DOM API (empfohlen) verwendet. Wir könnten auch *fixture.debugElement.triggerEventHandler(‘click’)* verwenden.
+Um den `click` auf den Container auszulösen, haben wir die DOM API (empfohlen) verwendet. Wir könnten auch `fixture.debugElement.triggerEventHandler(‘click’)` verwenden.
 
-In diesem Test haben wir **fakeAsync** und **tick** verwendet. Mit **fakeAsync** wird jegliche asynchrone Verarbeitung pausiert, bis wir **tick** aufrufen. Dies gibt uns eine größere Kontrolle und vermeidet es außerdem auf verschachtelte Blöcke von Versprechen oder Beobachtungen zurückzugreifen.
+In diesem Test haben wir `fakeAsync` und `tick` verwendet. Mit `fakeAsync` wird jegliche asynchrone Verarbeitung pausiert, bis wir `tick` aufrufen. Dies gibt uns eine größere Kontrolle und vermeidet es außerdem auf verschachtelte Blöcke von Versprechen oder Beobachtungen zurückzugreifen.
 
 *„Mit fakeAsync/tick bekommen wir eine bessere Kontrolle über den asynchronen Code, obwohl er nicht mit XHR verwendet werden kann.“*
 
 
 ### 6. Ein Pipe testen
 
-Pipes sind Funktionen, die Eingabedaten in ein vom Benutzer lesbares Format umwandeln können. Wir schreiben eine benutzerdefinierte Pipe *capitalise* mit dem Standard *[String.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)*. Das ist der Einfachheit halber, da Angular eine eigene [UpperCasePipe](https://angular.io/api/common/UpperCasePipe-class)-Implementierung hat.
+Pipes sind Funktionen, die Eingabedaten in ein vom Benutzer lesbares Format umwandeln können. Wir schreiben eine benutzerdefinierte Pipe `capitalise` mit dem Standard *[String.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)*. Das ist der Einfachheit halber, da Angular eine eigene [UpperCasePipe](https://angular.io/api/common/UpperCasePipe-class)-Implementierung hat.
 
 ```javascript
 import {Pipe, PipeTransform} from '@angular/core';
@@ -544,7 +544,7 @@ export class CapitalisePipe implements PipeTransform {
 
 ```
 
-Pipes sind nur einfache Klassen, die injiziert werden können, damit wir unsere Spezifikationen sehr einfach mit *inject* einrichten können.
+Pipes sind nur einfache Klassen, die injiziert werden können, damit wir unsere Spezifikationen sehr einfach mit `inject` einrichten können.
 
 
 ```javascript
@@ -663,7 +663,7 @@ describe('Router tests', () => {
 });
 
 ```
-Wir haben **RouterTestingModule.withRoutes(routes)** importiert, um die Routerinstanz mit den Routes für unsere Tests zu initialisieren (Zeile 6). Im obigen Code haben wir getestet, dass wir mit **async, asyncFake/tick** und **done** nach Hause navigieren können.
+Wir haben `RouterTestingModule.withRoutes(routes)` importiert, um die Routerinstanz mit den Routes für unsere Tests zu initialisieren (Zeile 6). Im obigen Code haben wir getestet, dass wir mit `async`, `asyncFake/tick` und `done` nach Hause navigieren können.
 
 *„FakeAsync/tick sind ideal für komplexe asynchrone Test ohne XHR“*
 
@@ -671,7 +671,7 @@ Wir haben **RouterTestingModule.withRoutes(routes)** importiert, um die Routerin
 
 ## 8. Observables testen
 
-Observables sind optimal, um asynchrone Aufgaben zu meistern. Sie werden an wenigen Stellen in Angular, wie *Http*, Form controls, validations oder hinter *EventEmitter* verwendet. Wir werden das *Observable* unten verwenden, um zu zeigen, wie wir ihr Verhalten testen können.
+Observables sind optimal, um asynchrone Aufgaben zu meistern. Sie werden an wenigen Stellen in Angular, wie `Http`, Form controls, validations oder hinter `EventEmitter` verwendet. Wir werden das `Observable` unten verwenden, um zu zeigen, wie wir ihr Verhalten testen können.
 
 
 ```javascript
@@ -704,11 +704,11 @@ describe('Observable: basic observable', () => {
 
 ```
 
-Wir haben eine *Observable* geschaffen, welche 1,2,3 aussendet und abschließt. Um zu testen, richten wir die nächsten ein, error und complete die Rückrufe auf Abonnieren. Während der nächste Rückrufe einige Male aufgerufen wird, müssen wir unsere Erwartungen dynamisch setzen.
+Wir haben eine `Observable` geschaffen, welche 1,2,3 aussendet und abschließt. Um zu testen, richten wir die nächsten ein, error und complete die Rückrufe auf Abonnieren. Während der nächste Rückrufe einige Male aufgerufen wird, müssen wir unsere Erwartungen dynamisch setzen.
 
 ### 9. EventEmitters testen
 
-**EventEmitters** werden in Angular verwendet, um Ereignisse zwischen Komponenten zu kommunizieren. Wir haben eine Gegenkomponente namens **Counter**, die es uns erlaubt, einen Anfangswert von Null zu erhöhen oder vermindern. Jedes Mal, wenn wir das tun, wird der neue Wert mit einem *EventEmitter* als *changes* offengelegt.
+`EventEmitters` werden in Angular verwendet, um Ereignisse zwischen Komponenten zu kommunizieren. Wir haben eine Gegenkomponente namens `Counter`, die es uns erlaubt, einen Anfangswert von Null zu erhöhen oder vermindern. Jedes Mal, wenn wir das tun, wird der neue Wert mit einem `EventEmitter` als `changes` offengelegt.
 
 ```javascript
 @Component({
@@ -767,7 +767,7 @@ describe('EventEmitter: Counter', () => {
 })
 
 ```
-In diesem Fall überprüfen wir, dass wir mit dem Abonnement auf dem *EventEmitter* **increment** oder **decrement** benutzen, da es ein Observable aussetzt. Wir lösen die verschiedenen Werte aus, indem wir die Änderungsmethode anrufen und unsere Erwartungen im nächsten Rückruf überprüfen.
+In diesem Fall überprüfen wir, dass wir mit dem Abonnement auf dem `EventEmitter` `increment` oder `decrement` benutzen, da es ein Observable aussetzt. Wir lösen die verschiedenen Werte aus, indem wir die Änderungsmethode anrufen und unsere Erwartungen im nächsten Rückruf überprüfen.
 
 Alle Tests, die in diesem Beitrag enthalten waren, und noch mehr findest auf [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
 
