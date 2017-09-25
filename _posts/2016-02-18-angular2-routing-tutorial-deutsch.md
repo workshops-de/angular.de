@@ -11,7 +11,7 @@ tutorial_page_order: '4'
 
 ## Routing im Überblick
 
-So langsam nimmt die zweite Version des beliebten Single-Page-Application Frameworks Formen an. Ein sehr wichtiger Punkt zu Erstellung einer Web-Anwendung ist das **Routing**. Dabei müssen Inhalte flexibel ausgetauscht werden, so dass sich der Nutzer einfach und bequem durch die Anwendung bewegen kann.
+So langsam nimmt die zweite Version des beliebten Single-Page-Application Frameworks Formen an. Ein sehr wichtiger Punkt zu Erstellung einer Web-Anwendung ist das `Routing`. Dabei müssen Inhalte flexibel ausgetauscht werden, so dass sich der Nutzer einfach und bequem durch die Anwendung bewegen kann.
 
 ### Routing bis AngularJS 1.4.x mit ngRoute
 
@@ -121,7 +121,7 @@ meineApp.directive('articleDirective', function () {
 
 ### Rounting ab AngularJS 1.5.x mit `$router` und Components
 
-Mit der Veröffentlichung von v1.5 weicht Angular die Grenzen zwischen erster und zweiter Version des Frameworks weiter auf. Einerseits können nun so genannte **Components** definiert  und andererseits eine neue Routing-Möglichkeit über das **ngComponentRouter**-Modul benutzt werden.
+Mit der Veröffentlichung von v1.5 weicht Angular die Grenzen zwischen erster und zweiter Version des Frameworks weiter auf. Einerseits können nun so genannte `Components` definiert  und andererseits eine neue Routing-Möglichkeit über das `ngComponentRouter`-Modul benutzt werden.
 
 #### Components
 
@@ -156,7 +156,7 @@ Hier setzt der Router ein. Er löst das alter und unflexible Verfahren auf Zust�
  2. `ngOutlet` - Direktive, stellt Einhängepunkte der Templates dar - mehrere möglich! (ähnlich zu ngView)
  3. `ngLink` - Direktive, um zwischen Routen zu navigieren
 
-Als erstes muss das **ngComponentRouter**-Modul als Abhängigkeit zu unserer Anwendung hinzugefügt werden. Danach kann der `$router`-Service in einem Basis-Controller geladen werden, um die Standardrouten zu definieren. In der Index-Datei der Anwendung wird dieser Controller verwendet und ein Element mit mit `ngOutlet` ausgestattet.
+Als erstes muss das `ngComponentRouter`-Modul als Abhängigkeit zu unserer Anwendung hinzugefügt werden. Danach kann der `$router`-Service in einem Basis-Controller geladen werden, um die Standardrouten zu definieren. In der Index-Datei der Anwendung wird dieser Controller verwendet und ein Element mit mit `ngOutlet` ausgestattet.
 
 ```typescript
 angular
@@ -308,7 +308,7 @@ export class MyComponent {
 
 #### `RouteParams` - Arbeiten mit URL-Parameter
 
-Um mit Parametern in Routen zu arbeiten kann die `RouteParams`-Komponente genutzt werden. Dazu muss der Service importiert und dem Konstruktor der Komponente übergeben werden. Durch die **Dependency-Injection** erhalten wir nun Zugriff auf den `RouteParams`-Service und könne über die `get`-Methode bestimmte Parameter abfragen.
+Um mit Parametern in Routen zu arbeiten kann die `RouteParams`-Komponente genutzt werden. Dazu muss der Service importiert und dem Konstruktor der Komponente übergeben werden. Durch die `Dependency-Injection` erhalten wir nun Zugriff auf den `RouteParams`-Service und könne über die `get`-Methode bestimmte Parameter abfragen.
 
 ```typescript
 import { RouteParams } from 'angular2/router';
@@ -361,7 +361,7 @@ provide(LocationStrategy, {useClass: HashLocationStrategy])
 
 fest, dass die Hash-Methode benutzt werden soll. Dadurch entstehen die bereits aus früheren Versionen bekannten URLs, mit einem #-Symbol am Anfang der Routen (`http://xxx.xx/#/order`).
 
-In Angular ist dagegen die **PathLocationStrategy** Standard, welche URLs ohne den Hash-Zeichen erstellt. Dazu sollte jedoch ein Basis-Pfad der App konfiguriert werden. Dieser ist dann sozusagen ein Ersatz für das #-Symbol, damit die fehlerfreie Ausführung der Anwendung gewährleistet werden kann.
+In Angular ist dagegen die `PathLocationStrategy` Standard, welche URLs ohne den Hash-Zeichen erstellt. Dazu sollte jedoch ein Basis-Pfad der App konfiguriert werden. Dieser ist dann sozusagen ein Ersatz für das #-Symbol, damit die fehlerfreie Ausführung der Anwendung gewährleistet werden kann.
 
 ```typescript
 import { bootstrap, provide } from 'angular2/platform/browser';
@@ -559,28 +559,28 @@ Es müssen nicht alle Routen in einer Komponente definiert werden.
 
 Natürlich bietet Angular auch mit dem neuen Routing Einhängepunkte, um auf diverse Routing-Zustände reagieren zu können.
 
-  - **routerOnActivate**
+  - `routerOnActivate`
     - wird aufgerufen, wenn die mit der Komponente verknüpfte Route aktiv wird
-  - **routerCanReuse**
+  - `routerCanReuse`
     - Gibt an, ob die aktuelle Instanz wiederverwendet werden soll
     - Rückgabewert kann ein Boolean oder ein Promise-Objekt sein
-  - **routerOnReuse**
+  - `routerOnReuse`
     - Funktion die ausgeführt wird, wenn die aktuelle Instanz wiederverwendet wird
-  - **routerCanDeactivate**
+  - `routerCanDeactivate`
     - Gibt Boolean oder Promise zurück
     - Route wird nur dann verlassen, wenn die Funktion `true` oder das Promise erfüllt (resolved) wird
-  - **routerOnDeactivate**
+  - `routerOnDeactivate`
     - wird vor dem Verlassen der Route ausgeführt
     - Gibt ein Promise zurück
     - Kann den Route-Wechsel solange verzögern bis das Promise erfüllt (resolved) wird
 
 Alle Funktionen erhalten zwei Parameter:
 
-  - **nextInstruction**
+  - `nextInstruction`
     - Objekt mit Informationen zur aktuellen Route z.B. Parameter und URL
-  - **prevInstruction**
+  - `prevInstruction`
     - Objekt mit Informationen zur vorherigen Route (falls vorhanden) z.B. Parameter und URL
-
+``
 Als kleines Beispiel kann in einer Komponente einfach auf die Funktionen zugegriffen werde.
 
 ```typescript
