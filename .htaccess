@@ -18,3 +18,4 @@ RedirectMatch 301 ^/blog/(.*)$ /artikel/$1
 
 RedirectMatch 301 ^/artikel/angular2-bootstrap-scss-angular-cli(.*)$ /artikel/angular-bootstrap-scss-angular-cli/
 RedirectMatch 301 ^/artikel/angular2-tutorial-deutsch(.*)$ /artikel/angular-tutorial-deutsch/
+RedirectMatch 301 ^/artikel/ngupgrade-migration-angularjs-angular2(.*)$ /artikel/ngupgrade-migration-angularjs-angular/

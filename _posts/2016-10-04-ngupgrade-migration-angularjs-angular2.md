@@ -1,8 +1,8 @@
 ---
-title: "Migration AngularJS zu Angular2"
+title: "Migration AngularJS zu Angular"
 description: "Migration mit ngUpgrade leichtgemacht. Eine Zusammenfassung über alle wichtigen Schritte, wie ihr eure AngularJS App zu einer Angular2 App migrieren könnt."
 author: "Jonathan Schneider"
-slug: "ngupgrade-migration-angularjs-angular2"
+slug: "ngupgrade-migration-angularjs-angular"
 published_at: 2016-10-04 00:00:00.000000Z
 categories: "angularjs angular angular2 angular4 migration"
 header_image: "/artikel/header_images/ngupgrade-migration-angularjs-angular2.jpg"
