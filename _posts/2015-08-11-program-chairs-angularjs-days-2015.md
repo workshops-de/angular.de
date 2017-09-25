@@ -1,6 +1,6 @@
 ---
 title: "Wir sind die Program Chairs der AngularJS Days 2015"
-description:
+description: "Es ist endlich wieder so weit! Vom 05. bis zum 07. Oktober 2015 veranstaltet der Software & Support Verlag die nächste Ausgabe der AngularJS Days!"
 author: "Robin Böhm"
 slug: "program-chairs-angularjs-days-2015"
 published_at: 2015-08-11 05:35:00.000000Z
