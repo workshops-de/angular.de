@@ -1,6 +1,7 @@
 ---
 number: 6.12
 title: Decorator zum Erweitern von Services
+description: Lerne, wie du mit Decorators Services erweitern kannst, über die du nicht selbst die Kontrolle hast.
 part: Konzepte und Hintergründe
 progress: 80
 ---

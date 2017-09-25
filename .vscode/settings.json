@@ -7,7 +7,7 @@
   "search.exclude": {
     ".sass-cache": true,
     "_site": true,
-    "artikel": true
+    "artikel/header_images": true
   },
   "editor.tabSize": 2,
   "editor.detectIndentation": false,

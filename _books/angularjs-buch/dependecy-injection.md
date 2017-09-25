@@ -1,6 +1,7 @@
 ---
 number: 6.10
 title: Dependency Injection und der Injektor
+description: Lerne, wie du mit Dependency Injection nie wieder bei der Lade-Reihenfolge deiner Dateien aufpassen musst.
 part: Konzepte und Hintergründe
 progress: 90
 ---

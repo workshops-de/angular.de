@@ -1,6 +1,7 @@
 ---
 number: 4.20
 title: Eigene Direktiven mit AngularJS
+description: "Lerne, was Direktiven in AngularJS sind und wofür man sie benutzt."
 part: Erweiterungen der Applikation
 progress: 30
 ---

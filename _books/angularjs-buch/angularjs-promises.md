@@ -1,6 +1,7 @@
 ---
 number: 6.60
 title: Promises (Callbacks 2.0)
+description: Lerne, was Promises sind und wie sie die Arbeit mit asynchronen Problemen erleichtern.
 part: Konzepte und Hintergründe
 progress: 100
 ---

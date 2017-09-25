@@ -1,6 +1,7 @@
 ---
 number: 6.40
 title: jqLite - Kompatibilität mit jQuery
+description: Lerne, wie AngularJS mit jQuery kombiniert werden kann und was jqLite ist.
 part: Konzepte und Hintergründe
 progress: 90
 ---

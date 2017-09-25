@@ -1,6 +1,7 @@
 ---
 number: 6.80
 title: Dirty-Checking / Updatezyklus
+description: Lerne, wie die Magie hinter AngularJS funktioniert. Du erfährst, wie das automatische Aktualisieren funktioniert und auf was du aufpassen musst.
 part: Konzepte und Hintergründe
 progress: 50
 ---
