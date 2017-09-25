@@ -8,11 +8,9 @@ categories: "tutorial ionic angularjs"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch.jpg"
 ---
 
-Wer sich ein wenig mit AngularJS beschäftigt oder bereits beschäftigt hat, wird bzw. ist sicher schon über den Namen **Ionic** oder das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") gestolpert.
+Wer sich ein wenig mit AngularJS beschäftigt oder bereits beschäftigt hat, wird bzw. ist sicher schon über den Namen Ionic oder das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") gestolpert.
 
 Der erste Teil des Tutorials befasst sich mit folgenden Themen:
-
-**INHALTE**
 
  - Was ist hybride App-Entwicklung?
  - Cordova, PhoneGap, Ionic CLI
@@ -27,7 +25,7 @@ Der erste Teil des Tutorials befasst sich mit folgenden Themen:
  - [Styling mit SCSS](/artikel/ionic-tutorial-deutsch-scss/)
  - [Konfiguration mit $ionicConfigProvider](/artikel/ionic-tutorial-deutsch-configuration/)
 
-**Voraussetzung**
+## Voraussetzung
 
 Zum Verständnis des Tutorials sollten die Grundlagen von AngularJS bekannt und vor allem verstanden sein!
 
@@ -59,7 +57,7 @@ Alle Quelltexte findet ihr auf [GitHub](https://github.com/angularjs-de/ionic-tu
 </div>
 <hr>
 
-### Ionic und hybride App-Entwicklung
+## Ionic und hybride App-Entwicklung
 
 Hinter dem Namen Ionic verbirgt sich nicht etwa noch ein weiteres Singel-Page-Application-Framework oder eine einfache Erweiterung von AngularJS. Das Team rund um Ionic hat mit ihrem Framework mehr einen Aufsatz für AngularJS geschaffen, um damit *hybride mobile Apps* zu bauen.
 
@@ -80,7 +78,7 @@ Cordova ist OpenSource und die Basis für PhoneGap. Adobe behält sich jedoch vo
 
 Ionic soll zukünftig ein Rundum-Paket liefern. Dazu zählen bereits eigene Services, wie Push-Nachrichten oder Analytics, aber auch eine eigene App-Verwaltung, um jederzeit die eigenen Apps ausprobieren und vorzuführen können.
 
-Damit dies überhaupt möglich ist, stellt auch Ionic ein eigenes CLI, die **Ionic CLI** - bereit, welches wiederum auf **Cordova** basiert.
+Damit dies überhaupt möglich ist, stellt auch Ionic ein eigenes CLI, die `Ionic CLI` - bereit, welches wiederum auf `Cordova` basiert.
 
 Die Ionic CLI enthält dabei alle wichtigen Funktionen der Cordova CLI und erweitert diese um weitere Befehle.
 
@@ -170,11 +168,11 @@ Im einfachsten Fall sieht die Definition einer Ionic-Anwendung folgendermaßen a
 </html>
 ```
 
-### Routing mit UI-Router
+## Routing mit UI-Router
 
 Ionic nutzt nicht den zum Core gehörenden ngRouter sondern setzt auf [UI-Router](https://github.com/angular-ui/ui-router "UI-Router"). Durch den UI-Router haben wir die Möglichkeit dynamisch mehrere View pro Route, die im UI-Router State heißen, anzusprechen und mit Inhalt zu füllen.
 
-#### Erstellen von Zuständen
+### Erstellen von Zuständen
 Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/03a-Routing%20(States)" target="_blank">Quellcode</a> / <a href="https://angularjs-de.github.io/ionic-tutorial/03a-Routing%20(States)/#/order" target="_blank">Demo</a>
 
 Anstatt, wie bisher, Routen zu definieren, werden nun Zustände in der config-Phase der Anwendung erstellt. Dazu bietet der UI-Router zwei Provider.
@@ -253,7 +251,7 @@ Sieht eine Zustandsdefinition so aus:
 })
 ```
 
-Das Konfigurationsobjekt erhält den Schlüssel **`views`**. Dieser hält wieder ein Objekt aus *`uiViewName@zustandDerUiViewDefinition`* als Schlüssel und als Wert ein Objekt mit Template, Controller, usw..
+Das Konfigurationsobjekt erhält den Schlüssel `views`. Dieser hält wieder ein Objekt aus *`uiViewName@zustandDerUiViewDefinition`* als Schlüssel und als Wert ein Objekt mit Template, Controller, usw..
 
 ### Parameter
 Natürlich kann ein Zustand auch Parameter erhalten. Dazu muss einfach der Name des Parameters mit einem ':' als Prefix in die URL eingepflegt werden.
@@ -308,13 +306,12 @@ Als Beispiel erhält unsere Anwendung nun einen Basis-Zustand, der das Basis-Tem
 
 Es gibt mehrere Möglichkeiten einen Eltern-Zustand zuzuweisen.
 
- 1. **dot-Notation** - Order State erhält `base` als Elternzustand durch die Benennung in "base.order"
- 2. **`parent`-Attribut** - Der `about`-State erhält `base` als Elternzustand durch seine Angabe im `parent`-Attributes
+ 1. dot-Notation - Order State erhält `base` als Elternzustand durch die Benennung in "base.order"
+ 2. `parent`-Attribut - Der `about`-State erhält `base` als Elternzustand durch seine Angabe im `parent`-Attributes
 
 Das `base`-Template beinhaltet nun die früheren Inhalte des body-Tags. Dort haben wir nun nur noch ein `uiView`-Element, das der Basis-Zustand als Einstiegspunkt nutzt.
 
-**Beachte:**
-Die URL eines Kind-Zustandes darf den gemeinsamen Teil mit dem Eltern-Zustand bei seiner Definition nicht beinhalten. Aus diesem Grund fehlt bei den Kind-Urls der '/'.
+*Beachte: Die URL eines Kind-Zustandes darf den gemeinsamen Teil mit dem Eltern-Zustand bei seiner Definition nicht beinhalten. Aus diesem Grund fehlt bei den Kind-Urls der '/'.*
 
 Jetzt haben wir nur noch ein Problem. Wenn wir nämlich direkt unsere Anwendung mit '/' aufrufen wird nur der Basis-Zustand geladen und angezeigt. Dies wollen wir vermeiden und glücklicherweise bietet der UI-Router auch dafür eine Lösung.
 Wir müssen aus unserem Basis-Zustand einen abstrakten Zustand machen. Dazu erhält der Basis-Zustand das Attribut `abstract`, welches wir auf `true` setzen. Danach ist '/' nicht mehr eigenständig aufrufbar und unser Fallback-Mechanismus greift.
@@ -389,15 +386,15 @@ Die Fußleiste kann einfach, wie die `ionHeaderBar` davor, nach dem `ionContent`
 
 Zusätzlich zu einer Kopfzeile kann man eine fixierte Unterzeile eingefügen. Dazu kommt eine zweite `ionHeaderBar` nach der ersten hinzu. Jedoch benötigt das Element Klasse `bar-subheader`.
 
-## Navigation
+## Erstellen einer eigenen Navigation
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/05-Navigation) / [Demo](https://angularjs-de.github.io/ionic-tutorial/05-Navigation/#/order)
 
 Die bisherige App-Struktur macht für eine komplexe App wenig Sinn. Derzeit kann immer nur der scrollbare Inhalt ausgetauscht werden. Es kann aber sein, dass in einem Zustand gar nicht gescrollt werden soll oder in der Kopfzeile andere Schaltflächen angezeigt werden.
 
-Dafür könnte natürlich in jedem Zustand eine neue Kopfzeile, Fußzeile und ein eigener Content-Bereich definiert werden. Das ist mühselig zu mühselig und geht auch einfacher.
+Dafür könnte natürlich in jedem Zustand eine neue Kopfzeile, Fußzeile und ein eigener Content-Bereich definiert werden. Das ist zu mühselig und geht auch einfacher.
 
-#### Komponenten
+### Komponenten für Navigation
 Aus diesem Grund gibt es im Ionic Framework Navigations-Komponenten.
 
  - `ionNavView` - basiert auf uiView
@@ -438,7 +435,7 @@ Klicken wir nun auf *Über Uns* erscheint sofort der Zurück-Button in der Navig
 
 ![Ionic Navigation Bild](ionic-navigation.gif?v=63629079934)
 
-#### Services
+### Services für Navigation
 
 Natürlich kann auch programmatisch auf die Navigation und das Verhalten der Navigationsleiste zugegriffen werden. Dazu stellt das Framework zwei Services bereit:
 
@@ -451,12 +448,12 @@ Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/
 
 Das Ionic Framework stellt dem Entwickler zwei zusätzliche und grundlegende Komponenten zur Navigation bereit.
 
- 1. **Seitenmenüs** - Ausklappbares Menü, Wechsel zwischen Hauptpunkten der App
- 2. **Tabs** - Reihe von Schaltflächen zum Wechsel zwischen Hauptfunktionen
+ 1. Seitenmenüs - Ausklappbares Menü, Wechsel zwischen Hauptpunkten der App
+ 2. Tabs - Reihe von Schaltflächen zum Wechsel zwischen Hauptfunktionen
 
 Dabei sollte beachtet werden, dass der Einsatz der Komponenten global für die App gilt. In meiner Arbeit mit Ionic habe ich auch die Erfahrungen gemacht, dass es nicht ratsam ist ein Seitenmenü oder Tabs nur in einem bestimmten Teil der Anwendung zu nutzen. Dies führt häufig zu unerwartetem Verhalten im Routing da jeder Tab eine eigene Navigationshistorie hat. Nur mit vielen Verbiegungen ist es möglich Tabs auf einer Unterseite direkt aufzurufen. Ein ähnlichen Fall gibt es bei Seitenmenüs. In der Regel ist ein Seitenmenü ein Schnellzugriff für die wichtigsten Funktionen und Informationen. Oft ist dieses auch nur zugänglich, wenn man sich nicht in einem Kind-Zustand befindet.
 
-#### Der Aufbau
+### Der Aufbau
 Unsere Pizza-App soll nun um ein Seitenmenü ergänzt werden. Dazu schauen wir uns erstmal an, aus was so ein Menü eigentlich besteht.
 
  - `ionSideMenus` - beinhaltet die einzelnen Seitenmenüs
@@ -498,7 +495,7 @@ Wir erstellen nun im Basis-Template unserer App ein Seitenmenü auf der linken S
 
 Über `ionSideMenus` sagen wir, dass unsere App Seitenmenüs verwendet. Danach folgt die Definition unseres Sidemenus durch `ionSideMenu` unter der Angabe von `side="left“`. Die entsprechenden Links legen wir als Inhalt des Menüs an. Alles übrige vom vorherigen Code wird in das `ionSideMenuContent`-Element verschoben.
 
-#### Öffnen und Schließen des Menüs
+### Öffnen und Schließen des Menüs
 Beim Ausführen der App fällt auf, dass es keinen Button gibt, um das Menü zu öffnen. Aber wir können schon einmal das Menü "aufziehen" (auch draggen genannt). Auf der Startseite ziehen wir nun quasi am Inhalt (von links nach rechts) und bringen so das Menü zum Vorschein.
 Natürlich hat das Ionic-Team auch daran gedacht, dass ein Seitenmenü auch möglichst elegant über einen Button oder generell eine Klick-Aktion geöffnet und geschlossen werden kann. Dazu existiert die Direktive `menuToggle`. Als Wert erhält sie dann den Wert, welches Seitenmenü (`left` oder `right`) mit dem Button verknüpft ist.
 In unsere Anwendung bauen wir, wie für eine mobile App typisch, in der Navigationsleiste auf der linken Seite eine Schaltfläche ein, die unser Menü öffnet und schließt.
@@ -514,7 +511,7 @@ Nun können wir schnell und einfach unser wunderschönes Seitenmenü ein- und au
 
 ![Ionic Sidemenu Bild](ionic-sidemenu.gif?v=63629079934)
 
-#### Einhalten des Navigationskonzeptes
+### Einhalten des Navigationskonzeptes
 
 Beim Ausführen der Anwendung und klicken auf die Links im Seitenmenü fällt nun auf, dass das Menü immer offen bleibt und das, obwohl der komplette Kontext gewechselt wird (kein Aufruf einer Kinder-View) blendet Ionic automatisch den Zurück-Knopf nach dem Zustandswechsel ein.
 Dieses Verhalten lässt sich dank einer eigenen Direktive - namens `menuClose` für Links in Seitenmenüs beheben. Schreiben wir an die beiden Links `menu-close` als Attribut, passiert beim Klick auf diese folgendes.
@@ -542,7 +539,7 @@ Hätten wir an dieser Stelle schon eine Detail-View auf einen weiteren Zustand, 
 </ion-side-menus>
 ```
 
-#### Programmatischer Zugriff auf Seitenmenüs
+### Programmatischer Zugriff auf Seitenmenüs
 
 Auch dafür gibt es natürlich eine ziemlich gute Lösung. Wie bei vielen Komponenten bietet Ionic auch hier einen eigenen Service an, um das Verhalten der Seitenmenüs zu steuern. Bindet einfach den `$ionicSideMenuDelegate`-Service als Abhängigkeit in euern Controller ein. Danach hab ihr Zugriff auf viele Funktionen. Ein paar wichtige stell ich hier kurz vor:
 
@@ -551,7 +548,7 @@ Auch dafür gibt es natürlich eine ziemlich gute Lösung. Wie bei vielen Kompon
  - `isOpen()`, `isOpenLeft()`, `isOpenRight()` - gibt `true` zurück, falls irgendein, das linke oder das rechte Menü geöffnet ist
  - `canDragContent([canDrag])` - getter- und setter-Methode, wenn `canDrag` gesetzt ist, dann kann das Aufziehen/Zuschieben durch das Ziehen am Inhaltsbereich aktiviert/deaktiviert werden
 
-### Listen
+## Listen in Ionic
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/07-Lists) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/07-Lists/#/order)
 
@@ -572,9 +569,9 @@ Bei den einfachen Listen passiert die ganze Magie nur über einer bestimmten DOM
 </ul>
 ```
 
-Im Grunde besteht eine Liste aus einem Wrapper-Knoten - im Normalfall ein *ul*- oder ein *div*-Tag mit der CSS-Klasse ***list***. Jeder Listen Eintrag ist wiederum ein *li*- bzw. *div*-Tag mit der Klasse ***item***.
+Im Grunde besteht eine Liste aus einem Wrapper-Knoten - im Normalfall ein *ul*- oder ein *div*-Tag mit der CSS-Klasse `list`. Jeder Listen Eintrag ist wiederum ein *li*- bzw. *div*-Tag mit der Klasse `item`.
 
-Erinnern wir uns kurz an den letzten Stand unserer Pizza-App. Wir haben zwar ein Sidemenu und die Pizzen werden auch bereits auf der Start-View ausgegeben, aber hübsch ist etwas anderes. Das sollten wir schleunigst ändern und passen das ***order***-Template, wie folgt an.
+Erinnern wir uns kurz an den letzten Stand unserer Pizza-App. Wir haben zwar ein Sidemenu und die Pizzen werden auch bereits auf der Start-View ausgegeben, aber hübsch ist etwas anderes. Das sollten wir schleunigst ändern und passen das `order`-Template, wie folgt an.
 
 ```html
 <ion-view>
@@ -616,14 +613,14 @@ Nach dem gleichen Prinzip können auch Buttons oder Bilder ausgerichtet und ange
 
 Natürlich hat Ionic auch daran gedacht, dass Listen in nativen Apps viel mehr können als nur Daten auflisten. So können Einträge umsortiert oder über Gesten erweiterte Funktionalitäten angesteuert werden. Ionic bietet genau dafür eigene Direktiven und Services an.
 
- - **ionList**: Listen-Wrapper, Ersatz für ul/div-Tag mit Klasse list
- - **ionItem**: Listeneintrag, Ersatz für Listeneintrag mit Klasse item
- - **ionDeleteButton**: vordefinierter Löschen-Knopf, blendet vor jedem Eintrag einen Löschen-Button ein
- - **ionReorderButton**: Möglichkeit zum Umsortieren von Listeneinträgen, "Greifer" an jedem Eintrag
- - **ionOptionButton**: Option-Buttons pro Listeneintrag
- - **$ionicListDelegate**: programmatischer Zugriff auf Liste und Zusatzfunktionen
+ - ionList: Listen-Wrapper, Ersatz für ul/div-Tag mit Klasse list
+ - ionItem: Listeneintrag, Ersatz für Listeneintrag mit Klasse item
+ - ionDeleteButton: vordefinierter Löschen-Knopf, blendet vor jedem Eintrag einen Löschen-Button ein
+ - ionReorderButton: Möglichkeit zum Umsortieren von Listeneinträgen, "Greifer" an jedem Eintrag
+ - ionOptionButton: Option-Buttons pro Listeneintrag
+ - $ionicListDelegate: programmatischer Zugriff auf Liste und Zusatzfunktionen
 
-Als Beispiel erweitern wir unsere Pizza-App, um die Funktionalität Pizzen in einen Warenkorb zu legen. Der Warenkorb ist ein eigener State und zeigt die Liste der zu kaufenden Waren. Jeder Eintrag kann über einen **ionOptionButton** gelöscht werden.
+Als Beispiel erweitern wir unsere Pizza-App, um die Funktionalität Pizzen in einen Warenkorb zu legen. Der Warenkorb ist ein eigener State und zeigt die Liste der zu kaufenden Waren. Jeder Eintrag kann über einen `ionOptionButton` gelöscht werden.
 
 Das Template zum Warenkorb könnte dann wie folgt aussehen.
 
@@ -665,10 +662,10 @@ Die Benutzung von *ionReorderButton* und *ionDeleteButton* sind sich sehr ähnli
 
 ![Ionic Tutorial Extend List](ionic-list-delete.gif?v=63629079934)
 
-Programmatischen Zugriff auf eure Listen erhaltet ihr über den **$ionicListDelegate**-Service.
+Programmatischen Zugriff auf eure Listen erhaltet ihr über den `$ionicListDelegate`-Service.
 Mit diesem lassen sich die Spezial-Buttons ein und ausblenden, Swipen der Listeneinträge unterbinden. Eine Funktionsübersicht erhaltet ihr auch in den [Ionic-Docs](http://ionicframework.com/docs/api/service/$ionicListDelegate/) des Services.
 
-Jetzt haben wir nur noch ein Problem - Listen können seeeeeeeeehr lang sein. Gerade in hybriden Apps ist das ein großer Nachteil und Performance-Killer - vor allem wenn noch Bilder im Spiel sind. Als Lösung hat Ionic eine eigene Listen-Komponente mit dem Namen **collectionRepeat** entwickelt, die versucht nur eine minimale Anzahl an Listenelemente in den DOM hängt und diese beim Scrollen wiederverwendet.
+Jetzt haben wir nur noch ein Problem - Listen können seeeeeeeeehr lang sein. Gerade in hybriden Apps ist das ein großer Nachteil und Performance-Killer - vor allem wenn noch Bilder im Spiel sind. Als Lösung hat Ionic eine eigene Listen-Komponente mit dem Namen `collectionRepeat` entwickelt, die versucht nur eine minimale Anzahl an Listenelemente in den DOM hängt und diese beim Scrollen wiederverwendet.
 
 Im Prinzip funktioniert collectionRepeat wie ein ngRepeat mit Arrays. Einziger Unterschied ist, dass ihr statt `ng-repeat` an den zu wiederholenden DOM-Knoten `collection-repeat` schreibt. Ionic bestimmt automatisch die Höhe und Breite der Listeneinträge anhand des ersten Elements. Ihr könnt die Werte auch für jeden Eintrag selbst bestimmten bzw. setzen. Dazu stehen die Attribute *item-width* und *item-height* zu Verfügung, die einen Ausdruck oder direkt eine Zahl oder Prozentwert erwarten. Dadurch habt ihr auch die Möglichkeit mehrere Listeneinträge pro Zeile anzuzeigen.
 
@@ -685,7 +682,7 @@ Hier der Code unserer Warenkorbliste mit *collection-repeat*.
 </ion-list>
 ```
 
-### Ladehandling
+## Umgang mit Hintergrundaktivitäten
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/08-Loading) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/08-Loading/#/order)
 
@@ -701,7 +698,7 @@ Für diese beiden Anwendungsfälle stellt Ionic zwei Komponenten zur Verfügung.
    - Ladekringel-Direktive
    - Indikator, dass Daten geladen werden, z.B. API-Request läuft und noch keine Daten vorhanden
 
-Um einen Ladelayer über die aktive View zu legen, muss der **$ionicLoading**-Service einfach im Controller als Abhängigkeit geladen werden. Danach stehen uns zwei Funktionen zur Verfügung.
+Um einen Ladelayer über die aktive View zu legen, muss der `$ionicLoading`-Service einfach im Controller als Abhängigkeit geladen werden. Danach stehen uns zwei Funktionen zur Verfügung.
 
  - show([options])
    - Einblenden des Ladelayers
@@ -762,7 +759,7 @@ angular
 
  ![Ionic Tutorial Loading Layer](medium_ionic-loading.png?v=63629399654)
 
-Für unsere Beispiel-App ist der Lade-Layer ein wenig unpraktikabel, da der Nutzer sich ja trotzdem frei in der Anwendung bewegen können soll. Aus diesem Grund nutzen wir nun den **ionSpinner**. Während des Ladevorgangs setzen wir eine Scope-Variable als Indikator, um den Spinner über *ngIf* oder *ngShow* ein- und vor allem wieder auszublenden.
+Für unsere Beispiel-App ist der Lade-Layer ein wenig unpraktikabel, da der Nutzer sich ja trotzdem frei in der Anwendung bewegen können soll. Aus diesem Grund nutzen wir nun den `ionSpinner`. Während des Ladevorgangs setzen wir eine Scope-Variable als Indikator, um den Spinner über *ngIf* oder *ngShow* ein- und vor allem wieder auszublenden.
 
 Der Controller-Code sieht nun so aus.
 
@@ -826,11 +823,11 @@ Im Template richten wir den Spinner noch zentriert aus und blenden den Listeninh
 Standardmäßig bestimmt Ionic die passende Ladeanimation. Darüber hinaus könnt ihr aber mit Hilfe einer CSS-Klasse eine eigene Ladeanimation als SVG erstellen oder einfach eine der vordefinierten [Spinner-Klassen](http://ionicframework.com/docs/api/directive/ionSpinner/) nutzen.
 
 
-### Daten aktualisieren mit Pull-To-Refresh
+## Daten aktualisieren mit Pull-To-Refresh
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/09-Refresher) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/09-Refresher/#/order)
 
-Sind einmal Daten einer View geladen, können diese in nativen Anwendung meist über ein Ziehen am Inhalt aktualisiert werden. Diese Geste bzw. Interaktion wird auch Pull-To-Refresh genannt. Das Ionic-Team hat natürlich auch dafür eine passende Lösung parat, denn diese Standardfunktion wird fast in jeder App genutzt und gebraucht. Mit der **ionRefresher**-Direktive wird einem Scroll-Container, wie dem *ion-content*- oder einem *ion-scroll*-Tag, die Pull-To-Refresh Funktionalität hinzugefügt.
+Sind einmal Daten einer View geladen, können diese in nativen Anwendung meist über ein Ziehen am Inhalt aktualisiert werden. Diese Geste bzw. Interaktion wird auch Pull-To-Refresh genannt. Das Ionic-Team hat natürlich auch dafür eine passende Lösung parat, denn diese Standardfunktion wird fast in jeder App genutzt und gebraucht. Mit der `ionRefresher`-Direktive wird einem Scroll-Container, wie dem *ion-content*- oder einem *ion-scroll*-Tag, die Pull-To-Refresh Funktionalität hinzugefügt.
 Die Direktive kann über eigene Attribute konfiguriert werden.
 
  - *on-refresh*: erwartet Funktion, die beim Aktualisieren aufgerufen wird
@@ -850,7 +847,7 @@ Zum Veständnis der Attribute folgt ein kleiner Ablaufplan der Pull-To-Refresh I
  6. Nutzer lässt Inhalt los
  7. *spinner* wird angezeigt und *on-refresh*-Funktion ausgeführt
 
-Zum Abschluss, müssen wir der Direktive noch informieren, dass der Aktualisierungsprozesses abgeschlossen ist. Für diesen Zweck reicht es, wenn wir an der passenden Stelle - meist am Ende der Aktualisierungfunktion im Controller - das Event **scroll.refreshComplete** "broadcasten".
+Zum Abschluss, müssen wir der Direktive noch informieren, dass der Aktualisierungsprozesses abgeschlossen ist. Für diesen Zweck reicht es, wenn wir an der passenden Stelle - meist am Ende der Aktualisierungfunktion im Controller - das Event `scroll.refreshComplete` "broadcasten".
 
 Unsere Pizza-Liste soll nun um eine Aktualisierungfunktion erweitert werden. Dabei müssen wir darauf achten, dass sich unser *ionSpinner* und *ionRefresher* nicht in die Quere kommen.
 
@@ -921,7 +918,7 @@ $scope.addToCart = function (pizza) {
 
 ![Ionic Tutorial Refresher](ionic-refresher.gif?v=63629079934)
 
-### Strukturieren von Inhalten durch Cards
+## Strukturieren von Inhalten durch Cards
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/10-Cards) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/10-Cards/#/order)
 
@@ -965,7 +962,9 @@ Das dazugehörige Template sieht dann so aus.
 
 Im entsprechenden Detail-Controller wird die anzuzeigende Pizza geladen und bereitgestellt.
 
-### Wie geht es weiter?
+## Wie geht es weiter?
+
+Folgende Artikel helfen dir nun in der Thematik weiter zu kommen:
 
  - [Modals](/artikel/ionic-tutorial-deutsch-modals/)
  - [Popups](/artikel/ionic-tutorial-deutsch-popups/)
@@ -973,7 +972,7 @@ Im entsprechenden Detail-Controller wird die anzuzeigende Pizza geladen und bere
  - [Styling mit SCSS](/artikel/ionic-tutorial-deutsch-scss/)
  - [Konfiguration mit $ionicConfigProvider](/artikel/ionic-tutorial-deutsch-configuration/)
 
-### Abschluss
+## Abschluss & Fazit
 
 Damit ist unsere kleine Rundreise durch den Ionischen-Ozean abgeschlossen. Wir hoffen es hat euch gefallen und euer Interesse an der hybriden Entwicklung mobiler Apps geweckt.
 
@@ -982,7 +981,7 @@ Leider haben nicht alle Komponenten im Tutorial und in unserer App ihren Platz g
  - Popover - Overlay, welches sich teilweise über die View legt, wird an einem DOM-Element ausgerichtet, z.B. Button in Kopfzeile öffnet Popover mit Liste an weiteren Navigationspunkten oder Einstellungen
  - ActionSheet - Schiebt sich von unten über die View, bedeckt diese nur teilweise, Auswahl an Funktionen und Aktionen
  - Tabs - Grundlegends Navigationskonzept, jeder Tab hat eigene Navigationshistorie
- - Slidebox - Galerie von Inhalten, z.B. Bildergalerie, **ab v1.2. sollte [ionSlides](/artikel/ionic-framework-new-slider/ "ionSlides") benutzt werden!!!**
+ - Slidebox - Galerie von Inhalten, z.B. Bildergalerie, ab v1.2. sollte [ionSlides](/artikel/ionic-framework-new-slider/ "ionSlides") benutzt werden!!!
 
 Hinzu kommen noch zahlreiche Services und Funktionen, die euch vor dem Kentern bewahren oder euch zumindest erstmal über Wasser halten.
 
