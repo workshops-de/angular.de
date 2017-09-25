@@ -168,7 +168,7 @@ asyncFn()
   });
 ```
 
-<div class="alert alert-info"><b>Hinweis:</b> Verkettet Promises, um Verschachteltungen von asynchronen Programmteilen zu verhindern</div>
+<div class="alert alert-info">Hinweis: Verkettet Promises, um Verschachteltungen von asynchronen Programmteilen zu verhindern</div>
 
 ![Promises-Composable](../images/figures/promises-composable-1.png)
 
@@ -246,7 +246,7 @@ asyncFn()
 
 Schlägt in obigen Code der Aufruf von `asyncFn` fehl, dann wird automatisch die Fehlerfunktion des zweiten `then`s aufgerufen.
 
-<div class="alert alert-info"><b>Hinweis:</b> Das Weiterreichen von Fehlern und Rückgabewerten nennt sich in der Fachsprache <b>Value & Error Downstream Propagation</b>. </div>
+<div class="alert alert-info">Hinweis: Das Weiterreichen von Fehlern und Rückgabewerten nennt sich in der Fachsprache <b>Value & Error Downstream Propagation</b>. </div>
 
 Schauen wir uns nun einmal die Lösung für eine einheitliche Fehlerbehandlung mehrerer Anfragen an.
 
@@ -267,7 +267,7 @@ $http.get('/api1')
 
 Zur Vereinfachung besitzt ein $q-Promise auch eine `catch`-Funktion mit der ihr eine elegant eine finale Fehlerbehandlung implementieren könnt. Mit `finally` könnt ihr sogar Logik implementieren, die immer ausgeführt werden soll, egal ob Fehler- oder Erfolgsfall. Das bietet sich vor allem an, wenn ihr eine Prozessanzeige abschließen oder einen Ladeindikator ausblenden wollt.
 
-<div class="alert alert-info"><b>Hinweis:</b> Benutzt <code>catch</code> und <code>finally</code>, um auf elegant mit Promises zu arbeiten und redundanten Code zu vermeiden.
+<div class="alert alert-info">Hinweis: Benutzt <code>catch</code> und <code>finally</code>, um auf elegant mit Promises zu arbeiten und redundanten Code zu vermeiden.
 </div>
 
 Durch die Verkettung und Error-Funktionen ist es auch möglich Fehler zu korrigieren!
