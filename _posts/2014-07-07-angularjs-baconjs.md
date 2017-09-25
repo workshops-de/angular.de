@@ -1,6 +1,6 @@
 ---
 title: "Funktionale Reaktive Programmierung mit Bacon.js"
-description:
+description: "Dieser Artikel soll Euch Funktionale Reaktive Programmierung näher bringen, damit Ihr komplexe Interaktionen mit einfachem, kompaktem Code umsetzen könnt."
 author: "Ramy Hardan"
 slug: "angularjs-baconjs"
 published_at: 2014-07-07 07:00:00.000000Z
