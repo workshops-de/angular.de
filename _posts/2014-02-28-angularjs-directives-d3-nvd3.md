@@ -30,7 +30,7 @@ Aktuell hat **nvd3** folgende Direktiven:
 *   nvd3SparklineChart
 *   nvd3SparklineWithBandlinesChart
 
-### Ein Beispiel
+## Ein Beispiel
 
 Wir nehmen als Beispiel ein einfaches Liniendiagram. Die Daten werden in einem mehrdimensionalen Array abgelegt:
 
@@ -43,7 +43,7 @@ Dieses könnt ihr dann mit der Direktive `nvd3-line-chart` ausgeben.
 
 ![D3 Chart][5]
 
-### Code
+## Code
 
 **application.js**
 
