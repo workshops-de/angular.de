@@ -8,8 +8,9 @@ categories: "angular styling advanced"
 header_image: "/artikel/header_images/angular-styling.png"
 ---
 
-In diesem Leitfaden wollen wir die verschiedenen Optionen abdecken, 
-die bei der Gestaltung von Angular-Komponenten und Direktiven zur Verfügung stehen. 
+In diesem Leitfaden wollen wir die verschiedenen Optionen abdecken,
+die bei der Gestaltung von Angular-Komponenten und Direktiven zur Verfügung stehen.
+Dieser Artikel ist an Fortgeschrittene gerichtet.
 
 
 Wir werden folgendes behandeln:
@@ -31,10 +32,10 @@ Du kannst den finalen Code mit diesem [Plunker](https://plnkr.co/edit/WUjoC897CX
 ## Einführung
 
 Angular Anwendungen zu entwerfen ging noch nie flexibler.
-*Angular-Component-Architecture* bietet ein neues Entwurfsmodell, das *Component Styles* durch die Verwendung von [Shadow DOM](https://www.w3.org/TR/shadow-dom/) (emuliert oder nativ) einer Technologie aus der [Web Components](https://www.w3.org/standards/techs/components#w3c_all) Spezifikation isoliert. 
+*Angular-Component-Architecture* bietet ein neues Entwurfsmodell, das *Component Styles* durch die Verwendung von [Shadow DOM](https://www.w3.org/TR/shadow-dom/) (emuliert oder nativ) einer Technologie aus der [Web Components](https://www.w3.org/standards/techs/components#w3c_all) Spezifikation isoliert.
 Entwürfe werden für jede Komponente skizziert, so dass sie andere Bereiche der Benutzeroberfläche nicht beeinflussen können.
 
-Für diesen Beitrag werden wir eine Komponente verwenden, um Song-Tracks zu veröffentlichen, die einige verschiedene Styling-Optionen haben. 
+Für diesen Beitrag werden wir eine Komponente verwenden, um Song-Tracks zu veröffentlichen, die einige verschiedene Styling-Optionen haben.
 aDiese Komponente wird das Cover, den Titel und den Künstler für einen Song rendern.
 
 
@@ -58,14 +59,14 @@ Lass uns schnell alle verfügbaren Encapsulation-Modi erkunden, bevor wir die ve
 
 ### Emuliert (Standard)
 
-Bei der Verwendung dieses Modus wird Angular jede Komponente mit zwei eindeutigen Attributen identifizieren: `_nghost-*` und `_ngcontent-*`. 
+Bei der Verwendung dieses Modus wird Angular jede Komponente mit zwei eindeutigen Attributen identifizieren: `_nghost-*` und `_ngcontent-*`.
 Alle Komponenten-Styles werden dem Kopf hinzugefügt, indem diese Attribute verwendet werden, um die Styles wie im folgenden Beispiel zu isolieren.
 
 ```html
 
 <head>
  <style>
- .container[_ngcontent-ikt-1] { ... } 
+ .container[_ngcontent-ikt-1] { ... }
 </style>
 </head>
 <body>
@@ -79,7 +80,7 @@ Alle Komponenten-Styles werden dem Kopf hinzugefügt, indem diese Attribute verw
 
 ```
 
-Beachte die Atrribute, die dem `root` und `content unserer Komponente fett hinzugefügt wurden. 
+Beachte die Atrribute, die dem `root` und `content unserer Komponente fett hinzugefügt wurden.
 Du kannst diesen Modus aktivieren, indem du folgenden Code unten verwendest
 
 
@@ -97,7 +98,7 @@ selector: 'song-track',
 
 ### Native Encapsulation (Shadow DOM)
 
-Bei diesem Encapsulation-Mode nutzen wir den `Native Shadow DOM` für eine bestimmte Komponente. 
+Bei diesem Encapsulation-Mode nutzen wir den `Native Shadow DOM` für eine bestimmte Komponente.
 Je nach Browser ist dies [v1 der Spezifikation](https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom) (Chrome).
 
 ```javascript
@@ -113,9 +114,9 @@ Diese Komponente wird als Resultat folgendes rendern.
 ```html
 <body>
  <my-app>
-    <song-track>    
-      ▾ #shadow-root (open)    
-        <style>.container { ... }</style>   
+    <song-track>
+      ▾ #shadow-root (open)
+        <style>.container { ... }</style>
         <div class="container"></div>
     </song-track>
   </my-app>
@@ -145,8 +146,8 @@ Durch die Verwendung dieses Modus wird Angular alle definierten Styles dem Kopf 
 
 ## Native Shadow DOM Browser-Support
 
-`Native Shadow DOM` wird zu diesem Zeitpunkt noch nicht unterstützt. 
-Siehe unten emulierten und nativen Browsersupport-Vergleiche, nebeneinander. 
+`Native Shadow DOM` wird zu diesem Zeitpunkt noch nicht unterstützt.
+Siehe unten emulierten und nativen Browsersupport-Vergleiche, nebeneinander.
 
 <div class="row">
     <div class="col-lg-6 col-sm-12">
@@ -176,7 +177,7 @@ Shadow DOM: Alle lokalen DOM-Elemente, die eine Komponente erstellt oder verwalt
 ```javascript
 @Component({
   selector: 'song-track',
-  template: `        
+  template: `
      <track-title>{{track}}</track-title>
      <track-artist>{{artist}}</track-artist>`
 })
@@ -209,9 +210,9 @@ Wollen wir spezifische Styles zu unser Angular Komponente hinzufügen, nutzen wi
 *„Angular wird die Styles exakt in der angegebenen Reihenfolge anfügen.“*
 
 
-### Verwendung von Inline-Styles 
+### Verwendung von Inline-Styles
 
-Hier fügen wir unsere Styles direkt in der TypeScipt-Datei welche unsere Komponente definiert hinzu. 
+Hier fügen wir unsere Styles direkt in der TypeScipt-Datei welche unsere Komponente definiert hinzu.
 Da `styles` ein Array ist, können wir hier beliebig viele Strings anfügen.
 
 ```javascript
@@ -234,7 +235,7 @@ Natürlich ermöglicht es Angular auch direkt mit Inline-Styles zu arbeiten.
  template: `
    <style>
    .container { color: deepskyblue; }
-   </style>   
+   </style>
    <div class="container">...</div>
  `
 })
@@ -263,8 +264,8 @@ export class SongTrack { }
 
 Als Teil der CSS-Sezifikation können wir auch `@import` verwenden, um Styles aus anderen Stylesheets zu importieren.
 Diese müssen im Stylesheet irgendwelchen Styile-Regeln vorangehen.
-Siehe [@import](https://developer.mozilla.org/en/docs/Web/CSS/@import). 
-Importe werden in den Header nach dem Stylesheet eingefügt. 
+Siehe [@import](https://developer.mozilla.org/en/docs/Web/CSS/@import).
+Importe werden in den Header nach dem Stylesheet eingefügt.
 
 
 ```css
@@ -282,8 +283,8 @@ Lass uns einige Verwendungen anschauen
 ```html
 
 <song-track ngClass="selected" class="disabled"></song-track>
-<song-track [ngClass]="'selected'"></song-track>   
-<song-track [ngClass]="['selected']"></song-track> 
+<song-track [ngClass]="'selected'"></song-track>
+<song-track [ngClass]="['selected']"></song-track>
 <song-track [ngClass]="{'selected': true}"></song-track>
 
 ```
@@ -294,9 +295,9 @@ Um mehrere Klassen zu erreichen, können wir die erweiterte Syntax mit einigen i
 
 ```html
 
-<song-track ngClass="selected disabled">             
-<song-track [ngClass]="'selected disabled'">      
-<song-track [ngClass]="['selected', 'disabled']">   
+<song-track ngClass="selected disabled">
+<song-track [ngClass]="'selected disabled'">
+<song-track [ngClass]="['selected', 'disabled']">
 <song-track [ngClass]="{'selected': true, 'disabled': true}">
 <song-track [ngClass]="{'selected disabled': true}">
 
@@ -337,7 +338,7 @@ Wir können auch auf unserer Vorgänger(ancestors) zugreifen, die zur Wurzel des
 
 ```css
 
-:host-context(.theme) { color: red; }   
+:host-context(.theme) { color: red; }
 :host-context(#player1) { color: red; }
 
 ```
@@ -363,21 +364,21 @@ Diese Option überschreibt alle Verkapselungseinstellungen einschließlich host 
 
 ## Verwendung @Component.host
 
-Durch die Verwendung dieser Eigenschaft können wir mit `DOM properties`, `DOM attributes und events binden. 
+Durch die Verwendung dieser Eigenschaft können wir mit `DOM properties`, `DOM attributes und events binden.
 
 ```javascript
 
 @Component({
  host: {
-  'value': 'default',                    //'DOM-prop': 'value'  
-  '[value]': "'default'",                //'[DOM-prop]': 'expr'   
-  
+  'value': 'default',                    //'DOM-prop': 'value'
+  '[value]': "'default'",                //'[DOM-prop]': 'expr'
+
   'class': 'selected',                   //'DOM-attr': 'value'
   '[class]': "'selected'",               //'[DOM-attr]': 'expr'
- 
-  '(change)': 'onChange($event)',        // (event) : ...   
+
+  '(change)': 'onChange($event)',        // (event) : ...
   '(window:resize)': 'onResize($event)', // (target:event) : ...
- } 
+ }
 })
 
 ```
@@ -391,20 +392,20 @@ Lass uns einige Beispiele mit `class` und *style* Dom Attributen sehen.
     //setting multiple values
     'class': 'selected disabled',
     'style': 'color: purple; margin: 5px;',
-    
+
     //setting single values (using binding)
-    '[class.selected]': 'true',    
+    '[class.selected]': 'true',
     '[class.selected]': '!!selected', //add class if selected = true
     '[style.color]': '"purple"'   //expression must be a string
-  } 
+  }
 })
 export class SongTrack { }
 
 ```
 
-Beachte die Verwendung von eckigen klammern, um eine Bindung zu erstellen. 
-Darum  wird ‘true’ zu `boolean true`. 
-Für die CSS-Eigenschaftsfarbe müssen wir einen String übergeben. 
+Beachte die Verwendung von eckigen klammern, um eine Bindung zu erstellen.
+Darum  wird ‘true’ zu `boolean true`.
+Für die CSS-Eigenschaftsfarbe müssen wir einen String übergeben.
 
 ### Bindung unsicherer Expressions
 
@@ -415,13 +416,13 @@ Um Missbrauch zu vermeiden, könnten einige Styling-Ausdrücke von Angular als u
 @Component({
   host: {
     '[style]': '_hostStyle' //unsafe
-  } 
+  }
 })
 export class SongTrack { }
 
 ```
 
-Wenn du vor diesem speziellen Problem stehst, kannst du die *expression* als sicher markieren, indem du den `bypassSecurityTrustStyle` API auf dem `Sanitizer` verwendest. 
+Wenn du vor diesem speziellen Problem stehst, kannst du die *expression* als sicher markieren, indem du den `bypassSecurityTrustStyle` API auf dem `Sanitizer` verwendest.
 Dadurch werden viele Missbrauchs- oder Sicherheitsverletzungen vermieden.
 
 ```javascript
@@ -437,15 +438,15 @@ export class SongTrack {
 
 ## Benutzung @HostBinding
 
-Wir können auch den `@hostBinding` Dekorateur verwenden, um unsere Styles einzustellen. 
+Wir können auch den `@hostBinding` Dekorateur verwenden, um unsere Styles einzustellen.
 Siehe einige Beispiele unten.
 
 ```javascript
 
-export class SongTrack {   
-  //<host class="selected"></host>   
+export class SongTrack {
+  //<host class="selected"></host>
   @HostBinding('class.selected') selected = true;
-  //<host style="color: red;"></host>     
+  //<host style="color: red;"></host>
   @HostBinding('style.color') color = 'red';
 }
 
@@ -466,7 +467,7 @@ export class SongTrack {
     let elem = this.element.nativeElement;
     elem.style.color = "blue";
     elem.style.cssText = "color: blue; ..."; // multiple styles
-    elem.setAttribute("style", "color: blue;"); 
+    elem.setAttribute("style", "color: blue;");
   }
 }
 
@@ -476,7 +477,7 @@ export class SongTrack {
 
 ## Benutzung von Renderer und setElementClass/setElementStyle APIs (Web, Server, WebWorker)
 
-Eine sichere Alternative zu ElementRef, um unser Styling einzusetzen, ist, den *Renderer* zusammen mit `setElementClass` und `setElementStyle` zu benutzen. 
+Eine sichere Alternative zu ElementRef, um unser Styling einzusetzen, ist, den *Renderer* zusammen mit `setElementClass` und `setElementStyle` zu benutzen.
 Ihre Implementierung wird die zugrunde liegende Plattform abstrahieren, welche die Kompatibilitätsbegrenzung von ElementRef überwindet.
 
 ```typescript
@@ -497,7 +498,7 @@ export class SongTrack {
 
 ## CSS Styles Spezifizierung und Ausführungsreihenfolge
 
-Jegliches Styling folgt den Spezifitäts- und Bestellregeln. 
+Jegliches Styling folgt den Spezifitäts- und Bestellregeln.
 
 Je spezifischer ein Style ist, desto höher ist die Priorität
 Mit der gleichen Spezifität überschreibt die letzte Style-Regel alle vorherigen
@@ -514,12 +515,12 @@ Dies ist die Reihenfolge der Anwendung von Styles und ihrer Priorität von unten
 
 
 
-Wenn wir also `ngStyle` verwenden, wird dies alle Inline-Styles überschreiben, die auf dem Element (und den vorherigen) definiert sind. 
+Wenn wir also `ngStyle` verwenden, wird dies alle Inline-Styles überschreiben, die auf dem Element (und den vorherigen) definiert sind.
 
 *Styles werden statisch und dynamisch als Teil der Angular-Rendering-Ausführung und des Komponenten-Lebenszyklus angewendet.*
 
-Beachte, dass je nach Reihenfolge der Ausführung ein Style vom anderen überschrieben wird. 
+Beachte, dass je nach Reihenfolge der Ausführung ein Style vom anderen überschrieben wird.
 Zum Beispiel wird `@Component.host` zuerst angewendet und dann `@Hostbinding`.
- 
- 
+
+
 Ich hoffe euch hat der Artikel geholfen, wenn ihr Anmerkungen oder Verbesserungen habt schreibt ein Kommentar oder stellt ein Pull-Request!
