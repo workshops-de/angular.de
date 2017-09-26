@@ -48,6 +48,11 @@ Die verwendete DSL(domain specific language) verfolgt die Grundsätze des behavi
 
 *“Beachte, dass `toEqual()` einen tiefen Objekt-Match macht, hier wird also der Inhalt von zwei Objekten verglichen. Die Funktion `.toBe()` prüft auf Referenzgleichheit. Also: Ist `actual` und `expected` das gleiche Objekt*
 
+*"Wenn ihr nur eine Submenge eurer Test ausführen wollt könnt ihr innerhalb euerer Tests auf diese Tests einen Fokus setzen.
+ Die Aufrufe heißen dann `fdescribe()` bzw. `fit()` - das f steht für Fokus!
+ Eine deutlich bessere Alternative als bei großen Testsuites sehr lange zu warten oder gar Tests auszukommentieren.
+ Allerdings sollten diese Funktionen nur bei euch lokal und temporär genutzt werden und nicht in euer Reposiotry wandern, da ihr sonst andere Personen im Team oder euerer CI die Möglichkeit nehmt alle Tests auszuführen und Chaos erzeugt."*
+
 ### Setup und Teardown
 
 Manchmal haben wir eine Summe von Tests, welche gleichen oder ähnliche Vorbedingungen haben z.B. ein bestimmten Zustand unser Directive oder eines Services.
