@@ -1,26 +1,165 @@
 ---
-title: Das Team von AngularJS.DE
+layout: base
+title: Das Team von angularjs.de
 description: Wir sind ein Team aus Angular-Enthusiasten. Lerne uns hier kennen!
 ---
 
-<div class="row">
-  {% for user_hash in site.data.users %}
-    {% assign user = user_hash[1] %}
-    {% if user.team %}
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="row">
-        <div class="col-6 user-thumbnail text-center">
-          <img alt="{{ user.name }}" class="rounded-circle" height="150"
-                  src="//www.gravatar.com/avatar/{{ user.gravatar_uid }}?s=300" width="150">
-        </div>
-        <div class="col-6">
-          <h2>{{ user.name }}</h2>
-        </div>
-        <div class="col-12">
-          <p>{{ user.bio }}</p>
+<main role="main">
+
+  <div class="header header-team bg-light">
+    <div class="container">
+      <div class="row h-100">
+        <div class="col-12 d-flex">
+          <h1 class="align-self-center display-4">
+            Das Team von <span class="font-weight-bold">angular<span class="text-muted">js.de</span></span><br>
+            <p class="lead mt-2">(subheadline...)</p>
+          </h1>
         </div>
       </div>
     </div>
-    {% endif %}
-  {% endfor %}
+  </div>
+
+<!--
+<div class="container px-4">
+  <div class="row px-4">
+    {% for user_hash in site.data.users %} {% assign user = user_hash[1] %} {% if user.team %}
+    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
+      <div class="row">
+        <div class="col-6">
+          <h2>{{ user.name }}</h2>
+        </div>
+        <div class="col-6 user-thumbnail text-center">
+          <img alt="{{ user.name }}" class="img-trainer" height="150" src="//www.gravatar.com/avatar/{{ user.gravatar_uid }}?s=300"
+            width="150">
+        </div>
+        <div class="col-9 mt-4">
+          <p class="">{{ user.bio }}</p>
+        </div>
+      </div>
+    </div>
+    {% endif %} {% endfor %}
+  </div>
 </div>
+-->
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
+      <div class="row">
+        <div class="col-6">
+          <h2>Britta Lenzen</h2>
+          <p class="text-muted">Dreh und Angelpunkt der angularjs.de Workshops.</p>
+        </div>
+        <div class="col-6 user-thumbnail text-center">
+          <img alt="Britta Lenzen" class="img-trainer" height="150" src="//www.gravatar.com/avatar/ef9aef2ffd895abd5f75bdfe5c26dfe1?s=300"
+            width="150">
+        </div>
+        <div class="col-9 mt-4">
+          <p class="">Sie sorgt sich um das perfekte Workshop Erlebnis
+            für die Teilnehmer. Als Meisterin der Termine versucht sie hier sowohl für Wissensdurstige als auch für Trainer
+            immer die beste Lösung zu finden. Wenn Sie nicht die Welt der Wissensvermittlung revolutioniert, geht Sie mit
+            Ihrem Mann segeln - obwohl sie eigentlich Angst vorm Segeln hat.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
+      <div class="row">
+        <div class="col-6">
+          <h2>David Müllerchen</h2>
+          <p class="text-muted">Leidenschaftlicher Webentwickler und ein neugieriges Spielkind.</p>
+        </div>
+        <div class="col-6 user-thumbnail text-center">
+          <img alt="David Müllerchen" class="img-trainer" height="150" src="//www.gravatar.com/avatar/a9cbad4d6a1ad2ecb26fc079e204dbb1?s=300"
+            width="150">
+        </div>
+        <div class="col-9 mt-4">
+          <p class="">David entwickelt seit mehr als einem Jahrzehnt Webanwendungen, (u.a. für Olympus, Telefonica, Hermes) und vermittelt seit
+            2014 sein Wissen über Javascript und Angular in Workshops. Nebenbei engagiert er sich in der Angular Community
+            und organisiert das Meetup in Hamburg.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
+      <div class="row">
+        <div class="col-6">
+          <h2>Max Mustermann</h2>
+          <p class="text-muted">(Hier fehlt noch ein Satz)</p>
+        </div>
+        <div class="col-6 user-thumbnail text-center">
+          <img alt="Martin Schurig" class="img-trainer" height="150" src="//www.gravatar.com/avatar/d169025e2c6dbb20010a7368917c061e?s=300"
+            width="150">
+        </div>
+        <div class="col-9 mt-4">
+          <p class="">Lorem ipsum dolor sit amet...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
+      <div class="row">
+        <div class="col-6">
+          <h2>Peter Müller</h2>
+          <p class="text-muted">Web Developer mit Schwerpunkt auf JavaScript und HTML5 insbesondere Angular.</p>
+        </div>
+        <div class="col-6 user-thumbnail text-center">
+          <img alt="Peter Müller" class="img-trainer" height="150" src="//www.gravatar.com/avatar/ae93b93b375e9e16cd570872d52aa1d4?s=300"
+            width="150">
+        </div>
+        <div class="col-9 mt-4">
+          <p class="">
+            Sein Know-How teilt er in Form von Talks, Coding-Dojos oder
+            Workshops auf Konferenzen und Meetups. Er arbeitete bereits als Frontend Entwickler und JavaScript Evangelist
+            für Marken wie WEB.DE, GMX, 1&amp;1, mail.com, sowie HOTEL DE. Peter organisiert Events für die FrankenJS Usergroup
+            in Nordbayern - genauer - in Nürnberg und Würzburg.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
+      <div class="row">
+        <div class="col-6">
+          <h2>Robin Böhm</h2>
+          <p class="text-muted">Entwickler, Autor und Berater in den Bereichen JavaScript und Web.</p>
+        </div>
+        <div class="col-6 user-thumbnail text-center">
+          <img alt="Robin Böhm" class="img-trainer" height="150" src="//www.gravatar.com/avatar/e9e044629f5324a4a3c27302f0d4efcc?s=300"
+            width="150">
+        </div>
+        <div class="col-9 mt-4">
+          <p class="">Robin beschäftigt sich seit einigen Jahren intensiv mit der Erstellung client-seitiger Web-Applikationen. Er hat das erste deutschsprachige
+            Buch zum Thema AngularJS geschrieben und ist Mitgründer der Platform AngularJS.DE. Du bist interessiert an Beratung
+            , Coaching oder einer Schulung im Bereich JavaScript und AngularJS? Sende mir einfach eine Nachricht! :)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
+      <div class="row">
+        <div class="col-6">
+          <h2>Sascha Brink</h2>
+          <p>(Hier fehlt noch ein kurzer Satz)</p>
+        </div>
+        <div class="col-6 user-thumbnail text-center">
+          <img alt="Sascha Brink" class="img-trainer" height="150" src="//www.gravatar.com/avatar/80cf026b76f105f6e03cc2955c1d21ff?s=300"
+            width="150">
+        </div>
+        <div class="col-9 mt-4">
+          <p class="">Sascha ist überzeugter Webentwickler und seit über 15+ Jahren im IT-Umfeld tätig. Er betreut regelmäßig Angular-Projekte
+            und unterstützt Firmen bei der Ausbildung ihrer Mitarbeiter. Sascha gibt Angular- und JavaScript-Schulungen auf
+            deutsch und englisch.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</main>

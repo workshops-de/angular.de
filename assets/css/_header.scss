@@ -18,13 +18,19 @@
     color: #fff;
   }
 
-  &.header-workshop {
+  &.header-workshop, &.header-team {
     background-color: #fcfcfc;
     border-bottom: 1px solid #efefef;
     color: #333;
     padding-bottom: 15px;
     padding-top: 100px;
     margin-bottom: 40px;
+  }
+
+  &.header-team {
+    & > .container {
+      height: 155px;
+    }
   }
 
   &.header-post {
