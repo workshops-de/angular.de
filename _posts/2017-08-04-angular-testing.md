@@ -51,7 +51,7 @@ Die verwendete DSL(domain specific language) verfolgt die Grundsätze des behavi
 *"Wenn ihr nur eine Submenge eurer Test ausführen wollt könnt ihr innerhalb euerer Tests auf diese Tests einen Fokus setzen.
  Die Aufrufe heißen dann `fdescribe()` bzw. `fit()` - das f steht für Fokus!
  Eine deutlich bessere Alternative als bei großen Testsuites sehr lange zu warten oder gar Tests auszukommentieren.
- Allerdings sollten diese Funktionen nur bei euch lokal und temporär genutzt werden und nicht in euer Reposiotry wandern, da ihr sonst andere Personen im Team oder euerer CI die Möglichkeit nehmt alle Tests auszuführen und Chaos erzeugt."*
+ Allerdings sollten diese Funktionen nur bei euch lokal und temporär genutzt werden und nicht in euer Repository wandern, da ihr sonst andere Personen im Team oder euerer CI die Möglichkeit nehmt alle Tests auszuführen und Chaos erzeugt."*
 
 ### Setup und Teardown
 
