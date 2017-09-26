@@ -21,7 +21,7 @@ description: Wir sind ein Team aus Angular-Enthusiasten. Lerne uns hier kennen!
 
 <div class="container">
   <div class="row">
-    {% for user_hash in site.data.users %} {% assign user = user_hash[1] %} {% if user.team %}
+    {% for user_hash in site.data.users reversed %} {% assign user = user_hash[1] %} {% if user.team %}
     <div class="col-lg-6 col-md-6 col-sm-12 my-4">
       <div class="row">
         <div class="col-6">
