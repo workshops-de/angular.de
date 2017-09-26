@@ -33,6 +33,7 @@
     background-size: cover;
     background-position: center;
     min-height: 200px;
+
     .header-post-title {
       color: #fff;
       padding-top: 15px;
@@ -43,15 +44,23 @@
     }
   }
 
-  &.header-book {
-    background: #fff;
-    border: 0;
-  }
-
-  &.header-bg-homepage {
-    background: url('/images/homepage-background.jpg') !important;
+  &.header-homepage {
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #efefef;
     color: #333;
-    padding: 80px 0 40px;
+    padding-bottom: 15px;
+    padding-top: 100px;
+    margin-bottom: 40px;
+    background: url('/assets/img/temp/header1.png');
+    background-size: cover;
+    background-position: center center;
+    color: #333;
+    padding: $spacer*8 0 $spacer*6;
+
+    .header-homepage-title {
+      line-height: 4.5rem;
+      font-weight: 600;
+    }
   }
 
   &.header-gradient-overlay {
@@ -76,6 +85,10 @@
         position: absolute; bottom: 0; left: 0; right: 0;
       }
     }
+
+    &.header-homepage  .header-homepage-title {
+      font-size: 5rem;
+    }
   }
 }
 
@@ -90,6 +103,11 @@
       .header-post-title {
         font-size: 200%;
       }
+    }
+
+    &.header-homepage .header-homepage-title {
+      font-size: 3rem;
+      line-height: 3.0rem;
     }
   }
 }
