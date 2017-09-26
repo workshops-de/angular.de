@@ -3,9 +3,7 @@ layout: base
 title: Das Team von AngularJS.DE
 description: Wir sind ein Team aus Angular-Enthusiasten. Lerne uns hier kennen!
 ---
-
 <main role="main">
-
   <div class="header header-team bg-light">
     <div class="container">
       <div class="row h-100">
@@ -19,28 +17,13 @@ description: Wir sind ein Team aus Angular-Enthusiasten. Lerne uns hier kennen!
     </div>
   </div>
 
-<div class="container">
-  <div class="row">
-    {% for user_hash in site.data.users reversed %} {% assign user = user_hash[1] %} {% if user.team %}
-    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
-      <div class="row">
-        <div class="col-6">
-          <h2>{{ user.name }}</h2>
-          <p class="text-muted">{{ user.intro }}</p>
-        </div>
-        <div class="col-6 user-thumbnail text-center">
-          <img alt="{{ user.name }}" class="img-trainer" height="150" src="//www.gravatar.com/avatar/{{ user.gravatar_uid }}?s=300"
-               width="150">
-        </div>
-        <div class="col-xs-12 col-sm-9 mt-4">
-          <p>{{ user.bio }}</p>
-        </div>
-      </div>
+  <div class="container">
+    <div class="row">
+      {% include _team_member.html name="Robin Böhm" %}
+      {% include _team_member.html name="Sascha Brink" %}
+      {% include _team_member.html name="David Müllerchen" %}
+      {% include _team_member.html name="Peter Müller" %}
+      {% include _team_member.html name="Britta Lenzen" %}
     </div>
-    {% endif %} {% endfor %}
   </div>
-</div>
-
-
-
 </main>
