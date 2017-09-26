@@ -10,9 +10,13 @@ GEM
       popper_js (~> 1.11.1)
       sass (>= 3.4.19)
     colorator (1.1.0)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
     execjs (2.7.0)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     jekyll (3.5.2)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -40,6 +44,10 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     mercenary (0.3.6)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    netrc (0.11.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     popper_js (1.11.1)
@@ -47,6 +55,10 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.5.1)
@@ -54,6 +66,9 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
 
 PLATFORMS
   ruby
@@ -64,6 +79,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.6)
   jekyll-paginate-v2
   jekyll-sitemap
+  rest-client
   tzinfo-data
 
 RUBY VERSION
