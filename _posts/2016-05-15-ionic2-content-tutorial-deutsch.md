@@ -21,6 +21,8 @@ Den [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pizza-service 
 6. Realisierung von Hinweisen und kurzer Nutzerabfragen durch `Alert`s
 7. Statusmeldungen über `Toast`s
 
+
+
 ## Einfache und komplexe Listen
 
 Listen sind überall, ob als einfache Aufzählung oder Darstellung komplexerer HTML-Strukturen. In Ionic 2 sind im Vergleich zu Version 1 ein paar weitere Komponenten zur Listendefinition hinzugekommen. Wir behandeln in diesem Tutorial nur ein paar davon, die restlichen sind mit der entsprechenden Stelle in der Ionic Dokumentation verlinkt.
@@ -101,9 +103,6 @@ Im Template greifen wir nun auf unser `pizzas` Array zu. Wir definieren eine Lis
 
 ![Bild](medium_ionic2-simple-list.png?v=63630686993)
 
-
-### Listentitel und erweiterter Inhalt
-
 Wir können natürlich auch ein paar Informationen zu unserer Pizza ausgeben. Dazu brauche wir nur den Inhalt des `ion-item` Tags anpassen. Als nächsten möchten wir unserer Liste noch einen Titel *Angebot* geben. Dazu nutzen wir einfach die `ionListHeader` Komponente in unserer `ionList`.
 
 ```html
@@ -123,7 +122,7 @@ Wir können natürlich auch ein paar Informationen zu unserer Pizza ausgeben. Da
 
 ![Bild](medium_ionic2-simple-list-header.png?v=63630703972)
 
-### Erweiterte Listen
+### Komplexe Liste
 
 Als nächste Funktion erweitern wir unsere App um einen [Warenkorb](https://github.com/angularjs-de/ionic2-pizza-service/tree/master/src/pages/cart "Warenkorb Quelltexte"). Dieser besteht aus einer `Component`, einem Service und einem `CartItem` Interface. Für Interfaces legen wir das Verzeichnis `models` in den `src` Ordner. Auf unserer Startseite fügen wir einen Warenkorb-Button in die Navigationsleiste ein und bieten die Möglichkeit Angebote in den Warenkorb zu legen. Der Warenkorb ist per Klick über die Schaltfläche (`ionButtons` mit `end` Direktive) in unserer Navigationsleiste erreichbar.
 
@@ -144,7 +143,7 @@ In Ionic 2 wird die Positionierung von Elementen in den meisten Fällen mit `Fle
 
 Wir gehen jetzt nicht mehr näher auf die Implementierung der einzelnen Funktionen ein, da dies weniger mit Ionic, sondern mehr mit Angular 2 zu tun hat. Entnehmt eine mögliche Umsetzung einfach unserem [GitHub-Repository](https://github.com/angularjs-de/ionic2-pizza-service/tree/master/src/cart "Warenkorb Quelltexte").
 
-<div class="alert alert-info"><b>Hinweis:</b> Benötigt ihr eine weitere Aktion auf einem <code>ionItem</code>, z.B. Navigieren zu einer anderen Seite, solltet ihr den <code>ionItem</code>-Tag in einen <code>a</code>-Tag umwandeln und <code>ion-item</code> als Attribut setzen.</div>
+<div class="alert alert-info"><em>Hinweis:</em> Benötigt ihr eine weitere Aktion auf einem <code>ionItem</code>, z.B. Navigieren zu einer anderen Seite, solltet ihr den <code>ionItem</code>-Tag in einen <code>a</code>-Tag umwandeln und <code>ion-item</code> als Attribut setzen.</div>
 
 Im Warenkorb bauen wir eine Liste von Warenkorbeinträgen auf. Jeder Einträg soll natürlich auch wieder entfernt werden können. Dazu benötigen wir eine erweiterte Liste. Ein Listeneintrag soll dabei nach links geslidet werden, wodurch ein Löschen-Knopf zum Vorschein kommt. Beim Klick darauf wird der Warenkorbeintrag entfernt.
 
@@ -169,7 +168,9 @@ Ein Listeneintrag wird *slidebar* in dem wir das `ionItem` mit der `ionItemSlidi
 
 ![Bild](medium_ionic2-list-advanced.png?v=63630707325)
 
-<div class="alert alert-info"><b>Hinweis:</b> Seit Beta 9 können nun auf beiden Seiten Option-Buttons eingebaut werden. Dazu müsst ihr dem ion-item-options Tag einfach die entsprechende Seite angeben. Beispiel: <code>&lt;ion-item-options side="right"></code>.</div>
+<div class="alert alert-info"><em>Hinweis:</em> Seit Beta 9 können nun auf beiden Seiten Option-Buttons eingebaut werden. Dazu müsst ihr dem ion-item-options Tag einfach die entsprechende Seite angeben. Beispiel: <code>&lt;ion-item-options side="right"></code>.</div>
+
+
 
 ## Ladehandling - Ladelayer und - spinner
 
@@ -185,7 +186,7 @@ In Ionic 2 passiert das - wie schon in Ionic 1 - über zwei unterschiedliche Bes
    - Komponente, die im Template genutzt wird
    - rotierende Ladeanzeige auf der Seite
 
-### `Loading`
+**Loading**
 
 Beginnen wir dem Ladelayer und `Loading` Controller. Er besitzt nur eine `create` Funktion, die uns erlaubt - unter Angabe von verschiedener Konfigurationsparametern - ein Lade-Overlay zu erzeugen.
 
@@ -235,7 +236,7 @@ loading.onDidDismiss(() => {
 loading.dismiss();
 ```
 
-### `ionSpinner`
+*ionSpinner*
 
 Zu dieser Komponente gibt es im Prinzip nicht viel zu erzählen. Wird sie ins Template geschrieben, erscheint an der entsprechenden Stelle der plattformspezifische Ladekringel.
 
@@ -284,6 +285,9 @@ Ausschnitte des Templates und das Resultat.
 
 Das war schon die ganze Magie hinter dem Ladehandling in Ionic 2.
 
+
+
+
 ## Aktualisierung von Inhalten
 
 Eine oft gewünscht und genutzte Funktionalität in Apps ist das Aktualisierung von Inhalten über einen so genannten *Pull-To-Refresh* Mechanismus. Dabei könnt ihr den Seiteninhalt nach unten Ziehen bis ein Schwellwert erreich wird. Danach wird der Seiteninhalte automatisch aktualisiert. Während des Ziehens wird dem Nutzer der aktuelle Status angezeigt, z.B. wann losgelassen werden kann, ob die Aktualisierung läuft oder ob noch weiter gezogen werden muss.
@@ -302,7 +306,7 @@ Ein Refresher besitzt immer einen Status aus folgender Liste:
   - *refreshing* - Aktualisierung läuft und wartet auf den Aufruf von `complete()` auf der Refresher Instanz
   - *completing* - Aktualisierung abgeschlossen, ist Refresher wieder ausgeblendet, wechselt der Zustand zu inactive
 
-### `ionRefresher`
+**ionRefresher**
 
 Im Template wird ein Refresher über die `ionRefresher` Komponente eingebunden. Sie ist ein direktes und das erste Kind des `ionContent`s. Über die folgenden Inputs könnt ihr den Refresher auch noch konfigurieren.
 
@@ -324,7 +328,7 @@ Zusätzlich könnt ihr auch noch auf Zustandsänderungen reagieren (Outputs) und
 
 Damit sind wir jedoch im Template noch nicht fertig.
 
-### `ionRefresherContent`
+**ionRefresherContent**
 
 Ein `ionRefresher` benötigt als Kind eine `ionRefresherContent` Komponente. Sie gibt dem Refresher erst sein Aussehen. Dies passiert über folgende Attribute.
 
@@ -382,6 +386,9 @@ Im Template sieht der Aufruf der `doRefresh` folgendermaßen aus.
 ![Bild](medium_ionic2-refresher.png?v=63631410058)
 
 
+
+
+
 ## Strukturierung von Inhalten durch Cards
 
 Der Einsatz von Cards zum Strukturieren und Trennen von Inhalten wird immer beliebter. Dabei kann ihr Inhalt aus reinem Text bis hin zu komplexen HTML-Strukturen bestehen.
@@ -398,13 +405,11 @@ openPizza(id: number) {
 }
 ```
 
-
 Nun schauen wir uns die verschiedene Möglichkeiten an Cards zu nutzen. Eine Card wird in Ionic immer über die `ionCard` Komponente im Template genutzt.
 
 ```html
 <ion-card></ion-card>
 ```
-
 
 Im einfachsten Fall enthält eine Card nur reinen Text. Damit dieser automatisch richtig angezeigt wird, existiert die `ionCardContent` Komponente. Sie umschließt den eigentlichen Inhalt einer Card. Auf unsere Detailseite angewandt, könnte der HTML-Code ungefähr so aussehen.
 
@@ -456,7 +461,7 @@ Und im Vergleich dazu die Lösung mit `ionCardHeader`.
 
 Wann ihr was benutzt, hängt immer von eurem Anwendungsfall ab. Wie wir gleich sehen werden, kann eine Card auch komplexere Strukturen beinhalten. Dabei wird dann der `ionCardHeader` wirklich immer am Anfang und als erstes in der Card angezeigt. Wollt ihr jedoch einen Titel einfach im Inhaltsbereich der Karte ausrichten, dann bietet sich `ionCardTitle` an.
 
-<div class="alert alert-info"><b>Hinweis:</b> Die Nutzung von <code>ionCardContent, ionCardHeader, ionCardTitle</code> sind nicht Pflicht. ihr könnt auch einfach das Styling selbst übernehmen. Sobald ihr `ionCard` nutzt, erhaltet ihr immer das Basislayout einer Card.</div>
+<div class="alert alert-info"><em>Hinweis:</em> Die Nutzung von <code>ionCardContent, ionCardHeader, ionCardTitle</code> sind nicht Pflicht. ihr könnt auch einfach das Styling selbst übernehmen. Sobald ihr `ionCard` nutzt, erhaltet ihr immer das Basislayout einer Card.</div>
 
 Des Weiteren könnt ihr auch weitere Ionic Komponenten, wie `ionAvatar`, `ionNote` und `ionItem`, zum Füllen eurer Cards nutzen.
 
@@ -489,6 +494,9 @@ Eine etwas komplexere Card für unser Angebot könnte dann so aussehen.
 ![Bild](medium_ionic2-card-complex.png?v=63631466010)
 
 Damit sind wir mit dem nächsten großen Punkt auf dem Weg zu unserer Pizza-App fertig.
+
+
+
 
 ## Anzeigen zusätzlicher Informationen in Dialogen
 
@@ -611,6 +619,7 @@ constructor(params: NavParams) {
 ```
 
 
+
 ## Realisierung von Hinweisen und kurzer Nutzerabfragen
 
 In Ionic 1 noch Popups genannt, müssen wir uns jetzt an den Begriff `Alert` gewöhnen. Daran ist nichts schlechtes und ihre Nutzung hat sich doch stark verbessert. Sie sind flexibler und generischer geworden. Anstatt für grundlegende Anwendungen extra Funktionen anzubieten, haben wir jetzt nur noch eine generelle Funktion.
@@ -679,7 +688,7 @@ Eine `Alert` Instanz besitzt zusätzlich auch eine  `dismiss` Funktion, die einf
 alert.dismiss();
 ```
 
-### Weitere Funktionen
+**Weitere Funktionen zu Alerts**
 
 Darüber hinaus könnt ihr das `Alert` nachträglich auch flexibel programmatisch über nachstehende Funktionen auf ihrer Instanz ändern.
 
@@ -689,6 +698,8 @@ Darüber hinaus könnt ihr das `Alert` nachträglich auch flexibel programmatisc
   - *setCssClass(class)* - setzt die eigene CSS Klassse
   - *addInput(input)* - Fügt ein Eingabefeld hinzu
   - *addButton(button)* - fügt einen weiteren Button hinzu
+
+
 
 
 ## Statusmeldungen über `Toast`s
@@ -735,7 +746,7 @@ toast.onDidDismiss(() => {
 toast.dismiss();
 ```
 
-<div class="alert alert-info"><b>Hinweis:</b> Wollt ihr schon darauf reagieren, dass ein Overlay-Element gleich geschlossen wird, gibt es auch den <code>onWillDismiss</code> Hook.</div>
+<div class="alert alert-info"><em>Hinweis:</em> Wollt ihr schon darauf reagieren, dass ein Overlay-Element gleich geschlossen wird, gibt es auch den <code>onWillDismiss</code> Hook.</div>
 
 Generell müsst ihr einfach folgende Schritte zum Erstellen von Komponenten, die die View überlagern, beachten.
 
@@ -743,6 +754,9 @@ Generell müsst ihr einfach folgende Schritte zum Erstellen von Komponenten, die
 2. Mittels Dependency Injection im Konstruktur eurer Komponente laden
 3. `create()`-Funktion der Controller-Instanz aufrufen und das Ergebnis auf einer Variablen speichern
 4. `present()`-Funktion aufrufen
+
+
+
 
 ## Fazit
 
