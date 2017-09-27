@@ -10,7 +10,7 @@ header_image: "/artikel/header_images/angular-electron.png"
 
 ## Warum solltest du dir Electron ansehen?
 
-Die Entwickler vom Elektron Framework fangen ihre Produktbeschreibung mit folgendem Slogan an:
+Die Entwickler vom Electron Framework fangen ihre Produktbeschreibung mit folgendem Slogan an:
 
 >"if you can build a website, you can build a desktop app".
 
