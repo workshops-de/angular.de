@@ -15,7 +15,7 @@ layout: base
     <h1 class="header-post-title">{{ page.title }}</h1>
     <div class="header-post-author">
       {% if page.author %}
-      von {{ author.name }}
+      <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>, {{ author.name }}
       {% endif %}
     </div>
     <p>
