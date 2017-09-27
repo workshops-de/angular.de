@@ -8,9 +8,9 @@ categories: "ionic2 angular angular2 angular4 tutorial"
 header_image: "/artikel/header_images/ionic2-content-tutorial-deutsch.jpg"
 ---
 
-Aufbauend auf dem [ersten Teil](/artikel/ionic2-tutorial-deutsch/) unseres Ionic 2 Tutorials wollen wir uns nun anschauen, wie ihr in Ionic 2 eure Inhalt ansprechend präsentieren und vor allem strukturieren könnt.
+Aufbauend auf dem [ersten Teil](/artikel/ionic2-tutorial-deutsch/) unseres Ionic 2 Tutorials wollen wir uns nun anschauen, wie ihr in Ionic 2 eure Inhalt ansprechend präsentieren und strukturieren könnt.
 
-Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pizza-service "Quellcode Ionic 2 Pizza App") der in diesem Tutorial entwickelten App findet unter unserem GitHub-Account. Außerdem gibt es auch eine [Live-Vorschau](http://angularjs-de.github.io/ionic2-pizza-service/www/ "Ionic 2 Pizza App") der App.
+Den [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pizza-service "Quellcode Ionic 2 Pizza App") der in diesem Tutorial entwickelten App findet unter unserem GitHub-Account. Außerdem gibt es auch eine [Live-Vorschau](http://angularjs-de.github.io/ionic2-pizza-service/www/ "Ionic 2 Pizza App") der App.
 
 **Teil 2: Strukturierung von Inhalten**
 1. Einfache und komplexe Listen - `ionList`, `ionItem` und `ionItemSliding`
@@ -191,12 +191,12 @@ Beginnen wir dem Ladelayer und `Loading` Controller. Er besitzt nur eine `create
 
 Als Optionen können folgende Eigenschaften gesetzt werden.
 
- - **spinner** - Name des anzuzeigenden Lade-Spinners, default: plattformspezifisch
- - **content** - eigener Inhalt, z.B. Hinweistext
- - **cssClass** - eigene CSS Klasse zum Stylen
- - **showBackdrop** - `true` oder `false`, legt abgedunkeltem Overlay über Inhalt
- - **dismissOnPageChange** - `true` oder `false`, Ausblenden des Ladelayers beim Seitenwechsel
- - **duration** - Dauer in Millisekunden, falls Layer automatisch ausgeblendet werden soll
+ - *spinner* - Name des anzuzeigenden Lade-Spinners, default: plattformspezifisch
+ - *content* - eigener Inhalt, z.B. Hinweistext
+ - *cssClass* - eigene CSS Klasse zum Stylen
+ - *showBackdrop* - `true` oder `false`, legt abgedunkeltem Overlay über Inhalt
+ - *dismissOnPageChange* - `true` oder `false`, Ausblenden des Ladelayers beim Seitenwechsel
+ - *duration* - Dauer in Millisekunden, falls Layer automatisch ausgeblendet werden soll
 
 Im Code könnte ein Layer so erzeugt werden.
 
@@ -245,9 +245,9 @@ Zu dieser Komponente gibt es im Prinzip nicht viel zu erzählen. Wird sie ins Te
 
 Sie kann über drei Attribute konfiguriert werden.
 
-  - **name** - Spinner Name
-  - **duration** - Dauer bis sich Spinner Icon komplett gedreht hat
-  - **paused** - Spinner anhalten
+  - *name* - Spinner Name
+  - *duration* - Dauer bis sich Spinner Icon komplett gedreht hat
+  - *paused* - Spinner anhalten
 
 In unserem Fall wollen wir über eine `isLoading` Variable unsere Angebotsliste erst einblenden, wenn die Daten geladen wurden. Bis dahin soll ein Ladespinner angezeigt werden.
 
@@ -295,22 +295,22 @@ In Ionic 2 besteht das ganze Unterfangen, wie auch schon Ionic 1 aus zwei Teilen
 
 Ein Refresher besitzt immer einen Status aus folgender Liste:
 
-  - **inactive** - nicht sichtbar, Nutzer zieht nicht im Inhalt
-  - **pulling** - Nutzer zieht am Inhalt und Refresher wird sichtbar (noch kein Refresh)
-  - **cancelling** - Nutzer lässt vor Aktualisierungsschwellwerten los, wird zu inactive, wenn Refresher wieder ausgeblendet wurde
-  - **ready** - Nutzer hat Inhalt über den minimalen Schwellwert gezogen, lässt er los, wird aktualisiert
-  - **refreshing** - Aktualisierung läuft und wartet auf den Aufruf von `complete()` auf der Refresher Instanz
-  - **completing** - Aktualisierung abgeschlossen, ist Refresher wieder ausgeblendet, wechselt der Zustand zu inactive
+  - *inactive* - nicht sichtbar, Nutzer zieht nicht im Inhalt
+  - *pulling* - Nutzer zieht am Inhalt und Refresher wird sichtbar (noch kein Refresh)
+  - *cancelling* - Nutzer lässt vor Aktualisierungsschwellwerten los, wird zu inactive, wenn Refresher wieder ausgeblendet wurde
+  - *ready* - Nutzer hat Inhalt über den minimalen Schwellwert gezogen, lässt er los, wird aktualisiert
+  - *refreshing* - Aktualisierung läuft und wartet auf den Aufruf von `complete()` auf der Refresher Instanz
+  - *completing* - Aktualisierung abgeschlossen, ist Refresher wieder ausgeblendet, wechselt der Zustand zu inactive
 
 ### `ionRefresher`
 
 Im Template wird ein Refresher über die `ionRefresher` Komponente eingebunden. Sie ist ein direktes und das erste Kind des `ionContent`s. Über die folgenden Inputs könnt ihr den Refresher auch noch konfigurieren.
 
-  - **pullMin** - minimale Distanz bis beim Loslassen aktualisiert wird (default: 60)
+  - *pullMin* - minimale Distanz bis beim Loslassen aktualisiert wird (default: 60)
   - pullMax - maximale Distanz bis automatisch aktualisiert wird (pullMin + x, default pullMin: + 60)
-  - **closeDuration** - Dauer in Millisekunden, die der Refresher zum Schließen/Ausblenden benötigt, default: 280
-  - **snapbackDuration** - Dauer in Millisekunden bis Refresher wieder zum Refreshing Zustand springt, default: 280
-  - **enabled** - aktiviert/deaktiviert Refresher, sollte anstatt `*ngIf` genutzt werden, default: `true`
+  - *closeDuration* - Dauer in Millisekunden, die der Refresher zum Schließen/Ausblenden benötigt, default: 280
+  - *snapbackDuration* - Dauer in Millisekunden bis Refresher wieder zum Refreshing Zustand springt, default: 280
+  - *enabled* - aktiviert/deaktiviert Refresher, sollte anstatt `*ngIf` genutzt werden, default: `true`
 
 ```html
 <ion-refresher></ion-refresher>
@@ -318,9 +318,9 @@ Im Template wird ein Refresher über die `ionRefresher` Komponente eingebunden. 
 
 Zusätzlich könnt ihr auch noch auf Zustandsänderungen reagieren (Outputs) und in bestimmten Situationen Code ausführen lassen.
 
-  - **ionStart** - Nutzer beginnt am Inhalt zu ziehen
-  - **ionPull** - Während des Ziehens
-  - **ionRefresh** - pullMin Grenze überschritten - Status wechselt beim Loslassen auf `refreshing`, Spinner wird angezeigt bis `complete()` ausgeführt wird.
+  - *ionStart* - Nutzer beginnt am Inhalt zu ziehen
+  - *ionPull* - Während des Ziehens
+  - *ionRefresh* - pullMin Grenze überschritten - Status wechselt beim Loslassen auf `refreshing`, Spinner wird angezeigt bis `complete()` ausgeführt wird.
 
 Damit sind wir jedoch im Template noch nicht fertig.
 
@@ -328,10 +328,10 @@ Damit sind wir jedoch im Template noch nicht fertig.
 
 Ein `ionRefresher` benötigt als Kind eine `ionRefresherContent` Komponente. Sie gibt dem Refresher erst sein Aussehen. Dies passiert über folgende Attribute.
 
-  - **pullingIcon** - Icon Name, wenn am Inhalt gezogen wird
-  - **pullingText** - Text, der beim Ziehen angezeigt wird
-  - **refreshingSpinner** - Spinner Name, wenn aktualisiert wird
-  - **refreshingText** - Aktualisierungstext
+  - *pullingIcon* - Icon Name, wenn am Inhalt gezogen wird
+  - *pullingText* - Text, der beim Ziehen angezeigt wird
+  - *refreshingSpinner* - Spinner Name, wenn aktualisiert wird
+  - *refreshingText* - Aktualisierungstext
 
 Jetzt sieht unserer Refresher schon mal nach etwas aus.
 
@@ -596,7 +596,7 @@ modal.onDidDismiss(data => {
 
 ### Daten an den Modal übergeben
 
-Jetzt werden einige denken: "Toll, ich kann Daten aus dem Modal nach außen geben, aber wie bekomme ich Daten von außen in den Modal?". Nichts leichteres als dass. `this.modalCtrl.ceate()` kann mit einem optionalen zweiten Parameter ausgestattet werden. Dabei handelt es sich um ein Parameter-Objekt.
+Nun kann ich Daten aus dem Modal nach außen geben, aber wie bekomme ich Daten von außen in den Modal? Nichts leichter als das. `this.modalCtrl.ceate()` kann mit einem optionalen zweiten Parameter ausgestattet werden. Dabei handelt es sich um ein Parameter-Objekt.
 
 ```javascript
 const modal = this.modalCtrl.create(AboutModalComponent, { data: 123 });
@@ -619,29 +619,29 @@ In Ionic 1 noch Popups genannt, müssen wir uns jetzt an den Begriff `Alert` gew
 
 Ähnlich zum Modal gibt es einen extra Controller (`AlertController`) mit einer `create` Funktion. Ein Alert wird jedoch anstatt mit einer Klasse über ein einfaches Konfigurationsobjekt erstellt, welches über folgende Schlüssel konfiguriert werden kann.
 
-  - **title** - Titel der Hinweisbox
-  - **subTitle** - Untertitel der Hinweisbox
-  - **message** - Hinweistext
-  - **cssClass** - eigene Klasse zum Stylen
-  - **inputs** - Liste und Konfiguration von Eingabefeldern
-  - **buttons** - Liste von Schaltflächen
-  - **enableBackdropDismiss** - Klick auf den Backdrop schließt Alert (`true` | `false`)
+  - *title* - Titel der Hinweisbox
+  - *subTitle* - Untertitel der Hinweisbox
+  - *message* - Hinweistext
+  - *cssClass* - eigene Klasse zum Stylen
+  - *inputs* - Liste und Konfiguration von Eingabefeldern
+  - *buttons* - Liste von Schaltflächen
+  - *enableBackdropDismiss* - Klick auf den Backdrop schließt Alert (`true` | `false`)
 
 Dabei kann ein `input` wiederum folgende Eigenschaften besitzen.
 
-  - **type** - Typ des Feldes (text, email, number, ...)
-  - **name** - Name des Eingabefeldes
-  - **placeholder** - Platzhaltertext
-  - **value** - Standardwert
-  - **checked** - falls Checkbox, wird diese angehakt
-  - **id** - Setzt Id Attribut
+  - *type* - Typ des Feldes (text, email, number, ...)
+  - *name* - Name des Eingabefeldes
+  - *placeholder* - Platzhaltertext
+  - *value* - Standardwert
+  - *checked* - falls Checkbox, wird diese angehakt
+  - *id* - Setzt Id Attribut
 
 Schalflächen haben dagegen einen anderen Aufbau.
 
-  - **text** - Beschriftung
-  - **handler** - Callback Funktion, wenn auf Button geklickt wird
-  - **cssClass** - Styling über zusätzlich Klasse
-  - **role** - setzt `role` Attribut, `cancel` oder `null`
+  - *text* - Beschriftung
+  - *handler* - Callback Funktion, wenn auf Button geklickt wird
+  - *cssClass* - Styling über zusätzlich Klasse
+  - *role* - setzt `role` Attribut, `cancel` oder `null`
 
 In unserer App wollen wir, wenn der Warenkorb leer ist und er aufgerufen wird, ein Alert auf der Warenkorb Seite anzeigen. Er zeigt dann einen Hinweis, dass es erst Produkte in den Warenkorb gelegt werden sollten.
 
@@ -683,28 +683,28 @@ alert.dismiss();
 
 Darüber hinaus könnt ihr das `Alert` nachträglich auch flexibel programmatisch über nachstehende Funktionen auf ihrer Instanz ändern.
 
-  - **setTitle(title)** - setzt den Titel
-  - **setSubTitle(setSubTitle)** - setzt den Untertitel
-  - **setMessage(message)** - ändert Hinweistext
-  - **setCssClass(class)** - setzt die eigene CSS Klassse
-  - **addInput(input)** - Fügt ein Eingabefeld hinzu
-  - **addButton(button)** - fügt einen weiteren Button hinzu
+  - *setTitle(title)* - setzt den Titel
+  - *setSubTitle(setSubTitle)* - setzt den Untertitel
+  - *setMessage(message)* - ändert Hinweistext
+  - *setCssClass(class)* - setzt die eigene CSS Klassse
+  - *addInput(input)* - Fügt ein Eingabefeld hinzu
+  - *addButton(button)* - fügt einen weiteren Button hinzu
 
 
 ## Statusmeldungen über `Toast`s
 
-Oft sind Alerts einfach zu viel. In vielen Fällen reicht das Einblenden einer kurzen und unauffälligen Meldung. Aus nativen Anwendungen sicher bekannt, sind die so genannten `Toast` Nachrichten. Ionic greift diese auf und hat sie nun auch in die neue Version des Frameworks integriert. Das bedeutet endlich das Ende vom Einbinden externen Module oder gar native Plugins für solch eine simple Funktionalität.
+Oft sind Alerts einfach zu viel. In vielen Fällen reicht das Einblenden einer kurzen und unauffälligen Meldung. Aus nativen Anwendungen sicher bekannt, sind die so genannten `Toast`-Nachrichten. Ionic hat sie in die neue Version des Frameworks integriert. Das bedeutet endlich das Ende vom Einbinden externer Module oder gar nativer Plugins für solch eine simple Funktionalität.
 
 ### `Toast` anlegen und anzeigen
 
-Hier müssen wir eigentlich nicht mehr viel sagen. Es funktioniert genauso einfach, wie bei einem `Modal` oder `Alert`. Wir importieren den `ToastController` und rufen die `create` Funktion auf, welche wieder ein Konfigurationsobjekt entgegennimmt.
+Toasts funktionieren genauso einfach, wie ein `Modal` oder `Alert`. Wir importieren den `ToastController` und rufen die `create` Funktion auf, welche wieder ein Konfigurationsobjekt entgegennimmt.
 
-  - **message** - Nachrichtentext
-  - **duration** - automatisch nach x Millisekunden ausblenden
-  - **cssClass** - zusätzliche CSS Klasse
-  - **showCloseButton** - optionaler Schließen-Button (default: false)
-  - **closeButtonText** - optionaler Schließen-Text (default: Close)
-  - **dismissOnPageChange** - automatisches Schließen beim Seitenwechsel (default: false)
+  - *message* - Nachrichtentext
+  - *duration* - automatisch nach x Millisekunden ausblenden
+  - *cssClass* - zusätzliche CSS Klasse
+  - *showCloseButton* - optionaler Schließen-Button (default: false)
+  - *closeButtonText* - optionaler Schließen-Text (default: Close)
+  - *dismissOnPageChange* - automatisches Schließen beim Seitenwechsel (default: false)
 
 In unserer App wollen wir nun beim Hinzufügen und Löschen eines Warenkorbeintrags eine `Toast` Nachricht anzeigen. Im folgenden zeigen wir dies nur an dem Beispiel des Hinzufügens. Dazu erweitern wir unsere `addToCart` Funktion in unserer `OrderComponent`.
 
