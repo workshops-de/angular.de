@@ -9,11 +9,11 @@ header_image: "/artikel/header_images/ionic2-tutorial-deutsch.jpg"
 tutorial_page_order: '2'
 ---
 
-Nach unserem [Ionic 1 Tutorial](/artikel/ionic-tutorial-deutsch/ "Ionic 1 Tutorial") über **Ionic 1** und das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") wird es Zeit , sich die neue Version des beliebten Frameworks zur Erstellung von mobilen hybriden Apps anzusehen.
+Nach unserem [Ionic 1 Tutorial](/artikel/ionic-tutorial-deutsch/ "Ionic 1 Tutorial") über **Ionic 1** und das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") wird es Zeit, sich die neue Version des Frameworks zur Erstellung von mobilen hybriden Apps anzusehen.
 
-Dabei setzt das Ionic-Team natürlich auf Angular und benutzt daher auch vieles aus diesem neuen Universum. Daher bietet es sich an vorher unsere Artikel über Angular 2 zu lesen oder zumindest einen Blick in unser [Angular Einführungstutorial](/artikel/angular-tutorial-deutsch/ "Angular Einführungstutorial") zu werfen.
+Dabei setzt das Ionic-Team auf Angular und benutzt daher auch vieles aus diesem neuen Universum. Daher bietet es sich an vorher unsere Artikel über Angular 2 zu lesen oder zumindest einen Blick in unser [Angular Einführungstutorial](/artikel/angular-tutorial-deutsch/ "Angular Einführungstutorial") zu werfen.
 
-Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1. Dadurch könnt ihr vergleichen, was anders oder besser funktioniert. Außerdem findet ihr dort auch alle allgemeinen Grundlagen und Informationen, was Ionic genau ist, worauf es basiert und was ihr damit machen könnt. Daher sparen wir uns diese Punkte hier und steigen direkt bei der Entwicklung ein. Unser Tutorial ist in drei Abschnitte aufgeteilt.
+Dieses Tutorial orientiert sich stark an den Inhalten der Einführung zu Ionic 1. Dadurch könnt ihr vergleichen, was anders oder besser funktioniert. Außerdem findet ihr dort alle allgemeinen Grundlagen und Informationen, was Ionic genau ist, worauf es basiert und was ihr damit machen könnt. Daher sparen wir uns diese Punkte hier und steigen direkt bei der Entwicklung ein. Unser Tutorial ist in drei Abschnitte aufgeteilt.
 
 **Teil 1: Allgemein**
 1. Installation und Anlegen eines Projekts
@@ -89,10 +89,6 @@ Unter der Angabe des Projektnamens `ionic2-pizza-service` erzeugen wir mit diese
 ionic start ionic2-pizza-service blank --v2
 ```
 
-Im Prinzip war es das auch schon. Ihr werden euch vielleicht über die im Tutorial gewählte Ordnerstruktur wundern, aber wir haben versucht uns an den [Angular 2 Style-Guide](https://angular.io/styleguide "Angular 2 Style-Guide") zu halten.
-
-<div class="alert alert-info"><b>Beachte:</b> Ihr solltet euch auch in einer Ionic Anwendung an den Angular Style-Guide halten.</div>
-
 Über den `serve`-Befehl könnt ihr die App in einem neuen Browserfenster starten. Ändert ihr eine Datei, wird dieses immer automatisch aktualisiert nachdem die Anwendung neu gebaut wurde.
 
 ```shell
@@ -105,6 +101,8 @@ Durch den `--lab` Parameter erhaltet ihr eine Gegenüberstellung vom Layout eure
 
 ## Anlegen einer App
 
+In diesem Tutorial versuchen wir uns weitestgehend an den [Angular 2 Style-Guide](https://angular.io/styleguide "Angular 2 Style-Guide") zu halten.
+
 Nachdem wir erfolgreich ein Projekt angelegt und es schon angesehen haben, sollten wir verstehen, wie wir selbst eine App anlegen können. Dazu schauen wir uns einmal den Inhalt unseres Projekt-Ordners an.
 
 Für uns und dieses Tutorial sind im Grunde nur zwei Ordner interessant.
@@ -114,7 +112,7 @@ Für uns und dieses Tutorial sind im Grunde nur zwei Ordner interessant.
 
 Die reine Ionic Entwicklung findet im `src` Verzeichnis statt. Dort werden wir uns auch im Laufe des Tutorials aufhalten. Hier können wir mit TypeScript arbeiten und der Bauprozess von Ionic greift automatisch, wenn ihr die Anwendung mit `ionic serve` gestartet habt. Im `www` Ordner landen dann die reinen JavaScript-Dateien, die aus dem Bauprozess herausfallen. Dies ist nötig da die meisten Browser bisher die JavaScript-Standard ES5.1 unterstützen. Mit Angular 2 und Ionic 2 können wir aber einfach schon den neuen ES2015-Standard nutzen. In unserem Fall auch die nicht in JavaScript - aber in TypeScript - vorhandene Typisierung.
 
-Werfen wir also den ersten Blick in das `src/app`-Verzeichnis. In diesem Kapitel ist für uns auch nur eine Datei - die `app.component.ts` interessant. Diese sollte jetzt ungefähr so aussehen. Wir haben alles Uninteressante erstmal entfernt.
+Werfen wir also den ersten Blick in das `src/app`-Verzeichnis. In diesem Kapitel ist für uns auch nur eine Datei - die `app.component.ts` interessant. Diese sollte jetzt ungefähr so aussehen. Alles Uninteressante blenden wir erstmal aus.
 
 ```typescript
 import {Component} from '@angular/core';
@@ -128,7 +126,7 @@ export class PizzaAppComponent {
 }
 ```
 
-So wie generell in TypeScript und Angular 2 kann ein Modul Abhängigkeiten zu anderen Modulen haben. In diesem Fall bietet uns Ionic über `ionic-angular` einen Werkzeugkasten mit allen Dingen, die wir so brauchen könnten. In unserem Falle benutzt Ionic 2 jedoch den normalen Component *Decorator*.  Diesen nutzen wir um eine Klasse als unsere Anwendung auszuzeichnen. Er nimmt Optionen entgegen, um unsere Komponente zu konfigurieren. Als Beispiel benötigt die Anwendung häufig ein Basis-Template.
+So wie generell in TypeScript und Angular 2, kann ein Modul Abhängigkeiten zu anderen Modulen haben. In diesem Fall bietet uns Ionic über `ionic-angular` einen Werkzeugkasten mit allen Dingen, die wir brauchen könnten. In unserem Falle benutzt Ionic 2 jedoch den normalen Component *Decorator*.  Diesen nutzen wir um eine Klasse als unsere Anwendung auszuzeichnen. Er nimmt Optionen entgegen, um unsere Komponente zu konfigurieren. Als Beispiel benötigt die Anwendung häufig ein Basis-Template.
 
 Damit weiß Ionic jedoch noch nicht, wo es die Anwendung starten soll. Warum funktioniert unsere Anwendung dann bereits? Dazu schauen wir jetzt in den `www` Ordner und öffnen die `index.html`. Dort entdecken wir im `body` eine Direktive mit dem Namen `ionApp`. Sie sorgt dafür, dass hier unsere Anwendung zumindest in den DOM eingehangen wird.
 
@@ -145,7 +143,7 @@ import {Component} from '@angular/core';
 export class PizzaAppComponent {}
 ```
 
-Das ist natürlich noch nicht alles. Wir müssen unsere `PizzaAppComponent` auch beim Aufruf der Anwendung starten, damit Ionic unsere Komponente dort einhängen kann. Dazu wechseln wir in die `app.module.ts`, wo über `ionic-angular` das spezielle `IonicModule` Methode geladen werden kann. Es wird dann wie folgt in unserem Modul als import angegeben und aufgerufen.
+Das ist natürlich nicht alles. Wir müssen unsere `PizzaAppComponent` auch beim Aufruf der Anwendung starten, damit Ionic unsere Komponente dort einhängen kann. Dazu wechseln wir in die `app.module.ts`, wo über `ionic-angular` das spezielle `IonicModule` Methode geladen werden kann. Es wird dann wie folgt in unserem Modul als import angegeben und aufgerufen.
 
 ```typescript
 @NgModule({
@@ -164,9 +162,10 @@ Das Ergebnis sieht im Browser zwar nicht mehr sonderlich ansprechend aus, aber d
 
 ![Bild](medium_ionic2-app.png?v=63630362119)
 
+
 ## Erstellen von Inhalten
 
-So wie die App ist auch jede View in der Ionic 2 Welt eine simple Angular2 Component. Eine View ist dabei die gesamte Ansicht einer Seite in der Anwendung. Die Konfiguration einer Seite im Quellcode ist daher auch hier nichts besonderes, denn die Komponente verknüpft einfach ein Template mit einer Klasse.
+So wie die App ist auch jede View in der Ionic 2 Welt eine simple Angular2 Component. Eine View ist dabei die gesamte Ansicht einer Seite in der Anwendung. Die Konfiguration einer Seite im Quellcode ist daher hier nichts besonderes, denn die Komponente verknüpft einfach ein Template mit einer Klasse.
 
 Standardmäßig existiert - auch in unserem Projekt - neben dem `app` Verzeichnis ein Ordner mit dem Namen `pages`. Hier liegen alle bereits vordefinierten Seiten.
 
