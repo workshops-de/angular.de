@@ -402,7 +402,7 @@ describe('Service: LanguagesServiceHttp', () => {
 
 `Http.get()` gibt ein Observavble zurück, welches wir abonnieren können. Wir werden Observables später noch ausführlicher abdecken.
 
-## 4. Testen mit MockBackend
+### 4. Testen mit MockBackend
 
 Ein Ansatz, der sinnvoller erscheint, ist das Ersetzen von HTTP-Anrufen durch einen MockBackend. Um dies zu tun, können wir die Bereitstellung (Zeile 10) verwenden. Dies wid uns ermöglichen, unsere Antworten zu mocken und damit zu vermeiden, das echte Backend zu „hitten“ und damit unsere Testergebnisse zu steigern.
 
@@ -673,7 +673,7 @@ Wir haben `RouterTestingModule.withRoutes(routes)` importiert, um die Routerinst
 
 
 
-## 8. Observables testen
+### 8. Observables testen
 
 Observables sind optimal, um asynchrone Aufgaben zu meistern. Sie werden an wenigen Stellen in Angular, wie `Http`, Form controls, validations oder hinter `EventEmitter` verwendet. Wir werden das `Observable` unten verwenden, um zu zeigen, wie wir ihr Verhalten testen können.
 
