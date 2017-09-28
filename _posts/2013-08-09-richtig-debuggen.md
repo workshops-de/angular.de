@@ -2,7 +2,6 @@
 title: "Debugging mit WebStorm und Chrome"
 description: Lerne, wie du mit WebStorm oder den Chrome Developer Tools deine AngularJS-Applikation debuggen kannst.
 author: "Robin Böhm"
-slug: "richtig-debuggen"
 published_at: 2013-08-09 16:00:39.000000Z
 categories: "angularjs debugging"
 header_image: "/artikel/header_images/richtig-debuggen.jpg"

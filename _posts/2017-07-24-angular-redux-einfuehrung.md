@@ -2,7 +2,6 @@
 title: "Redux in Angular - Einführung und Konzepte"
 description: "Redux ist eine Implementierung des Flux Patterns. Es ist dafür da, die Verwaltung von euerm ApplicationState in eine klare und wartbare Struktur zu bringen."
 author: "Gerard Sans"
-slug: "angular-redux-einfuehrung"
 published_at: 2017-07-24 08:22:01.000000Z
 categories: "angular redux tutorial"
 header_image: "/artikel/header_images/angular-redux-header.png"
@@ -133,7 +132,7 @@ Der `Application-Store` ist zentral für Redux und bietet eine API, um
 
 ## To-Do-Listen Beispiel
 
-Wir werden eine Todo Listen Anwendung erkunden, um zu erfahren, wie wir Redux mit Angular integrieren können. 
+Wir werden eine Todo Listen Anwendung erkunden, um zu erfahren, wie wir Redux mit Angular integrieren können.
 Dies ist eine grundlegende Implementierung, wo wir neue Todos hinzufügen können, sie als abgeschlossen markieren und filtern.
 
 <div class="text-center">

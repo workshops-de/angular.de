@@ -2,7 +2,6 @@
 title: "Angular-Tutorial für Einsteiger"
 description: "Tutorial zu Angular, die neue Version des beliebtesten JavaScript-Frameworks. Wir gehen Schritt für Schritt die Konzepte des Frameworks anhand eines Beispiels durch."
 author: "Robin Böhm"
-slug: "angular-tutorial-deutsch"
 published_at: 2015-12-19 08:00:00.000000Z
 categories: "tutorial angular angular2 angular4"
 header_image: "/artikel/header_images/angular-tutorial-deutsch.jpg"

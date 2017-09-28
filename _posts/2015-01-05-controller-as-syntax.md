@@ -2,7 +2,6 @@
 title: "Wie die Controller-As-Syntax Fehler vermeidet"
 description: "Lerne, was die Controller-As-Syntax in AngularJS ist und wie du damit Fehler vermeidest. Mehr im Artikel!"
 author: "Tilman Potthof"
-slug: "controller-as-syntax"
 published_at: 2015-01-05 09:01:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/controller-as-syntax.jpg"

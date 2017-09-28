@@ -2,7 +2,6 @@
 title: "ng-repeat - Duplicate error vermeiden"
 description: Lerne, woher der Fehler *Duplicates in a repeater are not allowed* kommt und wie du ihn löst.
 author: "Sascha Brink"
-slug: "ng-repeat-duplicates-in-repeater-are-not-allowed"
 published_at: 2014-03-03 07:45:24.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/ng-repeat-duplicates-in-repeater-are-not-allowed.jpg"

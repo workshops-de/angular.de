@@ -2,7 +2,6 @@
 title: "Testen deiner AngularJS Anwendung mit Jasmine"
 description: "Lerne, wie du Unit-Tests in AngularJS mit Jasmine schreiben kannst."
 author: "Robin Böhm"
-slug: "angularjs-test"
 published_at: 2013-05-30 16:00:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-test.jpg"

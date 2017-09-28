@@ -2,7 +2,6 @@
 title: "Angular E2E Tests mit Protractor und Sauce Labs"
 description: "Einführung in E2E Tests mit Protractor und Sauce Labs - Die universelle Fernbedienung für Browser. Hier findest du eine Schritt für Schritt Anleitung."
 author: "Martin Wiesmüller"
-slug: "angular-e2e-protractor-test-saucelabs"
 published_at: 2017-01-12 08:00:00.000000Z
 categories: "angular angular2 angular4 testing testen"
 header_image: "/artikel/header_images/angular-e2e-protractor-test-saucelabs.jpg"

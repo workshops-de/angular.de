@@ -2,7 +2,6 @@
 title: "Diagramme in AngularJS mit D3/nvd3"
 description: Lerne, wie du mit Hilfe von nvd3 die Bibliothek D3.js sehr einfach nutzen kannst, um z.B. Linien-, Balken-, Säulen oder Kreisdiagramme zu erstellen.
 author: "Robin Böhm"
-slug: "angularjs-directives-d3-nvd3"
 published_at: 2014-02-28 14:12:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-directives-d3-nvd3.jpg"

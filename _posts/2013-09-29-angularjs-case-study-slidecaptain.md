@@ -2,7 +2,6 @@
 title: "SlideCaptain - Entwicklung einer AngularJS-App"
 description: Lerne, wie SlideCaptain als Anwendung mit AngularJS umgesetzt wurde - welche Tools wurden eingesetzt und welche Stolpersteine gab es.
 author: "Gerd Jungbluth"
-slug: "angularjs-case-study-slidecaptain"
 published_at: 2013-09-29 17:00:40.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-case-study-slidecaptain.jpg"

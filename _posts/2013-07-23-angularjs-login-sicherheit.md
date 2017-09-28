@@ -2,7 +2,6 @@
 title: "Login & Sicherheit in AngularJS"
 description: Lerne, wie Authentifizierung in Single-Page-Applikationen funktioniert und was du in Bezug auf Sicherheit beachten musst.
 author: "Marius Soutier"
-slug: "angularjs-login-sicherheit"
 published_at: 2013-07-23 16:00:00.000000Z
 categories: "angularjs security authentication"
 header_image: "/artikel/header_images/angularjs-login-sicherheit.jpg"

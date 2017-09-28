@@ -2,7 +2,6 @@
 title: "Ionic Framework Tutorial - hybride Apps"
 description: "Unser Einführungstutorial zu Ionic erklärt euch alle wichtigen Konzepte und Bestandteile des Frameworks. Vom Erstellen des Projekts bis hin zur ersten App."
 author: "Bengt Weiße"
-slug: "ionic-tutorial-deutsch"
 published_at: 2016-03-12 08:29:00.000000Z
 categories: "tutorial ionic angularjs"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch.jpg"

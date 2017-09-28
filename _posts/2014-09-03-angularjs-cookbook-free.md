@@ -2,7 +2,6 @@
 title: "Kostenloses AngularJS CookBook mit 70 Rezepten"
 description:
 author: "Robin Böhm"
-slug: "angularjs-cookbook-free"
 published_at: 2014-09-03 13:43:00.000000Z
 categories: "angularjs buch"
 header_image: "/artikel/header_images/angularjs-cookbook-free.jpg"

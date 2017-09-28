@@ -2,7 +2,6 @@
 title: "Ionic 2 Tutorial - Einstieg zu hybriden Apps"
 description: "Ionic 2 ist der Nachfolger des beliebten Frameworks Ionic für die Entwicklung hybrider und mobiler Apps auf Basis von Angular2. Wir helfen euch beim Start."
 author: "Bengt Weiße"
-slug: "ionic2-tutorial-deutsch"
 published_at: 2016-06-03 06:12:12.000000Z
 categories: "tutorial ionic2 angular angular2 angular4"
 header_image: "/artikel/header_images/ionic2-tutorial-deutsch.jpg"

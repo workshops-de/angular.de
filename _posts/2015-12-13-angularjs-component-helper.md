@@ -2,7 +2,6 @@
 title: "Der AngularJS Component Helper"
 description: "In AngularJS 1.5 wurden die Components eingeführt. Lernt wozu sie gut sind und warum ihr sie nutzen sollten. Macht eure Projekte bereit für Angular Version 2+"
 author: "Robin Böhm"
-slug: "angularjs-component-helper"
 published_at: 2015-12-13 19:58:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-component-helper.jpg"

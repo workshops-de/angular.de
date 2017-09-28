@@ -2,7 +2,6 @@
 title: "Continuous Deployment mit Docker in 5 Schritten"
 description: "Tutorial zu Continuous Deployment mit Docker und CircleCI für deine Angular Anwendung. Hier lernst du Schritt für Schritt wie du dein Deployment automatisierst."
 author: "Martin Wiesmüller"
-slug: "angular-deployment-docker"
 published_at: 2017-03-19 00:00:01.000000Z
 categories: "angular angular2 angular4 docker deployment"
 header_image: "/artikel/header_images/angular-deployment-docker.jpg"
@@ -111,9 +110,9 @@ Also wählen wir folglich die Variante per Webhook bei Check-In. Nachdem wir uns
 Dockerhub bietet die Möglichkeit sowohl public, als auch kostenpflichtige private Repos anzulegen. Die public Repos sind für alle frei zugänglich, die private Repos hingegen können nur nach Autorisierung erreicht werden.
 
 Schaut euch die [Dokumentation von Docker](https://docs.docker.com) an.
-In diesem Artikel konnte ich das Thema "Docker" leider nur kurz anschneiden. 
+In diesem Artikel konnte ich das Thema "Docker" leider nur kurz anschneiden.
 Denn mit dieser Engine ist noch weit aus mehr möglich.
-Der Build-Prozess auf Dockerhub kann je nach Tageszeit mehrere Minuten dauern. 
+Der Build-Prozess auf Dockerhub kann je nach Tageszeit mehrere Minuten dauern.
 Daher empfehle ich, vor allem bei Änderungen am Build Prozess selbst, den Container mit ```docker build``` vorab lokal zu bauen. Somit lässt sich überprüfen, ob der Prozess fehlerfrei durchläuft. Sollten Fehler im Build Prozess auftreten, ist es immer sehr ärgerlich wenn auf Dockerhub sinnlos gewartet hat.*
 
 ## 2. Circle CI als Continuous Integration Umgebung
@@ -238,7 +237,7 @@ Ihr könnt direkt beim Check-In abfangen, dass nur dann eingecheckt werden kann,
 
 ## Fazit
 
-Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche Arbeit erleichtern. 
+Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche Arbeit erleichtern.
 Allerdings haben wir es in einer solchen Pipe mit sehr vielen unterschiedlichen Systemen und Oberflächen zu tun.
 In diesem Artikel konnte ich nur grob erklären, was es mit den einzelnen Bausteinen auf sich hat.
 Daher - falls ich euer Interesse geweckt habe, kann ich euch nur empfehlen, sich mit den einzelnen Bausteinen intensiv auseinander zu setzen.

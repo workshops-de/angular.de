@@ -2,7 +2,6 @@
 title: "Testen von Direktiven mit templateUrl"
 description: "Lernt, wie ihr beim Testen von Direktiven den Fehler \"Unexpected request\" vermeidet und Templates in AngularJS testet."
 author: "Robin Böhm"
-slug: "test-directive-templateurl"
 published_at: 2014-04-09 07:23:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/test-directive-templateurl.jpg"

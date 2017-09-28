@@ -2,7 +2,6 @@
 title: "Mit dem Limit-Filter das letzte Element auswählen"
 description: "Lernt mit einem einfachen Trick, wie ihr aus einer Liste das letzte Element herausfiltern könnt."
 author: "Sascha Brink"
-slug: "angularjs-limit-filter-last-element"
 published_at: 2014-02-22 10:32:12.000000Z
 categories: "angularjs"
 noindex: true

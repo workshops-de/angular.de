@@ -2,7 +2,6 @@
 title: "Ionic - Konfiguration mit $ionicConfigProvider"
 description: "Im letzten Teil unserer Ionic Tutorialreihe zeigen wir euch, wie ihr mit dem $ionicConfigProvider das Framework nach euren Wünschen pro Plattform konfigurieren könnt."
 author: "Bengt Weiße"
-slug: "ionic-tutorial-deutsch-configuration"
 published_at: 2016-01-27 08:29:00.000000Z
 categories: "ionic angularjs tutorial"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-configuration.jpg"

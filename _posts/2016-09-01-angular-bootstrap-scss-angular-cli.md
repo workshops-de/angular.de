@@ -2,7 +2,6 @@
 title: "Bootstrap SCSS 4 mit Angular in wenigen Sekunden"
 description: "Gestaltet eure Angular Anwendung spielend leicht mit Bootstrap und SCSS. Hier erhaltet ihr eine einfache Schritt-für-Schritt-Anleitung."
 author: "Robin Böhm"
-slug: "angular-bootstrap-scss-angular-cli"
 published_at: 2016-09-01 10:00:00.000000Z
 categories: "angular bootstrap scss cli"
 header_image: "/artikel/header_images/angular-bootstrap-scss-angular-cli.jpg"

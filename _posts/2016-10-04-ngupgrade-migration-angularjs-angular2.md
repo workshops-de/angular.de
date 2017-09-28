@@ -2,7 +2,6 @@
 title: "Migration AngularJS zu Angular"
 description: "Migration mit ngUpgrade leichtgemacht. Eine Zusammenfassung über alle wichtigen Schritte, wie ihr eure AngularJS App zu einer Angular App migrieren könnt."
 author: "Jonathan Schneider"
-slug: "ngupgrade-migration-angularjs-angular"
 published_at: 2016-10-04 00:00:00.000000Z
 categories: "angularjs angular angular2 angular4 migration"
 header_image: "/artikel/header_images/ngupgrade-migration-angularjs-angular2.jpg"
@@ -139,8 +138,8 @@ export class HeroDetailComponent {
 
 ### Change Detection
 
-View & Logic sind zwischen den Schnittstellen verknüpft, aber wie löst man das Problem der Change-Detection - ohne auf den alten $scope zuzugreifen? 
-Kein Problem für ngZone, welches sich zwischen dem Browser-Event-Handler und der Applikation als Zwischenschicht legt. 
+View & Logic sind zwischen den Schnittstellen verknüpft, aber wie löst man das Problem der Change-Detection - ohne auf den alten $scope zuzugreifen?
+Kein Problem für ngZone, welches sich zwischen dem Browser-Event-Handler und der Applikation als Zwischenschicht legt.
 Hier werden alle Events abgefangen, die in  AngularJS und Angular benutzt werden können.
 
 ![Change-Detection mit ngZone](medium_Screen-Shot-2016-09-11-at-15.53.02.png?v=63640821222)

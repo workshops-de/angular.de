@@ -2,7 +2,6 @@
 title: "Angular - Asynchronität von Callbacks zu Observables"
 description: "Moderne Web-Awendungen leben von mehr Interaktion. Hier erfahrt ihr wie - von Callbacks bis zu den neuen Observables in Angular."
 author: "Bengt Weiße"
-slug: "angular2-observables"
 published_at: 2016-05-27 10:00:00.000000Z
 categories: "angular angular2 angular4 observables"
 header_image: "/artikel/header_images/angular2-observables.jpg"

@@ -2,7 +2,6 @@
 title: "CoffeeScript mit AngularJS nutzen"
 description: "Lernt alles über die Programmierung von AngularJS mit CoffeeScript. Schreibt übersichtlichen und sauberen Quelltext, der einfach in JavaScript umgewandelt werden kann."
 author: "Sascha Brink"
-slug: "angularjs-mit-coffeescript"
 published_at: 2013-04-25 22:17:46.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-mit-coffeescript.jpg"

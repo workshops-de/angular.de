@@ -2,7 +2,6 @@
 title: "Angular 4 im Überblick - Die wichtigsten Neuerungen"
 description: "Am 23.03.2017 ist die finale Version von Angular 4 erschienen und freigegeben. Die wichtigsten Neuerungen haben wir für dich kurz und knapp zusammengefasst."
 author: "Robin Böhm"
-slug: "angular-4-neuerungen"
 published_at: 2017-04-03 08:00:01.000000Z
 categories: "angular angular4"
 header_image: "/artikel/header_images/angular-4-neuerungen.jpg"

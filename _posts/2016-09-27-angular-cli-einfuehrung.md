@@ -2,7 +2,6 @@
 title: "Einführung in Angular-CLI"
 description: "Angular-CLI ist ein Werkzeug zum Generieren von Angular Projekten. Es hilft euch dabei Komponenten, Direktiven, Services und noch mehr zu generieren."
 author: "David Müllerchen"
-slug: "angular-cli-einfuehrung"
 published_at: 2016-09-27 00:00:00.000000Z
 categories: "angular angular2 angular4 cli"
 header_image: "/artikel/header_images/angular-cli-einfuehrung.jpg"

@@ -2,7 +2,6 @@
 title: "Mit One-Time Binding die Performance verbessern "
 description: "Oftmals stoßen wir auf Performanceprobleme bei großen AngularJS-Anwendungen. Der Einsatz von One-Time-Binding kann diese meist direkt lösen."
 author: "Tilman Potthof"
-slug: "angularjs-one-time-binding"
 published_at: 2014-10-27 13:25:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-one-time-binding.jpg"

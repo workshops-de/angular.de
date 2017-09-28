@@ -2,7 +2,6 @@
 title: "ngQuill - Der WYSIWYG Editor für AngularJS"
 description: "Texte formatieren leicht gemacht. Der Rich-Text Editor QuillJS jetzt auch für eure AngularJS Anwendung."
 author: "Bengt Weiße"
-slug: "ngquill-wysiwyg-editor-angularjs"
 published_at: 2015-12-11 08:37:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/ngquill-wysiwyg-editor-angularjs.jpg"

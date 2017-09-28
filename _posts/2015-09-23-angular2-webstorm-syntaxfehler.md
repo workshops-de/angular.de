@@ -2,7 +2,6 @@
 title: "Angular2 in WebStorm ohne Syntaxfehler"
 description: "Eine Anleitung wie ihr eure WebStorm IDE mit Angular so konfiguriert, dass keine Syntaxfehler mehr auftreten."
 author: "Robin Böhm"
-slug: "angular2-webstorm-syntaxfehler"
 published_at: 2015-09-23 07:01:00.000000Z
 categories: "angular angular2 angular4"
 header_image: "/artikel/header_images/angular2-webstorm-syntaxfehler.jpg"

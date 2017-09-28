@@ -2,7 +2,6 @@
 title: "Event Listener und Watcher wieder entfernen"
 description: Lerne mehr über die schlecht dokumentierte Funktion, um einen Event Listener wieder zu entfernen.
 author: "Sascha Brink"
-slug: "deregister-event-listener-watcher"
 published_at: 2014-03-11 07:45:04.000000Z
 categories: "angularjs tipps"
 header_image: "/artikel/header_images/deregister-event-listener-watcher.jpg"

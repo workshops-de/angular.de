@@ -2,7 +2,6 @@
 title: "Angular Styling für Fortgeschrittene"
 description: "Styling in Angular bietet euch viele Möglichkeiten. Encapsulation-Modes, Shadow-DOM und der Zugriff auf Host-Elemente sind nur einige Punkte."
 author: "Gerard Sans"
-slug: "angular-styling"
 published_at: 2017-07-24 08:22:01.000000Z
 categories: "angular styling advanced"
 header_image: "/artikel/header_images/angular-styling.png"

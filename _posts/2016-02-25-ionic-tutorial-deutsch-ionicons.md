@@ -2,7 +2,6 @@
 title: "Ionic Framework - Ionicons als Icon-Font"
 description: "Die Ionic Framework eigene Icon-Font im Detail erklärt. Auch außerhalb der Ionic-Welt einsetzbar!"
 author: "Bengt Weiße"
-slug: "ionic-tutorial-deutsch-ionicons"
 published_at: 2016-02-25 08:29:00.000000Z
 categories: "ionic angularjs tutorial"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-ionicons.jpg"

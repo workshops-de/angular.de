@@ -2,7 +2,6 @@
 title: "Ionic Framework - Das Arbeiten mit SCSS"
 description: "Mit Ionic habt ihr die Möglichkeit eure App mit SCSS zu stylen. Wie und warum ihr das tun solltet, erfahrt ihr hier."
 author: "Bengt Weiße"
-slug: "ionic-tutorial-deutsch-scss"
 published_at: 2016-01-25 08:29:00.000000Z
 categories: "ionic angularjs tutorial"
 header_image: "/artikel/header_images/ionic-tutorial-deutsch-scss.jpg"

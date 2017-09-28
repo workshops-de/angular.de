@@ -2,7 +2,6 @@
 title: "Angular - Der Component Lifecycle"
 description: "Angular-Anwendungen bestehen aus Components. Diese durchleben verschiedene Stadien, auf die ihr zugreifen könnt. Warum und wie das geht, erfahrt ihr hier."
 author: "Bengt Weiße"
-slug: "angular-2-component-lifecycle"
 published_at: 2016-04-25 12:12:12.000000Z
 categories: "angular angular2 angular4"
 header_image: "/artikel/header_images/angular-2-component-lifecycle.jpg"

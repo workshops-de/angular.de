@@ -2,7 +2,6 @@
 title: "Parsing mit $compile, $interpolate und $parse"
 description: "Wofür brauche ich die Services $compile, $interpolate oder $parse? In diesem Artikel geht es darum, wie sie sich unterscheiden und wie man sie benutzt."
 author: "Sascha Brink"
-slug: "angularjs-compile-interpolate-parse"
 published_at: 2015-08-25 07:45:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-compile-interpolate-parse.jpg"
@@ -12,10 +11,10 @@ header_image: "/artikel/header_images/angularjs-compile-interpolate-parse.jpg"
 
 ## Ziel des Artikels:
 
-Wie AngularJS ein HTML-Template verarbeitet, ist in den Tiefen des Frameworks verborgen. 
-Normalerweise muss man auch nicht wissen, wie es funktioniert. 
-Das ändert sich, wenn man eigene Direktiven zu baut. 
-In diesem Fall kommt man sehr oft in die Situation, Templates oder Variablen selbst kompilieren zu müssen. 
+Wie AngularJS ein HTML-Template verarbeitet, ist in den Tiefen des Frameworks verborgen.
+Normalerweise muss man auch nicht wissen, wie es funktioniert.
+Das ändert sich, wenn man eigene Direktiven zu baut.
+In diesem Fall kommt man sehr oft in die Situation, Templates oder Variablen selbst kompilieren zu müssen.
 Dazu braucht man einen der folgenden Services: $compile, $interpolate oder $parse. In diesem Artikel geht es darum, wie sie sich unterscheiden und wie man sie benutzt.
 
 ## Der typische Anwendungsfall

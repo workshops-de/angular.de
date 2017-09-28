@@ -2,7 +2,6 @@
 title: "AngularJS-Tutorial für Einsteiger"
 description: "Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application."
 author: "Sascha Brink"
-slug: "angularjs-tutorial-deutsch"
 published_at: 2014-03-23 12:12:00.000000Z
 categories: "tutorial angularjs"
 header_image: "/artikel/header_images/angularjs-tutorial-deutsch.jpg"

@@ -2,7 +2,6 @@
 title: "Ionic Framework v1.2 - Der neue Slider"
 description: "Ihr habt Probleme mit der eingebauten Slideshow von Ionic? Die Entwickler in Version 1.2 den konfigurierbaren SwiperJS Slider als Alternative implementiert."
 author: "Bengt Weiße"
-slug: "ionic-framework-new-slider"
 published_at: 2015-12-13 18:16:00.000000Z
 categories: "angularjs ionic"
 header_image: "/artikel/header_images/ionic-framework-new-slider.jpg"

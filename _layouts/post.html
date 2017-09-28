@@ -54,7 +54,7 @@ layout: base
               var disqus_config = function () {
                   this.page.url = "{{ site.url }}{{ page.url}}";
                   console.log(this.page.url);
-                  this.page.identifier = "{{post.slug}}";
+                  this.page.identifier = "{{ page.slug }}";
 
               };
               (function () { // DON'T EDIT BELOW THIS LINE

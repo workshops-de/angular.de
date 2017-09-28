@@ -3,7 +3,6 @@ title: "Tests in Angular - 9 Beispiele zeigen dir, wie es geht"
 subtitle: "Test"
 description: "Wie teste ich meine Angular Anwendung? Wir zeigen dir in 9 leicht zu befolgenden Beispielen wie ihr Services, Komponenten und alle weiteren Konzepte testet."
 author: "Gerard Sans"
-slug: "angular-testing"
 published_at: 2017-09-13 08:25:01.000000Z
 categories: "angular testing advanced"
 header_image: "/artikel/header_images/angular-testing.png"

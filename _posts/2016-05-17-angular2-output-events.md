@@ -2,7 +2,6 @@
 title: "Angular - Outputs, Events und EventEmitter"
 description: "Lasst eure Komponenten schnell und einfach über Events kommunizieren. Informiert Anwendungsteile über Änderungen mit Service-Events."
 author: "Bengt Weiße"
-slug: "angular2-output-events"
 published_at: 2016-05-17 12:12:12.000000Z
 categories: "angular angular2 angular4"
 header_image: "/artikel/header_images/angular2-output-events.jpg"
