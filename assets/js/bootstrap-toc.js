@@ -150,18 +150,19 @@
     }
   };
 
-  $(function() {
-    $('nav[data-toggle="toc"]').each(function(i, el) {
-      var $nav = $(el);
-      Toc.init($nav);
-
-      new ScrollSpy($('main')[0], {
-        // set option
-        target: $('#toc')[0]
-        // alternativelly, provide a valid selector string
-        // EG: ".my-unique-class-name" or "#my-unique-ID"
-      })
-
-    });
-  });
+  // $(function() {
+  //   $('nav[data-toggle="toc"]').each(function(i, el) {
+  //     var $nav = $(el);
+  //     Toc.init($nav);
+  //
+  //     new ScrollSpy($('main')[0], {
+  //       // set option
+  //       target: $('#toc')[0],
+  //       // alternativelly, provide a valid selector string
+  //       // EG: ".my-unique-class-name" or "#my-unique-ID",
+  //       offset: 100
+  //     })
+  //
+  //   });
+  // });
 })();
