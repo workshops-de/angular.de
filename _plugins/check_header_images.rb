@@ -9,8 +9,9 @@ Jekyll::Hooks.register :site, :pre_render do |p|
       exit 1
     end
 
-    # puts file
-    # puts img.type == :jpeg
-
+    if File.size(file) > 440000
+      puts "Image '#{file}' is too big with #{File.size(file)}. Try to stay under 400kb!"
+      exit 1
+    end
   end
 end
