@@ -27,12 +27,14 @@ Wir werden alle Grundlagen hiermit behandeln.
 In diesem Artikel werden wir ein Todo-Listen-Beispiel aus React verwenden, welches aus dem neusten Redux-Videokurs von [Dan Abramov](https://medium.com/@dan_abramov) stammt.
 
 
-## Warum nutzen wir nicht ngRX, die Standard-Implementierung in Angular für Redux?
+## Warum nicht ngRX
+
+Warum nutzen wir nicht ngRX, die Standard-Implementierung in Angular für Redux?
 
 Dieses Beispiel soll so simple wie möglich gehalten werden.
 Falls ihr mit Redux in euer Angular Anwendung arbeiten wollt, empfehle ich euch `ngRx`.
 Allerdings zielt dieser Artikel auf die Kommunikation der Konzepte, wofür sich diese simple Version von Redux mehr eignet.
-ngRx enthält noch Erweiterungen wie `Observbables`, welche die Beispiele an dieser Stelle unnötig komplex machen würden.
+ngRx enthält noch Erweiterungen wie `Observables`, welche die Beispiele an dieser Stelle unnötig komplex machen würden.
 
 
 <hr>
@@ -206,7 +208,6 @@ Wir werden das in den folgenden Code-Beispielen genauer ansehen.
 
 ## Anwendungs State
 
-
 Der Application Store (`appStore`) hält den Anwendungsstatus.
 Dieser ist: das Todos array und der aktuelle Filter.
 
@@ -250,7 +251,6 @@ export class AddTodo {
    input.value = ‘’;
  }
 }
-
 ```
 
 Im Template (Zeilen 4-8) verwenden wir eine [lokale Template-Variable](https://angular.io/guide/template-syntax#!#local-vars) #todo (inline HTML Element, Zeile 6) und übergeben deren Referenz auf das Button-Klickereignis (Zeile 7). Auf dem Konstruktor haben wir appStore und todoActions in die Komponente (Zeilen 11-17) als private Eigenschaften injiziert. Wenn der Benutzer eine Beschreibung eingibt und auf ‘Add Todo’ klickt, wird eine Aktion (Zeile 20) wie die unten abgegeben und den Eingabeinhalt löschen.
