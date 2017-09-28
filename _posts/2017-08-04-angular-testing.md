@@ -18,7 +18,7 @@ Das CoreTeam von Angular hat hart gearbeitet, um Boilerplate-Code zu reduzieren 
 
 In diesem Artikel werden wir folgendes abdecken:
 
-- Einführung in Jasmin: `suites`, `specs`, `exprectations` und `matchers`...
+- Einführung in Jasmine: `suites`, `specs`, `exprectations` und `matchers`...
 
 - Testen in Angular: `setup`, `dependency injection` und testing checklist
 
@@ -28,9 +28,9 @@ In diesem Artikel werden wir folgendes abdecken:
 
 Alle 26 Test-Specs zum selber ausprobieren und ändern findest du in diesem [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
 
-*„Wir haben in diesem Beispielen [Jasmin](https://jasmine.github.io/) verwendet, es ist aber problemlos Möglich auch andere Test-Frameworks wie [Mocha](https://mochajs.org/) zu verwenden.*
+*„Wir haben in diesem Beispielen [Jasmine](https://jasmine.github.io/) verwendet, es ist aber problemlos Möglich auch andere Test-Frameworks wie [Mocha](https://mochajs.org/) zu verwenden.*
 
-## Einführung in Jasmin
+## Einführung in Jasmine
 
 Jasmine ist ein Open-Source-Test-Framwork von [Pivotal Labs](https://pivotal.io/labs).
 Die verwendete DSL(domain specific language) verfolgt die Grundsätze des behaviour-driven-developments, somit ist es sehr leicht hiermit natürlich-sprachliche Tests zu definieren.
