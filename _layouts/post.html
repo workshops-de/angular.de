@@ -8,6 +8,8 @@ layout: base
   {% endif %}
 {% endfor %}
 
+
+
 <div class="header header-post header-gradient-overlay">
   <div class="header header-post hidden-print"
        style="background-image: url('{{page.header_image}}');"></div>
@@ -31,9 +33,21 @@ layout: base
   <main role="main">
 
     <div class="row justify-content-md-center">
-      <div class="col-md-12 col-lg-8 mb-2">
-        {{ content }}
+      <div class="col-lg-2 hidden-md-down">
+        <div class="sticky sticky-under-navbar pt-3">
+          <div class="h5">Inhalt</div>
+          <nav id="toc" data-toggle="toc">
 
+          </nav>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-8 mb-2 add-anchor-fixed-header-styles">
+        {{ content }}
+        </div>
+      </div>
+    <div class="row justify-content-md-center">
+      <div class="col-lg-2 hidden-md-down"></div>
+      <div class="col-md-12 col-lg-8 mb-2">
         <div class="row">
           <div class="col-sm-12 col-md-6 mb-2">
             {% include _author.html %}
