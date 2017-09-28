@@ -4,7 +4,7 @@ description: "Redux ist eine Implementierung des Flux Patterns. Es ist dafür da
 author: "Gerard Sans"
 published_at: 2017-07-24 08:22:01.000000Z
 categories: "angular redux tutorial"
-header_image: "/artikel/header_images/angular-redux-header.png"
+header_image: "/artikel/header_images/angular-redux-einfuehrung.jpg"
 ---
 
 ## Warum brauch ich Redux?
