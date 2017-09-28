@@ -7,7 +7,7 @@ categories: "angular redux tutorial"
 header_image: "/artikel/header_images/angular-redux-einfuehrung.jpg"
 ---
 
-## Warum brauch ich Redux?
+## Warum Redux?
 
 State Verwaltung in komplexen Anwendungen kann schnell zu einem Problem werden.
 Autonome und wiederverwendbare Komponenten, auch "Dumb Components" genannt, kommunizieren über `@Input` und `@Output`.
