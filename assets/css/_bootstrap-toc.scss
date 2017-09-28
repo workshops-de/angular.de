@@ -28,6 +28,12 @@ nav[data-toggle='toc'] .nav .nav {
   display: none; /* Hide by default, but at >768px, show it */
   padding-bottom: 10px;
 }
+
+
+
+nav[data-toggle='toc'] .active + .nav {
+  display: flex;
+}
 nav[data-toggle='toc'] .nav .nav > li > a {
   padding-top: 1px;
   padding-bottom: 1px;
@@ -35,8 +41,8 @@ nav[data-toggle='toc'] .nav .nav > li > a {
   font-size: 12px;
   font-weight: normal;
 }
-nav[data-toggle='toc'] .nav .nav > li > a:hover,
-nav[data-toggle='toc'] .nav .nav > li > a:focus {
+nav[data-toggle='toc'] .nav .nav li > a:hover,
+nav[data-toggle='toc'] .nav .nav li > a:focus {
   padding-left: 29px;
 }
 nav[data-toggle='toc'] .nav .nav .active,

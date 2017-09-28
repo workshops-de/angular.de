@@ -126,7 +126,10 @@ blockquote {
   max-width: 200px;
 }
 
-.add-anchor-fixed-header-styles h2{
-  padding-top: 70px; margin-top: -70px;
+/* Scroll with fixed header and anchor tag */
+.add-anchor-fixed-header-styles {
+  h2, h3 {
+    padding-top: 70px; margin-top: -70px;
+  }
 }
 
