@@ -719,7 +719,7 @@ export class AppComponent {
 
 Durch Interfaces legt ihr nur die Struktur fest. Wollt ihr gleichzeitig eine sinnvolle Belegung von Standardwerten, könnt ihr auch ganz normale Klassen dazu nehmen.
 
-# Fazit
+## Fazit
 
 Mit Angular ist vieles neu und bekannte Dinge funktionieren doch ein wenig anders. Dennoch lohnt sich bereits ein genauerer Blick auf die neue Version des Single-Page-Application Frameworks. Viel Spaß beim Lernen von Angular.
 
