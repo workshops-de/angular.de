@@ -4,7 +4,7 @@ description: "Anwendungen wie Spotify machen es vor: Desktop-Anwendungen werden 
 author: "Michael Berrezak"
 published_at: 2017-09-22 8:25:01.000000Z
 categories: "angular electron desktop advanced"
-header_image: "/artikel/header_images/angular-electron.png"
+header_image: "/artikel/header_images/angular-electron.jpg"
 ---
 
 ## Warum solltest du dir Electron ansehen?
