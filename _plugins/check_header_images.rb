@@ -1,4 +1,4 @@
-Jekyll::Hooks.register :site, :pre_render do |p|
+Jekyll::Hooks.register :site, :after_init do |p|
   require 'fastimage'
   puts "Checking header images"
   Dir["artikel/header_images/*"].each do |file|
