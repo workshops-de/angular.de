@@ -13,6 +13,7 @@ GEM
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     execjs (2.7.0)
+    fastimage (2.1.0)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
     http-cookie (1.0.3)
@@ -75,6 +76,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0.0.alpha6)
+  fastimage
   jekyll (= 3.5.2)
   jekyll-feed (~> 0.6)
   jekyll-paginate-v2
