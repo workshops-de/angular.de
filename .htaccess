@@ -1,4 +1,4 @@
-SetEnvIf Referer "^https://beta\." is_beta
+SetEnvIf Host "^beta\.angularjs\.de" is_beta
 Header set X-Robots-Tag "noindex, nofollow" env=is_beta
 
 RedirectMatch 301 ^/feed$ /feed.xml
