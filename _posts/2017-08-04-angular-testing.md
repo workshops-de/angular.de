@@ -5,7 +5,7 @@ description: "Wie teste ich meine Angular Anwendung? Wir zeigen dir in 9 leicht 
 author: "Gerard Sans"
 published_at: 2017-09-13 08:25:01.000000Z
 categories: "angular testing advanced"
-header_image: "/artikel/header_images/angular-testing.png"
+header_image: "/artikel/header_images/angular-testing.jpg"
 ---
 In diesem Artikel wollen wir die gängigsten Unit-Tests für Angular Anwendungen, wie zum Beispiel Komponenten, Services, Http und Pipes abdecken.
 Wir werden aber auch weniger bekannte Bereiche, wie `Directives`, `Routes` und `Testen` von `Observables` behandeln.
