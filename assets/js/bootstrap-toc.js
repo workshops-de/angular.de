@@ -47,7 +47,7 @@
       },
 
       createNavList: function() {
-        return $('<ul class="nav"></ul>');
+        return $('<ul class="nav flex-column"></ul>');
       },
 
       createChildNavList: function($parent) {
@@ -57,10 +57,10 @@
       },
 
       generateNavEl: function(anchor, text) {
-        var $a = $('<a></a>');
+        var $a = $('<a class="nav-link"></a>');
         $a.attr('href', '#' + anchor);
         $a.text(text);
-        var $li = $('<li></li>');
+        var $li = $('<li class="nav-item"></li>');
         $li.append($a);
         return $li;
       },
@@ -150,19 +150,13 @@
     }
   };
 
-  // $(function() {
-  //   $('nav[data-toggle="toc"]').each(function(i, el) {
-  //     var $nav = $(el);
-  //     Toc.init($nav);
-  //
-  //     new ScrollSpy($('main')[0], {
-  //       // set option
-  //       target: $('#toc')[0],
-  //       // alternativelly, provide a valid selector string
-  //       // EG: ".my-unique-class-name" or "#my-unique-ID",
-  //       offset: 100
-  //     })
-  //
-  //   });
-  // });
+  $(function() {
+    $('nav[data-toggle="toc"]').each(function(i, el) {
+      var $nav = $(el);
+      Toc.init($nav);
+
+      $('body').scrollspy({ target: '#toc', offset: 100 });
+
+    });
+  });
 })();
