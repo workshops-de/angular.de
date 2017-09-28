@@ -4,7 +4,7 @@ description: "Was sind die Unterschiede zwischen Angular und AngularJS?"
 author: "Robin Böhm"
 published_at: 2017-03-26 03:45:00.000000Z
 categories: "angularjs angular"
-header_image: "/artikel/header_images/was-ist-angularjs.jpg"
+header_image: "/artikel/header_images/was-ist-angular.jpg"
 ---
 
 In diesem Artikel möchte ich kurz Klarheit in die aktuell leider etwas verwirrende Struktur der Projektnamen im Bereich Angular bringen.
