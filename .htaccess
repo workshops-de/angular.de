@@ -1,5 +1,5 @@
-# RewriteCond %{HTTP_HOST}   ^beta\.angularjs\.de [NC]
-# Header set X-Robots-Tag "noindex, nofollow"
+SetEnvIf Referer "^https://beta\." is_beta
+Header set X-Robots-Tag "noindex, nofollow" env=is_beta
 
 RedirectMatch 301 ^/feed$ /feed.xml
 RedirectMatch 301 ^/chat(.*)$ https://slack.angularjs.de/
