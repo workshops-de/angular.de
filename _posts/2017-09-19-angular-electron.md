@@ -9,7 +9,7 @@ header_image: "/artikel/header_images/angular-electron.jpg"
 
 ## Warum solltest du dir Electron ansehen?
 
-Die Entwickler vom Electron Framework fangen ihre Produktbeschreibung mit folgendem Slogan an:
+Die Entwickler vom Electron-Framework fangen ihre Produktbeschreibung mit folgendem Slogan an:
 
 >"if you can build a website, you can build a desktop app".
 
@@ -19,6 +19,7 @@ Zum Erstellen und Verwalten der APP, werde ich die beliebte Angular-CLI benutzen
 Wir haben dazu auch einen Artikel [Einführung in Angular-CLI](https://angularjs.de/artikel/angular-cli-einfuehrung/).
 
 ## Voraussetzungen
+
 Ich setze nicht voraus, dass Du die Angular-CLI installiert hast.
 Jedoch sollte NodeJS und NPM bereits in einer nicht zu alten Version(>=6.0) installiert sein.
 Der Installer für NodeJS kann hier heruntergeladen werden unter: [http://nodejs.org/download/](http://nodejs.org/download/).
@@ -35,8 +36,9 @@ NPM 4.2.0
 ```
 
 ## Vorbereitung
+
 Um ein neues Angular Projekt zu erstellen, benötigst Du nicht zwingend die **Angular-CLI**.
-Ich würde aber stets empfehlen sie zu benutzen.
+Ich würde aber stets empfehlen, sie zu benutzen.
 Das hat vielerlei Gründe, nicht zuletzt, dass bereits alles vorkonfiguriert ist.
 Selbst ein Testframework steht Dir zur Verfügung.
 Die Angular-CLI nimmt Dir einfach viel Arbeit ab und unterstützt dich während des gesamten Entwicklungsprozesses.
@@ -59,6 +61,7 @@ Die neue App erstellst Du jetzt in deinem Ordner wie folgt:
 ```bash
 ~/repo/private$ ng new AngularElectron
 ```
+
 Der Befehl `ng new` erstellt die App mitsamt der Abhängigkeiten und verdrahtet alles logisch miteinander.
 Der Name der App ist jetzt *AngularElectron*. Du kannst aber ruhig einen anderen wählen.
 Leider fehlt mir gerade die Fantasie für einen cooleren Namen.
@@ -72,6 +75,7 @@ Das kannst Du durch folgenden Befehl im neuen Ordner testen:
 ```bash
 ~/repo/private/AngularElectron$ ng serve
 ```
+
 Der Output sollte dann in etwa so aussehen:
 
 ![Initial Start der Electron App in der Console](/artikel/angular-electron/first_start.png)
@@ -81,9 +85,9 @@ Dich sollte jetzt eine Seite mit dem Titel "*Welcome to app!*" und ein paar weit
 
 Das war der grobe Angular-Teil. Als nächstes zeige ich Dir, was getan werden muss um *Electron* zu integrieren.
 
-## Electron Einrichten
+## Electron einrichten
 
-Installiere das Electron Framework bitte im Projektordner:
+Installiere das Electron-Framework bitte im Projektordner:
 
 ```bash
 ~/repo/private/AngularElectron$ npm install electron --save-dev
@@ -108,6 +112,7 @@ Die erste Konfigurationsdatei die Du erstellst, nennst Du `package.json` und gib
     "main": "main.js"
 }
 ```
+
 Diese Datei dient als Einstiegspunkt für das *Electron-Framework*.
 Der wichtigste Eintrag hierbei ist der Link zur eigentlichen Electron-Konfiguration `"main": "main.js"`.
 Da diese `main.js` noch nicht existiert, musst Du sie ebenfalls erstellen und mit folgendem Inhalt füllen:
@@ -187,7 +192,7 @@ Hier noch mal (als Übersicht) die neuen Dateien, die Du eben erstellt hast:
 ~/repo/private/AngularElectron/src/electron/package.json
 ```
 
-## Electron Integrieren
+## Electron integrieren
 
 Prinzipiell ist Electron jetzt schon lauffähig.
 Dummerweise weiß dein Projekt aber noch nicht, dass es Electron gibt.
@@ -413,7 +418,7 @@ Das solltest Du noch ändern, da Du diese Abfragen eventuell mal benötigst.
 Das Problem hierbei ist, dass Webpack falsche *Render-Einstellungen* zum Rendern benutzt.
 Im nächsten Schritt wirst Du sehen, wie dieses Problem zu beheben ist.
 
-## Webpack Konfiguration
+## Webpack konfiguration
 
 Angular-CLI nutzt als Standard Builder nicht **SystemJS** sondern Webpack.
 Wenn Du mehr über Webpack erfahren willst, dann lese Dir einfach die [Doku](https://webpack.js.org/concepts/) durch.
