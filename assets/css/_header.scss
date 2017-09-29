@@ -82,6 +82,12 @@
   }
 }
 
+.header-team, .header-workshop {
+  background: url('/assets/img/header_tris-1.png');
+  background-size: cover;
+  background-position: center center;
+}
+
 @include media-breakpoint-up(sm) {
   .header {
     &.header-post {
