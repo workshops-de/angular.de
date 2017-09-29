@@ -1,3 +1,12 @@
+<style>
+  article.card h2.card-title {
+    font-size: 2rem;
+    padding: 20px 0 0 0;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+</style>
+
 <script type="application/ld+json">{"url":"{{post.url}}","publisher":"AngularJS.DE","image":{"width":920,"url":"{{post.header_image}}","height":270,"@type":"ImageObject"},"headline":"{{post.title}}","description":"{{post.description}}","datePublished":"2017-01-12","dateModified":"2017-02-05","author":"{{post.author}}","@type":"Article","@context":"http://schema.org"}</script>
 
 <article class="card mb-4">
@@ -7,17 +16,13 @@
   </a>
   <div class="card-body">
     <h2 class="h4 card-title"><a href="{{ post.url }}">{{post.title}}</a></h2>
-    <p>
+    <small class="text-muted">von {{post.author}} <time>({{ post.published_at | timeago }})</time></small>
+    <p class="mb-4 mt-3">
       {{post.description}}
     </p>
-    <p>
-      <small><a class="text-muted" href="{{ post.url }}">Weiterlesen...</a></small>
-    </p>
-    <small>
-      <span class="text-muted">{% include _reading_time.html %}</span>
-      <span class="float-right">
-        <span class="text-muted">von {{post.author}}</span>
-      </span>
+    <a class="btn btn-outline-secondary float-left px-4" href="{{ post.url }}">Artikel lesen</a>
+    <small class="float-right">
+      <span class="text-muted" style="position: relative; top: 14px;">{% include _reading_time.html %}</span>
     </small>
     <div class="clearfix"></div>
   </div>
