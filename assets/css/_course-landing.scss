@@ -1,0 +1,25 @@
+.cl-intro-1 {
+  padding: 40px 0;
+  position: relative;
+}
+
+.cl-intro-1::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  max-width: 860px;
+  min-height: 540px;
+  height: 50%;
+  right: 0;
+  bottom: 0;
+  background: url(/assets/img/temp/teaser1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+}
+
+@media (max-width: 768px) {
+  .cl-intro-1::after {
+    display: none;
+  }
+}

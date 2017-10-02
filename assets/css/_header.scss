@@ -18,7 +18,7 @@
     color: #fff;
   }
 
-  &.header-workshop, &.header-team {
+  &.header-workshop, &.header-team, &.header-tutorials {
     background-color: #fcfcfc;
     border-bottom: 1px solid #efefef;
     color: #333;
@@ -27,7 +27,7 @@
     margin-bottom: 40px;
   }
 
-  &.header-team {
+  &.header-team, &.header-tutorials {
     padding: $spacer*8 0 $spacer*4;
     margin-bottom: $spacer*4;
   }
@@ -80,6 +80,12 @@
       opacity: .4;
     }
   }
+}
+
+.header-team, .header-workshop {
+  background: url('/assets/img/header_tris-1.png');
+  background-size: cover;
+  background-position: center center;
 }
 
 @include media-breakpoint-up(sm) {
