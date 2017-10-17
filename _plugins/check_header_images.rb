@@ -14,4 +14,5 @@ Jekyll::Hooks.register :site, :after_init do |p|
       exit 1
     end
   end
+  puts "Checking header images...done"
 end
