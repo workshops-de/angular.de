@@ -2,3 +2,4 @@ _site
 .sass-cache
 .jekyll-metadata
 _includes/_events_jsonld.json
+_includes/_course_reviews_jsonld.json
