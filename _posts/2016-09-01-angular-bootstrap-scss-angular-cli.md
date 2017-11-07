@@ -73,7 +73,7 @@ Nun kann ich diese via `@import` Statement in der Datei `src/style.scss` einbind
 Danach wird der Webserver, den wir über `ng serve` gestartet haben, unsere Anwendung neu bauen und die Seite in unserem Browser automatisch aktualisieren.
 
 ```css
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 ```
 
 Nun können wir in unseren Komponenten direkt die Bootstrap-Klassen benutzen.
