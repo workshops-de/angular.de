@@ -5,6 +5,25 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [
+      {"source" : "/feed", "destination" : "/feed.xml", "type" : 301},
+      {"source" : "/chat*", "destination" : "https://slack.angularjs.de/", "type" : 301},
+      {"source" : "/workshops/", "destination" : "/workshops/angular-intensiv/", "type" : 301},
+      {"source" : "/workshops/angularjs*", "destination" : "/workshops/angular-intensiv/", "type" : 301},
+      {"source" : "/workshops/angular2*", "destination" : "/workshops/angular-intensiv/", "type" : 301},
+      {"source" : "/inhouse-workshop-anfrage", "destination" : "/inhouse-workshop/", "type" : 301},
+      {"source" : "/veranstaltungen*", "destination" : "/workshops/angular-intensiv/", "type" : 301},
+      {"source" : "/entwickler*", "destination" : "/", "type" : 301},
+      {"source" : "/consulting*", "destination" : "/", "type" : 301},
+      {"source" : "/projekte*", "destination" : "/", "type" : 301},
+      {"source" : "/classroom/*", "destination" : "https://workshops.de/classroom/", "type" : 301},
+      {"source" : "/buch/*", "destination" : "/buecher/angularjs-buch/", "type" : 301},
+      {"source" : "/blog/*", "destination" : "/", "type" : 301},
+      {"source" : "/artikel/angular2-bootstrap-scss-angular-cli*", "destination" : "/artikel/angular-bootstrap-scss-angular-cli/", "type" : 301},
+      {"source" : "/artikel/angular2-tutorial-deutsch*", "destination" : "/artikel/angular-tutorial-deutsch/", "type" : 301},
+      {"source" : "/artikel/ngupgrade-migration-angularjs-angular2*", "destination" : "/artikel/ngupgrade-migration-angularjs-angular/", "type" : 301},
+      {"source" : "/artikel/angular2-routing-tutorial-deutsch*", "destination" : "/artikel/angular-routing-tutorial-deutsch/", "type" : 301}
     ]
   }
 }
