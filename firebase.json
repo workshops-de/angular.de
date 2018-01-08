@@ -24,6 +24,16 @@
       {"source" : "/artikel/angular2-tutorial-deutsch*", "destination" : "/artikel/angular-tutorial-deutsch/", "type" : 301},
       {"source" : "/artikel/ngupgrade-migration-angularjs-angular2*", "destination" : "/artikel/ngupgrade-migration-angularjs-angular/", "type" : 301},
       {"source" : "/artikel/angular2-routing-tutorial-deutsch*", "destination" : "/artikel/angular-routing-tutorial-deutsch/", "type" : 301}
+    ],
+    "headers": [
+      { "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7200"
+          }
+        ]
+      }
     ]
   }
 }
