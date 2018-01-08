@@ -74,6 +74,8 @@ exclude:
   - Dockerfile
   - .gitignore
   - nginx.conf
+  - cloudbuild.yaml
+  - firebase-debug.log
 
 # webrick:
 #   headers:
