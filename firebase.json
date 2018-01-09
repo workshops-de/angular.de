@@ -26,12 +26,8 @@
       {"source" : "/artikel/angular2-routing-tutorial-deutsch*", "destination" : "/artikel/angular-routing-tutorial-deutsch/", "type" : 301}
     ],
     "headers": [
-      { "source": "**/*.@(jpg|jpeg|gif|png)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=7200"
-          }
+      { "source": "**/*.@(jpg|jpeg|gif|png|svg|css)",
+        "headers": [{"key": "Cache-Control", "value": "max-age=604800"}
         ]
       }
     ]
