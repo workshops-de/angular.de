@@ -11,13 +11,13 @@ Es rückt näher und näher! Brad Green hat in einem Tweet den Milestone für de
 
 
 <br/>
-![Angular 2 Release Candidate Tweet Brad Green](medium_Screen-Shot-2016-03-17-at-11.25.56.png?v=63625429605)
+![Angular 2 Release Candidate Tweet Brad Green](angular2-tweet-brad-green.png)
 <br/>
 
 Zum heutigen Tag befindet sich der [Milestone](https://github.com/angular/angular/milestones) bei 21% der Entwicklung. Wenn wir einen Blick auf die Issues in dieser Liste werfen, sind viele der Implementierung mit Easy oder Medium bewertet. Große Punkte wie i18n sind jedoch noch gar nicht bewertet und kaum diskutiert. Es bleibt also spannend wann wir mit einem Release oder Final rechnen können. Diesen Prozess aber öffentlich zu Kommunizieren ist ein sehr sinnvoller Schritt. Somit kann man auch ggf noch Breaking Changes besser vorhersagen/sehen welche  bis dahin noch passieren.
 
 <br/>
-![Angular 2 Release Candidate Milestone Overview](medium_Screen-Shot-2016-03-17-at-10.57.23.png?v=63625429412)
+![Angular 2 Release Candidate Milestone Overview](angular2-milestone-overview.png)
 
 <br/>
 
