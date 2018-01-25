@@ -73,7 +73,7 @@ Für die Big-Bang-Strategie gibt es keine weitere Erläuterung. Der Code wird we
 
 Hingegen die Baby-Steps-Strategie ihren Namen erhalten hat, da wir die Applikation in kleinen einfachen Schritten immer weiter migrieren. Grundsätzlich kann gesagt werden, was mit AngularJS funktioniert hat, lässt sich auch mit Angular bewerkstelligen.
 
-![AngularJS to Angular 2 Migration Process](medium_Screen-Shot-2016-09-11-at-15.36.50.png?v=63640820242)
+![AngularJS to Angular 2 Migration Process](migration-process.png)
 
 Um die Migration zu starten, müssen wir zuvor Angular in unsere AngularJS integrieren und das Modul ngUpgrade installieren.
 
