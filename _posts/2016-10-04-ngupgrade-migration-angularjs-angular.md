@@ -18,7 +18,7 @@ Um eine Migration starten zu können, müssen wir unsere AngularJS-Anwendung zuv
 ### Unterschiede mit Components
 Der Kernunterschied von Angular zu AngularJS ist, dass die ganze Applikation in Components aufgeschlüsselt wird und es dabei keine eigenständige Controller oder Directives mit Template mehr gibt. Diese werden in Angular durch Components ersetzt. Components können wiederum Child-Components enthalten und erlauben uns somit die Funktionalität in kleine wartbare und wiederverwendbare Container zu verschachteln.
 
-![Component Struktur](medium_Screen-Shot-2016-09-11-at-15.42.31.png?v=63640820603)
+![Component Struktur](component-structure.png)
 
 Ab der AngularJS 1.5 Version können Components  erstellt werden, die maßgeblich wichtig für die Migration sind. Besteht unsere Logik bereits aus Components, haben wir den größten Teil der Migration fast schon erledigt. Sollten wir noch eine unfertige Applikation besitzen, die noch mit Directives oder reinen Controllers arbeitet, müssen wir an diesen Stellen auf Components umsteigen.
 
@@ -85,7 +85,7 @@ const upgradeAdapter = new UpgradeAdapter();
 ### Migration von Components
 Nach und nach können nun unsere AngularJS-Components in neue Angular-Components migrieren.
 
-![Migration AngularJS Components zu Angular 2](medium_Screen-Shot-2016-09-11-at-15.47.44.png?v=63640820915)
+![Migration AngularJS Components zu Angular 2](compontent-migration.png)
 
 Der große Vorteil: Sobald wir eine Component übersetzt haben, können wir die Angular-Component wieder mit Hilfe des ngUpgrade-Moduls in unserer AngularJS-Applikation lauffähig machen.
 
@@ -134,7 +134,7 @@ export class HeroDetailComponent {
 }
 ```
 
-![Anmeldung am jeweiligen Root-Injector](medium_Screen-Shot-2016-09-11-at-15.49.44.png?v=63640821011)
+![Anmeldung am jeweiligen Root-Injector](migration-root-injector.png)
 
 ### Change Detection
 
@@ -142,7 +142,7 @@ View & Logic sind zwischen den Schnittstellen verknüpft, aber wie löst man das
 Kein Problem für ngZone, welches sich zwischen dem Browser-Event-Handler und der Applikation als Zwischenschicht legt.
 Hier werden alle Events abgefangen, die in  AngularJS und Angular benutzt werden können.
 
-![Change-Detection mit ngZone](medium_Screen-Shot-2016-09-11-at-15.53.02.png?v=63640821222)
+![Change-Detection mit ngZone](change-detection-ng-zone.png)
 
 
 ### TypeScript
