@@ -9,7 +9,7 @@ header_image: "/artikel/header_images/ionic-tutorial-deutsch-ionicons.jpg"
 
 Für eine stylische App dürfen auch passende Icons nicht fehlen. Bei Ionic hat der Entwickler das Glück, dass das Ionic-Team eine eigene Icon-Font unter dem Namen **Ionicons** pflegt und stetig weiterentwickelt. Sie orientiert sich dabei an den System-Icons von iOS und Android. Dadurch stehen für verschiedene Anwendungsfälle gleich mehrere Icons zur Verfügung.
 
-![Bild](medium_ionicons.png?v=63629400558)
+![Bild](medium_ionicons.png)
 
 Die in unserem [Einführungsartikel](/artikel/ionic-tutorial-deutsch/ "Ionic Framework Tutorial") entwickelte Pizza-Service-App nutzt die Icon-Font, um sie ein wenig "aufzupeppen" (wenn das überhaupt noch irgendwie geht ;) ).
 
@@ -25,10 +25,10 @@ In die eigene App oder Webseite eingebunden, braucht ihr nur per entsprechende C
 
 Dazu einfach die Klasse `icon`, gefolgt von der entsprechende Icon-Klasse, setzten.
 
-![Bild](medium_ionicons-preview.png?v=63629400520)
+![Bild](medium_ionicons-preview.png)
 
 Eine Liste aller Icons mit der dazugehörigen CSS-Klasse könnt ihr auf [ionicons.com](http://ionicons.com/ "Webseite Ionicons") einsehen und durchsuchen!
 
 In der finalen Version unserer Ionic-Pizza-App werden an den unterschiedlichsten Stelle Ionicons zur Gestaltung genutzt.
 
-![Bild](medium_13-ionic-ionicons.png?v=63626730860)
+![Bild](medium_13-ionic-ionicons.png)

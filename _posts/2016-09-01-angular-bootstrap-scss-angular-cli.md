@@ -100,7 +100,7 @@ Danke fürs lesen! Feedback jederzeit willkommen!
 
 ## Video
 
-![Bild](medium_Screen-Shot-2016-09-01-at-19.00.45.png?v=63639968496)
+![Angular Bootstrap](angular-bootstrap-teaser.png)
 
 Hier nochmal kurz der Video-Mitschnitt zur Einrichtung!
 

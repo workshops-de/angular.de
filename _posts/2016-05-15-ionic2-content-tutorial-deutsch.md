@@ -100,7 +100,7 @@ Im Template greifen wir nun auf unser `pizzas` Array zu. Wir definieren eine Lis
 </ion-content>
 ```
 
-![Bild](medium_ionic2-simple-list.png?v=63630686993)
+![Bild](medium_ionic2-simple-list.png)
 
 Wir können natürlich auch ein paar Informationen zu unserer Pizza ausgeben. Dazu brauche wir nur den Inhalt des `ion-item` Tags anpassen. Als nächsten möchten wir unserer Liste noch einen Titel *Angebot* geben. Dazu nutzen wir einfach die `ionListHeader` Komponente in unserer `ionList`.
 
@@ -119,7 +119,7 @@ Wir können natürlich auch ein paar Informationen zu unserer Pizza ausgeben. Da
 </ion-content>
 ```
 
-![Bild](medium_ionic2-simple-list-header.png?v=63630703972)
+![Bild](medium_ionic2-simple-list-header.png)
 
 ### Komplexe Liste
 
@@ -138,7 +138,7 @@ In Ionic 2 wird die Positionierung von Elementen in den meisten Fällen mit `Fle
 </ion-item>
 ```
 
-![Bild](medium_ionic2-list-button.png?v=63630707241)
+![Bild](medium_ionic2-list-button.png)
 
 Wir gehen jetzt nicht mehr näher auf die Implementierung der einzelnen Funktionen ein, da dies weniger mit Ionic, sondern mehr mit Angular 2 zu tun hat. Entnehmt eine mögliche Umsetzung einfach unserem [GitHub-Repository](https://github.com/angularjs-de/ionic2-pizza-service/tree/master/src/cart "Warenkorb Quelltexte").
 
@@ -165,7 +165,7 @@ Ein Listeneintrag wird *slidebar* in dem wir das `ionItem` mit der `ionItemSlidi
 </ion-list>
 ```
 
-![Bild](medium_ionic2-list-advanced.png?v=63630707325)
+![Bild](medium_ionic2-list-advanced.png)
 
 <div class="alert alert-info"><em>Hinweis:</em> Seit Beta 9 können nun auf beiden Seiten Option-Buttons eingebaut werden. Dazu müsst ihr dem ion-item-options Tag einfach die entsprechende Seite angeben. Beispiel: <code>&lt;ion-item-options side="right"></code>.</div>
 
@@ -217,7 +217,7 @@ Damit dieser auch sichtbar wird, muss er noch über die aktuelle Seite gelegt we
 loading.present();
 ```
 
-![Bild](medium_ionic2-loading.png?v=63631401587)
+![Bild](medium_ionic2-loading.png)
 
 Ausblenden könnt ihr das Overlay über die `dismiss` Funktion.
 
@@ -280,7 +280,7 @@ Ausschnitte des Templates und das Resultat.
 </ion-content>
 ```
 
-![Bild](medium_ionic2-spinner.png?v=63631402698)
+![Bild](medium_ionic2-spinner.png)
 
 Das war schon die ganze Magie hinter dem Ladehandling in Ionic 2.
 
@@ -382,7 +382,7 @@ Im Template sieht der Aufruf der `doRefresh` folgendermaßen aus.
 </ion-refresher>
 ```
 
-![Bild](medium_ionic2-refresher.png?v=63631410058)
+![Bild](medium_ionic2-refresher.png)
 
 
 
@@ -423,7 +423,7 @@ Im einfachsten Fall enthält eine Card nur reinen Text. Damit dieser automatisch
 
 Und das Ergebnis sieht schon mal gar nicht so schlecht aus.
 
-![Bild](medium_ionic2-card-simple.png?v=63631464934)
+![Bild](medium_ionic2-card-simple.png)
 
 Zum expliziten Auszeichnen eines Card-Titels stehen uns zwei Möglichkeiten zur Verfügung.
 
@@ -441,7 +441,7 @@ Wir schauen uns den jeweiligen Quellcode und das damit verbundene visuelle Resul
 </ion-card>
 ```
 
-![Bild](medium_ionic2-card-title.png?v=63631465355)
+![Bild](medium_ionic2-card-title.png)
 
 Und im Vergleich dazu die Lösung mit `ionCardHeader`.
 
@@ -456,7 +456,7 @@ Und im Vergleich dazu die Lösung mit `ionCardHeader`.
 </ion-card>
 ```
 
-![Bild](medium_ionic2-card-header.png?v=63631465403)
+![Bild](medium_ionic2-card-header.png)
 
 Wann ihr was benutzt, hängt immer von eurem Anwendungsfall ab. Wie wir gleich sehen werden, kann eine Card auch komplexere Strukturen beinhalten. Dabei wird dann der `ionCardHeader` wirklich immer am Anfang und als erstes in der Card angezeigt. Wollt ihr jedoch einen Titel einfach im Inhaltsbereich der Karte ausrichten, dann bietet sich `ionCardTitle` an.
 
@@ -490,7 +490,7 @@ Eine etwas komplexere Card für unser Angebot könnte dann so aussehen.
 </ion-card>
 ```
 
-![Bild](medium_ionic2-card-complex.png?v=63631466010)
+![Bild](medium_ionic2-card-complex.png)
 
 Damit sind wir mit dem nächsten großen Punkt auf dem Weg zu unserer Pizza-App fertig.
 
@@ -551,7 +551,7 @@ Im Template weisen wir dem Klick-Event des Über Uns Eintrags die `openAboutModa
 
 Das Ergebnis ist schon gar nicht mal so schlecht.
 
-![Bild](medium_ionic2-modal-withoutclose.png?v=63631468166)
+![Bild](medium_ionic2-modal-withoutclose.png)
 
 ### Schließen eines Modals
 
@@ -589,7 +589,7 @@ Der Schließen-Knopf könnte dann im Template so eingebaut werden:
 </ion-toolbar>
 ```
 
-![Bild](medium_ionic2-modal-close.png?v=63631469478)
+![Bild](medium_ionic2-modal-close.png)
 
 ### Daten aus dem Modal extrahieren
 
@@ -675,7 +675,7 @@ ionViewDidEnter(): void {
 
 Ein Button kann auch nur über seinen Text definiert werden. Dadurch sparen wir uns Schreibarbeit.
 
-![Bild](medium_ionic2-alert.png?v=63631471960)
+![Bild](medium_ionic2-alert.png)
 
 ### Alert schließen
 
@@ -732,7 +732,7 @@ addToCart($event, pizza: Pizza) {
 }
 ```
 
-![Bild](medium_ionic2-toast.png?v=63631473726)
+![Bild](medium_ionic2-toast.png)
 
 ### `Toast`s schließen
 

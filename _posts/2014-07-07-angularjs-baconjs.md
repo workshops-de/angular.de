@@ -38,8 +38,8 @@ Bei reaktiver Programmierung bedeutet der Ausdruck: "Beobachte ständig jede Än
 Die Werte eines *Observable* sind also nie einfach, sondern immer Ströme von Werten über die Zeit. Wenn ich z.B. `Ramy` in das Eingabefeld tippe, dann könnte `dom.input` den Wert `...'R'....'a'..'m'...'y'..` haben, je nachdem, wann ich die Tasten drücke. Die Punkte entsprechen jeweils einer Zeiteinheit.
 
 |   | Synchron | Asynchron |
-| Ein Wert | ![Bild](medium_bacon1.png?v=12345678)<br>Datentyp: z.B. Number | ![Bild](medium_bacon3.png?v=12345678)<br>Datentyp: Promise/Future |
-| Viele Werte | ![Bild](medium_bacon2.png?v=12345678)<br>Datentyp: Array/Object | ![Bild](medium_bacon4.png?v=12345678)<br>Datentyp: Observable |
+| Ein Wert | ![Bild](medium_bacon1.png)<br>Datentyp: z.B. Number | ![Bild](medium_bacon3.png)<br>Datentyp: Promise/Future |
+| Viele Werte | ![Bild](medium_bacon2.png)<br>Datentyp: Array/Object | ![Bild](medium_bacon4.png)<br>Datentyp: Observable |
 |   |   |   |
 
 Das war der reaktive Teil, es fehlt noch der funktionale. Auf den Ereignisströmen lassen sich Funktionen definieren, deren Ergebnisse wiederum Ereignisströme sind. So können wir Ströme  kombinieren und zu einer "Kanalisation" ausbauen, um komplexes Verhalten abzubilden.
