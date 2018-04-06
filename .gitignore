@@ -1,6 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
+.DS_Store
 _includes/_events_jsonld.json
 _includes/_course_reviews_jsonld.json
 firebase-debug.log
