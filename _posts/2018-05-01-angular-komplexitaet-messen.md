@@ -23,7 +23,7 @@ Häufig dienen Angular Anwendungen dabei als Front-end und machen einen wesentli
 
 ## Wie funktioniert das Script?
 
-Um nun nicht einfach eine rein intuitive Abschätzung zu geben, andererseits aber auch nicht jedes Mal aufwendig individuell und manuell jede Komponente einer Angular Anwendung analysieren zu müssen [threevirtues.com](http://threevirtues.com/), habe ich ein [Ruby Script](https://github.com/BjoernKW/Miscellaneous/blob/master/measure_angular_component_complexity.rb) erstellt, mit dem man die Komplexität von Angular Apps automatisiert messen kann.
+Um nun nicht einfach eine rein intuitive Abschätzung zu geben, andererseits aber auch nicht jedes Mal aufwendig individuell und manuell jede Komponente einer Angular Anwendung analysieren zu müssen ([threevirtues.com](http://threevirtues.com/) ), habe ich ein [Ruby Script](https://github.com/BjoernKW/Miscellaneous/blob/master/measure_angular_component_complexity.rb) erstellt, mit dem man die Komplexität von Angular Apps automatisiert messen kann.
 
 Dies geht von der Annahme aus, dass sich die Komplexität einer Code Entität (Klasse, Komponente, Service …) wesentlich aus ihren Abhängigkeiten und deren Anzahl ergibt.
 
@@ -39,4 +39,4 @@ Neben den einzelnen Abhängigkeiten je Komponente gibt das Script auch einen Ges
 
 ## Fazit
 
-Dies ist ein kleines Script welches mir meine tägliche Arbeit erleichtert. Ich würde mich über eure Meinung dazu freuen und hoffe, dass es dem einem oder anderen auch Hilft die Qualität der eigenen Anwendung zu Bewerten und zu verbessern. Das Projekt ist Open-Source und ich freu mich über Anregungen und Ideen es zu verbessern!
+Dies ist ein kleines Script welches mir meine tägliche Arbeit erleichtert. Ich würde mich über eure Meinung dazu freuen und hoffe, dass es dem einem oder anderen auch hilft, die Qualität der eigenen Anwendung zu Bewerten und zu verbessern. Das Projekt ist Open-Source und ich freue mich über Anregungen und Ideen, es zu verbessern!
