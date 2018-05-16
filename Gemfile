@@ -9,7 +9,7 @@ ruby RUBY_VERSION
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.7.0"
+gem "jekyll", "3.8.1"
 gem "rest-client"
 gem 'fastimage'
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
@@ -20,7 +20,7 @@ gem 'fastimage'
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem 'bootstrap', '~> 4.0.0'
+  gem 'bootstrap', '~> 4.1.1'
   gem "jekyll-feed", "~> 0.6"
   gem "jekyll-sitemap"
   gem "jekyll-paginate-v2"
@@ -28,4 +28,4 @@ group :jekyll_plugins do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
