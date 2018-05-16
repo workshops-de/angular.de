@@ -31,8 +31,6 @@ Die Entwicklungsumgebung umfasst:
 Der Styleguide wird befolgt, wodurch man einen sehr aufgeräumten Code bekommt. Im Idealfall findet sich so jeder recht schnell in dem Projekt zurecht.
 Im Urlaub fand ich ein perfektes Beispiel anhand zweier Grundstücke, die nebeneinenader liegen. Man erkennt schnell, welches von beiden den Styleguide ignoriert:
 
-![Styleguide](https://pbs.twimg.com/media/Cp_9AwhXYAAqBJz.jpg:small)
-
 ## Wie verwendet man die angular-cli?
 ### Installation
 Zuerst muss die cli installiert werden. Dafür benötigen wir wie so oft nodejs, da die cli per npm installiert wird.
