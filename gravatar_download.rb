@@ -18,7 +18,7 @@ Dir["_data/users/*.yaml"].each do |file|
   if gravatar_uid then
     save_gravatar_image(gravatar_uid, 64)
     save_gravatar_image(gravatar_uid, 160)
-    if user["team"] then
+    if user["team"] || user["trainer"] then
       save_gravatar_image(gravatar_uid, 300)
     end
   end
