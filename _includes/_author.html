@@ -4,7 +4,7 @@
     <span>
       <img alt="{{ author.name }}" class="rounded-circle img-fluid"
       {% if author.gravatar_uid %}
-      src="//www.gravatar.com/avatar/{{ author.gravatar_uid }}?s=160"
+      src="/assets/img/gravatars/{{ author.gravatar_uid }}-160x160.jpg"
       {% endif %}
       {% if author.image_url %}
       src="{{author.image_url}}"
