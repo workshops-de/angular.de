@@ -19,7 +19,7 @@ Wir haben gemerkt, dass es so viele interessante und relevante Themen gibt und h
   <br/>
 </div>
 
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/tSbir2jetHg?rel=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/tSbir2jetHg?rel=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 <div class="alert alert-warning">
   Dies ist eine Aufnahme vom 16. August 2016

@@ -104,4 +104,4 @@ Danke fürs lesen! Feedback jederzeit willkommen!
 
 Hier nochmal kurz der Video-Mitschnitt zur Einrichtung!
 
-<iframe width="100%" height="360" src="https://www.youtube.com/embed/u1_IeSkM1yc" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/u1_IeSkM1yc" frameborder="0" allowfullscreen></iframe>

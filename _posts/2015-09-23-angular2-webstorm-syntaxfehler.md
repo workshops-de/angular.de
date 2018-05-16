@@ -33,7 +33,7 @@ Anfang 2017 hat das Unternehmen ein Video veröffentlicht wo Victor Savkin, eine
 Es werden Shortcuts, Settings und Plugins besprochen welche euch helfen eurer Webstorm optimal zu konfigurieren!
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/upgjCMHGpwo" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/upgjCMHGpwo" frameborder="0" allowfullscreen></iframe>
 
 
 Eine weitere Alternative kann natürlich auch [Visual Studio Code](https://code.visualstudio.com/) sein.
