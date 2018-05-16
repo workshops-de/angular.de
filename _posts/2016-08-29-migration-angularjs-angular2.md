@@ -28,7 +28,6 @@ Falls Ihr weitere Fragen habt schreibt mich jederzeit liebend gern an! :)
 
 Die Slides separat findet ihr übrigens <a href="https://docs.google.com/presentation/d/1Imu7RE7gS_e3I5YzWCkKfQggvMaB1EZHKQMGgjnubOU/edit?usp=sharing" target="_blank">hier</a>.
 
-
-<iframe src="https://player.vimeo.com/video/172696386" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+Das Video zur Migration findet ihr <a href="https://vimeo.com/172696386" target="_blank">hier</a>.
 
 
