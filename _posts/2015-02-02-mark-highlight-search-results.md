@@ -43,7 +43,7 @@ Zusätzlich wird noch das Angular-eigene Modul `ngSanitize` benötigt, da wir zu
 
 ```html
 <script src="http://angular-ui.github.io/ui-utils/dist/ui-utils.js"></script>
-<script src="https://code.angularjs.org/1.3.10/angular-sanitize.js"></script>
+<script src="/assets/mirror/code.angularjs.org/1.3.10/angular-sanitize.js"></script>
 ```
 
 Die beiden Abhängigkeiten müssen jetzt nur noch in unser eigenes App-Modul eingebunden werden und schon können wird die gewünschten Komponenten verwenden.
