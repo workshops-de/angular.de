@@ -66,7 +66,7 @@ Zusammen mit dem `filter` Filter und der `ng-repeat` Direktive sieht der Code da
 </ul>
 ```
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/8usO3m16k7BYDFsiNPap/preview.html" style="width:100%;height:150px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/8usO3m16k7BYDFsiNPap/preview.html" style="width:100%;height:150px;border:0"></iframe>
 
 ## Komplexe Suche
 
@@ -176,7 +176,7 @@ Und das Ganze als Template mit Such-Feld und Benutzer-Tabelle:
 
 Das fertige Beispiel auf Plunker:
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/mNPRyvaBQxBrlElCs7UQ/preview.html" style="width:100%;height:350px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/mNPRyvaBQxBrlElCs7UQ/preview.html" style="width:100%;height:350px;border:0"></iframe>
 
 ## Fazit
 

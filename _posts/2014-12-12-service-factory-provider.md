@@ -108,7 +108,7 @@ In einem Template können wir beide Controller unanhängig voneinander einsetzen
 </body>
 ```
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/YqpPJT6tWUpZNgFiwT3K/preview.html" style="width:100%;height:150px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/YqpPJT6tWUpZNgFiwT3K/preview.html" style="width:100%;height:150px;border:0"></iframe>
 
 
 ### Beispiel `service()`
@@ -226,7 +226,7 @@ angular.module('myApp').config(function(userServiceProvider) {
 });
 ```
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/5pi46MIe9bEuI3nZNc3k/preview.html" style="width:100%;height:150px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/5pi46MIe9bEuI3nZNc3k/preview.html" style="width:100%;height:150px;border:0"></iframe>
 
 ## TL; DR
 

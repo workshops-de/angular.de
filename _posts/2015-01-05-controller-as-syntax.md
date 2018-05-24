@@ -86,7 +86,7 @@ Es ist ebenfalls möglich, den gleichen Controller mehrfach mit anderem Variable
 
 Anhand der Eingabefelder kann man überprüfen, dass die erzeugten Controller-Instanzen wirklich unabhängig voneinander sind.
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/Sh6BGgpxygAbys97aNMa/preview.html" style="width:100%;height:150px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/Sh6BGgpxygAbys97aNMa/preview.html" style="width:100%;height:150px;border:0"></iframe>
 
 
 ## Dependency Injection

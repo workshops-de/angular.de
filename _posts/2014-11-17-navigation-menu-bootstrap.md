@@ -263,7 +263,7 @@ Wenn man jetzt eine neue Unterseite hinzufügen möchte, dann reicht es aus sie 
 
 Fertig zusammengefügt sieht das Beispiel wie folgt aus.
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/rN1CUfoEbGfxkHrZPuoi/preview.html" style="width:100%;height:320px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/rN1CUfoEbGfxkHrZPuoi/preview.html" style="width:100%;height:320px;border:0"></iframe>
 
 ## TL;DR
 

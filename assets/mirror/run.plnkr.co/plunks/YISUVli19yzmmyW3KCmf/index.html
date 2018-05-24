@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="baconDemo">
+
+  <head>
+    <script data-require="angular.js@1.2.16" data-semver="1.2.16" src="//code.angularjs.org/1.2.16/angular.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.10/bacon.min.js"></script>
+    <script type="text/javascript" src="//rawgit.com/lauripiispanen/angular-bacon/master/dist/angular-bacon.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <p ng-controller="baconCtrl">
+      <blink>This should blink</blink>
+      This shouldn't
+      <blink>This should blink, too</blink>
+    </p>
+  </body>
+
+</html>

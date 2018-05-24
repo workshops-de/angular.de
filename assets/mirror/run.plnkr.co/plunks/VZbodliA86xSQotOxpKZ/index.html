@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="angular.js@1.2.17" data-semver="1.2.17" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+    <script data-require="bacon.js@0.7.2" data-semver="0.7.2" src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.2/bacon.js"></script>
+    <script type="text/javascript" src="//rawgit.com/lauripiispanen/angular-bacon/master/dist/angular-bacon.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/uikit/2.7.1/css/uikit.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/uikit/2.7.1/css/uikit.gradient.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body ng-app="circuitBreakerDemo" ng-controller="cbCtrl">
+    <div class="uk-grid uk-container" style="max-width: 960px">
+      <div class="uk-width-1-2">
+        <button ng-click="send()" class="uk-button uk-button-primary uk-width-1-1">
+          Send Request And Don't Delay Response</button>
+          With slow connections (mobile) this might cause accidental timeouts.
+      </div>
+      <div class="uk-width-1-2">
+        <button ng-click="send(1)" class="uk-button uk-button-danger uk-width-1-1">
+          Send Request And Delay Response 1s Causing a Timeout</button>
+          Backend <a href="http://httpbin.org/">httpbin</a> 
+          seems to buffer requests, so don't click too fast if you want timeouts.
+      </div>
+      <div class="uk-width-1-1">
+        <div class="uk-panel uk-panel-box">
+          <div class="uk-panel-title">Circuit Breaker State and Consecutive Failures</div>
+          <div class="uk-margin">The Circuit Breaker has a timeout of 1 second, trips at 3 consecutive failures and cools off within 5 seconds.</div>
+          <div ng-class="{'uk-badge-warning': cbFailureCount > 0 && !cbFailuresReachedLimit,
+              'uk-badge-danger': cbFailuresReachedLimit}"
+              class="uk-badge uk-badge-notification">{{cbFailureCount}}</div>
+          <div
+              ng-class="{'uk-badge-danger': cbState == 'OPEN', 'uk-badge-warning': cbState == 'HALF_OPEN'}"
+              class="uk-badge">
+            {{cbState}}
+          </div>
+          <div class="uk-margin uk-panel uk-panel-box" style="height: 100px; overflow: scroll">
+            <span ng-repeat="entry in httpLog track by $index">
+              {{entry}}
+            </span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -23,7 +23,7 @@ Mit einem kleinen Code-Beispiel lässt sich sehr einfach zeigen, worin sich die 
 </label>
 ```
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/klTOmQl6yvLPjhCrF69M/preview.html" style="width:100%;height:80px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/klTOmQl6yvLPjhCrF69M/preview.html" style="width:100%;height:80px;border:0"></iframe>
 
 Der Text wird direkt angezeigt.
 Daraus können wir schließen, dass die Variable `showMyText` auf `true` gesetzt wurde, was heißt, dass das innere `ng-init` nach dem Äußeren ausgewertet wurde.
@@ -47,7 +47,7 @@ Wenn wir `ng-show` mit `ng-if` ersetzen erhalten wir ein komplett anderes Verhal
 </label>
 ```
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/kJZ0jgyjieerZ6eEUMxb/preview.html" style="width:100%;height:80px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/kJZ0jgyjieerZ6eEUMxb/preview.html" style="width:100%;height:80px;border:0"></iframe>
 
 AngularJS zeigt den Text, anders als bei `ng-show`, nicht an.
 Das heißt, dass das innere `ng-init` nicht ausgewertet wird.
@@ -68,11 +68,11 @@ Um die Abläufe in den Direktiven noch besser zu verstehen, gibt es hier zwei Pl
 Das erste Beispiel loggt Veränderungen an Variablen, Aufrufe von `ng-init` und das `$destroy` Event des Scopes der für `ng-if` erzeugt wird.
 
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/ugI1KCtFFMik7tB54bDj/preview.html" style="width:100%;height:460px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/ugI1KCtFFMik7tB54bDj/preview.html" style="width:100%;height:460px;border:0"></iframe>
 
 Im zweiten Beispiel kann man sich die Elemente, die eigene Scopes haben, markieren lassen und deren `$id` Attribut anzeigen.
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/oaypFTr2P2cF4WzZ5a0Q/preview.html" style="width:100%;height:460px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/oaypFTr2P2cF4WzZ5a0Q/preview.html" style="width:100%;height:460px;border:0"></iframe>
 
 ## Angular 1.0.x
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="userTable">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.4.x" src="//code.angularjs.org/1.4.2/angular.js" data-semver="1.4.2"></script>
+    <script data-require="ui-utils@*" data-semver="0.1.1" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
+    <script data-require="angular-sanitize@1.4.x" data-semver="1.4.2" src="//code.angularjs.org/1.4.2/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="userTableController">
+    <input type="text" ng-model="searchTerm" placeholder="Suchbegriff" />
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users | filter:searchTerm">
+          <td>
+            <img class="user-thumb" src="{{user.user.picture.thumbnail}}" />
+          </td>
+          <td ng-bind-html="user | name | highlight:searchTerm"></td>
+          <td ng-bind-html="user | email | highlight:searchTerm"></td>
+          <td><small ng-bind-html="user | address | highlight:searchTerm"></small></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+</html>

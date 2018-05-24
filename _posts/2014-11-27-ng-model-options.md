@@ -37,7 +37,7 @@ Damit wird das Model nur beim Verlassen des Eingabefelds aktualisiert und nicht 
 <input type="text" ng-model="user.email" ng-model-options="{updateOn:'blur'}" />
 ```
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/kVlCDFy0QMeGOzGqr47r/preview.html" style="width:100%;height:220px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/kVlCDFy0QMeGOzGqr47r/preview.html" style="width:100%;height:220px;border:0"></iframe>
 
 ## Option `debounce`
 
@@ -49,7 +49,7 @@ Das ist besonders praktisch, wenn die Änderung des Models weitere Aktionen wie 
 <input type="text" ng-model="searchTerm" ng-model-options="{debounce:500} />
 ```
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/TJL43E8MLnwLuYHns9MO/preview.html" style="width:100%;height:300px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/TJL43E8MLnwLuYHns9MO/preview.html" style="width:100%;height:300px;border:0"></iframe>
 
 ## Option `getterSetter`
 
@@ -103,7 +103,7 @@ angular.module('ngModelOptionsDemo').controller('baseController', function($scop
 });
 ```
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/FUF0jNAE4ce1guOqWolI/preview.html" style="width:100%;height:400px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/FUF0jNAE4ce1guOqWolI/preview.html" style="width:100%;height:400px;border:0"></iframe>
 
 **Hinweis:** Das Initialisieren der Eingabefelder über die getterSetter-Funktion funktioniert erst ab 1.3.4 korrekt. Vorher werden Eingabefelder leider immer leer initialisiert.
 
@@ -113,4 +113,4 @@ Zum Abschluss dieses Blog-Posts gibt es noch ein interaktives Beispiel zum Bearb
 
 **Tipp:** Die Optionen `updateOn` und `debounce` lassen sich kombinieren.
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/ygc28XaPL8s0XaL11tEX/preview.html" style="width:100%;height:540px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/ygc28XaPL8s0XaL11tEX/preview.html" style="width:100%;height:540px;border:0"></iframe>

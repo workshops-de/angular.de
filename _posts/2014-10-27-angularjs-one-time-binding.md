@@ -22,4 +22,4 @@ Ab Angular 1.3 gibt es eine neuen Syntax für Template-Ausdrücke `::`. Statt `{
 Die einzelnen Punkte sollten am folgenden Beispiel klar werden. Wenn man einen Namen auswählt oder auf **Rotieren** klickt, dann zeigen beide Template-Ausdrücke den Namen an. Wiederholt man die Aktion,dann verändert sich nur noch der Ausdruck mit der klassischen Syntax. Anschließend kann man beide Elemente **Ausblenden** und da diese Funktion mit `ng-if` umgesetzt ist, werden die Elemente beim Einblenden neu initialisiert und erhalten beide den aktuellen Wert der Variable `selectedName`. Mit **Zurücksetzen** und **Aus/Einblenden** kann man den Ursprungszustand wiederherstellen.
 
 
-<iframe src="https://angularjs-de.github.io/plunker-mirror-angularjs.de/embed.plnkr.co/xRfEMg44ZDPh8dkCEN6y/preview.html" style="width:100%;height:300px;border:0"></iframe>
+<iframe src="/assets/mirror/embed.plnkr.co/xRfEMg44ZDPh8dkCEN6y/preview.html" style="width:100%;height:300px;border:0"></iframe>
