@@ -18,7 +18,6 @@
     <table class="table">
       <thead>
         <tr>
-          <th></th>
           <th>Name</th>
           <th>Email</th>
           <th>Address</th>
@@ -26,9 +25,6 @@
       </thead>
       <tbody>
         <tr ng-repeat="user in users | filter:searchTerm">
-          <td>
-            <img class="user-thumb" src="{{user.user.picture.thumbnail}}" />
-          </td>
           <td ng-bind-html="user | name | highlight:searchTerm"></td>
           <td ng-bind-html="user | email | highlight:searchTerm"></td>
           <td><small ng-bind-html="user | address | highlight:searchTerm"></small></td>
@@ -36,5 +32,4 @@
       </tbody>
     </table>
   </body>
-
 </html>
