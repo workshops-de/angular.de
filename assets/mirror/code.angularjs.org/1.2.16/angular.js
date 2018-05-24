@@ -20213,7 +20213,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
       </div>
     </file>
     <file name="glyphicons.css">
-      @import url(//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css);
+      @import url(/assets/mirror/netdna.bootstrapcdn.com/bootstrap-glyphicons.css);
     </file>
     <file name="animations.css">
       .animate-show {
@@ -20373,7 +20373,7 @@ var ngShowDirective = ['$animate', function($animate) {
       </div>
     </file>
     <file name="glyphicons.css">
-      @import url(//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css);
+      @import url(/assets/mirror/netdna.bootstrapcdn.com/bootstrap-glyphicons.css);
     </file>
     <file name="animations.css">
       .animate-hide {
