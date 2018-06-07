@@ -131,9 +131,7 @@ Da `ticktack` jetzt im Scope liegt, können wir sie wie gewohnt in AngularJS nut
 </p>
 ```
 
-<iframe src="https://embed.plnkr.co/C19tGuKws9aa2IOpPX3f/" width="100%" frameborder="0"></iframe>
-
-[Plunkr in neuem Fenster öffnen](https://embed.plnkr.co/C19tGuKws9aa2IOpPX3f/)
+[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/C19tGuKws9aa2IOpPX3f/)
 
 ### Zurück in die 90er: Die Wiederbelebung von &lt;blink&gt;
 
@@ -182,8 +180,6 @@ Jetzt steht uns nichts mehr im Weg auf unserer Reise zu den Ursprüngen der Webg
 ```
 
 
-<iframe src="/assets/mirror/embed.plnkr.co/YISUVli19yzmmyW3KCmf/preview.html" width="100%" frameborder="0"></iframe>
-
 [Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/YISUVli19yzmmyW3KCmf/preview.html)
 
 ### Es nervt auf Dauer, bitte ausschalten!
@@ -222,10 +218,7 @@ shouldBlinkProp: tttttttttttffffffffffftttttttt
 tickStream:      ....1....1..............1....1
 ```
 
-
-<iframe src="https://embed.plnkr.co/Rppkr0TbLmCMDgvDAIXd/preview" width="100%" frameborder="0"></iframe>
-
-[Plunkr in neuem Fenster öffnen](https://embed.plnkr.co/Rppkr0TbLmCMDgvDAIXd/preview)
+[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/Rppkr0TbLmCMDgvDAIXd/preview)
 
 Wer mit dem Button etwas herumspielt, wird einen Fehler entdecken. Schalte ich das Blinken aus, während die blinkenden Elemente gerade nicht sichtbar sind, bleiben sie dauerhaft verborgen. Damit die blinkenden Elemente bei ausgeschaltetem Blinken immer sichtbar sind, haken wir uns an anderer Stelle im Strom ein:
 
@@ -248,9 +241,7 @@ Mit [combine](https://github.com/baconjs/bacon.js#observable-combine) erzeugen w
 ```
 
 
-<iframe src="https://embed.plnkr.co/mFfJc56HymdAJGELJNDP/preview" width="100%" frameborder="0"></iframe>
-
-[Plunkr in neuem Fenster öffnen](https://embed.plnkr.co/mFfJc56HymdAJGELJNDP/preview)
+[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/mFfJc56HymdAJGELJNDP/preview)
 
 Wir sollten nun ein Gefühl für die grundlegenden Funktionen ([filter](https://github.com/baconjs/bacon.js#observable-filter), [map](https://github.com/baconjs/bacon.js#observable-map), [scan](https://github.com/baconjs/bacon.js#observable-scan), [combine](https://github.com/baconjs/bacon.js#observable-combine)) eines *Observable* haben. Auch haben wir gesehen, wie wir das Verhalten durch Zusammenstecken von Strömen leicht ändern und erweitern können. Als nächstes zeige ich Code aus einem unserer echten Projekte.
 
@@ -308,9 +299,6 @@ Die Funktionen `response` und `responseError` des Interceptors sind schnell erkl
 Die `request`-Funktion ist nur wenig anspruchsvoller: Mit [$q](https://docs.angularjs.org/api/ng/service/$q) erzeugen wir zunächst ein neues `deferred`-Objekt, packen es mit der Anfrage (`config`) in ein Container-Objekt und schieben dies in die `sendQueue`. Dann geben wir das zu `deferred` gehörige `promise` an AngularJS zurück. Der Circuit Breaker kann nun abhängig von seinem Zustand die Anfrage erlauben (mit `deferred.resolve(config)`) oder ablehnen (mit `deferred.reject(config)`) und AngularJS erfährt von der Entscheidung über das zugehörige `promise`.
 
 Den Code des Circuit Breakers will ich nicht in jedem Detail erklären, weil er überwiegend aus den alten Bekannten [filter](https://github.com/baconjs/bacon.js#observable-filter), [map](https://github.com/baconjs/bacon.js#observable-map) und [scan](https://github.com/baconjs/bacon.js#observable-scan) besteht. Der folgende Plunk demonstriert die Funktionsweise des Circuit Breakers und enthält den vollständigen Code.
-
-
-<iframe src="/assets/mirror/embed.plnkr.co/VZbodliA86xSQotOxpKZ/preview.html" width="100%" height="330" frameborder="0"></iframe>
 
 [Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/VZbodliA86xSQotOxpKZ/preview.html)
 
