@@ -2,7 +2,7 @@
 title: "Angular in der Browser Konsole - Services"
 description: "Ihr wollt eure AngularJS Anwendung in der Browserkonsole analysieren und auf Services zugreifen? Dieser Artikel zeigt, wie ihr mit dem $injector an die Services kommt."
 author: "Tilman Potthof"
-published_at: 2014-11-03 05:28:00.000000Z
+published_at: 2099-11-03 05:28:00.000000Z
 categories: "angularjs"
 header_image: "/artikel/header_images/angularjs-access-services-via-console.jpg"
 ---
@@ -12,7 +12,7 @@ Dadurch erreicht man eine saubere Kapselung und verhindert, dass Variablen im gl
 Diese positive Eigenschaft hat jedoch zur Folge, dass man auf seine Services und Objekte nicht einfach von der Browser Konsole aus zugreifen kann, falls man eine Angular Anwendung zum Debuggen oder Lernen interaktiv manipulieren möchte.
 Aber bevor es richtig losgeht, ein paar Worte dazu, warum die Browser Konsole so ein hilfreiches Werkzeug ist.
 
-![Browser Console Code Complete](http://blog.programmingisart.com/wp-content/uploads/2014/10/browser-console-angular-code-complete-1024x550.png)
+![Browser Console Code Complete](/artikel/angularjs-access-services-via-console/browser-console-angular-code-complete-1024x550.png)
 
 ## Experimentieren mit Technologien
 
@@ -75,7 +75,7 @@ $http.get("/").then(function() {
 Als Ausgabe erhalten wir ein Array mit dem Serverergebnis als Objekt.
 Mit der Konsole können wir uns den Inhalt des Objekts ausklappen und einfach analysieren.
 
-![Browser Console Http Result](http://blog.programmingisart.com/wp-content/uploads/2014/10/browser-console-http-result-1024x435.png)
+![Browser Console Http Result](/artikel/angularjs-access-services-via-console/browser-console-http-result-1024x435.png)
 
 
 ## Manipulieren von Daten
@@ -97,7 +97,7 @@ Das liegt daran, dass wir unsere Änderung außerhalb des Aktualisierungszyklus 
 Dies ist der Mechanismus hinter dem bidirektionalen (two-way) Databinding und wenn eine Änderung außerhalb passiert, dann wird sie nicht registriert.
 Man kann diese Überprüfung über Aktionen manuell auslösen, die von Angular registriert werden, wie z.B das Wechseln zwischen den Todo Filtern *Active* und *Inactive*.
 
-![Todo MVC Active State](http://blog.programmingisart.com/wp-content/uploads/2014/10/todo-mvc-active-state-1024x377.png)
+![Todo MVC Active State](/artikel/angularjs-access-services-via-console/todo-mvc-active-state-1024x377.png)
 
 Wie man den Aktualisierungszyklus auch direkt von der Konsole auslösen kann, wird in einem folgenden Artikel gezeigt.
 
