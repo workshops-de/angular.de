@@ -90,6 +90,15 @@
   padding-bottom: 100px;
   margin-bottom: 0px;
 
+  .btn {
+    border-radius: .25rem;
+  }
+
+  .header-btn-call-to-action {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+
   .header-intro {
     font-size: 1.4rem
   }
@@ -161,7 +170,7 @@
   border-bottom: 1px solid rgba(63,66,83,.1);
   position: relative;
   &:after {
-    content: 'Proudly powering';
+    content: 'Unsere Kunden';
     position: absolute;
     -webkit-transform: translate(-50%,0);
     -ms-transform: translate(-50%,0);

@@ -12,7 +12,7 @@
   height: 50%;
   right: 0;
   bottom: 0;
-  background: url(/assets/img/temp/teaser1.png);
+  background: url(/assets/img/workshops/anguar-workshop-attendees-color.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right center;
@@ -35,4 +35,19 @@
   border-radius: 8px;
   padding: 30px;
   position: relative;
+}
+
+.value-proposition-list {
+
+  li {
+    list-style: none;
+  }
+
+  li:before {
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    margin:0 5px 0 -15px;
+    color: #126eb9;
+    }
+
 }
