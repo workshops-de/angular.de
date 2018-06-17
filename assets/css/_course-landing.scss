@@ -23,3 +23,16 @@
     display: none;
   }
 }
+
+.intro-overlay {
+  margin-top: -50px;
+}
+
+.intro-overlay-box{
+  background: #fff;
+  -webkit-box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  border-radius: 8px;
+  padding: 30px;
+  position: relative;
+}
