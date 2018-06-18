@@ -31,16 +31,40 @@
     }
 }
 
-.image-value-proposition {
-&:before {
-  content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: .9;
-}
+.testimonials  {
+  position: relative;
+  background: url(/assets/img/workshops/annika-stille-foto.1024x1024.jpg);
+  background-size: 600px;
+  background-position: right top;
+  background-repeat: no-repeat;
+  color: white;
+  padding-top: 50px;
+
+  h2 {
+    color: white
+  }
+
+  .container {
+    min-height: 400px;
+    position: relative;
+  }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      // opacity: .9;
+      // background-color: #0d47a1;
+      // background: linear-gradient(145deg, #0a387e, #126eb9);
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0a387e+0,0a387e+0,126eb9+34,126eb9+100&1+0,0.75+55,0+100 */
+background: -moz-linear-gradient(left, rgba(10,56,126,1) 0%, rgba(18,110,185,0.85) 34%, rgba(18,110,185,0.75) 55%, rgba(18,110,185,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(10,56,126,1) 0%,rgba(18,110,185,0.85) 34%,rgba(18,110,185,0.75) 55%,rgba(18,110,185,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(10,56,126,1) 0%,rgba(18,110,185,0.85) 34%,rgba(18,110,185,0.75) 55%,rgba(18,110,185,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', endColorstr='#00126eb9',GradientType=1 ); /* IE6-9 */
+    }
 
 
 }
