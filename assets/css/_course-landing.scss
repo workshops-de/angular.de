@@ -8,7 +8,7 @@
   margin-top: -50px;
 }
 
-.intro-overlay-box{
+.overlay-box, .intro-overlay-box{
   background: #fff;
   -webkit-box-shadow: 0 4px 8px rgba(0,0,0,.1);
   box-shadow: 0 4px 8px rgba(0,0,0,.1);
@@ -38,7 +38,7 @@
   background-position: right top;
   background-repeat: no-repeat;
   color: white;
-  padding-top: 50px;
+  padding-bottom: 50px;
 
   h2 {
     color: white
@@ -56,6 +56,7 @@
       right: 0;
       bottom: 0;
       left: 0;
+      background-color: rgba(10,56,126,1);
       // opacity: .9;
       // background-color: #0d47a1;
       // background: linear-gradient(145deg, #0a387e, #126eb9);
@@ -67,4 +68,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', end
     }
 
 
+
+    &.testimonials-dev {
+      background: url(/assets/img/workshops/Christianz-Janz-transparent.png);
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: 500px;
+      background-color: #0a387e;
+
+      blockquote {
+        border-right: .25rem solid #eceeef;
+        border-left: none;
+      }
+
+      &:before {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#126eb9+0,126eb9+66,0a387e+100,0a387e+100&0+0,0.75+45,1+100 */
+        background: -moz-linear-gradient(left, rgba(18,110,185,0) 0%, rgba(18,110,185,0.75) 45%, rgba(18,110,185,0.85) 66%, rgba(10,56,126,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, rgba(18,110,185,0) 0%,rgba(18,110,185,0.75) 45%,rgba(18,110,185,0.85) 66%,rgba(10,56,126,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, rgba(18,110,185,0) 0%,rgba(18,110,185,0.75) 45%,rgba(18,110,185,0.85) 66%,rgba(10,56,126,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00126eb9', endColorstr='#0a387e',GradientType=1 ); /* IE6-9 */
+      }
+    }
+}
+
+.why, .why-developers {
+  position: relative;
+  margin-top: -50px;
+
+  i.fa {
+  font-size: 2.222rem;
+  }
 }
