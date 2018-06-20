@@ -45,7 +45,8 @@
   }
 
   .container {
-    min-height: 300px;
+    min-height: 200px;
+    padding-top: 50px;
     position: relative;
   }
 
@@ -79,7 +80,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', end
     &.testimonials-dev {
       background: url(/assets/img/workshops/Christianz-Janz-transparent.png);
       background-repeat: no-repeat;
-      background-position: left top;
+      background-position: left -50px;
       background-size: 500px;
       background-color: #0a387e;
 
