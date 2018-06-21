@@ -152,8 +152,138 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', end
 }
 
 .trainers {
+  padding-top:100px;
+  padding-bottom:100px;
+
   position: relative;
   .container {
     position: relative;
   }
+
+  .image {
+    width: 100%;
+    height: 200px;
+  }
+  .radio {
+    /*display: none;*/
+  }
+  .images {
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-bottom: -40px;
+  }
+  .images-inner {
+    width: 500%;
+    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  }
+  .image-slide {
+    width: 20%;
+    float: left;
+  }
+  .image-slide,
+  .fake-radio,
+  .radio-btn {
+    transition: all 0.5s ease-out;
+  }
+
+
+
+
+  /* Move slides overflowed container */
+  #slide1:checked ~ .images .images-inner {
+    margin-left: 0;
+  }
+  #slide2:checked ~ .images .images-inner {
+    margin-left: -100%;
+  }
+  #slide3:checked ~ .images .images-inner {
+    margin-left: -200%;
+  }
+
+
+
+
+  /* Color of bullets */
+  #slide1:checked ~ div .fake-radio .radio-btn:nth-child(1),
+  #slide2:checked ~ div .fake-radio .radio-btn:nth-child(2),
+  #slide3:checked ~ div .fake-radio .radio-btn:nth-child(3) {
+    background: red;
+  }
+  .radio-btn {
+    width: 9px;
+    height: 9px;
+    border-radius: 5px;
+    background: gray;
+    display: inline-block !important;
+    margin: 0 1px;
+    cursor: pointer;
+  }
+  /* Color of bullets - END */
+
+
+
+
+  /* Text of slides */
+  #slide1:checked ~ .labels .label:nth-child(1),
+  #slide2:checked ~ .labels .label:nth-child(2),
+  #slide3:checked ~ .labels .label:nth-child(3) {
+    opacity: 1;
+  }
+
+  .label {
+    opacity: 0;
+    position: absolute;
+  }
+  /* Text of slides - END */
+
+
+
+  /* Calculate AUTOPLAY for SLIDES */
+  @keyframes slide {
+    0%, 25.203252032520325%	{ margin-left: 0; }
+    50.333333333333336%, 75.53658536585366%	{ margin-left: -100%; }
+  }
+
+
+  // .st-slider > #play1:checked ~ .images .images-inner {
+  //   animation: slide 12300ms infinite;
+  // }
+  /* Calculate AUTOPLAY for SLIDES - END */
+
+
+
+
+
+  /* Calculate AUTOPLAY for CAPTION */
+  @keyframes caption {
+    0%, 33.32333333333334%	{
+      opacity: 1;
+    }
+    33.333333333333336%, 100% {
+      opacity: 0;
+    }
+  }
+
+
+  #play1:checked ~ .labels .label:nth-child(1) {
+    animation: caption 12300ms infinite -1000ms;
+  }
+
+  #play1:checked ~ .labels .label:nth-child(2) {
+    animation: caption 12300ms infinite 3100ms;
+  }
+
+  #play1:checked ~ .labels .label:nth-child(3) {
+    animation: caption 12300ms infinite 7200ms;
+  }
+  /* Calculate AUTOPLAY for CAPTION - END */
+
+
+
+
 }
