@@ -70,6 +70,6 @@ Mehrere und verschachtelte `ng-views`
 Integration von Authentifikation und Autorisierung
 Intelligentes Vorladen von Views
 
-Es werden hierfür unter anderem Konzepte und Stärken des [EmberJS Routers](http://emberjs.com/guides/routing/) wieder verwendet. Für die Autorisierung wird eine eine direkte Schnittstelle für die Node.js Middleware [passport.js](http://passportjs.org/) angeboten.
+Es werden hierfür unter anderem Konzepte und Stärken des EmberJS Routers wieder verwendet. Für die Autorisierung wird eine eine direkte Schnittstelle für die Node.js Middleware [passport.js](http://passportjs.org/) angeboten.
 
 Die Gedanken und Diskusionen hierzu könnt ihr euch [hier](https://docs.google.com/document/d/1I3UC0RrgCh9CKrLxeE4sxwmNSBl3oSXQGt9g3KZnTJI/edit) anschauen.
