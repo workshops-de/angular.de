@@ -1,7 +1,7 @@
 <div class="text-center mx-2">
   {% for user_hash in site.data.users %}{% assign user = user_hash[1] %}{% if user.name == include.name %}
   <img alt="{{ include.name }} Image"
-       class="img-grayscale-100 img-trainer embed-responsive-1by1 mb-1"
+       class="img-trainer embed-responsive-1by1 mb-1"
        src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg">
   {% endif %}{% endfor %}
   <small>{{ include.name }}</small>

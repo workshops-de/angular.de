@@ -1,47 +1,66 @@
-<section class="bg-light" style="padding: 80px 0 70px 0; margin-top: 40px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 d-flex">
-          <!--<h2 class="mb-4 pt-1 display-4" style="font-size: 3rem; font-weight: 300;">Deine Trainer</h2>-->
-          <h2 class="mb-4 pt-1 display-4 align-self-center" style="font-size: 3rem; font-weight: 300;">Deine Trainer</h2>
-        </div>
-        <div class="col-md-6 d-flex text-right">
-          <p class="d-inline-block mr-4 align-self-center">
-            <em style="font-size: 1.2rem; color: #a0a0a0;">"Wir sind ein Team aus Angular-Trainern, <br>die sich über die Begeisterung für Angular gefunden haben."</em>
-          </p>
-        </div>
-      </div>
-    </div>
-</section>
-
-
-<section class="" style="padding: 40px 0; margin-top: 40px;">
-  <div class="container">
+<section class="trainers my-5">
+  <div class="container overlay-box">
     <div class="row">
-      <div class="col-12 text-center">
-        <p class="lead mb-4 mt-4">
-          Durch den Austausch unserer gemeinsamen Erfahrungen entwickeln wir uns und unsere Schulungen ständig weiter.
-        </p>
+      <div class="col-12 col-md-6">
+          <h3>Wer sind deine Trainer?</h3>
+          <p class="lead mb-4 mt-4">
+              Durch den Austausch unserer gemeinsamen Erfahrungen entwickeln wir uns und unsere Schulungen ständig weiter.
+            </p>
+
+            <ul class="lead my-4 value-proposition-list">
+                <li>
+                    Erfahrene Softwareentwickler mit dem Fokus auf Angular
+                </li>
+                <li>
+                  Google Developer Experts für Angular
+                </li>
+                <li>
+                  Buch- und Artikel-Authoren
+                </li>
+                <li>
+                  Aktive Mitglieder der Angular-Community
+                </li>
+                <li>
+                  Organisatoren von Meetups und Konferenzen
+                </li>
+              </ul>
+              <p class="mt-3">
+                Seit 2012 geben wir monatliche Workshops in Berlin, München, Hamburg, Essen und Stuttgart.
+                Für größere Teams empfehlen wir eine Inhouse-Schulung.
+              </p>
       </div>
-    </div>
+        <div class="col-12 col-md-6">
+            <div class="container-fluid d-flex flex-wrap">
+              <div class="text-right pb-3">
+                  <em style="font-size: 1.2rem; color: #a0a0a0;">"Wir sind ein Team aus Angular-Trainern,
+                      <br>die sich über die Begeisterung für Angular gefunden haben."</em>
+              </div>
+                <div class="d-flex flex-no-wrap mb-4">
+                  {% include_relative workshop/_trainer.html name="Robin Böhm" %}
+                  {% include_relative workshop/_trainer.html name="Sascha Brink" %}
+                  {% include_relative workshop/_trainer.html name="David Müllerchen"%}
+                  {% include_relative workshop/_trainer.html name="Peter Müller" %}
+                </div>
+                <div class="d-flex flex-no-wrap mb-4">
+                  {% include_relative workshop/_trainer.html name="Christian Liebel" %}
+                  {% include_relative workshop/_trainer.html name="Aaron Czichon" %}
+                  {% include_relative workshop/_trainer.html name="Timo Korinth" %}
+                  {% include_relative workshop/_trainer.html name="Gregor Woiwode" %}
+                </div>
+                <div class="d-flex flex-no-wrap mb-4">
+                    {% include_relative workshop/_trainer.html name="Sebastian Kleinschmager" %}
+                    {% include_relative workshop/_trainer.html name="Peter Bouda" %}
+                    {% include_relative workshop/_trainer.html name="Christoph Hoeller" %}
+                    {% include_relative workshop/_trainer.html name="Erfan Nazmehr" %}
+                  </div>
+                  <div class="d-flex flex-no-wrap mb-4">
+                      {% include_relative workshop/_trainer.html name="Pawel Sawicki" %}
+                      {% include_relative workshop/_trainer.html name="Nico König" %}
+                      {% include_relative workshop/_trainer.html name="Marcel Ploch" %}
+                      {% include_relative workshop/_trainer.html name="Johannes Busch" %}
+                    </div>
+              </div>
+        </div>
+      </div>
   </div>
 </section>
-
-<div class="container-fluid d-flex flex-wrap flex-lg-nowrap">
-  <div class="d-flex flex-no-wrap mb-4">
-      {% include_relative workshop/_trainer.html name="Sascha Brink" %}
-      {% include_relative workshop/_trainer.html name="Robin Böhm" %}
-      {% include_relative workshop/_trainer.html name="David Müllerchen" %}
-      {% include_relative workshop/_trainer.html name="Peter Müller" %}
-      {% include_relative workshop/_trainer.html name="Nico König" %}
-  </div>
-  <div class="d-flex flex-no-wrap mb-4">
-      {% include_relative workshop/_trainer.html name="Christian Liebel" %}
-      {% include_relative workshop/_trainer.html name="Aaron Czichon" %}
-      {% include_relative workshop/_trainer.html name="Timo Korinth" %}
-      {% include_relative workshop/_trainer.html name="Gregor Woiwode" %}
-  </div>
-</div>
-
-<br>
-<br>
