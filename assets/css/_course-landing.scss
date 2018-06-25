@@ -8,6 +8,27 @@
   margin-top: -50px;
 }
 
+.content-box {
+
+  h2 {
+    font-size: 35px;
+    padding: 0 20% 45px 20%;
+    border-bottom: 1px solid #ccc;
+    // font-family: "iowan old style";
+    color: #000;
+    text-align: center;
+    margin: 0 0 40px 0;
+  }
+
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  img {
+    border-radius: 15px;
+  }
+
+}
+
 .overlay-box, .intro-overlay-box{
   background: #fff;
   -webkit-box-shadow: 0 4px 8px rgba(0,0,0,.1);
