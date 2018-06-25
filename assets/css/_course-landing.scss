@@ -136,33 +136,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', end
 }
 
 .agenda  {
-  position: relative;
-  color: white;
-  padding-bottom: 50px;
-
-  background: url('/assets/img/workshops/attendees-coding.jpg');
-  background-size: cover;
-  background-position: center center;
-
-  h2, h3, h4, h5 {
-    color: white
-  }
-  .container {
-    position: relative;
-  }
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #0d47a1;
-      background: linear-gradient(145deg,#0a387e,#126eb9);
-      opacity: 0.95;
-    }
-
     .overlay-box {
       color: black;
       padding: 10px;
