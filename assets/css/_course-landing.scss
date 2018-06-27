@@ -280,3 +280,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', end
 .requirements {
   position: relative;
 }
+
+section.ratings {
+  .quote {
+    font-family: "Iowan Old Style", serif;
+    font-style: italic;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    padding: 0 0 8px 0;
+  }
+}
