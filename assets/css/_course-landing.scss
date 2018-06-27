@@ -80,10 +80,11 @@
   }
 
   blockquote {
-    padding: .5rem 1rem;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    border-left: .25rem solid #eceeef;
+    font-family: "PT serif";
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+    border: none;
   }
 
     &:before {
@@ -112,11 +113,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', end
       background-position: left -50px;
       background-size: 500px;
       background-color: #0a387e;
-
-      blockquote {
-        border-right: .25rem solid #eceeef;
-        border-left: none;
-      }
 
       &:before {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#126eb9+0,126eb9+66,0a387e+100,0a387e+100&0+0,0.75+58,1+100 */
@@ -283,10 +279,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', end
 
 section.ratings {
   .quote {
-    font-family: "Iowan Old Style", serif;
+    font-family: "PT serif";
     font-style: italic;
     font-size: 1.5em;
     line-height: 1.4em;
     padding: 0 0 8px 0;
   }
 }
+
