@@ -1,5 +1,5 @@
 ---
-title: "Was ist Angular und AngularJS?"
+title: "Was sind Angular und AngularJS?"
 description: "Was sind die Unterschiede zwischen Angular und AngularJS?"
 author: "Robin Böhm"
 published_at: 2017-03-26 03:45:00.000000Z
