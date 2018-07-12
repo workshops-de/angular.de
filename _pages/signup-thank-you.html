@@ -1,6 +1,5 @@
 ---
 title: "Vielen Dank für deine Anmeldung"
-layout: post
 noindex: true
 sitemap: false
 ---
@@ -14,12 +13,14 @@ sitemap: false
     {% for post in site.posts %}
       {% if post.categories contains 'tutorial' %}
         <div class="col-12 col-md-6 mb-2">
-          {% include _article.html %}
+          {% include _post_card.html %}
         </div>
       {% endif %}
     {% endfor %}
   </div>
 </div>
+
+<br>
 
 <h4>Falls Du bereits weiter im Thema bist, könnten dich folgende Artikel interessieren:</h4>
 
@@ -30,7 +31,7 @@ sitemap: false
       {% else %}
         {% if post.categories contains 'angular' %}
         <div class="col-12 col-md-6 mb-2">
-          {% include _article.html %}
+          {% include _post_card.html %}
         </div>
         {% endif %}
       {% endif %}

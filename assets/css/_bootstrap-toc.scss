@@ -1,26 +1,23 @@
 nav[data-toggle='toc'] .nav > li > a {
   display: block;
-  padding: 4px 20px;
-  font-size: 13px;
-  font-weight: 500;
+  padding: $spacer*0.25 0;
+  font-size: $small-font-size;
   color: #767676;
 }
 nav[data-toggle='toc'] .nav > li > a:hover,
 nav[data-toggle='toc'] .nav > li > a:focus {
-  padding-left: 19px;
-  color: #563d7c;
+  color: $primary;
   text-decoration: none;
   background-color: transparent;
-  border-left: 1px solid #563d7c;
 }
 nav[data-toggle='toc'] .nav a.active,
 nav[data-toggle='toc'] .nav a.active:hover,
 nav[data-toggle='toc'] .nav a.active:focus{
-  padding-left: 18px;
+  // padding-left: 18px;
   font-weight: bold;
-  color: #563d7c;
+  color: $primary;
   background-color: transparent;
-  border-left: 2px solid #563d7c;
+  // border-left: 2px solid $primary;
 }
 
 /* Nav: second level (shown on .active) */
@@ -30,25 +27,24 @@ nav[data-toggle='toc'] .nav .nav {
 }
 
 
-
 nav[data-toggle='toc'] .active + .nav {
   display: flex;
 }
 nav[data-toggle='toc'] .nav .nav > li > a {
   padding-top: 1px;
   padding-bottom: 1px;
-  padding-left: 30px;
+  padding-left: $spacer;
   font-size: 12px;
   font-weight: normal;
 }
 nav[data-toggle='toc'] .nav .nav li > a:hover,
 nav[data-toggle='toc'] .nav .nav li > a:focus {
-  padding-left: 29px;
+  // padding-left: 29px;
 }
 nav[data-toggle='toc'] .nav .nav .active,
 nav[data-toggle='toc'] .nav .nav .active:hover,
 nav[data-toggle='toc'] .nav .nav .active:focus {
-  padding-left: 28px;
+  // padding-left: 28px;
   font-weight: 500;
 }
 

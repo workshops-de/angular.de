@@ -1,6 +1,5 @@
 ---
 title: "Deine Anmeldung ist fast fertig ..."
-layout: post
 sitemap: false
 noindex: true
 ---
