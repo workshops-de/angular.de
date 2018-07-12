@@ -77,28 +77,6 @@ Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, das
 
 Ihr kennt bestimmt das File ```.gitignore``` zum Ignorieren von Dateien beim Check-In auf Github. Die gleiche Funktion steht uns auch mit dem File ```.dockerignore``` zur Verfügung. Hier könnt ihr Files / Folders Ignorieren, z.b. gibt es keinen Grund die Testfiles aus dem Repo in Dockerhub mit hoch zu laden.*
 
-<hr>
-<div class="workshop-hint">
-  <div class="h3">Keine Lust zu Lesen?</div>
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p>
-        Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und auch Spaß machen. Wir bieten euch auch
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=article&utm_medium=link&utm_content=text-top">Docker Schulungen</a>        an, falls du tiefer in die Thematik einsteigen willst.
-      </p>
-      <p class="">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angularjs.de&utm_campaign=article&utm_medium=button&utm_content=text-top">
-          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-        </a>
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer in der Veranstaltung Docker &amp; Kubernetes Intensiv Workshop/Schulung">
-    </div>
-  </div>
-</div>
-<hr>
-
 ### Was ist Dockerhub?
 
 Mit Dockerhub hat Docker ein Ökosystem geschaffen, in welchem Images gespeichert werden können. Nachdem man sich einen Account auf Dockerhub angelegt hat, besteht entweder die Möglichkeit fertige Images über ```docker push``` im lokalen CLI hochzuladen, oder dies automatisiert per Webhook über Github / Bitbucket durchlaufen zu lassen.

@@ -106,33 +106,6 @@ class XY extends OnInit {} --> class XY implements OnInit {}
 
 6. Der Template-Tag `<template>` wird ersetzt durch `<ng-template>`
 
-<div>
-  <h3>Update unserer Schulungsmaterialien</h3>
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <p>Das Update unserer Schulungsmaterialien lief auch ohne Probleme. Alle Teilnehmer die bereits einen Angular Kurs ab
-        Version 2 bei uns besucht haben, haben automatisch Zugriff auf die Updates der Materialien über unser virtuelles
-        Klassenzimmer(Classroom).
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshop-attendees.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 p-3">
-      <p>
-        Wenn Ihr oder eure Kollegen ebenfalls Angular lernen wollt, könnt ihr sehr gern einen unser nächsten <a target="_blank"
-          href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=article&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Workshops</a>        besuchen. Alternativ bieten wir natürlich auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript/inhouse?utm_source=angularjs.de&utm_campaign=article&utm_medium=link&utm_content=text-buttom">Inhouse Schulungen für Angular und TypeScript</a>        an. Wenn ihr fragen habt, beantworten wir diese gern via E-Mail, Telefon oder in unserem Slack-Channel.
-      </p>
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=article&utm_medium=button&utm_content=text-buttom">
-          <button class="btn btn-danger">Jetzt Angular 4 lernen</button>
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
 
 ### Das Fazit zu Angular v4
 
