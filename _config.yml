@@ -5,7 +5,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 ga_property: "UA-39010393-1"
 permalink: /artikel/:slug/
-repository_url: "https://github.com/workshops-de/angularjs.de"
+repository_url: "https://github.com/symetics/angularjs.de"
 ws_course_id: 4
 
 jekyll_timeago:
