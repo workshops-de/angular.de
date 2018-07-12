@@ -8,39 +8,57 @@ layout: base
   {% endif %}
 {% endfor %}
 
-
-
-<div class="header header-post header-gradient-overlay">
-  <div class="header header-post hidden-print"
-       style="background-image: url('{{page.header_image}}');"></div>
-  <div class="container text-wrapper" style="text-align: center;">
-    <h1 class="header-post-title">{{ page.title }}</h1>
-    <div class="header-post-author">
-      {% if page.author %}
-      von  {{ author.name }} am <time>{{ page.published_at | date: "%d.%m.%Y" }}</time> veröffentlicht
-      {% endif %}
+<div class="header header-post shadow-sm d-flex align-items-center justify-content-center mb-5" style="background-image: url('{{page.header_image}}');">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 d-none d-lg-block"></div>
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">{{ page.title }}</h1>
+        <span>{{ page.author }}</span>
+          <span class="ml-1 mr-1">•</span>
+        {% include _reading_time.html text=page.content %}
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <main role="main">
+<main role="main">
+  <div class="container">
 
-    <div class="row justify-content-md-center">
-      <div class="col-lg-2 hidden-md-down">
-        <div class="sticky sticky-under-navbar pt-3">
-          <div class="h5">Inhalt</div>
-          <nav id="toc" data-toggle="toc">
-
-          </nav>
+    <div class="row mb-5">
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ml-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
         </div>
       </div>
-      <div class="col-md-12 col-lg-8 mb-2 add-anchor-fixed-header-styles">
-        {{ content }}
+      <div class="col-md-12 col-lg-8 mb-2">
+        <p class="text-muted">
+          <small>
+            {% for category in page.categories %}
+              <span class="text-uppercase">{{category}}</span>
+              {% unless forloop.last %}<span class="ml-1 mr-1">•</span>{% endunless %}
+            {% endfor %}
+            <span class="ml-1 mr-1">|</span>
+            {{ page.author }} <span class="ml-1 mr-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
+            <span class="ml-1 mr-1">|</span>
+            {% include _reading_time.html text=page.content %}
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          {{ content }}
         </div>
       </div>
+    </div>
     <div class="row justify-content-md-center">
-      <div class="col-lg-2 hidden-md-down"></div>
+      <div class="col-lg-2 d-none d-lg-block"></div>
       <div class="col-md-12 col-lg-8 mb-2">
         <div class="row">
           <div class="col-sm-12 col-md-6 mb-2">
@@ -48,21 +66,21 @@ layout: base
           </div>
           <div class="col-sm-12 col-md-6 mb-2">
             <p>
-              <a class="btn btn-sm btn-info" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
-              <i class="fa fa-github" aria-hidden="true"></i>
+              <a class="btn btn-sm btn-primary" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
                 Diesen Artikel auf GitHub verbessern
-                </a>
+              </a>
             </p>
           </div>
         </div>
+
         <br>
 
-        {% include _post_disqus_disabled.html %}
-
-        <div class="hidden-print">
-          {% include _related_articles.html %}
-        </div>
       </div>
     </div>
-  </main>
-</div>
+
+  </div>
+
+  <div class="row justify-content-md-center no-gutters my-6">
+    {% include _related_posts.html %}
+  </div>
+</main>

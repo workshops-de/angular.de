@@ -2,23 +2,50 @@
 ---
 // 🔝 those lines above are needed by jekyll
 
+// General
+$enable-shadows: true;
+
+// Font / Typographie
 $font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-size-base: 1.1rem;
+$line-height-base: 1.618;
 
+// Theme Colors
+$primary:#0386c9; // #4eafca
+$success:#43ac6a;
+$warning:#e99002;
+$danger: #f04124;
+$info:   #5bc0de;
+$black:  #000;
+$white:  #fff;
+
+// Spacers
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 6)
+), $spacers);
+
+// Cards
+$card-cap-bg: $white;
+$card-border-color: $white;
+
+// Pagination
+$pagination-border-width: 0;
+$pagination-padding-y: 1rem;
+$pagination-padding-x: 1rem;
+
+// Settings
 $navbar-brand-font-size: 1rem;
-
-$border-radius: 0;
-$border-radius-sm: 0;
-$border-radius-lg: 0;
 $line-height-base: 1.618;
 $headings-margin-bottom: 1.1rem;
-$card-cap-bg: #fff;
 
-$blue:   #0386c9;
-$green:  #43ac6a;
-$orange: #e99002;
-$red:    #f04124;
-$teal:   #5bc0de;
 
 // Imports
 //
@@ -39,11 +66,12 @@ $teal:   #5bc0de;
 @import "col-count";
 @import "post";
 @import "code";
+@import "content";
 @import "img-utilities";
 @import "newsletter";
 @import "tutorials";
 @import "bootstrap-toc";
-@import "unsorted-crap";
+@import "misc";
 @import "course-landing";
 @import "ratings";
 @import "clients";
