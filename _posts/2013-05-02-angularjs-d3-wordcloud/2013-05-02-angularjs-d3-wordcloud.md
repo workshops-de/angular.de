@@ -4,7 +4,6 @@ description: "Lerne, wie du AngularJS mit der Bibliothek D3 verwenden kannst, um
 author: "Robin Böhm"
 published_at: 2013-05-02 16:00:28.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-d3-wordcloud.jpg"
 ---
 
 Eine beeindruckende Eigenschaft unterscheidet AngularJS von anderen Frameworks - wir können HTML um eigene Elemente, wie z.B. einen Tag `<tabs>` erweitern. Komplexe DOM-Strukturen und das dazugehörige Verhalten kann hinter einfachen HTML-Tags, -Attributen oder einer CSS-Klassen versteckt werden. In diesem Artikel wird ein Projekt vorgestellt, welches diese Möglichkeiten von AngularJS nutzt und sich als Ziel gesetzt hat, die D3-Bibliothek auch für Menschen nutzbar zu machen, die bisher nur Basiskenntnisse in JavaScript besitzen. Es basiert auf einem AngularJS-Modul, das die D3-Implementierung durch einen Service bereitstellt. Dieser Service kann über den Injektor-Mechanismus in andere Module wie z.B. eine eigene Direktive eingebunden werden. Um dies zu demonstrieren, werden wir das Vorgehen bei der Implementierung der D3-WordCloud Direktive beschreiben. Das komplette Projekt ist [auf GitHub](https://github.com/robinboehm/angular-d3-directives) zu finden.

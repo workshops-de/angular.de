@@ -4,7 +4,6 @@ description: "In diesem Artikel möchte ich euch anhand eines Enterprise Softwar
 author: "Björn Wilmsmann"
 published_at: 2014-06-10 07:00:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-spring-web-mvc.jpg"
 ---
 
 **UPDATE 05.01.2015:** ZenQuery ist nun Open Source auf [GitHub](https://github.com/BjoernKW/ZenQuery) verfügbar. Insbesondere kann der Quellcode des mit AngularJS umgesetzten Frontends [hier](https://github.com/BjoernKW/ZenQueryUI) eingesehen werden.

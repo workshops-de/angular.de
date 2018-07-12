@@ -5,7 +5,6 @@ author: "Sascha Brink"
 published_at: 2014-02-22 10:32:12.000000Z
 categories: "angularjs"
 noindex: true
-header_image: "/artikel/header_images/angularjs-limit-filter-last-element.jpg"
 ---
 
 Hier nur ein ganz kurzer Tipp zum *Limit*-Filter.

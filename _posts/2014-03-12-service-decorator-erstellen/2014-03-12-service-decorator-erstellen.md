@@ -4,7 +4,6 @@ description: Lerne, wie du mit einem Decorator die Ausgabe eines Services verän
 author: "Sascha Brink"
 published_at: 2014-03-12 13:13:54.000000Z
 categories: "angularjs services decorator"
-header_image: "/artikel/header_images/service-decorator-erstellen.jpg"
 ---
 
 ## Problem

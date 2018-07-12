@@ -4,7 +4,6 @@ description: "Lernt alles über die Programmierung von AngularJS mit CoffeeScrip
 author: "Sascha Brink"
 published_at: 2013-04-25 22:17:46.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-mit-coffeescript.jpg"
 ---
 
 AngularJS kann nicht eleganter werden? Kein Problem, denken viele. Schon falsch. [CoffeeScript](http://coffeescript.org) schafft's.

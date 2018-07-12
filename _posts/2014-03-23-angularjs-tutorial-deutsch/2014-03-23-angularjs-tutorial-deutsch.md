@@ -4,7 +4,6 @@ description: "Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anh
 author: "Sascha Brink"
 published_at: 2014-03-23 12:12:00.000000Z
 categories: "tutorial angularjs"
-header_image: "/artikel/header_images/angularjs-tutorial-deutsch.jpg"
 ---
 
 Dieses Tutorial ist für Anfänger gedacht, die gerade erst mit AngularJS beginnen. Als Beispiel werden wir eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von AngularJS kennenlernen.

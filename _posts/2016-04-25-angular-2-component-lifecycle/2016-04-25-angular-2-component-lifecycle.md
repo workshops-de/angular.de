@@ -4,7 +4,6 @@ description: "Angular-Anwendungen bestehen aus Components. Diese durchleben vers
 author: "Bengt Weiße"
 published_at: 2016-04-25 12:12:12.000000Z
 categories: "angular angular2 angular4"
-header_image: "/artikel/header_images/angular-2-component-lifecycle.jpg"
 ---
 
 Am Ende unseres [Angular Einsteigertutorials](/artikel/angular-tutorial-deutsch/) haben wir euch das Thema Component Lifecycle nur kurz vorgestellt, damit ihr zumindest mit dem Begriff etwas anfangen könnt bzw. schon mal etwas davon gehört habt. In diesem Artikel wollen wir uns den Lebenszyklus und die damit verbundenen Hook-Funktionen nun mal etwas genauer anschauen.

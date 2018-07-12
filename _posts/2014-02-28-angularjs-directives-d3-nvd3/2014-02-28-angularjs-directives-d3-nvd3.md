@@ -4,7 +4,6 @@ description: Lerne, wie du mit Hilfe von nvd3 die Bibliothek D3.js sehr einfach 
 author: "Robin Böhm"
 published_at: 2014-02-28 14:12:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-directives-d3-nvd3.jpg"
 ---
 
 Ihr erstellt gerade eine Anwendung, in der ihr ein **Linien-, Balken-, Säulen oder Kreisdiagramm** benötigt? Dann seid ihr bestimmt schon auf die JavaScript-Bibliothek [D3.js][1] von Mike Bostock gestoßen. Mit D3 könnt ihr diese Art von Diagrammen auf eine sehr elegante Weise erstellen. Außerdem wird die Bibliothek kontinuierlich verbessert und liefert fast [200 Beispiele][2] mit. Natürlich gibt es auch Bücher und eine Menge Artikel dazu.

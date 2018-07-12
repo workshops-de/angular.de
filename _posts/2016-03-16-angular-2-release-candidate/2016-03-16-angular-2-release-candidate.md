@@ -4,7 +4,6 @@ description: "Es rückt näher und näher! Brad Green hat in einem Tweet den Mil
 author: "Robin Böhm"
 published_at: 2016-03-16 11:00:00.000000Z
 categories: "angular angular2 angular4 news beta rc"
-header_image: "/artikel/header_images/angular-2-release-candidate.jpg"
 ---
 
 Es rückt näher und näher! Brad Green hat in einem Tweet den Milestone für den Release Candidate von Angular 2 angekündigt. Es ist kein genauer Termin des Release oder der Angular 2 Final, mehr ist es ein Zeichen für den aktuellen Prozess der Entwicklung des Frameworks.

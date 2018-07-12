@@ -4,7 +4,6 @@ description: "Lerne, wie du Unit-Tests in AngularJS mit Jasmine schreiben kannst
 author: "Robin Böhm"
 published_at: 2013-05-30 16:00:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-test.jpg"
 ---
 
 Unit-Tests für meine Web-Anwendung? Für viele Web-Entwickler ist dieser Bereich noch absolutes Neuland. Bisher beschränkten sich Tests oft auf die Simulation von Interaktionen wie es Werkzeuge wie z.B. [Selenium](http://docs.seleniumhq.org/) ermöglichen. Diese Tests sind sinnvoll und notwendig, jedoch wird hier meistens nur das Endprodukt in der gesamten Komplexität getestet. Dies macht es schwer Fehler exakt zu identifizieren. Möchtest du einen einzelnen Funktionsbaustein auf seine *Korrektheit* prüfen, ohne die Komplexität des gesamten Systems mit einzubeziehen, benötigst du einen isolierten Test für z.B. eine Methode.

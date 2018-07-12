@@ -4,7 +4,6 @@ description: "Tutorial zu Continuous Deployment mit Docker und CircleCI für dei
 author: "Martin Wiesmüller"
 published_at: 2017-03-19 00:00:01.000000Z
 categories: "angular angular2 angular4 docker deployment"
-header_image: "/artikel/header_images/angular-deployment-docker.jpg"
 ---
 
 Welcher Web-Entwickler kennt nicht die guten alten Zeiten, in welchen Webserver sehr aufwendig aufgesetzt werden mussten. Jeder aus dieser Zeit kann bestätigen, dass dies alles andere als einfach war.

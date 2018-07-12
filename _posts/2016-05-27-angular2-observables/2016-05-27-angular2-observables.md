@@ -4,7 +4,6 @@ description: "Moderne Web-Awendungen leben von mehr Interaktion. Hier erfahrt ih
 author: "Bengt Weiße"
 published_at: 2016-05-27 10:00:00.000000Z
 categories: "angular angular2 angular4 observables"
-header_image: "/artikel/header_images/angular2-observables.jpg"
 ---
 
 Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadurch von Asynchronität. Sei es nur ein Tap/Klick, oder das Abschnicken einer Anfrage an eine Schnittstelle. In unserem [Angular Einsteigertutorials](/artikel/angular-tutorial-deutsch/) sind wir schon kurz auf wichtige Punkte bezüglich der Asynchonität in Angular Anwendungen eingegangen. Natürlich steckt hinter diesem Begriff noch viel mehr, was erklärt werden kann und sollte. Daher folgt nun dieser Artikel, in dem wir uns ausschließlich mit Fragen und Problemen rundum das Thema Asynchronität beschäftigen.

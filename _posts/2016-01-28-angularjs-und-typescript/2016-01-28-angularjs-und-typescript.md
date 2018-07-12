@@ -4,7 +4,6 @@ description: "Nutzt alle Features von ES2015 und eine strikte Typisierung schon 
 author: "Sascha Brink"
 published_at: 2016-01-28 16:32:00.000000Z
 categories: "angularjs typescript"
-header_image: "/artikel/header_images/angularjs-und-typescript.jpg"
 ---
 
 Ich möchte euch in diesem Artikel zeigen, wie man schon heute mit AngularJS 1.X  Anwendungen mit TypeScript entwickeln kann. TypeScript ist eine Sprache die von Microsoft entwickelt wurde und auf ES2015 (früher auch mal ES6 oder Harmony genannt) aufsetzt und um Typen erweitert.

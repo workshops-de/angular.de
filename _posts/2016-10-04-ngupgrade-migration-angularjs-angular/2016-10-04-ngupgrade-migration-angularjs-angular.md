@@ -4,7 +4,6 @@ description: "Migration mit ngUpgrade leichtgemacht. Eine Zusammenfassung über 
 author: "Jonathan Schneider"
 published_at: 2016-10-04 00:00:00.000000Z
 categories: "angularjs angular angular2 angular4 migration"
-header_image: "/artikel/header_images/ngupgrade-migration-angularjs-angular2.jpg"
 ---
 
 Die Migration einer AngularJS- zu einer Angular-Anwendung wurde in der Vergangenheit oftmals als großes Problem und Schwierigkeit bezeichnet. Code müsste weggeschmissen werden, alles wäre anders und TypeScript wird noch oben drauf gesetzt. Panisch zu reagieren und das Schlimmste zu befürchten ist aber nicht der beste Weg. Wie schauen uns im folgenden Artikel an, wieso wir keine Angst vor der Migration haben müssen und wieso es doch viel einfacher funktioniert, als vorher gedacht.

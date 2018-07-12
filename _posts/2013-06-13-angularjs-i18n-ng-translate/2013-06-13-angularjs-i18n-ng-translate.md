@@ -4,7 +4,6 @@ description: Lerne, wie du mit angular-translate deine Anwendung mehrsprachig ma
 author: "Pascal Precht"
 published_at: 2013-06-13 00:00:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-i18n-ng-translate.jpg"
 ---
 
 Internationalisierung (I18n) in Apps ist heutzutage ein Muss. Ob auf dem Desktop, im Web oder auf mobilen Endgeräten, Apps sollten dem Nutzer die Möglichkeit geben die Sprache des UIs auswählbar zu machen. Auch AngularJS bietet uns ein [Internationalisierungs- und Lokalisierungs-Feature](http://docs.angularjs.org/guide/i18n) in sämtlichen Filterkomponenten. Da sich der Support aktuell aber nur auf Datums-, Zahlen-, und Währungsformatierungen beschränkt, sind die Möglichkeiten zum Internationalisieren vollständiger App-Inhalte schnell ausgereizt.

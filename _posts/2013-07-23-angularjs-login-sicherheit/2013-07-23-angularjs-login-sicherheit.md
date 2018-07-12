@@ -4,7 +4,6 @@ description: Lerne, wie Authentifizierung in Single-Page-Applikationen funktioni
 author: "Marius Soutier"
 published_at: 2013-07-23 16:00:00.000000Z
 categories: "angularjs security authentication"
-header_image: "/artikel/header_images/angularjs-login-sicherheit.jpg"
 ---
 
 Authentifizierung ist ein Thema, das so gut wie jede größere Webanwendung betrifft. Da HTTP ein zustandsloses Protokoll ist, und damit keine Sessions kennt, muss bei jeder Anfrage eine Authentifizierungsinformation mitgeschickt werden. Damit sich ein Benutzer nur ein mal pro Session anmelden muss, soll diese Information erhalten bleiben und automatisch bei jedem Request mitgeschickt werden.

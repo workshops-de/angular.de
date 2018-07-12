@@ -4,7 +4,6 @@ description: "Ihr wollt eure AngularJS Anwendung in der Browserkonsole analysier
 author: "Tilman Potthof"
 published_at: 2099-11-03 05:28:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-access-services-via-console.jpg"
 ---
 
 Als ich Angular entdeckt habe war ich davon begeistert, wie leicht sich eine Anwendung durch Dependency Injection in unabhängige und klar getrennte Komponenten aufteilen lässt.

@@ -4,7 +4,6 @@ description: "Im letzten Teil unserer Ionic Tutorialreihe zeigen wir euch, wie i
 author: "Bengt Weiße"
 published_at: 2016-01-27 08:29:00.000000Z
 categories: "ionic angularjs tutorial"
-header_image: "/artikel/header_images/ionic-tutorial-deutsch-configuration.jpg"
 ---
 
 Wie wir im [Einführungsartikel](/artikel/ionic-tutorial-deutsch/) zu Ionic erfahren haben, bringt das Framework eine Reihe von Funktionen und Komponenten mit. Viele von diesen sind über eigene Services konfigurierbar und lassen sich so spielend leicht den eigenen Vorstellungen anpassen. Für die grundlegenden Einstellungen des Frameworks bietet Ionic einen eigenen Provider mit dem Namen **$ionicConfigProvider** an.

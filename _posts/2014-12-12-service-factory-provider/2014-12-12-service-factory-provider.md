@@ -4,7 +4,6 @@ description: "Was ist der Unterschied? Wann brauch ich was? In diesem Artikel we
 author: "Tilman Potthof"
 published_at: 2014-12-12 14:07:00.000000Z
 categories: "angularjs services"
-header_image: "/artikel/header_images/service-factory-provider.jpg"
 ---
 
 In diesem Artikel werden alle relevanten Wege zum Erzeugen von Services gezeigt und praktische Tipps gegeben, wie ihr die übliche Verwirrung mit den unterschiedlichen Methoden einfach umgehen könnt.

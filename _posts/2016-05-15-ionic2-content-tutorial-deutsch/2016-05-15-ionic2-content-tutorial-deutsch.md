@@ -4,7 +4,6 @@ description: "In diesem Teil unserer Ionic 2 Einführung zeigen wir, wie ihr eur
 author: "Bengt Weiße"
 published_at: 2016-05-15 06:12:12.000000Z
 categories: "ionic2 angular angular2 angular4 tutorial"
-header_image: "/artikel/header_images/ionic2-content-tutorial-deutsch.jpg"
 ---
 
 Aufbauend auf dem [ersten Teil](/artikel/ionic2-tutorial-deutsch/) unseres Ionic 2 Tutorials wollen wir uns nun anschauen, wie ihr in Ionic 2 eure Inhalt ansprechend präsentieren und strukturieren könnt.

@@ -4,7 +4,6 @@ description: Lerne, woher der Fehler *Duplicates in a repeater are not allowed* 
 author: "Sascha Brink"
 published_at: 2014-03-03 07:45:24.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/ng-repeat-duplicates-in-repeater-are-not-allowed.jpg"
 ---
 
 Hattet ihr in Verbindung mit `ng-repeat` schon einmal folgenden Fehler?

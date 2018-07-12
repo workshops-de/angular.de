@@ -4,7 +4,6 @@ description: Lerne, wie du AngularJS und SVG kombinieren kannst, um dynamische G
 author: "Sascha Brink"
 published_at: 2014-02-21 11:48:13.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-svg-clock.jpg"
 ---
 
 > [SVG](http://en.wikipedia.org/wiki/Scalable_Vector_Graphics) ist eine Spezifikation, mit der ihr Vektorgrafiken erstellen und in HTML einbetten könnt.

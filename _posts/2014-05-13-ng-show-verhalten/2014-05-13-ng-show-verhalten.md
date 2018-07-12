@@ -4,7 +4,6 @@ description: Lerne, wieso sich ng-show vor AngularJS 1.3 mehrwürdig verhalten h
 author: "Sascha Brink"
 published_at: 2014-05-13 10:43:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/ng-show-verhalten.jpg"
 noindex: true
 ---
 

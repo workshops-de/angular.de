@@ -4,7 +4,6 @@ description: "Angular Watcher ist eine Chrome Extension welche euch ermöglicht 
 author: "Robin Böhm"
 published_at: 2015-08-13 05:57:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angular-watcher-chrome-extension.jpg"
 ---
 
 In diesem kleinem Eintrag möchte ich euch eine Erweiterung für den Chrome Browser vorstellen. Der Name dieser Erweiterung ist: **Angular Watcher**.

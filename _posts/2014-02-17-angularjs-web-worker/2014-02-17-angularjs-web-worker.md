@@ -4,7 +4,6 @@ description: Lerne, wie du Web Worker zusammen mit AngularJS einsetzen kannst un
 author: "Björn Weinbrenner"
 published_at: 2014-02-17 10:30:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-web-worker.jpg"
 ---
 
 Web Worker ist eine relative neue Spezifikation, um Multi-Threading im Browser zu ermöglichen. Über eine JavaScript-API können zusätzlich zum Haupt- oder UI-Thread einer HTML-Seite weitere Threads gestartet und über eine nachrichtenbasierte Schnittstelle angesprochen werden. Der Einsatz von Web Workern hat zwei entscheidende Vorteile:

@@ -4,7 +4,6 @@ description: "Es gibt vielfältige Gründe, die Komplexität einer Anwendung ein
 author: "Björn Wilmsmann"
 published_at: 2018-05-01 8:25:01.000000Z
 categories: "angular advanced"
-header_image: "/artikel/header_images/angular-measuring-complexity.jpg"
 ---
 
 ## Warum möchte ich die Komplexität einer Anwendung messen?

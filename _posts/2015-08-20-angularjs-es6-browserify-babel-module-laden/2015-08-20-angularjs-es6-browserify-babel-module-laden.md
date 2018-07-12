@@ -4,7 +4,6 @@ description: "In diesem Artikel zeige ich ein paar kleine Erweiterungen, die Euc
 author: "Robin Böhm"
 published_at: 2015-08-20 08:58:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-es6-browserify-babel-module-laden.jpg"
 ---
 
 In diesem Artikel zeige ich ein paar kleine Erweiterungen, die Euch die Entwicklung mit AngularJS 1 erleichtern und gleichzeitig auf die Zukunft mit Angular2 vorbereiten. Es ist jetzt schon möglich Quellcode zu schreiben, der nahe an Angular2 ist. Ein Test-Projekt könnt Ihr auf [GitHub](https://github.com/angularjs-de/angularjs-de-seed-es6) finden. Schickt gerne eigene Pull-Requests oder Issues und optimiert gemeinsam mit mir!

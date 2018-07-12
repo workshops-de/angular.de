@@ -4,7 +4,6 @@ description: "Unser Einführungstutorial zu Ionic erklärt euch alle wichtigen K
 author: "Bengt Weiße"
 published_at: 2016-03-12 08:29:00.000000Z
 categories: "tutorial ionic angularjs"
-header_image: "/artikel/header_images/ionic-tutorial-deutsch.jpg"
 ---
 
 Wer sich ein wenig mit AngularJS beschäftigt oder bereits beschäftigt hat, wird bzw. ist sicher schon über den Namen Ionic oder das [Ionic Framework](http://ionicframework.com/ "Ionic Framework") gestolpert.

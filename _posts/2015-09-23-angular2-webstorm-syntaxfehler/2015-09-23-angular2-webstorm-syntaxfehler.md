@@ -4,7 +4,6 @@ description: "Eine Anleitung wie ihr eure WebStorm IDE mit Angular so konfigurie
 author: "Robin Böhm"
 published_at: 2015-09-23 07:01:00.000000Z
 categories: "angular angular2 angular4"
-header_image: "/artikel/header_images/angular2-webstorm-syntaxfehler.jpg"
 ---
 
 In diesem kleinen Artikel beschreibe ich, wie ihr eure WebStorm IDE so konfiguriert, dass ihr auch schon heute ohne Syntaxfehler Angular2 Code mit z.B. Decorators schreiben könnt.

@@ -4,7 +4,6 @@ description: "Einführung in E2E Tests mit Protractor und Sauce Labs - Die unive
 author: "Martin Wiesmüller"
 published_at: 2017-01-12 08:00:00.000000Z
 categories: "angular angular2 angular4 testing testen"
-header_image: "/artikel/header_images/angular-e2e-protractor-test-saucelabs.jpg"
 ---
 
 Die innovative Entwicklung der Web Welt bietet inzwischen eine ganze Menge an Möglichkeiten, testgetriebene Entwicklungen durchzuführen. Neben den Komponententests mittels [Karma](https://karma-runner.github.io) und [PhantomJs](http://phantomjs.org/), nehmen wir heute End2End Tests mit Hilfe von [Protractor](http://www.protractortest.org/#/) genauer unter die Lupe. Um anschließend eine Testabdeckung über verschiedene Browser und deren Versionen zu erreichen, wollen wir das ganze zusammen mit dem Cloud Dienst von [SauceLabs](https://saucelabs.com/) realiseren.

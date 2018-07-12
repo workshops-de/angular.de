@@ -4,7 +4,6 @@ description: "Der nächste Teil unseres Ionic Tutorials beschäftigt sich mit Di
 author: "Bengt Weiße"
 published_at: 2016-01-25 08:29:00.000000Z
 categories: "ionic angularjs tutorial"
-header_image: "/artikel/header_images/ionic-tutorial-deutsch-modals.jpg"
 ---
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/11-Modals) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/11-Modals/#/order)

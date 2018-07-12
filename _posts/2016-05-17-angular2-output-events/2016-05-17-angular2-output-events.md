@@ -4,7 +4,6 @@ description: "Lasst eure Komponenten schnell und einfach über Events kommunizie
 author: "Bengt Weiße"
 published_at: 2016-05-17 12:12:12.000000Z
 categories: "angular angular2 angular4"
-header_image: "/artikel/header_images/angular2-output-events.jpg"
 ---
 
 Für das Verständnis dieses Artikels solltet ihr euch zurvor mit den Grundlagen der Angular Entwicklung befassen. Dazu bietet sich unser [Angular-Einführungstutorial](/artikel/angular-tutorial-deutsch/) an.

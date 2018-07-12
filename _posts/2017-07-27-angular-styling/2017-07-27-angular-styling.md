@@ -4,7 +4,6 @@ description: "Styling in Angular bietet euch viele Möglichkeiten. Encapsulation
 author: "Gerard Sans"
 published_at: 2017-07-24 08:22:01.000000Z
 categories: "angular styling advanced"
-header_image: "/artikel/header_images/angular-styling.jpg"
 ---
 
 In diesem Leitfaden wollen wir die verschiedenen Optionen abdecken,

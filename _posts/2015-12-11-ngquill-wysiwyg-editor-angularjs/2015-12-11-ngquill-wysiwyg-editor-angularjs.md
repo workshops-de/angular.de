@@ -4,7 +4,6 @@ description: "Texte formatieren leicht gemacht. Der Rich-Text Editor QuillJS jet
 author: "Bengt Weiße"
 published_at: 2015-12-11 08:37:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/ngquill-wysiwyg-editor-angularjs.jpg"
 ---
 
 Das Module [ngQuill] stellt dem Nutzer eine Direktive bereit, die den Einsatz des [Quill] Rich Text WYSIWYG Editors im eigene AngularJS-Projekt vereinfachen soll.

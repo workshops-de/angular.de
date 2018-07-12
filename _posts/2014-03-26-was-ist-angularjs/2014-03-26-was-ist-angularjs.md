@@ -4,7 +4,6 @@ description: "Lerne, was AngularJS ist und wo die Stärken des Frameworks liegen
 author: "Sascha Brink"
 published_at: 2014-03-26 03:45:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/was-ist-angularjs.jpg"
 ---
 
 ## AngularJS in Stichpunkten:

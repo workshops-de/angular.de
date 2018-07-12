@@ -4,7 +4,6 @@ description: "In AngularJS 1.5 wurden die Components eingeführt. Lernt wozu sie
 author: "Robin Böhm"
 published_at: 2015-12-13 19:58:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-component-helper.jpg"
 ---
 
 In diesem Artikel stelle ich euch den neuen Component-Helper vor. Wie uns der aktuelle [Changelog] verrät ist dieser nun endlich mit der Version 1.5.0-beta2 im Framework gelandet. Dieser ermöglicht euch eine sehr handliche schreibweise von Komponenten. Die Syntax ist hierbei sehr an den @Component-Decorator von Angular angelehnt.

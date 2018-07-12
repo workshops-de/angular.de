@@ -4,7 +4,6 @@ description: Lerne, was du beim Verwenden von ng-repeat beachten musst. Insbeson
 author: "Philipp Tarasiewicz"
 published_at: 2013-06-05 14:30:20.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-ng-repeat.jpg"
 ---
 
 Als AngularJS-Entwickler kommen wir an der Direktive *ng-repeat* nicht vorbei. Ganz im Gegenteil: So ziemlich jede Anwendung, die mit Collections operiert, benötigt den Einsatz dieser Direktive, um die Sammlungen von Daten in einer View bequem ausgeben zu können. Auf den ersten Blick sieht *ng-repeat* dabei völlig harmlos aus und jedem Entwickler erscheint offensichtlich, welche Logik sich hinter diesem Konstrukt verbirgt. Wenn man jedoch genauer hinschaut, gibt es einige Besonderheiten, die zu beachten sind.

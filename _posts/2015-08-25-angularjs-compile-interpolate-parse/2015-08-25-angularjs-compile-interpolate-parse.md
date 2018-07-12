@@ -4,7 +4,6 @@ description: "Wofür brauche ich die Services $compile, $interpolate oder $parse
 author: "Sascha Brink"
 published_at: 2015-08-25 07:45:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-compile-interpolate-parse.jpg"
 ---
 
 <div class="alert alert-info">Dieser Artikel ist für fortgeschrittene AngularJS-Entwickler gedacht.</div>

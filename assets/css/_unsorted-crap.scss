@@ -129,3 +129,19 @@ blockquote {
   }
 }
 
+
+.c-post-categories {
+  position: absolute;
+  left: $spacer;
+  top: $spacer;
+  display: inline-block;
+  border-radius: $border-radius-sm;
+  color: $white;
+  padding: 2px 5px 3px;
+  font-size: 70%;
+  background: rgba(41,47,56,0.3);
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.04em;
+  max-width: calc(100% - $spacer*2);
+}

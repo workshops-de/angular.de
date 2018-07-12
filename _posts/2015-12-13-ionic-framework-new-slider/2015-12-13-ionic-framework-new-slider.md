@@ -4,7 +4,6 @@ description: "Ihr habt Probleme mit der eingebauten Slideshow von Ionic? Die Ent
 author: "Bengt Weiße"
 published_at: 2015-12-13 18:16:00.000000Z
 categories: "angularjs ionic"
-header_image: "/artikel/header_images/ionic-framework-new-slider.jpg"
 ---
 
 Immer wieder gab es [Probleme] mit der bisherigen Slidebox-Komponente des hybriden Frameworks zur Erstellung von mobilen Apps auf Basis von AngularJS.

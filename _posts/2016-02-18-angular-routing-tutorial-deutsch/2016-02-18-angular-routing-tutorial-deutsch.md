@@ -4,7 +4,6 @@ description: "Routing ist ein fester Bestandteil fast jeder Web-Anwendung. Wie d
 author: "Bengt Weiße"
 published_at: 2016-02-18 10:30:00.000000Z
 categories: "angular angular2 angular4 tutorial"
-header_image: "/artikel/header_images/angular-routing-tutorial-deutsch.jpg"
 tutorial_page_order: '4'
 ---
 

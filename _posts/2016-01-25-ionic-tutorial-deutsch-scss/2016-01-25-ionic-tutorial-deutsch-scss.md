@@ -4,7 +4,6 @@ description: "Mit Ionic habt ihr die Möglichkeit eure App mit SCSS zu stylen. W
 author: "Bengt Weiße"
 published_at: 2016-01-25 08:29:00.000000Z
 categories: "ionic angularjs tutorial"
-header_image: "/artikel/header_images/ionic-tutorial-deutsch-scss.jpg"
 ---
 
 Für den geübten Webentwickler sind die Erweiterungssprachen Less und SASS/SCSS nicht mehr wegzudenken. Variablen und Mixins lassen - sagen wir mal fast - kinderleicht komplexe Layouts realisieren und redundanter CSS-Code sollte damit der Vergangenheit angehören.

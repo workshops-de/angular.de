@@ -4,7 +4,6 @@ description: "Angular Version >2.x kommt … und es macht alles anders! Ist das 
 author: "Robin Böhm"
 published_at: 2016-08-29 06:00:00.000000Z
 categories: "angularjs angular angular2 angular4 migration"
-header_image: "/artikel/header_images/migration-angularjs-angular2.jpg"
 ---
 
 Mitte Juni fand in Darmstadt zum zweiten mal die EnterJS statt. Hierbei handelt es sich, wie der Name schon vermuten lässt, um eine JavaScript Konferenz für Entwickler welche sich mit JavaScript in Enterprise-Anwendung beschäftigen. War dies vor ein paar Jahren noch undenkbar, merken wir die letzten Jahre doch ein massives Wachstum von JavaScript im professionellen Entwicklungs-Bereich. Ein großer Schritt in diese Richtung war sicherlich das Framework AngularJS. Nun entwicklet sich die JavaScript Welt rasant weiter und die zweite Version des Frameworks kommt - was das für eure AngularJS Anwendungen zu bedeuten hat und wie ihr eine Migration nach Angular2 durchführen könnnt habe ich in einem Vortrag auf der letzten EnterJS einmal zusammengefasst. Da das fabelhafte Team der Konferenz die meisten Sessions auch aufgenommen hat, kann ich euch jetzt hier den Mitschnitt zur Verfügung stellen!

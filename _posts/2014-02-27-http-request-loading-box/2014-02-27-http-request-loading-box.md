@@ -4,7 +4,6 @@ description: Lerne, wie du dem Benutzer signalisieren kannst, dass ein Http-Aufr
 author: "Sascha Brink"
 published_at: 2014-02-27 11:55:15.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/http-request-loading-box.jpg"
 ---
 
 ## Problem

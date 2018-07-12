@@ -4,7 +4,6 @@ description: Lerne, was sich in Angular 2 ändern wird. Wir besprechen Punkte wi
 author: "Robin Böhm"
 published_at: 2014-04-08 13:16:00.000000Z
 categories: "angular2 news"
-header_image: "/artikel/header_images/angularjs-2-0-vorschau.jpg"
 ---
 
 Mitte März 2014 gab das Angular-Team via [Blog](http://blog.angularjs.org/2014/03/angular-20.html) bekannt, ab nun aktiv an der Implementierung von AngularJS 2.0 zu arbeiten. Die Fertigstellung dieser Version liegt noch in ferner Zukunft, jedoch will das Team die Designentscheidungen offen mit der Community diskutieren. Woran im Moment gearbeitet wird, fasse ich euch in diesem Artikel zusammen. Auf einen Blick sind es:

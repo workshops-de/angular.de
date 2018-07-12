@@ -4,7 +4,6 @@ description: "Dieser Artikel soll Euch Funktionale Reaktive Programmierung nähe
 author: "Ramy Hardan"
 published_at: 2014-07-07 07:00:00.000000Z
 categories: "angularjs reactive observables"
-header_image: "/artikel/header_images/angularjs-baconjs.jpg"
 ---
 
 Dieser Artikel soll Euch Funktionale Reaktive Programmierung näher bringen und in Verbindung mit AngularJS schmackhaft machen, damit Ihr komplexe Interaktionen mit einfachem, kompaktem Code umsetzen könnt.

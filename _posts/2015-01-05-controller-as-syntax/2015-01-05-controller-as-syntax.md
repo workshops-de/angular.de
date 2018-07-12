@@ -4,7 +4,6 @@ description: "Lerne, was die Controller-As-Syntax in AngularJS ist und wie du da
 author: "Tilman Potthof"
 published_at: 2015-01-05 09:01:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/controller-as-syntax.jpg"
 ---
 
 Dieser Artikel zeigt euch, wie man Variablen aus unterschiedlichen Controllern in Templates besser unterscheiden kann.

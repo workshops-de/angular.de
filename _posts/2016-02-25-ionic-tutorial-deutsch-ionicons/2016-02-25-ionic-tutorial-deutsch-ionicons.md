@@ -4,7 +4,6 @@ description: "Die Ionic Framework eigene Icon-Font im Detail erklärt. Auch auß
 author: "Bengt Weiße"
 published_at: 2016-02-25 08:29:00.000000Z
 categories: "ionic angularjs tutorial"
-header_image: "/artikel/header_images/ionic-tutorial-deutsch-ionicons.jpg"
 ---
 
 Für eine stylische App dürfen auch passende Icons nicht fehlen. Bei Ionic hat der Entwickler das Glück, dass das Ionic-Team eine eigene Icon-Font unter dem Namen **Ionicons** pflegt und stetig weiterentwickelt. Sie orientiert sich dabei an den System-Icons von iOS und Android. Dadurch stehen für verschiedene Anwendungsfälle gleich mehrere Icons zur Verfügung.

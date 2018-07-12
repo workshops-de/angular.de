@@ -4,7 +4,6 @@ description: "Angular-CLI ist ein Werkzeug zum Generieren von Angular Projekten.
 author: "David Müllerchen"
 published_at: 2016-09-27 00:00:00.000000Z
 categories: "angular angular2 angular4 cli"
-header_image: "/artikel/header_images/angular-cli-einfuehrung.jpg"
 ---
 
 Seit Brad Green auf der ng-conf verkündet hat, Angular2 sei kein Framework mehr, sondern eine Plattform, stellt sich die Frage, was die anderen Teile neben dem Framework Angular2 sind.

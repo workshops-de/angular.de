@@ -4,7 +4,6 @@ description: "Browserify ist eine Alternative zu anderen gängigen Projekt-Setup
 author: "Bastian Krol"
 published_at: 2014-06-02 07:00:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/angularjs-browserify.jpg"
 ---
 
 Mit [Browserify](http://browserify.org/) lassen sich client-seitige JavaScript-Projekte mit CommonJS-Modulen strukturieren, obwohl CommonJS-Module nicht nativ im Browser lauffähig sind. Browserify transformiert alle Module und ihre transitiven Abhängigkeiten und erzeugt eine einzige, im Browser lauffähige JavaScript-Datei – das Browserify-Bundle. Auch in AngularJS-Projekten lässt sich Browserify hervorragend einsetzen. Wie das geht, zeigt dieser Artikel.

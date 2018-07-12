@@ -4,7 +4,6 @@ description: "Die Direktive ngModelOptions ermöglicht euch das Verhalten von ng
 author: "Tilman Potthof"
 published_at: 2014-11-27 09:04:00.000000Z
 categories: "angularjs 1.3"
-header_image: "/artikel/header_images/ng-model-options.jpg"
 ---
 
 AngularJS ist bekannt für sein einfaches bidirektionales Databinding.

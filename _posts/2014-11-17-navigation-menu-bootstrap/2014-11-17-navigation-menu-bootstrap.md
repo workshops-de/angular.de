@@ -4,7 +4,6 @@ description: "Automatisches Erzeugen der Navigation mit AngularJS und Bootstrap 
 author: "Tilman Potthof"
 published_at: 2014-11-17 11:52:00.000000Z
 categories: "angularjs bootstrap"
-header_image: "/artikel/header_images/navigation-menu-bootstrap.jpg"
 ---
 
 [Single-page-Webanwendungen](http://de.wikipedia.org/wiki/Single-page-Webanwendung) sind mittlerweile sehr verbreitet und je nach Anwendungsfall eine sinnvolle Alternative zu klassischen Webanwendungen.

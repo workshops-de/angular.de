@@ -4,7 +4,6 @@ description: "Lernt, wie ihr beim Testen von Direktiven den Fehler \"Unexpected 
 author: "Robin Böhm"
 published_at: 2014-04-09 07:23:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/test-directive-templateurl.jpg"
 ---
 
 Fast in jedem Projekt nutzen wir Direktiven, die mit Templates arbeiten. Diese verweisen mit dem Parameter `templateUrl` auf eine Datei, die während der Laufzeit der Anwendung per HTTP-Request nachgeladen wird.

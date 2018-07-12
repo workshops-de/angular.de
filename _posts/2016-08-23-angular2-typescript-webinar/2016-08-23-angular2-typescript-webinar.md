@@ -4,7 +4,6 @@ description: "Als Erweiterung unserer Workshops setzen wir nun zusätzlich auf d
 author: "Robin Böhm"
 published_at: 2016-08-23 10:00:00.000000Z
 categories: "angular angular2 angular4 typescript webinar"
-header_image: "/artikel/header_images/angular2-typescript-webinar.jpg"
 ---
 
 Als Erweiterung unserer Workshops setzen wir nun vermehrt auf Wissensvermittlung via Webinar, um das Workshop-Erlebnis unserer Teilnehmer noch weiter zu verbessern!

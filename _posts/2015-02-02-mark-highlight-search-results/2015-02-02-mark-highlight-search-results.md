@@ -4,7 +4,6 @@ description: "Das Durchsuchen von Tabellen lässt sich in Angular spielend löse
 author: "Tilman Potthof"
 published_at: 2015-02-02 09:49:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/mark-highlight-search-results.jpg"
 ---
 
 Das Durchsuchen von Tabellen oder Listen lässt sich in Angular spielend lösen.

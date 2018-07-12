@@ -4,7 +4,6 @@ description: Lerne, wie du einen eigenen Expression-Fillter erstellen kannst. Al
 author: "Philipp Tarasiewicz"
 published_at: 2014-03-25 12:00:00.000000Z
 categories: "angularjs"
-header_image: "/artikel/header_images/expression-filter.jpg"
 ---
 
 Filter sind in AngularJS ein mächtiges Konzept, um Daten vor der Ausgabe beliebig transformieren zu können. Grundsätzlich unterscheiden wir zwischen den so genannten Expression- und Collectionfiltern.

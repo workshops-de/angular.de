@@ -4,7 +4,6 @@ description: "Angular setzt ab jetzt auf das System der semantischen Versionieru
 author: "Robin Böhm"
 published_at: 2016-12-14 09:00:00.000000Z
 categories: "angular angular2 angular4"
-header_image: "/artikel/header_images/angular-4-semver.jpg"
 ---
 
 
