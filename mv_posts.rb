@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+# Moves all .md files in _post into its own folder
 Dir["_posts/*.md"].each do |file|
   name = File.basename(file, ".md")
   new_dir = "_posts/#{name}"
@@ -9,3 +10,4 @@ Dir["_posts/*.md"].each do |file|
   Dir.mkdir(new_dir)
   File.rename file, new_file
 end
+

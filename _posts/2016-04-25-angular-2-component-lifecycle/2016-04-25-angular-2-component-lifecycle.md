@@ -20,7 +20,7 @@ In Angular kann eine Komponente wieder andere Komponenten nutzen, wodurch eine A
 
 Der passende Name sagt im Grunde schon alles über die Funktion aus: Der Component Lifecycle bildet das ganze Leben einer Komponente ab und gibt uns Zugriff auf ihre wichtigsten Zustände.
 
- ![Lifecycle Hooks Angular from init to destroy](medium_Copy-of-lifecycle-hooks-init.png)
+ ![Lifecycle Hooks Angular from init to destroy](medium_lifecycle-hooks-init-simple.png)
 
 ## Zugriff auf den Life cycle
 
