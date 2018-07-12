@@ -49,7 +49,7 @@ export class SongTrack { }
 ```
 
 
-![Beispiel Komponente für diesen Artikel](/artikel/angular-styleguide/angular-styleguide-example-component.gif)
+![Beispiel Komponente für diesen Artikel](angular-styleguide-example-component.gif)
 
 
 ## Angular Encapsulation
@@ -150,10 +150,10 @@ Siehe unten emulierten und nativen Browsersupport-Vergleiche, nebeneinander.
 
 <div class="row">
     <div class="col-lg-6 col-sm-12">
-        <img class="img-fluid" alt="Browser Support for Emulated Shadow DOM im Überblick" src="/artikel/angular-styleguide/browser-support-shadow-dom.png"/>
+        <img class="img-fluid" alt="Browser Support for Emulated Shadow DOM im Überblick" src="browser-support-shadow-dom.png"/>
     </div>
     <div class="col-lg-6 col-sm-12">
-        <img class="img-fluid" alt="Browser Support for Native Shadow DOM im Überblick" src="/artikel/angular-styleguide/browser-support-native-shadow-dom.png"/>
+        <img class="img-fluid" alt="Browser Support for Native Shadow DOM im Überblick" src="browser-support-native-shadow-dom.png"/>
     </div>
 </div>
 
