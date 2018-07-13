@@ -4,76 +4,48 @@ title: Die deutsche Seite zum Angular Framework
 description: Alles rund um Angular/JavaScript auf deutsch - Tutorials · Artikel · News · Workshops.
 permalink: /
 ---
-<main>
-  <div class="header header-homepage d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-3 col-sm-3 text-center mx-auto my-auto">
-          <img class="img img-fluid mx-xl-4" alt="Angular &amp; TypeScript Intensiv-Schulung"
-                src="/assets/img/temp/angularjs-de-logo-3.svg"
-                title="AngularJS.DE Logo">
-        </div>
-        <div class="col-sm-9 pt-3">
-          <div class="pl-lg-4 mr-lg-4">
-            <p class="lead align-self-center text-muted">
-              Seit 6 Jahren alle Infos zum Angular Framework auf Deutsch!
-            </p>
-            <h1 class="header-homepage-title">Alles rund um Angular</h1>
-            <p class="mt-sm-2 pt-sm-2 mt-md-3 pt-md-3">
-              Stöbere durch unsere Artikel und Tutorials und informiere
-              <br class="hidden-lg-down">dich über unsere
-              <a href="/workshops/angular-intensiv/">Inhouse- und offenen Intensiv-Schulungen!</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mb-2 mt-2 pb-2">
-    <div class="container mt-4">
-      <div class="alert alert-info text-center lead">
-        Noch neu im Bereich
-        <strong>Angular</strong> oder
-        <strong>Ionic</strong>?
-        - Starte hier mit unseren
-        <a href="/tutorials/"><strong>Einsteiger-Tutorials!</strong></a>
-      </div>
-    </div>
-  </div>
-
+<div class="header header-homepage d-flex align-items-center">
   <div class="container">
-
-
-    <div class="row mt-4">
-      <div class="col-md-8">
-        <h2 class="h3">Die neusten Artikel</h2>
-
-      <div class="row">
-        {% for post in site.posts limit:6 %}
-          <div class="col-sm-6 col-md-6 mb-4">
-            {% include _post_card.html %}
-          </div>
-        {% endfor %}
-      </div>
-        <a class="btn btn-block btn-secondary text-muted hidden-sm-up" href="/artikel/">weitere Artikel</a>      <br class="hidden-sm-up">
-        <br class="hidden-sm-up">
-      </div>
-
-      <div class="col-md-4">
-        <div class="h3">&nbsp;</div>
-
-        {% include _course_banner.html %}
-      </div>
-    </div>
-  </div>
-
-  <div class="container py-5">
     <div class="row">
-      <div class="col-12">
-        <p class="lead">Wir betreiben AngularJS.DE seit Ende 2012 und sind die größte deutsche Seite rund um das Framework.</p>
+      <div class="col-3 col-sm-3 text-center mx-auto my-auto">
+        <img class="img img-fluid mx-xl-4" alt="Angular &amp; TypeScript Intensiv-Schulung"
+              src="/assets/img/temp/angularjs-de-logo-3.svg"
+              title="AngularJS.DE Logo">
+      </div>
+      <div class="col-sm-9 pt-3">
+        <div class="pl-lg-4 mr-lg-4">
+          <p class="lead align-self-center text-muted">
+            Seit 6 Jahren alle Infos zu Angular auf Deutsch!
+          </p>
+          <h1 class="header-homepage-title">Alles rund um Angular</h1>
+          <!-- <p class="mt-sm-2 pt-sm-2 mt-md-3 pt-md-3 h3">
+            <a href="/artikel/" class="text-muted">Artikel</a>
+            <span class="ml-1 mr-1">•</span>
+            <a href="/tutorials/" class="text-muted">Tutorials</a>
+            <span class="ml-1 mr-1">•</span>
+            <a href="/workshops/angular-intensiv/" class="text-muted">Schulungen</a>
+          </p> -->
+          <p class="pt-2 pt-md-4">
+            <a href="/artikel/" class="btn btn-outline-secondary mr-2">Artikel ansehen</a>
+            <a href="/tutorials/" class="btn btn-primary">Mit einem Tutorial starten &rsaquo;</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
+<main class="container">
+  <section class="py-5">
+    <h2>Die neusten Artikel</h2>
+    <div class="row">
+      {% for post in site.posts limit:6 %}
+        <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
+          {% include _post_card.html %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <p class="lead py-5 text-center">AngularJS.DE besteht seit Ende 2012 und ist die größte deutsche Seite rund um das Framework.</p>
 </main>
