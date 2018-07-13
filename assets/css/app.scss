@@ -49,10 +49,10 @@ $headings-margin-bottom: 1.1rem;
 
 // Imports
 //
+@import "mixins/underline";
 @import "fonts/font-source-sans";
 @import "fonts/font-awesome";
 @import "bootstrap";
-@import "mixins";
 @import "visibility";
 @import "inputs";
 @import "image-loader";

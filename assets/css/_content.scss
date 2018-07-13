@@ -39,6 +39,7 @@
   // Code Tags
   li code,
   p code {
+    color: $body-color;
     background-color: $light;
     border-radius: $border-radius-sm;
     padding: 4px;
