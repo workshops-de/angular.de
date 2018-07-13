@@ -47,6 +47,8 @@ permalink: /
 
     <div class="row mt-4">
       <div class="col-md-8">
+        <h2 class="h3">Die neusten Artikel</h2>
+
       <div class="row">
         {% for post in site.posts limit:6 %}
           <div class="col-sm-6 col-md-6 mb-4">
@@ -59,8 +61,7 @@ permalink: /
       </div>
 
       <div class="col-md-4">
-        <h2 class="h3">Tutorials</h2>
-        {% include _sidebar_posts.html contains='tutorial' %}
+        <div class="h3">&nbsp;</div>
 
         {% include _course_banner.html %}
       </div>
