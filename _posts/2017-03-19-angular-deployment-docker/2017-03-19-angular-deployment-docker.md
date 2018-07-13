@@ -18,7 +18,7 @@ Bevor wir jedoch in das Gesamtkonstrukt eintauchen, müssen wir uns die einzelne
 
 Mit Docker wurde eine Engine geschaffen, welche es ermöglicht eine Anwendung zusammen mit allen notwendigen Umgebungen in einen Container einzusperren und zu starten. Dieser Container ist eine Art leichtgewichtige virtuelle Maschine, die alles mitbringt, um die Applikation laufen zu lassen. Dies hat den Vorteil, dass das Problem "Is running on my machine" nahezu völlig ausgeschlossen wird.
 
-![Docker](medium_docker.jpg?v=63657051997)
+![Docker](docker.jpg)
 
 Als Grundlage für den Dockercontainer muss immer ein Image definiert werden. In diesem Image befindet sich das komplette Betriebssystem, auf welchem anschließend unsere Applikation läuft. Auch hier ist der Aufbau dieses Schemas sehr flexibel und kann frei definiert werden. Die Apple-Jünger unter euch müssen [Docker-Machine auf ihrem System installieren](https://docs.docker.com/machine/install-machine/).
 
@@ -191,7 +191,7 @@ Wie bereits beschrieben, kann man mit Hilfe von Webhooks einem anderem System et
 
 Nun kennt Ihr alle Bausteine, aus welchem das Gesamtkonstrukt gebaut werden soll. Ich habe euch eine Schemazeichnung erstellt, in welcher euch der Gesamtprozess bildlich dargestellt werden soll:
 
-![Schema der Angular Docker Continuous Deployment Pipe](medium_schema.jpg?v=63657052773)
+![Schema der Angular Docker Continuous Deployment Pipe](docker-ci-schema.jpg)
 
 Wie ihr erkennen könnt, gibt es zwei Auslöser, welche die Automatismen anwerfen können. Zum einem Check-In von Code, zum anderen per Scheduler (Nightly Build).
 
