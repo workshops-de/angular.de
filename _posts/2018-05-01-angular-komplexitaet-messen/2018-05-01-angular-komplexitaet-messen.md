@@ -1,6 +1,6 @@
 ---
 title: "Abschätzung der Komplexität einer Angular Anwendung"
-description: "Es gibt vielfältige Gründe, die Komplexität einer Anwendung einschätzen zu wollen. Häufig machen  Angular Anwendungen einen wesentlichen Teil der Komplexität einer Anwendung aus. Ein kleines Ruby-Script hilft bei der Bewertung."
+description: "Häufig machen Angular-Anwendungen einen wesentlichen Teil der Komplexität einer Anwendung aus. Ein kleines Ruby-Script hilft bei der Bewertung."
 author: "Björn Wilmsmann"
 published_at: 2018-05-01 8:25:01.000000Z
 header_source: https://unsplash.com/photos/PqkuJqzghew
