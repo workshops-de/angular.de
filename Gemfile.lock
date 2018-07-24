@@ -3,9 +3,9 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    autoprefixer-rails (8.6.5)
+    autoprefixer-rails (9.0.0)
       execjs
-    bootstrap (4.1.1)
+    bootstrap (4.1.2)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
@@ -77,7 +77,7 @@ GEM
     rouge (3.1.1)
     ruby_dep (1.5.0)
     safe_yaml (1.0.4)
-    sass (3.5.6)
+    sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -90,7 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (~> 4.1.1)
+  bootstrap (~> 4.1.2)
   fastimage
   jekyll (~> 3.8.1)
   jekyll-feed (~> 0.6)
