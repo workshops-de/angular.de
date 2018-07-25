@@ -8,25 +8,6 @@ permalink: /artikel/:slug/
 repository_url: "https://github.com/symetics/angularjs.de"
 ws_course_id: 4
 
-jekyll_timeago:
-  depth: 1 # Level of detail
-  today: 'Heute'
-  yesterday: 'Gestern'
-  tomorrow: 'Morgen'
-  and: 'und'
-  suffix: ''
-  prefix: 'vor'
-  suffix_future: ''
-  prefix_future: 'in'
-  years: 'Jahre'
-  year: 'Jahr'
-  months: 'Monaten'
-  month: 'Monat'
-  weeks: 'Wochen'
-  week: 'Woche'
-  days: 'Tagen'
-  day: 'Tag'
-
 collections:
   books:
     output: true
