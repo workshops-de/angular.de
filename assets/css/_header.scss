@@ -120,7 +120,13 @@
 }
 
 .header-team, .header-workshop {
-  background: url('/assets/img/workshops/anguar-workshop-attendees.jpg');
+  background: url('/assets/img/headers/header-bg-neutral.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+.header-tutorials {
+  background: url('/assets/img/headers/header-bg-neutral.png');
   background-size: cover;
   background-position: center center;
 }
