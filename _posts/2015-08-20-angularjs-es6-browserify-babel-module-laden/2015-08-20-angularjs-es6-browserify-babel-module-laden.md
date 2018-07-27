@@ -6,7 +6,7 @@ published_at: 2015-08-20 08:58:00.000000Z
 categories: "angularjs"
 ---
 
-In diesem Artikel zeige ich ein paar kleine Erweiterungen, die Euch die Entwicklung mit AngularJS 1 erleichtern und gleichzeitig auf die Zukunft mit Angular2 vorbereiten. Es ist jetzt schon möglich Quellcode zu schreiben, der nahe an Angular2 ist. Ein Test-Projekt könnt Ihr auf [GitHub](https://github.com/angularjs-de/angularjs-de-seed-es6) finden. Schickt gerne eigene Pull-Requests oder Issues und optimiert gemeinsam mit mir!
+In diesem Artikel zeige ich ein paar kleine Erweiterungen, die Euch die Entwicklung mit AngularJS 1 erleichtern und gleichzeitig auf die Zukunft mit Angular2 vorbereiten. Es ist jetzt schon möglich Quellcode zu schreiben, der nahe an Angular2 ist.
 
 **Inhalt:**
 
@@ -137,8 +137,6 @@ Weiter müssen wir in unseren Browserify Bundle-Prozess diesen Schritt als Trans
 ```javascript
 browserify(bundleConfig).transform(babel);
 ```
-
-Einen funktionierenden Gulp-Task findet Ihr als Beispiel auf [GitHub](https://github.com/angularjs-de/angularjs-de-seed-es6/blob/master/gulp/tasks/browserify.js#L37).
 
 Nun können wir die neuen ES6 Features benutzen wie z.B. `import` und können unsere Datei dann schon in schönem neuen ES6-Code schreiben:
 
