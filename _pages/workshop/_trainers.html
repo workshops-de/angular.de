@@ -1,92 +1,70 @@
 <section id="trainers" class="trainers">
   <div class="content-box">
-  <div class="container">
+    <div class="container">
       <h2>Wer sind deine Trainer?</h2>
-    <div class="row">
+      <div class="row">
         <div class="col-12 col-md-6">
-            <div class="container-fluid d-flex flex-wrap">
-              <div>
-                  <!-- <div class="text-right pb-3 pt-3">
-                      <em style="font-size: 1.2rem; color: #a0a0a0;">"Wir sind ein Team aus Angular-Trainern,
-                          <br>die sich über die Begeisterung für Angular gefunden haben."</em>
-                    </div> -->
-                <div id="homepage-slider" class="st-slider">
-
-                    <input type="radio" class="cs_anchor radio d-none" name="slider" id="slide1" checked="checked"/>
-                    <input type="radio" class="cs_anchor radio d-none" name="slider" id="slide2"/>
-
-                  <div class="images">
-                     <div class="images-inner">
-                      <div class="image-slide">
-                        <div class="d-flex flex-no-wrap mb-4">
-                          {% include_relative workshop/_trainer.html name="Robin Böhm" %}
-                          {% include_relative workshop/_trainer.html name="Sascha Brink" %}
-                          {% include_relative workshop/_trainer.html name="David Müllerchen"%}
-                          {% include_relative workshop/_trainer.html name="Peter Müller" %}
-                        </div>
-                        <div class="d-flex flex-no-wrap mb-4">
-                          {% include_relative workshop/_trainer.html name="Aaron Czichon" %}
-                          {% include_relative workshop/_trainer.html name="Timo Korinth" %}
-                          {% include_relative workshop/_trainer.html name="Gregor Woiwode" %}
-                          {% include_relative workshop/_trainer.html name="Christoph Hoeller" %}
-                        </div>
-                      </div>
-                      <div class="image-slide">
-                        <div class="d-flex flex-no-wrap mb-4">
-                          {% include_relative workshop/_trainer.html name="Sebastian Kleinschmager" %}
-                          {% include_relative workshop/_trainer.html name="Peter Bouda" %}
-                          {% include_relative workshop/_trainer.html name="Christian Liebel" %}
-                          {% include_relative workshop/_trainer.html name="Erfan Nazmehr" %}
-                        </div>
-                        <div class="d-flex flex-no-wrap mb-4">
-                            {% include_relative workshop/_trainer.html name="Pawel Sawicki" %}
-                            {% include_relative workshop/_trainer.html name="Nico König" %}
-                            {% include_relative workshop/_trainer.html name="Marcel Ploch" %}
-                            {% include_relative workshop/_trainer.html name="Johannes Busch" %}
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="labels">
-                      <div class="fake-radio text-center">
-                        <label for="slide1" class="radio-btn"></label>
-                        <label for="slide2" class="radio-btn"></label>
-                      </div>
-                  </div>
+          <div id="carouselTrainers" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner pb-4">
+              <div class="carousel-item active">
+                <div class="row">
+                  {% include_relative workshop/_trainer.html name="Robin Böhm" %}
+                  {% include_relative workshop/_trainer.html name="Sascha Brink" %}
+                  {% include_relative workshop/_trainer.html name="David Müllerchen"%}
+                  {% include_relative workshop/_trainer.html name="Peter Müller" %}
+                  {% include_relative workshop/_trainer.html name="Aaron Czichon" %}
+                  {% include_relative workshop/_trainer.html name="Timo Korinth" %}
+                  {% include_relative workshop/_trainer.html name="Gregor Woiwode" %}
+                  {% include_relative workshop/_trainer.html name="Christoph Hoeller" %}
+                </div>
               </div>
+              <div class="carousel-item">
+                <div class="row">
+                  {% include_relative workshop/_trainer.html name="Sebastian Kleinschmager" %}
+                  {% include_relative workshop/_trainer.html name="Peter Bouda" %}
+                  {% include_relative workshop/_trainer.html name="Christian Liebel" %}
+                  {% include_relative workshop/_trainer.html name="Erfan Nazmehr" %}
+                  {% include_relative workshop/_trainer.html name="Pawel Sawicki" %}
+                  {% include_relative workshop/_trainer.html name="Nico König" %}
+                  {% include_relative workshop/_trainer.html name="Marcel Ploch" %}
+                  {% include_relative workshop/_trainer.html name="Johannes Busch" %}
+                </div>
               </div>
-              </div>
+            </div>
+            <ol class="carousel-indicators">
+              <li data-target="#carouselTrainers" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselTrainers" data-slide-to="1"></li>
+            </ol>
+          </div>
         </div>
-      <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6">
           <p>
-            Seit 2013 schulen wir Entwickler zum Thema Angular.
-            Um die Qualität der Schulungen zu maximieren, haben wir uns als Trainer-Team zusammengeschlossen.
-            Somit arbeiten wir gemeinsam an Materialien und Didaktik für unsere Teilnehmer.
-            Wir sind ...
+            Seit 2013 schulen wir Entwickler zum Thema Angular. Um die Qualität der Schulungen zu maximieren, haben wir uns als Trainer-Team
+            zusammengeschlossen. Somit arbeiten wir gemeinsam an Materialien und Didaktik für unsere Teilnehmer. Wir sind
+            ...
           </p>
-            <ul class="value-proposition-list">
-                <li>
-                    Erfahrene Softwareentwickler mit dem Fokus auf Angular
-                </li>
-                <li>
-                  Google Developer Experts für Angular
-                </li>
-                <li>
-                  Buch- und Artikel-Authoren
-                </li>
-                <li>
-                  Aktive Mitglieder der Angular-Community
-                </li>
-                <li>
-                  Organisatoren von Meetups und Konferenzen
-                </li>
-              </ul>
-              <p class="mb-4 mt-4">
-                Durch den Austausch unserer gemeinsamen Erfahrungen entwickeln wir uns und unsere Schulungen ständig weiter.
-              </p>
-
+          <ul class="value-proposition-list">
+            <li>
+              Erfahrene Softwareentwickler mit dem Fokus auf Angular
+            </li>
+            <li>
+              Google Developer Experts für Angular
+            </li>
+            <li>
+              Buch- und Artikel-Authoren
+            </li>
+            <li>
+              Aktive Mitglieder der Angular-Community
+            </li>
+            <li>
+              Organisatoren von Meetups und Konferenzen
+            </li>
+          </ul>
+          <p class="mb-4 mt-4">
+            Durch den Austausch unserer gemeinsamen Erfahrungen entwickeln wir uns und unsere Schulungen ständig weiter.
+          </p>
+        </div>
       </div>
-      </div>
+    </div>
   </div>
-</div>
 </section>
