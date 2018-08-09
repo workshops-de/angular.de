@@ -1,3 +1,4 @@
 ---
 ---
 Sitemap: {{ "sitemap.xml" | absolute_url }}
+Noindex: /assets/mirror/
