@@ -30,6 +30,15 @@
       { "source": "**/*.@(jpg|jpeg|gif|png|svg|css)",
         "headers": [{"key": "Cache-Control", "value": "max-age=604800"}
         ]
+      },
+      {
+        "source": "/assets/mirror/**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, follow"
+          }
+        ]
       }
     ]
   }
