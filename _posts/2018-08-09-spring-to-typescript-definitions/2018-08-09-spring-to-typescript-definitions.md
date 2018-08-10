@@ -8,7 +8,7 @@ categories: "angular advanced"
 ---
 
 ## Was möchten wir erreichen?
-Mit Hilfe der Metadaten die uns Spring Data REST zur Verfügung stellt, können wir für unsere Web-Clients automatisch Schema-Definitionen generieren. Somit sparen wir uns unnötige Aufwände durch die sonst durch die doppelte Definition in Spring Data REST und TypeScript notwendig wäre. Dies reduziert weiterhin das sehr fehleranfällige manuelle Updaten dieser Definitionen. Durch ein von mir erstelles NPM Paket kann dies nun in jedes Projekt eingebunden werden.
+Mit Hilfe der Metadaten, die uns [Spring Data REST](https://projects.spring.io/spring-data-rest/) zur Verfügung stellt, können wir für unsere Web Clients automatisch Schema-Definitionen generieren. Somit sparen wir uns unnötige Aufwände durch die sonst notwendige doppelte Definition von Datenmodellen in Java und TypeScript. Dies reduziert weiterhin fehleranfälliges manuelles Aktualisieren dieser Definitionen. Durch ein von mir erstelles NPM Paket kann dieses Verfahren nun in jedes Projekt eingebunden werden.
 
 ![Overview Process](/artikel/spring-to-typescript-definitions/overview-package.jpg "Übersicht über die Arbeitsweise des Pakets")
 
@@ -62,7 +62,7 @@ Daher habe ich [ein npm Package mit dem Namen spring-data-rest-json-schema-to-ty
 In eurer `package.json` könnt ihr das script nach der Installation wie folgt einbinden.
 In diesem Beispiel habe ich es unter dem Namen `generate-model` angelegt.
 
-```json
+`````json
 {
   ...
   "scripts": {
