@@ -7,6 +7,11 @@ header_source: https://unsplash.com/photos/EhLH-WN7F7I
 categories: "angular advanced"
 ---
 
+## Was möchten wir erreichen?
+Mit Hilfe der Metadaten die uns Spring Data REST zur verfügung stellt, können wir für unsere Web-Clients automatisch Schema-Definitionen generieren. Somit sparen wir uns unnötige Aufwände durch die sonst durch die doppelte Definition in Spring Data REST und TypeScript notwendig wäre. Dies reduziert weiterhin das sehr fehleranfällige manuelle Updaten dieser Definitionen. Durch ein von mir erstelles NPM Paket kann dies nun in jedes Projekt eingebunden werden.
+
+## Warum macht dieser Ansatz Sinn?
+
 Heutzutage ist es üblich, Web Anwendungen in Client und Server Komponenten aufzuteilen: Während der Server (oft auch _Back-end_ genannt) sich um das zugrundeliegende Datenmodell, Datenhaltung und den größten Teil der Business Logik kümmert, wird das User Interface und Verhalten, das den Nutzer betrifft, im Allgemeinen mit JavaScript, HTML und CSS auf dem Client (oft auch als _Front-end_ bezeichnet) realisiert, d.h. im Browser des Nutzers.
 
 Häufig kommmen dabei Frameworks wie [Angular](https://angular.io/) zum Einsatz, um die Entwicklung zu beschleunigen und Code besser lesbar und generell zugänglicher zu machen, z.B. indem eine standardisierte Struktur für Projekte vorgegeben und bestimmte Code Artefakte an bestimmte Stellen platziert werden, so dass Entwickler, die sich in einem Projekt noch nicht auskennen, sich dennoch schnell zurecht finden.
@@ -19,6 +24,8 @@ Die zwei Seiten einer solchen Web Anwendung kommunizieren typischerweise mittels
 *   Offline Fähigkeit: Selbst wenn der Server nicht erreichbar ist, kann die Anwendung weiterlaufen (siehe [Progressive Web Apps (PWAs)](https://en.wikipedia.org/wiki/Progressive_Web_Apps)) und sich wieder synchronisieren, sobald der Server wieder verfügbar ist.
 
 Dennoch, wie bei fast jedem _design pattern_, bringt dies auch Nachteile mit sich. Einer davon ist, dass das clientseitige Datenmodell mit seinem serverseiigen Gegenstück synchron gehalten werden muss. Wenn man nicht dauerhaft darauf achtet, werden das Server und das Client Model mit der Zeit unvermeidlich divergieren, was die Software wiederum deutlich schwerer wartbar macht.
+
+## Wie funktioniert das Paket?
 
 Es gibt nun einige Ansätze, dieses Problem zu lösen, ohne dass man [diese Arbeit manuell machen muss](http://threevirtues.com/). Einer dieser Ansätze ist die Nutzung von [Swagger](https://swagger.io/) und / oder [OpenAPI](https://www.openapis.org/). Mit diesen Werkzeugen lassen sich APIs definieren und anschließend clientseitige SDKs mittels [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) generieren, um auf APIs zuzugreifen, so dass man diese nicht selber programmieren muss.
 
@@ -38,17 +45,52 @@ Allerding besteht alternativ die Möglichkeit, `application/schema+json` als `Ac
 
 Darüber hinaus gibt es [json-schema-to-typescript](https://github.com/bcherny/json-schema-to-typescript) von [Boris Cherny](https://github.com/bcherny), das beinahe das ist, wonach ich suchte. Diese Library nimmt JSON Schema Dateien entgegen und erstellt daraus [TypeScript Deklarationen](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html).
 
-Was allerdings noch fehlte, war eine Möglichkeit, nicht nur einfach eine einzelne JSON Datei - oder mehrere davon - einzulesen, sondern über alle
-REST API Endpoints zu iterieren, die vom Server per HTTP bereit gestellt werden und deren Metadaten dann jeweils zu verarbeiten.
+Was allerdings noch fehlte, war eine Möglichkeit, nicht nur einfach eine einzelne JSON Datei - oder mehrere davon - einzulesen, sondern über alle REST API Endpoints zu iterieren, die vom Server per HTTP bereit gestellt werden und deren Metadaten dann jeweils zu verarbeiten.
 
 Daher habe ich [ein npm Package mit dem Namen spring-data-rest-json-schema-to-typescript-definitions](https://www.npmjs.com/package/spring-data-rest-json-schema-to-typescript-definitions) erstellt, das dieses Problem in einer wiederverwendbaren Weise löst.
+
+## Benutzung des Paketes
+
+### Paket via NPM installieren
+
+`npm install spring-data-rest-json-schema-to-typescript-definitions --save-dev`
+
+### package.json erweitern
+
+In eurer `package.json` könnt ihr das script nach der Installation wie folgt einbinden.
+In diesem Beispiel habe ich es unter dem Namen `generate-model` angelegt.
+
+`````json
+{
+  ...
+  "scripts": {
+    ...
+    "generate-model": "node node_modules/spring-data-rest-json-schema-to-typescript-definitions/dist/index.js http://localhost:8080 ./src/app/generated-model"
+    ...
+  },
+  ...
+}
+
+```
+
+Die `index.js` nimmt hierbei zwei Argumente entgegen:
+
+1. Die URL eures API Endpoints der genutzt werden soll, um die Metadaten abzufragen.
+Hierbei hängt das Script `/profile` an die URL und ruft die [Spring Data Metadaten](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#metadata.json-schema) ab.
+
+2. Der Ordner in den die TypeScript Decleations geschrieben werden sollen.
+
+
+### Ausführen
+
+Habt ihr das nach eur spezifischen Projektkonfiguration angepasst, könnt ihr mit folgendem Befehl die Declarations erstellen und aktuallisieren.
+
+`npm run generate-model`
+
+## Fazit
+
 Dies wird hoffentlich anderen - mein zukünftiges Ich inklusive - ermöglichen, darauf in ihren Angular (bzw. generell TypeScript-basierten) Applikationen darauf aufzubauen.
 TypeScript Declarations auf diese Weise zu generieren, sollte dabei helfen, Datenmodelle zwischen Client und Server synchron zu halten und damit die Software Qualität insgesamt zu verbessern.
 
+
 Weitere Informationen finden sich im [spring-data-rest-json-schema-to-typescript-definitions GitHub Repository](https://github.com/BjoernKW/spring-data-rest-json-schema-to-typescript-definitions), sowie [der Projekt Dokumentation](https://bjoernkw.github.io/spring-data-rest-json-schema-to-typescript-definitions/).
-
----
-
-Björn Wilmsmann ist selbständiger IT Berater. Er realisiert Anwendungen und Softwarelösungen im Geschäftsumfeld. Er unterstützt Unternehmen in Sachen Software Qualität und gibt Schulungen bei der Einführung neuer Technologien.
-
-https://bjoernkw.com/
