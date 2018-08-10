@@ -8,7 +8,9 @@ categories: "angular advanced"
 ---
 
 ## Was möchten wir erreichen?
-Mit Hilfe der Metadaten die uns Spring Data REST zur verfügung stellt, können wir für unsere Web-Clients automatisch Schema-Definitionen generieren. Somit sparen wir uns unnötige Aufwände durch die sonst durch die doppelte Definition in Spring Data REST und TypeScript notwendig wäre. Dies reduziert weiterhin das sehr fehleranfällige manuelle Updaten dieser Definitionen. Durch ein von mir erstelles NPM Paket kann dies nun in jedes Projekt eingebunden werden.
+Mit Hilfe der Metadaten die uns Spring Data REST zur Verfügung stellt, können wir für unsere Web-Clients automatisch Schema-Definitionen generieren. Somit sparen wir uns unnötige Aufwände durch die sonst durch die doppelte Definition in Spring Data REST und TypeScript notwendig wäre. Dies reduziert weiterhin das sehr fehleranfällige manuelle Updaten dieser Definitionen. Durch ein von mir erstelles NPM Paket kann dies nun in jedes Projekt eingebunden werden.
+
+![Overview Process](/artikel/spring-data-rest-json-schema-to-typescript-definitions/overview-package.jpg "Übersicht über die Arbeitsweise des Pakets")
 
 ## Warum macht dieser Ansatz Sinn?
 
