@@ -62,7 +62,7 @@ Daher habe ich [ein npm Package mit dem Namen spring-data-rest-json-schema-to-ty
 In eurer `package.json` könnt ihr das script nach der Installation wie folgt einbinden.
 In diesem Beispiel habe ich es unter dem Namen `generate-model` angelegt.
 
-`````json
+```json
 {
   ...
   "scripts": {
