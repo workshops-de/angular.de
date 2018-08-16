@@ -62,66 +62,46 @@
 
 .testimonials  {
   position: relative;
-  background: url(/assets/img/workshops/annika-stille-foto.1024x1024.jpg);
-  background-size: 500px;
+  background: url(/assets/img/workshops/testimonial-annika-stille-adesso.jpg);
+  background-size: auto 100%;
   background-position: right top;
   background-repeat: no-repeat;
   color: white;
-  padding-bottom: 50px;
+  @extend .py-6;
 
   h2, h3, h4 {
     color: white
   }
 
-  .container {
-    min-height: 200px;
-    padding-top: 50px;
-    position: relative;
+  blockquote {
+    font-size: $font-size-base * 1.2;
   }
 
-  blockquote {
-    font-family: "PT serif";
-    font-size: 1.3rem;
-    padding: 0;
-    margin: 0;
-    border: none;
+  $testimonial-start: darken($primary, 10%);
+  $testimonial-end: darken($primary, 8%);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-linear-gradient(left, rgba($testimonial-start,1) 0%,rgba($testimonial-end,0.85) 34%,rgba($testimonial-end,0.75) 55%,rgba($testimonial-end,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba($testimonial-start,1) 0%,rgba($testimonial-end,0.85) 34%,rgba($testimonial-end,0.75) 55%,rgba($testimonial-end,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
+
+  &.testimonials-dev {
+    background: url(/assets/img/workshops/Christianz-Janz-transparent.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: auto 100%;
 
     &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(10,56,126,1);
-      // opacity: .9;
-      // background-color: #0d47a1;
-      // background: linear-gradient(145deg, #0a387e, #126eb9);
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0a387e+0,0a387e+0,126eb9+34,126eb9+100&1+0,0.75+55,0+100 */
-background: -moz-linear-gradient(left, rgba(10,56,126,1) 0%, rgba(18,110,185,0.85) 34%, rgba(18,110,185,0.75) 55%, rgba(18,110,185,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, rgba(10,56,126,1) 0%,rgba(18,110,185,0.85) 34%,rgba(18,110,185,0.75) 55%,rgba(18,110,185,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, rgba(10,56,126,1) 0%,rgba(18,110,185,0.85) 34%,rgba(18,110,185,0.75) 55%,rgba(18,110,185,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a387e', endColorstr='#00126eb9',GradientType=1 ); /* IE6-9 */
+    background: -webkit-linear-gradient(right, rgba($testimonial-start,1) 0%,rgba($testimonial-end,0.85) 34%,rgba($testimonial-end,0.75) 55%,rgba($testimonial-end,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to left, rgba($testimonial-start,1) 0%,rgba($testimonial-end,0.85) 34%,rgba($testimonial-end,0.75) 55%,rgba($testimonial-end,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
-
-
-
-    &.testimonials-dev {
-      background: url(/assets/img/workshops/Christianz-Janz-transparent.png);
-      background-repeat: no-repeat;
-      background-position: left -50px;
-      background-size: 500px;
-      background-color: #0a387e;
-
-      &:before {
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#126eb9+0,126eb9+66,0a387e+100,0a387e+100&0+0,0.75+58,1+100 */
-        background: -moz-linear-gradient(left, rgba(18,110,185,0) 0%, rgba(18,110,185,0.75) 58%, rgba(18,110,185,0.8) 66%, rgba(10,56,126,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left, rgba(18,110,185,0) 0%,rgba(18,110,185,0.75) 58%,rgba(18,110,185,0.8) 66%,rgba(10,56,126,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right, rgba(18,110,185,0) 0%,rgba(18,110,185,0.75) 58%,rgba(18,110,185,0.8) 66%,rgba(10,56,126,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00126eb9', endColorstr='#0a387e',GradientType=1 ); /* IE6-9 */
-      }
-    }
+  }
 }
 
 .why, .why-developers {
