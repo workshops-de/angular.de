@@ -1,7 +1,7 @@
 Jekyll::Hooks.register :site, :after_init do |p|
   require 'fastimage'
   puts "Checking header images"
-  Dir["_posts/**/header.jpg"].each do |file|
+  Dir["_posts/**/header.*"].each do |file|
     img = FastImage.new(file)
 
     if img.type != :jpeg
