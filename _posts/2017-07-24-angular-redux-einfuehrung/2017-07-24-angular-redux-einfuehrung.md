@@ -70,7 +70,7 @@ Durch diese Grundsätze können wir ein vorhersagbares und reproduzierbares Anwe
 Das nächste Diagramm zeigt eine Übersicht der verschiedenen Komponenten von Redux, welche wir nun Schritt für Schritt erklären werden.
 
 <div class="text-center">
-    <img src="/artikel/angular-redux-einfuehrung/redux-overview.png" alt="Redux Overview" />
+  <img src="redux-overview.png" alt="Redux Overview" />
 </div>
 
 ### Actions

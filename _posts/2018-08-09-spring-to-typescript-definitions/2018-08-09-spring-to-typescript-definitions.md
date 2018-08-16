@@ -10,7 +10,7 @@ categories: "angular advanced"
 ## Was möchten wir erreichen?
 Mit Hilfe der Metadaten, die uns [Spring Data REST](https://projects.spring.io/spring-data-rest/) zur Verfügung stellt, können wir für unsere Web Clients automatisch Schema-Definitionen generieren. Somit sparen wir uns unnötige Aufwände durch die sonst notwendige doppelte Definition von Datenmodellen in Java und TypeScript. Dies reduziert weiterhin fehleranfälliges manuelles Aktualisieren dieser Definitionen. Durch ein von mir erstelles NPM Paket kann dieses Verfahren nun in jedes Projekt eingebunden werden.
 
-![Overview Process](/artikel/spring-to-typescript-definitions/overview-package.jpg "Übersicht über die Arbeitsweise des Pakets")
+![Overview Process](overview-package.jpg)
 
 ## Warum macht dieser Ansatz Sinn?
 

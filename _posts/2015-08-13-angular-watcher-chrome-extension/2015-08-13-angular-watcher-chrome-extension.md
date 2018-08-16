@@ -16,4 +16,4 @@ Gerade wenn Ihr eigene komplexe Views schreibt welche viele Watcher registrieren
 
 Hier mal ein kleines Beispiel wie das aussehen könnte:
 
-![Bild](Angular-Watchers-Aug_11__2015_19_45.gif)
+![Bild](angular-watcher-chrome-example.gif)

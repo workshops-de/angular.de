@@ -29,7 +29,7 @@ In der neuen Version des Frameworks ist jedoch eine neue Komponente extra dafür
 
 Dadurch sucht sich Ionic das passende Icon je nach Plattform. Eine Liste aller verfügbaren [Icon Namen](http://ionicframework.com/docs/v2/ionicons/) findet ihr in der Ionic Dokumentation.
 
-![Bild](medium_ionic2-ionicon.png)
+![Bild](ionic2-ionicon.png)
 
 Wollt ihr selbst entscheiden, welches Icon für die Plattformen angezeigt werden, dann könnt ihr dies auch. Setzt das Icon nicht über das `name` Attribute, sondern einfach über das Plattformkürzel, z.B. `ios` oder `md`.
 
@@ -137,7 +137,7 @@ IonicModule.forRoot(PizzaAppComponent, {
 
 In unserer Pizza App wollen wir auf allen Plattformen nur einen Zurück-Pfeil auf Unterseiten anzeigen. Auf Android ist der Text bereits von vornherein leer.
 
-![Bild](medium_ionic2-card-complex.png)
+![Bild](ionic2-card-complex.png)
 
 Nun setzen wir den Back-Button Text generell auf einen Leerstring.
 
@@ -147,7 +147,7 @@ IonicModule.forRoot(PizzaAppComponent, {
 });
 ```
 
-![Bild](medium_ionic2-config.png)
+![Bild](ionic2-config.png)
 
 
 ## Zugriff auf native Schnittstellen

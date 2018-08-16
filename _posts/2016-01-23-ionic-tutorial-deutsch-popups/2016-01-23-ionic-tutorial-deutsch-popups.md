@@ -82,4 +82,4 @@ $scope.$on('$ionicView.enter', function () {
 
 Nicht vergessen $ionicPopup über die Abhängigkeiten des Controllers zu laden!
 
-![Bild](medium_ionic-popups.png)
+![Bild](ionic-popups.png)

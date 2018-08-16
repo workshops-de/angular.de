@@ -77,7 +77,7 @@ Das kannst Du durch folgenden Befehl im neuen Ordner testen:
 
 Der Output sollte dann in etwa so aussehen:
 
-![Initial Start der Electron App in der Console](/artikel/angular-electron/first_start.png)
+![Initial Start der Electron App in der Console](electron-first-start.png)
 
 Schau Dir die App im Browser an, indem Du **http://localhost:4200** öffnest.
 Dich sollte jetzt eine Seite mit dem Titel "*Welcome to app!*" und ein paar weitere Komponenten erwarten.
@@ -264,7 +264,7 @@ Teste es doch einfach mal mit:
 
 Es sollte ein waschechtes OS Fenster aufgehen, mit dem Inhalt deiner Angular App.
 
-![Angular Electron](/artikel/angular-electron/electron_window1.png "Initial Start")
+![Angular Electron](electron-window1.png "Initial Start")
 
 ## Weitere Funktionen
 
@@ -340,7 +340,7 @@ Starte die App, um deine Änderungen zu testen.
 
 Solltest Du jetzt anstelle von *app* den Pfad zu deiner App sehen.
 
-![Angular Electron Zugriff](/artikel/angular-electron/electron_window2.png "Electron Zugriff")
+![Angular Electron Zugriff](electron-window2.png "Electron Zugriff")
 
 Du kannst jetzt auch eigene Funktionen innerhalb der **Electron-Umgebung** definieren.
 Das solltest Du auch gleich mal ausprobieren! Öffne die Datei `~/repo/private/AngularElectron/src/electron/main.js` und füge ihr am Ende eine neue Methode hinzu:
@@ -367,7 +367,7 @@ Ob das geklappt hat, siehst Du in der Konsole deiner App, die Du mit `<STRG>+<SH
 ~/repo/private/AngularElectron$ npm run electron
 ```
 
-![Angular Electron Method](/artikel/angular-electron/electron_window3.png "Electron App Method")
+![Angular Electron Method](electron-window3.png "Electron App Method")
 
 Im Laufe der Zeit wirst Du mit Sicherheit auch mal innerhalb deiner Angular2 Logik auf Node.js zugreifen wollen!
 Zum Beispiel, wenn Du neue Module laden willst (`require()`).
@@ -410,7 +410,7 @@ constructor(){
 
 Zusätzlich zu **“Grayskull”** solltest Du jetzt auch noch die Ausgabe **“Browser”** in der Konsole sehen.
 
-![Angular Electron Console](/artikel/angular-electron/console.png "Console browser")
+![Angular Electron Console](console.png "Console browser")
 
 Schön, dass dort jetzt *Browser* steht, leider ist das aber nicht dein Betriebssystem.
 Das solltest Du noch ändern, da Du diese Abfragen eventuell mal benötigst.
@@ -448,7 +448,7 @@ Das kannst Du aber leicht beheben.
 ~/repo/private/AngularElectron/$ ng eject
 ```
 
-![Angular Electron ng eject](/artikel/angular-electron/ngeject.png "NG EJECT")
+![Angular Electron ng eject](ngeject.png "NG EJECT")
 
 AngularCLI empfiehlt nach diesem Schritt `npm install` aufzurufen, das machst Du jetzt auch gleich mal.
 Dir ist bestimm aufgefallen, dass es jetzt im Hauptverzeichnis deiner App geine neue Datei gibt: `webpack.config.js`
@@ -469,7 +469,7 @@ Im Skript `build electron` muss das `ng serve` durch `npm run build` ersetzt wer
 
 Starte die App und schaue Dir die Ausgabe auf der Konsole an, dort sollte jetzt dein OS stehen, bei mir ist das `linux`.
 
-![Angular Electron OS](/artikel/angular-electron/os.png "OS")
+![Angular Electron OS](os.png "OS")
 
 Deine App ist jetzt von Electron umgeben und Du kannst auf das Betriebssystem zugreifen, wie in einer richtigen Desktop Applikation.
 Ich hoffe Dir hat die Anleitung Spaß gemacht und vor allem, dass sie Dir etwas gebracht hat.

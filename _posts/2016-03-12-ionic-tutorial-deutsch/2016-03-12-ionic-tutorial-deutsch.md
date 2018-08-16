@@ -583,7 +583,7 @@ Erinnern wir uns kurz an den letzten Stand unserer Pizza-App. Wir haben zwar ein
 </ion-view>
 ```
 
-![Ionic Tutorial Simple List](medium_ionic-list.png)
+![Ionic Tutorial Simple List](ionic-list.png)
 
 Aus meiner Erfahrung als Ionic-Entwickler weiß ich, dass Listeneinträge oft gruppiert ausgegeben werden soll, beispielsweise wie ein Kontaktliste nach Buchstaben getrennt oder wie in einem Kalendar nach Zeit/Datum. Auch für solche Trenner bietet Ionic eine einfache Lösung. Durch die zusätzliche CSS-Klasse *item-divider* wird ein Listeneintrag zum Trenner.
 
@@ -755,7 +755,7 @@ angular
   ]);
 ```
 
- ![Ionic Tutorial Loading Layer](medium_ionic-loading.png)
+ ![Ionic Tutorial Loading Layer](ionic-loading.png)
 
 Für unsere Beispiel-App ist der Lade-Layer ein wenig unpraktikabel, da der Nutzer sich ja trotzdem frei in der Anwendung bewegen können soll. Aus diesem Grund nutzen wir nun den `ionSpinner`. Während des Ladevorgangs setzen wir eine Scope-Variable als Indikator, um den Spinner über *ngIf* oder *ngShow* ein- und vor allem wieder auszublenden.
 
@@ -816,7 +816,7 @@ Im Template richten wir den Spinner noch zentriert aus und blenden den Listeninh
 </ion-view>
 ```
 
-![Ionic Tutorial Loading Spinner](medium_ionic-loading-spinner.png)
+![Ionic Tutorial Loading Spinner](ionic-loading-spinner.png)
 
 Standardmäßig bestimmt Ionic die passende Ladeanimation. Darüber hinaus könnt ihr aber mit Hilfe einer CSS-Klasse eine eigene Ladeanimation als SVG erstellen oder einfach eine der vordefinierten [Spinner-Klassen](http://ionicframework.com/docs/api/directive/ionSpinner/) nutzen.
 
@@ -924,11 +924,11 @@ Mit sogenannten Karten (engl. Cards) bietet Ionic eine gute Möglichkeit Listene
 
 Der Aufbau ist dem einer Liste sehr ähnlich. Ein Elternelement - meist ein div-Tag - bekommt die CSS-Klasse *card* und das Kindelement - oft auch ein div- oder a-Tag - erhält die bereits bekannte *item*-Klasse. Darüber hinaus können auch alle weiteren "item"-Klassen genutzt werden, um das Layout anzupassen, z.B. *item-divider*, *item-avatar*, *item-icon-left|right*, ...
 
-![Ionic Tutorial Cards](medium_ionic-cards.png)
+![Ionic Tutorial Cards](ionic-cards.png)
 
 Als kleines Praxisbeispiel erhält unsere App eine Detail-View für die Pizzen, die beim Klick auf einen Angebotseintrag angezeigt wird.
 
-![Ionic Tutorial Cards Pizza](medium_ionic-card-final.png)
+![Ionic Tutorial Cards Pizza](ionic-card-final.png)
 
 Das dazugehörige Template sieht dann so aus.
 

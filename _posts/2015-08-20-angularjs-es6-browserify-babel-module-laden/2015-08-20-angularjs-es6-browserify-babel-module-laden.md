@@ -81,7 +81,7 @@ angular.module('myApp', [require('../components/bookData')])
 
 Dies erspart uns wieder ein wenig Schreibarbeit. Diese Schreibweise bringt allerdings auch einen Nachteil: Wenn Ihr euch gerne in euer IDE mit *Navigate-To-File* Funktionen bewegt bekommt Ihr sehr schnell folgende Ansicht:
 
-![IDE-Index-js-navigate-to-file.png](IDE-Index-js-navigate-to-file-small.png)
+![ide-navigate-multiple-index-js.png](ide-navigate-multiple-index-js.png)
 
 Die zweite Alternative ist, eine eigene `package.json` für die Komponente anzulegen. Der wichtige Parameter für das Laden unseres Modules ist hierbei: `main`.
 
