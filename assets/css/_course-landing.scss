@@ -146,3 +146,24 @@ section.ratings {
   margin-bottom: 25px;
   opacity: 0.35;
 }
+
+.workshop{
+  .badge-free {
+    background-color: #ded;
+    color: #060;
+    font-weight: 300;
+  }
+
+  .card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #efefef;
+  }
+
+  .card.events {
+    background-clip: border-box;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+  }
+}
