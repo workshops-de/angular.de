@@ -1,10 +1,5 @@
 <section class="ratings section-grey" itemscope="" itemtype="http://schema.org/Product">
-  <meta itemprop="name" content="{{site.data.course.name}}"></meta>/
-  <meta itemprop="aggregateRating"
-    itemscope itemtype="http://schema.org/AggregateRating">
-   <meta itemprop="ratingValue" content="{{site.data.course.aggregateRating.ratingValue}}"></meta>/
-   <meta itemprop="ratingCount" content="{{site.data.course.aggregateRating.reviewCount}}"></meta>
-  </meta>
+  <meta itemprop="name" content="{{site.data.course.name}}"></meta>
   <div class="content-box">
     <div class="container">
       <h2>Was sagen unsere Teilnehmer? </h2>
@@ -81,9 +76,9 @@
           Lern-Management-System abgegeben werden und wird genutzt um den Workshop kontinuierlich zu verbessern.
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
       <div class="col-8 text-center">
-        <div style="font-size:3rem">4.6</div>
+        <div style="font-size:3rem" itemprop="ratingValue" content="{{site.data.course.aggregateRating.ratingValue}}">4.6</div>
         <div class="stars text-center w-100" style="font-size:2rem">
           <span class="star on"></span>
           <span class="star on"></span>
@@ -91,7 +86,7 @@
           <span class="star on"></span>
           <span class="star half"></span>
         </div>
-        <small class="text-muted" style="font-size:1rem;font-weight: 200">(aus 425 Bewertungen)</small>
+        <small class="text-muted" style="font-size:1rem;font-weight: 200" itemprop="ratingCount" content="{{site.data.course.aggregateRating.reviewCount}}">(aus 425 Bewertungen)</small>
       </div>
     </div>
     <div class="row justify-content-center">

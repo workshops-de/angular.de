@@ -16,8 +16,8 @@
       <div class="hidden-xs-down col-sm-1">
         KW{{ event.startDate | date: "%W" }}
       </div>
-      <div class="col-3" itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">
-        {{ event.startDate | date: "%d.%m" }} - {{ event.endDate | date: "%d.%m.%Y" }} <span class="badge badge-free">Noch
+      <div class="col-3">
+        <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span itemprop="endDate" content="{{ event.endDate | date: " %Y-%m-%d " }}">{{ event.endDate | date: "%d.%m.%Y" }}</span> <span class="badge badge-free">Noch
           freie Plätze</span>
       </div>
       <div class="col-9 col-sm-8">
@@ -29,11 +29,9 @@
               {% when '3' %}März {% when '4' %}April {% when '5' %}Mai {% when '6' %}Juni {% when '7' %}Juli {% when '8'
               %}August {% when '9' %}September {% when '10' %}Oktober {% when '11' %}November {% when '12' %}Dezember {%
               endcase %}
-            </a> in {{event.location.address.addressLocality}}
+            </a> in <span itemprop="location" content="{{event.location.address.addressLocality}}">{{event.location.address.addressLocality}}</span>
             <meta itemprop="name" content="Angular Intensiv Kurs">
             <meta itemprop="url" content="{{ event.url }}">
-            <meta itemprop="location" content="{{event.location.address.addressLocality}}">
-            <meta itemprop="description" content="">
           </div>
           <div class="col-sm-3">
             <a class="btn btn-success btn-sm btn-cta" href="{{ event.url }}#booking?utm_source=https://angularjs.de/workshops/angular-intensiv/?utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list"
