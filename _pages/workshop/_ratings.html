@@ -1,4 +1,10 @@
-<section class="ratings section-grey">
+<section class="ratings section-grey" itemscope="" itemtype="http://schema.org/Product">
+  <meta itemprop="name" content="{{site.data.course.name}}"></meta>/
+  <meta itemprop="aggregateRating"
+    itemscope itemtype="http://schema.org/AggregateRating">
+   <meta itemprop="ratingValue" content="{{site.data.course.aggregateRating.ratingValue}}"></meta>/
+   <meta itemprop="ratingCount" content="{{site.data.course.aggregateRating.reviewCount}}"></meta>
+  </meta>
   <div class="content-box">
     <div class="container">
       <h2>Was sagen unsere Teilnehmer? </h2>
