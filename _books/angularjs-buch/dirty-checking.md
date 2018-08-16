@@ -10,7 +10,7 @@ Um Model und View synchron zu halten, gibt es verschiedene Möglichkeiten. Wir b
 
 ## Beobachter Entwurfsmuster
 
-Die meisten bekannten Frameworks setzen auf das Entwurfsmuster des [Beobachters](http://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)) (auch Observer oder publish-subscribe). Dabei werden Werte nicht direkt verändert, sondern über Zwischenfunktionen (Getter/Setter).
+Die meisten bekannten Frameworks setzen auf das Entwurfsmuster des [Beobachters](http://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)) (auch Observer oder publish-subscribe). Dabei werden Werte nicht direkt, sondern über Zwischenfunktionen (Getter/Setter) geändert.
 
 Schau wir uns als Beispiel Ember.js an:
 
