@@ -78,7 +78,7 @@
     </div>
     <div class="row justify-content-center" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
       <div class="col-8 text-center">
-        <div style="font-size:3rem" itemprop="ratingValue" content="{{site.data.course.aggregateRating.ratingValue}}">4.6</div>
+        <div style="font-size:3rem" itemprop="ratingValue" content="{{site.data.course.aggregateRating.ratingValue | round: 1}}">{{site.data.course.aggregateRating.ratingValue | round: 1}}</div>
         <div class="stars text-center w-100" style="font-size:2rem">
           <span class="star on"></span>
           <span class="star on"></span>
