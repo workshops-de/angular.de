@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.5.1
+
+cache: bundler
+
+install: bundle install
+script: jekyll build
+
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  token:
+    secure: "ZitorfpiZG5XveRJwSB4luO9giwV/h3iLYcNQaNIunCidBR9DiMKa5o+d+/68PYQw6Cdd1ZKtAdEQnKeg4C2vetWGSrOPR950oj7Jp7gynlwxZDqNut3mo9x3+N+9m3by3MnX2+TRS0us6qf7izpC6ES3nl0bSfIMmhIb9IvvmZoHV+GS05fmZ28QRgd4OBeFu3Li+r9wRpa1IltyQtH6x3FSF8RUN9c7OGWsBLr4vbsyeFUPq91BUaReDGyiKyHqb1L8y5UIK9Cud0jO+thZUHcgzbjEktpxkxkuGoYuw3u6VWpatmg3vqAzNEW/bjdgQc0JTgEz7ZbOF9d/MMfiL2IPIK1Nemj5s5+yYWG+mHoVaLxbszHc3l42kaXUaMMp0OXIBpLQS+ZXCUP/LE2XyfEVVsP//lW/Mudl4Iib2h7t2gPST5Ih4axzBfJNmx+Wpt3Hk0uA6EdXI9Q2cYiBxLq7s0pJ0KU74EXuReHEn/faAgYtd8oOId7Z6cgQWBXjswaK0IYccL0Nl9kNRzyMiEO4urzlB5Srkb17rxanTnDZ/oI/3QwN/8wIr8NlqiXNQnpDa09hSNyOdKcQejkN4Sz2Kn5R66ykjJXNoT6lYBSYgnAK42cPZBODId4QoT5pakj8J1hgRLByO9YWdQF0xAvlLY2cVaw++yq465zAng="
+  on:
+    branch: master
+
+env:
+ - JEKYLL_ENV=production
