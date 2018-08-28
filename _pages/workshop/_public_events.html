@@ -16,7 +16,7 @@
       <div class="hidden-xs-down col-sm-1">
         KW{{ event.startDate | date: "%W" }}
       </div>
-      <div class="col-3">
+      <div class="col-4">
         <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - {{ event.endDate | date: "%d.%m.%Y" }}
         {% if event.bookingsStatus == "BOOKED" %}
           <span class="badge badge-danger">ausgebucht</span>
@@ -30,7 +30,7 @@
           <span class="badge badge-free">Noch freie Plätze</span>
         {% endif %}
       </div>
-      <div class="col-9 col-sm-8">
+      <div class="col-8 col-sm-7">
         <div class="row">
           <div class="col-sm-9">
             <a class="underlined" href="{{ event.url }}?utm_source=https://angularjs.de/workshops/angular-intensiv/?utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list"
