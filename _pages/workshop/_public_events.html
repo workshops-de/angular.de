@@ -17,8 +17,18 @@
         KW{{ event.startDate | date: "%W" }}
       </div>
       <div class="col-3">
-        <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - {{ event.endDate | date: "%d.%m.%Y" }} <span class="badge badge-free">Noch
-          freie Plätze</span>
+        <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - {{ event.endDate | date: "%d.%m.%Y" }}
+        {% if event.bookingsStatus == "BOOKED" %}
+          <span class="badge badge-danger">ausgebucht</span>
+        {% elsif event.bookingsStatus == "ONE_LEFT" %}
+          <span class="badge badge-danger">Nur noch 1 Platz</span>
+        {% elsif event.bookingsStatus == "FEW_TICKETS_LEFT" %}
+          <span class="badge badge-danger">Fast ausgebucht</span>
+        {% elsif event.bookingsStatus == "SOME_TICKETS_LEFT" %}
+          <span class="badge badge-warning">Wenige Plätze frei</span>
+        {% elsif event.bookingsStatus == "TICKETS_LEFT" %}
+          <span class="badge badge-free">Noch freie Plätze</span>
+        {% endif %}
       </div>
       <div class="col-9 col-sm-8">
         <div class="row">
