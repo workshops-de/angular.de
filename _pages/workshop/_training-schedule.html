@@ -19,7 +19,7 @@
             <div class="card-body">
               {% for event in site.data.events %}
               <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
-                <div class="hidden-md-down col-1">
+                <div class="d-none d-md-block col-1">
                   KW{{ event.startDate | date: "%W" }}
                 </div>
                 <div class="col-4">
@@ -63,7 +63,7 @@
               {% endfor %}
               <hr>
               <div class="row">
-                <div class="hidden-md-down col-1"></div>
+                <div class="d-none d-md-block col-1"></div>
                 <div class="col-4 text-muted">
                   Termin flexibel<br>
                   <small class="d-none d-sm-inline">Standarddauer 3 Tage</small>
