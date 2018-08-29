@@ -148,7 +148,7 @@ section.ratings {
 }
 
 .workshop{
-  .badge-free {
+  .c-badge-free {
     background-color: #ded;
     color: #060;
     font-weight: 300;
@@ -165,10 +165,5 @@ section.ratings {
     background-clip: border-box;
     border: 1px solid #efefef;
     border-radius: 3px;
-  }
-
-  .badge-warning {
-    color: #fff;
-    background-color: #e88002;
   }
 }

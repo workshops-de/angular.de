@@ -27,7 +27,7 @@
         {% elsif event.bookingsStatus == "SOME_TICKETS_LEFT" %}
           <span class="badge badge-warning">Wenige Plätze frei</span>
         {% elsif event.bookingsStatus == "TICKETS_LEFT" %}
-          <span class="badge badge-free">Noch freie Plätze</span>
+          <span class="badge c-badge-free">Noch freie Plätze</span>
         {% endif %}
       </div>
       <div class="col-8 col-sm-7">
@@ -44,7 +44,7 @@
             <meta itemprop="url" content="{{ event.url }}">
           </div>
           <div class="col-sm-3">
-            <a class="btn btn-success btn-sm btn-cta" href="{{ event.url }}#booking?utm_source=https://angularjs.de/workshops/angular-intensiv/?utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list"
+            <a class="btn btn-success btn-sm btn-cta shadow" href="{{ event.url }}#booking?utm_source=https://angularjs.de/workshops/angular-intensiv/?utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list"
               target="_blank">anmelden</a>
           </div>
         </div>
@@ -58,15 +58,15 @@
         Termin flexibel<br>
         <small>Standarddauer 3 Tage</small>
       </div>
-      <div class="col-6">
+      <div class="col-7">
         <div class="row">
-          <div class="col-10">
+          <div class="col-9">
             <a class="text-unstyled" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript/inhouse?utm_source=https://angularjs.de/workshops/angular-intensiv/?utm_campaign=website-link-inhouse&utm_medium=link&utm_content=workshops-list"
               target="_blank"> <span class="sr-only">Angular &amp; TypeScript</span> Firmenschulung Inhouse
             </a> <br>
             <small> Termine und Preise auf Anfrage </small>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <a class="btn btn-primary btn-sm btn-cta" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript/inhouse?utm_source=https://angularjs.de/workshops/angular-intensiv/#iframe&amp;utm_campaign=undefined&utm_medium=button&utm_content=workshops-list"
               target="_blank"> <span class="sr-only">Angular &amp; TypeScript Inhouse</span> &nbsp;anfragen&nbsp;
             </a> </div>
