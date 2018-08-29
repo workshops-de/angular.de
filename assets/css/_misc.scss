@@ -39,3 +39,12 @@ h6,
     border-radius: $border-radius-sm;
   }
 }
+
+.c-header-dark {
+  color: $light;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $light;
+    text-shadow: 1px 1px 0px $dark;
+  }
+}

@@ -18,7 +18,7 @@
     color: #fff;
   }
 
-  &.header-team, &.header-tutorials {
+  &.header-tutorials {
     background-color: #fcfcfc;
     border-bottom: 1px solid #efefef;
     color: #333;
@@ -27,7 +27,7 @@
     margin-bottom: 40px;
   }
 
-  &.header-team, &.header-tutorials {
+  &.header-tutorials {
     padding: $spacer*8 0 $spacer*4;
     margin-bottom: $spacer*4;
   }
@@ -119,10 +119,18 @@
 
 }
 
-.header-team, .header-workshop {
+.header-workshop {
   background: url('/assets/img/headers/header-bg-neutral.png');
   background-size: cover;
   background-position: center center;
+}
+
+.header-team {
+  background: url('/assets/img/headers/team.jpg');
+  background-size: cover;
+  background-position: center center;
+  padding-top: 150px;
+  padding-bottom: 200px;
 }
 
 .header-tutorials {
