@@ -130,8 +130,6 @@ Da `ticktack` jetzt im Scope liegt, können wir sie wie gewohnt in AngularJS nut
 </p>
 ```
 
-[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/C19tGuKws9aa2IOpPX3f/)
-
 ### Zurück in die 90er: Die Wiederbelebung von &lt;blink&gt;
 
 Sogar [Google vermisst &lt;blink&gt;](https://www.google.de/search?q=blink+tag). Erwecken wir es also wieder zum Leben. Dazu erstellen wir eine Direktive `blink`, deren Sichtbarkeit wir über [ng-style](https://docs.angularjs.org/api/ng/directive/ngStyle) mit Hilfe unserer `ticktackProp` wechseln.
@@ -217,8 +215,6 @@ shouldBlinkProp: tttttttttttffffffffffftttttttt
 tickStream:      ....1....1..............1....1
 ```
 
-[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/Rppkr0TbLmCMDgvDAIXd/preview)
-
 Wer mit dem Button etwas herumspielt, wird einen Fehler entdecken. Schalte ich das Blinken aus, während die blinkenden Elemente gerade nicht sichtbar sind, bleiben sie dauerhaft verborgen. Damit die blinkenden Elemente bei ausgeschaltetem Blinken immer sichtbar sind, haken wir uns an anderer Stelle im Strom ein:
 
 ```javascript
@@ -239,8 +235,6 @@ Mit [combine](https://github.com/baconjs/bacon.js#observable-combine) erzeugen w
     combined:        000001111101111111111100011111
 ```
 
-
-[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/mFfJc56HymdAJGELJNDP/preview)
 
 Wir sollten nun ein Gefühl für die grundlegenden Funktionen ([filter](https://github.com/baconjs/bacon.js#observable-filter), [map](https://github.com/baconjs/bacon.js#observable-map), [scan](https://github.com/baconjs/bacon.js#observable-scan), [combine](https://github.com/baconjs/bacon.js#observable-combine)) eines *Observable* haben. Auch haben wir gesehen, wie wir das Verhalten durch Zusammenstecken von Strömen leicht ändern und erweitern können. Als nächstes zeige ich Code aus einem unserer echten Projekte.
 
