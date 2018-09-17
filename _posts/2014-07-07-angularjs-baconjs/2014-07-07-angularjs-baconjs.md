@@ -413,6 +413,6 @@ Im Zusammenspiel mit AngularJS kann Bacon.js den Bau von Oberflächen und Kompon
 
 * [Implementierung des Spiels Snake mit Bacon.js](http://philipnilsson.github.io/badness/)
 
-* Bacon.js Tutorial [Teil 1](http://nullzzz.blogspot.fi/2012/11/baconjs-tutorial-part-i-hacking-with.html), [Teil 2](http://nullzzz.blogspot.fi/2012/11/baconjs-tutorial-part-ii-get-started.html), [Teil 3](http://nullzzz.blogspot.fi/2012/12/baconjs-tutorial-part-iii-ajax-and-stuff.html)
+* Bacon.js Tutorial [Teil 1](http://nullzzz.blogspot.com/2012/11/baconjs-tutorial-part-i-hacking-with.html), [Teil 2](http://nullzzz.blogspot.com/2012/11/baconjs-tutorial-part-ii-get-started.html), [Teil 3](http://nullzzz.blogspot.com/2012/12/baconjs-tutorial-part-iii-ajax-and-stuff.html)
 
 * [Reactive Programming in Practice](http://eamodeorubio.github.io/reactive-baconjs/#/)
