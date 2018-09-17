@@ -46,7 +46,7 @@ Was AngularJS für Entwicker besonders angenehm macht, ist die User Experience d
 
 ## Backend
 
-[Spring Web MVC](http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html) ist wiederum gut geeignet, um als Backend für eine Single Page Application zu fungieren. Wie oben erwähnt, kommen die Kunden für ein Produkt wie ZenQuery eher aus dem Enterprise-Bereich und verfügen vornehmlich über Java-Infrastruktur.
+[Spring Web MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc) ist wiederum gut geeignet, um als Backend für eine Single Page Application zu fungieren. Wie oben erwähnt, kommen die Kunden für ein Produkt wie ZenQuery eher aus dem Enterprise-Bereich und verfügen vornehmlich über Java-Infrastruktur.
 
 Ein erprobtes Java-Framework ist hier deswegen Voraussetzung fürs Backend. Spring, insbesondere in der [aktuellen Version 4](https://docs.spring.io/spring/docs/4.3.x/spring-framework-reference/htmlsingle/#spring-whats-new), ist dabei [besser als sein Ruf](https://plus.google.com/+aerotwist/posts/1QhcnQizuPc). Die Entwicklung mit Spring und Java geht mittlerweile leicht von der Hand und steht zusammen mit einer leistungsfähigen IDE in Sachen Produktivität anderen Web-Frameworks in Nichts nach.
 
