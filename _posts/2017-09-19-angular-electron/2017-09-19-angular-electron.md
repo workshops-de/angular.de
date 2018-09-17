@@ -181,7 +181,7 @@ app.on('activate', function () {
 
 Diese Datei beschreibt, wie dein Fenster später aussehen soll und welche Datei(URL) geladen werden soll.
 Außerdem kannst Du dort eigene Funktionen definieren, auf die Du dann innerhalb deiner App-Logik zugreifen kannst.
-Für mehr Details solltest Du Dir die [Electron Dokumentation](https://electron.atom.io) anschauen.
+Für mehr Details solltest Du Dir die [Electron Dokumentation](https://electronjs.org/docs) anschauen.
 
 Hier noch mal (als Übersicht) die neuen Dateien, die Du eben erstellt hast:
 
