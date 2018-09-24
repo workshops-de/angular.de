@@ -1,0 +1,13 @@
+.c-checked-list {
+  li {
+    list-style: none;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "✓";
+      left: -18px;
+      font-weight: 600;
+    }
+  }
+}
