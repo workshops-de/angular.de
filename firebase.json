@@ -10,9 +10,8 @@
     "redirects": [
       {"source" : "/feed", "destination" : "/feed.xml", "type" : 301},
       {"source" : "/chat*", "destination" : "https://slack.angularjs.de/", "type" : 301},
-      {"source" : "/workshops/", "destination" : "/workshops/angular-intensiv/", "type" : 301},
-      {"source" : "/workshops/angularjs*", "destination" : "/workshops/angular-intensiv/", "type" : 301},
-      {"source" : "/workshops/angular2*", "destination" : "/workshops/angular-intensiv/", "type" : 301},
+      {"source" : "/workshops/", "destination" : "/schulungen/angular-intensiv/", "type" : 301},
+      {"source" : "/workshops/*", "destination" : "/schulungen/angular-intensiv/", "type" : 301},
       {"source" : "/inhouse-workshop-anfrage", "destination" : "/inhouse-workshop/", "type" : 301},
       {"source" : "/veranstaltungen*", "destination" : "/workshops/angular-intensiv/", "type" : 301},
       {"source" : "/entwickler*", "destination" : "/", "type" : 301},
