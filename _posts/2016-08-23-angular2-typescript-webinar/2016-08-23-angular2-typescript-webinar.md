@@ -8,7 +8,7 @@ categories: "angular angular2 angular4 typescript webinar"
 
 Als Erweiterung unserer Workshops setzen wir nun vermehrt auf Wissensvermittlung via Webinar, um das Workshop-Erlebnis unserer Teilnehmer noch weiter zu verbessern!
 
-Wir haben gemerkt, dass es so viele interessante und relevante Themen gibt und hierzu 3 Tage meist fast schon zu kurz sind. Darum gibt es nun die Möglichkeit, sich vor unseren [Workshops](/workshops/angular-intensiv/) schon einiges an Vorwissen anzueignen, um dann im Workshop die richtigen Fragen stellen zu können!
+Wir haben gemerkt, dass es so viele interessante und relevante Themen gibt und hierzu 3 Tage meist fast schon zu kurz sind. Darum gibt es nun die Möglichkeit, sich vor unseren [Workshops](/schulungen/angular-intensiv/) schon einiges an Vorwissen anzueignen, um dann im Workshop die richtigen Fragen stellen zu können!
 
 
 <div class="alert alert-info">

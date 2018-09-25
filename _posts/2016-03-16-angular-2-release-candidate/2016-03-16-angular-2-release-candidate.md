@@ -21,7 +21,7 @@ Zum heutigen Tag befindet sich der [Milestone](https://github.com/angular/angula
 <br/>
 
 
-Gerade in unseren [Angular 2 Intensiv Workshops](/workshops/angular-intensiv/) waren diese Breaking Changes auch immer wieder zeitintensiv nachzupflegen und die vielen Änderungen der Alpha und Beta mit unseren Materialien und Beispielen auf einem aktuellen Stand zu halten. Nun da sich der Core mehr und mehr stabilisiert werden wir auch endlich mehr Inhalte in Form von ausführlicher Artikel zum Thema Angular 2 veröffentlichen.
+Gerade in unseren [Angular 2 Intensiv Workshops](/schulungen/angular-intensiv/) waren diese Breaking Changes auch immer wieder zeitintensiv nachzupflegen und die vielen Änderungen der Alpha und Beta mit unseren Materialien und Beispielen auf einem aktuellen Stand zu halten. Nun da sich der Core mehr und mehr stabilisiert werden wir auch endlich mehr Inhalte in Form von ausführlicher Artikel zum Thema Angular 2 veröffentlichen.
 
 Mich persönlich freut die Weiterentwicklung des Code-Generators [Angular-CLI](https://github.com/angular/angular-cli). Dieser macht endlich Schluss mit den vielen chaotischen Seed Projekten und ermöglichst eine vom Core-Team gepflegte Generator mit Vorgaben für Code-Style, Struktur und Build-Prozess. Es gibt sicherlich Anpassungen die notwendig sind, jedoch kann man hier nur an einer zentralen Stelle die Best-Practices sammeln und automatisiert sicherstellen.
 
