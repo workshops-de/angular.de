@@ -38,7 +38,7 @@
             <div class="col-sm-9">
               <a class="underlined" href="{{ event.url }}?utm_source=https://angularjs.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list"
                 target="_blank">
-                Intensiv-Schulung<span class="d-none d-sm-inline">· {% assign m = event.startDate | date: "%-m" %} {% case m %} {% when '1' %}Januar {% when '2' %}Februar
+                Intensiv-Schulung · <span class="d-none d-sm-inline">{% assign m = event.startDate | date: "%-m" %} {% case m %} {% when '1' %}Januar {% when '2' %}Februar
                 {% when '3' %}März {% when '4' %}April {% when '5' %}Mai {% when '6' %}Juni {% when '7' %}Juli {% when '8'
                 %}August {% when '9' %}September {% when '10' %}Oktober {% when '11' %}November {% when '12' %}Dezember {%
                 endcase %}</span>
