@@ -147,12 +147,13 @@ section.ratings {
   opacity: 0.35;
 }
 
+.c-badge-free {
+  background-color: #ded;
+  color: #060;
+  font-weight: 300;
+}
+
 .workshop{
-  .c-badge-free {
-    background-color: #ded;
-    color: #060;
-    font-weight: 300;
-  }
 
   .card-header {
     padding: 0.75rem 1.25rem;
