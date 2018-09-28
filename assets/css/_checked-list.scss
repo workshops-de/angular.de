@@ -5,9 +5,9 @@
 
     &:before {
       position: absolute;
-      content: "✓";
       color: $primary;
-      left: -20px;
+      content: "✓";
+      left: -1em;
       font-weight: 600;
     }
   }
