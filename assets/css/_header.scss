@@ -90,6 +90,9 @@
   padding-bottom: 100px;
   margin-bottom: 0px;
   height: 100vh;
+  background: url('/assets/img/headers/header-bg-neutral.png');
+  background-size: cover;
+  background-position: center center;
 
   .header-intro {
     font-size: 1.4rem
@@ -99,27 +102,45 @@
     color: #fff;
   }
 
-  &.header-workshop-gradient-overlay {
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      opacity: .9;
-      background-color: #0d47a1;
-      background: linear-gradient(145deg,#0a387e,#126eb9);
-    }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .9;
+    background-color: #0d47a1;
+    background: linear-gradient(145deg,#0a387e,#126eb9);
   }
-
 }
 
-.header-workshop {
-  background: url('/assets/img/headers/header-bg-neutral.png');
+
+.header-workshop-advanced {
+  padding-top: 100px;
+  background: url('/assets/img/schulungen/angular-advanced/header-bg.jpg');
   background-size: cover;
   background-position: center center;
+
+  .header-intro {
+    font-size: 1.4rem
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .94;
+    background-image: linear-gradient(-180deg, #fefefe 0%, #efefef 100%);
+  }
 }
+
+
+
+
 
 .header-team {
   background: url('/assets/img/headers/team.jpg');
