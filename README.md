@@ -1,4 +1,4 @@
-# angularjs.de
+# angular.de
 
 ## Installation
 

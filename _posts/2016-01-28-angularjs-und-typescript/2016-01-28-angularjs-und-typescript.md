@@ -191,7 +191,7 @@ Erst dann folgt unser eigentlicher Service, den wir ebenfalls als Klasse definie
 
 ```typescript
 class HttpBooksApi implements IBooksApi {
-  private baseUrl: string = 'http://bookmonkey-api.angularjs.de/books'
+  private baseUrl: string = 'http://bookmonkey-api.angular.de/books'
 
   constructor(
     private $http: angular.IHttpService

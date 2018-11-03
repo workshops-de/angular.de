@@ -19,11 +19,11 @@ Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories:
     <div class="col-xs-12 col-md-6">
       <p>
         Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und Spaß machen. Wir bieten euch auch
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
                     und TypeScript Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
       </p>
       <p class="">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
           <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
         </a>
       </p>
@@ -104,7 +104,7 @@ import {bootstrap} from '@angular/platform-browser-dynamic';
   template : `<h1>
       Willkommen zum
       Angular2 Tutorial von
-      AngularJS.DE
+      Angular.DE
     </h1>`
 })
 ```
@@ -127,7 +127,7 @@ import {bootstrap} from '@angular/platform-browser-dynamic';
   template : `<h1>
       Willkommen zum
       Angular2 Tutorial von
-      AngularJS.DE
+      Angular.DE
     </h1>`
 })
 export class AppComponent {
@@ -205,7 +205,7 @@ import {Component} from 'angular2/core';
   template : `
     <h1>
         Angular2 Tutorial von
-        AngularJS.DE</h1>
+        Angular.DE</h1>
         <input
             type="text"
             [(ngModel)]="search" >
@@ -723,18 +723,18 @@ Durch Interfaces legt ihr nur die Struktur fest. Wollt ihr gleichzeitig eine sin
 Mit Angular ist vieles neu und bekannte Dinge funktionieren doch ein wenig anders. Dennoch lohnt sich bereits ein genauerer Blick auf die neue Version des Single-Page-Application Frameworks. Viel Spaß beim Lernen von Angular.
 
 
-Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](https://angularjs.de/chat)!
+Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](/chat)!
 
 <hr>
 <div class="workshop-hint text-center">
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
         schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
       </p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angularjs.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
           <button class="btn btn-danger">Jetzt weiter lernen</button>
         </a>
       </p>

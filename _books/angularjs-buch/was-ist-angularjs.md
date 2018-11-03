@@ -13,7 +13,7 @@ Es zielt auf die Entwicklung von WebAnwendungen legt großen Wert auf Struktur u
 Es war das erste Framework welches durch den Fokus auf Architektur, Testing und isolierte Komponenten im JavaScript-Bereich auch für große Enterprise Anwendungen geeignet war.
 Durch Methoden wie Dependency Injection und ein ausgereiftes Tooling ermöglicht es effiziente und wartbare Softwareentwicklung auf Basis von JavaScript.
 
-Wir haben auch ein [AngularJS Tutorial für Einsteiger](https://angularjs.de/artikel/angularjs-tutorial-deutsch/) mit Beispielen und Erklärungen.
+Wir haben auch ein [AngularJS Tutorial für Einsteiger](/artikel/angularjs-tutorial-deutsch/) mit Beispielen und Erklärungen.
 
 ### AngularJS in Stichpunkten
 
@@ -34,9 +34,9 @@ Die Code-Basis wurde komplett neu geschrieben und nutzt nun als Basis die Sprach
 Grundidee und Konzepte des Frameworks sind jedoch identisch geblieben was eine Migration oder sogar einen hybriden Einsatz der Versionen ermöglicht.
 Der Fokus des Projektes hat sich von der Entwicklung eines Frameworks auf die Entwicklung einer ganzen Plattform für WebAnwendungen erweitert.
 Aktuell arbeiten über 30 MitarbeiterInnen fest an dem Projekt und werden von hunderten Entwicklern aus der OpenSource-Community unterstützt.
-Durch die Einführung von Werkzeugen wie dem Kommandozeilenwerkzeug [Angular-CLI](https://angularjs.de/artikel/angular-cli-einfuehrung/) können Projekte jetzt noch schneller erstellt und in Produktion überführt werden.
+Durch die Einführung von Werkzeugen wie dem Kommandozeilenwerkzeug [Angular-CLI](/artikel/angular-cli-einfuehrung/) können Projekte jetzt noch schneller erstellt und in Produktion überführt werden.
 
-Den besten Einstieg hierzu bietet dir unser [Angular Tutorial für Einsteiger](https://angularjs.de/artikel/angular-tutorial-deutsch/).
+Den besten Einstieg hierzu bietet dir unser [Angular Tutorial für Einsteiger](/artikel/angular-tutorial-deutsch/).
 
 ### Angular in Stichpunkten
 

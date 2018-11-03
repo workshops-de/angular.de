@@ -9,7 +9,7 @@
     ],
     "redirects": [
       {"source" : "/feed", "destination" : "/feed.xml", "type" : 301},
-      {"source" : "/chat*", "destination" : "https://slack.angularjs.de/", "type" : 301},
+      {"source" : "/chat*", "destination" : "https://slack.angular.de/", "type" : 301},
       {"source" : "/schulungen/", "destination" : "/schulungen/angular-intensiv/", "type" : 301},
       {"source" : "/workshops/", "destination" : "/schulungen/angular-intensiv/", "type" : 301},
       {"source" : "/workshops/*", "destination" : "/schulungen/angular-intensiv/", "type" : 301},

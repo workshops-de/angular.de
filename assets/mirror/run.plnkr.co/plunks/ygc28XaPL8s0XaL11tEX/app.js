@@ -4,13 +4,13 @@ angular.module('ngModelOptionsDemo').controller('baseController', function ($sco
     $scope.user = {
       username: "tilmanpotthof",
       name: "",
-      url: "http://angularjs.de/entwickler/tilmanpotthof"
+      url: "http://angular.de/entwickler/tilmanpotthof"
     };
-    
+
     $scope.userInputOptions = {
       updateOn: 'default'
     };
-    
+
     $scope.debounceOptions = [0,100,250,500,750,1000,1500]
     $scope.hasDebounce = function () {
       return $scope.userInputOptions.debounce;
@@ -23,7 +23,7 @@ angular.module('ngModelOptionsDemo').controller('baseController', function ($sco
     $scope.removeDebounce = function () {
       delete $scope.userInputOptions.debounce;
     };
-  
+
     $scope.onUpdateOptions = ["", "default", "blur", "default blur"];
 
     $scope.editInputOptions = false;

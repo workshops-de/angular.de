@@ -15,7 +15,7 @@ Die Entwickler vom Electron-Framework fangen ihre Produktbeschreibung mit folgen
 Ich denke, dem ist nichts hinzuzufügen, außer dieser Anleitung, die Dir zeigt, wie Du eine Angular Webapp mit Electron in eine plattformunabhängige Desktop-Anwendung verwandelst.
 
 Zum Erstellen und Verwalten der APP, werde ich die beliebte Angular-CLI benutzen.
-Wir haben dazu auch einen Artikel [Einführung in Angular-CLI](https://angularjs.de/artikel/angular-cli-einfuehrung/).
+Wir haben dazu auch einen Artikel [Einführung in Angular-CLI](/artikel/angular-cli-einfuehrung/).
 
 ## Voraussetzungen
 

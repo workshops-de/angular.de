@@ -256,7 +256,7 @@ Statt ngTransclude steht euch die Direktive mit dem passenden Namen **ngContent*
 Das Template:
 
 ```html
-<name-component name="AngularJS.de"><b>Hello,</b></name-component>
+<name-component name="Angular.DE"><b>Hello,</b></name-component>
 ```
 
 Die Komponente:
