@@ -1,6 +1,8 @@
 var myElement = document.querySelector("[data-headroom]");
 // construct an instance of Headroom, passing the element
-var headroom  = new Headroom(myElement);
+var headroom = new Headroom(myElement, {
+  tolerance : 5
+});
 // initialise
 headroom.init();
 
