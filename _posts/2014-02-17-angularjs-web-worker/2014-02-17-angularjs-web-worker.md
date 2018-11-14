@@ -111,6 +111,6 @@ Durch den Einsatz der WebWorkerPool.js-Bibliothek lassen sich sehr einfach mehre
  [4]: angularjs-web-worker-communication.png
  [5]: http://en.wikipedia.org/wiki/Web_worker
  [6]: http://www.developer.com/lang/jscript/7-things-you-need-to-know-about-web-workers.html
- [7]: http://caniuse.com/#feat=webworkers
+ [7]: https://caniuse.com/#feat=webworkers
  [8]: https://github.com/bjoerne2/webworkerpool.js
  [9]: https://github.com/bjoerne2/webworkerpool.js/tree/master/dist

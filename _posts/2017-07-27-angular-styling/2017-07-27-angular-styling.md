@@ -157,7 +157,7 @@ Siehe unten emulierten und nativen Browsersupport-Vergleiche, nebeneinander.
 </div>
 
 
-*„Welche Browser das Feature aktuell unterstützen kannst du bei [canIuse.com](http://caniuse.com/#feat=shadowdomv1) nachschauen.“
+*„Welche Browser das Feature aktuell unterstützen kannst du bei [canIuse.com](https://caniuse.com/#feat=shadowdomv1) nachschauen.“
 
 „ProTip: Schaue, ob dein Browser native Encapsulation unterstützt, bevor du sie aktivierst. :)“
 
