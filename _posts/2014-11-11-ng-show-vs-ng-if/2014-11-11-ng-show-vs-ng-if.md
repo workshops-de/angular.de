@@ -6,11 +6,11 @@ published_at: 2014-11-11 08:10:00.000000Z
 categories: "angularjs"
 ---
 
-# Der kleine Unterschied - ng-show vs. ng-if
+## Der kleine Unterschied - ng-show vs. ng-if
 
 In fast jeder Webanwendung gibt es Elemente, die man zeitweise aus- oder einblenden möchte – Hilfetexte, optionale Formular-Felder, Dialog-Boxen, um nur einige Anwendungsfälle zu nennen. In Angular gibt es dafür die praktische Direktive `ng-show` bzw. deren Gegenspieler `ng-hide`. Gleichzeitig gibt es aber noch die Direktive `ng-if`, die auf den ersten Blick das gleiche tut. Hier steckt der Teufel mal wieder im Detail.
 
-## Verhalten von `ng-show`
+### Verhalten von `ng-show`
 
 Mit einem kleinen Code-Beispiel lässt sich sehr einfach zeigen, worin sich die Direktiven grundlegend unterscheiden.
 
@@ -34,7 +34,7 @@ Der Grund dafür ist einfach, denn `ng-show` blendet Elemente mithilfe der CSS-K
 
 ![ng-show in der Element Analyse](inspect-element-ng-show.png)
 
-## Verhalten von `ng-if`
+### Verhalten von `ng-if`
 
 Wenn wir `ng-show` mit `ng-if` ersetzen erhalten wir ein komplett anderes Verhalten.
 
@@ -73,13 +73,13 @@ Im zweiten Beispiel kann man sich die Elemente, die eigene Scopes haben, markier
 
 <iframe src="/assets/mirror/embed.plnkr.co/oaypFTr2P2cF4WzZ5a0Q/preview.html" style="width:100%;height:460px;border:0"></iframe>
 
-## Angular 1.0.x
+### Angular 1.0.x
 
 Auch wenn es Angular 1.2 schon seit November 2013 gibt, kann ich mir gut vorstellen, dass es Projekte gibt, die noch auf einer 1.0.x Version sind.
 Hierfür sollte man wissen, dass `ng-if` erst mit Angular 1.2 eingeführt wurde.
 Als Workaround kann man von einer alten angular-ui Version die `ui-if` Direktive verwenden, die im Prinzip das Gleiche tut ([github: Quellcode von ui-if (angular-ui)](https://github.com/angular-ui/angular-ui-OLDREPO/blob/master/modules/directives/if/if.js)).
 
-# Fazit
+## Fazit
 
 Die `ng-if` Direktive ist besonders dann nützlich, wenn das Fehlen von Variablen in einem Block zu Fehlern führt.
 Das Gleiche gilt für Fälle, in denen man möchte, dass z.B. `ng-init` erst ausgewertet wird, wenn eine Variable `true` wird.
