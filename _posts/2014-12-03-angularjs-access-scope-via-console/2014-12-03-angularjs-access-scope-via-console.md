@@ -1,6 +1,6 @@
 ---
 title: "Angular in der Browser Konsole Teil 2 - Scopes"
-description: "Wie komme ich aus der Browserconsole an einen bestimmten Scope und welche Möglichkeiten bietet mir dieses Objekt? Wir geben euch alle Informationen die ihr braucht."
+description: "Ihr wollt aus der Browser-Konsole heraus einen Scope mit anhängenden Objekte analysieren? Wir zeigen euch wie."
 author: "Tilman Potthof"
 published_at: 2014-12-03 07:57:00.000000Z
 categories: "angularjs"
