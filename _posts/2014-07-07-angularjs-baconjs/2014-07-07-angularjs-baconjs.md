@@ -357,7 +357,7 @@ Meine Erfahrung ist, dass ich mit FRP kompakteren und robusteren Code schreibe, 
 
 Ich führe das auf folgende Eigenschaften von FRP zurück:
 
-* **Inversion of Control**: Unser Code muss sich nicht um den Kontrollfluss kümmern. Alle hier gezeigten Beispiele kommen ohne Schleifen und [if](https://cirillocompany.de/pages/anti-if-campaign)-Anweisungen aus ([McCabe](http://de.wikipedia.org/wiki/McCabe-Metrik) würde sich freuen). Mit [Dependency Injection](https://docs.angularjs.org/guide/di) begegnet uns eine Anwendung dieses Prinzips bereits bei AngularJS.
+* **Inversion of Control**: Unser Code muss sich nicht um den Kontrollfluss kümmern. Alle hier gezeigten Beispiele kommen ohne Schleifen und [if](https://francescocirillo.com/pages/anti-if-campaign)-Anweisungen aus ([McCabe](http://de.wikipedia.org/wiki/McCabe-Metrik) würde sich freuen). Mit [Dependency Injection](https://docs.angularjs.org/guide/di) begegnet uns eine Anwendung dieses Prinzips bereits bei AngularJS.
 
 * **Vielseitigkeit**: Wir programmieren für den allgemeinen Fall, d.h. uns ist egal, ob wir einen Wert oder viele Werte, synchron oder asynchron verarbeiten. Wie unsere Beispiele zeigen, arbeitet der Großteil unseres Codes mit nur ein oder zwei Werten, die er als Funktionsparameter erhält, und bleibt so sehr einfach.
 
