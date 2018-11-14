@@ -723,7 +723,7 @@ Durch Interfaces legt ihr nur die Struktur fest. Wollt ihr gleichzeitig eine sin
 Mit Angular ist vieles neu und bekannte Dinge funktionieren doch ein wenig anders. Dennoch lohnt sich bereits ein genauerer Blick auf die neue Version des Single-Page-Application Frameworks. Viel Spaß beim Lernen von Angular.
 
 
-Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](/chat)!
+Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](/slack)!
 
 <hr>
 <div class="workshop-hint text-center">
