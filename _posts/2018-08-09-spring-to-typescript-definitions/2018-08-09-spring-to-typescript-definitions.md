@@ -16,7 +16,7 @@ Mit Hilfe der Metadaten, die uns [Spring Data REST](https://projects.spring.io/s
 
 Heutzutage ist es üblich, Web Anwendungen in Client und Server Komponenten aufzuteilen: Während der Server (oft auch _Back-end_ genannt) sich um das zugrundeliegende Datenmodell, Datenhaltung und den größten Teil der Business Logik kümmert, wird das User Interface und Verhalten, das den Nutzer betrifft, im Allgemeinen mit JavaScript, HTML und CSS auf dem Client (oft auch als _Front-end_ bezeichnet) realisiert, d.h. im Browser des Nutzers.
 
-Häufig kommmen dabei Frameworks wie [Angular](https://angular.io/) zum Einsatz, um die Entwicklung zu beschleunigen und Code besser lesbar und generell zugänglicher zu machen, z.B. indem eine standardisierte Struktur für Projekte vorgegeben und bestimmte Code Artefakte an bestimmte Stellen platziert werden, so dass Entwickler, die sich in einem Projekt noch nicht auskennen, sich dennoch schnell zurecht finden.
+Häufig kommen dabei Frameworks wie [Angular](https://angular.io/) zum Einsatz, um die Entwicklung zu beschleunigen und Code besser lesbar und generell zugänglicher zu machen, z.B. indem eine standardisierte Struktur für Projekte vorgegeben und bestimmte Code Artefakte an bestimmte Stellen platziert werden, so dass Entwickler, die sich in einem Projekt noch nicht auskennen, sich dennoch schnell zurecht finden.
 
 Die zwei Seiten einer solchen Web Anwendung kommunizieren typischerweise mittels **HTTP-basierter RESTful APIs**, die vom Server bereit gestellt werden. Diese klare Trennung zwischen Client und Server hat zahlreiche Vorteile, z.B.:
 
@@ -31,7 +31,7 @@ Dennoch, wie bei fast jedem _design pattern_, bringt dies auch Nachteile mit sic
 
 Es gibt nun einige Ansätze, dieses Problem zu lösen, ohne dass man [diese Arbeit manuell machen muss](http://threevirtues.com/). Einer dieser Ansätze ist die Nutzung von [Swagger](https://swagger.io/) und / oder [OpenAPI](https://www.openapis.org/). Mit diesen Werkzeugen lassen sich APIs definieren und anschließend clientseitige SDKs mittels [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) generieren, um auf APIs zuzugreifen, so dass man diese nicht selber programmieren muss.
 
-Momentan bin ich in der Erstellung eines Workflow Tool involviert, das [Spring Data REST](https://projects.spring.io/spring-data-rest/) für die Bereitstellung von REST Resourcen und [Spring REST Docs](https://spring.io/projects/spring-restdocs) zur Dokumentierung dieser API nutzt (eine Aufgabe, die sonst oft ebenfalls an Swagger delegiert wird. Denn obwohl Swagger ein umfassendes Werkzeug zum Arbeiten mit APIs ist, ist dessen offensichtlichster und direktester Nutzen die Bereitstellung einer automatisch generierten, für Menschen lesbaren API Dokumentation). Was die Entwicklung des Clients angeht, werden für dieses Workflow Tool [Angular](https://angular.io/) und [TypeScript](https://www.typescriptlang.org/) verwendet.
+Momentan bin ich in der Erstellung eines Workflow Tool involviert, das [Spring Data REST](https://projects.spring.io/spring-data-rest/) für die Bereitstellung von REST-Ressourcen und [Spring REST Docs](https://spring.io/projects/spring-restdocs) zur Dokumentierung dieser API nutzt (eine Aufgabe, die sonst oft ebenfalls an Swagger delegiert wird. Denn obwohl Swagger ein umfassendes Werkzeug zum Arbeiten mit APIs ist, ist dessen offensichtlichster und direktester Nutzen die Bereitstellung einer automatisch generierten, für Menschen lesbaren API Dokumentation). Was die Entwicklung des Clients angeht, werden für dieses Workflow Tool [Angular](https://angular.io/) und [TypeScript](https://www.typescriptlang.org/) verwendet.
 
 Hier wäre also eine API Definition, aus der man einen TypeScript Client generieren könnte, sehr sinnvoll.
 
@@ -41,7 +41,7 @@ Also recherchierte ich ein wenig und fragte ein wenig herum, konnte aber nicht w
 
 Normalerweise geschieht diese in einem Format namens [Application-Level Profile Semantics (ALPS)](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#metadata). Obwohl dieses Format sicherlich sinnvoll ist, eignet es sich nicht besonders, um in JavaScript (oder TypeScript wie im Falle von Angular) Applikationen verarbeitet zu werden.
 
-Allerding besteht alternativ die Möglichkeit, `application/schema+json` als `Accept` Header an Spring Data REST Endpoints zu senden, woraufhin diese [mit Metadaten in einem JSON Schema Format antworten](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#metadata.json-schema).
+Allerdings besteht alternativ die Möglichkeit, `application/schema+json` als `Accept` Header an Spring Data REST Endpoints zu senden, woraufhin diese [mit Metadaten in einem JSON Schema Format antworten](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#metadata.json-schema).
 
 [JSON Schema](http://json-schema.org/) wiederum lässt sich sehr gut zusammen mit Angular and TypeScript verwenden. Zum Beispiel gibt es Libraries, die [dynamisch Formulare aus mit JSON Schema definierten Datentypen generieren](https://github.com/json-schema-form/angular-schema-form).
 
