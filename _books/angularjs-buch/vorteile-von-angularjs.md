@@ -32,7 +32,7 @@ AngularJS kann das HTML-Vokabular über Direktiven erweitern. Man könnte z.B. `
 
 Ein Grund, weshalb der Einstieg in AngularJS sehr schnell geht, ist die Möglichkeit, die normalen Datentypen von JavaScript zu verwenden. Dadurch ist es sehr einfach möglich, fremde Bibliotheken einzubinden, ohne eine weitere Zwischenschicht (Glue Code) zu implementieren. Andere JavaScript-Frameworks, wie z.B. Knockout oder Ember zwingen einem auf, ihre Klassen zu erben und Attribute durch Getter/Setter zu verändern. Die Methode, die AngularJS dazu verwendet nennt sich Dirty-Checking und wird im Vertiefungskapitel näher erklärt.
 
-# Struktur
+## Struktur
 
 Wie eine AngularJS-Applikation aufgebaut werden sollte, wird stark vom Framework vorgegeben. Wir
 bezeichnen AngularJS deshalb als opinionated. Durch Konventionen brauchen wir weniger überlegen,
