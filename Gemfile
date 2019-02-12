@@ -20,7 +20,7 @@ gem 'fastimage'
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem 'bootstrap', '~> 4.2.1'
+  gem 'bootstrap', '~> 4.3.0'
   gem "jekyll-feed", "~> 0.11"
   gem "jekyll-sitemap"
   gem "jekyll-paginate-v2"
