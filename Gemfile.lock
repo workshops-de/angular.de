@@ -62,7 +62,7 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.12.1)
       jekyll (>= 3.7, < 5.0)
-    jekyll-paginate-v2 (2.1.0)
+    jekyll-paginate-v2 (2.0.0)
       jekyll (~> 3.0)
     jekyll-postfiles (3.0.0)
       jekyll (~> 3.6)
