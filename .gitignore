@@ -1,6 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
+.jekyll-cache
 .firebase
 .DS_Store
 _includes/_events_jsonld.json
