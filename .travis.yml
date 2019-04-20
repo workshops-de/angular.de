@@ -5,6 +5,7 @@ cache:
   bundler: true
   directories:
     - .firebase
+    - .jekyll-cache
 install: bundle install
 script: jekyll build
 deploy:
