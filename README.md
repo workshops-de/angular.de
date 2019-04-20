@@ -1,5 +1,7 @@
 # angular.de
 
+Requires Ruby 2.5+
+
 ## Installation
 
 ```
