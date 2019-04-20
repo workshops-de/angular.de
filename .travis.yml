@@ -6,6 +6,7 @@ cache:
   directories:
     - .firebase
     - .jekyll-cache
+before_install: bundle update --bundler
 install: bundle install
 script: jekyll build
 deploy:
