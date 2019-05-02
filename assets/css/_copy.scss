@@ -6,7 +6,7 @@
 .copy-headline {
   @extend h1;
   // @extend .text-center;
-  font-size: 60px;
+  font-size: calc(2em + 1vw);
   font-weight: $font-weight-bold;
 }
 
