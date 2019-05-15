@@ -72,7 +72,7 @@ Wenn wir aber normale JavaScript-Frameworks einbinden wollen, sind natürlich hi
 
 ## AngularJS mit TypeScript
 
-Wir starten mit unserem [AngularJS-TypeScript-Seed auf GitHub](https://github.com/angularjs-de/angularjs-typescript-webpack). Hier sind alle nötigen Schritte, wie das konfigurieren des Compilers und das laden der TypeDefinitions bereits erledigt und wir können uns auf das wesentliche konzentrieren.
+Wir starten mit unserem [AngularJS-TypeScript-Seed auf GitHub](https://github.com/angularjs-de/angularjs-typescript-upgrade). Hier sind alle nötigen Schritte, wie das konfigurieren des Compilers und das laden der TypeDefinitions bereits erledigt und wir können uns auf das wesentliche konzentrieren.
 
 Schauen wir uns die `index.html` an, sehen wir eine kleine Besonderheit. In diesem Seed setzten wir [SystemJS](https://github.com/systemjs/systemjs) als Module Loader ein um unsere Datein direkt laden zu können und im Browser vom TypeScript zu JavaScript zu übersetzten. So können wir hier auf einen Build-Prozess verzichten. Wir importieren als Startpunkt also die Datei, die in `app/app.ts` liegt. Die Dateiendung deutet auf TypeScript hin und wird von SystemJS automatisch angefügt. Schauen wir uns also die Datei mal genauer an.
 
