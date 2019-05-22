@@ -36,7 +36,7 @@ pagination:
   enabled: true
   per_page: 5
   permalink: '/seite/:num/'
-  title: ':title - Seite :num von :max'
+  title: ':title - Seite :num'
   limit: 0
   sort_field: 'date'
   sort_reverse: true
