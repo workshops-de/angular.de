@@ -1,7 +1,9 @@
 <div class="col-sm-6 p-0">
-  <a class="embed-responsive embed-responsive-16by9 d-flex align-items-center c-img-grayscale-70 c-bg-img-cover-center"
-    style="background-image: url('/artikel/{{ post.slug }}/{{ post.header_image }}');"
-    href="{{ post.url }}">
+  <a class="embed-responsive embed-responsive-16by9 d-flex align-items-center c-img-grayscale-70 c-bg-img-cover-center lazy"
+    style="background-image: url('/assets/img/placeholder-image.svg');"
+    href="{{ post.url }}"
+    data-style="background-image: url('/artikel/{{ post.slug }}/{{ post.header_image }}')"
+    >
     <div class="text-center w-100 h2 text-white">
       <p>
         {{ post.title }}

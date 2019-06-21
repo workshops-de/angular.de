@@ -1,6 +1,7 @@
 <script type="text/javascript">
   (() => {
-    document.addEventListener("DOMContentLoaded", function() {
+
+    function lazyLoadImages() {
       var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
       if ("IntersectionObserver" in window) {
@@ -27,6 +28,39 @@
           lazyImage.classList.remove("lazy");
         });
       }
-    });
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
   })();
 </script>
