@@ -43,7 +43,8 @@ Da sich aus Sicht von uns Framework-Usern hierbei kaum etwas ändert, werde ich 
 ### Differential loading
 Dieses Feature ermöglicht euch je nach Browser nur die Bundles auszuliefern, welche auch benötigt werden. Nutzt ihr also ein sogenannten legacy Browser der zwingend ES5 benötigt bekommt dieser ein anderes Bundle als ein neuerer evergreen Browser wie z.B. die aktuellen Versionen von Firefox, Edge oder Chrome. Diese sind oftmals wesentlich kleiner und effizienter als der “alte ES5 Code”. Als Beispiel nutzt das Angular Team ihre eigene Webseite und zeigt hierbei Optimierungen bis 20%.
 
-![Angular.IO saves up to 20% with Ivy](differential-loading-savings.png)
+<img src="/assets/img/placeholder-image.svg" alt="Angular.IO saves up to 20% with Ivy" class="lazy" data-src="differential-loading-savings.png" data-srcset="differential-loading-savings.png"
+ />
 Bildquelle: https://blog.angularindepth.com/embrace-yourself-angular-8-is-coming-1bf187c8f0bf
 
 Um dieses Feature zu nutzen könnt ihr eins euer Projekt mit einer sogenannten [Browserlist Konfiguration](https://github.com/browserslist/browserslist) erweitern. Explizit heißt das, dass ihr in eure `package.json` den entsprechenden Eintrag angefügt oder eine neue Datei mit dem Namen `browserlist` anlegt (präferiert, da diese Datei auch vom SEO crawler gelesen wird). Eine Beispielkonfiguration könnte z.B. so aussehen:
@@ -65,12 +66,15 @@ Mit der neuen Version der CLI werden im Build-Prozess nun verschiedene Versionen
 
 Die Einbindung in euerm Projekt erfolgt dann über die [nomodule Syntax](https://jakearchibald.com/2017/es-modules-in-browsers/#nomodule-for-backwards-compatibility) im Browser. Dies wird aber automatisch über den Build-Prozess für euch erledigt.
 
-![Angular.IO saves up to 20% with Ivy](differential-loading-network.png)
+<img src="/assets/img/placeholder-image.svg" alt="Example Network Requests for Differential Loading" class="lazy" data-src="differential-loading-network.png" data-srcset="differential-loading-network.png"
+ />
 Bildquelle: https://dev.to/lacolaco/differential-loading-a-new-feature-of-angular-cli-v8-4jl
 
 Wenn ihr wissen wollt welche Browser von euer Regel inkludiert und welche exkludiert sind bietet das Projekt dieses [Browserlist Online Tool](https://browserl.ist/?q=%3E+1%25%2C+last+2+Chrome+versions%2C+IE+11%2C+Firefox+ESR%2C+not+dead%2C+not+IE+9-11).
 
-![BrowserList Example output of supported modern browsers](browserlist-web.png)
+<img src="/assets/img/placeholder-image.svg" alt="BrowserList Example output of supported modern browsers" class="lazy" data-src="browserlist-web.png" data-srcset="browserlist-web.png"
+ />
+
 
 ### Web Worker Unterstützung
 Ihr habt bestimmt schon einiges von Web-Workern gehört. Hinter diesem Begriff verbringt sich ein Browser Feature welches uns in der Single-threaded Sprache JavaScript ermöglicht doch eine Art von Multi Threading zu nutzen. Wir können dabei neue Threads, sogenannte Web-Worker, erstellen und hierbei über die Message-Queues der jeweiligen Prozesse miteinander Kommunizieren und so Arbeit vom Main-Thread auslagern. Dies ist sinnvoll für lange Berechnungen, da diese sonst ebenfalls z.B. den Render-Zyklus euer Anwendung blocken. Durch die Unterstützung von Web-Workern in Angular Version 8 könnt ihr nun bequem davon profitieren und intensive Berechnungen auslagern und auch parallel ausführen lassen. Wobei Angular hierbei lediglich die Benutzung von WebWorkern erkennt und diese ein separate bundles ausgelagert, welche nur nachgeladen werden wenn diese auch benutzt werden. Der Worker selbst läuft jedoch nicht im Angular Context.
@@ -107,7 +111,8 @@ Die Angular-CLI sorgt dafür das die jeweiligen Worker in eigene Bundles ausgela
 ### Neue Lazy-Loading / Code-Spitting Syntax
 Endlich wird der kryptische String abgelöst mit welchem wir bisher in unser Routing-Konfiguration Module definiert haben welche wir dynamisch Nachladen und somit als extra Bundle gebaut haben möchten. Dies klappt nun endlich über die native Browserfunktion `import()` was es sowohl webpack, den Browsern als auch unseren IDEs einfacher macht damit umzugehen.
 
-![Git Diff about router updates](git-diff-routerupdate-v8.png)
+<img src="/assets/img/placeholder-image.svg" alt="Git Diff about router updates" class="lazy" data-src="git-diff-routerupdate-v8.png" data-srcset="git-diff-routerupdate-v8.png"
+ />
 
 Durch die neue Syntax kann nun auch unsere IDE eine korrekte statische Analyse durchführen und beliebte “typos” an dieser Stelle direkt aufdecken und uns viel Zeit sparen! Ein Weiterer Vorteil ist, dass nun auch Code-Bundling und Optimierung mit den Standard-Webpack-Modulen durchgeführt werden können und kein zusätzlicher Buildprozess dafür speziell für Angular genutzt werden muss.
 
@@ -149,11 +154,13 @@ ng update @angular/cli @angular/core
 
 Nachdem wir diesen Befehl ausgeführt haben werden automatisch unsere Pakete auf die neueste Version aktualisiert und notwendige Änderungen an eurem Code vorgenommen.
 
-![ng update example run on an angular v7 project](ng-update.gif)
+<img src="/assets/img/placeholder-image.svg" alt="ng update example run on an angular v7 project" class="lazy" data-src="ng-update.gif" data-srcset="ng-update.gif"
+ />
 
 Nach der Migration nutzt ihr die neue Angular Version und eure potentiellen Breaking Changes wurden erwartungsgemäß automatisch migriert bzw. mit einem ToDo versehen.
 
-![Git Diff for the updated package.json to angular v8](git-diff-package-json.png)
+<img src="/assets/img/placeholder-image.svg" alt="Git Diff for the updated package.json to angular v8" class="lazy" data-src="git-diff-package-json.png" data-srcset="git-diff-package-json.png"
+ />
 
 ## Fazit
 Bei dieser Version hat das Angular Team ganze Arbeit geleistet. Durch die neue Engine Ivy wird das Framework um einiges schneller - und das an vielen Stellen. Sowohl der Build als auch die Ladezeiten für den Endnutzer sind deutlich beschleunigt. Das alles kommt mit absolut kleinem Breaking-Change für uns Entwickler, was eine wahnsinnige Leistung ist. Ivy wird auch noch zu Angular v9 weiterentwickelt und ist auf unser Feedback aus der “echten Welt” angewiesen. Darum empfehle ich Ivy gerne einmal eine Chance zu geben und früh das Feedback via GitHub zurückfließen zu lassen, damit wir gemeinsam das Framework weiter für neue Herausforderungen stärken können.
