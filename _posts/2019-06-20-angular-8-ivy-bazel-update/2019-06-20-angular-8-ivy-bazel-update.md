@@ -35,7 +35,7 @@ Oder in eurer `tsconfig.app.json` in euern bereits existierenden Projekt.
 }
 ```
 
-Da sich aus Sicht von uns Framework-Usern hierbei kaum etwas ändert, werde ich in diesem Artikel nicht weiter auf Ivy eingehen. Jedoch habe ich ein Meetup Talk welchen ihr euch dazu gerne ansehen könnt der die interna von Ivy erklärt.
+Da sich aus Sicht von uns Framework-Usern hierbei kaum etwas ändert, werde ich in diesem Artikel nicht weiter auf Ivy eingehen. Jedoch habe ich ein Meetup Talk welchen ihr euch dazu gerne ansehen könnt der die Interna von Ivy erklärt.
 
 [Robin Böhm, Angular Ruhr Ivy](https://www.youtube.com/watch?v=aRZaE0b2HFk){:target="_blank"}
 
