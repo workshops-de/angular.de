@@ -1,6 +1,6 @@
 ---
 title: "Angular 8 - Neue Features und Anleitung zum Update"
-description: "Mit Angular 8 kommen neue Features wie Ivy, Differential Loading, Lazy Loading und ein kliner Breaking Change bei der ViewChild Direktive."
+description: "Mit Angular 8 kommen neue Features wie Ivy, Differential Loading, Lazy Loading und ein kleiner Breaking Change bei der ViewChild Direktive."
 author: "Robin Böhm"
 published_at: 2018-06-21 10:15:01.000000Z
 header_source: https://unsplash.com/photos/1eKHJw3P5M8
