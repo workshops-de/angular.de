@@ -1,13 +1,11 @@
-  <a href="/schulungen/{{ include.permalink }}/" class="list-group-item list-group-item-action d-flex flex-row p-0 border-0">
-    <div class="pt-5 pl-5 pb-5">
-      <div class="media">
-        <img class="d-flex mr-4" width="315" src="/assets/img/workshops/logo-{{ include.logo }}.png" alt="Logo für {{ include.title }}">
-        <div class="media-body">
+  <a href="/schulungen/{{ include.permalink }}/" class="list-group-item-action row p-0 border-0 mb-5">
+        <div class="col-sm-12 col-lg-4 text-center">
+          <img style="width: 100%;max-width:315px;" src="/assets/img/workshops/logo-{{ include.logo }}.png" alt="Logo für {{ include.title }}">
+        </div>
+        <div class="col-sm-12 col-lg-8">
           <h2 class="mt-0">{{ include.title }}</h2>
           <div style="max-width: 600px;">
             {{ include.description }}
           </div>
         </div>
-      </div>
-    </div>
   </a>

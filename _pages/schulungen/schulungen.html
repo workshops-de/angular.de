@@ -9,7 +9,7 @@ permalink: /schulungen/
   Der beste Weg mit einem neuen Framework zu starten!
 </p>
 
-<div class="list-group mb-5">
+<div class="list-group mb-5 container">
   {% include_relative _schulung.html
      permalink="angular-intensiv"
      title="Angular <strong>Intensiv</strong> Schulung"
@@ -24,11 +24,32 @@ permalink: /schulungen/
     logo="angular-advanced"
     pattern="1"
  %}
+  {% include_relative _schulung.html
+    permalink="angular-enterprise-applications"
+    title="Angular für <strong>Enterprise Applications</strong> Schulung"
+    description="Große Enterprise Anwendungen habe besondere Herrausforderung. In dieser Schulung widmen wir uns speziell Themen wie Architektur, eigenen Komponenten Bibliotheken, Umgang mit Mono-Repos und Micro-Apps und Performance."
+    logo="angular-enterprise-applications"
+    pattern="1"
+ %}
  {% include_relative _schulung.html
   permalink="rxjs-intensiv"
-  title="RxJS <strong>Intensiv</strong> Schulung"
+  title="<strong>RxJS</strong> Intensiv Schulung"
   description="Reaktive Programmierung ist in vielen modernen Frameworks wie z.B. Angular, React und Vue ein fester Bestandteil. Lerne die Konzepte zu verstehen, sinnvoll einzusetzen und so lesbaren und wartbaren Code zu schreiben."
   logo="rxjs-intensiv-schulung"
+  pattern="1"
+%}
+{% include_relative _schulung.html
+  permalink="state-management"
+  title="Angular <strong>State Management</strong>"
+  description="State Management wird in größeren Anwendungen schnell zu einer echten Herrausforderung. Im Angular Öko-System gibt es verschiedene Ansätze welche je nach Problemstellung ihres Projektes besser oder auch schlechter geeinget sind. In diesem Workshop schauen wir uns die verschiedenen Ansätze an, sodass du selbst beurteilen kannst was für dein Projekt die beste Wahl ist."
+  logo="state-management-schulung"
+  pattern="1"
+%}
+{% include_relative _schulung.html
+  permalink="nestjs-intensiv"
+  title="<strong>NestJS</strong> for Enterprise Applications Schulung"
+  description="NestJS liefert endlich eine gute Lösung für serverseitiges NodeJS Implementierungen in Enterprise Projekten. NestJS ist ein serverseitiges Framework auf Basis von NodeJS. Es unterstützt TypeScript und vereint Elemente von objekt-orientierter, funktionaler und auch reaktiver Programmierung."
+  logo="nestjs-intensiv"
   pattern="1"
 %}
 </div>
