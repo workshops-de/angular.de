@@ -1,0 +1,13 @@
+  <a href="/schulungen/{{ include.permalink }}/" class="list-group-item list-group-item-action d-flex flex-row p-0 border-0">
+    <div class="pt-5 pl-5 pb-5">
+      <div class="media">
+        <img class="d-flex mr-4" width="315" src="/assets/img/workshops/logo-{{ include.logo }}.png" alt="Logo für {{ include.title }}">
+        <div class="media-body">
+          <h2 class="mt-0">{{ include.title }}</h2>
+          <div style="max-width: 600px;">
+            {{ include.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
