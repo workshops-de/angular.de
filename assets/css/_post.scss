@@ -49,3 +49,17 @@
     font-weight: 300;
   }
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50% !important;
+}
+
+.center-80 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80% !important;
+}
