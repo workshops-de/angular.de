@@ -7,7 +7,7 @@ header_source: https://unsplash.com/photos/MkjeghKewIE
 categories: "nestjs tutorial nodejs"
 ---
 
-Dieses Tutorial erklärt euch die Grundlagen des Frameworks NestJS. Wir werden einige Code Beispiele benutzen, welche selber via [Git Repository](https://github.com/angularjs-de/angular-de-nestjs-tutorial) auf eurem eigenen Rechner ausprobieren könnt.
+Dieses Tutorial erklärt euch die Grundlagen des Frameworks NestJS. Wir werden einige Code Beispiele benutzen die ihr via [Git Repository](https://github.com/angularjs-de/angular-de-nestjs-tutorial) auf eurem eigenen Rechner ausprobieren könnt.
 Dieses Tutorial richtet sich an Entwicklerinnen und Entwickler, welche die Grundlagen des Webs, Client-Server Architektur und Rest-Schnittstellen bereits verstanden haben.
 Ziel dieses Tutorials ist es, zu zeigen wie eine Rest-API mit Nest gebaut werden kann.
 Wir benutzen hierbei als Datenbank eine PostgreSQL Instanz, es können aber auch andere (NoSQL) Datenbanken wie MongoDB genau so einfach angebunden werden. Weiterhin wird ein lauffähiges NodeJS in Version 10 oder höher für dieses Tutorial vorausgesetzt.
@@ -26,31 +26,31 @@ NestJS orientiert sich sehr stark an den Konzepten und der Architektur von Angul
 Durch den Einsatz von Elementen wie Dependency Injection und Decorators/Annotations kann der Fokus größtenteilsauf die Definition von Business Logic gelegt werden. Die dadurch reduzierte Komplexität führt zu deutlich verbesserten Lesbarkeit und auch langlebiger Wartbarkeit, da Updates am Framework über klare und einfache Schnittstellen getrennt sind und sich oft automatisch updaten lassen.
 
 ### Die Nest CLI
-Durch die Nest CLI lässt sich sehr viel Zeit gerade am Anfang eines Projektes sparen, Da viele Fragen zur organisation des Projektes bereits beantwortet sind:
+Durch die Nest CLI lässt sich sehr viel Zeit gerade am Anfang eines Projektes sparen, da etliche Fragen zur organisation des Projektes bereits beantwortet sind:
 Wie sieht unsere Ordnerstruktur aus?
 Wie benennen wir Dateien?
 Welche Formatierung nutzen wir? Tabs oder Spaces?
 Wieso sieht unsere Struktur ganz anders aus als von Team B?
 usw
-Jeder kennt diese Situationen: Man möchte das eigentliche Problem lösen, ist aber durch das Projekt Setup erstmal eine ganze Weile blockiert. Durch die klare Vorgabe durch Generatoren kann hier teamübergreifend schnell und effizient gearbeitet werden.
+Jeder kennt diese Situationen: Man möchte das eigentliche Problem lösen, muss aber erst einmal Zeit in das Projekt Setup investieren. Das Kommandozeilenwerkzeug Nest CLI gibt klare Strukturen vor. So kann hier teamübergreifend schnell und effizient gearbeitet werden.
 
 ### Separation of Concerns
-Hinter diesem fancy Begriff versteckt sich ein Design Pattern, welches sich aufgrund der langfristigen Wartbarkeit als sehr beliebt zeigt. Es geht hierbei unter anderem um den fachliche Schnitt unserer Module in Bausteine. Jeder Baustein löst hierbei eine spezielle und abgetrennte Aufgabe. Dies betrifft einerseits unsere eigene Businesslogik, wird aber auch von den Frameworks durch klare Grenzen und Vorgaben unterstützt. Oftmals sieht man dies auch in Verbindung mit Dependency Injection, welches eine klare Abtrennung bestimmter Funktionalitäten ermöglicht, wie z.B. Http Verbindungen oder die Implementierung eines bestimmten oAuth Providers. Die Architektur der Frameworks unterstützt diese Trennung sehr stark.
+Hinter diesem Schlagwort versteckt sich ein Design Pattern, welches sich aufgrund der langfristigen Wartbarkeit als sehr beliebt zeigt. Es geht hierbei unter anderem um den fachliche Schnitt unserer Module in Bausteine. Jeder Baustein löst hierbei eine spezielle und abgetrennte Aufgabe. Die Trennung unserer eigenen Businesslogik wird von dem Framework durch klare Grenzen und Vorgaben unterstützt. Oftmals sieht man dies auch in Verbindung mit Dependency Injection, welches eine klare Abtrennung bestimmter Funktionalitäten ermöglicht, wie z.B. Http Verbindungen oder die Implementierung eines bestimmten oAuth Providers. Die Architektur des Frameworks unterstützt diese Trennung sehr stark.
 
 ### Atomare und testbare Module
-Die Aufteilung in kleine atomare und funktionale Bausteine in unseren Anwendungen ermöglicht Wiederverwendbarkeit und Testbarkeit. Beide Eigenschaften sind für viele Projekte ein essentieller Schlüssel zum Erfolg. Atomare Bausteine lassen sich gut testen. Getesteter Code lässt sich einfacher warten und ist langfristig günstiger. Die Wartbarkeit des Projektes ermöglicht langfristig schnelle Änderungen.
+Die Aufteilung in atomare und funktionale Bausteine in unseren Anwendungen ermöglicht Wiederverwendbarkeit und Testbarkeit. Beide Eigenschaften sind für viele Projekte ein essentieller Schlüssel zum Erfolg. Atomare Bausteine lassen sich gut testen. Getesteter Code lässt sich einfacher warten und ist langfristig günstiger. Die Wartbarkeit des Projektes ermöglicht langfristig schnelle Änderungen.
 
 ## Vorteile von NestJS
-Die oben genannten Vorteile gelten meist für alle der genannten Frameworks. Welche Vorteile bietet uns dann NestJS? Hierbei kommt es, wie so oft, immer auf die spezifische Projektsituation an. NestJS kann eine besonders gute Wahl sein in Verbindung mit einem modernen Frontend-Stack wie Angular, React oder Vue.
+Die oben genannten Vorteile gelten meist für alle der genannten Frameworks. Welche Vorteile bietet uns dann NestJS? Hierbei kommt es, wie so oft, immer auf die spezifische Projektsituation an. NestJS kann eine besonders gute Wahl in Verbindung mit einem modernen Frontend-Stack wie Angular, React oder Vue sein.
 
 ### Die gleiche Programmiersprache
-Durch die Benutzung von TypeScript sowohl im Frontend als auch im Backend, müssen Entwickler, welche an beiden Projekten arbeiten, nicht ständig zwischen zwei Sprachen und Konzepten hin und her wechseln. Das spart enorm viel kognitive Energie welche sinnvoller eingesetzt werden kann.
+Durch die Benutzung von TypeScript(JavaScript) sowohl im Frontend als auch im Backend, müssen Entwickler, welche an beiden Projekten arbeiten, nicht ständig zwischen zwei Sprachen und Konzepten hin und her wechseln. Das spart enorm viel kognitive Energie welche sinnvoller eingesetzt werden kann.
 
 ### Wiederverwenden von DTOs
 Unter dem Begriff DTO versteht man ein Data-Transfer-Objekt. Dies wird benutzt um die Serialisierung und De-Serialisierung bei Netzwerk-Kommunikation klar zu definieren. Im Fall einer Client-Server-Anwendung müssen diese Definitionen und Funktionen also jeweils auf beiden Seiten implementiert und synchron gehalten werden. Ein typischer Projektaufbau mit NestJS erlaubt aber die gleichzeitige Verwendung dieser Interface-Definitionen. Somit hat man eine klare Stelle für diese Definitionen und reduziert so die Gefahr einer potentielle zeitfressenden Fehlerquellen enorm.
 
 ### Ähnliche Struktur
-Nest ist sehr stark durch moderne Platformen wie Angular inspiriert. Sowohl die Entwicklungsumgebung, die Laufzeitumgebung, als auch die Build-Prozesse sind sehr ähnlich im Front und Backend. Es kann also viel gelerntes Wissen direkt wiederverwendet werden. Die oftmals strikte Trennung zwischen Backend- und Frontend-EntwicklerInnen kann sich so auch für beide Seiten cross-funktional vermischen und zu einer verbesserten Kommunikation fördern.
+Nest ist sehr stark durch moderne Plattformen wie Angular inspiriert. Sowohl die Entwicklungsumgebung, die Laufzeitumgebung, als auch die Build-Prozesse sind sehr ähnlich im Front und Backend. Es kann also viel gelerntes Wissen direkt wiederverwendet werden. Die oftmals strikte Trennung zwischen Backend- und Frontend-EntwicklerInnen kann aufgeweicht werden und eine bessere Kommunikation fördern.
 
 ### Ähnliche Konzepte
 Sehr stark ausgeprägt in Verbindung mit Angular sind die gemeinsamen Konzepte und Paradigmen, welche genutzt werden, um die Architektur zu definieren. Geführt durch einen Generator(welcher auf Schematics basiert) können sowohl NestJS-Core als auch Third-Party-Module einfach integriert und aktualisiert werden. Die Benutzung von Dependency Injection, Decorators und Modulen ermöglicht ein Wiederverwenden von vielen Wissensbausteinen.
@@ -406,3 +406,16 @@ Dies passiert, wenn ihr euren Server über `npm run start:dev` startet. Diese Op
 ```
 
 ## Fazit
+Zusammenfassend würde ich behaupten: NestJS schließt endlich eine Lücke für Backend-Entwickler die sich mit anderen NodeJS-Frameworks wie Express bisher eher schwer getan haben.
+Die Konzepte fügen sich sehr angenehm an bereits bestehende Konzepte aus der Angular oder auch Java Spring Welt. Die Lernkurve ist relativ flach und es werden viele Module mitgeliefert welche die tägliche Arbeit durch eine angenehme Abstraktion sehr erleichern.
+Des Weiteren legt das Framework ein starken Fokus auf Test, wodurch es für professionelle Projekte ein oft schmerzhaften Punkt von Beginn an löst.
+Die ersten Schritte gehen leicht von der Hand und machen Spaß auf mehr!
+
+
+## Eure Meinung?
+Was haltet ihr von NestJS und diesem Tutorial? Hinterlasst mir gerne einen Kommentar.
+Ich werde dieses Tutorial regelmäßig updaten und erweitern.
+Weiterhin werde ich die nächsten Wochen auch noch speziellere Themen wie GraphQL mit Nest behandeln!
+
+
+Danke fürs lesen!
