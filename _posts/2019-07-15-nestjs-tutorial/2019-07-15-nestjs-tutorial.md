@@ -1,6 +1,6 @@
 ---
 title: "NestJS Tutorial für Einsteiger"
-description: "NestJS ist ein Framework für serverseitige NodeJS Implementierungen in Enterprise Projekten. In diesem Tutorial werden wir eine Rest-API mit einer Datenbank implementieren."
+description: "NestJS ist ein Framework für serverseitige NodeJS Implementierungen in Enterprise Projekten. In diesem Tutorial werden wir eine Rest-API implementieren."
 author: "Robin Böhm"
 published_at: 2019-06-21 10:15:01.000000Z
 header_source: https://unsplash.com/photos/MkjeghKewIE
@@ -55,7 +55,31 @@ Nest ist sehr stark durch moderne Plattformen wie Angular inspiriert. Sowohl die
 ### Ähnliche Konzepte
 Sehr stark ausgeprägt in Verbindung mit Angular sind die gemeinsamen Konzepte und Paradigmen, welche genutzt werden, um die Architektur zu definieren. Geführt durch einen Generator(welcher auf Schematics basiert) können sowohl NestJS-Core als auch Third-Party-Module einfach integriert und aktualisiert werden. Die Benutzung von Dependency Injection, Decorators und Modulen ermöglicht ein Wiederverwenden von vielen Wissensbausteinen.
 
-
+<hr>
+<div class="workshop-hint">
+  <div class="h3">Keine Lust zu Lesen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und Spaß machen. Wir bieten euch auch
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">NestJS Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
+      </p>
+      <p class="">
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded lazy"
+      style="margin-top:-20px"
+      data-src="/assets/img/workshops/workshops-attendees.png"
+      data-srcset="/assets/img/workshops/workshops-attendees.png"
+       src="/assets/img/placeholder-image.svg" alt="Teilnehmer in unser Intensiv Schulung">
+    </div>
+  </div>
+</div>
+<hr>
 
 ## Konzepte
 NestJS hat viele Bausteine, jedoch sind einige davon essentiell um die grundlegende Funktionsweise des Frameworks zu verstehen. Genau diesen Konzepten werden wir uns als nächstes widmen. Es handelt sich hierbei um Controller, Services und Module. Um diese zu erklären nutzen wir einen minimalen Projekt-Aufbau einer Client/Server Architektur die auf einer Rest-Schnittstelle basiert.
@@ -196,7 +220,7 @@ export class EventsModule {}
 
 Im ersten Schritt werden wir hier ein statisches Array an Events zurückgeben. Um dies zu erreichen erstellen wir eine `findAll` Funktion in unserem Service. Der Rückgabewert hierbei ist ein einfaches Array mit einem Beispiel-Event.
 
-```typescript`
+```typescript
 @Injectable()
 export class EventsService {
 
@@ -235,9 +259,9 @@ Wir werden nicht alle Operationen statisch einbinden, jedoch möchte ich an dies
 
 ```typescript
 @Get(':id')
-    findOne(@Param('id') id: string): any {
-      return this.eventService.findAll()[0];
-    }
+findOne(@Param('id') id: string): any {
+  return this.eventService.findAll()[0];
+}
 ```
 
 Natürlich gibt es neben `@Get` auch weitere Decorator wie `@Put`, `@Post`, `@Patch` und  `@Delete` um weitere HTTP-Verben abzubilden. Wir werden diese im nächsten Kapitel nutzen wenn wir unsere Datenbank mit echten Daten anbinden.
@@ -269,7 +293,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 })
 ```
 
-Die Initialisierung erwartet eine Datei mit dem Namen `ormconfig.json` in unserem Root-Ordner, welche die Argumente für unsere Datenbank Verbindung definiert. Der Standard nutzer bei Postgres ist der aktuelle Nutzer, was in meinem Fall  `robinboehm´ ist. Des Weiteren habe ich eine Datenbank mit dem Namen `angular-de-nestjs-tutorial` angelegt. Ich nutze hierfür das Tool [PostiCo für Mac](https://eggerapps.at/postico/) in der Trial Version. Der Parameter `entities`  kann erstmal so übernommen werden, wir werden im nächsten Abschnitt lernen was es damit auf sich hat.
+Die Initialisierung erwartet eine Datei mit dem Namen `ormconfig.json` in unserem Root-Ordner, welche die Argumente für unsere Datenbank Verbindung definiert. Der Standard nutzer bei Postgres ist der aktuelle Nutzer, was in meinem Fall  `robinboehm` ist. Des Weiteren habe ich eine Datenbank mit dem Namen `angular-de-nestjs-tutorial` angelegt. Ich nutze hierfür das Tool [PostiCo für Mac](https://eggerapps.at/postico/) in der Trial Version. Der Parameter `entities`  kann erstmal so übernommen werden, wir werden im nächsten Abschnitt lernen was es damit auf sich hat.
 
 ```json
 {
@@ -419,3 +443,28 @@ Weiterhin werde ich die nächsten Wochen auch noch speziellere Themen wie GraphQ
 
 
 Danke fürs lesen!
+
+<hr>
+<div class="workshop-hint">
+  <div class="h3">Bereit mehr NestJS zu lernen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und Spaß machen. Wir bieten euch auch
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">NestJS Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
+      </p>
+      <p class="">
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded lazy"
+      data-src="/assets/img/workshops/workshops-attendees-2.jpg"
+      data-srcset="/assets/img/workshops/workshops-attendees-2.jpg"
+       src="/assets/img/placeholder-image.svg" alt="Teilnehmer in unser Intensiv Schulung">
+    </div>
+  </div>
+</div>
+<hr>
