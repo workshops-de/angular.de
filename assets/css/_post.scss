@@ -63,3 +63,13 @@
   margin-right: auto;
   width: 80% !important;
 }
+
+@include media-breakpoint-down(sm) {
+  .center {
+    width: 80% !important;
+  }
+
+  .center-80 {
+    width: 100% !important;
+  }
+}
