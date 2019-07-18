@@ -58,7 +58,13 @@ layout: base
               {% unless forloop.last %}<span class="ml-1 mr-1">•</span>{% endunless %}
             {% endfor %}
             <span class="ml-1 mr-1">|</span>
-            {{ page.author }} <span class="ml-1 mr-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
+            {{ page.author }}
+            {% if author.twitter %}
+            <a href="https://twitter.com/{{ author.twitter }}" target="_blank" style="margin-bottom: 5px;">
+              <img src="/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo"/>
+            </a>
+          {% endif %}
+            <span class="ml-1 mr-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
             <span class="ml-1 mr-1">|</span>
             {% include _reading_time.html text=page.content %}
           </small>
