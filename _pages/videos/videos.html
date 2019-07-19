@@ -1,0 +1,53 @@
+---
+title: Videos über Angular aus der deutschen Community
+description: Auf dieser Seite findet ihr eine Liste von Videos die im Zusammenhang in der Angular Community in der DACH Region stehen!
+layout: base
+newsletter: false
+---
+
+<h1 class="header__title pt-5 mt-5">Angular Community Videos</h1>
+
+<div class="container mt-t">
+    <div class="lead mb-5">
+      <p class="lead__content">
+        Du konntest bei einem Meetup nicht dabei sein interessierst dich aber wahnsinnig für das Thema?
+        Mehr und mehr Meetups nehmen ihre Talks auf und veröffentlichen diese auf diversen Video Platformen.
+        Auf dieser Seite findest du eine Liste dieser Videos.
+        Wir haben vergessen dein Video hier aufzulisten? Kein Problem! Schick uns einfach eine Mail oder melde dich via Twitter bei uns!
+      </p>
+    </div>
+  </div>
+
+
+
+<div class="container">
+    <div class="row">
+  {% for video in site.data.videos %}
+  <div class="card h-100 col-lg-4 col-md-6 col-12">
+      <!-- <a class="c-img-post"
+            style="height: 150px; background-image: url('{{  meetup.key_photo.photo_link }}');"
+            href="{{ meetup.link }}">
+        <span class="c-post-categories">
+            <span class="text-uppercase">{{meetup.city}}</span>
+        </span>
+      </a> -->
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{video.youtube}}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <a class="card-body text-dark" href="{{ meetup.link }}"  target="_blank">
+        <span class="c-post-categories" style="top: 120px;">
+            {% for tag in video.tags %}
+              <span class="text-uppercase">{{tag}}</span>
+              {% unless forloop.last %}<span class="ml-1 mr-1">•</span>{% endunless %}
+            {% endfor %}
+        </span>
+        <div class="text-muted">{{ video.title }}</div>
+        <div class="text-muted">{{ video.event }}</div>
+        <span class="font-weight-bold">
+        {{ video.speaker.name }}
+        </span>
+      </a>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+<hr>
+{% include _slack.html %}
