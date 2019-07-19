@@ -9,4 +9,5 @@ _includes/_course_reviews.json
 _data/events/*.json
 _data/course.json
 _data/meetups.json
+_data/videos.json
 firebase-debug.log
