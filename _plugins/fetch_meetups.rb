@@ -21,6 +21,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
     'NgNiederrhein',
     'Angular-Meetup-Graz',
     'ngGirls-RheinNeckar',
+    'niederrhein-valley',
   ]
 
   File.write(filename, '[')
