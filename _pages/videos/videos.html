@@ -20,7 +20,7 @@ newsletter: false
 
 <div class="container">
     <div class="row">
-  {% for video in site.data.videos.items %}
+  {% for video in site.data.videos.items reversed %}
   <div class="card h-100 col-lg-4 col-md-6 col-12">
       <iframe width="100%" height="250" src="https://www.youtube.com/embed/{{video.contentDetails.videoId}}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <a class="card-body text-dark" href="https://www.youtube.com/watch?v={{video.contentDetails.videoId}}"  target="_blank">
