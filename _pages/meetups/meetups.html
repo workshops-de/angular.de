@@ -34,6 +34,50 @@ newsletter: false
       </p>
     </div>
   </div>
+  <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+    <div class="container mb-5">
+      <div id="map"></div>
+    </div>
+<script>
+  var map, heatmap;
+  function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6,
+          center: {lat: 50.52, lng: 12.38},
+          mapTypeId: 'hybrid'
+        });
+
+        heatmap = new google.maps.visualization.HeatmapLayer({
+          data: getPoints(),
+          map: map,
+          radius: 50
+        });
+
+        heatmap.setMap(map);
+      }
+
+        function getPoints() {
+          // {{sum}}
+          return [
+            {% for meetup in site.data.meetups %}
+            // {{meetup.members}}
+            // {{meetup.members | times: 100 | divided_by: sum}}
+              {location:new google.maps.LatLng({{meetup.lat}}, {{meetup.lon}}),  weight: {{meetup.members | times: 100 | divided_by: sum}}},
+            {% endfor %}
+          ]
+        };
+
+ </script>
+ <script async defer type="text/javascript"
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArgxgu1qg78Xw-1iBMYFWCxtFXKvuZTVY&libraries=visualization&callback=initMap">
+</script>
 
 
 
