@@ -167,7 +167,7 @@ DEPENDENCIES
   rest-client
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
