@@ -46,6 +46,11 @@
               <span class="d-block d-lg-inline">
                 <span>in</span>
                 <span itemprop="location" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
+                <span>
+                  {% if event.early_bird == true %}
+                    <span class="badge badge-info">Frühbucher Rabatt</span>
+                  {% endif %}
+                </span>
               </span>
               <meta itemprop="name" content="🅰️ Angular Intensiv Kurs">
               <meta itemprop="url" content="{{ event.url }}">
