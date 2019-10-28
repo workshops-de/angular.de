@@ -16,9 +16,6 @@
 
       {% for event in site.data.events.angular-intensiv limit:6 %}
       <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
-        <div class="d-none d-md-block col-1">
-          KW{{ event.startDate | date: "%W" }}
-        </div>
         <div class="col-4">
           <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span class="mr-2">{{ event.endDate | date: "%d.%m.%Y" }}</span>
           {% if event.bookingsStatus == "BOOKED" %}
@@ -33,7 +30,7 @@
             <span class="badge c-badge-free">Noch freie Plätze</span>
           {% endif %}
         </div>
-        <div class="col-8 col-md-7">
+        <div class="col-8">
           <div class="row">
             <div class="col-sm-9">
               <a class="underlined" href="{{ event.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list"
@@ -48,7 +45,7 @@
                 <span itemprop="location" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
                 <span>
                   {% if event.early_bird == true %}
-                    <span class="badge badge-info">Frühbucher Rabatt</span>
+                    <span class="badge badge-info"><small>Frühbucher Rabatt</small></span>
                   {% endif %}
                 </span>
               </span>
