@@ -5,7 +5,7 @@
 
   <main role="main">
     <div class="row">
-      <div class="col-8">
+      <div class="col-12 col-md-8  order-2 order-md-1">
       {% if user.bio %}
         <div class="row">
           <div class="col">
@@ -46,19 +46,19 @@
         </div>
         {% endif %}
       </div>
-      <div class="col-4">
+      <div class="col-12 col-md-4 order-1 order-md-2">
         <div class="position-sticky c-top-4">
           <div class="card h-100">
             <div class="card-body">
               <div class="row">
-                <div class="col-6 mb-2">
+                <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-md-8 mb-2">
                   <img alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130"
                     src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg" width="130">
                   {% if user.gde == true %}
-                  <img class="d-md-inline" width="100%" src="/assets/img/gde-logo.png" />
+                  <img class="d-md-inline" style="max-width: 130px;" width="100%" src="/assets/img/gde-logo.png" />
                   {% endif %}
                 </div>
-                <div class="col-12 mb-2">
+                <div class="col-8 col-sm-6 col-md-12 mb-2">
                   <h2 class="h3">{{ user.name }}</h2>
                   <p>{{ user.intro }}</p>
                   {% if user.twitter %}
