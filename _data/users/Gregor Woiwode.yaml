@@ -8,6 +8,12 @@ gde: true
 intro: >
   Google Developer Expert<br>
   Software Engineer, Speaker, Blogger
+bio: >
+  Gregor beschreibt sich selbst als Agilist. Stetig sucht er nach Verbesserungsmöglichkeiten und weiß sich und sein Team dafür zu begeistern.
+
+  Er blickt auf eine Vielzahl herausfordernder Webprojekte in den Bereichen E-Commerce, Auftrags- & Netzwerksteuerung, sowie Produktentwicklung zurück.
+
+  Als Autor des Buchs Angular - Grundlagen, fortgeschrittene Techniken und Best Practices mit TypeScript hat er sich tiefgreifende Kenntnisse der Plattform angeeignet, die er der erfolgreichen Umsetzung zahlreicher Projekte zu Gute kommen lässt.
 twitter: https://twitter.com/GregOnNet
 blog: https://medium.com/@gregor.woiwode
 github: https://github.com/GregOnNet
