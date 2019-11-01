@@ -1,0 +1,85 @@
+{% for user_hash in site.data.users %}{% assign user = user_hash[1] %}{% if user.name == include.name %}
+
+<div class="container pt-6">
+  <h1>{{ page.title }}</h1>
+
+  <main role="main">
+    <div class="row">
+      <div class="col-8">
+      {% if user.bio %}
+        <div class="row">
+          <div class="col">
+            {{user.bio}}
+          </div>
+        </div>
+        {% endif %}
+        {% if user.started_with_angular %}
+        <div class="row">
+          <div class="col">
+            <h2 class="pt-5">Seit wann beschäftigst du dich mit dem Framework Angular?</h2>
+            {{user.started_with_angular}}
+          </div>
+        </div>
+        {% endif %}
+        {% if user.why_angular_de_team %}
+        <div class="row">
+          <div class="col">
+            <h2 class="pt-5">Warum bist du Teil des Angular.DE Teams?</h2>
+            {{user.why_angular_de_team}}
+          </div>
+        </div>
+        {% endif %}
+        {% if user.best_workshop_memory %}
+        <div class="row">
+          <div class="col">
+            <h2 class="pt-5">Was ist deine schönste Erinnerung an einen Workshop?</h2>
+            {{user.best_workshop_memory}}
+          </div>
+        </div>
+        {% endif %}
+        {% if user.fun_fact %}
+        <div class="row pb-5">
+          <div class="col">
+            <h2 class="pt-5">Erzähl uns einen Fun Fact über dich!</h2>
+            {{user.fun_fact}}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-4">
+        <div class="position-sticky c-top-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6 mb-2">
+                  <img alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130"
+                    src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg" width="130">
+                  {% if user.gde == true %}
+                  <img class="d-md-inline" width="100%" src="/assets/img/gde-logo.png" />
+                  {% endif %}
+                </div>
+                <div class="col-12 mb-2">
+                  <h2 class="h3">{{ user.name }}</h2>
+                  <p>{{ user.intro }}</p>
+                  {% if user.twitter %}
+                  <a href="{{user.twitter}}">Twitter</a>
+                  {% endif %}
+                  {% if user.blog %}
+                  <a href="{{user.blog}}">Blog</a>
+                  {% endif %}
+                  {% if user.github %}
+                  <a href="{{user.github}}">Github</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endif %}{% endfor %}
