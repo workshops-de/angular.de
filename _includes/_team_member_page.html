@@ -1,13 +1,13 @@
 {% for user_hash in site.data.users %}{% assign user = user_hash[1] %}{% if user.name == include.name %}
 
-<div class="container pt-6 pb-5">
+<div class="container pt-6 pb-5" itemscope itemtype="http://schema.org/Person">
   <h1>{{ page.title }}</h1>
 
   <main role="main">
     <div class="row">
       <div class="col-12 col-md-8  order-2 order-md-1">
       {% if user.bio %}
-        <div class="row">
+        <div class="row" itemprop="description">
           <div class="col">
             {{user.bio}}
           </div>
@@ -52,15 +52,16 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-md-8 mb-2">
-                  <img alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130"
+                  <img itemprop="image" alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130"
                     src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg" width="130">
                   {% if user.gde == true %}
                   <img class="d-md-inline" style="max-width: 130px;" width="100%" src="/assets/img/gde-logo.png" />
                   {% endif %}
                 </div>
                 <div class="col-8 col-sm-6 col-md-12 mb-2">
-                  <h2 class="h3">{{ user.name }}</h2>
-                  <p>{{ user.intro }}</p>
+                  <h2 class="h3" itemprop="name">{{ user.name }}</h2>
+                  <p itemprop="jobTitle">{{ user.intro }}</p>
+                  <p itemprop="worksFor">Angular.DE</p>
                   {% if user.twitter %}
                   <a href="{{user.twitter}}">Twitter</a>
                   {% endif %}
