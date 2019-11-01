@@ -9,6 +9,9 @@ gde: true
 intro: >
   Google Developer Expert<br>
   Speaker,Trainer und NG-Girls Orga
+bio: >
+  Martina Kraus hatte schon immer ein starkes Interesse am Web-Engineering. Als Freelancerin konzentriert sie sich auf die Implementierung von hochskalierbaren Softwarelösungen mit Node.Js und Angular.
+  Neben ihrer Tätigkeit als Dozentin an der Hochschule Mannheim ist sie auch Mitglied im Hackerststolz e.V., Gründer der JavaScript User Group und Organisatorin von AngularGirls Events.
 twitter: https://twitter.com/MartinaKraus11
 #blog: https://www.schmaga.de
 github: https://github.com/martinakraus
