@@ -1,6 +1,22 @@
 name: Gregor Woiwode
 gravatar_uid: 6a13335df5f4e59feb8e87609458f13d
 city: Germany
-team: false
+team: true
 trainer: true
-bio: >
+gde: true
+intro: >
+  Google Developer Expert<br>
+  Software Engineer, Speaker, Blogger
+twitter: https://twitter.com/GregOnNet
+blog: https://medium.com/@gregor.woiwode
+github: https://github.com/GregOnNet
+started_with_angular: >
+  2008 habe ich mit AngularJS begonnen erste Projekte umzusetzen.
+  Es hat mich begeistert, dass mit diesem Framework die SOLID-Prinzipien auch in der Front-End-Welt umgesetzt werden konnten.
+why_angular_de_team: >
+  Bei Angular.DE arbeiten tolle Leute. Mit jedem Gespräch wachse ich ein Stück. Es ist eine tolle Arbeitsatmosphäre.
+best_workshop_memory: >
+  Die kleinen und großen AHA-Momente der Teilnehmer sind wie eine Droge für mich.
+fun_fact: >
+  Ich führe im Büro kleine Siegestänze auf wenn ich komplizierte Aufgaben lösen konnte... Ja, meine Kollegen sind da auch anwesend. 🕺
+

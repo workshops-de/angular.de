@@ -8,14 +8,11 @@
         <div class="col-3 text-center mb-2">
           <img alt="{{ user.name }}" class="shadow-sm rounded img-fluid" height="130" src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg"
                 width="130">
-            {% if user.gde == true %}
-              <br><img width="100%" src="/assets/img/gde-logo.png" /><br>
-            {% endif %}
         </div>
         <div class="col-9 mb-2">
           <h2 class="h3">{{ user.name }}</h2>
           <p>{{ user.intro }}</p>
-          <a class="text-muted" href="#">Mehr erfahren ...</a>
+          <p class="text-muted">{{ user.bio }}</p>
         </div>
       </div>
 

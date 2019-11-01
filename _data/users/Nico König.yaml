@@ -1,6 +1,19 @@
 name: Nico König
 gravatar_uid: 0708c6bcce8f44a15dd12ba5021dcd36
 city: Germany
-team: false
+team: true
 trainer: true
-bio: >
+intro: >
+  Developer, Speaker and Trainer
+twitter: https://twitter.com/theNicoKoenig
+#blog: https://www.schmaga.de
+github: https://github.com/nicokoenig
+started_with_angular: >
+  Ich habe im Dezember 2015 in die ersten Betas von Angular geschnuppert und seit dem damit gearbeitet.
+  Was mich an Angular begeistert ist das von Google geschnürte All-In-One Paket... keine überflüssigen Konfigurationen und ein solider Style-Guide (das spart viele Diskussionen ein).
+why_angular_de_team: >
+  Ich teile mein Wissen gern mit den Menschen um mich herum und wollte mal sehen wie das so als Trainer ist.
+best_workshop_memory: >
+  Strahlende Augen beim Lernen und Entwickeln
+fun_fact: >
+  CSS macht mir tatsächlich Spaß.
