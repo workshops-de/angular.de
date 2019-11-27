@@ -1,6 +1,8 @@
-<nav data-headroom="" class="navbar navbar-light navbar-ajs navbar-expand-md fixed-top headroom headroom--top headroom--not-bottom">
+<nav data-headroom=""
+  class="navbar navbar-light navbar-ajs navbar-expand-md fixed-top headroom headroom--top headroom--not-bottom">
   <div class="container">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand d-none d-md-block img-grayscale-100" href="/">
@@ -18,15 +20,16 @@
           <a class="nav-link" href="/schulungen/">Schulungen</a>
         </li>
         <li class="nav-item dropdown {% if page.url contains '/ng-de-konferenz' %}active{% endif %}">
-          <a class="nav-link" href="#" id="navbarCourseDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Community
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarCourseDropdown">
-              <a class="dropdown-item" href="/meetups/">Meetups</a>
-              <a class="dropdown-item" href="/videos/">Videos</a>
-              <a class="dropdown-item" href="/ng-de-konferenz/">NG-DE Konferenz</a>
-              <a class="dropdown-item" href="/slack">Slack</a>
-            </div>
+          <a class="nav-link" href="#" id="navbarCourseDropdown" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Community
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarCourseDropdown">
+            <a class="dropdown-item" href="/meetups/">Meetups</a>
+            <a class="dropdown-item" href="/videos/">Videos</a>
+            <a class="dropdown-item" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+            <a class="dropdown-item" href="/slack">Slack</a>
+          </div>
         </li>
         <li class="nav-item {% if page.url contains '/team' %}active{% endif %}">
           <a class="nav-link" href="/team/">Team</a>
@@ -38,12 +41,29 @@
       <form class="form-inline mr-auto" action="/suche/" method="GET">
         <input name="q" class="form-control navbar-search" type="text" placeholder="&#xF002;" autocomplete="off">
       </form>
-     <div class="mx-md-auto mr-4">
+      <div class="mx-md-auto mr-4">
         <a href="/slack" target="_blank" rel="noopener nofollow">
-          <img src="/assets/img/slack-logo.svg" alt="Angular Slack" height="35"/>
+          <div class="slack">
+            <span class="dot dot--a"></span>
+            <span class="dot dot--b"></span>
+            <span class="dot dot--c"></span>
+            <span class="dot dot--d"></span>
+          </div>
+          <span class="slack-text">
+            <span class="slack-text-community d-lg-inline d-md-none">Community</span> Slack</span>
         </a>
-     </div>
+      </div>
     </div>
+    <a href="/slack" target="_blank" rel="noopener nofollow" class="d-md-none">
+      <div class="slack">
+        <span class="dot dot--a"></span>
+        <span class="dot dot--b"></span>
+        <span class="dot dot--c"></span>
+        <span class="dot dot--d"></span>
+      </div>
+      <span class="slack-text">
+        <span class="slack-text-community d-lg-inline d-md-none">Community</span> Slack</span>
+    </a>
     <a class="navbar-brand order-md-12" href="/">
       angular.de
     </a>
