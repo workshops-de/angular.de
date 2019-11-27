@@ -8,6 +8,7 @@ cache:
     - .jekyll-cache
     - vendor/bundle
 before_install: gem install bundler
+install: bundle install
 script: jekyll build
 deploy:
   provider: firebase
