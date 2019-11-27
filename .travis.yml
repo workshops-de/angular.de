@@ -1,13 +1,13 @@
 language: ruby
 rvm:
-- 2.6.3
+- 2.6.5
 cache:
   bundler: true
   directories:
     - .firebase
     - .jekyll-cache
+    - vendor/bundle
 before_install: gem install bundler
-install: bundle install
 script: jekyll build
 deploy:
   provider: firebase
