@@ -32,9 +32,9 @@ defaults:
     values:
       layout: "page"
   - scope:
-      path: "assets/mirror/**"
+      path: "assets"
     values:
-      sitemap: "false"
+      sitemap: false
 
 
 
