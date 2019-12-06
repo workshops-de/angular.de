@@ -31,6 +31,12 @@ defaults:
       path: "_pages" # an empty string here means all files in the project
     values:
       layout: "page"
+  - scope:
+      path: "assets/mirror/**"
+    values:
+      sitemap: "false"
+
+
 
 pagination:
   enabled: true
