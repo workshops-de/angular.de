@@ -6,17 +6,16 @@
     <div class="card-body">
       <div class="row">
         <div class="col-xs-4 col-sm-3 col-md-3 mb-2">
-          <img alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130" src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg"
-                width="130">
-            {% if user.gde == true %}
-              <img class="d-block d-md-inline" width="100%" style="max-width: 130px;" src="/assets/img/gde-logo.png" />
-            {% endif %}
+          <img alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130" src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg" width="130">
+          {% if user.gde == true %}
+          <img class="d-block d-md-inline" width="100%" style="max-width: 130px;" src="/assets/img/gde-logo.png" alt="Google Developer Experts Logo" />
+          {% endif %}
         </div>
         <div class="col-9 col-sm-9 col-md-9 mb-2">
           <h2 class="h3">{{ user.name }}</h2>
           <p>{{ user.intro }}</p>
           {% if user.why_angular_de_team %}
-            <a class="text-muted" href="/team/{{user.permalink}}/">Mehr erfahren ...</a>
+          <a class="text-muted" href="/team/{{user.permalink}}/">Mehr erfahren ...</a>
           {% endif %}
         </div>
       </div>

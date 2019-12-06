@@ -6,7 +6,7 @@
   <main role="main">
     <div class="row">
       <div class="col-12 col-md-8  order-2 order-md-1">
-      {% if user.bio %}
+        {% if user.bio %}
         <div class="row" itemprop="description">
           <div class="col">
             {{user.bio}}
@@ -52,10 +52,9 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-md-8 mb-2">
-                  <img itemprop="image" alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130"
-                    src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg" width="130">
+                  <img itemprop="image" alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130" src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg" width="130">
                   {% if user.gde == true %}
-                  <img class="d-md-inline" style="max-width: 130px;" width="100%" src="/assets/img/gde-logo.png" />
+                  <img class="d-md-inline" style="max-width: 130px;" width="100%" src="/assets/img/gde-logo.png" alt="Google Developer Experts Logo" />
                   {% endif %}
                 </div>
                 <div class="col-8 col-sm-6 col-md-12 mb-2">
