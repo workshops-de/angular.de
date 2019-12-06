@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Declarations aus Spring REST API Metadaten generieren"
-description: "TypeScript Declarations aus Spring REST API Metadaten generieren und Datenmodelle zwischen Client und Server synchron halten."
+description: "TypeScript Declarations aus Spring REST API generieren und Datenmodelle zwischen Client und Server synchron halten."
 author: "Björn Wilmsmann"
 published_at: 2018-08-09 21:25:01.000000Z
 header_source: https://unsplash.com/photos/EhLH-WN7F7I
