@@ -348,7 +348,7 @@ Dieser `NavController` erlaubt uns mittels den Funktionen:
 - **present**(component, navOpts) - für Overlays, z.B. Alert, Modal
 - **setRoot**(page, params, navOpts) - Setzt Wurzel des Navigationsstacks
 
-den Navigations-Stack zu manipulieren. Alle weiteren Funktionen findet ihr in der [NavController Dokumentation](http://ionicframework.com/docs/v2/api/components/nav/NavController/#setRoot "NavController Dokumentation").
+den Navigations-Stack zu manipulieren. Alle weiteren Funktionen findet ihr in der [NavController Dokumentation](https://ionicframework.com/docs/v3/api/navigation/NavController/ "NavController Dokumentation").
 
 <div class="alert alert-danger">Achtung: Falls ihr den NavController auch in eurer <code>App Component</code> Klasse benötigt, ist dieser erst nach dem Initialisieren verfügbar und kann nicht einfach per Dependency Injection geladen werden! Nutzt als Alternative <code>@ViewChild</code> aus Angular2 und <code>Nav</code> aus *ionic-angular*</div>
 

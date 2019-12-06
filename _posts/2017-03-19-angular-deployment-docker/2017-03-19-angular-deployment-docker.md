@@ -147,7 +147,7 @@ Mit Circle CI besteht auch die Möglichkeit sogenannte Nightly-Builds durchzufü
 
 Um dies zu realisieren, muss die API von Circle CI z.B. per Scheduler angetriggert werden. Dies wird mit Hilfe eines POSTS durchgeführt. Innerhalb dieses Requests kann man Informationen mitliefern, die Circle CI erkennen lässt, dass es sich um einen Nightly Build handelt.
 
-Mehr hierzu findet Ihr unter der Doc vom [Circle CI](https://circleci.com/docs/nightly-builds/)
+Mehr hierzu findet Ihr unter der Doc vom [Circle CI](https://circleci.com/docs/)
 
 ## 3. Sauce Labs für eure E2E Tests
 
@@ -157,7 +157,7 @@ Falls euch dieses Thema tiefer interessieren sollte, empfehle ich euch meinen Ar
 
 ## 4. Dockercloud als Continuous Delivery Umgebung
 
-Mit [Dockercloud](https://cloud.docker.com) (ehemals Tutum) hat Docker eine Umgebung geschaffen, in welcher sich diese Dockercontainer mit ihren Applikationen sehr einfach von Dockerhub herunterladen, starten und veröffentlichen lassen. Als Basis lassen sich Machinedroplets von Digital Ocean, AWS o.ä. als Node in Dockercloud verlinken.
+Mit [Dockercloud](https://hub.docker.com) (ehemals Tutum) hat Docker eine Umgebung geschaffen, in welcher sich diese Dockercontainer mit ihren Applikationen sehr einfach von Dockerhub herunterladen, starten und veröffentlichen lassen. Als Basis lassen sich Machinedroplets von Digital Ocean, AWS o.ä. als Node in Dockercloud verlinken.
 
 ### Arbeiten mit unterschiedlichen Stacks
 

@@ -68,7 +68,7 @@ Da die Jungs von Ionic ja nicht auf den Kopf gefallen sind, werden die Komponent
 
 Es geht voran! Mit dem Release der Version 1.2 macht das Framework einen riesen Schritt zu mehr Stabilität (es wurden mehr als **100 Bugs** gefixt!!!) und einige Neuerungen eingeführt, die den Umstieg oder das Upgrade von v1.x-Apps auf die Version 2 erleichtern. Der neue Slider freut mich persönlich besonders, da sich damit viele "Kundenprobleme" in Luft auf lösen :).
 
-[Swiper]: <http://www.idangero.us/swiper/api/>
+[Swiper]: <http://swiperjs.com/>
 [iDangero.us]: <http://www.idangero.us/>
 [Ionic]: <http://ionicframework.com/>
 [Probleme]: <https://github.com/driftyco/ionic/issues?utf8mb4=%E2%9C%93&q=is%3Aissue+is%3Aopen+is%3Aclosed+slide>

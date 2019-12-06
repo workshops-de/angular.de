@@ -25,7 +25,7 @@ In diesem Artikel werden wir folgendes abdecken:
 
 - Testbeispiele: `Components`, `Services`, `Http+MockBackend`, `Directives`, `Pipes`, `Routes`, `Observables` und `EventEmitter`.
 
-Alle 26 Test-Specs zum selber ausprobieren und ändern findest du in diesem [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
+Alle 26 Test-Specs zum selber ausprobieren und ändern findest du in diesem [Plunker](https://next.plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
 
 *„Wir haben in diesem Beispielen [Jasmine](https://jasmine.github.io/) verwendet, es ist aber problemlos Möglich auch andere Test-Frameworks wie [Mocha](https://mochajs.org/) zu verwenden.*
 

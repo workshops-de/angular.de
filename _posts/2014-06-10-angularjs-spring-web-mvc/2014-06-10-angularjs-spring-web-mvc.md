@@ -133,7 +133,7 @@ zenQueryServices.factory('DatabaseConnection', function($resource, configuration
 });
 ```
 
-Hier wird über Dependency Injection ein *configuration* Objekt genutzt, um die URL des Backends je nach Umgebung individuell setzen zu können. Dies ist nötig, weil die AngularJS App während der Entwicklung über einen eigenen Grunt-Prozess unter Port 9000 gestartet wird, während sie in Produktion im Kontext der Java-Anwendung unter ihrem Port laufen wird. Um eine umgebungsspezifische Konfiguration umzusetzen, habe ich [Simon Baileys env-config Yeoman Generator](http://newtriks.com/2013/11/29/environment-specific-configuration-in-angularjs-using-grunt/) verwendet. Sehr nützliches Tool!
+Hier wird über Dependency Injection ein *configuration* Objekt genutzt, um die URL des Backends je nach Umgebung individuell setzen zu können. Dies ist nötig, weil die AngularJS App während der Entwicklung über einen eigenen Grunt-Prozess unter Port 9000 gestartet wird, während sie in Produktion im Kontext der Java-Anwendung unter ihrem Port laufen wird. Um eine umgebungsspezifische Konfiguration umzusetzen, habe ich [Simon Baileys env-config Yeoman Generator](http://archive.newtriks.com/2013/11/29/environment-specific-configuration-in-angularjs-using-grunt/) verwendet. Sehr nützliches Tool!
 
 ## mvn jetty:run
 

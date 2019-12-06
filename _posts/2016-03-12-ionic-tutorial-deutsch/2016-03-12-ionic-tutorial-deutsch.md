@@ -661,7 +661,7 @@ Die Benutzung von *ionReorderButton* und *ionDeleteButton* sind sich sehr ähnli
 ![Ionic Tutorial Extend List](ionic-list-delete.gif?v=63629079934)
 
 Programmatischen Zugriff auf eure Listen erhaltet ihr über den `$ionicListDelegate`-Service.
-Mit diesem lassen sich die Spezial-Buttons ein und ausblenden, Swipen der Listeneinträge unterbinden. Eine Funktionsübersicht erhaltet ihr auch in den [Ionic-Docs](http://ionicframework.com/docs/api/service/$ionicListDelegate/) des Services.
+Mit diesem lassen sich die Spezial-Buttons ein und ausblenden, Swipen der Listeneinträge unterbinden.
 
 Jetzt haben wir nur noch ein Problem - Listen können seeeeeeeeehr lang sein. Gerade in hybriden Apps ist das ein großer Nachteil und Performance-Killer - vor allem wenn noch Bilder im Spiel sind. Als Lösung hat Ionic eine eigene Listen-Komponente mit dem Namen `collectionRepeat` entwickelt, die versucht nur eine minimale Anzahl an Listenelemente in den DOM hängt und diese beim Scrollen wiederverwendet.
 
@@ -818,7 +818,7 @@ Im Template richten wir den Spinner noch zentriert aus und blenden den Listeninh
 
 ![Ionic Tutorial Loading Spinner](ionic-loading-spinner.png)
 
-Standardmäßig bestimmt Ionic die passende Ladeanimation. Darüber hinaus könnt ihr aber mit Hilfe einer CSS-Klasse eine eigene Ladeanimation als SVG erstellen oder einfach eine der vordefinierten [Spinner-Klassen](http://ionicframework.com/docs/api/directive/ionSpinner/) nutzen.
+Standardmäßig bestimmt Ionic die passende Ladeanimation. Darüber hinaus könnt ihr aber mit Hilfe einer CSS-Klasse eine eigene Ladeanimation als SVG erstellen oder einfach eine der vordefinierten [Spinner-Klassen](https://ionicframework.com/docs/v3/api/components/spinner/Spinner/) nutzen.
 
 
 ## Daten aktualisieren mit Pull-To-Refresh
