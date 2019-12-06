@@ -159,7 +159,7 @@ Wenn ich die Testfälle in Suiten aufteile, habe ich anschließend auch die Mög
 
 #### PROTRACTOR.CONF.JS
 
-Hier mal eine Protractor Konfigurationsdatei, welche das Testing lokal, sowie auch über SauceLabs unterstüzt. Als Testframework verwende ich hier [Jasmine](https://jasmine.github.io/). Zudem habe ich einen Testreporter mit integriert, welcher Screenshots erstellt und diese zusammen mit dem Test-Report lokal ablegt.
+Hier mal eine Protractor Konfigurationsdatei, welche das Testing lokal, sowie auch über SauceLabs unterstützt. Als Testframework verwende ich hier [Jasmine](https://jasmine.github.io/). Zudem habe ich einen Testreporter mit integriert, welcher Screenshots erstellt und diese zusammen mit dem Test-Report lokal ablegt.
 
 Dieses File wollen wir uns mal Stück für Stück ansehen:
 
