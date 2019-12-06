@@ -3,9 +3,9 @@ layout: base
 ---
 
 {% for user_hash in site.data.users %}
-  {% if page.author == user_hash[1].name %}
-    {% assign author = user_hash[1] %}
-  {% endif %}
+{% if page.author == user_hash[1].name %}
+{% assign author = user_hash[1] %}
+{% endif %}
 {% endfor %}
 
 <div class="header header-post shadow-sm d-flex align-items-center justify-content-center mb-5" style="background-image: url('{{page.header_image}}');">
@@ -20,7 +20,7 @@ layout: base
       <div class="col-md-12 col-lg-8 mb-2">
         <h1 class="header-post-title">{{ page.title }}</h1>
         <span>{{ page.author }}</span>
-          <span class="ml-1 mr-1">•</span>
+        <span class="ml-1 mr-1">•</span>
         {% include _reading_time.html text=page.content %}
       </div>
     </div>
@@ -37,14 +37,14 @@ layout: base
           <nav id="toc" data-toggle="toc"></nav>
           <hr>
           <div class="lead text-center">
-            Nix verpassen?
+            Nichts verpassen?
           </div>
           <div class="text-center">
-          <a class="btn btn-sm btn-primary mt-3" href="http://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=7e804310eb&group[21361][64]=1&group[20925][1]=1" target="_blank">
-            Zum Newsletter anmelden! <br>
-            💌
-          </a>
-        </div>
+            <a class="btn btn-sm btn-primary mt-3" href="http://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=7e804310eb&group[21361][64]=1&group[20925][1]=1" target="_blank">
+              Zum Newsletter anmelden! <br>
+              💌
+            </a>
+          </div>
         </div>
         <div class="position-sticky c-top-4">
 
@@ -54,16 +54,16 @@ layout: base
         <p class="text-muted">
           <small>
             {% for category in page.categories %}
-              <span class="text-uppercase">{{category}}</span>
-              {% unless forloop.last %}<span class="ml-1 mr-1">•</span>{% endunless %}
+            <span class="text-uppercase">{{category}}</span>
+            {% unless forloop.last %}<span class="ml-1 mr-1">•</span>{% endunless %}
             {% endfor %}
             <span class="ml-1 mr-1">|</span>
             {{ page.author }}
             {% if author.twitter %}
             <a href="https://twitter.com/{{ author.twitter }}" target="_blank" style="margin-bottom: 5px;">
-              <img src="/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo"/>
+              <img src="/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
             </a>
-          {% endif %}
+            {% endif %}
             <span class="ml-1 mr-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
             <span class="ml-1 mr-1">|</span>
             {% include _reading_time.html text=page.content %}
