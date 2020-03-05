@@ -52,6 +52,9 @@ markdown: kramdown
 sass:
   style: :compressed
   sass_dir: assets/css
+  sourcemap: never
+autoprefixer:
+  only_production: true
 plugins:
   - jekyll-feed
   - jekyll-sitemap
