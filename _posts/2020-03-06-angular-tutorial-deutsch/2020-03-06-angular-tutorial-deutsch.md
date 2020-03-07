@@ -157,12 +157,6 @@ Dann hat alles geklappt und wir könne im Browser `http://localhost:4200/` aufru
 
 ### Component
 
-### routing
-
-#### regular
-
-#### lazy
-
 ### Service
 
 #### HTTPClient
