@@ -144,7 +144,8 @@ cd angular-de-tutorial
 ng serve
 ```
 
-Wir sollten dann folgende ausgebe sehen
+Wir sollten dann folgende Ausgabe sehen:
+
 `Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ : Compiled successfully.`
 
 Dann hat alles geklappt und wir könne im Browser `http://localhost:4200/` aufrufen.
