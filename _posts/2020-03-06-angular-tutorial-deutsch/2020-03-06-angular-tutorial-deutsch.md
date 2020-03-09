@@ -2,16 +2,14 @@
 
 ## intro
 
-Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular.
+Dieses Tutorial erklärt euch die **Grundlagen** des Frameworks Angular.
 Wir behandeln hierbei Angular in der Version 9 und höher.
 Bewusst wird hierbei aber die Versionsnummer weggelassen, da das Framework nun semantische Versionierung benutzt.
 Kurz gesagt: Es ist einfach Angular.
 
-Weiterhin baut dieses Tutorial auf dem selben Code-Beispiel wie unser AngularJS 1 Tutorial auf - so können die Implementierungen leicht verglichen werden.
-Es ist aber nicht erforderlich das Angular 1 Tutorial vorher durchzuarbeiten.
+Es ist nicht erforderlich das Angular 1 Tutorial vorher durchzuarbeiten.
 Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen.
-Als Beispiel werden wir wieder eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von Angular kennenlernen.
-Da wir das selbe Szenario benutzen, könnt Ihr die Lösungen in AngularJS 1 und Angular direkt miteinander vergleichen.
+Als Beispiel werden wir eine Seite mit einer Userliste bauen und auf dem Weg die Kernelemente von Angular kennenlernen.
 
 ## Angular
 
@@ -322,7 +320,8 @@ export class AppModule {}
 ```
 
 In diesem Modul definieren wir potentielle Abhängigkeiten zu anderen Modulen und die Haupt-Komponente unserer Anwendung die `AppComponent`.
-Ihr könnt euch ein `NgModule` auch als Dependency-Container vorstellen.
+
+> Ihr könnt euch ein `NgModule` auch als Dependency-Container vorstellen.
 
 Angular nutzt für alle Elemente Klassen und Decoratoren um Metadaten zu definieren.
 
@@ -330,18 +329,106 @@ Angular nutzt für alle Elemente Klassen und Decoratoren um Metadaten zu definie
 
 > **Decorator** sind strukturierte Meta-Daten einer Klasse. Ihr kennt diese vielleicht aus anderen Programmiersprachen wie z.B. Java. Das eigentliche fachliche Verhalten der Komponente bilden wir innerhalb der Klasse mit Methoden ab. Somit haben wir das Model und die Anzeige-Logik der Komponente sehr sauber getrennt.
 
+Wir werden nach und nach noch tiefer in das Thema `NgModule` eintauchen.
+
 ### Component
 
----
+Schauen wir uns Komponenten an.
+Ich hatte weiter oben den Vergleich mit einer Tabelle gemacht. Unsere Applikation wird also in einer Root-Komponente starten.
+Diese wird per Default als AppComponnet bezeichnent.
+Eine Komponente ist ein UI element, ein DOM Element.
+Sie besteht aus einer Klasse in der die Logik zufinden ist, einem Template und Styling.
+Angular lehnt sich deutlich an die offiziellen Web-Components an.
+Wir definieren Components als HTML element.
+Deshalb liegt es auf der Hand, dass wir einfach ein neues HTML-Element einführen welches unsere Anwendung an dieser Stelle für uns generiert. In unserem Fall unsere Pizza-Anwendung.
 
-- was sind komponenten
-- wie sehen sie aud
-- woraus bestehen sie
-- was machne sie
+```ts
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
+})
+export class AppComponent {
+  title = "angular-de-tutorial";
+}
+```
 
----
+Eine Component wird wie ein `NgModule` über einen `Decorator` mit Metadaten versorgt.
+Ausserdem wird über diesen Decorator die Verbindung Zwischen der View (Template) und der Logik (Klasse) hergestellt.
+Damit wir diese Komponnete auch nutzen können, benötigt sie auch einen html-TAG, dieser ist als `selector` definiert.
+Das Template kann entweder inline im Decorator angegeben werden oder wie in unserem Fall in eine html Datei ausgelagert werden. Beide Wege sind gleich gut, es gibt hier keine Unterschiede.
+Um das Turorial möglichst einfach zu halten, werden wir hier mit inline-Templates arbeiten. Dafür müssen wir unsere app.componnet.ts anpassen:
 
-Angular lehnt sich deutlich an die offiziellen Web-Components an. Deshalb liegt es auf der Hand, dass wir einfach ein neues HTML-Element einführen welches unsere Anwendung an dieser Stelle für uns generiert. In unserem Fall unsere Pizza-Anwendung.
+```ts
+@Component({
+  selector: "app-root",
+  template: `
+    <h1>
+      Willkommen zum
+      {{ title }}!
+    </h1>
+  `
+})
+export class AppComponent {
+  title = "angular-de-tutorial";
+}
+```
+
+Um unser Template zu definieren, benutzen wir ein weiteres ES2015 Feature mit dem Namen `Template Strings`.
+
+> **Template-Strings** ermöglichen es uns sehr einfach mehrzeilige HTML-Templates innerhalb von JavaScript zu definieren. Es ist sogar möglich innerhalb dieser Strings Expressions zu verwenden, welche im aktuellen Kontext interpoliert werden. Für Weitere Informationen zu diesem Thema findet ihr z.B. auf der MDN Platform unter dem Kapitel [Template Strings Referenz](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings).
+
+Damit sollte die Ausgabe im Browser wie folgt aussehen
+
+> <h1>Willkommen zum angular-de-tutorial!</h1>
+
+Unsere AppComponnet wird in der index.html genutzt und zeigt uns auch direct wie wir mit zukünftigen Komponenten verfahren müssen um sie nutzen zu könen.
+
+```html
+<app-root></app-root>
+```
+
+Eine `Component` muss in einem `NgModule` deklariert sein um sie über den html-TAG einbinden zu können.
+
+> Meinem Tabellen vergleich folgend, wird unsere Applikation komplett in der AppComponent leben.
+
+In der Klasse einer Komponente wird die Logic definiert, wird können hier gerne den Begriff Controller benutzen, den wenn wir hier das MVC Pattern anwenden wollen, ist die Klasse genau das.
+Das Template der Component ist dabei das `V` und as Model lenrnen wir gleich kennen.
+
+> Im Controller solle nur die Logic definiert sein, die für diese Komponnete benötigt wird.
+
+Wenn ihr euch den Code angesehen habt, wird euch evtl etwas aufgefallen sein was ihr (wenn ihr schon mit AngularJS vertraut seid) evtl schon kennt. Ich rede von der expression Schreibweise (`{{}}`).
+Damit ist es möglich, Daten aus derm Controller in der View anzuzeigen. Diese Anzeige wird dank etwas was wir changedetection nennen immer Aktualisiert, wenn sich die Daten im Controller ändern.
+
+Wir wollen ja eine Userliste anzeige, dafür benötigen wir User. Ich habe mir erlaubt eine Nutzerliste aus der Starwars API zu holen. Diese werden wir **vorerst** in unserer AppComponent ablegen.
+
+Ihr könnt euch di Daten von [hier](./user.json) kopieren und im Klassenattribut `data` ablegen.
+
+```ts
+export class AppComponent {
+  title = 'angular-de-tutorial';
+  data = [
+    {
+      "name": "Luke Skywalker",
+      ...
+    }
+  ];
+}
+```
+
+Wenn wir diese daten jetzt anzeigen wollen wissen wir, dass wir dies als expression tun können.
+
+```ts
+{
+  {
+    data;
+  }
+}
+```
+
+Aber Objekte werden von Angular als Text geparst und alles was wir sehen ist
+
+`[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]`
 
 ### Service
 
