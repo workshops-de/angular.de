@@ -167,7 +167,7 @@ In der angular.json sind alle Applikatinonen die wir in unserem Ordner anlegen m
 
 ```json
 {
-"projects": {
+  "projects": {
     "angular-de-tutorial": {
       "projectType": "application",
       "schematics": {},
@@ -184,19 +184,15 @@ In der angular.json sind alle Applikatinonen die wir in unserem Ordner anlegen m
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
-          },
-          ...
+          }
+          // ...
         }
       }
-    }}
+    }
+  }
 }
 ```
 
@@ -206,10 +202,10 @@ Uns soll hier erstmal nur zwei informationen interessieren.
 
 ```json
 {
-  ...
+  // ...
   "index": "src/index.html",
-  "main": "src/main.ts",
-  ...
+  "main": "src/main.ts"
+  // ...
 }
 ```
 
@@ -406,11 +402,11 @@ Ihr könnt euch die Daten von [hier](./user.json) kopieren und im Klassenattribu
 
 ```ts
 export class AppComponent {
-  title = 'angular-de-tutorial';
+  title = "angular-de-tutorial";
   users = [
     {
-      "name": "Luke Skywalker",
-      ...
+      name: "Luke Skywalker"
+      // ...
     }
   ];
 }
@@ -456,9 +452,11 @@ Mit dieser Direktive können wir über eine Liste iterieren und ein DOM ELement 
 > Im Prinzip steckt dahinter eine for-of schleife wie wir sie aus JavaScript kennen.
 
 ```ts
-users = [...]
-for(let user of users){
-  console.log(user.name)
+users = [
+  // ...
+];
+for (let user of users) {
+  console.log(user.name);
 }
 ```
 
@@ -475,11 +473,19 @@ Wenn wir hier sowas wie ein Master-Detail Pattern implementieren wollen, benöti
 
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcYAAAIOCAMAAAAV711fAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAAEBAQICAgMDAwQEBAUFBQYGBgcHBwgICAkJCQoKCgsLCwwMDA0NDQ4ODg8PDxAQEBERERISEhMTExQUFBUVFRYWFhcXFxgYGBkZGRoaGhsbGxwcHB0dHR4eHh8fHyAgICEhISIiIiMjIyQkJCUlJSYmJicnJygoKCkpKSoqKisrKywsLC0tLS4uLi8vLzAwMDExMTIyMjMzMzQ0NDU1NTY2Njc3Nzg4ODk5OTo6Ojs7Ozw8PD09PT4+Pj8/P0BAQEFBQUJCQkNDQ0REREVFRUZGRkdHR0hISElJSUpKSktLS0xMTE1NTU5OTk9PT1BQUFFRUVJSUlNTU1RUVFVVVVZWVldXV1hYWFlZWVpaWltbW1xcXF1dXV5eXl9fX2BgYGFhYWJiYmNjY2RkZGVlZWZmZmdnZ2hoaGlpaWpqamtra2xsbG1tbW5ubm9vb3BwcHFxcXJycnNzc3R0dHV1dXZ2dnd3d3h4eHl5eXp6ent7e3x8fH19fX5+fn9/f4CAgIGBgYKCgoODg4SEhIWFhYaGhoeHh4iIiImJiYqKiouLi4yMjI2NjY6Ojo+Pj5CQkJGRkZKSkpOTk5SUlJWVlZaWlpeXl5iYmJmZmZqampubm5ycnJ2dnZ6enp+fn6CgoKGhoaKioqOjo6SkpKWlpaampqenp6ioqKmpqaqqqqurq6ysrK2tra6urq+vr7CwsLGxsbKysrOzs7S0tLW1tba2tre3t7i4uLm5ubq6uru7u7y8vL29vb6+vr+/v8DAwMHBwcLCwsPDw8TExMXFxcbGxsfHx8jIyMnJycrKysvLy8zMzM3Nzc7Ozs/Pz9DQ0NHR0dLS0tPT09TU1NXV1dbW1tfX19jY2NnZ2dra2tvb29zc3N3d3d7e3t/f3+Dg4OHh4eLi4uPj4+Tk5OXl5ebm5ufn5+jo6Onp6erq6uvr6+zs7O3t7e7u7u/v7/Dw8PHx8fLy8vPz8/T09PX19fb29vf39/j4+Pn5+fr6+vv7+/z8/P39/f7+/v///+KwXX0AAAAJcEhZcwAADsMAAA7DAcdvqGQAADAVSURBVHhe7Z0HvBTV9cfve4AgImINoNhrUAFLUDHGJFhixRLF2ECxEVRsSTQajRgT9a9YoxGVKKJGDaggFkSjREUFLAR7A7uo2CgKMv9zZu577547u2fP3Z1hdob7/Xxg7p3zO2/O2d/b2ZnZfTsq8BQAb2Mh8DYWAm9jIfA2FgJvYyHwNhYCb2Mh8DYWAm9jIRDZ+OzYsWMf0WM574+++HcXjv9ezzxpIrHxHYWcrWdCJvw0zFIdf/+NXuNJD4mNF4d+bKJnMk4Mc0J21auyZGifPifqYSGR2PiTyI4n9VTC4VHK2vjfj/W6LGmAOvSwkAiaewkeguXg36l6LuA6tK/NzW8F8yb2U1volVmC9ehhIRE0dw48BCfDv7X1PJjzMf7/8G0zwhnw1Wz8f9KdU8IZsD7I13kmGk88IVoGXz0zetpCPQ4WvxEOH5vwRjh9a+yDH4aDIFjy5iL4/7V7x38ZzSNeu++RJkEQfPwp/v/u6BfDmeaNMZO/0kNd0Nf3/jd6XZ4/H21csGBBOCsiAhs3g4cg/HWeFM2PUOrg4KYNYcVqJ4crLlKqR3A/7nrb7xeuuBHVV4TDZoZ3wZVqwzHh7BUYvjp3v7aw2Oez4KvjMLTj2xjB46kXZg3AFT2bduPTtm3E+aqnR9O+Sg0NRm4Kaxr+Hq0JFh61AirWvT2cQUGbBc/ugGuOh+lrOAg5LQwXkMo2PgntHxhsAP/rp9VvlOoVPu7AIFxxIexA4V/IrvNhxRAYtMdBM18cHIWBY3GONl6Le2qg90sbRYPVPoMI2nh56IlSyz+M2uDqaAZs/h+cwzHwPv31mmGh4pGN9bS5oLbRcZlSvwiC5/RQR4tIZRtPgfanBFfC/2tEK8BGfHK0wcdF3QErmiwMOQ9W4LnG7qG2iUMx1GUb/F9dCXO0Mc4FEInObjRbYu54HLXafiVcbIcr9KlMyJq4IugOo70uPrk1LO6HKSnov8aPPCVUF5DKNq4F7cMCH4Xx4QqwEZ4X44NHfgRL+GWPHrWVRi14dntYdoEVeIBKfvHvRcVoeM3C3JU+b7LxjzOe+nE4OPHZaTvCYlOQRo/5z2Z/dC4ucYtbwvJIWI7GFVfBILSx923vX4VLVODT9UBY/hOWO8EyLKjVpa9f0RWWQ4JgxgxcMW3adIgVk4o2PggPwFGw7AXLgeEatGJzsCK4BB8cOETBR20FfIjewBVjgwD3ln8OtZqtYAU+TSOH/6lt/BvMQ2/wGHgyLFeGZWjjJSjdHQb9g+B6WKyL8+BPMMKn406w3OYLGOCe9WpYdlNqLRQE+8MKOHQKbXwI5iNguTcGcAUui0rF5gbBA4BHoPiIrLgE16CN0YHKGjCCVyt81CLXdoYRPK5oI7noszKs+CAcDYMRGIo29sD5bBhEFuBOGg4l0caNwxX4HPtpEJwJi+gKwnsw6gxLtDE83LocBmfAESksNp+DYLGvGQW9CoPwfAeWy7aN+JIUDvCRuAsHLTbiwSnsKltsPApGZwYB7inxGdzElzDvEA3xIBb2kGhjz3AFvJ51Cwerwypi48MwWj96yo0KV4S/HnDkhDZOxfktMBgcBM/AooVHooLOR8GnMIAf4W28C/pvtzqCzxbYx5k27gaja0wbT4MRHM/uA4vdwhURz8N8w2iIP28Py8bohDRm47MwWiUItoPFxHBFsBoMZ0U2TsO5tvFmWLTwv6ig8BDW26hpOVFA2uBZRIuNvWEER4b02XhxEJwKi7b46qn5EOfR8AoYwiOPNvYKV4CN64QDw8aNwhX4bNwqCPrBYmS4YiGMWsHStnECLLoMHjx4yNAzzvwT7B3CgvCo19uo+SY8724B924tNuJL3sumjXjGfWcQ/B0W6qxwTUQ7mEeXa/D0BQ5g0EawCAAbowOYmI2XwuiAIBgKC9hRAy/CaANY2ja+DAt4EW0hbiPsShpwWVQq2HgTPA67Xxty3S4w7gfr0MYtPoLBGTDARx4ftQ54GDQGVzwHA7zwo59CwUiwC+fh47qwA4zujmzcOgyDjeuFA9xjahvDY9jwlff06PkbWhFeVegLS2Ij7MPnwWJFvHTQBBb0FxygjeFPx1+4F3BQUCrYuAe0f6se41mZgl0l2qh63j3vX61giaeH+KipTjfOm4AX6HZE6R24Rv32hqmTBvbCM8mLcPpgEMzZC5aoIDZGJpk2qvNefuFYXM6E41N8UR4Mx8h4BUI9DkrbxmBfWA6Yg2te/QdeXIjbuC0Mdv9o5tM4LiK8jfiipubpyfc4uV7b2MTzEAhtbCK6qokHP03gOUIPHKy6eTh/FOZo4zahEmzEHaVlo+YgDIS/A6oXPo+jiwoxG6djaJVdTty3e3RuG7fxEFQodTSOiwhvI14nia52I3i4AwegaOMm+KAA4Z4SH7X1ork6LlQGwel6DuAVmIfxiRrSiNdhKtmIbw8CPeCoExgYzYD+4XFTzMbwmEqDW4vb+EIYI2dBhYK38XhovWmfGgRjYdb2h9DGUVcuD/+vg4eF0aN23J140W6N8EUtJHzHQ6nWu+JV1yCYfyTuglXHXV4Jp691bDpSBfeaD3E6L9Q2vomnLK33bdoP3NgJV6qNb4imfZVqj3uB4FZYGdoYTNsjOhbrfCi+eYWXxf+Kqz9btek4+JY1MRyeTBaRCq+Nc+c2v0MILJo7d1H0bLw3WPz4+PBtRwBtPCMInhzzjl4RMW/qffdMNT5RNeuxR6MrOSHvv196ENoYBDPvD59vTXwxdczMH/QYlYujwSfNyUHw7mPjHn9Xjz9+v6m2FsGr9zwVvk1ZSCrYWIrIRgO0Mdy7JgHauIIee6QkZWP4UpQEaCO+S+JxoS5txDesPC6UtHFY387wYHrqkc59ow88UErY2B/OATx1TOvwHQpCzMZR4Wm2p67poN+5a8a2cbgWeuqb4dovjWXjqFDT0xJ56ojhPUOP6PPRshH3qO3Cy2WeuuUqfN9Pf5pCQ23ED0y002NP/YI+kuMcaiMeo/rnYv2Db1m01uMQYiN+bC36hIynvsHXR/P8kdjYF4L+6CYP4AkFfhCiCWIjXrvRQ099A07h2/FNENsg5m3MB5ZV3sZ84m0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBN7GQuBtLATexkLgbSwE3sZC4G0sBHVt46IF38yd8+Hst1+f+eK0Z578zyMPjr9n0oc65jGpOxv/d8LG63XrsnqnDu1a4/ZtthmndR4TfGj0EMnexml742bLstW9WucxwYdGD5HsbXx+X9xsWXqO1TqPCT40eohkb+NL++NmI1ovv+LKq3dde/2Nf9xj6959frbdj5Ta4t9a5zHBR0sPkext/N+BSm0yYs7cbxcu1muawVD3u/TEY1J3Nr58kFI//peeUDC0WenQsk7d2fhqf6U2vV1PKBjapHRoWafubHz9N0ptNFpPKGHoVj3xmNSdjW8eptQGo/SE8tbhELpFTzwmdWfj20cotd7NekJ550gI/VNPPCZ1Z+O7A5RaZ6SeUGYNhNBNeuIxqTsbZx+lVLcb9ITy3tFlQ8s6dWfjB8coteb1ekLBUNfSoWWdurPxo+OU6nKdnlAw1Ll0aFmn7mz85ASlfvR3PaFgaI3SoWWdurNxzm+VWv1qPaFgaLXSoWWdurPx8xOVWuVKPaEwoWWdurNx7slKdbpcTyhfDoXQcD3xmNSdjV+dolTHy/SE8vWpELpUTzwmdWfjN6cp1eH/9ITy7ekQukRPPCZ1Z+O8M5Rqf7GeUOb/DkIX6Um9MnvKW7gYu8vO+zwZrlgq1J2NC36vVLu/6gll4R+Uals6lCRPh7z45iI9d+IKeMzOhiX8xqmleFBtWZW9jd+fpdRyf9ETCobalA4lyOHYNtJq5yrOUQ+BxJ/Cclm3cfHZSrUepicUDLUqHUqQrbBtzU+f0CstXuq34w6l32oZAFm7wXJZt3HJn5Rq/LOeUDDUUDqUIKaNSp2n11Juh8hhekwZt2Wnje6G5bJuY3AubPVcPbZgQsmBNt4HZzdPnID9q+l6NQFt3F+PS7PM23h+o1Ln/KAnlPNblQ0lh7YRGNUehr8Mh8Di6aNfWBIN54+AwK8WLFgQTaeNu/XRN5vK+u7N+bgwbHx30h2Pfh4NUwO2loKN70x5R4/cuaC1Un8sfZR4QZuyoeRosTG4Ch+B6AMl07fDsdrpBRifGQ6Rl4LgrdM6h8PVLwyNvA2Gp8Oy2cYxPwnDB6ZrJG5CD5GqbZwzduwkPQwCODFQ1+ixMxcup9SZ3+kJ5cK2ZUPJYdgYrAfjo3BwJT4WIcOD4Ld6qNTk4HU9Ao5G4c0wGAzLJhuvDkNAup92xy3oIVK1jb1A2/wJmp1gcogeO/O3dkr9Xu+uLP62fNlQcpg2ngzjjWE5HZbq8OFHw/+d5gV/xFnIzGA8/N99j4M74WwCKC0bZ8Gi09nDj1k/RzY2f4KmL0zC302TW/rsuOeLesxxMbwinTFPTygXr1A2lBymjdfBuCssD4Ql7mwuheWfgmAGHmvtPW0atPNuw6CnUTkI1uBVe8tGdPlGjN/zCf6fGrCZxGwM60Wu27jTVo/rcTP4qyz5WNv/rajUad/oCeVSCJ36tZ6khWnjf2DcEWyDxabhCtir/xwW18OKA8IVTUyENUNhadmIL5XpX3dK1sYRelyaI0HxDz3muGwlpU75Sk8owyE09Es9SYutoc4mG++G8RpBcBcsBs9B4HBmA1iPNtJXjWmw5jewtGx8ChbqYNzbpgtuRg+RmmxsMWn+m9/r0axHb5/0GQ7mHwCKqxcsaDrQfOuex+fqIeXylZU6uXToCgid9IWepIVp40UwXg9OdGDRTBtYjzYeGUmCb284sM/68KJd0sbgIAyozdP+rDtuRA+Rqm3EXdG1ehxcDJPw7d37dsCfofp9FGwbDoDVQ8UJsHtUau1SO9krV1XqxNKH51dBaEj4S5Eipo3Hwnin6EJpM+vAejxv1C/+l8FprqaUjUuOCENqj09RnBq4CT1EarKx+RzjLzDBVwT8pQ25PdhUj1Q7WD95Cz1Rh4d6wtWrwwNRuulryoeSw7BxLhxSqTOD4CRY9Bk8ePCJp/7urHMfg8BIWBHZiAc9avtj/nwYLErZGATjdkOJOj6cpAVuQQ+Rmmy8So+bbPwEFh3+ePlxG4KN+OCErAJxPCP+1V9PxQfpzijD4NofQc8f6wnlWnhpKhNKDsPG32PBD8AzDhbk7epbYUVkI7aCfzj0JCxL2xgELx0Dk/Z6kg6wgdRsfAQW4TN0/Kzgixl7wuycadPeCIKbYLQHrMazsa0xTvhHF6WOLf19G//oWjaUHC02ng0j9WsYjIHlnuEqzdjmytsotREun4Y15WyMfuYrepwK8PNTsxG7b7mSjTZGFwg2g1Pi8Ookvm7EXupGrKnUoPf1hDJirbKh5MCH/LxJD145JHw5X/VNWPUlnt1H5w0zLn4J/8fQHd/BExV+59S7QfDpz2BZwsbrTg/L3VCptrhMDdhaajaG1z4ObPoGFPyGjfBvTJc0KLVuePg+FFZNC4MGN3ZT6qjZekK5ce2yoeRo3v0jy0Vf/DEcxxsccMxusDu4A+YL9XHN5AC/qWCDIQPhV6+kjeeqhoPOOrs3TLbHn5MauHk9RBK1Ub+Rvll0PIoNhzbODNc2cU8YNBi5rlID4Be8BBg6svqL7jJMG3dr2hMa3/KCNjZdj5scPBcNlFq/pI3XhDGgS/gJndTATeghkqyN4ZUbYJf3YHwwDEIb8Zy6hSm4yuRmeECOeFtPKLdA6PB0H4/osBRYaaP9L8D9p+aOjaLV3fFSDexR8Gqr6gJl3gIvEfCrOuU0pfpDYBS8WA6BJfjc+rog+GzgKhhWA/8XpqUGbkMPkYRtDB7YA3+IGghDPCQPbXwCBqvC4fuQoWeceU78D1JHwQvJYfiKFOdWCB0Kx0jp8g0SvwC/8JUJDzzZclniqyn3zYhGMyc+NgdX6MtLs6NvEFnc9Bo+9cEJU9N+IUjMRtwVlbARmhwMk0Y4ohkIy9DG2TDoEcZKMnpj2D29rieU2yB0yGt64jGAhzRdG4OgD8yeD4IhsDgjXAHHB42zwlEpbt8Udk+lj87vgNDBqR645xV4bBOzsf9No5FmG0eeEr7EbQ4z2NFcDotek1+DUzK8tnXIBxj6/Mb458Pv/DGcrM3UE8qd3cuGlnHgEU3MRs24Jhv/Cg/6H87By6q9QIFvvQFw/vQqLjv88qT9tojOril3g+0H6Jcdi7shoUxoGQcfUT1EErXxxmgOBzThjhA/ExCdBre8fW69a4eM2VKp/Uq/vzymR9nQMg4+lHqIVG3jb1dAOnTooNRT+DRsfVEQfD1oNfwR6ojokZ+xF07wiRnM6NcqjKzR/5kwZHJPT6X2hdfSEtzTq2xoGQcfTD1EqraRsrjpCHv6g/c/13K0/eGjE5tPF2Y9ft9/Sp4d3gfnLnvHru2E3AfP+b2n6kkaYMf1jC4zjhVMyMZaGL+tUns+pyeU+yG0x7N6kgbYcT2jy4xjBevAxgm9lfpVfF+LPACh3WOXfRIEO65ndJlxrGAd2Pjg9krtFn7aLMZDENr1KT1JA+y4ntFlxrGCdWDjw32U2qX0X3hOhFDf/+pJGmTTsQy2NitYlY2oq2d0mQLc1EsXtjYrSIRsogHq6hldpgA39dKFrc0KEiGbaIC6ekaXKcBNvXRha7OCRMgmGqCuntFlCnBTL13Y2qwgEbKJBlKdjCd3UWqHh/WE8tSuEHpIT2S41ZZsJ8nC1mYFiZBNNJDqZEzZXantHtATCoZ6lw6Vw622ZDtJFrY2K0iEbKKBVCfj2T2U+sn9ekLB0LalQ+Vwqy3ZTpKFrc0KEiGbaCDVyZi6V9kbimFoa7d7jbnVlmwnycLWZgWJkE00kOpkTN+n7A3FMNTL7V5jbrUl20mysLVZQSJkEw2kOhkv9FOqR+m/zWVC5XCrLdlOkoWtzQoSIZtoINXJwHuNlbmh2IwDIITfOiPHrbZkO0kWtjYrSIRsooFUJ4O5odjMX0Mo/sc7HG61JdtJsrC1WUEiZBMNpDoZzA3FXjkYQuGntsW41ZZsJ8nC1mYFiZBNNJDqZDA3FHvtEAjdpicy3GpLtpNkYWuzgkTIJhpIdTKYG4q9cahSG7r9/bVbbcl2kixsbVaQCNlEA6lOBnNDMQyt73avMbfaku0kWdjarCARsokGUp0M5oZiGFpX8qUsLbjVlmwnycLWZgWJkE00kOpkMDcUw9Dabvcac6st2U6Sha3NChIhm2gg1clgbiiGobXc7jXmVluynSQLW5sVJEI20UCqk8HcUCwMSb4iqQW32pLtJFnY2qwgEbKJBlKdDOaGYh8fD6Hmb98R4VZbsp0kC1ubFSRCNtFAqpPB3FDs08EQcvuGT7faku0kWdjarCARsokGUp0M5oZinw2BUPNfUYpwqy3ZTpKFrc0KEiGbaCDVyQhvKHaFnlC+OKlsqBxutSXbSbKwtVlBImQTDaQ6GcwNxTC0ktu9xtxqS7aTZGFrs4JEyCYaSHUymBuKYWiF01+cPvXZKU/994nHJk186KFKf+3oVluynSQLW5sVJEI20UCqK8f3T47991133HbrLf+86Ybrrxvet+wNxfBeY6233G+fvfbYfde+v9h5pz7b71zp0pxbbbV2kiZsbVaQCNlEA6muHAsu6rFF98022WiD9dZeq2vnNdqXvaEY3muMsmKl23mhSA8FuKmXLmxtVpAI2UQDqa4ci/Cb9AhlbiiG9xojNG7xrQ6VA1V6KMBNvXRha7OCRMgmGkh1Zfm4G/4IgzI3FFt02Sabdd+iR6+tt+29/Y47Lgd72FN0pCz40/RQgJt66cLWZgWJkE00kOrKsugopRo6HXr4kQOPPua4E4acNPT0iTpCWfLibXfcefeYe8fd/8BDE/+FNv5HR8riVlvNnaQIW5sVJEI20UCqK8/D8BPaPf3WO7Pe++CjTz774suvm76qnOEeyFm/9B0CDNxqc1MvXdjarCARsokGUl15vl4HfoTbh2yCwxuUOkHfNKo8brXV3kl6sLVZQSJkEw2kOobjG5U6wOkmYnPXBhsf8jZGWEEiZBMNpDqGR+GFbmWn7y2e0FapdfCbE3ncakugk9Rga7OCRMgmGkh1DN90h6fjTS43gzu2jVJHV75flVttCXSSGmxtVpAI2UQDqY7j1HZK7VPpJNBg7mbg+5jKR0JutSXRSVqwtVlBImQTDaQ6jsmdlFrptYovdc1MAH23dyrr3WpLopO0YGuzgkTIJhpIdRzf/qS1UteENyIVcdzySg0Q3K7KrbYkOkkLtjYrSIRsooFUx3LWikrtXvmQRfP5lq1U410L9YzBrbZEOkkJtjYrSIRsooFUxzKlq1Idp0nPOR7oDMepkn2wW22JdJISbG1WkAjZRAOpjmX+z+Gc45LSN/yLM7SjUkdI7mzpVlsinaQEW5sVJEI20UCq4xm2ilK/FH5F/twdWqvGWyT3VXWrLZlO0oGtzQoSIZtoINXxTN1QqQ5PyE4dJ60Hx6nTJce1brUl00k6sLVZQSJkEw2kOp4Fe7dV6nzZ3RnPgmduf9Ez1622ZDpJB7Y2K0iEbKKBVFeBS+CwZSfRXTa+2qWNarxOdJNjt9oS6iQV2NqsIBGyiQZSXQVe2FKpFSYI3qIKnthMqa6TRUe1brUl1EkqsLVZQSJkEw2kugosPBhO6c+U3GXzgh8ptV/pG+fYuNWWUCepwNZmBYmQTTSQ6ipxVTeltir9ZfGEr/stpxovLX0Xaxu32pLqJA3Y2qwgEbKJBlJdJV7bQal2oyu/a/H01kp1flB2pcCttqQ6SQO2NitIhGyigVRXie8Hw0n98ZXvz3jpmkrtKbw5jlttSXWSBmxtVpAI2UQDqa4it26i1OaT9aQs3x7aVjWeL7z86lZbYp2kAFubFSRCNtFAqqvI27so1fb6ShdnnttRqdX/Hd0lsSJutSXWSQqwtVlBImQTDaS6iiw6Y2WlBlQ6dfz7ekr1LX2/lThutSXWSQqwtVlBImQTDaS6ytwNp46bVvj64nnHLa8a/yC9+79bbcl1kjxsbVaQCNlEA6muMrP7KbXcZfxnOV6APe+qt0g/tuNWW3KdJA9bmxUkQjbRQKqrzKJzV1WqP38QOnIjpXaqeBzUhFttyXWSPGxtVpAI2UQDqU7AuG2U2nCMnpTk21Paq4aTxJ+FdKstwU4Sh63NChIhm2gg1Qn44FCl2gzjLnpP/xXsU68TfxTSrbYEO0kctjYrSIRsooFUJ2DxJWso1Y+7IHfLxkr99DE9qYxbbQl2kjhsbVaQCNlEA6lOAt5obF3mSxrnnQnHqYPlny93qy3JTpKGrc0KEiGbaCDVSfj4WKVa/6H8Jxdn7I9fxiE89wfcakuyk6Rha7OCRMgmGkh1En64potSu5e/R+Nd3ZXa7kE9EeBWW5KdJA1bmxUkQjbRQKoT8fgvlepW9nvhFlzQXjUe+a6eCXCrLdFOEoatzQoSIZtoINWJmHOKUq2GfKFnNq/CkWynC+X7VMfaEu0kYdjarCARsokGUp2IH/65llI7l/tj8PE9ldrqHj2R4FZbop0kDFubFSRCNtFAqpMxBU4Mu5T5KqqFl6+gGg98U88kuNWWbCfJwtZmBYmQTTSQ6mR8cQ7sVQeU/qDjW8co1fGPLn8G6VZbsp0kC1ubFSRCNtFAqpOx5K51lPrJBD2jTNpWqc2dviPArbZkO0kWtjYrSIRsooFUJ+SlX8Op4Tl6QvhuxIqqcU/RR1mbcKst4U4Sha3NChIhm2gg1Qn55rJWqrHfe3pmMvtEpToMddmnOtaWcCeJwtZmBYmQTTSQ6oQseWgTpbYs9TbHUzsotbG/gUMJrCARsokGUp2U1wcotdKpemKw6PaOquHnM/VMhlttSXeSJGxtVpAI2UQDqU7KvOtbqYZd4pdqPvy9Uu0HSf46oAW32pLuJEnY2qwgEbKJBlKdmCe6K7Vp/G5jz/9MqXVL3xOgLG61Jd5JgrC1WUEiZBMNpDox7x4PhzLH6kkzi8etpBp6v6BnQtxqS7yTBGFrs4JEyCYaSHViFtwOe9Ud3tKzJuacp1S7/m77VMfaEu8kQdjarCARsokGUp2caT2UWm+knjTxcl+l1rxcT6S41ZZ8J8nB1mYFiZBNNJDq5Hw4FA5mfqMnmsUPdVANW07VMylutSXfSXKwtVlBImQTDaQ6Od+Ng73qlvQvGD8fBvvU/b/TMylutSXfSXKwtVlBImQTDaQ6B17ZWqmu9KD0zV8o1dntXiqAW20pdJIYbG1WkAjZRAOpzoHPzoSn3j56ErL4yRVVwyaOx6mutaXQSWKwtVlBImQTDaQ6BxY91lo1bPiqniFfX6rUcrs6XU9F3GpLoZPEYGuzgkTIJhpIdS7M6q3UauYu9IPdlFrlb3oix622NDpJCrY2K0iEbKKBVOfCV39Wqs0v9AT44cWOqqGb9M/hWnCrLY1OkoKtzQoSIZtoINW58MPU1nCQ8z89C4L51yrVuo/juT/gVlsanSQFW5sVJEI20UCqc2JOH6U6ttzj6Iu9lOpwnp444FZbKp0kBFubFSRCNtFAqnNi/sXw9Ovd9LVwS95eSTWs+rSeOeBWWyqdJARbmxUkQjbRQKpzYskrsFft+IyefX+zUq16uO9THWtLpZOEYGuzgkTIJhpIdW7M2xXOMH6nJ/P3h8kf9MQFt9rS6SQZ2NqsIBGyiQZSnRuLRyg4ddRfYvRJJ9XQXvwnxgZutaXTSTKwtVlBImQTDaQ6Rz5rB6+Oj4fDJXeCpetXsU91rC2lThKBrc0KEiGbaCDVObJkX/DuxGjcHzZxcjR0w622lDpJBLY2K0iEbKKBVOfKqEal1gyfgl+v2qBaPRqudMSttrQ6SQK2NitIhGyigVTnyjcdG5R6GM857m2jVDeHe+a04FZbWp0kAVubFSRCNtFAqnPmYDjnOA6fjgNgMLial0bH2lLrJAHY2qwgEbKJBlKdM/9qr1SXuUHw7dqNqtU4h79qbMGtttQ6SQC2NitIhGyigVTnzLddYa86dlFwf0elukruuhHHrbbUOkkAtjYrSIRsooFU585AOOcY8HVwFCwGib4hPoZbbel1UjtsbVaQCNlEA6nOnTGrNKjOs7/aoFG1/rfrp3Ai3GpLr5PaYWuzgkTIJhpIde7M2xTOOUb/a3Wl1hHeL8fGrbb0OqkdtjYrSIRsooFUVwW/7aDUbw6C/wbJ7rMSw622FDupGbY2K0iEbKKBVFcF49dsUGusCMepd1T+JvmSuNWWYic1w9ZmBYmQTTSQ6qpg/jawVwXWfFmvcMWtNjf10oWtzQoSIZtoINVVA35tNXD4B3ruilttbuqlC1ubFSRCNtFAqquGhzaAU0fV6qaqrsQBbrWl2UmtsLVZQSJkEw2kumpYsHMr+Old3D8Sp3GrLc1OaoWtzQoSIZtoINVVxZ/gbEMdZP+RnBi32lLtpEbY2qwgEbKJBlJdVTy2eYNqvEp6s9wYbrWl2kmNsLVZQSJkEw2kuqpY0G85tUa5r5CrjFttqXZSI2xtVpAI2UQDqa46Lu+m+lV7uuFaW7qd1AZbmxUkQjbRQKqrjqnbN/7tcz12x622dDupDbY2K0iEbKKBVFcd3x+x5njJzahL41Zbup3UBlubFSRCNtFAqquSG06crkdV4FZbyp3UBFubFSRCNtFAqquSV574VI+qwK22lDupCbY2K0iEbKKBVFclPyyufp/qWFvKndQEW5sVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCt9py24kVJEI20UCqywK32nLbiRUkQjbRQKrLArfactuJFSRCNtFAqssCprbbh7+nR83ktJNYkAjZRAOpLguY2s5VakfLyZx2EgsSIZtoINVlAVMb2AgQJxl15rC1WUEiZBMNpLosYGqLbARanMSZHtYdbG1WkAjZRAOpLguY2pptBHa8dg6uwmEYq0PY2qwgEbKJBlJdFjC1oY0dMB7Suu+IOXntJBYkQjbRQKrLAqY2tPHcN4b1RElI6774v47WHWxtVpAI2UQDqS4LmNpCG2FpOgmEe9c6BGvTwzhWkAjZRAOpLguY2ppsBF45e0MUhoR71zoEa9PDOFaQCNlEA6kuC5jaDBuB5+vdSSxMD+NYQSJkEw2kuixgaqM2As+fjeqI+nMSq9LDOFaQCNlEA6kuC5jaYjZG6mZa7zXqG72+HsCS9DCOFSRCNtFAqssCprYyNpp713b96sdJrEcP41hBImQTDaS6LGBqK2MjLOrSSSxG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">
 
-Um Weitere Components zu generieren nutzen wir die CLI (und nutzen hier im Tutorial weiter die inline Templates)
+Um Weitere Components zu generieren nutzen wir die CLI (und nutzen hier im Tutorial weiter die inline Templates),
 
 ```bash
 ng generate component liste --inline-template true
 ng generate component details --inline-template true
+```
+
+was folgende Auswirkungen hat (Ich unterschlage hier mit absicht alle generiereten `*.spec.ts`, `*.css` Dateien, da diese un in diesem Tutorial nicht interessieren):
+
+```bash
+CREATE src/app/liste/liste.component.ts
+CREATE src/app/details/details.component.ts
+UPDATE src/app/app.module.ts
 ```
 
 Mit diesen beiden Befehlen werden die benötigten Dateien generiert und die Komponenten werden auch gleich im AppModule Declariert.
@@ -592,9 +598,11 @@ Aussen ist dann das selbe zu tun. Wir definieren eine Methode `setSelectedUser` 
 
 ```ts
 export class AppComponent {
-  title = 'angular-de-tutorial';
+  title = "angular-de-tutorial";
   selectedUser;
-  users = [...];
+  users = [
+    // ...
+  ];
 
   setSelectedUser(u) {
     this.selectedUser = u;
@@ -652,9 +660,7 @@ Wenn wir jetzt auf einen Listeneintrag klicken, werden die Details dazu angezeig
 
 Aber wenn wir uns die Entwicklerkonsole vom Browser anschauen, ist sie voller Fehler!.
 
-> <label style="color:red">ERROR TypeError: Cannot read property 'name' of undefined
-
-    at DetailsComponent_Template ...</label>
+> <label style="color:red">ERROR TypeError: Cannot read property 'name' of undefined at DetailsComponent_Template ...</label>
 
 Das Problem ist, wir versuchen auf daten zuzugreifen, die nicht da sind. Initial ist `selectedUser` nicht definiert (`undefined`).
 Aber hier gibt es einen einfachen trick.
@@ -673,6 +679,86 @@ Damit werden die Details aus demTemplate rausgenommen, regelrecht rausgeschnitte
 In einer Applikation kommen die Nutzerdaten aber selten (bis nie) aus der GUI. Wir wollen auch hier die Nutzer aus einem Backend laden.
 Die Daten wollen wir von der offenen API (https://swapi.co/api/people) laden.
 
+In Angular gibt es Services. Das sind einfache Javascript Klassen.
+Diese Services dienen dazu, Logic und Daten ausserhalb von Components zu halten oder gar zwischen ihnen zu sharen.
+In Services kann ich auch andere Services nutzen.
+
+#### DependencyInjection
+
+Das beste an Services ist, das ich mich nicht um die Instanziierung kümmern muss.
+Darum kümmert sich Angular mit `DependencyInjection` (DI). Ich sage lediglich, dass ich eonen Bestimmten Service brauche und Angular sorgt für die Instatnziierung und bereitstellung. Das Feature kennt ihr warscheinlich aus anderen Programiersprachen.
+So muss ich nichtwissen wie ein Service instanziiert werden muss, ich fordere ihn nur an.
+
+Wir Wollen die User mit einem Service aus vion der API abrufen.
+Dafür generieren wir uns einen Service,
+
+```bash
+ng generate service user
+```
+
+was folgende Auswirkungen hat (Ich unterschlage hier mit absicht alle generiereten `*.spec.ts`, `*.css` Dateien, da diese un in diesem Tutorial nicht interessieren):
+
+```bash
+CREATE src/app/user.service.ts
+```
+
+Schauen wir uns den Service mal an:
+
+```ts
+import { Injectable } from "@angular/core";
+
+@Injectable({
+  providedIn: "root"
+})
+export class UserService {
+  constructor() {}
+}
+```
+
+Wir sehen auch hier wieder einen Decorator, dieser registriert unseren UserService für die `DependencyInjection`, zusätzlich gint er auch gleich an, wo der Service Instatziiert werden soll, was direkte Auswirkung darauf hat wer den Service alle sehen und nutzen kann.
+Das passiert über `providedIn: 'root'`. Das sagt aus, dass der Service global in unserer APP gehostet wird, was bei unserer Kleinen Anwendung erstmal logisch erscheint.
+
+> Wir könnten den Service auch eine Ebene höher im Window Object hosten, so könnten sich mehrer Apps einen Service teilen.
+
+Im Service können wir jetzt methoden (als API) definieren.
+
+```ts
+export class UserService {
+  constructor() {}
+
+  getUsers() {}
+}
+```
+
 #### HTTPClient
+
+Ein wichtiger Bestandteil von Web-Anwendungen ist die Kommunikation mit Schnittstellen. Typischerweise basieren diese Schnittstellen auf dem HTTP-Protokoll. Für diesen Zweck existiert ein `HttpClient`-Service innerhalb des Angular-common Modules. Dieses können wir von `@angular/common/http` importieren und unserem AppModule hinzufügen.
+Dadurch haben wir in unserer Applikation zugriff auf den `HttpClient` aus dem `HttpClientModule`
+
+```ts
+import { HttpClientModule } from "@angular/common/http";
+
+@NgModule({
+  // ...
+  imports: [BrowserModule, HttpModule]
+  // ...
+})
+export class AppModule {}
+```
+
+Diesen `HttpClient` wollen wor in unserem `UserService` nutzen.
+Wie bekommen wir den in unseren `UserService`?
+Richtig über DependencyInjection.
+Die Schreibweise ist denkbar einfach.
+Beim instanziieren von Klassen wird, wie in fast allen Programmiersprachen, der `constructor` ausgeführt, darin können wir Services anfordern. die Syntax:
+
+```ts
+constructor(private http: HttpClient) {}
+```
+
+Damit wird zum Zeitpunkt der instanziierung ein privates Klassen attribute `http` angelegt die einen Referenz auf den `HttpClient` hält.
+Dieser `HttpClient` bietet für alle HTTP Verben (GET, PUT, PATCH, POST, DELETE) eine Methoden an.
+
+#### Observables
 
 ### pipe
