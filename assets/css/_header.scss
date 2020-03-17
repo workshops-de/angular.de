@@ -23,12 +23,12 @@
     border-bottom: 1px solid #efefef;
     color: #333;
     padding-bottom: 15px;
-    padding-top: 100px;
+    padding-top: 140px;
     margin-bottom: 40px;
   }
 
   &.header-tutorials {
-    padding: $spacer*8 0 $spacer*4;
+    padding: $spacer*11 0 $spacer*4;
     margin-bottom: $spacer*4;
   }
 
@@ -54,13 +54,13 @@
     border-bottom: 1px solid #efefef;
     color: #333;
     padding-bottom: 15px;
-    padding-top: 100px;
+    padding-top: 140px;
     margin-bottom: 40px;
     background: url('/assets/img/headers/header-bg-angular.png');
     background-size: cover;
     background-position: center center;
     color: #333;
-    padding: $spacer*8 0 $spacer*6;
+    padding: $spacer*11 0 $spacer*6;
 
     .header-homepage-title {
       line-height: 4.5rem;
@@ -86,7 +86,7 @@
   background-color: #fcfcfc;
   border-bottom: 1px solid #efefef;
   color: #333;
-  padding-top: 100px;
+  padding-top: 140px;
   padding-bottom: 100px;
   margin-bottom: 0px;
   background: url('/assets/img/headers/header-bg-neutral.png');
@@ -116,7 +116,7 @@
 
 
 .header-workshop-advanced {
-  padding-top: 100px;
+  padding-top: 140px;
   background: url('/assets/img/schulungen/angular-enterprise-applications/header-bg.jpg');
   background-size: cover;
   background-position: center center;
@@ -146,7 +146,7 @@
   background: url('/assets/img/headers/team.jpg');
   background-size: cover;
   background-position: center center;
-  padding-top: 150px;
+  padding-top: 200px;
   padding-bottom: 100px;
 }
 

@@ -1,6 +1,18 @@
+.navbar-wrapper {
+  background-color: #fff;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar-banner {
+  font-size: 1rem;
+  text-align: center;
+  padding: .6rem 1.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
 .navbar-ajs {
   background-color: #fff;
-  border-bottom: 1px solid #eee;
 
   .nav-link {
     position: relative;

@@ -15,6 +15,20 @@ h6,
 
 // Misc
 //==================================================
+.has-navigation-fixed {}
+
+.pt-8, .py-8 {
+  padding-top: 8rem;
+}
+
+.pt-9, .py-9 {
+  padding-top: 9rem;
+}
+
+.mt-8, .my-8 {
+  margin-top: 8rem;
+}
+
 .c-post-categories {
   position: absolute;
   left: $spacer;
