@@ -1,19 +1,36 @@
-> This article aims to describe how you can set up **end-to-end testing** for **Angular** with **Cypress** including **TypeScript**. You will write your very first **e2e tests** and make them ready to run on a **CircleCI** as a continuous integration system with every update to your repository.
+> Der folgende Artikel möchte dir zeigen, wie du *End-to-End Testing* für *Angular* mit *Cypress* und *TypeScript* aufsetzt. Du wirst erste E2E Tests schreiben und sie zur Ausführung auf *CircleCI* als Continunous Integration System vorbereiten, sodass sie mit jedem Push auf dein Repository ausgeführt werden.
 
-# Before we start: What is an e2e test?<a name=e2e"></a>
+<!-- > This article aims to describe how you can set up **end-to-end testing** for **Angular** with **Cypress** including **TypeScript**. You will write your very first **e2e tests** and make them ready to run on a **CircleCI** as a continuous integration system with every update to your repository. -->
+
+# Bevor wir starten: Was ist ein E2E Test?
+> End-to-End *(kurz E2E)* Testing ist eine Art des Software Testings, welches nicht nur das Software System an sich validiert, sondern auch dessen Zusammenspiel mit externen Schnittstellen und deren Intergation. End-to-End Tests schreibt man, um vollständige, Szenarien, die einem Produktivsystem entsprechen durchzuspielen
+
+*Quelle (frei übersetzt): https://www.guru99.com/end-to-end-testing.html*
+
+<!-- # Before we start: What is an e2e test?<a name=e2e"></a>
 > End-to-end *(short e2e)* testing  is a type of software testing that validates the software system along with its integration with external interfaces. The purpose of end-to-end test is to exercise a complete production-like scenario.
 
-*Source: https://www.guru99.com/end-to-end-testing.html.*
+*Source: https://www.guru99.com/end-to-end-testing.html.* -->
 
-# Overview
+# Überblick
+- [Was ist Cypress?](#cypress)
+- [Vorbedingungen](#pre)
+- [Cypress aufsetzen](#setup)
+- [Erste Tests](#tests)
+- [Continuous Integration aufsetzen](#ci)
+- [Fazit und Referenzen](#summary)
+
+<!-- # Overview
 - [What is Cypress?](#cypress)
 - [Prerequisites](#pre)
 - [Setting up Cypress](#setup)
 - [Writing Some Tests](#tests)
 - [Setting up Continuous Integration](#ci)
-- [Conclusion and References](#summary)
+- [Conclusion and References](#summary) -->
 
-I have a frontend development background in [Microsoft's .NET & WPF](https://docs.microsoft.com/en-US/dotnet/framework/wpf/) and remember the times where we evaluated costly frameworks to write end-to-end tests for our projects. After a lot of evaluations and weeks, even months of custom glue code and development of test infrastructures on top of existing tools, we finally got some e2e tests running. They were brittle, often failed because of manual adjustments we had to do or problems with flaky runners in the continuous integration pipeline.
+Früher habe ich in der Frontend Entwicklung mit [Microsofs .NET und WPF](https://docs.microsoft.com/en-US/dotnet/framework/wpf/) gearbeitet und erinnere mich noch gut an die Zeiten, in denen wir teure Frameworks zum Schreiben von End-to-End Tests für unsere Projekte evaluiert haben. Nach vielen Wochen, sogar Monaten der Evaluation, der Entwicklung von speziellem *Glue-Code* oder einer eigenen Test Infrastruktur auf Basis bereits existierender Werkzeuge, hatten wir es endlich geschafft unsere E2E Tests zum Laufen zu bekommen. Leider waren sie ziemlich brüchig und sind oft fehlgeschlagen, weil wir händische Anpassungen machen musste oder Probleme hatten mit unzuverlässigen Test Runnern in unsere Continuous Integration Pipeline.
+
+<!-- I have a frontend development background in [Microsoft's .NET & WPF](https://docs.microsoft.com/en-US/dotnet/framework/wpf/) and remember the times where we evaluated costly frameworks to write end-to-end tests for our projects. After a lot of evaluations and weeks, even months of custom glue code and development of test infrastructures on top of existing tools, we finally got some e2e tests running. They were brittle, often failed because of manual adjustments we had to do or problems with flaky runners in the continuous integration pipeline. -->
 
 Some years later with [Angular](https://angular.io/) and [Protractor](https://www.protractortest.org/#/) as a default for e2e tests, we were still based on [page objects](https://www.protractortest.org/#/page-objects), [Selenium Web Driver](https://www.selenium.dev/) and the tests continued to be rather unreliable. No expensive commercial frameworks and custom infrastructure were needed. But was it fun to write e2e tests? No.
 
