@@ -1,7 +1,7 @@
 <section class="copy-section py-6" id="Anfrage">
   <div class="container">
     {% include_relative _includes/_section_header.html cols="11"
-         feature="Termine & Inhouse-Buchung"
+         feature="Termine, Inhouse & Remote-Buchung"
          benefit="Hier kannst du buchen."
     %}
 
@@ -14,76 +14,72 @@
       </div>
     </div>
 
-      {% for event in site.data.events.angular-intensiv limit:6 %}
-      <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
-        <div class="col-4">
-          <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span class="mr-2">{{ event.endDate | date: "%d.%m.%Y" }}</span>
-          {% if event.bookingsStatus == "BOOKED" %}
-            <span class="badge badge-danger">ausgebucht</span>
-          {% elsif event.bookingsStatus == "ONE_LEFT" %}
-            <span class="badge badge-danger">Nur noch 1 Platz</span>
-          {% elsif event.bookingsStatus == "FEW_TICKETS_LEFT" %}
-            <span class="badge badge-danger">Fast ausgebucht</span>
-          {% elsif event.bookingsStatus == "SOME_TICKETS_LEFT" %}
-            <span class="badge badge-warning">Wenige Plätze frei</span>
-          {% elsif event.bookingsStatus == "TICKETS_LEFT" %}
-            <span class="badge c-badge-free">Noch freie Plätze</span>
-          {% endif %}
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col-sm-9">
-              <a class="underlined" href="{{ event.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list"
-                target="_blank">
-                Intensiv-Schulung · <span class="d-none d-sm-inline">{% assign m = event.startDate | date: "%-m" %} {% case m %} {% when '1' %}Januar {% when '2' %}Februar
+    {% for event in site.data.events.angular-intensiv limit:6 %}
+    <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
+      <div class="col-4">
+        <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span class="mr-2">{{ event.endDate | date: "%d.%m.%Y" }}</span>
+        {% if event.bookingsStatus == "BOOKED" %}
+        <span class="badge badge-danger">ausgebucht</span>
+        {% elsif event.bookingsStatus == "ONE_LEFT" %}
+        <span class="badge badge-danger">Nur noch 1 Platz</span>
+        {% elsif event.bookingsStatus == "FEW_TICKETS_LEFT" %}
+        <span class="badge badge-danger">Fast ausgebucht</span>
+        {% elsif event.bookingsStatus == "SOME_TICKETS_LEFT" %}
+        <span class="badge badge-warning">Wenige Plätze frei</span>
+        {% elsif event.bookingsStatus == "TICKETS_LEFT" %}
+        <span class="badge c-badge-free">Noch freie Plätze</span>
+        {% endif %}
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-sm-9">
+            <a class="underlined" href="{{ event.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list" target="_blank">
+              Intensiv-Schulung · <span class="d-none d-sm-inline">{% assign m = event.startDate | date: "%-m" %} {% case m %} {% when '1' %}Januar {% when '2' %}Februar
                 {% when '3' %}März {% when '4' %}April {% when '5' %}Mai {% when '6' %}Juni {% when '7' %}Juli {% when '8'
                 %}August {% when '9' %}September {% when '10' %}Oktober {% when '11' %}November {% when '12' %}Dezember {%
                 endcase %}</span>
-              </a>
-              <span class="d-block d-lg-inline">
-                <span>in</span>
-                <span itemprop="location" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
-                <span>
-                  {% if event.early_bird == true %}
-                    <span class="badge badge-info"><small>Frühbucher Rabatt</small></span>
-                  {% endif %}
-                </span>
+            </a>
+            <span class="d-block d-lg-inline">
+              <span>in</span>
+              <span itemprop="location" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
+              <span>
+                {% if event.early_bird == true %}
+                <span class="badge badge-info"><small>Frühbucher Rabatt</small></span>
+                {% endif %}
               </span>
-              <meta itemprop="name" content="🅰️ Angular Intensiv Kurs">
-              <meta itemprop="url" content="{{ event.url }}">
-            </div>
-            <div class="col-sm-3 text-right">
-              <a class="btn btn-success btn-sm btn-cta shadow" href="{{ event.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list#booking"
-                target="_blank">anmelden</a>
-            </div>
+            </span>
+            <meta itemprop="name" content="🅰️ Angular Intensiv Kurs">
+            <meta itemprop="url" content="{{ event.url }}">
+          </div>
+          <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm btn-cta shadow" href="{{ event.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list#booking" target="_blank">anmelden</a>
           </div>
         </div>
       </div>
-      {% endfor %}
-      <hr>
-      <div class="row">
-        <div class="d-none d-md-block col-1"></div>
-        <div class="col-4 text-muted">
-          Termin flexibel<br>
-          <small class="d-none d-sm-inline">Standarddauer 3 Tage</small>
-        </div>
-        <div class="col-8 col-sm-7">
-          <div class="row">
-            <div class="col-12 col-sm-9">
-              <a class="text-unstyled" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript/inhouse?utm_source=https://angular.de/schulungen/angular-intensiv/?utm_campaign=website-link-inhouse&utm_medium=link&utm_content=workshops-list"
-                target="_blank"> <span class="sr-only">Angular &amp; TypeScript</span> Firmenschulung Inhouse
-              </a> <br>
-              <small class="d-none d-sm-inline"> Termine und Preise auf Anfrage </small>
-              <small class="d-inline d-sm-none"> Auf Anfrage </small>
-            </div>
-            <div class="col-12 col-sm-3 text-right">
-              <a class="btn btn-primary btn-sm btn-cta shadow" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript/inhouse?utm_source=https://angular.de/schulungen/angular-intensiv/#iframe&amp;utm_campaign=undefined&utm_medium=button&utm_content=workshops-list"
-                target="_blank"> <span class="sr-only">Angular &amp; TypeScript Inhouse</span> &nbsp;anfragen&nbsp;
-              </a> </div>
+    </div>
+    {% endfor %}
+    <hr>
+    <div class="row">
+      <div class="d-none d-md-block col-1"></div>
+      <div class="col-4 text-muted">
+        Termin flexibel<br>
+        <small class="d-none d-sm-inline">Standarddauer 3 Tage</small>
+      </div>
+      <div class="col-8 col-sm-7">
+        <div class="row">
+          <div class="col-12 col-sm-9">
+            <a class="text-unstyled" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript/inhouse?utm_source=https://angular.de/schulungen/angular-intensiv/?utm_campaign=website-link-inhouse&utm_medium=link&utm_content=workshops-list" target="_blank"> <span class="sr-only">Angular &amp; TypeScript</span> Firmenschulung Inhouse
+            </a> <br>
+            <small class="d-none d-sm-inline"> Termine und Preise auf Anfrage </small>
+            <small class="d-inline d-sm-none"> Auf Anfrage </small>
           </div>
+          <div class="col-12 col-sm-3 text-right">
+            <a class="btn btn-primary btn-sm btn-cta shadow" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript/inhouse?utm_source=https://angular.de/schulungen/angular-intensiv/#iframe&amp;utm_campaign=undefined&utm_medium=button&utm_content=workshops-list" target="_blank"> <span class="sr-only">Angular &amp; TypeScript Inhouse</span> &nbsp;anfragen&nbsp;
+            </a> </div>
         </div>
       </div>
-      <!-- /.col~ -->
+    </div>
+    <!-- /.col~ -->
     <!-- /.row -->
   </div>
   <!-- /.container -->
