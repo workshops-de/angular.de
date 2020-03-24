@@ -24,15 +24,19 @@ Jekyll::Hooks.register :site, :after_init do |site|
     'niederrhein-valley',
   ]
 
-  File.write(filename, '[')
-  meetups.each {
-     |meetup|
-     response = RestClient.get("https://api.meetup.com/#{meetup}?&sign=true&photo-host=public")
-     File.write(filename, response.body, File.size(filename) , mode: 'a')
-     File.write(filename, ',', File.size(filename) , mode: 'a')
-    }
-  File.write(filename, ']',File.size(filename)-1 , mode: 'a')
+  if(ENV["JEKYLL_ENV"] == "production") then
+    File.write(filename, '[')
+    meetups.each {
+      |meetup|
+      response = RestClient.get("https://api.meetup.com/#{meetup}?&sign=true&photo-host=public")
+      File.write(filename, response.body, File.size(filename) , mode: 'a')
+      File.write(filename, ',', File.size(filename) , mode: 'a')
+      }
+    File.write(filename, ']',File.size(filename)-1 , mode: 'a')
 
 
-  puts "Fetching meetups...done"
+    puts "Fetching meetups...done"
+  else
+    puts "JEKYLL_ENV NOT PRODUCTION - Meetup fetch aborted"
+  end
 end
