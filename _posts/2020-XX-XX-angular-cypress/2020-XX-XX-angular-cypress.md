@@ -1,3 +1,14 @@
+---
+title: "E2E Tests für Angular mit Cypress und TypeScript in unter 60 Minuten bereit für Continuous Integration"
+description: "Cypress ist ein Framework zum Schreiben von E2E Tests für Browser-Applikation. Wir werden am Beispiel von Angular erste E2E Tests mit TyeScript schreiben und sie zur Ausführung auf CircleCI als Continunous Integration System vorbereiten."
+author: "David Würfel"
+published_at: 2020-XX-XX- HH:MM.SS.000000Z
+header_source: https://unsplash.com/photos/ XXXXXXXX-TODO!
+categories: "cypress testing angular typescript circleci tutorial"
+---
+
+<!-- CI ready e2e tests for Angular with Cypress and TypeScript in under 60 minutes -->
+
 > Der folgende Artikel möchte dir zeigen, wie du *End-to-End Testing* für *Angular* mit *Cypress* und *TypeScript* aufsetzt. Du wirst erste E2E Tests schreiben und sie zur Ausführung auf *CircleCI* als Continunous Integration System vorbereiten, sodass sie mit jedem Push auf dein Repository ausgeführt werden.
 
 <!-- > This article aims to describe how you can set up **end-to-end testing** for **Angular** with **Cypress** including **TypeScript**. You will write your very first **e2e tests** and make them ready to run on a **CircleCI** as a continuous integration system with every update to your repository. -->
@@ -28,27 +39,46 @@
 - [Setting up Continuous Integration](#ci)
 - [Conclusion and References](#summary) -->
 
-Früher habe ich in der Frontend Entwicklung mit [Microsofs .NET und WPF](https://docs.microsoft.com/en-US/dotnet/framework/wpf/) gearbeitet und erinnere mich noch gut an die Zeiten, in denen wir teure Frameworks zum Schreiben von End-to-End Tests für unsere Projekte evaluiert haben. Nach vielen Wochen, sogar Monaten der Evaluation, der Entwicklung von speziellem *Glue-Code* oder einer eigenen Test Infrastruktur auf Basis bereits existierender Werkzeuge, hatten wir es endlich geschafft unsere E2E Tests zum Laufen zu bekommen. Leider waren sie ziemlich brüchig und sind oft fehlgeschlagen, weil wir händische Anpassungen machen musste oder Probleme hatten mit unzuverlässigen Test Runnern in unsere Continuous Integration Pipeline.
+Früher habe ich in der Frontend Entwicklung mit [Microsofs .NET und WPF](https://docs.microsoft.com/en-US/dotnet/framework/wpf/) gearbeitet und erinnere mich noch gut an die Zeiten, in denen wir kostenintensive Frameworks zum Schreiben von End-to-End Tests für unsere Projekte evaluiert haben. Nach vielen Wochen, sogar Monaten der Evaluation, der Entwicklung von speziellem *Glue-Code* oder einer eigenen Test Infrastruktur auf Basis bereits existierender Werkzeuge, hatten wir es endlich geschafft unsere E2E Tests zum Laufen zu bekommen. Leider waren sie ziemlich brüchig und sind oft fehlgeschlagen, weil wir händische Anpassungen machen musste oder Probleme hatten mit unzuverlässigen Test Runnern in unsere Continuous Integration Pipeline.
 
 <!-- I have a frontend development background in [Microsoft's .NET & WPF](https://docs.microsoft.com/en-US/dotnet/framework/wpf/) and remember the times where we evaluated costly frameworks to write end-to-end tests for our projects. After a lot of evaluations and weeks, even months of custom glue code and development of test infrastructures on top of existing tools, we finally got some e2e tests running. They were brittle, often failed because of manual adjustments we had to do or problems with flaky runners in the continuous integration pipeline. -->
 
-Some years later with [Angular](https://angular.io/) and [Protractor](https://www.protractortest.org/#/) as a default for e2e tests, we were still based on [page objects](https://www.protractortest.org/#/page-objects), [Selenium Web Driver](https://www.selenium.dev/) and the tests continued to be rather unreliable. No expensive commercial frameworks and custom infrastructure were needed. But was it fun to write e2e tests? No.
+Ein paar Jahre später mit [Angular](https://angular.io/) und [Protractor](https://www.protractortest.org/#/) als voreingestelltem E2E Testing Framework sind die Tests weiterhin basierend auf sogenannten [Page Objects](https://www.protractortest.org/#/page-objects) und dem [Selenium Web Driver](https://www.selenium.dev/). Unzuverlässig sind sie immer noch. Keine teuren, kommerziellen Frameworks oder maßgeschneiderte Infrastruktur war mehr notwendig. Aber hat es Spaß gemacht E2E Tests zu schreiben? Nein.
 
-However we are in 2020 now and time has come for new heroes to arise. 🚀
+Mittlerweile sind wir aber im Jahr 2020 angekommen und die Zeit zum Aufstieg neuer Helden ist angebrochen. 🚀
 
-# What is Cypress?<a name="cypress"></a>
-[Cypress](https://cypress.io) promises *fast, easy and reliable testing for anything that runs in a browser*. It is not based on Selenium Web Driver which is using network connections to interact with your browser. Instead Cypress is a test runner that runs *inside* your browser next to your web application and therefore has has direct control over it.
+<!-- Some years later with [Angular](https://angular.io/) and [Protractor](https://www.protractortest.org/#/) as a default for e2e tests, we were still based on [page objects](https://www.protractortest.org/#/page-objects), [Selenium Web Driver](https://www.selenium.dev/) and the tests continued to be rather unreliable. No expensive commercial frameworks and custom infrastructure were needed. But was it fun to write e2e tests? No.
 
-Without going into all the details, this not only makes Cypress faster and more reliable, it also opens the door for a lot of other interesting features like
+However we are in 2020 now and time has come for new heroes to arise. 🚀 -->
+
+# Was ist Cypress<a name="cypress"></a>
+[Cypress](https://cypress.io) verspricht *schnelles, einfaches und zuverlässiges Testing für alles was im Browser läuft*. Es basiert nicht auf dem Selenium Web Driver, der Netzwerk Verbindungen nutzt, um mit dem Browser zu interagieren. Stattdessen ist Cypress ein Test Runner, der *im Inneren* deines Browsers neben deiner Web Applikation läuft und darum direkten Zugriff auf diese hat.
+
+<!-- # What is Cypress?<a name="cypress"></a>
+[Cypress](https://cypress.io) promises *fast, easy and reliable testing for anything that runs in a browser*. It is not based on Selenium Web Driver which is using network connections to interact with your browser. Instead Cypress is a test runner that runs *inside* your browser next to your web application and therefore has has direct control over it. -->
+
+Ohne an dieser Stelle auf alle Details einzugehen, ist dadurch Cypress nicht nur schneller und zuverlässiger, es ebnet den Weg für viele weitere interessante Eigenschaften wie beispielsweise
+* Debugging mit Zeitreisefunktion
+* Einfaches Aufzeichnen von Videos und Screenshots des Testlaufs
+* Automatisierte Wartemechanismen
+
+<!-- Without going into all the details, this not only makes Cypress faster and more reliable, it also opens the door for a lot of other interesting features like
 * time travel debugging,
 * easy snapshotting and recording,
-* automatic waitings.
+* automatic waitings. -->
 
-On top of all the features, Cypress has a developer experience (*DX*) that is nearly unrivalled. Have you ever seen a [message in the error logs](https://www.cypress.io/blog/2017/07/26/good-error-messages/) of your failed build that tells you exactly what you did wrong, points you to the right dependencies to add and also links to an explanatory documentation site describing the problem? This is what Cypress feels like. It is built by developers for developers.
+Zusätzlich zu all diesen Besonderheiten hat Cypress eine sogenannte Developer Experience (*DX*) die kaum zu toppen ist. Hast du jemals eine bei einem fehlgeschlagenem eine [Fehlermeldung](https://www.cypress.io/blog/2017/07/26/good-error-messages/) gesehen, die dir genau sagt, was du falsch gemacht hast, dir aufzeigt, welche Abhängigkeiten hinzugefügt werden müssen und dich darüber hinaus noch an eine verständliche Dokumentationsseite verweist, die das Problem im Detail beschreibt? So fühlt sich Cypress an: Es ist gemacht von Entwicklern für Entwickler.
 
-![Cypress error on the build server telling you how to fix it](https://dev-to-uploads.s3.amazonaws.com/i/l90rk6dmuijzkv3uvhg6.png)
+<img src="/assets/img/placeholder-image.svg" alt="Cypress Fehlermeldung auf dem Build-Server, die genau sagt, wie der Fehler zu beheben sei" class="lazy center" data-src="02-cy-error.png" data-srcset="02-cy-error.png"
+ />
 
-Hereafter, we will install Cypress for a fresh Angular project created with the CLI. We'll write some e2e tests and conclude with running these by an automated build system. All these steps should not take more than 60 minutes. We try to keep the steps as short as possible, leveraging existing tools like [Angular Schematics](https://angular.io/guide/schematics), libraries and common templates.
+<!-- On top of all the features, Cypress has a developer experience (*DX*) that is nearly unrivalled. Have you ever seen a [message in the error logs](https://www.cypress.io/blog/2017/07/26/good-error-messages/) of your failed build that tells you exactly what you did wrong, points you to the right dependencies to add and also links to an explanatory documentation site describing the problem? This is what Cypress feels like. It is built by developers for developers.
+
+![Cypress error on the build server telling you how to fix it](https://dev-to-uploads.s3.amazonaws.com/i/l90rk6dmuijzkv3uvhg6.png)-->
+
+Gleich werden wir Cypress für ein frisches, mit der CLI erstellte Angular Projekt installieren. Wir werden ein paar E2E Test schreiben und sie am Ende von einem automatisierten Build-System laufen lassen. Die Gesamtheit dieser Schritte sollten nicht länger als 60 Minuten in Anspruch nehmen. Wir werden versuchen, diese Schritte so kurz wie möglich zu halten und existierende Werkzeuge wie [Angular Schematics](https://angular.io/guide/schematics), Bibliotheken oder bekannte Vorlagen zu unserem Vorteil einsetzen.
+
+<!-- Hereafter, we will install Cypress for a fresh Angular project created with the CLI. We'll write some e2e tests and conclude with running these by an automated build system. All these steps should not take more than 60 minutes. We try to keep the steps as short as possible, leveraging existing tools like [Angular Schematics](https://angular.io/guide/schematics), libraries and common templates. -->
 
 # Prerequisites<a name="pre"></a>
 This guide assumes that you have a standard Angular 9 app project. If not, you may create one like you would normally do with the [Angular CLI](https://angular.io/cli/new). If you don't have the CLI installed globally, you can make use of the [`npx`](https://www.npmjs.com/package/npx) command that will install it temporarily on the fly:
