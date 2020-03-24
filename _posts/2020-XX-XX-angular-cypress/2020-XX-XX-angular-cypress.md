@@ -80,38 +80,71 @@ Gleich werden wir Cypress für ein frisches, mit der CLI erstellte Angular Proje
 
 <!-- Hereafter, we will install Cypress for a fresh Angular project created with the CLI. We'll write some e2e tests and conclude with running these by an automated build system. All these steps should not take more than 60 minutes. We try to keep the steps as short as possible, leveraging existing tools like [Angular Schematics](https://angular.io/guide/schematics), libraries and common templates. -->
 
-# Prerequisites<a name="pre"></a>
-This guide assumes that you have a standard Angular 9 app project. If not, you may create one like you would normally do with the [Angular CLI](https://angular.io/cli/new). If you don't have the CLI installed globally, you can make use of the [`npx`](https://www.npmjs.com/package/npx) command that will install it temporarily on the fly:
+# Vorbedingungen<a name="pre"></a>
+Diese Anleitung setzt voraus, dass du bereits mit einem standardmäßigen Angular 9 Projekt arbeitest. Falls dies noch nicht der Fall ist, kannst du ein neues mit der [Angular CLI](https://angular.io/cli/new) erstellen. Wenn du die CLI nicht global installiert hast, kannst du dir den [`npx`](https://www.npmjs.com/package/npx) Befehl zur Nutze machen, der die CLI temporär installiert:
 
 ```sh
 npx @angular/cli new <app-name>
 ```
 
-# Setting up Cypress<a name="setup"></a>
-In order to set up Cypress together with TypeScript as fast as possible, we make use of an existing schematic developed by [BrieBug](https://www.npmjs.com/package/@briebug/cypress-schematic).
+<!-- # Prerequisites<a name="pre"></a>
+This guide assumes that you have a standard Angular 9 app project. If not, you may create one like you would normally do with the [Angular CLI](https://angular.io/cli/new). If you don't have the CLI installed globally, you can make use of the [`npx`](https://www.npmjs.com/package/npx) command that will install it temporarily on the fly:
 
-In the root of your Angular project, you can open the terminal and enter the following command:
+```sh
+npx @angular/cli new <app-name>
+``` -->
+
+# Cypress aufsetzen<a name="setup"></a>
+Um Cypress zusammen mit TypeScript so schnell wie möglich aufzusetzen, nutzen wir eine existierende, von [BrieBug](https://www.npmjs.com/package/@briebug/cypress-schematic) entwickelte Schematic.
+
+<!-- # Setting up Cypress<a name="setup"></a>
+In order to set up Cypress together with TypeScript as fast as possible, we make use of an existing schematic developed by [BrieBug](https://www.npmjs.com/package/@briebug/cypress-schematic). -->
+
+Im Wurzelverzeichnis deines Angular Projekts kannst du das Terminal öffnen und folgenden Befehl eingeben:
 
 ```sh
 ng add @briebug/cypress-schematic --addCypressTestScripts
 ```
 
-If the CLI isn't installed globally, the `ng` command may not be available directly. You can enforce the use of the local `ng` from the `package.json`:
+<!-- In the root of your Angular project, you can open the terminal and enter the following command:
+
+```sh
+ng add @briebug/cypress-schematic --addCypressTestScripts
+``` -->
+
+Falls die CLI nicht global installiert ist, könnte es sein, dass der `ng` Befehl nicht direkt verfügbar ist. Du kannst den Aufruf des lokalen `ng` aus der `package.json` erzwingen:
+
+```sh
+npm run ng -- add @briebug/cypress-schematic # Falls 'ng' allein nicht gefunden werden konnte
+```
+
+<!-- If the CLI isn't installed globally, the `ng` command may not be available directly. You can enforce the use of the local `ng` from the `package.json`:
 
 ```sh
 npm run ng -- add @briebug/cypress-schematic # In case 'ng' could not be found
+``` -->
+
+Wir können ohne Bedenken Protractor entfernen, weil es vollständig ersetzt wird. Während der Installation werden ein paar Binardateien heruntergeladen, da Cypress Test Runner als eine in [Electron](https://www.electronjs.org/) gepackten Oberfläche kommt.
+
+<!-- We can safely remove Protractor because it will be completely replaced. During the installation some binaries were downloaded because Cypress comes with an [Electron](https://www.electronjs.org/)-bundled UI as an interactive test runner. -->
+
+Durch die Verwendung des Parameters `--addCypressTestScripts` werden zwei nützliche npm Skripte hinzugefügt, die das Arbeiten mit Cypress komfortabler machen: Eins, um die E2E Tests mit, das andere, um die Tests ohne die Oberfläche auszuführen.
+
+```json
+    // package.json Skripte
+
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
 ```
 
-We can safely remove Protractor because it will be completely replaced. During the installation, some binaries were downloaded because Cypress comes with an [Electron](https://www.electronjs.org/)-bundled UI as an interactive test runner.
-
-Using the flag `--addCypressTestScripts` two handy npm scripts were added to make the work with cypress more comfortable. One to run e2e tests headless and the other script running the tests with the Cypress UI runner:
+<!-- Using the flag `--addCypressTestScripts` two handy npm scripts were added to make the work with Cypress more comfortable. One to run e2e tests headless and the other script running the tests with the Cypress UI runner:
 
 ```json
     // package.json scripts
 
     "cy:run": "cypress run",
     "cy:open": "cypress open"
-```
+``` -->
 
 If you were to run one of these scripts standalone, the test would fail because it tries to route to *http://localhost:4200* where nothing is served at the moment. In order to fix this, we need to open a second terminal and serve our Angular application beforehand with `npm start`.
 
