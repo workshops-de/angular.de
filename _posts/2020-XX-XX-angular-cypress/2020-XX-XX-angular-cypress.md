@@ -146,24 +146,42 @@ Durch die Verwendung des Parameters `--addCypressTestScripts` werden zwei nützl
     "cy:open": "cypress open"
 ``` -->
 
-If you were to run one of these scripts standalone, the test would fail because it tries to route to *http://localhost:4200* where nothing is served at the moment. In order to fix this, we need to open a second terminal and serve our Angular application beforehand with `npm start`.
+Würde man eines dieser Skripte laufen lassen, würde der Test zunächst fehlschlagen, weil er versuchen würde auf *http://localhost:4200* zu navigieren, wo aktuell noch nichts bereitgestellt wird. Um das zu beheben, können wir ein zweites Konsolenfenster öffnen und unser Angular Applikation vorher mit `npm start` bereitstellen.
 
-Luckily the schematic adjusted the `e2e` command so that this is done for you automatically by the [CLI builder](https://angular.io/guide/cli-builder). You can serve the application and start the e2e test by using the following command:
+<!-- If you were to run one of these scripts standalone, the test would fail because it tries to route to *http://localhost:4200* where nothing is served at the moment. In order to fix this, we need to open a second terminal and serve our Angular application beforehand with `npm start`. -->
+
+Glücklicherweise passt die vorherige Schematic den `e2e` Befehl so an, dass dies für uns automatisch von einem sogenannten [CLI Builder](https://angular.io/guide/cli-builder) durchgeführt wird. Mit folgendem Befehl liefern wir die Anwendung aus und lassen den Test dagegen laufen:
 
 ```sh
 npm run e2e
 ```
 
-Cypress will detect that we launched it for the first time. It verifies its installation and adds some initial example files. After the UI has opened up, we can see a test that has already been created for us.
+<!-- Luckily the schematic adjusted the `e2e` command so that this is done for you automatically by the [CLI builder](https://angular.io/guide/cli-builder). You can serve the application and start the e2e test by using the following command:
 
-![Cypress UI after cy:open](https://dev-to-uploads.s3.amazonaws.com/i/2byc31bumuz3hoozi28h.PNG)
+```sh
+npm run e2e
+``` -->
 
-Selecting the test will run it. Initially the test will fail because we didn't actually test something properly. We will fix this now.
+Cypress erkennt, dass es zum ersten Mal ausgeführt wird. Es verifiziert seine Installation und fügt ein paar grundlegende Beispieldateien hinzu. Nachdem die Oberfläche öffnet, können wir einen Test sehen, der bereits für uns erstellt wurde.
 
-![Failing test that is not implemented yet](https://dev-to-uploads.s3.amazonaws.com/i/qi6455u49slch9bq2gor.png)
+<img src="/assets/img/placeholder-image.svg" alt="Cypress Oberfläche nach cy:open oder e2e" class="lazy center" data-src="03-cy-open.png" data-srcset="03-cy-open.png"
+ />
 
-# Writing Some Tests<a name="tests"></a>
-As a very first step, as proposed by the Cypress [best practices](https://docs.cypress.io/guides/references/best-practices.html), we set our [global baseUrl](https://docs.cypress.io/guides/references/best-practices.html#Setting-a-global-baseUrl), so that we don't have to duplicate this on every test execution. Add the following to the configuration `cypress.json`:
+<!-- Cypress will detect that we launched it for the first time. It verifies its installation and adds some initial example files. After the UI has opened up, we can see a test that has already been created for us.
+
+![Cypress UI after cy:open](https://dev-to-uploads.s3.amazonaws.com/i/2byc31bumuz3hoozi28h.PNG) -->
+
+Wählt man diesen Test aus, so wird er ausgeführt. Initial wird er fehlschlagen, weil wir tatsächlich noch nichts vernünftiges testen. Das werden wir nun beheben.
+
+<!-- Selecting the test will run it. Initially the test will fail because we didn't actually test something properly. We will fix this now. -->
+
+<img src="/assets/img/placeholder-image.svg" alt="Fehlschlagender Test, der aktuell noch nicht implementiert ist" class="lazy center" data-src="04-cy-test.png" data-srcset="04-cy-test.png"
+ />
+
+<!-- ![Failing test that is not implemented yet](https://dev-to-uploads.s3.amazonaws.com/i/qi6455u49slch9bq2gor.png) -->
+
+# Erste Tests<a name="tests"></a>
+Wie von den Cypress [Best Practices](https://docs.cypress.io/guides/references/best-practices.html) vorgeschlagen, setzen wir als ersten Schritt die [globale Basis-URL](https://docs.cypress.io/guides/references/best-practices.html#Setting-a-global-baseUrl), sodass wir diese Adresse nicht bei jeder Testausführung duplizieren müssen. Dazu fügen wir die folgende Konfiguration der Datei `cypress.json` hinzu:
 
 ```json
 // cypress.json
@@ -172,7 +190,17 @@ As a very first step, as proposed by the Cypress [best practices](https://docs.c
 }
 ```
 
-After that, we write our very first [*smoke test*](https://en.wikipedia.org/wiki/Smoke_testing_(software)) that only checks whether the default app title is set on the Angular starting page. Therefore, change the content of the `spec.ts` to the following content:
+<!-- # Writing Some Tests<a name="tests"></a>
+As a very first step, as proposed by the Cypress [best practices](https://docs.cypress.io/guides/references/best-practices.html), we set our [global baseUrl](https://docs.cypress.io/guides/references/best-practices.html#Setting-a-global-baseUrl), so that we don't have to duplicate this on every test execution. Add the following to the configuration `cypress.json`:
+
+```json
+// cypress.json
+{
+  "baseUrl": "http://localhost:4200"
+}
+``` -->
+
+Danach schreiben wir unseren ersten [*Smoke Test*](https://de.wikipedia.org/wiki/Smoke_testing), der nur prüft, ob der standard Applikationstitel der Angular Startseite gesetzt ist. Dazu ändern wir den Inhalt von `spec.ts` auf folgenden:
 
 ```ts
 // spec.ts
@@ -182,13 +210,49 @@ it('smoke test', () => {
 });
 ```
 
-The tests starts by routing to our *baseUrl* and proceeds by querying any element that contains the text *cypress-e2e-testing-angular app is running!*.
+<!-- After that, we write our very first [*smoke test*](https://en.wikipedia.org/wiki/Smoke_testing_(software)) that only checks whether the default app title is set on the Angular starting page. Therefore, change the content of the `spec.ts` to the following content:
 
-## Testing User Flows
+```ts
+// spec.ts
+it('smoke test', () => {
+  cy.visit('/');
+  cy.contains('cypress-e2e-testing-angular app is running!');
+});
+``` -->
 
-This test should already work, but let's write some more interactive ones. As e2e are inherently slower than unit tests, it is totally fine to have e2e tests that model the entire user flow for a feature.
+Der Test startet indem er zu unserer Basis-URL navigiert und danach nach einem beliebigem Element sucht, dass den Text *cypress-e2e-testing-angular app is running!* enthält.
 
-For example, we want to check whether some characteristics of the starting page are valid: Our page should contain the title and the `ng generate` text in the terminal by default, but when the users clicks the *Angular Material* button, we want to ensure that the proper `ng add` command is displayed in the terminal view below.
+<!-- The test starts by routing to our *baseUrl* and proceeds by querying any element that contains the text *cypress-e2e-testing-angular app is running!*. -->
+
+## Nutzerverhalten testen
+Dieser Test sollte bereits funktionieren, aber wir sollten doch etwas interaktivere schreiben. Weil E2E Tests von Natur aus langsamer sind als Unit Tests, ist es völlig in Ordnung E2E Test zu schreiben, die einen gesamten Ablauf eines Benutzers bezogen auf eine Funktionalität modellieren.
+
+<!-- ## Testing User Flows
+This test should already work, but let's write some more interactive ones. As e2e are inherently slower than unit tests, it is totally fine to have e2e tests that model the entire user flow for a feature. -->
+
+Zum Beispiel wollen wir prüfen, ob die Eigenschaften der eben erwähnten Startseite gültig sind: Unsere Seite sollte ihren Titel anzeigen und darunter im Konselenfenster standardmäßig den Text `ng generate`. Klickt der Nutzer nun auf den *Angular Material* Button, wollen wir sicherstellen, dass das richtige Kommando `ng add` in der Konsolenansicht darunter erscheint.
+
+Du kannst folgenden Inhalt deiner Testdatei hiermit ersetzen:
+
+```ts
+// spec.ts
+describe('When Angular starting page is loaded', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
+  it('has app title, shows proper command by default and reacts on command changes', () => {
+    cy.contains('cypress-e2e-testing-angular');
+
+    cy.contains('.terminal', 'ng generate component xyz');
+
+    cy.contains('Angular Material').click();
+    cy.contains('.terminal', 'ng add @angular/material');
+  });
+});
+```
+
+<!-- For example, we want to check whether some characteristics of the starting page are valid: Our page should contain the title and the `ng generate` text in the terminal by default, but when the users clicks the *Angular Material* button, we want to ensure that the proper `ng add` command is displayed in the terminal view below.
 
 You may replace the content of your test file with this:
 
@@ -209,41 +273,76 @@ describe('When Angular starting page is loaded', () => {
   });
 });
 ```
+-->
 
-We refactored our test suite by adding a `describe` block to capture all tests that run when the starting page is loaded. As we visit the *baseUrl* every time, we moved this into the `beforeEach` call. Lastly we combined the basic smoke tests with the test for the terminal view on the starting page.
+Wir haben unsere Testreihe etwas umgestellt, indem wir einen `describe` Block hinzugefügt haben, um alle Tests zu gruppieren, die sich auf unsere Startseite beziehen. Da wir in jedem Test die `baseUrl` besuchen, haben wir dies in den `beforeEach` Aufruf verschoben. Zu guter Letzt kombinieren wir unseren existierenden Smoke Test mit dem Test für die Konselenfenster-Ansicht auf der Startseite.
 
-It is important to know that you should not store Cypress' query results in variables, but instead work with [closures](https://docs.cypress.io/guides/references/best-practices.html#Assigning-Return-Values). Moreover, we selected elements by CSS classes and text content, which may be too brittle. It is recommended to use `data-` attributes for [selecting elements](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements).
+<!-- We refactored our test suite by adding a `describe` block to capture all tests that run when the starting page is loaded. As we visit the *baseUrl* every time, we moved this into the `beforeEach` call. Lastly we combined the basic smoke tests with the test for the terminal view on the starting page. -->
 
-Cypress has a lot of great features and possibilities. We won't cover all of them because our goal is to focus on the very first starting point. The official documentation is really good and covers everything on how to [interact with elements](https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html#Actionability).
+Es ist wichtig zu wissen, dass man die Ergebnisse der Cypress Anfragen nicht in Variablen zwischenspeichert, sondern stattdessen [Closures](https://docs.cypress.io/guides/references/best-practices.html#Assigning-Return-Values) verwenden sollte. Darüber hinaus wählen wir aktuell unsere Element über CSS Klassen oder sogar Textinhalt aus, was sehr brüchig sein kann. Hier wir empfohlen `data-` Attribute zur [Auswahl von Elementen](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements) zu nutzen.
 
-If you rerun this test suite, you should see the UI clicking through each scenario and all three tests should pass this time. ✔✔✔
+<!-- It is important to know that you should not store Cypress' query results in variables, but instead work with [closures](https://docs.cypress.io/guides/references/best-practices.html#Assigning-Return-Values). Moreover, we selected elements by CSS classes and text content, which may be too brittle. It is recommended to use `data-` attributes for [selecting elements](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements). -->
 
-![Running our first Cypress test suite succefully](https://dev-to-uploads.s3.amazonaws.com/i/2hkws56oi8xyusxu6t4r.gif)
+Cypress hat eine Menge toller Funktionalitäten und Möglichkeiten. Wir können hier nicht alle von ihnen behandeln, da unser Fokus darauf liegt, einen ersten Startpunkt zu finden. Die offizielle Dokumentation ist allerdings sehr gute und liefert alle Informationen, wie man [mit verschiedenen Elementen interagiert](https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html#Actionability).
 
-# Setting up Continuous Integration<a name="ci"></a>
-Now that our tests run locally, let's kick of a small CI ([continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)) pipeline. A good way to prepare for this, is to create npm scripts and combine them so that the build system can use a single script as entry point. By following this method, you can try the CI steps locally before pushing online. Moreover npm scripts are rather independent from any actual build system.
+<!-- Cypress has a lot of great features and possibilities. We won't cover all of them because our goal is to focus on the very first starting point. The official documentation is really good and covers everything on how to [interact with elements](https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html#Actionability). -->
 
-On CI, we need to start our server in the background and wait for it to bundle our application, which might take a while. Then we need to start the Cypress test runner, go through the tests and shut down the server when the tests finish. Luckily we can do this all with a single utility called *start-server-and-test* as described in the [Cypress docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Solutions):
+Lassen wir unsere Testreihe nochmal laufen, sollten wir sehen wie er sich durch jedes Szenario durchklickt und unsere 3 Abfragen sollten diesmal gelingen. ✔✔✔
+
+<img src="/assets/img/placeholder-image.svg" alt="Unsere erste Cypress Testreihe erfolgreich laufen lassen" class="lazy center" data-src="05-cy-workflow.gif" data-srcset="05-cy-workflow.gif"
+ />
+
+<!-- If you rerun this test suite, you should see the UI clicking through each scenario and all three tests should pass this time. ✔✔✔
+
+![Running our first Cypress test suite succefully](https://dev-to-uploads.s3.amazonaws.com/i/2hkws56oi8xyusxu6t4r.gif) -->
+
+# Continuous Integration aufsetzen<a name="ci"></a>
+Da unsere Tests nun local laufen, möchten wir als nächsten eine kleine CI ([Continuous Integration](https://de.wikipedia.org/wiki/Kontinuierliche_Integration)) Pipeline aufsetzen. Ein guter Weg sich darauf vorzubereiten, ist es ein paar npm Skripte anzulegen und diese zu kombinieren, sodass das Build-System ein einziges Skript als Einstiegspunkt aufrufen kann. Wenn wir diese Methode verfolgen, können wir auch die CI Schritte vor dem Push auf den Server zuvor lokal ausprobieren. Weiterhin sind diese npm Skripte eher unabhängig von einem tatsächlich verwendeten Build-System.
+
+<!-- # Setting up Continuous Integration<a name="ci"></a>
+Now that our tests run locally, let's kick of a small CI ([continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)) pipeline. A good way to prepare for this, is to create npm scripts and combine them so that the build system can use a single script as entry point. By following this method, you can try the CI steps locally before pushing online. Moreover npm scripts are rather independent from any actual build system. -->
+
+Auf dem CI-Server müssen wir den Webserver im Hintergrund starten und darauf warten, dass unsere Anwendung gebaut wird, was etwas dauern kann. Danach muss der Cypress Testrunner gestartet werden, durch alle Tests gehen und nach Abschluss der Tests den Server herunterfahren. Praktischerweise können wir dies mit einem einzigen Hilfsmittel namens *start-server-and-test* tun, wie es in der [Cypress Dokumentation]((https://docs.cypress.io/guides/guides/continuous-integration.html#Solutions)) beschrieben ist.
 
 ```sh
 npm install --save-dev start-server-and-test
 ```
 
-After this is installed, we use the Angular *serve* which is currently behind `npm start` and combine it with the headless `cy:run` command:
+<!-- On CI, we need to start our server in the background and wait for it to bundle our application, which might take a while. Then we need to start the Cypress test runner, go through the tests and shut down the server when the tests finish. Luckily we can do this all with a single utility called *start-server-and-test* as described in the [Cypress docs](https://docs.cypress.io/guides/guides/continuous-integration.html#Solutions):
+
+```sh
+npm install --save-dev start-server-and-test
+``` -->
+
+Nachdem dies installiert ist, können wir den Angular `serve` Befehl nutzen, der über `npm start` aufgerufen wird und ihn mit dem oberflächenlosen `cy:run` Kommando verbinden.
+
+```json
+   // package.json Skripte
+  "start": "ng serve",
+  "cy:run": "cypress run",
+  "e2e:ci": "start-server-and-test start http://localhost:4200 cy:run"
+```
+
+<!-- After this is installed, we use the Angular *serve* which is currently behind `npm start` and combine it with the headless `cy:run` command:
 
 ```json
    // package.json scripts
   "start": "ng serve",
   "cy:run": "cypress run",
   "e2e:ci": "start-server-and-test start http://localhost:4200 cy:run"
-```
+``` -->
 
-You could surely use a production build or build beforehand and serve the app using any http server. For sake of conciseness, I will leave these improvements up for you.
+Selbstverständlich könnte man auch einen Produktiv-Build nutzen oder vorher einen Build ausführen und die Applikation über einen beliebigen Http-Server ausliefern. Um es kurz zu halten, möchte ich diese Verbesserung dir überlassen.
+
+<!-- You could surely use a production build or build beforehand and serve the app using any http server. For sake of conciseness, I will leave these improvements up for you. -->
 
 ## Circle CI
-For our example, we choose [CircleCI](https://circleci.com/) because it integrates very well with GitHub, is commonly used there and has a free plan. You may use any other CI system like [Jenkins](https://jenkins.io/) or [GitLab](https://about.gitlab.com/) (which I have the most experience with). After signing into CircleCI and connecting to our GitHub account, you can select the repository and create a new project via their dashboard.
+Für unser Beispiel nutzen wir [CircleCI](https://circleci.com/) weil es sich sehr gut mit GitHub integriert, sehr weit verbreitet ist und eine freie Nutzung erlaubt. Die letzliche Wahl eines anderen CI-Systems wie [Jenkins](https://jenkins.io/) oder [GitLab](https://about.gitlab.com/)(mit dem ich die meiste Erfahrung gesammelt habe) ist dir selbst überlassen. Nachdem man sich bei CircleCI angemeldet und seinen GitHub Account verbunden hat, kann man ein Repository auswählen und ein neues Projekt über das CircleCI-Dashboard erstellen.
 
-In order to configure the pipeline, you could write a `config.yml` by selecting a template and adjusting it to your needs and eventually running the e2e script. Fortunately Cypress has a [ready to use configurations](https://github.com/cypress-io/circleci-orb) (called [Orbs](https://github.com/cypress-io/circleci-orb/blob/master/docs/examples.md)) for CircleCI which already include the installation of dependencies, caching and so on. Before we can use it, we must visit the *Organisation Settings* to [enable third party runners](https://github.com/cypress-io/circleci-orb#how-to-enable).
+<!-- ## Circle CI
+For our example, we choose [CircleCI](https://circleci.com/) because it integrates very well with GitHub, is commonly used there and has a free plan. You may use any other CI system like [Jenkins](https://jenkins.io/) or [GitLab](https://about.gitlab.com/) (which I have the most experience with). After signing into CircleCI and connecting to our GitHub account, you can select the repository and create a new project via their dashboard. -->
+
+Um die Pipeline zu konfigurieren, könnten wir durch Auswahl einer Vorlage die `config.yml` schreiben und sie auf unsere Bedürfnisse hin anpassen um schlussendlich unser E2E Skript aufzurufen. Erfreulicherweise bringt Cypress bereits eine [fertig nutzbare Konfiguration](https://github.com/cypress-io/circleci-orb) (als sogenannten [Orbs](https://github.com/cypress-io/circleci-orb/blob/master/docs/examples.md)) für CircleCI mit, weöche bereit die Installation von Abhängigkeiten, Caching und mehr beinhaltet. Bevor wir diese allerdings nutzen können, müssen wir erst über die *Organisation Settings* die [Drittanbieter Runner aktivieren](https://github.com/cypress-io/circleci-orb#how-to-enable).
 
 ```yml
 # circleci/config.yml
@@ -267,13 +366,57 @@ workflows:
           store_artifacts: true
 ```
 
-The pipeline only has one job: Run all e2e tests. It checks out the current branch, installs all dependencies including caching, starts the application server and runs our tests. Additionally, videos (recorded by default) and screenshots (in case tests are failing) are uploaded as CircleCI artifacts for further inspection.*
+<!-- In order to configure the pipeline, you could write a `config.yml` by selecting a template and adjusting it to your needs and eventually running the e2e script. Fortunately Cypress has a [ready to use configurations](https://github.com/cypress-io/circleci-orb) (called [Orbs](https://github.com/cypress-io/circleci-orb/blob/master/docs/examples.md)) for CircleCI which already include the installation of dependencies, caching and so on. Before we can use it, we must visit the *Organisation Settings* to [enable third party runners](https://github.com/cypress-io/circleci-orb#how-to-enable).
+
+```yml
+# circleci/config.yml
+
+version: 2.1
+orbs:
+  # This Orb includes the following:
+  # - checkout current repository
+  # - npm install with caching
+  # - start the server
+  # - wait for the server to respond
+  # - run Cypress tests
+  # - store videos and screenshots as artifacts on CircleCI
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    jobs:
+      - cypress/run:
+          start: npm start
+          wait-on: 'http://localhost:4200'
+          store_artifacts: true
+``` -->
+
+Die Pipeline hat nur eine Aufgabe: Alle E2E Tests ausführen. Der aktuelle Git-Branch wir ausgecheckt, alle Abhängigkeiten installiert inklusive Caching, der Applikations-Server wird gestartet und die Tests werden ausgeführt. Zusätzlich werden standardmäßig Videos des Testdurchlaufs aufgezeichnet und Screenshots (im Falle von fehlschlagenden Tests) und am Ende als CircleCI Artefakte zur späteren Analyse hochgeladen.*
+
+<img src="/assets/img/placeholder-image.svg" alt="CircleCI Dashboard" class="lazy center" data-src="06-circleci.png" data-srcset="06-circleci.png"
+ />
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/w3BVGdNIhFg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!-- The pipeline only has one job: Run all e2e tests. It checks out the current branch, installs all dependencies including caching, starts the application server and runs our tests. Additionally, videos (recorded by default) and screenshots (in case tests are failing) are uploaded as CircleCI artifacts for further inspection.*
 
 ![CircleCI Dashboard](https://dev-to-uploads.s3.amazonaws.com/i/77rim7ftwubsef1pzn32.PNG)
 
-{% youtube w3BVGdNIhFg %}
+{% youtube w3BVGdNIhFg %} -->
 
-# Conclusion<a name="summary"></a>
+# Fazit<a name="summary"></a>
+Die Schritte in dieser Anleitung sind sehr minimal. Du könntest dein existierendes Angular Projekt nutzen, du kannst die Konfiguration der Cypress Testreihen ändern oder deutlich mehr und aussagekräftigere Tests schreiben. Darüber hinaus könnte es dir nützen, npm Skripte für unter unterschiedliche Szenarien oder Umgebungen zu schreiben und natürlich die gesamte Build-Pipeline mit automatischen Codeprüfungen, Unit Tests, dem Bauprozess oder der Auslieferung deiner Anwendung zu erweitern. Dennoch sollte dies ein erster Schritt sein, der zeigt, wie schnell man automatisierte Ende-zu-Ende Tests heutzutage aufsetzen kann.
+
+Warte nur, bis du deine ersten echten Cypress Tests für deine Anwendung schreibst. Du wirst Spaß haben!
+
+<img src="/assets/img/placeholder-image.svg" alt="Animiertes Bild, das eine überwältigte Person zeigt" class="lazy center" data-src="08-mind-blown.gif" data-srcset="08-mind-blown.gif"
+ />
+
+Ich hoffe, du hast etwas nützliches aus dem Artikel ziehen können. Bei Fragen oder Anmerkungen, lass es mich wissen. Rückmeldung ist immer sehr willkommen!
+
+Der Quellcode für diese Anleitung ist auf GitHub zu finden:
+[https://github.com/MrCube42/cypress-e2e-testing-angular](https://github.com/MrCube42/cypress-e2e-testing-angular)
+
+<!-- # Conclusion<a name="summary"></a>
 The steps in this guide are rather minimal. You may use your existing Angular project, may change the configuration of your Cypress test suites and write a lot of more meaningful tests. Moreover, you may define npm scripts for different scenarios and environments and of course your entire build pipeline may be extended with linting, unit testing, building and even deploying your application. Nevertheless, this should be a first step which shows how quick automated end-to-end tests can be set up in nowadays.
 
 Wait till you write real Cypress tests for your application. You will have fun!
@@ -283,12 +426,20 @@ Wait till you write real Cypress tests for your application. You will have fun!
 I hope that you will also find some value in this article. If you have any questions or remarks, just let me know. Your feedback is very welcome!
 
 You can find the sources for this guide on GitHub:
-{% github https://github.com/MrCube42/cypress-e2e-testing-angular %}
+{% github https://github.com/MrCube42/cypress-e2e-testing-angular %} -->
 
-### References<a name="references"></a>
-*For other CI systems we could use our previously defined npm script. However we need to take care of all the additional work by ourselves. If you already have an existing sophisticated pipeline it could be easier to integrate just the script.
+### Quellen und Hinweise<a name="references"></a>
+* Für andere CI-System könnte man unser vorher definiertes npm Skript nutzen. Jedoch müssten wir uns dann um all die zusätzlichen Hilfsmittel selbst kümmern. Falls du bereits eine weit entwickelte Pipeline hast, könnte es ein einfachere Weg sein, nur das eine Skript zu integrieren.
+
+- [Offizielle Angular Dokumentation](https://angular.io/docs)
+- [Briebug Cypress Schematic](https://github.com/briebug/cypress-schematic)
+- [Offizielle Cypress Dokumentation](https://docs.cypress.i)
+- [CircleCI](https://circleci.com/)
+
+<!-- ### References<a name="references"></a>
+*For other CI systems we could use our previously defined npm script. However, we need to take care of all the additional work by ourselves. If you already have an existing sophisticated pipeline it could be easier to integrate just the script.
 
 - [Official Angular documentation](https://angular.io/docs)
 - [Briebug Cypress schematic](https://github.com/briebug/cypress-schematic)
 - [Official Cypress documentation](https://docs.cypress.i)
-- [CircleCI](https://circleci.com/)
+- [CircleCI](https://circleci.com/) -->
