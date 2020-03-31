@@ -211,7 +211,7 @@ Die Schritte in dieser Anleitung sind sehr minimal gehalten. Ihr könntet euer e
 
 Wartet, bis ihr eure ersten echten Cypress Tests für eure Anwendung schreibt. Ihr werdet Spaß haben!
 
-<img src="/assets/img/placeholder-image.svg" alt="Animiertes Bild, das eine überwältigte Person zeigt" class="lazy" data-src="08-mind-blown.gif" data-srcset="08-mind-blown.gif"
+<img src="/assets/img/placeholder-image.svg" alt="Animiertes Bild, das eine überwältigte Person zeigt" class="lazy center" data-src="08-mind-blown.gif" data-srcset="08-mind-blown.gif"
  />
 
 Ich hoffe, ihr konntet etwas nützliches aus dem Artikel ziehen. Bei Fragen oder Anmerkungen, lasst es mich wissen. Rückmeldung ist immer sehr willkommen!
