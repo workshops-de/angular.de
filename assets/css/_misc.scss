@@ -76,3 +76,11 @@ h6,
   color: #060;
   font-weight: 300;
 }
+
+.c-course-img {
+  width: 100%;
+  height: 100px;
+  max-width: 125px;
+  object-fit: contain;
+  object-position: top;
+}
