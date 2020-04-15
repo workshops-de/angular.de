@@ -3,7 +3,7 @@ title: "Neues Workshop-Format: Lerne die Grundlagen von Angular in unserem 5-Hal
 description: "Wir einen 5-Tages-Workshop entwickelt. Dieser bietet euch die Möglichkeit neue Fähigkeiten zu erlangen, ohne in Projekten auszufallen."
 author: "Robin Böhm"
 published_at: 2020-04-15 10:15:01.000000Z
-header_source: https://unsplash.com/photos/MPWwkkqDVG0
+header_source: https://unsplash.com/photos/i5iIhHSAtp4
 categories: "angular remote schulung"
 ---
 
