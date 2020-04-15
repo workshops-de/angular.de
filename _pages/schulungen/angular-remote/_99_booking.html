@@ -8,13 +8,17 @@
     <div class="row mb-4">
       <div class="col-md-10">
         <p>
-          Im Normalfall beginnen unsere Schulungen am ersten Tag um 9:00 Uhr und enden am letzten Tag um 16:30 Uhr.
-          Die genauen Start- und Endzeiten findest du, wenn du auf einen Termin klickst.
+          Unsere Remote Schulungen finden meist über 5 halbe Tage statt. Typische Zeiten sind am Vormittag von 9 bis 13 Uhr oder am Nachmittag von 14-17 Uhr.
+          Diese 5 Tage müssen auch nicht an einem Stück passieren. Es macht oftmals Sinn in 3 Tagen die Grundlagen zu lernen, danach 1-2 Wochen das Wissen Sacken zu lassen und erste Erfahrungen zu machen und dannach weitere 2 Tage intensiv auf fortgeschrittene Themen und Fragen einzugehen.
+          Andere Variationen sind natürlich auch sehr flexibel umzusetzen und können gerne gemeinsam erarbeitet werden.
+          Kommt gerne mit euern Ideen auf uns zu!
         </p>
       </div>
     </div>
 
-    {% for event in site.data.events.angular-remote limit:6 %}
+    {% assign remote_workshops = site.data.events.angular-remote  | where: 'location.address.addressLocality',  'Remote'  %}
+
+    {% for event in remote_workshops | limit:6 %}
     <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
       <div class="col-4">
         <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span class="mr-2">{{ event.endDate | date: "%d.%m.%Y" }}</span>
@@ -40,7 +44,6 @@
                 endcase %}</span>
             </a>
             <span class="d-block d-lg-inline">
-              <span>in</span>
               <span itemprop="location" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
               <span>
                 {% if event.early_bird == true %}
