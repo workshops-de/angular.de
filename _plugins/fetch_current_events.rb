@@ -12,6 +12,6 @@ Jekyll::Hooks.register :site, :after_init do |site|
   response = RestClient.get('https://workshops.de/api/course/28/events')
   File.write('_data/events/rxjs.json', response.body)
 
-  response = RestClient.get('https://workshops.de/api/course/35/events')
+  response = RestClient.get('https://workshops.de/api/course/4/events')
   File.write('_data/events/angular-remote.json', response.body)
 end
