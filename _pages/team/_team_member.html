@@ -6,7 +6,11 @@
     <div class="card-body">
       <div class="row">
         <div class="col-3 mb-2">
+          {% if user.gravatar_uid %}
           <img alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130" src="/assets/img/gravatars/{{ user.gravatar_uid }}-300x300.jpg" width="130">
+          {% elsif user.avatar_name %}
+          <img alt="{{ user.name }}" class="shadow-sm rounded img-fluid d-md-inline" height="130" src="/assets/img/avatars/{{ user.avatar_name }}" width="130">
+          {% endif %}
           {% if user.gde == true %}
           <img class="d-block d-md-inline" width="100%" style="max-width: 130px;" src="/assets/img/gde-logo.png" alt="Google Developer Experts Logo" />
           {% endif %}

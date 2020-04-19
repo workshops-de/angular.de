@@ -7,10 +7,9 @@
       {% if author.gravatar_uid %}
       data-src="/assets/img/gravatars/{{ author.gravatar_uid }}-160x160.jpg"
       data-srcset="/assets/img/gravatars/{{ author.gravatar_uid }}-160x160.jpg"
-      {% endif %}
-      {% if author.image_url %}
-      data-src="{{author.image_url}}"
-      data-srcset="{{author.image_url}}"
+      {% elsif author.avatar_name %}
+      data-src="/assets/img/avatars/{{author.avatar_name}}"
+      data-srcset="/assets/img/avatars/{{author.avatar_name}}"
       {% endif %}
       >
     </span>
