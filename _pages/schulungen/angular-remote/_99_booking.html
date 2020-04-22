@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    {% assign remote_workshops = site.data.events.angular-remote  | where: 'location.address.addressLocality',  'Remote'  %}
+    {% assign remote_workshops = site.data.events.angular-intensiv  | where: 'location.address.addressLocality',  'Remote'  %}
 
     {% for event in remote_workshops | limit:6 %}
     <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
