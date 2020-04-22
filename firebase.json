@@ -15,7 +15,7 @@
       },
       {
         "source": "/slack*",
-        "destination": "https://join.slack.com/t/workshops-de/shared_invite/enQtOTI0OTUxOTQ4ODE4LTAzNmFlNDQyNWJiZTE1NmEyMDBhNmU3ZTNiMWUwOTAzNTI1MDE1ZWRhYmJjYjlhMjk5NmRlMTk2YjI0OGU3NDU",
+        "destination": "https://workshops.de/slack",
         "type": 301
       },
       {
