@@ -23,6 +23,7 @@ defaults:
       layout: "post"
       header_image: "header.jpg"
       toc: true
+      language: "de"
   - scope:
       path: "_books" # an empty string here means all files in the project
     values:

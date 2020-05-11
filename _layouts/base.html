@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-{% if post.language %}
-<html lang="{{ post.language }}">
-{% else %}
 <html lang="de">
-{% endif %}
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="utf-8">
@@ -20,12 +16,15 @@
   {% if page.noindex %}
   <meta name="robots" content="noindex, follow">
   {% else %}
+  <!-- Use canonical_url if available is post -->
+  {% if page.canonical_url %}
+  <link rel="canonical" href="{{ page.canonical_url }}">
+  {% else %}
   <link rel="canonical" href="{{ site.url }}{{ page.url}}">
   {% endif %}
-
-  {% if post.canonical %}
-  <link rel="canonical" href="{{ post.canonical }}">
   {% endif %}
+
+
 
   {% include _social_meta_tags.html %}
 
