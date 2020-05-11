@@ -1,9 +1,11 @@
 ---
 title: "VSCode extension inside nx workspace"
 description: "Run an Angular webview in vscode."
-author: "Grandschtroumpf"
-published_at: 2020-05-7 10:15:01.000000Z
+author: "François Guezengar"
+published_at: 2020-05-07 10:15:01.000000Z
 categories: "vscode nx angular"
+canonical_url: https://medium.com/@GrandSchtroumpf/vscode-extension-inside-a-nx-workspace-f9ad232a26e5
+language: "en"
 ---
 
 Building a good UX with VSCode extension can be difficult and might require to use webview. Here we see how nx workspace helps you a great vscode webview with Angular.
@@ -13,7 +15,7 @@ _The code below is available in [this repository](https://github.com/GrandSchtro
 
 ## Create the workspace
 Create an nx workspace. Let's keep it empty for now and use the angular CLI.
-```
+```cmd
 npx create-nx-workspace studio
 -> What to create in the new workspace: empty
 -> CLI to power the Nx workspace      : Angular CLI
@@ -27,14 +29,14 @@ cd studio/
 vscode extension are node programs that run inside the ide.
 
 We'll need `@nrwl/node` schematics for that :
-```
+```cmd
 npm i -D @nrwl/node
 ng generate @nrwl/node:application vs-code
 ```
 
 ### Setup vscode
 This application is the empty point for your extension and requires the vsode api :
-```
+```cmd
 npm i vscode
 ```
 
@@ -148,12 +150,12 @@ I just pasted the code from the `yo` generator for vscode extension & change the
 
 ## Try it out
 First build you node app :
-```
+```cmd
 ng build vs-code --watch
 ```
 
 Then press **F5**. It should open a new vscode window. For there hit `Ctrl+p` and write :
-```
+```cmd
 > Start My Extension
 ```
 If everything goes well, you should see a message "Hello World" 🎉.
@@ -195,7 +197,7 @@ This is a good start, but as you can imagine it's going to be a pain to build a 
 
 ### Create Angular Application
 Create the application
-```
+```cmd
 npm i -D @nrwl/angular
 ng generate @nrwl/angular:application studio
 ```
@@ -203,7 +205,7 @@ ng generate @nrwl/angular:application studio
 The first thing to do it update the `outputPath` of the angular application to put it inside the dist folder of the `vs-code` extension:
 
 In `angular.json` change `projects/studio/architect/build/options/outputPath` to :
-```
+```json
 "outputPath": "dist/apps/vs-code/studio"
 ```
 
@@ -306,7 +308,7 @@ export function activate(context: ExtensionContext) {
 
 ### Build and test
 Let's run everything.
-```
+```cmd
 ng build studio --prod
 ng build vs-code
 ```
@@ -342,7 +344,7 @@ updateWebview();
 
 For this to work we need to enable `outputHashing` in development mode for our angular app.
 In `angular.json` update `projects/studio/architect/build/options/outputHashing` to "all"
-```
+```json
 "outputHashing": "all"
 ```
 
@@ -352,7 +354,7 @@ In `angular.json` update `projects/studio/architect/build/options/outputHashing`
 
 Now we need to build our extension & angular application in watch mode in two terminals :
 
-```
+```cmd
 ng build studio --watch
 ng build vs-code --watch
 ```
