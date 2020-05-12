@@ -36,7 +36,7 @@ Standardmäßig gibt es folgende Hooks, die bei ihrer Nutzung auch beim ersten M
 7. **ngAfterViewChecked** - Kontrolle auf Änderungen in den Views
 8. **ngOnDestroy** - vor dem Entfernen der Komponente
 
-Anwendung finden eure Hook-Funktionen aber erst, wenn ihr eurer Component-Klasse das dazugehörige Interface zuweist. Für jeden Hook existiert ein entsprechendes Interface ohne den Prefix *ng*.
+Das Zuweisen des Interfaces zu der Component ist optional, vermeidet aber Tippfehler. Für jeden Hook existiert ein entsprechendes Interface ohne den Prefix *ng*.
 
 <table class="table table-striped">
   <thead>
