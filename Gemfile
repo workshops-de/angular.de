@@ -10,7 +10,7 @@ ruby RUBY_VERSION
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem 'jekyll', '~> 4.0.1'
-gem "rest-client"
+gem 'rest-client'
 gem 'fastimage'
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 
@@ -21,9 +21,9 @@ gem 'fastimage'
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem 'jekyll-autoprefixer', '~> 1.0'
-  gem "jekyll-feed", "~> 0.13"
-  gem "jekyll-sitemap"
-  gem "jekyll-paginate-v2"
+  gem 'jekyll-feed', '~> 0.13'
+  gem 'jekyll-sitemap'
+  gem 'jekyll-paginate-v2'
   gem 'jekyll-postfiles'
 end
 
