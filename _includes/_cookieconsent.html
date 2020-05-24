@@ -1,0 +1,54 @@
+<script>
+var loadAnalyticTools = function() {
+  var scripts = document.querySelectorAll('script[type*=plain][data-cookieconsent=accepted]');
+  scripts.forEach(function(elm) {
+    eval(elm.text);
+  });
+}
+
+var cc = window.cookieconsent.initialise({
+  palette: {
+    popup: {
+      background: '#ffffff',
+      text: '#838391',
+    },
+    button: {
+      background: '#0386c9',
+      text: '#ffffff'
+    }
+  },
+  theme: 'classic',
+  position: 'bottom-left',
+  type: 'opt-in',
+  content: {
+    message: 'Wir nutzen Cookies und Google Analytics, um diese Website für Sie so interessant wie möglich zu gestalten. Sind Sie damit einverstanden? (Sie können diese Entscheidung jederzeit widerrufen)',
+    deny: 'Ablehnen',
+    dismiss: 'Ablehnen',
+    allow: 'OK, gerne!',
+    link: 'Datenschutzerklärung',
+    href: 'https://angular.de/datenschutz/'
+  },
+  onInitialise: function (status) {
+    var type = this.options.type;
+    var didConsent = this.hasConsented();
+    if (type == 'opt-in' && didConsent) {
+      // enable cookies
+      window.loadAnalyticTools();
+    }
+  },
+  onStatusChange: function(status, chosenBefore) {
+    var type = this.options.type;
+    var didConsent = this.hasConsented();
+    if (type == 'opt-in' && didConsent) {
+      // enable cookies
+      window.loadAnalyticTools();
+    }
+  },
+  onRevokeChoice: function() {
+    var type = this.options.type;
+    if (type == 'opt-in') {
+      // disable cookies
+    }
+  }
+});
+</script>
