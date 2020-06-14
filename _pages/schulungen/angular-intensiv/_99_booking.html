@@ -16,9 +16,7 @@
       </div>
     </div>
 
-    {% assign onsite_workshops = site.data.events.angular-intensiv  | where_exp: "event", "event.location.address.addressLocality != 'Remote'"  %}
-
-    {% for event in onsite_workshops limit:6 %}
+    {% for event in site.data.events.angular-intensiv limit:6 %}
     <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
       <div class="col-4">
         <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span class="mr-2">{{ event.endDate | date: "%d.%m.%Y" }}</span>
@@ -44,7 +42,9 @@
                 endcase %}</span>
             </a>
             <span class="d-block d-lg-inline">
+              {% if event.location.address.addressLocality != 'Remote' %}
               <span>in</span>
+              {% endif %}
               <span itemprop="location" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
               <span>
                 {% if event.early_bird == true %}
