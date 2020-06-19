@@ -7,8 +7,8 @@ header_source: https://unsplash.com/photos/idmvPhF8t4E
 categories: "angular remote schulung"
 ---
 
-## Teaser
-Artikel über einen Workshop von Michael Wellner.
+## Der Besuch eines Angular & TypeScript Remote Workshops
+von Michael Wellner.
 
 Vom 12.02. - 14.02.2020 war ich auf dem "Angular & TypeScript Intensiv Workshop" von workshops.de / angular.de in Berlin.
 Ich bin aktuell in einem Angular Projekt tätig, weshalb ich schon etwas Vorwissen mitbrachte. Nach einer kurzen Vorstellung des Trainers und der geplanten Inhalte, hatte jeder Teilnehmer die Möglichkeit sich vorzustellen. Was ziemlich cool ist, es gibt ein Online Portal, zu dem die Teilnehmer Zugriff haben und sich während und auch nach dem Workshop noch Folien und Aufgaben anschauen können und sich zusätzlich noch per Chat austauschen können.
