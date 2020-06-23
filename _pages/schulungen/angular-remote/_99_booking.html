@@ -53,6 +53,10 @@
             </span>
             <meta itemprop="name" content="🅰️ Angular Intensiv Kurs">
             <meta itemprop="url" content="{{ event.url }}">
+            <meta itemprop="eventStatus" content="https://schema.org/EventScheduled">
+            {% if event.location.address.addressLocality == 'Remote' %}
+            <meta itemprop="eventAttendanceMode" content="https://schema.org/OnlineEventAttendanceMode">
+            {% endif %}
           </div>
           <div class="col-sm-3 text-right">
             <a class="btn btn-success btn-sm btn-cta shadow" href="{{ event.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list#booking" target="_blank">anmelden</a>
