@@ -1,8 +1,8 @@
 ---
-title: "Remote Workshops: Kleiner Einblick eines Workshopteilnehmers"
-description: ""
+title: "Ist der Angular & TypeScript Workshop die richtige Entscheidung?"
+description: "Ein kleiner Einblick von Michael Wellner in den Angular & TypeScript Workshop"
 author: "Michael Wellner"
-published_at: 
+published_at: 2020-07-29 10:00:00
 header_source: https://unsplash.com/photos/idmvPhF8t4E
 categories: "angular remote schulung"
 ---
