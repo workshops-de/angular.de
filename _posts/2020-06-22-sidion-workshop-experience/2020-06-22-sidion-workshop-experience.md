@@ -2,7 +2,7 @@
 title: "Ist der Angular & TypeScript Workshop die richtige Entscheidung?"
 description: "Ein kleiner Einblick von Michael Wellner in den Angular & TypeScript Workshop"
 author: "Michael Wellner"
-published_at: 2020-07-29 15:00:00
+published_at: 2020-06-29 15:00:00
 header_source: https://unsplash.com/photos/idmvPhF8t4E
 categories: "angular remote schulung"
 canonical_url: https://www.sidion.de/lernen/sidion-labor/blog/Angular-TypeScript-Workshop.html
