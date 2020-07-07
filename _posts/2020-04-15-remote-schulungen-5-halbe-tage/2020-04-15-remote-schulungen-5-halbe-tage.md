@@ -54,7 +54,7 @@ Unsere Schulungen fokussieren einen sehr starken Hands-On-Anteil, was bedeutet, 
 * 60% Praxis Anteil
 * Aufbau eines eigenen Projektes
 * Musterlösungen zu allen Aufgaben
-* TrainerIn kann sich bei Bedarf auf den Bildschirm schalten
+* Trainer:in kann sich bei Bedarf auf den Bildschirm schalten
 * Gruppenarbeit und Breakout-Sessions
 
 ## Aufgaben im Online Zugriff
