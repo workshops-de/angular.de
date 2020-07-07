@@ -199,3 +199,7 @@ Ich habe die Code-Snippets in ein vollständiges [Beispiel auf StackBlitz](https
 style="width: 100%; height: 450px"
 src="https://stackblitz.com/edit/ng-loading-indication?ctl=1&embed=1&file=src/app/app.component.ts&view=preview">
 </iframe>
+
+
+Du möchtest den Artikel lieber in Englisch lesen? Das kannst du hier tun:
+<https://nils-mehlhorn.de/posts/indicating-loading-the-right-way-in-angular>
