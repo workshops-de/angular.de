@@ -15,7 +15,7 @@ Es ist eine Standardanforderung: eine Ladeanzeige soll den Nutzer unterhalten, w
 ## Ladeanzeige für Daten
 
 Fangen wir mit einem häufig vorkommenden Fall an: wir wollen eine Liste von Nutzern darstellen, welche asynchron von einem Service bereitgestellt wird. Eine einfache, aber technisch einwandfreie Lösung könnte wie folgt aussehen:
- 
+
 ``` typescript
 export class UserComponent implements OnInit  {
 
@@ -138,13 +138,13 @@ Auch wenn der Nutzer mit diesem Ansatz eine grobe Indikation darüber bekommt, o
 
 Wenn dir die Nachteile des Ansatzes mit HTTP Interceptor passen, kannst du ihn für eine globale Ladeanzeige wie etwa ein Fortschrittsleiste am oberen Bildschirmrand verwenden - siehe erste Abbildung.
 
-![Globale Ladeanzeige](./global_indication.png)
+![Globale Ladeanzeige](./global-indication.png)
 
 Ein paar Mainstream-Anwendungen machen das, es sieht ganz fancy aus und es gibt [Tutorials](https://www.freakyjolly.com/http-global-loader-progress-bar-using-angular-interceptors/) und [Bibliotheken](https://github.com/aitboudad/ngx-loading-bar) mit denen man dieses Verhalten gut umsetzen kann.
 
 Wenn wir dem Nutzer aber genau sagen wollen, worauf er gerade wartet oder sogar bestimmte Interaktionen deaktivieren möchten (siehe zweite Abbildung), müssen wir uns was anderes überlegen.
 
-![Kontextbezogene Ladeanzeige](./contextual_indication.png)
+![Kontextbezogene Ladeanzeige](./contextual-indication.png)
 
 Es ist wichtig den Unterschied zu verstehen. Ansonsten zeigt man vielleicht fälschlicherweise an, dass eine Formular-Interaktion (bspw. unten link in der Abbildung) lädt, obwohl ein anderer Aufruf (bspw. das Widget ganz rechts) eigentlich für den Indikator verantwortlich ist.
 
@@ -195,7 +195,7 @@ export class UserComponent  {
 
 Ich habe die Code-Snippets in ein vollständiges [Beispiel auf StackBlitz](https://stackblitz.com/edit/ng-loading-indication) zusammengestellt - klick auf 'Run Project' um die Ladenindikatoren zu sehen. Lass dich nicht von den blauen Indikatoren von StackBlitz irritieren, unsere sind rot.
 
-<iframe 
+<iframe
 style="width: 100%; height: 450px"
 src="https://stackblitz.com/edit/ng-loading-indication?ctl=1&embed=1&file=src/app/app.component.ts&view=preview">
 </iframe>
