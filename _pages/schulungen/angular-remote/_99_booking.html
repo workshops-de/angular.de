@@ -46,7 +46,7 @@
             <span class="d-block d-lg-inline">
               {% if event.location.address.addressLocality != 'Remote' %}
               <span>in</span>
-              <span itemprop="location" itemscope itemtype="http://schema.org/Place" content="{{event.location.address.addressLocality}} + Inhouse">
+              <span itemprop="location" itemscope itemtype="http://schema.org/Place">
                 <meta itemprop="name" content="{{event.location.name}}">
                 <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                   <span itemprop="addressLocality" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
@@ -55,7 +55,10 @@
                 </span>
               </span>
               {% else %}
-              <span itemprop="location" content="{{event.location.address.addressLocality}} + Remote">{{event.location.address.addressLocality}}</span>
+              <span itemprop="location" itemscope itemtype="http://schema.org/VirtualLocation">
+                <span>{{event.location.address.addressLocality}}</span>
+                <meta itemprop="url" content="https://zoom.us/  ">
+              </span>
               {% endif %}
               <span>
                 {% if event.early_bird == true %}
