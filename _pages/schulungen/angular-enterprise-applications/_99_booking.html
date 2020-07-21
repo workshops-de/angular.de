@@ -22,7 +22,7 @@
               </div>
               <div class="col-4">
                 <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">
-                  {{ event.startDate | date: "%d.%m" }}</span> - {{ event.endDate | date: "%d.%m.%Y" }}
+                  {{ event.startDate | date: "%d.%m" }}</span> - <span class="mr-2" itemprop="endDate" content="{{ event.endDate | date: " %Y-%m-%d " }}"></span>{{ event.endDate | date: "%d.%m.%Y" }}</span>
                 {% if event.bookingsStatus == "BOOKED" %}
                   <span class="badge badge-danger">ausgebucht</span>
                 {% elsif event.bookingsStatus == "ONE_LEFT" %}
@@ -73,11 +73,15 @@
                     </span>
                     <meta itemprop="name" content="🅰️ Angular Advanced Kurs">
                     <meta itemprop="url" content="{{ event.url }}">
-                    <meta itemprop="organizer.name" content="Workshops.DE">
-                    <meta itemprop="organizer.url" content="https://workshops.de">
+                    <span itemprop="organizer" itemscope itemtype="http://schema.org/Organization">
+                      <meta itemprop="name" content="Workshops.DE">
+                      <meta itemprop="url" content="https://workshops.de">
+                    </span>
                     <meta itemprop="eventStatus" content="https://schema.org/EventScheduled">
                     {% if event.location.address.addressLocality == 'Remote' %}
                     <meta itemprop="eventAttendanceMode" content="https://schema.org/OnlineEventAttendanceMode">
+                    {% else %}
+                    <meta itemprop="eventAttendanceMode" content="https://schema.org/OfflineEventAttendanceMode">
                     {% endif %}
                   </div>
                   <div class="col-sm-3 text-right">
