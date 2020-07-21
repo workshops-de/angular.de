@@ -44,7 +44,19 @@
                 endcase %}</span>
             </a>
             <span class="d-block d-lg-inline">
-              <span itemprop="location" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
+              {% if event.location.address.addressLocality != 'Remote' %}
+              <span>in</span>
+              <span itemprop="location" itemscope itemtype="http://schema.org/Place" content="{{event.location.address.addressLocality}} + Inhouse">
+                <meta itemprop="name" content="{{event.location.name}}">
+                <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                  <span itemprop="addressLocality" content="{{event.location.address.addressLocality}} + Inhouse">{{event.location.address.addressLocality}}</span>
+                  <meta itemprop="streetAddress" content="{{event.location.address.streetAddress}}">
+                  <meta itemprop="postalCode" content="{{event.location.address.postalCode}}">
+                </span>
+              </span>
+              {% else %}
+              <span itemprop="location" content="{{event.location.address.addressLocality}} + Remote">{{event.location.address.addressLocality}}</span>
+              {% endif %}
               <span>
                 {% if event.early_bird == true %}
                 <span class="badge badge-info"><small>Frühbucher Rabatt</small></span>
@@ -53,6 +65,8 @@
             </span>
             <meta itemprop="name" content="🅰️ Angular Intensiv Kurs">
             <meta itemprop="url" content="{{ event.url }}">
+            <meta itemprop="organizer.name" content="Workshops.DE">
+            <meta itemprop="organizer.url" content="https://workshops.de">
             <meta itemprop="eventStatus" content="https://schema.org/EventScheduled">
             {% if event.location.address.addressLocality == 'Remote' %}
             <meta itemprop="eventAttendanceMode" content="https://schema.org/OnlineEventAttendanceMode">
