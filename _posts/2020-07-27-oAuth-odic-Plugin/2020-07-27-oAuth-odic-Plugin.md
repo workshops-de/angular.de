@@ -1,10 +1,10 @@
 ---
-title: “Single Sign-on mit OAuth 2 und OpenId Connect”
+title: Single Sign-on mit OAuth 2 und OpenId Connect
 description: “Die wenigsten Geschäftsanwendungen kommen ohne Authentifizierung und Autorisierung aus. Häufig müssen bestehende Identity-Lösungen wie Active Directory oder LDAP-Systeme integriert werden, um Single-Sign-on zu ermöglichen. In modernen Web-Anwendungen muss der Client auch das Recht erhalten, im Namen des angemeldeten Benutzers auf Services zuzugreifen. All diese Anforderungen lassen sich elegant mit Security-Tokens lösen.”
 author: "Manfred Steyer"
 published_at: 2020-07-27 15:00:00
 header_source: https://unsplash.com/photos/w7ZyuGYNpRQ
-categories: "angular oAuth Plugin"
+categories: "angular oAuth"
 ---
 
 # Single Sign-on mit OAuth 2 und OpenId Connect
@@ -94,7 +94,7 @@ Während sich Aussteller und Konsumenten von Claims bilateral auf die zu verwend
 
 ## Protokoll-Flüsse (Flows)
 
-Für verschiedene Anwendungsfälle definieren OAuth 2 und OIDC sogenannte Flows. Diese legen fest, welche Nachrichten auszutauschen sind, damit der Client die erwähnten Tokens erhält. Das aktuelle [Best Current Practice Dokument](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13) der OAuth-Working-Group empfiehlt den sogenannten Authorization Code Flow in Kombination mit dem Verfahren [PKCE](https://oauth.net/2/pkce/) für Single Page Applications. Darauf ist auch bei der Konfiguration des gewählten Authorization Servers zu achten. 
+Für verschiedene Anwendungsfälle definieren OAuth 2 und OIDC sogenannte Flows. Diese legen fest, welche Nachrichten auszutauschen sind, damit der Client die erwähnten Tokens erhält. Das aktuelle [Best Current Practice Dokument](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13) der OAuth-Working-Group empfiehlt den sogenannten Authorization Code Flow in Kombination mit dem Verfahren [PKCE](https://oauth.net/2/pkce/) für Single Page Applications. Darauf ist auch bei der Konfiguration des gewählten Authorization Servers zu achten.
 
 Wer sich für die Protokoll-Details dieses Flows interessiert, wird in der [OAuth 2 Spezifikation](https://oauth.net/2/) fündig. Dieser Artikel nutzt zur Automatisierung der damit einhergehenden Details die Bibliothek [angular-oauth2-oidc](https://www.npmjs.com/package/angular-oauth2-oidc), sodass man sich damit nicht belasten muss.
 
@@ -132,20 +132,20 @@ Um der Bibliothek Eckdaten wie die URL des Authorization Servers mitzuteilen, is
 
 ```typescript
 import { AuthConfig } from 'angular-oauth2-oidc';
- 
+
 export const authConfig: AuthConfig = {
- 
+
   // Url des Authorization-Servers
   issuer: 'http://idsvr4.azurewebsites.net',
- 
+
   // Url der Angular-Anwendung
   // An diese URL sendet der Authorization-Server den Access Code
   redirectUri: window.location.origin + '/index.html',
- 
+
   // Name der Angular-Anwendung
   clientId: 'spa',
- 
-  // Rechte des Benutzers, die die Angular-Anwendung wahrnehmen möchte 
+
+  // Rechte des Benutzers, die die Angular-Anwendung wahrnehmen möchte
   scope: 'openid profile email offline_access api',
 
   // Code Flow (PKCE ist standardmäßig bei Nutzung von Code Flow aktiviert)
@@ -158,7 +158,7 @@ Die ``redirectUri`` und die ``clientId`` müssen gemeinsam beim Authorization-Se
 
 Die Scopes ``openid``, ``profile`` und ``email`` sind durch OIDC definiert und beschrieben die Informationen, die die Anwendung über den Benutzer bekommen möchte. Im einfachsten Fall wird nur ``openid`` angefordert. Das hätte zur Folge, dass die Anwendung lediglich die Id des Benutzers erhält. Hinter ``profile`` verbergen sich Profilinformationen wie Vorname oder Nachname und hinter ``email`` – wenig überraschend – die Email-Adresse des Benutzers, aber auch die Tatsache, ob diese bereits durch eine Test-Email verifiziert wurde.
 
-Der Scope ``offline_access`` gibt an, dass die Anwendung ein Refresh-Token haben möchte. Damit lässt sich ein neues Access Token anfordern, wenn das bestehende abgelaufen ist. Aus Sicherheitsgründen sind Access Tokens in der Regel kurzlebig - eine Lebensdauer von lediglich 10 bis 20 Minuten ist keine Seltenheit. 
+Der Scope ``offline_access`` gibt an, dass die Anwendung ein Refresh-Token haben möchte. Damit lässt sich ein neues Access Token anfordern, wenn das bestehende abgelaufen ist. Aus Sicherheitsgründen sind Access Tokens in der Regel kurzlebig - eine Lebensdauer von lediglich 10 bis 20 Minuten ist keine Seltenheit.
 
 Bei ``api`` handelt es sich hingegen um einen benutzerspezifischen Scope. Im betrachteten Fall gibt er an, dass der Client im Namen des Benutzers auf die Demo-API zugreifen darf. In der Regel gibt es pro API solch einen Scope, wobei sich diese auch auf (Teile von) Use-Cases herunterbrechen oder zu übergeordneten Scopes aggregieren lassen.
 
