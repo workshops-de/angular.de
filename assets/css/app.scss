@@ -6,9 +6,12 @@
 // $enable-shadows: true;
 
 // Font / Typographie
-$font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 $font-size-base: 1.1rem;
 $line-height-base: 1.618;
+
+$code-font-size: .875em;
 
 // Theme Colors
 $primary:#0386c9; // #4eafca
