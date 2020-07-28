@@ -5,14 +5,6 @@
         <div class="card events">
           <div class="card-header">
             <strong class="h4">Termine</strong>
-            <span class="float-right">
-              <small>
-                <a class="text-muted" data-utm-campaign="website-link-right-top" data-utm-medium="link" href="https://workshops.de?utm_source=angular_de&utm_campaign=website-link-right-top&utm_medium=link&utm_content=workshops-list"
-                  target="_blank">
-                  Buchung über workshops.de
-                </a>
-              </small>
-            </span>
           </div>
           <div class="card-body">
             {% for event in site.data.events.nestjs %}
@@ -90,29 +82,27 @@
               </div>
             </div>
             {% endfor %}
-            <hr>
-            <div class="row">
-              <div class="d-none d-md-block col-1"></div>
-              <div class="col-4 text-muted">
-                Termin flexibel<br>
-                <small class="d-none d-sm-inline">Standarddauer 2 Tage</small>
+            <div class="row mb-2 mt-4">
+              <div class="col-4">
+                <span>Individuell <span class="small d-block d-lg-inline">(Standarddauer 2 Tage)</span></span>
               </div>
-              <div class="col-8 col-sm-7">
+              <div class="col-8">
                 <div class="row">
-                  <div class="col-12 col-sm-9">
-                    <a class="text-unstyled" href="https://workshops.de/seminare-schulungen-kurse/nestjs-enterprise-applications/inhouse?utm_source=angular_de&utm_campaign=website-link-inhouse&utm_medium=link&utm_content=workshops-list"
-                      target="_blank"> <span class="sr-only">Angular Advanced</span> Firmenschulung Inhouse
-                    </a> <br>
-                    <small class="d-none d-sm-inline"> Termine und Preise auf Anfrage </small>
-                    <small class="d-inline d-sm-none"> Auf Anfrage </small>
+                  <div class="col-sm-9">
+                    <a class="text-unstyled" href="https://workshops.de/seminare-schulungen-kurse/nestjs-enterprise-applications/inhouse?utm_source=angular_de&utm_campaign=website-link-inhouse&utm_medium=link&utm_content=workshops-list" target="_blank"> <span class="sr-only"><span class="sr-only">Angular Advanced</span> Firmenschulung Inhouse</a>
+                    <span class="small d-block d-lg-inline">
+                      Termine und Preise auf Anfrage
+                    </span>
+                    <span class="small d-inline d-sm-none"> Auf Anfrage </span>
                   </div>
-                  <div class="col-12 col-sm-3 text-right">
-                    <a class="btn btn-primary btn-sm btn-cta shadow" href="https://workshops.de/seminare-schulungen-kurse/nestjs-enterprise-applications/inhouse?utm_source=angular_de&utm_campaign=undefined&utm_medium=button&utm_content=workshops-list"
-                      target="_blank"> <span class="sr-only">Angular Advanced Inhouse</span> &nbsp;anfragen&nbsp;
-                    </a> </div>
+                  <div class="col-sm-3 text-right">
+                    <a class="btn btn-primary btn-sm btn-cta shadow" href="https://workshops.de/seminare-schulungen-kurse/nestjs-enterprise-applications/inhouse?utm_source=angular_de&utm_campaign=undefined&utm_medium=button&utm_content=workshops-list" target="_blank"><span class="sr-only">Angular Advanced Inhouse</span> &nbsp;anfragen&nbsp;</a>
+                  </div>
                 </div>
               </div>
             </div>
+            <hr>
+            <div class="text-muted smaller text-right d-flex justify-content-end">Unsere Workshops werden durchgeführt von <span class="d-inline-flex align-items-center"><img class="ml-1 mr-1" alt="Workshops Logo" src="/assets/img/workshops-de-logo.svg" height="16"> <a class="text-workshops" href="https://workshops.de/?utm_source=angular_de&utm_campaign=website-link-right-bottom&utm_medium=link&utm_content=workshops-list" target="_blank" rel="noopener">Workshops.DE</a></span></div>
           </div>
         </div>
       </div>
