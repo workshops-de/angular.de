@@ -1,6 +1,6 @@
 ---
 title: Single Sign-on mit OAuth 2 und OpenId Connect
-description: “Die wenigsten Geschäftsanwendungen kommen ohne Authentifizierung und Autorisierung aus. Häufig müssen bestehende Identity-Lösungen wie Active Directory oder LDAP-Systeme integriert werden, um Single-Sign-on zu ermöglichen. In modernen Web-Anwendungen muss der Client auch das Recht erhalten, im Namen des angemeldeten Benutzers auf Services zuzugreifen. All diese Anforderungen lassen sich elegant mit Security-Tokens lösen.”
+description: Dieser Artikel zeigt, wie Token-basierte Sicherheit in einer Angular-Anwendung genutzt werden kann.
 author: "Manfred Steyer"
 published_at: 2020-07-27 15:00:00
 header_source: https://unsplash.com/photos/w7ZyuGYNpRQ
