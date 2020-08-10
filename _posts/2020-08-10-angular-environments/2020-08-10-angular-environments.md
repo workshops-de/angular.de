@@ -5,6 +5,7 @@ author: "Nils Mehlhorn"
 published_at: 2020-08-10 13:00:00
 header_image: banner.png
 categories: "angular environments"
+canonical_url: https://nils-mehlhorn.de/posts/angular-environment-setup-testing 
 ---
 
 Die meisten professionellen Angular Anwendungen durchlaufen im Entwicklungszyklus mehrere Ausführungs-Umgebungen. Während die Unterschiede zwischen diesen Umgebungen für eine reibungslose Auslieferung möglichst gering gehalten werden sollten, muss sich deine Webapp wahrscheinlich auf einer Entwicklungsmaschine ein bisschen anders verhalten als im produktiven Betrieb.
