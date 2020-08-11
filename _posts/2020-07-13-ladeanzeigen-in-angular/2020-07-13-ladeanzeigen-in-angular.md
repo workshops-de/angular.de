@@ -1,6 +1,6 @@
 ---
 title: "Ladeanzeigen in Angular"
-description: "Es ist eine Standardanforderung: eine Ladeanzeige soll den Nutzer unterhalten, während er darauf wartet, dass der Server Daten bereitstellt. Auch wenn man schnell einen Spinner von [CodePen](https://codepen.io/search/pens?q=spinner) oder [Angular Material](https://material.angular.io/components/progress-spinner/overview) eingebunden hat, mag es doch ein paar Unklarheiten geben, wenn man diesen nun zum richtigen Zeitpunkt in Angular anzeigen möchte - das ändern wir mit diesem Artikel!"
+description: "Es ist eine Standardanforderung: eine Ladeanzeige soll den Nutzer unterhalten, während er darauf wartet, dass der Server Daten bereitstellt."
 author: "Nils Mehlhorn"
 published_at: 2020-07-13 10:00:00
 header_image: banner.png
