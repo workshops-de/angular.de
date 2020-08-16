@@ -9,7 +9,7 @@
       "position": 1,
       "name": "Home",
       "item": "{{site.url}}"
-    },
+    }{% if crumbs.size > 0 %},{% endif %}
     {% for crumb in crumbs offset: 1 %}
       {% if forloop.last %}
     {
