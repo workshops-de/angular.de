@@ -1,6 +1,6 @@
 ---
-title: “Unit Tests mit Karma und Jasmine bei StackBlitz”
-description: “StackBlitz ist ein vielseitiges Tool. Wie man es gut in seinen Alltag einbinden kann und welche Möglichkeiten es für Unit Tests mit Karma und Jasmine gibt erzählt dir David heute in diesem Artikel.”
+title: Unit Tests mit Karma und Jasmine bei StackBlitz
+description: StackBlitz ist ein vielseitiges Tool. Wie man es gut in seinen Alltag einbinden kann und welche Möglichkeiten es für Unit Tests mit Karma und Jasmine gibt erzählt dir David heute in diesem Artikel.
 author: "David Müllerchen"
 published_at: 2020-08-24 10:00:00
 header_source: https://unsplash.com/photos/YbPGHwWJIdI
