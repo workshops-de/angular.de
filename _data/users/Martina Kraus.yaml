@@ -1,7 +1,6 @@
 permalink: martinakraus
 name: Martina Kraus
 gravatar_uid: 4f3c13088a8fe8940c3caed266f0e287
-github: martinakraus
 city: Mannheim
 trainer: true
 team: true
@@ -12,9 +11,9 @@ intro: >
 bio: >
   Martina Kraus hatte schon immer ein starkes Interesse am Web-Engineering. Als Freelancerin konzentriert sie sich auf die Implementierung von hochskalierbaren Softwarelösungen mit Node.Js und Angular.
   Neben ihrer Tätigkeit als Dozentin an der Hochschule Mannheim ist sie auch Mitglied im Hackerststolz e.V., Gründer der JavaScript User Group und Organisatorin von AngularGirls Events.
-twitter: https://twitter.com/MartinaKraus11
+twitter: MartinaKraus11
 #blog: https://www.schmaga.de
-github: https://github.com/martinakraus
+github: martinakraus
 started_with_angular: >
   Das allererste mal war glaube ich 2012, damals noch AngularJS.
   Seitdem hat sich natürlich alles geändert.

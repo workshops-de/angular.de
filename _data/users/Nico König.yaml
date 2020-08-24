@@ -10,9 +10,9 @@ bio: >
   Hi, ich bin Nico und arbeite als selbstständiger IT-Consultant und Trainer in Nürnberg. Noch immer gehe ich ohne Vorbehalte an Projekte und erreiche damit die besten Ergebnisse. Dabei nutzt ich meine exzellenten Kenntnisse der Web-Basics (JavaScript, HTML und CSS) zur Erfüllung von Kundenwünschen wahlweise mit den Frameworks Angular oder Vue.
 
   Neben der responsiven Umsetzung von Webapplikationen liegt mein Schwerpunkt außerdem bei der Implementierung von hochoptimierten Anwendungen auf Basis von Webtechnologien im Embedded Umfeld.
-twitter: https://twitter.com/theNicoKoenig
+twitter: theNicoKoenig
 #blog: https://www.schmaga.de
-github: https://github.com/nicokoenig
+github: nicokoenig
 started_with_angular: >
   Ich habe im Dezember 2015 in die ersten Betas von Angular geschnuppert und seit dem damit gearbeitet.
   Was mich an Angular begeistert ist das von Google geschnürte All-In-One Paket... keine überflüssigen Konfigurationen und ein solider Style-Guide (das spart viele Diskussionen ein).
