@@ -4,7 +4,7 @@ description: “StackBlitz ist ein vielseitiges Tool. Wie man es gut in seinen A
 author: "David Müllerchen"
 published_at: 2020-08-24 10:00:00
 header_source: https://unsplash.com/photos/YbPGHwWJIdI
-categories: "angular stackblitz"
+categories: "angular testing online ide"
 canonical_url: https://webdave.de/blog/stackblitz
 ---
 
