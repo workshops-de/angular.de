@@ -19,6 +19,9 @@
       {{ author.name }}
     </p>
     <div>
+      {% if author.website %}
+        <a href="{{ author.website }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">Website</a>
+      {% endif %}
       {% if author.github %}
         <a href="https://github.com/{{ author.github }}" class="btn btn-sm btn-outline-primary" target="_blank">Github</a>
       {% endif %}
