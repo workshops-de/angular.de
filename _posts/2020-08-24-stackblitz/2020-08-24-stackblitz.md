@@ -21,7 +21,7 @@ Aber erstmal einige grundlegende Funktionen.
 
 ### Was ist StackBlitz?
 
-![](stackblitz.png)
+![StackBlitz](stackblitz.png)
 
 StackBlitz ist ein Online Live Editor basierend auf Visual Studio Code. Hier funktionieren die selben Keyboard Shortcuts, die man von seiner lokalen Installation kennt (und liebt).
 
@@ -140,7 +140,7 @@ Das war es auch schon.
 
 ## Ja, es IST so einfach!
 
-![](stackblitz-2.png)
+![StackBlitz2](stackblitz-2.png)
 
 #### Danke
 
