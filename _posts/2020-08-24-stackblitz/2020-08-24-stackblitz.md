@@ -21,7 +21,7 @@ Aber erstmal einige grundlegende Funktionen.
 
 ### Was ist StackBlitz?
 
-<img src="assets/images/stackblitz.png" class="alignnone size-thumbnail wp-image-446" width="200" />
+![](stackblitz.png)
 
 StackBlitz ist ein Online Live Editor basierend auf Visual Studio Code. Hier funktionieren die selben Keyboard Shortcuts, die man von seiner lokalen Installation kennt (und liebt).
 
@@ -140,7 +140,7 @@ Das war es auch schon.
 
 ## Ja, es IST so einfach!
 
-<img src="assets/images/stackblitz-2.png" class="alignnone size-thumbnail wp-image-446" width="200" />
+![](stackblitz-2.png)
 
 #### Danke
 
