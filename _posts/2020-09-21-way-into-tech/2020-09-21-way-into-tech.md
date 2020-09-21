@@ -7,7 +7,7 @@ header_image: header.jpg
 categories: "angular developer tech"
 canonical_url: https://webdave.de/blog/my-way-into-tech
 language: “en”
-
+---
 
 
 # Davids way into tech
