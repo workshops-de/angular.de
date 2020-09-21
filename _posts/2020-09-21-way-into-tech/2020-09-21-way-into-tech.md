@@ -1,4 +1,5 @@
-title: Davids way into tech
+---
+title: David's way into tech
 description: Why is community so important? How could you find your way into tech? 
 author: "David Müllerchen"
 published_at: 2020-09-21 15:00:00
@@ -10,7 +11,7 @@ language: “en”
 ---
 
 
-# Davids way into tech
+# David's way into tech
 
 I've been asked a lot about how I became a developer.
 So I decided to write about my journey.
