@@ -8,7 +8,7 @@ tutorial_page_order: '1'
 ---
 
 Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular. Wir behandeln hierbei Angular in der Version 2 und höher. Bewusst wird hierbei aber die Versionsnummer weggelassen, da das Framework nun semantische Versionierung benutzt. Kurz gesagt: Es ist einfach Angular.
-Weiterhin baut dieses Tutorial auf dem selben Code-Beispiel wie unser [AngularJS 1 Tutorial](/artikel/angularjs-tutorial-deutsch/) auf - so können die Implementierungen leicht verglichen werden. Es ist aber nicht erforderlich das Angular 1 Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Als Beispiel werden wir wieder eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von Angular kennenlernen. Da wir das selbe Szenario benutzen, könnt Ihr die Lösungen in AngularJS 1 und Angular direkt miteinander vergleichen.
+Es ist  nicht erforderlich das AngularJS(Angular 1) Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an unseren Workshop-Inhalten der Angular Intensiv Schulung.
 
 Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
 
@@ -35,9 +35,49 @@ Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories:
 </div>
 <hr>
 
-## Überblick
+## Was ist Angular?
+Angular ist ein sehr erfolgreiches clientseitiges JavaScript-Webframework zur Erstellung von Single-Page-Webanwendungen. Es reiht sich neben den anderen großen Frameworks für Single Page Applications ein. Wobei das nicht ganz stimmt, da Angular sich mittlerweile sogar eher zur Platform weiterentwickelt hat. Es beinhaltet neben der reinen "API" um Anwendungen zu entwicklen mittlerweile auch Entwicklungs-Werkzeuge, Generatoren und mitgelieferte Architektur-Konzepte. Eine Ready-to-Rock Lösung um Enterprise-Anwendungen zu entwickeln. Es reiht sich ein neben den beiden anderen erfolgreichen Frontend Frameworks [React](https://reactjs.de) und [VueJS](https://vuejs.de).
 
-Wir haben die Artikelreihe in verschiedene Teile aufgeteilt.
+
+## Unterschiede zu Vue und React
+Alle drei Bibliotheken bzw Frameworks haben ihre Daseinsberechtigung, Stärken und Schwächen. Je nach Use-Case sollte hier entschieden werden, welche der Alternativen die beste Basis für das aktuelle Projekt liefert.
+**Angular** zielt hierbei ganz klar auf die professionelle Entwicklung von Enterprise Software. Durch klare Vorgaben in Struktur und den Einsatz von Generatoren können langfristig wartbare und skalierbare Softwarelösungen erstellt werden. Konzepte wie Dependency Injection und ein Fokus auf TDD sind seit der ersten Stunde von Angular im Core verankert. Durch die klare Struktur von Projekten ist hierbei explizit die Skalierbarkeit von neuen Entwickler:innen hervorzuheben. Durch dieses Massive Grundgerüst wirkt Angular auf den ersten Blick oft etwas schwergewichtig - überzeugt jedoch in Production durch systematische Optimierungen und Erweiterbarkeit.
+
+**ReactJS** zielt hierbei eher auf einen sehr minimalen Layer auf Komponenten-Ebene und ermöglicht/erfordert das Konzipieren einer eigenen Architektur vom Grund auf. Dies bietet sehr flexible Möglichkeiten für individuelle Problemstellungen sehr explizite Lösungen zu bauen. Es gibt eine Auswahl an verschiedensten Modulen für die verschiedene Anforderungen. Der Aufwand der Integration und Pflege ist hier höher als in Angular, allerdings ist das Projekt dadurch oftmals auch simpler und sehr leichtgewichtig.
+
+**VueJS** bedient die Anforderungen zwischen diesen beiden Frameworks. Indem das Framework auf einen Generator und klare Strukturen setzt begünstigt es ebenfalls die Skalierung von Projekt-Teams. Allerdings versucht Vue gleichzeitig sehr leichtgewichtig zu bleiben und möglicht wenig "Framework-Magic" einzubringen. Es ist also die simple aber strukturiere Mittellösung.
+
+Dies ist meine persöhnliche Einschätzung und ich habe bereits sehr gut mit allen drei Frameworks gearbeitet. Es kommt eben individuell auf die Problemstellung und das Team an. Falls ihr gerade Neu im Bereich Web seid kann ich euch auch sehr unseren [Moderne Webentwicklung und Frontend-Architekur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, welcher euch Webentwicklung von heute nahebringt und einen Überblick der Frameworks mit ihren stärken/schwächen gibt.
+
+
+## Motivation
+Angular selbst hat die Ursprünge in 2009, im "wilden Westen" der Webanwendungsentwicklung. Seitdem ist viel passiert - keine Angst, ich werde jetzt hier keine Geschichtsstunde starten. Es geht eher um den Punkt: In der wilden Welt von JavaScript Frameworks wo gefühlt jeden Tag 10 neue Frameworks raus kommmen ... wie konnte sich Angular sich auch seit über 10 Jahren noch als eines der erfolgreichsten Frameworks beweisen?
+Dies lässt sich wahrscheinlich am einfachsten mit der Mission von Angular beschreiben:
+
+* Apps that users ❤️ to use.
+* Apps that developers ❤️ to build.
+* A community where everyone feels welcome.
+
+Durch diese Mission ist ein wunderbares Ökosystem mit einer wahnsinnig tollen Community entstanden.
+Neben diesen ist aber der Fokus auf Qualität und Enterprise ebenfalls klar zu spüren.
+Google selber selbst nutzt nach eigenen Angaben Angular in über 1600 Projekten ein.
+(Google Teams nutzen übrigens AUCH React und VueJS für Projekte wo dieser Stack besser passt).
+
+In 2016 hat sich das Angular-Team für ein kompletten Rewrite in TypeScript entschieden.
+Damals wurde die Entscheidung größtenteils negativ wahrgenommen und von anderen Framework Benutzern zerrissen.
+
+<img class="img-fluid img-rounded" src="angular-history.png" alt="Angular Historie - Ein Zeitstrahl welcher sich 2016 in zwei Zweige aufteilt. AngularJS und Angular">
+
+
+Heute sehen wir die Weitsicht dieser Entscheidungen, da heute alle anderen Frameworks ebenfalls auf TypeScript setzen. Um Breaking Changes einfacher kommunizieren zu können hat sich das Team ebenfalls für ein fixen Relase Plan entschieden. So können Projekt-Teams Budgets für Updates bereits im Vorraus einplanen und werden nicht von Breaking-Changes in einem Release "überrascht".
+
+<img class="img-fluid img-rounded" src="relase-cycle.png" alt="Angular Release Cycle">
+
+## Struktur der Angular Platform
+
+<img class="img-fluid img-rounded" src="angular-platform-overview.png" alt="Angular Plarform Overview">
+
+## Überblick
 
 * Basis-Komponente, Klassen und Decorators(ähnlich Annotationen)
 * Property- und Event-Binding
