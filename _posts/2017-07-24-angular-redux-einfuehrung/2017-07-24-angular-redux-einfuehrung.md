@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD:_posts/2017-07-24-angular-redux-einfuehrung/2017-07-24-angular-redux-einfuehrung.md
 title: "Redux in Angular - Einführung und Konzepte"
+=======
+title: "Einführung Angular Redux - Konzepte und Begrifflichkeiten"
+>>>>>>> fix meta description of the redux article:_posts/2017-07-24-angular-redux-einfuehrung.md
 description: "Redux ist eine Implementierung des Flux Patterns. Es ist dafür da, die Verwaltung von euerm ApplicationState in eine klare und wartbare Struktur zu bringen."
 author: "Gerard Sans"
 published_at: 2017-07-24 08:22:01.000000Z
