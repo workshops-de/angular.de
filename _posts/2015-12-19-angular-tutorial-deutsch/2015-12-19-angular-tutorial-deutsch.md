@@ -7,27 +7,34 @@ categories: "tutorial angular"
 tutorial_page_order: '1'
 ---
 
+## Einführung
+
 Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular. Wir behandeln hierbei Angular in der Version 2 und höher. Bewusst wird hierbei aber die Versionsnummer weggelassen, da das Framework nun semantische Versionierung benutzt. Kurz gesagt: Es ist einfach Angular.
-Es ist  nicht erforderlich das AngularJS(Angular 1) Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an unseren Workshop-Inhalten der Angular Intensiv Schulung.
+Es ist  nicht erforderlich das AngularJS(Angular 1) Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalten der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript).
 
-Den Quellcode für das Tutorial findet ihr in einem unserer GitHub-Repositories: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
+Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil. Ihr könnt hierbei alle Aufgaben selber Programmieren und über unseren Workshops.DE Classroom Hilfestsellungen und Musterlösungen für die Aufgaben erhalten.
 
-## Was ist Angular?
+<img class="img-fluid img-rounded" src="classroom-example.png" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de">
+
+Den Quellcode für das Tutorial findet ihr in unsererem GitHub-Repository: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
+
+### Was ist Angular?
 Angular ist ein sehr erfolgreiches clientseitiges JavaScript-Webframework zur Erstellung von Single-Page-Webanwendungen. Es reiht sich neben den anderen großen Frameworks für Single Page Applications ein. Wobei das nicht ganz stimmt, da Angular sich mittlerweile sogar eher zur Platform weiterentwickelt hat. Es beinhaltet neben der reinen "API" um Anwendungen zu entwicklen mittlerweile auch Entwicklungs-Werkzeuge, Generatoren und mitgelieferte Architektur-Konzepte. Eine Ready-to-Rock Lösung um Enterprise-Anwendungen zu entwickeln. Es reiht sich ein neben den beiden anderen erfolgreichen Frontend Frameworks [React](https://reactjs.de) und [VueJS](https://vuejs.de).
 
 
-## Unterschiede zu Vue und React
+### Unterschiede zu Vue und React
 Alle drei Bibliotheken bzw Frameworks haben ihre Daseinsberechtigung, Stärken und Schwächen. Je nach Use-Case sollte hier entschieden werden, welche der Alternativen die beste Basis für das aktuelle Projekt liefert.
+
 **Angular** zielt hierbei ganz klar auf die professionelle Entwicklung von Enterprise Software. Durch klare Vorgaben in Struktur und den Einsatz von Generatoren können langfristig wartbare und skalierbare Softwarelösungen erstellt werden. Konzepte wie Dependency Injection und ein Fokus auf TDD sind seit der ersten Stunde von Angular im Core verankert. Durch die klare Struktur von Projekten ist hierbei explizit die Skalierbarkeit von neuen Entwickler:innen hervorzuheben. Durch dieses Massive Grundgerüst wirkt Angular auf den ersten Blick oft etwas schwergewichtig - überzeugt jedoch in Production durch systematische Optimierungen und Erweiterbarkeit.
 
 **ReactJS** zielt hierbei eher auf einen sehr minimalen Layer auf Komponenten-Ebene und ermöglicht/erfordert das Konzipieren einer eigenen Architektur vom Grund auf. Dies bietet sehr flexible Möglichkeiten für individuelle Problemstellungen sehr explizite Lösungen zu bauen. Es gibt eine Auswahl an verschiedensten Modulen für die verschiedene Anforderungen. Der Aufwand der Integration und Pflege ist hier höher als in Angular, allerdings ist das Projekt dadurch oftmals auch simpler und sehr leichtgewichtig.
 
 **VueJS** bedient die Anforderungen zwischen diesen beiden Frameworks. Indem das Framework auf einen Generator und klare Strukturen setzt begünstigt es ebenfalls die Skalierung von Projekt-Teams. Allerdings versucht Vue gleichzeitig sehr leichtgewichtig zu bleiben und möglicht wenig "Framework-Magic" einzubringen. Es ist also die simple aber strukturiere Mittellösung.
 
-Dies ist meine persöhnliche Einschätzung und ich habe bereits sehr gut mit allen drei Frameworks gearbeitet. Es kommt eben individuell auf die Problemstellung und das Team an. Falls ihr gerade Neu im Bereich Web seid kann ich euch auch sehr unseren [Moderne Webentwicklung und Frontend-Architekur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, welcher euch Webentwicklung von heute nahebringt und einen Überblick der Frameworks mit ihren stärken/schwächen gibt.
+Dies ist meine persöhnliche Einschätzung und ich habe bereits sehr gut mit allen dieser Frameworks gearbeitet. Es kommt individuell auf die Problemstellung und das Team an. Falls ihr gerade Neu im Bereich Web seid kann ich euch auch sehr unseren [Moderne Webentwicklung und Frontend-Architekur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, welcher euch einen Überblick in die moderne Webentwicklung von heute aufzeigt.
 
 
-## Motivation
+### Motivation
 Angular selbst hat die Ursprünge in 2009, im "wilden Westen" der Webanwendungsentwicklung. Seitdem ist viel passiert - keine Angst, ich werde jetzt hier keine Geschichtsstunde starten. Es geht eher um den Punkt: In der wilden Welt von JavaScript Frameworks wo gefühlt jeden Tag 10 neue Frameworks raus kommmen ... wie konnte sich Angular sich auch seit über 10 Jahren noch als eines der erfolgreichsten Frameworks beweisen?
 Dies lässt sich wahrscheinlich am einfachsten mit der Mission von Angular beschreiben:
 
@@ -46,13 +53,88 @@ Damals wurde die Entscheidung größtenteils negativ wahrgenommen und von andere
 <img class="img-fluid img-rounded" src="angular-history.png" alt="Angular Historie - Ein Zeitstrahl welcher sich 2016 in zwei Zweige aufteilt. AngularJS und Angular">
 
 
-Heute sehen wir die Weitsicht dieser Entscheidungen, da heute alle anderen Frameworks ebenfalls auf TypeScript setzen. Um Breaking Changes einfacher kommunizieren zu können hat sich das Team ebenfalls für ein fixen Relase Plan entschieden. So können Projekt-Teams Budgets für Updates bereits im Vorraus einplanen und werden nicht von Breaking-Changes in einem Release "überrascht".
+Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele andere Frameworks ebenfalls auf TypeScript setzen. Um Breaking Changes einfacher kommunizieren zu können hat sich das Team ebenfalls für ein fixen Relase Plan entschieden. So können Projekt-Teams Budgets für Updates bereits im Vorraus einplanen und werden nicht von Breaking-Changes in einem Release "überrascht".
 
-<img class="img-fluid img-rounded" src="relase-cycle.png" alt="Angular Release Cycle">
+<img class="img-fluid img-rounded" src="release-cycle.png" alt="Der Angular Release Cycle">
 
-## Struktur der Angular Platform
+### Die Angular Platform
+
+Das Ökosystem von Angular ist sehr groß. Die Basis bildet hierbei das Core-Framework. Hier sind die fundamentalen Konzepte implementiert die für moderne Web-Anwendungen essentiell sind. Zwei weitere Core-Konzepe die jedoch als separant nutzbar sind ist die Angular-CLI und das die Verwaltung von Komponenten. Diese bilden die Kernfunktionalitäten ab welche in fast jeder Anwendung benötigt werden. Weitere Module lassen sich *optional einbinden* falls ihr diese benötigt:
+
+* Routing - Routing für Single Page Applications
+* forms - Formulare und Validierung
+* i18n - Mehrsprachige Anwendungen
+* Animations - Animationen für Transitionen
+* PWA - Offline Fähigkeiten
+* HTTP - HTTP, Rest und GraphQL Kommunikation
+* und viele mehr
 
 <img class="img-fluid img-rounded" src="angular-platform-overview.png" alt="Angular Plarform Overview">
+
+In diesem Tutorial werden wir uns primär um das Framework, die Angular CLI und Komponenten kümmern.
+
+## Vorbereitung & Installation
+<div class="alert alert-success">👨‍💻👩‍💻Classroom Task: <a href="#" target="_blank">Install Chrome, Node & IDE</a></div>
+
+Beginnen wir nun mit der Installation von NodeJS.
+NodeJS ist die sogenannte "JavaScript Runtime" und dafür zuständig Programme auf unserem Rechner auszuführen welche in der Sprache JavaScript geschrieben sind wie z.B. das Command-Line-Interface von Angular welches wir gleich nutzen werden.
+
+Ihr könnt NodeJS über folgenden Link herrunterladen und installieren: [https://nodejs.org/download/](https://nodejs.org/download/)
+
+Mit NodeJS wird ebenfalls das Kommandozeilenwerkzeug `npm` installiert, welches uns ermöglicht weitere NodeJS Pakete auf unserem Rechner zu installieren.
+
+<div class="alert alert-info">Hinweis: Falls ihr spezielle Proxy Einstellungen benötigt könnt ihr diese in der <a href="https://docs.npmjs.com/misc/config#https-proxy" target="_blank">NPM Dokumentation für HTTPS Proxies</a> nachlesen.</div>
+
+Nachdem ihr die Installation erfolgreich abgeschlossen habt, könnt ihr nun über euren Terminal folgenden Befehl ausführen:
+
+    npm i -g @angular/cli bookmonkey-api
+
+Dieser Befehl installiert die `Angular-CLI` global auf eurem Rechner und ermöglicht euch somit nach der Installation mit dem Kommandozeilenwerkzeug `ng` zu arbeien. Als zweites Paket wird das Paket `bookmonkey-api` installiert, welches uns als simulierter Backend-Server in unserem Beispiel dient.
+
+## Generieren der Angular App
+
+<div class="alert alert-success">👨‍💻👩‍💻Classroom Task: <a href="#" target="_blank">Create a new project</a></div>
+
+Die Angular-CLI wird genutzt um neue Strukturen innerhalb unser Anwendungen zu generieren, anstatt wie oft in Projekten die Basis-Strukturen zu kopieren und über potentielle Fehler bei der Umbenennung zu stolpern. Es ist ein mächtiges Werkzeug welches euch mit `ng  --help` eine ausführlichen Hilfetext anbietet.
+
+Um unsere erste Anwendung zu generieren verwenden wir den `new` command welcher als Argument den Namen eurer Anwendung entgegennimmt. Hierbei werdet ihr gefragt ob ihr das `Routing Module` installieren wollt: Ja. Weiterhin welches Stylesheet Format ihr nutzen wollt: Hierbei wählt ihr bitte SCSS.
+
+```bash
+$ ng new angular-de-tutorial
+
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? SCSS
+```
+
+Nun werden automatisch die Projektstrukturen für euch angelegt. Dies inkludiert eine Startseite, eine Komponente, die ersten End2End Tests, Linter-Regeln, GitIgnore-Regeln und eine TypeScript Konfigiration.
+
+```bash
+CREATE angular-de-tutorial/angular.json (3671 bytes)
+CREATE angular-de-tutorial/package.json (1296 bytes)
+CREATE angular-de-tutorial/README.md (1034 bytes)
+CREATE angular-de-tutorial/tsconfig.json (543 bytes)
+CREATE angular-de-tutorial/tslint.json (1953 bytes)
+...
+CREATE angular-de-tutorial/e2e/tsconfig.json (214 bytes)
+CREATE angular-de-tutorial/e2e/src/app.e2e-spec.ts (652 bytes)
+CREATE angular-de-tutorial/e2e/src/app.po.ts (301 bytes)
+```
+
+Nach dem Generieren werden ebenfalls notwendige Pakete via `npm` installiert. Dies kann durchaus einige Minuten dauern. Ist die Installation abgeschlossen könnt ihr die Entwicklungsumgebung starten.
+
+Anschliessend können wir die Entwicklungsumgebung starten, wir müssen und mit der Console im Order der soeben Generierten App befinden.
+
+```bash
+$ cd angular-de-tutorial
+$ ng serve
+
+Angular Live Development Server is listening on localhost:4200
+```
+
+Eure Basisanwendung ist nun generiert und kann im Browser under http://localhost:4200 aufgerufen werden. Ihr solltet ein ähnliches Bild wie folgendes sehen:
+
+<img class="img-fluid img-rounded" src="first-ng-serve.png" alt="Website View of first NG Serve after generating the applicatin">
+
 
 ## Überblick
 
