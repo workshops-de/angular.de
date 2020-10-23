@@ -97,6 +97,11 @@
         "source": "/artikel/angular2-routing-tutorial-deutsch*",
         "destination": "https://angular.de/artikel/angular-routing-tutorial-deutsch/",
         "type": 301
+      },
+      {
+        "source": "/artikel/way-into-tech",
+        "destination": "https://angular.de/artikel/david-muellerchen-my-way-into-tech/",
+        "type": 301
       }
     ],
     "headers": [
