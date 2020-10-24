@@ -133,7 +133,64 @@ Angular Live Development Server is listening on localhost:4200
 
 Eure Basisanwendung ist nun generiert und kann im Browser under http://localhost:4200 aufgerufen werden. Ihr solltet ein ähnliches Bild wie folgendes sehen:
 
-<img class="img-fluid img-rounded" src="first-ng-serve.png" alt="Website View of first NG Serve after generating the applicatin">
+<img class="img-fluid img-rounded" src="first-ng-serve.png" alt="Website View of first NG Serve after generating the application">
+
+## Komponenten und Services
+
+In Angular gibt es zwei primäre Bestandteile des Frameworks mit welchen wir uns zuerst auseinander setzen.
+
+**Komponenten** sind Anzeige-Elemente. Sie werden als eigene HTML-Elemente definiert. Abhängig der definierten Anzeige-Logik und den aktuktellen Daten stellen diese Elemente den Zustand eurer Anwendung dar.
+
+**Services** sind unabhängig von der Anzeige eurer Anwendung. Sie definieren Daten, Logig und Algorithmen eurer Anwendung. Sie sind modular und wiederverwendbar.
+
+### Komponenten
+
+Angular Komponenten sind die sogenannten "building blocks" jeder Anwendung. Die verschiedenen logischen  Bausteiner einer Anwendung werden also in Komponenten aufgeteilt. Jeder dieser Komponenten übernimmt dabei eine bestimmte Funktion und wird als eigenes HTML-Element definiert.
+
+<img class="img-fluid img-rounded" src="basic-todo-component-annotated.png" alt="Example of different components of an angular application">
+
+```html
+<todo-title>ToDo App</todo-title>
+<todo-list>
+  <todo-item state="checked">Prepare Workshop</todo-item>
+  <todo-item>Hold the Workshop</todo-item>
+</todo-list>
+
+```
+
+<div class="alert alert-info">Hinweis: Diese Darstellung ist noch nicht 100% korrekt und dient in vereinfachter Form der schrittweisen Erklärung. 🙂</div>
+
+Wie ihr in diesem kleinen Beispiel einer ToDo-Liste seht, gibt es für die verschiedenen Bereiche eigene Elemente die in diesem Fall mit dem Prefix `todo-` eingeleitet werden. Wie ihr gut an der `todo-list` erkennt ist es möglich und auch absolut üblich eigene Komponenten ineinander zu verschachteln. Ziel ist es immer wiederverwendbare und wartbare Elemente zu bauen. Ws hierbei die richtige Komponentengröße ist werdet ihr in euren Projekten selber entscheiden müssen und mit wachsender Erfahrungen ein immer besseres Gefühl dafür bekommen. Bei Unsicherheit könnt ihr euch aber auch jederzeit in unserem [Slack](https://workshops.de/slack) bei uns melden.
+
+
+### Services
+
+Für Daten und Logik die nicht zwingend nur an eine Komponente gekoppelt ist werden in Angular Services genutzt. Ein Service ist eine Klasse welche Attribuite und Methoden definiert welche von Komponenten und anderen Services genutzt werden können.
+
+<img class="img-fluid img-rounded" src="angular-component-service-simple-example.png" alt="Basic Example of a component and service relation">
+
+```typescript
+export class TodoService {
+  data = [
+          {
+            title: 'Prepare Workshop',
+            state: 'checked'
+          },
+          {
+            title: 'Hold the Workshop'
+          }
+        ];
+}
+```
+
+Die eigentlichen Daten werden also aus einem Service referenziert, denn ggf werden auf Basis der aktuellen Todos auch noch andere Komponenten angezeigt wie z.B. eine Komponente welche  die aktuell offenen Todos zählt.
+
+Als erste Übersicht soll dies an dieser Stelle reichen. Wir werden uns später Services noch einmal genauer ansehen.
+
+
+## Unsere erste Komponente
+
+
 
 
 ## Überblick
