@@ -18,7 +18,29 @@ Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-
 
 Den Quellcode für das Tutorial findet ihr in unsererem GitHub-Repository: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
 
-### Was ist Angular?
+### Was wirst du in diesem Tutorial lernen?
+Dieses Tutorial zeigt die die Grundlegenden Bestandteile einer Angular Anwendung anhand eines praktisches Beispieles welches du selber implementieren oder fertige Musterlösungen nutzen und verändern kannst.
+
+Wir werden hierbei folgende Themen behandeln:
+* Was ist Angular
+* Unterschiede zu React und Vue
+* Installation von Angular
+* Komponenten
+* Expressions und Schleifen
+* Event & Property-Binding
+* Services
+* Dependency-Injection
+* Anbinden einer Rest-API
+
+Wir werden hierbei die Motivation und den Theoretischen Background kurz einleiten uns jedoch primär auf Praktische Beispiele konzentrieren. Wir werden eine kleine Anwendung bauen welche uns eine Liste von Daten von einer REST-API ausliest und diese anzeigt.
+
+<p class="text-center">
+  <img class="img-fluid img-rounded" width="40%" src="preview-bookmonkey-app.png" alt="Beispielansicht unserer Anwendung die in diesem Tutorial gemeinsam gebaut wird. Eine Liste an Büchern welche von einem Server geladen wird.">
+</p>
+
+<div class="alert alert-success">Dieser Artikel und unser Portal ist open-source. Wenn ihr Vorschläge zur Verbesserung des Artikels habt, fühlt euch jederzeit herzlich willkommen euch über unser <a href="https://github.com/workshops-de/angular.de" target="_blank">GitHub Repo</a> zu beteiligen. Wir freuen uns über jeden Input! </div>
+
+## Was ist Angular?
 Angular ist ein sehr erfolgreiches clientseitiges JavaScript-Webframework zur Erstellung von Single-Page-Webanwendungen. Es reiht sich neben den anderen großen Frameworks für Single Page Applications ein. Wobei das nicht ganz stimmt, da Angular sich mittlerweile sogar eher zur Platform weiterentwickelt hat. Es beinhaltet neben der reinen "API" um Anwendungen zu entwicklen mittlerweile auch Entwicklungs-Werkzeuge, Generatoren und mitgelieferte Architektur-Konzepte. Eine Ready-to-Rock Lösung um Enterprise-Anwendungen zu entwickeln. Es reiht sich ein neben den beiden anderen erfolgreichen Frontend Frameworks [React](https://reactjs.de) und [VueJS](https://vuejs.de).
 
 
