@@ -228,7 +228,7 @@ Hier wird als erstes der vorher beschriebene Befehl `build-electron` ausgeführt
 Anschließend wird Electron aufgerufen (Hast Du installiert), und als Parameter der Build-Ordner `dist/` übergeben.
 Speichere die Änderungen ab.
 
-> Vorsicht: Die Pfade der oben beschriebenen Befehle funktionieren so nicht in einer Windows Umgebung. In so einem Falle müssen alle "/" mit "\\\\" ersetzt werden.
+> Vorsicht: Die Pfade der oben beschriebenen Befehle funktionieren so nicht in einer Windows Umgebung. In so einem Falle müssen alle "/" mit "\\\\" ersetzt werden. Außerdem muss auch der Befehl "cp" mit "copy /Y" ersetzt werden.
 
 Electron wird deine App jetzt leider noch nicht anzeigen/laden.
 Es fehlen noch ein paar Einstellungen an der Applikation.
