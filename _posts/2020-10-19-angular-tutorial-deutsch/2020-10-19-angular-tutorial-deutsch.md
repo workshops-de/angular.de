@@ -96,7 +96,6 @@ Das Ökosystem von Angular ist sehr groß. Die Basis bildet hierbei das Core-Fra
 In diesem Tutorial werden wir uns primär um das Framework, die Angular CLI und Komponenten kümmern.
 
 ## Vorbereitung & Installation
-<div class="alert alert-success">👨‍💻👩‍💻Classroom Task: <a href="#" target="_blank">Install Chrome, Node & IDE</a></div>
 
 Beginnen wir nun mit der Installation von NodeJS.
 NodeJS ist die sogenannte "JavaScript Runtime" und dafür zuständig Programme auf unserem Rechner auszuführen welche in der Sprache JavaScript geschrieben sind wie z.B. das Command-Line-Interface von Angular welches wir gleich nutzen werden.
@@ -113,9 +112,9 @@ Nachdem ihr die Installation erfolgreich abgeschlossen habt, könnt ihr nun übe
 
 Dieser Befehl installiert die `Angular-CLI` global auf eurem Rechner und ermöglicht euch somit nach der Installation mit dem Kommandozeilenwerkzeug `ng` zu arbeien. Als zweites Paket wird das Paket `bookmonkey-api` installiert, welches uns als simulierter Backend-Server in unserem Beispiel dient.
 
-## Generieren der Angular App
+<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Install Chrome, Node & IDE</a></div>
 
-<div class="alert alert-success">👨‍💻👩‍💻Classroom Task: <a href="#" target="_blank">Create a new project</a></div>
+## Generieren der Angular App
 
 Die Angular-CLI wird genutzt um neue Strukturen innerhalb unser Anwendungen zu generieren, anstatt wie oft in Projekten die Basis-Strukturen zu kopieren und über potentielle Fehler bei der Umbenennung zu stolpern. Es ist ein mächtiges Werkzeug welches euch mit `ng  --help` eine ausführlichen Hilfetext anbietet.
 
@@ -156,6 +155,8 @@ Angular Live Development Server is listening on localhost:4200
 Eure Basisanwendung ist nun generiert und kann im Browser under http://localhost:4200 aufgerufen werden. Ihr solltet ein ähnliches Bild wie folgendes sehen:
 
 <img class="img-fluid img-rounded" src="first-ng-serve.png" alt="Website View of first NG Serve after generating the application">
+
+<div class="alert alert-success">👨‍💻👩‍💻 Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Create a new project</a></div>
 
 ## Komponenten und Services
 
@@ -211,8 +212,6 @@ Als erste Übersicht soll dies an dieser Stelle reichen. Wir werden uns später 
 
 
 ## Die erste Komponente
-
-<div class="alert alert-success">👨‍💻👩‍💻Classroom Task: <a href="#" target="_blank">Create Info Box</a></div>
 
 Wenn wir uns nun die Komponenten-Definition anschauen kommen wir das erstse mal mit [TypeScript](https://typescript.org) in Berührung. TypeScript ist eine Erweiterung von JavaScript welche uns die Möglichkeit bietet die Daten unserer Anwendung explizit zu typisieren. Weiterhin führt diese Meta-Sprache auch Features ein die es in JavaScript (noch) nicht gibt wie `Decoratoren`. TypeScript "transpiled" unseren geschriebenen Quellcode, sodass der Browser nachher wieder ganz normales JavaScript sieht und interpretieren kann. Es is also ein Feature welches uns als Entwickler:innen die tägliche Arbeit angenehmer macht.
 
@@ -357,9 +356,9 @@ Um es einfach zu halten nutzen wir in diesem Fall erstmal eine `Template-Express
 
 <img class="img-fluid img-rounded" src="info-box-toggle.gif" alt="Show and hide the additional text after button click">
 
-Wir können natürlich auch jedes andere Event wie keyup benutzen und die Methode onKeyUp an dieses Event binden. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist das unabhängig davon, ob sie in Angular oder einem anderem Framework geschrieben sind.
+Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist das unabhängig davon, ob sie in Angular oder einem anderem Framework geschrieben sind.
 
-
+<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Create Info Box</a>. </div>
 
 ### Strukturelle Template Direktiven
 Wie schon erklärt sollten strukturelle Direktiven immer dann verwendet werden, wenn der DOM verändert wird, sprich Elemente hinzugefügt oder entfernt werden sollen. Ein Beispiel dafür ist die `ngIf-Direktive`.
