@@ -188,9 +188,25 @@ Die eigentlichen Daten werden also aus einem Service referenziert, denn ggf werd
 Als erste Übersicht soll dies an dieser Stelle reichen. Wir werden uns später Services noch einmal genauer ansehen.
 
 
-## Unsere erste Komponente
+## Die erste Komponente
 
+<div class="alert alert-success">👨‍💻👩‍💻Classroom Task: <a href="#" target="_blank">Create Info Box</a></div>
 
+Wenn wir uns nun die Komponenten-Definition anschauen kommen wir das erstse mal mit [TypeScript](https://typescript.org) in Berührung. TypeScript ist eine Erweiterung von JavaScript welche uns die Möglichkeit bietet die Daten unserer Anwendung explizit zu typisieren. Weiterhin führt diese Meta-Sprache auch Features ein die es in JavaScript (noch) nicht gibt wie `Decoratoren`. TypeScript "transpiled" unseren geschriebenen Quellcode, sodass der Browser nachher wieder ganz normales JavaScript sieht und interpretieren kann. Es is also ein Feature welches uns als Entwickler:innen die tägliche Arbeit angenehmer macht.
+
+> **Klassen** wurden in ES2015 eingeführt, um Konzepte wie unter anderem Vererbung und Konstruktoren nicht mehr über Prototypen abbilden zu müssen. Diese können nun über eine einfache und saubere Syntax erstellt werden.
+
+> **Decorator** sind strukturierte Meta-Daten einer Klasse. Ihr kennt diese vielleicht aus anderen Programmiersprachen wie z.B. Java. Das eigentliche fachliche Verhalten der Komponente bilden wir innerhalb der Klasse mit Methoden ab.
+
+Eine Komponenten-Definition besteht primär aus drei Teilen:
+
+* Einer **Klasse** welche das Interface und die Anzeige-Logik der Komponente beschreibt.
+* Einem **HTML-Template** welches die Darstellung unserer Komponente definiert
+* Einem **Component-Decorator** welcher die Komponente innerhalb von Angular bekannt macht.
+
+<img class="img-fluid img-rounded" src="first-component-class-example.png" alt="Example of our first ToDo Item Component">
+
+Wie ihr in der Abbildung seht ist es möglich Variable Daten in dieser Komponente anzuzeigen. Hierzu nutzen wir die doppelten geschweiften Klammern `{{ variable }}` und können auf Attribute der Klasse zugreifen.
 
 
 ## Überblick
