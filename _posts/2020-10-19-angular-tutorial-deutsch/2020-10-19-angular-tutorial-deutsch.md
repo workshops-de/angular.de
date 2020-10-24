@@ -220,270 +220,146 @@ Wenn wir uns nun die Komponenten-Definition anschauen kommen wir das erstse mal 
 
 > **Decorator** sind strukturierte Meta-Daten einer Klasse. Ihr kennt diese vielleicht aus anderen Programmiersprachen wie z.B. Java. Das eigentliche fachliche Verhalten der Komponente bilden wir innerhalb der Klasse mit Methoden ab.
 
-Eine Komponenten-Definition besteht primär aus drei Teilen:
+Eine Komponenten-Definition besteht primär aus folgenen Teilen:
 
-* Einer **Klasse** welche das Interface und die Anzeige-Logik der Komponente beschreibt.
-* Einem **HTML-Template** welches die Darstellung unserer Komponente definiert
+
 * Einem **Component-Decorator** welcher die Komponente innerhalb von Angular bekannt macht.
+* Einer **Selektor** welcher das HTML-Element beschreibt welches wir erzeugen
+* Einem **HTML-Template** welches die Darstellung unserer Komponente definiert
+* Einer **Klasse** welche das Interface und die Anzeige-Logik der Komponente beschreibt.
 
 <img class="img-fluid img-rounded" src="first-component-class-example.png" alt="Example of our first ToDo Item Component">
 
-Wie ihr in der Abbildung seht ist es möglich Variable Daten in dieser Komponente anzuzeigen. Hierzu nutzen wir die doppelten geschweiften Klammern `{{ variable }}` und können auf Attribute der Klasse zugreifen.
+Unsere erste Komponente wird eine statische Info-Box sein. Um diese zu generieren nutzen wir wieder die Angular-CLI.
+Ihr könnt hierzu ein neuen Terminal öffnen oder den laufenden `ng serve` kurzzeitig stoppen.
+Der Serve-Prozess erkannt aber automatisch Veränderungen innerhalb eures Quellcode und kompiliert die jeweils aktuelle Version euerer Anwendung in wenigen Sekunden.
+Ich würde euch also empfehlen einen zweiten Terminal zu öffnen und folgenden Befehl zu benutzen.
 
-
-## Überblick
-
-* Basis-Komponente, Klassen und Decorators(ähnlich Annotationen)
-* Property- und Event-Binding
-* Zwei-Wege-Datenbindung
-* Expressions
-* Direktiven und Komponenten
-* Schleifen mit ngFor
-* Pipes(Filter)
-* Services
-* HTTP
-* Observables
-* Component-Lifecycle + [extra Artikel](/artikel/angular-2-component-lifecycle/)
-* Interfaces
-* [Routing mit Angular](/artikel/angular-routing-tutorial-deutsch/)
-
-<div class="alert alert-info">Hinweis: Das Tutorial orientiert sich stark am <a href="https://angular.io/docs/ts/latest/guide/style-guide.html" target="_blank">Style-Guide</a> für Angular Anwendungen.</div>
-
-## Bootstrap unser Anwendung
-
-Die Beispiele in diesem Tutorial haben wir in TypeScript geschrieben. Da viele Entwickler mit ES2015 und TypeScript nicht vertraut sind, werden wir zu neuen Funktionalitäten eine kurze Erklärung einstreuen. Ihr könnt auch eure AngularJS 1 Anwendung mit diesem Stack schreiben und euer Projekt somit sehr nah an Angular anlehnen. Dies macht eine potentielle Portierung so sehr viel angenehmer. Die ersten Vorteile von diesem Stack sehen wir bereits in unser initialen [Index-Datei](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/index.html). Anstatt riesigen Listen von `<script src="...">`, wie wir sie heutzutage in fast jeder Single-Page-Application(SPA) sehen, kümmert sich unser Build-Prozess selber um die nötigen Imports.
-
-Weiter brauchen wir noch ein Einstiegspunkt unserer Anwendung. In Angular 1.X haben wir dies immer mit der [ng-app Direktive](/artikel/angularjs-tutorial-deutsch/#ng-app---der-anfang-jeder-angularjs-applikation) gelöst. Nun definieren wir ein Angular Modul indem wir eine (meist leere) Klasse um den `@NgModule`-Decorator erweitern.
-
-> **Klassen** wurden in ES2015 eingeführt, um Konzepte wie unter anderem Vererbung und Konstruktoren nicht mehr über Prototypen abbilden zu müssen. Diese können nun über eine einfache und saubere Syntax erstellt werden.
-
-> **Decorator** sind strukturierte Meta-Daten einer Klasse. Ihr kennt diese vielleicht aus anderen Programmiersprachen wie z.B. Java. Das eigentliche fachliche Verhalten der Komponente bilden wir innerhalb der Klasse mit Methoden ab. Somit haben wir das Model und die Anzeige-Logik der Komponente sehr sauber getrennt.
-
-```typescript
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+```bash
+$ ng generate component info-box
+CREATE src/app/info-box/info-box.component.scss (0 bytes)
+CREATE src/app/info-box/info-box.component.html (23 bytes)
+CREATE src/app/info-box/info-box.component.spec.ts (636 bytes)
+CREATE src/app/info-box/info-box.component.ts (277 bytes)
+UPDATE src/app/app.module.ts (0 bytes)
 ```
 
-In diesem Modul definieren wir potentielle Abhängigkeiten zu anderen Modulen und die Haupt-Komponente unserer Anwendung die `AppComponent`. Angular lehnt sich deutlich mehr an die offiziellen Web-Components an und wird zu diesen kompatibel sein. Deshalb liegt es auf der Hand, dass wir einfach ein neues HTML-Element einführen welches unsere Anwendung an dieser Stelle für uns generiert. In unserem Fall unsere Pizza-Anwendung.
+Die für uns aktuell relevanten Dateien sind zur Zeit die `info-box.component.ts` und unser Template `info-box.component.html`. Schauen wir uns zunächst einmal unsere Klasse an.
+
+``` typescript
+@Component({
+  selector: 'app-info-box',
+  templateUrl: './info-box.component.html',
+  styleUrls: ['./info-box.component.scss']
+})
+export class InfoBoxComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+```
+
+Hier sehen wir wie erwartet eine Komponente. Unser Selektor hat den automatischen Prefix `app-` bekommen. Somit ist unsere neue Komponente nun unter dem HTML-Tag `<app-info-box></app-info-box>` benutzbar. Der Einsteigspunkt unser kompletten Anwendung ist ebenfalls eine Komponente mit dem Namen `AppComponent`.
+Um unsere frisch generierete Komponente anzuzeigen, müssen wir diese in dem Template unser Anwendung aufrufen. Hierzu geht ihr in die Datei `app.component.html`, löscht dort den kompletten derzeitigen Inhalt und fügt eure Komponente via HTML-Tag ein.
 
 ```html
-<pizza-root>Lädt...</pizza-root>
+<app-info-box></app-info-box>
 ```
 
-Unsere PizzaApp-Komponente übernimmt die komplette Komposition der Anwendung. Die Basis von diesem Element ist unsere PizzaApp Klasse.
+Wenn ihr nun eure Anwendung wieder im Browser öffnet solltet ihr die Ausgabe `info-box works!` sehen.
+Ihr könnt an dieser Stelle gerne mit euerm Template in `info-box.component.html` etwas herunmspielen und auch mehrere dieser Info-Boxen erzeugen, indem ihr den HTML-Tag in eurem App-Template einfach kopiert.
+Ein historischer Moment, nehmt euch ein paar Sekunden eure erste eigene Komponente zu bewundern. 😉
+
+## Expressions
+Eine rein statische Komponente ist natürlich nur sehr begrenzt in einer Anwendung nutzbar.
+Um variable Daten anzuzeigen nutzt Angular sogenannte Expressions in den Templates.
+Diese werden mit doppelten geschweiften Klammern eingeleitet und auch wieder geschlossen.
+
+    {{ expression }}
+
+Eine Expression wird von Angular dynamisch auf basis der aktuellen Properties eurer Klasse ausgewertet.
+Führen wir also eine ein neues Property `text` ein und füllen dieses mit eine String, können wir diesen in unserem Template ausgeben.
 
 ```typescript
-class PizzaApp {
-}
-```
+class InfoBoxComponent implements OnInit {
+  text = 'Additional Info-Text on our Info Box! 🎊';
 
-Unsere Komponente soll im ersten Schritt nichts weiter tun als einen `<h1>`-Tag zu erzeugen. Hierzu erweitern wir die Klasse `AppComponent` mit dem `@Component`-Decorator. Diese müssen wir jedoch erst mit einem [Import-Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) laden. Dies ist ebenfalls eine ES2015 Erweiterung welche es uns nun endlich die Modularisierung auf Sprachebene ermöglicht.
+  constructor() { }
 
-```typescript
-import {Component} from '@angular/core';
-import {bootstrap} from '@angular/platform-browser-dynamic';
-
-@Component({
-  template : `<h1>
-      Willkommen zum
-      Angular2 Tutorial von
-      Angular.DE
-    </h1>`
-})
-```
-
-
-Um unser Template zu definieren können wir die Eigenschaft `template`nutzen. Hierzu benutzen wir ein weiteres ES2015 Feature mit dem Namen `Template Strings`.
-
-> **Template-Strings** ermöglichen es uns sehr einfach mehrzeilige HTML-Templates innerhalb von JavaScript zu definieren. Es ist sogar möglich innerhalb dieser Strings Expressions zu verwenden, welche im aktuellen Kontext interpoliert werden. Für Weitere Informationen zu diesem Thema findet ihr z.B. auf der MDN Platform unter dem Kapitel [Template Strings Referenz](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings).
-
-Es es natürlich auch in Angular Möglich `templateUrl` zu benutzen, um eine HTML Datei für das Template anzugeben. Aufgrund der besseren Lesbarkeit innerhalb von diesem Artikel haben wir uns aber dafür entschieden die kompletten Komponenten in einer Datei zusammen zu fassen.
-
-Als nächsten müssen wir die Meta-Daten der eigentlichen Komponente definieren. Hierbei können wir über die Eigenschaft `selector` mit Hilfe einer CSS-Selektor-Regel definieren, wann unsere Komponente angewendet werden soll.
-
-```typescript
-import {Component} from '@angular/core';
-import {bootstrap} from '@angular/platform-browser-dynamic';
-
-@Component({
-  selector: 'pizza-root',
-  template : `<h1>
-      Willkommen zum
-      Angular2 Tutorial von
-      Angular.DE
-    </h1>`
-})
-export class AppComponent {
-}
-```
-
-Nun haben wir unsere [minimale Komponente](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/app/app.component.ts) bereits fast komplett fertig definiert. Was uns jetzt noch fehlt ist eine kleine Helper-Funktion die Angular uns mitliefert: Die `bootstrap` Funktion. Mit Hilfe dieser Funktion stoßen wir die Initialisierung des Modules an.
-
-```typescript
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/';
-
-platformBrowserDynamic().bootstrapModule(AppModule);
-```
-
-
-[Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/app/app.component.ts) app.component.ts<br>
-[Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/02-bootstrap/src/main.ts) main.ts
-
-Nach dem Angular Style-Guide sollte das Starten der Anwendung in einer extra Datei geschehen. Diese trägt in der Regel den Namen `main.ts`. Aus diesem Grund ist auch der obige Quellcode in diese Dateien aufgeteilt.
-
-<div class="alert alert-warning">Beachte: In der Regel besteht eine Anwendung nicht nur aus einer Komponente, sondern aus komplexeren Logiken. In diesen Fällen bietet es sich an das Starten (bootstrap) der Anwendung in eine eigene Datei mit dem Namen <i>main.ts</i> auszulagern!</div>
-
-Nachdem wir unsere Basis-Komponente nun erfolgreich eingebunden haben, werfen wir einmal ein Blick auf die Features die uns das Angular Framework mitbringt.
-
-## Property- und Event-Binding
-Angular bietet uns viel generische Möglichkeiten um auf Events zu reagieren oder Eigenschaften an einem Element dynamisch zu definieren. Mussten wir in Angular 1 noch für jedes Event eine extra Direktive definieren, wie z.B. `ng-click`, `ng-doubleclick`, `ng-mouseover` usw., können wir dies nun generisch mit Hilfe der Runden klammern lösen.
-
-Da sich Angular hierbei direkt an die nativen Events der DOM-Elemente hängt, können wir auch ohne Probleme Standart-Elemente, Polymer, WebComponents oder auch Komponenten von anderen Frameworks wie z.B. ReactJS miteinander kombinieren. Das selbe gilt natürlich auch für die `Property-Bindings`, welche sich auf die Eigenschaften eines Elements beziehen. War es bei AngularJS 1 noch so, dass wir diese in einem JavaScript Scope halten mussten und schwer nach externen Komponenten (nativ oder andere Frameworks) kommunizieren konnten, können wir nun auch auf den Browser-DOM-Objekten unsere Daten manipulieren und mit anderen Komponenten austauschen.
-
-So können wir mit `[style.background-color]` auf die Hintergrundfarbe eines Elements Einfluss nehmen. Diesen Wert können wir sowohl statisch als auch über dynamisch Variablen setzen. Um auf `input-Events` zu reagieren, können wir hierbei einen Listener direkt mit einer Expression erstellen.
-Wir bekommen hierbei eine Referenz auf das native Event an die Hand.
-
-```typescript
-import {Component} from '@angular/core';
-
-@Component({
-  selector: 'pizza-root',
-  template: `
-    <input
-      type="text"
-      (keyup)="onKeyUp()"
-      (input)="color=$event.target.value"
-      [style.background-color]="color"
-      >`
-})
-export class AppComponent {
-  public color: string;
-  onKeyUp() {
-    console.log('keyup: ' + this.color)
+  ngOnInit() {
   }
+
 }
 ```
 
-[Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/03a-event-property-bindings/src/app/app.component.ts) für die Verwendung von Property- und Eventbinding
+```html
+  <p>info-box works!</p>
+  <p>{{text}}</p>
+```
+
+<img class="img-fluid img-rounded" src="info-box-with-expression.png" alt="Ausgabe der Info-Box Komponente mit unserem dynamischen Expression Text">
+
+Sollte sich die Property `text` ändern z.B. durch externe Events wird diese automatisch von Angular aktuallisiert. Dieses Konzept nennt sich `Data-Binding`.
+
+## Property- & Event-Bindings
+
+Andere Komponenten können über sogenannte Property- und Event-Bindings eingebunden werden.
+Angular verbindet sich hierbei mit den Eigenschaften und Events der nativen HTML-Elemente,
+somit ist auch das Benutzen von anderen Elementen aus Frameworks wie ReactJS oder VueJS einfach möglich.
+
+Um auf eine Properties von Elementen zuzugreifen nutzen wir die eckigen Klammern innerhalb unseres HTML Templates. Möchten wir also z.B. die [HTMLElement.hidden Property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidden) einer Komponente beeinflussen können wir das wie folgt erreichen:
+
+```html
+<p [hidden]="'true'">{{text}}</p>
+```
+
+Hier wird die Eigenschaft `hidden` des Elements auf `'true'` gesetzt und somit das Element ausgeblendet.
+Um diese Eigenschaft dynamisch zu ändern, haben wir die Möglichkeit in unser Klasse selbst eine neue Property einzuführen und diese per `Property-Binding` an die Property des p-Elements zu binden.
+Hierzu setzen wir statt dem string `'true'` den Namen des Attributes in unserer Klasse auf das Binding:
+
+
+```typescript
+class InfoBoxComponent implements OnInit {
+  text = 'Additional Info-Text on our Info Box! 🎊';
+  hidden = true;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+```
+
+```html
+  <p>info-box works!</p>
+  <p [hidden]="hidden">{{text}}</p>
+```
+
+Um die Komponente nun durch User-Interaktion zu ändern, haben wie die Möglichkeit auf sogenannte `Events` zu hören und hierfür ebenfalls ein `Event-Binding` zu definieren.
+Event-Bindings werden in Angular über Runde Klammern definiert welche den Namen des Events enthalten.
+Wenn wir nun also auf das [click Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) eines eines HTML-Elements hören wollen können wir das wie folgt erreichen.
+
+    <button (click)="">
+
+Innerhalb dieser Definition haben wir nun die Möglichkeit ein sogenanntes `Template-Statement` zu definieren. Dies kann sowohl eine `Template-Expression` sein welche z.B. direkt Änderungen an Attributen eurer Klasse macht oder eine Referenz auf eine Methode in eurer Klasse.
+Um es einfach zu halten nutzen wir in diesem Fall erstmal eine `Template-Expression` welche den Wert von `hidden` jeweils negiert. Also aus `true` wird `false` und andersherum.
+
+
+```html
+  <p>info-box works!</p>
+  <button (click)="hidden=!hidden">
+  <p [hidden]="true">{{text}}</p>
+```
+
+<img class="img-fluid img-rounded" src="info-box-toggle.gif" alt="Show and hide the additional text after button click">
 
 Wir können natürlich auch jedes andere Event wie keyup benutzen und die Methode onKeyUp an dieses Event binden. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist das unabhängig davon, ob sie in Angular oder einem anderem Framework geschrieben sind.
 
-> Die Syntax `[()]` (also eckige UND runde Klammern) ist einfach nur ein Indikator, dass diese Direktive die übergebene Eigenschaft liest und ebenso schreibt. Wir werden diese im nächsten Kapitel innerhalb der Form-Direktiven verwenden. Eselsbrücken zum Merken sind `banana in a box` oder für die Fußball-Begeisterten: `Das Runde muss in das Eckige` :)
 
-## Zwei-Wege-Datenbindung
-
-<strike>
-Möchten wir nun mit Formularen arbeiten und dort auf die bereits definierten Direktiven des Frameworks zurück greifen, haben wir die Möglichkeit diese zu importieren.
-Mit Hilfe der Eigenschaft *directives* an unser `@ComponentAnnotation` unser Komponente zur Verfügung zu stellen. Wir benutzen hierbei das Sub-Modul `FORM_DIRECTIVES`, welches uns den einzelnen Import aller Form-Direktiven deutlich vereinfacht.
-</strike>
-
-Dies ist seit der Einführung von `@NgModules` nicht mehr notwendig und wird hier über den Import des `FormsModule` in unserem [AppModule](https://github.com/angularjs-de/angular2-tutorial/blob/master/03b-two-way-data-binding/src/app/app.module.ts#L14) sehr vereinfacht. Mit dem import von FormsMoule sind alle dort exportierten Direktiven direkt verfügbar.
-
-```typescript
-import {Component} from 'angular2/core';
-
-@Component({
-  selector: 'pizza-root',
-  template : `
-    <h1>
-        Angular2 Tutorial von
-        Angular.DE</h1>
-        <input
-            type="text"
-            [(ngModel)]="search" >
-      <p>
-          Du suchst gerade nach:
-          {{search}}
-      </p>`
-})
-export class AppComponent {
-}
-```
-
-[Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/03b-two-way-data-binding/src/app/app.component.ts) zur Nutzung von ngModel
-
-Unser *template* erweitern wir um ein kleines Formular, in dem wir eine Input-Box mit einer kleinen Ausgabe verbinden. *Wichtig* hierbei ist, dass die Direktive `ngModel` sowohl mit runden als auch den eckigen Klammern angegeben wird. Der Hintergrund ist, dass wir hierbei die Variable search sowohl lesen als auch schreiben wollen.
-
-## Expressions
-
-Expressions sind viel mächtiger, als sie im ersten Moment erscheinen. Expressions erlauben uns sowohl einfache Variablen auszugeben, als auch komplexere Ausdrücke zu bilden.
-
-```html
-{{search.toUpperCase() + "!"}}
-{{1 + 2 + 3}}
-```
-
-In diesem Fall wird z.B. der Inhalt von search immer direkt in Großbuchstaben umgewandelt und ein Ausrufezeichen angehängt.
-
-Ein eleganter Anwendungsfall ist die Nutzung des ternären Operators. So kann eine abhängige Ausgabe ohne die Nutzung von *ngIf oder DOM-Manipulation geregelt werden.
-
-```html
-{{search.length === 3 ? "ausgebucht" : "noch frei"}}
-```
-
-Ein anderes Beispiel ist der logische ODER-Operator.
-
-```html
-{{search.length || 0}}
-```
-
-Es sollte jedoch trotzdem beachtet werden, dass komplexe Logik nichts im Template zu suchen hat! Wir nutzen dies hier nur um die Möglichkeiten darzustellen.
-
-[Code](https://github.com/angularjs-de/angular2-tutorial/blob/master/04-expressions/src/app/app.component.ts) zu einfachen Anwendungen von Expressions
-
-## Direktiven und Komponenten in Angular
-
-Mit der Einführung von Direktiven im Jahr 2009 war AngularJS eines der ersten Frameworks, die den Gedanken eigener HTML-Elemente (Direktiven) so weit gedacht und sehr gut umgesetzt haben.
-Das Angular Framework führt nun dazu noch den `Begriff der Components` ein. Unter Komponenten versteht man Elemente, welche einen eigenen Sub-Dom-Tree aufbauen. Hierbei können wir optional entschieden, ob wir hierfür einen echten Shadow-DOM aufbauen wollen.
-
-> Wenn Ihr eure AngularJS 1 Anwendung heute schon näher an die Component Architektur anlehnen wollt und so für eine Migration näher an Angular Code zu sein, solltet Ihr euch meinen Artikel über den [AngularJS Component-Helper](/artikel/angularjs-component-helper/) ansehen.
-
-
-Grundsächlich kann man die HTML-Erweiterungen in Angular in drei Kategorien aufteilen:
-
-* Components - komplett eigene DOM-Elemente mit eigenem Template
-* Strukturelle Template Direktiven - verändern den DOM, d.h. fügen Elemente hinzu oder entfernen sie, z.B. ngIf, ngSwitch und ngFor
-* Attribut-Direktiven - verändern nur das Aussehen oder Verhalten von DOM-Elementen, z.B. ngStyle und ngClass
-
-### Components
-Das Herzstück einer Angular-Anwendung. Eine Komponente verknüpft ein Template mit einer JavaScript-Klasse über ein eigenes Element.
-
-```typescript
-import {Component} from '@angular/core';
-
-@Component({
-  selector: 'pizza-root',
-  template: `
-    Inhalt der Komponente
-  `
-})
-export class AppComponent {
-  // Logic here
-}
-```
-
-Die Eigenschaft `selector` stellt den zur Komponente gehörenden HTML-Tag als CSS-Selektorregel dar. Dieser muss in den HTML-Quelltext eingebunden werden, um die Komponente auszuführen.
-
-```html
-<body>
-  <div class="container">
-    <pizza-root>
-    </pizza-root>
-  </div>
-</body>
-```
 
 ### Strukturelle Template Direktiven
 Wie schon erklärt sollten strukturelle Direktiven immer dann verwendet werden, wenn der DOM verändert wird, sprich Elemente hinzugefügt oder entfernt werden sollen. Ein Beispiel dafür ist die `ngIf-Direktive`.
