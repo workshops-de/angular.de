@@ -272,7 +272,7 @@ Ihr könnt an dieser Stelle gerne mit eurem Template in `info-box.component.html
 Ein historischer Moment, nehmt euch ein paar Sekunden eure erste eigene Komponente zu bewundern. 😉
 
 ## Expressions
-Eine rein statische Komponente ist natürlich nur sehr begrenzt in einer Anwendung nutzbar.
+Eine Komponente mit statischen Inhalten ist natürlich nur sehr begrenzt in einer Anwendung nutzbar.
 Um variable Daten anzuzeigen nutzt Angular sogenannte Expressions in den Templates.
 Diese werden mit doppelten geschweiften Klammern eingeleitet und auch wieder geschlossen.
 
