@@ -23,7 +23,7 @@ Den Quellcode für das Tutorial findet ihr in unsererem GitHub-Repository: <a hr
 Dieses Tutorial zeigt die die Grundlegenden Bestandteile einer Angular Anwendung anhand eines praktisches Beispiels welches du selber implementieren oder fertige Musterlösungen nutzen und verändern kannst.
 
 Wir werden hierbei folgende Themen behandeln:
-* Was ist Angular
+* Was ist Angular?
 * Unterschiede zu React und Vue
 * Installation von Angular
 * Komponenten
