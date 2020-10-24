@@ -10,7 +10,8 @@ tutorial_page_order: '1'
 ## Einführung
 
 Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular. Wir behandeln hierbei Angular in der Version 2 und höher. Bewusst wird hierbei aber die Versionsnummer weggelassen, da das Framework nun semantische Versionierung benutzt. Kurz gesagt: Es ist einfach Angular.
-Es ist  nicht erforderlich das AngularJS(Angular 1) Tutorial vorher durchzuarbeiten. Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalten der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript).
+
+Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalten der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript).
 
 Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil. Ihr könnt hierbei alle Aufgaben selber Programmieren und über unseren Workshops.DE Classroom Hilfestsellungen und Musterlösungen für die Aufgaben erhalten.
 
@@ -358,3 +359,89 @@ Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit di
 
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Create Info Box</a>. </div>
 
+## Schleifen mit *ngFor
+
+```html
+<ul>
+    <li *ngFor="let book of books">
+        <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
+    </li>
+</ul>
+```
+
+```typescript
+books = [
+    {
+      title: 'Book #1',
+      subtitle: 'Subtitle #1'
+    },
+    {
+      title: 'Book #2',
+      subtitle: 'Subtitle #2'
+    },
+    {
+      title: 'Book #3',
+      subtitle: 'Subtitle #3'
+    }
+  ];
+```
+
+
+<img class="img-fluid img-rounded" src="static-list-of-books.png" alt="A static list of books with the data defined in the array">
+
+<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
+
+## Der erste Service
+
+### Dependency Injection
+
+### Der BookDataService
+
+```typescript
+
+books = [
+    {
+      title: 'Book #1 from Service',
+      subtitle: 'Subtitle #1'
+    },
+    {
+      title: 'Book #2 from Service',
+      subtitle: 'Subtitle #2'
+    },
+    {
+      title: 'Book #3 from Service',
+      subtitle: 'Subtitle #3'
+    }
+  ];
+
+getBooks(): [] {
+  return this.books;
+  }
+```
+
+<img class="img-fluid img-rounded" src="static-list-from-service.png" alt="A static list of books loaded from the service">
+
+<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
+
+## Daten via Rest-API laden
+
+```html
+<ul>
+    <li *ngFor="let book of books$ | async">
+        <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
+    </li>
+</ul>
+```
+
+```typescript
+getBooks(): Observable<[]> {
+    return this.http.get<[]>('http://localhost:4730/books')
+  }
+```
+
+
+<img class="img-fluid img-rounded" src="static-list-of-books.png" alt="A static list of books with the data defined in the array">
+
+<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
+
+## Fazit
