@@ -127,9 +127,6 @@ Nachdem ihr die Installation erfolgreich abgeschlossen habt, könnt ihr nun übe
 
 Dieser Befehl installiert die `Angular-CLI` global auf eurem Rechner und ermöglicht euch somit nach der Installation mit dem Kommandozeilenwerkzeug `ng` zu arbeiten. Als zweites Paket wird das Paket `bookmonkey-api` installiert, welches uns als simulierter Backend-Server in unserem Beispiel dient.
 
-<!--
-<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Install Chrome, Node & IDE</a></div>
--->
 
 ## Generieren der Angular App
 
@@ -173,9 +170,6 @@ Eure Basisanwendung ist nun generiert und kann im Browser unter http://localhost
 class="lazy img-fluid img-rounded"
 src="/assets/img/placeholder-image.svg" alt="Die Webansicht von ng serve nach dem generieren der Angular Anwedung." data-src="first-ng-serve.png" data-srcset="first-ng-serve.png"
 />
-<!--
-<div class="alert alert-success">👨‍💻👩‍💻 Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Create a new project</a></div>
--->
 
 ## Komponenten und Services
 
@@ -394,9 +388,6 @@ src="/assets/img/placeholder-image.svg" alt="Animation der Basis Show and Hide I
 
 Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist das unabhängig davon, ob sie in Angular oder einem anderem Framework geschrieben sind.
 
-<!--
-<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Create Info Box</a>. </div>
--->
 
 ## Schleifen mit *ngFor
 
@@ -445,9 +436,6 @@ class="lazy img-fluid img-rounded"
 src="/assets/img/placeholder-image.svg" alt="Die liste der statischen Bücher in HTML ausgeben" data-src="static-list-of-books.png" data-srcset="static-list-of-books.png"
 />
 
-<!--
-<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
--->
 
 ## Der erste Service
 
@@ -534,9 +522,6 @@ export class BookListComponent {
 }
 ```
 
-<!--
-<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
--->
 
 ## Daten via Rest-API nachladen
 
@@ -630,9 +615,8 @@ Die `async` Pipe in Verbindung mit `*ngFor` regestriert sich auf asynchrone Upda
 class="lazy img-fluid img-rounded"
 src="/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern aus dem HTTP-Backend" data-src="http-list-of-books.png" data-srcset="http-list-of-books.png"
 />
-<!--
-<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Load data from local API</a>. </div>
--->
+
+
 
 ## Fazit
 
