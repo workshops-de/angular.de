@@ -19,7 +19,7 @@ Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-
 />
 
 ### Was wirst du in diesem Tutorial lernen?
-Dieses Tutorial zeigt die die Grundlegenden Bestandteile einer Angular Anwendung anhand eines praktisches Beispiels welches du selber implementieren oder fertige Musterlösungen nutzen und verändern kannst.
+Dieses Tutorial zeigt die die Grundlegenden Bestandteile einer Angular Anwendung anhand eines praktisches Beispiels welches, du selber implementieren oder fertige Musterlösungen nutzen und verändern kannst.
 
 Wir werden hierbei folgende Themen behandeln:
 * Was ist Angular?
