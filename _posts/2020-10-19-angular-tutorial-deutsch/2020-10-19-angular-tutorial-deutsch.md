@@ -38,8 +38,9 @@ Wir werden hierbei die Motivation und den theoretischen Background kurz einleite
 
 <p class="text-center">
  <img
- width="40%"
- src="/assets/img/placeholder-image.svg" alt="Beispielansicht unserer Anwendung die in diesem Tutorial gemeinsam gebaut wird. Eine Liste an Büchern welche von einem Server geladen wird." class="lazy img-fluid img-rounded" data-src="preview-bookmonkey-app.png" data-srcset="preview-bookmonkey-app.png"
+ style="max-width:40%"
+ src="/assets/img/placeholder-image.svg" alt="Beispielansicht unserer Anwendung die in diesem Tutorial gemeinsam gebaut wird. Eine Liste an Büchern welche von einem Server geladen wird."
+ class="lazy img-fluid img-rounded" data-src="preview-bookmonkey-app.png" data-srcset="preview-bookmonkey-app.png"
  />
 </p>
 
@@ -77,15 +78,16 @@ Google selber selbst nutzt nach eigenen Angaben Angular in über 1600 Projekten 
 In 2016 hat sich das Angular-Team für ein kompletten Rewrite in TypeScript entschieden.
 Damals wurde die Entscheidung größtenteils negativ wahrgenommen und von anderen Framework Benutzern zerrissen.
 
-<img class="img-fluid img-rounded" src="angular-history.png" alt="Angular Historie - Ein Zeitstrahl welcher sich 2016 in zwei Zweige aufgeteilt. AngularJS und Angular">
 <img
- src="/assets/img/placeholder-image.svg" alt="Angular Historie - Ein Zeitstrahl welcher sich 2016 in zwei Zweige aufgeteilt. AngularJS und Angular." class="lazy img-fluid img-rounded" data-src="angular-history.png" data-srcset="angular-history.png"
+ src="/assets/img/placeholder-image.svg" alt="Angular Historie - Ein Zeitstrahl welcher sich 2016 in zwei Zweige aufgeteilt. AngularJS und Angular."
+ class="lazy img-fluid img-rounded" data-src="angular-history.png" data-srcset="angular-history.png"
  />
 
 
 Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele andere Frameworks ebenfalls auf TypeScript setzen. Um Breaking Changes einfacher kommunizieren zu können hat sich das Team ebenfalls für ein fixen Release Plan entschieden. So können Projektteams Budgets für Updates bereits im Voraus einplanen und werden nicht von Breaking-Changes in einem Release "überrascht".
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche." data-src="release-cycle.png" data-srcset="release-cycle.png"
  />
 
@@ -102,6 +104,7 @@ Das Ökosystem von Angular ist sehr groß. Die Basis bildet hierbei das Core-Fra
 * und viele mehr
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Angular Platform Overview. Viele Verschiedene Blöcke mit Modulen wie Forms, OWA, HTTP, I81n, Language Services, Router, Animcations  Cli, Components und dem Core Framework selber." data-src="angular-platform-overview.png" data-srcset="angular-platform-overview.png"
  />
 
@@ -167,6 +170,7 @@ Angular Live Development Server is listening on localhost:4200
 Eure Basisanwendung ist nun generiert und kann im Browser unter http://localhost:4200 aufgerufen werden. Ihr solltet ein ähnliches Bild wie folgendes sehen:
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Die Webansicht von ng serve nach dem generieren der Angular Anwedung." data-src="first-ng-serve.png" data-srcset="first-ng-serve.png"
  />
 <!--
@@ -186,6 +190,7 @@ In Angular gibt es zwei primäre Bestandteile des Frameworks mit welchen wir uns
 Angular Komponenten sind die sogenannten "building blocks" jeder Anwendung. Die verschiedenen logischen  Bausteiner einer Anwendung werden also in Komponenten aufgeteilt. Jeder dieser Komponenten übernimmt dabei eine bestimmte Funktion und wird als eigenes HTML-Element definiert.
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Beispiel ToDo App welche die Anwendung in verschiedene logische Bausteine unterteilt wie Title, ItemList und Items." data-src="basic-todo-component-annotated.png" data-srcset="basic-todo-component-annotated.png"
  />
 
@@ -208,6 +213,7 @@ Wie ihr in diesem kleinen Beispiel einer ToDo-Liste seht, gibt es für die versc
 Für Daten und Logik die nicht zwingend nur an eine Komponente gekoppelt ist werden in Angular Services genutzt. Ein Service ist eine Klasse welche Attribute und Methoden definiert welche von Komponenten und anderen Services genutzt werden können.
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Beispiel der Beziehung von Angular Komponenten und Services." data-src="angular-component-service-simple-example.png" data-srcset="angular-component-service-simple-example.png"
  />
 
@@ -247,6 +253,7 @@ Eine Komponenten-Definition besteht primär aus folgenden Bestandteilen:
 * Einer **Klasse** welche das Interface und die Anzeige-Logik der Komponente beschreibt.
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Beispiel einer Item-Komponenten-Definition der eben gezeigten ToDo App" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
  />
 
@@ -321,6 +328,7 @@ class InfoBoxComponent implements OnInit {
 ```
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Ausgabe der Info-Box Komponente mit unserem dynamischen Expression Text" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
  />
 
@@ -380,6 +388,7 @@ Um es einfach zu halten nutzen wir in diesem Fall erstmal eine `Template-Express
 ```
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Animation der Basis Show and Hide Infobox" data-src="info-box-toggle.gif" data-srcset="info-box-toggle.gif"
  />
 
@@ -432,6 +441,7 @@ books = [
 
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Die liste der statischen Bücher in HTML ausgeben" data-src="static-list-of-books.png" data-srcset="static-list-of-books.png"
  />
 
@@ -446,6 +456,7 @@ Wir vermischen hier die Anzeige-Logik mit der Verwaltung unserer Daten.
 Nehmen wir also ein kurzes Refactoring unserer Anwendung vor und extrahieren die Daten in einen separaten Service.
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Animation der Extraktion der Daten von der Komoponente in einen Service." data-src="extract-service.gif" data-srcset="extract-service.gif"
  />
 
@@ -495,6 +506,7 @@ Unter `Dependency Injection` versteht man ein Design-Pattern welches ebenfalls  
 In unserem kleinen Beispiel erstellt also die `BookListComponent` nicht unsern Service, sondern gibt dem Angular Framework lediglich bescheid, dass sie einen `BookDataService` benötigt um zu funktionieren.
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Angular DI erklärt indem die Komponente mit dem Injektor einen Dialog über ihre Bedürfnisse führt" data-src="di-explained-dialog.gif" data-srcset="di-explained-dialog.gif"
  />
 
@@ -615,6 +627,7 @@ Der Aufruf innerhalb unserer Komponente ändert sich also im Grunde nicht. Jedoc
 Die `asyc` Pipe in Verbindung mit `*ngFor` regestriert sich auf asynchrone Updates der `books$` Variable. Durch diese Anpassung unseres Templates können wir nun auch die Daten von unseren JSON-Server wie folgt anzeigen können:
 
 <img
+ class="lazy img-fluid img-rounded"
  src="/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern aus dem HTTP-Backend" data-src="http-list-of-books.png" data-srcset="http-list-of-books.png"
  />
 <!--
@@ -648,6 +661,7 @@ Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Sl
     </div>
     <div class="col-xs-12 col-md-6">
       <img
+      class="lazy img-fluid img-rounded"
       src="/assets/img/placeholder-image.svg" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
       />
     </div>
