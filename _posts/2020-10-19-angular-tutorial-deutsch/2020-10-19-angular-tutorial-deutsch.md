@@ -113,7 +113,9 @@ Nachdem ihr die Installation erfolgreich abgeschlossen habt, könnt ihr nun übe
 
 Dieser Befehl installiert die `Angular-CLI` global auf eurem Rechner und ermöglicht euch somit nach der Installation mit dem Kommandozeilenwerkzeug `ng` zu arbeiten. Als zweites Paket wird das Paket `bookmonkey-api` installiert, welches uns als simulierter Backend-Server in unserem Beispiel dient.
 
+<!--
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Install Chrome, Node & IDE</a></div>
+-->
 
 ## Generieren der Angular App
 
@@ -154,8 +156,9 @@ Angular Live Development Server is listening on localhost:4200
 Eure Basisanwendung ist nun generiert und kann im Browser unter http://localhost:4200 aufgerufen werden. Ihr solltet ein ähnliches Bild wie folgendes sehen:
 
 <img class="img-fluid img-rounded" src="first-ng-serve.png" alt="Website View of first NG Serve after generating the application">
-
+<!--
 <div class="alert alert-success">👨‍💻👩‍💻 Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Create a new project</a></div>
+-->
 
 ## Komponenten und Services
 
@@ -359,7 +362,9 @@ Um es einfach zu halten nutzen wir in diesem Fall erstmal eine `Template-Express
 
 Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist das unabhängig davon, ob sie in Angular oder einem anderem Framework geschrieben sind.
 
+<!--
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Create Info Box</a>. </div>
+-->
 
 ## Schleifen mit *ngFor
 
@@ -405,7 +410,9 @@ books = [
 
 <img class="img-fluid img-rounded" src="static-list-of-books.png" alt="A static list of books with the data defined in the array">
 
+<!--
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
+-->
 
 ## Der erste Service
 
@@ -486,7 +493,9 @@ export class BookListComponent {
 }
 ```
 
+<!--
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
+-->
 
 ## Daten via Rest-API nachladen
 
@@ -502,7 +511,7 @@ Unter folgender URL könnt ihr euch nun die Daten ansehen, welche vom Server aus
 
 Im nächsten Schritt wollen wir diese Daten aus unserem `BookDataService` herraus abrufen. Dazu benötigen wir den sogenannten `HttpClient` Service. Dieser bietet uns eine sehr einfache API um verschiedene Operationen auf eine HTTP-Schnittstelle auszuführen.
 
-Der Service ist Teil eines separaten Modules und muss explizit eingebunden werden. Wir erreichen dies, indem wir in der Datei `app.module.ts` dieses Modul importieren.
+Der Service ist Teil eines separaten Modules und muss explizit eingebunden werden. Wir erreichen dies, indem wir in der Datei `app.module.ts` das `HttpClientModule` importieren und im Array `imports` angeben.
 
 ```typesscript
 // ...
@@ -521,6 +530,7 @@ import {HttpClientModule} from '@angular/common/http';
 // ...
 ```
 
+Ist dies erledigt kennt unser `Injector` auch einen Service vom Typ `HttpClient` welchen wir nun über den Konstruktor unseres `BookDataService` einbinden können.
 
 
 ```typescript
@@ -541,8 +551,29 @@ export class BookDataService {
 
 ```
 
+Der Service bietet uns die Methode `.get(url:string)` welcher wir den API-Endpoint für unsere Abfrage angeben können. Wir nutzen hier die Adresse des lokal gestarten JSON-Server.
+
 ### Umgang mit Asynchronität
 
+<div class="alert alert-info">Hinweis: Wir gehen in diesem Tutorial davon aus, dass Asynchronität in JavaScript bereits bekannt ist. Es gibt dazu eine sehr gute Einführung in den <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous" target="_blank">Mozilla Web Docs über Asynchronous JavaScript</a>. </div>
+
+Der RÜckgabewert der der get-Methode des HTTP-Services liefert ein [Observable](https://angular.io/guide/observables-in-angular) zurück. Dies ist eine Datenstruktur,welche uns den Umgang mit asynchronen Daten erleichert. Angular nutzt dafür die [RxJS Observables](https://rxjs.dev/guide/observable).
+
+Es hat sich als guter Stil etabliert Variablen und Felder welche asynchrone Datenstrukturen halten mit einem `$` postfix zu kennzeichnen. Es hat rein funktional keine Einfluss, hilft jedoch bei der langfristigen Zurechtfinden und Wartung eurer Anwendung.
+
+```typescript
+export class BookListComponent {
+
+  books$: Observable;
+
+  constructor(private bookData: BookDataService) {
+    this.books$ = this.bookService.getBooks();
+   }
+
+}
+```
+
+Der Aufruf innerhalb unserer Komponente ändert sich also im Grunde nicht. Jedoch die Auswertung innerhalb unseres HTML-Templates muss etwas agepasst werden. Mit Hilfe einer sogenannten `async` Pipe können wir der `*ngFor` Direktive den Umgang mit der asynchronen Datenstruktur ermöglichen.
 
 ```html
 <ul>
@@ -552,9 +583,11 @@ export class BookDataService {
 </ul>
 ```
 
+Die `asyc` Pipe in Verbindung mit `*ngFor` regestriert sich auf asynchrone Updates der `books$` Variable. Durch diese Anpassung unseres Templates können wir nun auch die Daten von unseren JSON-Server wie folgt anzeigen können:
 
 <img class="img-fluid img-rounded" src="static-list-of-books.png" alt="A static list of books with the data defined in the array">
-
-<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
+<!--
+<div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Load data from local API</a>. </div>
+-->
 
 ## Fazit
