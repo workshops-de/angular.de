@@ -18,8 +18,6 @@ Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-
 <img src="/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="classroom-example.png" data-srcset="classroom-example.png"
 />
 
-Den Quellcode für das Tutorial findet ihr in unsererem GitHub-Repository: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
-
 ### Was wirst du in diesem Tutorial lernen?
 Dieses Tutorial zeigt die die Grundlegenden Bestandteile einer Angular Anwendung anhand eines praktisches Beispiels welches du selber implementieren oder fertige Musterlösungen nutzen und verändern kannst.
 
