@@ -591,3 +591,33 @@ Die `asyc` Pipe in Verbindung mit `*ngFor` regestriert sich auf asynchrone Updat
 -->
 
 ## Fazit
+
+Angular ist in vielerlei Hinsicht sehr opinionated(meinungsstark). Dies beeutet, dass viele Entscheidungen über Architektur und Rendering dem/der Entwickler:in bereits abgenommen werden. Dies hat natürlich den Vorteil, dass sich das Projektteam 100% auf die Umsetzung von Features konzentrieren kann und nicht die Grundlegende Architektur eigenständig aufbauen muss.
+
+Durch die sehr einheitliche Struktur von Angular Anwendungen lassen sich in Angular ausgebildete Entwickler:innen sehr schnell in das Projekt integrieren, da Angular Anwendungen stets einrer gewissen Struktur folgen. Dies ermöglicht die Skalierung von Entwickler:innen-Zeit auf dem Projekt deutlich besser als mit Individuallösungen der Architekrur wie in anderen Frameworks.
+
+Generell ist es für langlebige Enterprise Projekte sicherlich eine gute Option. Andere Frameworks wie React und Vue sollten aber ebenfalls in Betracht gezogen werden, um objekiv die beste Entscheidung für die aktuelle Herrausforderungen zu treffen.
+
+Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](/slack) mit über 2000 wunderbaren anderen Menschen! Zusammen lernt sich besser! :)
+
+
+<hr>
+<div class="workshop-hint text-center">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+      </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
+</div>
+<hr>
