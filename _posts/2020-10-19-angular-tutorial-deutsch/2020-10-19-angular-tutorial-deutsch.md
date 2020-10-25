@@ -276,7 +276,7 @@ Eine Komponente mit statischen Inhalten ist natürlich nur sehr begrenzt in eine
 Um variable Daten anzuzeigen nutzt Angular sogenannte Expressions in den Templates.
 Diese werden mit doppelten geschweiften Klammern eingeleitet und auch wieder geschlossen.
 
-   {{ expression }}
+    {{ expression }}
 
 Eine Expression wird von Angular dynamisch auf basis der aktuellen Properties eurer Klasse ausgewertet.
 Führen wir also eine ein neues Property `text` ein und füllen dieses mit eine String, können wir diesen in unserem Template ausgeben.
@@ -341,7 +341,9 @@ Um die Komponente nun durch User-Interaktion zu ändern, haben wie die Möglichk
 Event-Bindings werden in Angular über Runde Klammern definiert welche den Namen des Events enthalten.
 Wenn wir nun also auf das [click Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) eines eines HTML-Elements hören wollen können wir das wie folgt erreichen.
 
-   <button (click)="">
+```html
+<button (click)="">
+```
 
 Innerhalb dieser Definition haben wir nun die Möglichkeit ein sogenanntes `Template-Statement` zu definieren. Dies kann sowohl eine `Template-Expression` sein welche z.B. direkt Änderungen an Attributen eurer Klasse macht oder eine Referenz auf eine Methode in eurer Klasse.
 Um es einfach zu halten nutzen wir in diesem Fall erstmal eine `Template-Expression` welche den Wert von `hidden` jeweils negiert. Also aus `true` wird `false` und andersherum.
@@ -361,6 +363,17 @@ Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit di
 
 ## Schleifen mit *ngFor
 
+Ein weiteres Core-Feature ist wie in jedem Framework die ausgabe von listenartigen Datenstrukturen.
+Hierfür gibt es in Angular die Direktive `*ngFor`.
+
+> Direktiven sind HTML Attribute welche an DOM-Elementen genutzt werden können.
+Hierbei können wir zwischen `Attribute Directives` und  `Structural directives` unterscheiden.
+Attribute Directives verändern oder beinflussen das Verhalten eines Elements an dem sie angehangen werden wie z.B. `ngStyle` zum setzen von CSS-Styles auf Basis von Daten.
+Structural directives erzeugen oder entfernen DOM-Elemente wie z.B. `ngIf` oder `ngFor`.
+Strukturelle Direktiven werden mit dem Prefix `*` gekennzeichnet.
+
+Die Direktive ist angelehnt an eine For-Schleife und iterriert über eine listenartige Struktur und erzeugt für jedes Element eine Kopie des DOM Elements auf das es angewand wird.
+
 ```html
 <ul>
     <li *ngFor="let book of books">
@@ -368,6 +381,9 @@ Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit di
     </li>
 </ul>
 ```
+
+Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und eine Liste, in unserem `books` definiert. Die Variable Buch enthält somit jeweils den Wert des aktuellen Listeneintrages.
+Wenn wir also in unserer Komponente eine Variable `books` mit einer Liste von Büchern definieren, erhalen wir hierfür 3 DOM-Elemente.
 
 ```typescript
 books = [
@@ -393,13 +409,25 @@ books = [
 
 ## Der erste Service
 
-### Dependency Injection
+Wer genau aufgepasst hat dem ist aufgefallen, dass die Daten in einer Angular Anwendung nicht in die Komponene gehören.
+Wir vermischen hier die Anzeige-Logik mit der Verwaltung unserer Daten.
+Nehmen wir also ein kurzes Refactoring unserer Anwendung vor und extrahieren die Daten in einen separaten Service.
 
-### Der BookDataService
+<img class="img-fluid img-rounded" src="extract-service.gif" alt="Extract the data from the component to an angular service">
+
+Ein Service sollte sich immer um eine explizite Aufgabe kümmern und dementsprechend auch benannt werden.
+In unserem Fall wollen wie die Daten von Büchern verwalten.
+Wir nennen unseren Service also `BookDataService`.
+Um diesen zu generieren können wir wie gewohnt die Angular-CLI benutzen.
+
+```bash
+$ ng generate service book-data
+```
 
 ```typescript
+export class BookDataService {
 
-books = [
+  books = [
     {
       title: 'Book #1 from Service',
       subtitle: 'Subtitle #1'
@@ -414,16 +442,107 @@ books = [
     }
   ];
 
-getBooks() {
-  return this.books;
+  constructor() { }
+
+  getBooks() {
+    return this.books;
   }
+}
 ```
 
-<img class="img-fluid img-rounded" src="static-list-from-service.png" alt="A static list of books loaded from the service">
+Somit haben wir die Daten aus unser Komoponente gezogen.
+Die Frage ist jetzt nur - wie bekomme die die Daten nun wieder in meine Komponente verbunden?
+An dieser Stelle kommt der Begriff `Dependency Injection` ins Spiel.
+
+### Dependency Injection
+
+Unter `Dependency Injection` versteht man ein Design-Pattern welches ebenfalls  `Inversion of Control` genannt wird. Hierbei geht es darum, dass die erforderliche Abhängigkeit (Dependency) nicht von der Aufrufenden Stelle selbst erzeugt wird, sondern diese Komponente die Kontrolle abgibt und lediglich definiert welche Abhängigkeiten bestehen.
+
+In unserem kleinen Beispiel erstellt also die `BookListComponent` nicht unsern Service, sondern gibt dem Angular Framework lediglich bescheid, dass sie einen `BookDataService` benötigt um zu funktionieren.
+
+<img class="img-fluid img-rounded" src="di-explained-dialog.gif" alt="Angular DI explained as dialog between a component and the injector">
+
+<div class="alert alert-info">Hinweis: Dies ist eine sehr vereinfachte Darstellung von Dependency Injection in Angular, um das Grundkonzept zu verstehen. </div>
+
+Innerhalb des Angular Frameworks werden die verschiedenen Services von dem sogenannten `Injector` verwaltet.
+Dieser gibt der aufrufenden Stelle eine Referenz auf den angefragten Service, sofern dieser definiert ist.
+
+Die Definition der Abhängigkeit wird hierbei über den Konstruktor abgebildet. In dem Beispiel unserer `BookListComponent` definieren wir die Abhängigkeit auf `BookDataService` und binden diesen an das Feld `bookData` unserer Komponente.
+
+<div class="alert alert-info">Hinweis: Wir benutzen hier die Typisierung von TypeScript indem wir `: BookDataService` nach unserer Variable schreiben. Dies bedeutet, dass die Variablr `bookData` den Typ `BookDataService` hat und ist essentiell für den Dependency Injection Mechanismus. An den anderen Stellen dieses Tutorials haben wir aufdie Typisierung nicht benutzt, um die Komplexität des Tutorials möglicht minimal zu halten.</div>
+
+Innerhalb des Konstruktors rufen wir dann die `getBooks()` Methode des Services auf und beschaffen uns unsere Daten.
+
+
+```typescript
+export class BookListComponent {
+
+  books = [];
+
+  constructor(private bookData: BookDataService) {
+    this.books = this.bookService.getBooks();
+   }
+
+}
+```
 
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
 
-## Daten via Rest-API
+## Daten via Rest-API nachladen
+
+Die aktuelle Version hat uns die Konzepte von Angular Stück für Stück näher erklärt. In der Realität werden Daten jedoch in  den meisten Fällen unsere Daten von einem Server asynchron nachgeladen.
+
+Wir ladenn diese Daten von einer Beispiel-API welche ihr mit folgendem Befehl starten könnt:
+
+```bash
+$ npx bookmonkey-api
+JSON Server is running on port 4730
+```
+Unter folgender URL könnt ihr euch nun die Daten ansehen, welche vom Server ausgegeben werden: <a href="http://localhost:4730/books" target="_blank">http://localhost:4730/books</a>
+
+Im nächsten Schritt wollen wir diese Daten aus unserem `BookDataService` herraus abrufen. Dazu benötigen wir den sogenannten `HttpClient` Service. Dieser bietet uns eine sehr einfache API um verschiedene Operationen auf eine HTTP-Schnittstelle auszuführen.
+
+Der Service ist Teil eines separaten Modules und muss explizit eingebunden werden. Wir erreichen dies, indem wir in der Datei `app.module.ts` dieses Modul importieren.
+
+```typesscript
+// ...
+import {HttpClientModule} from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    InfoBoxComponent,
+    BookListComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule
+  ],
+// ...
+```
+
+
+
+```typescript
+import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class BookDataService {
+
+  constructor(private http: HttpClient) { }
+
+  getBooks() {
+    return this.http.get('http://localhost:4730/books')
+  }
+}
+
+```
+
+### Umgang mit Asynchronität
+
 
 ```html
 <ul>
@@ -431,12 +550,6 @@ getBooks() {
         <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
     </li>
 </ul>
-```
-
-```typescript
-getBooks() {
-    return this.http.get<[]>('http://localhost:4730/books')
-  }
 ```
 
 
