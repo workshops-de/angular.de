@@ -61,7 +61,7 @@ Dies ist meine persönliche Einschätzung und ich habe bereits sehr gut mit alle
 
 
 ### Motivation
-Angular selbst hat die Ursprünge in 2009, im "wilden Westen" der Web Anwendungsentwicklung. Seitdem ist viel passiert - keine Angst, ich werde jetzt hier keine Geschichtsstunde starten. Es geht eher um den Punkt: In der wilden Welt von JavaScript Frameworks wo gefühlt jeden Tag 10 neue Frameworks raus kommmen ... wie konnte sich Angular sich auch seit über 10 Jahren noch als eines der erfolgreichsten Frameworks beweisen?
+Angular selbst hat die Ursprünge in 2009, im "wilden Westen" der Web Anwendungsentwicklung. Seitdem ist viel passiert - keine Angst, ich werde jetzt hier keine Geschichtsstunde starten. Es geht eher um den Punkt: In der wilden Welt von JavaScript Frameworks wo gefühlt jeden Tag 10 neue Frameworks raus kommmen ... wie konnte sich Angular auch seit über 10 Jahren noch als eines der erfolgreichsten Frameworks beweisen?
 Dies lässt sich wahrscheinlich am einfachsten mit der Mission von Angular beschreiben:
 
 * Apps that users ❤️ to use.
