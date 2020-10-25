@@ -423,7 +423,7 @@ getBooks() {
 
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
 
-## Daten via Rest-API laden
+## Daten via Rest-API
 
 ```html
 <ul>
