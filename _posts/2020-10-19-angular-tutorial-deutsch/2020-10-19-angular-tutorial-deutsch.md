@@ -414,7 +414,7 @@ books = [
     }
   ];
 
-getBooks(): [] {
+getBooks() {
   return this.books;
   }
 ```
@@ -434,7 +434,7 @@ getBooks(): [] {
 ```
 
 ```typescript
-getBooks(): Observable<[]> {
+getBooks() {
     return this.http.get<[]>('http://localhost:4730/books')
   }
 ```
