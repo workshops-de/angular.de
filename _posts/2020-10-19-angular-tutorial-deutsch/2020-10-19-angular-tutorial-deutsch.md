@@ -16,7 +16,7 @@ Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. D
 Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil. Ihr könnt hierbei alle Aufgaben selber Programmieren und über unseren Workshops.DE Classroom Hilfestsellungen und Musterlösungen für die Aufgaben erhalten.
 
 <img src="/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="classroom-example.png" data-srcset="classroom-example.png"
- />
+/>
 
 Den Quellcode für das Tutorial findet ihr in unsererem GitHub-Repository: <a href="https://github.com/angularjs-de/angular2-tutorial" title="Tutorial Quellcode" target="_blank"><strong>Tutorial Quellcode</strong></a>
 
@@ -37,11 +37,11 @@ Wir werden hierbei folgende Themen behandeln:
 Wir werden hierbei die Motivation und den theoretischen Background kurz einleiten, uns jedoch primär auf praktische Beispiele konzentrieren. Wir werden eine kleine Anwendung bauen welche uns eine Liste von Daten von einer REST-API ausliest und diese anzeigt.
 
 <p class="text-center">
- <img
- style="max-width:40%"
- src="/assets/img/placeholder-image.svg" alt="Beispielansicht unserer Anwendung die in diesem Tutorial gemeinsam gebaut wird. Eine Liste an Büchern welche von einem Server geladen wird."
- class="lazy img-fluid img-rounded" data-src="preview-bookmonkey-app.png" data-srcset="preview-bookmonkey-app.png"
- />
+<img
+style="max-width:40%"
+src="/assets/img/placeholder-image.svg" alt="Beispielansicht unserer Anwendung die in diesem Tutorial gemeinsam gebaut wird. Eine Liste an Büchern welche von einem Server geladen wird."
+class="lazy img-fluid img-rounded" data-src="preview-bookmonkey-app.png" data-srcset="preview-bookmonkey-app.png"
+/>
 </p>
 
 <div class="alert alert-success">Dieser Artikel und unser Portal ist open-source. Wenn ihr Vorschläge zur Verbesserung des Artikels habt, fühlt euch jederzeit herzlich willkommen euch über unser <a href="https://github.com/workshops-de/angular.de" target="_blank">GitHub Repo</a> zu beteiligen. Wir freuen uns über jeden Input! </div>
@@ -79,17 +79,17 @@ In 2016 hat sich das Angular-Team für ein kompletten Rewrite in TypeScript ents
 Damals wurde die Entscheidung größtenteils negativ wahrgenommen und von anderen Framework Benutzern zerrissen.
 
 <img
- src="/assets/img/placeholder-image.svg" alt="Angular Historie - Ein Zeitstrahl welcher sich 2016 in zwei Zweige aufgeteilt. AngularJS und Angular."
- class="lazy img-fluid img-rounded" data-src="angular-history.png" data-srcset="angular-history.png"
- />
+src="/assets/img/placeholder-image.svg" alt="Angular Historie - Ein Zeitstrahl welcher sich 2016 in zwei Zweige aufgeteilt. AngularJS und Angular."
+class="lazy img-fluid img-rounded" data-src="angular-history.png" data-srcset="angular-history.png"
+/>
 
 
 Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele andere Frameworks ebenfalls auf TypeScript setzen. Um Breaking Changes einfacher kommunizieren zu können hat sich das Team ebenfalls für ein fixen Release Plan entschieden. So können Projektteams Budgets für Updates bereits im Voraus einplanen und werden nicht von Breaking-Changes in einem Release "überrascht".
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche." data-src="release-cycle.png" data-srcset="release-cycle.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche." data-src="release-cycle.png" data-srcset="release-cycle.png"
+/>
 
 ### Die Angular Platform
 
@@ -104,9 +104,9 @@ Das Ökosystem von Angular ist sehr groß. Die Basis bildet hierbei das Core-Fra
 * und viele mehr
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Angular Platform Overview. Viele Verschiedene Blöcke mit Modulen wie Forms, OWA, HTTP, I81n, Language Services, Router, Animcations  Cli, Components und dem Core Framework selber." data-src="angular-platform-overview.png" data-srcset="angular-platform-overview.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Angular Platform Overview. Viele Verschiedene Blöcke mit Modulen wie Forms, OWA, HTTP, I81n, Language Services, Router, Animcations  Cli, Components und dem Core Framework selber." data-src="angular-platform-overview.png" data-srcset="angular-platform-overview.png"
+/>
 
 In diesem Tutorial werden wir uns primär um das Framework, die Angular CLI und Komponenten kümmern.
 
@@ -123,7 +123,7 @@ Mit NodeJS wird ebenfalls das Kommandozeilenwerkzeug `npm` installiert, welches 
 
 Nachdem ihr die Installation erfolgreich abgeschlossen habt, könnt ihr nun über euren Terminal folgenden Befehl ausführen:
 
-   npm i -g @angular/cli bookmonkey-api
+  npm i -g @angular/cli bookmonkey-api
 
 Dieser Befehl installiert die `Angular-CLI` global auf eurem Rechner und ermöglicht euch somit nach der Installation mit dem Kommandozeilenwerkzeug `ng` zu arbeiten. Als zweites Paket wird das Paket `bookmonkey-api` installiert, welches uns als simulierter Backend-Server in unserem Beispiel dient.
 
@@ -170,9 +170,9 @@ Angular Live Development Server is listening on localhost:4200
 Eure Basisanwendung ist nun generiert und kann im Browser unter http://localhost:4200 aufgerufen werden. Ihr solltet ein ähnliches Bild wie folgendes sehen:
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Die Webansicht von ng serve nach dem generieren der Angular Anwedung." data-src="first-ng-serve.png" data-srcset="first-ng-serve.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Die Webansicht von ng serve nach dem generieren der Angular Anwedung." data-src="first-ng-serve.png" data-srcset="first-ng-serve.png"
+/>
 <!--
 <div class="alert alert-success">👨‍💻👩‍💻 Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Create a new project</a></div>
 -->
@@ -190,15 +190,15 @@ In Angular gibt es zwei primäre Bestandteile des Frameworks mit welchen wir uns
 Angular Komponenten sind die sogenannten "building blocks" jeder Anwendung. Die verschiedenen logischen  Bausteiner einer Anwendung werden also in Komponenten aufgeteilt. Jeder dieser Komponenten übernimmt dabei eine bestimmte Funktion und wird als eigenes HTML-Element definiert.
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Beispiel ToDo App welche die Anwendung in verschiedene logische Bausteine unterteilt wie Title, ItemList und Items." data-src="basic-todo-component-annotated.png" data-srcset="basic-todo-component-annotated.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Beispiel ToDo App welche die Anwendung in verschiedene logische Bausteine unterteilt wie Title, ItemList und Items." data-src="basic-todo-component-annotated.png" data-srcset="basic-todo-component-annotated.png"
+/>
 
 ```html
 <todo-title>ToDo App</todo-title>
 <todo-list>
- <todo-item state="checked">Prepare Workshop</todo-item>
- <todo-item>Hold the Workshop</todo-item>
+<todo-item state="checked">Prepare Workshop</todo-item>
+<todo-item>Hold the Workshop</todo-item>
 </todo-list>
 
 ```
@@ -213,21 +213,21 @@ Wie ihr in diesem kleinen Beispiel einer ToDo-Liste seht, gibt es für die versc
 Für Daten und Logik die nicht zwingend nur an eine Komponente gekoppelt ist werden in Angular Services genutzt. Ein Service ist eine Klasse welche Attribute und Methoden definiert welche von Komponenten und anderen Services genutzt werden können.
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Beispiel der Beziehung von Angular Komponenten und Services." data-src="angular-component-service-simple-example.png" data-srcset="angular-component-service-simple-example.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Beispiel der Beziehung von Angular Komponenten und Services." data-src="angular-component-service-simple-example.png" data-srcset="angular-component-service-simple-example.png"
+/>
 
 ```typescript
 export class TodoService {
- data = [
-         {
-           title: 'Prepare Workshop',
-           state: 'checked'
-         },
-         {
-           title: 'Hold the Workshop'
-         }
-       ];
+data = [
+        {
+          title: 'Prepare Workshop',
+          state: 'checked'
+        },
+        {
+          title: 'Hold the Workshop'
+        }
+      ];
 }
 ```
 
@@ -253,9 +253,9 @@ Eine Komponenten-Definition besteht primär aus folgenden Bestandteilen:
 * Einer **Klasse** welche das Interface und die Anzeige-Logik der Komponente beschreibt.
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Beispiel einer Item-Komponenten-Definition der eben gezeigten ToDo App" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Beispiel einer Item-Komponenten-Definition der eben gezeigten ToDo App" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
+/>
 
 Unsere erste Komponente wird eine statische Infobox sein. Um diese zu generieren nutzen wir wieder die Angular-CLI.
 Ihr könnt hierzu ein neuen Terminal öffnen oder den laufenden `ng serve` kurzzeitig stoppen.
@@ -275,16 +275,16 @@ Die für uns aktuell relevanten Dateien sind zur Zeit die `info-box.component.ts
 
 ``` typescript
 @Component({
- selector: 'app-info-box',
- templateUrl: './info-box.component.html',
- styleUrls: ['./info-box.component.scss']
+selector: 'app-info-box',
+templateUrl: './info-box.component.html',
+styleUrls: ['./info-box.component.scss']
 })
 export class InfoBoxComponent implements OnInit {
 
- constructor() { }
+constructor() { }
 
- ngOnInit() {
- }
+ngOnInit() {
+}
 
 }
 ```
@@ -305,32 +305,32 @@ Eine Komponente mit statischen Inhalten ist natürlich nur sehr begrenzt in eine
 Um variable Daten anzuzeigen nutzt Angular sogenannte Expressions in den Templates.
 Diese werden mit doppelten geschweiften Klammern eingeleitet und auch wieder geschlossen.
 
-    {{ expression }}
+   {{ expression }}
 
 Eine Expression wird von Angular dynamisch auf basis der aktuellen Properties eurer Klasse ausgewertet.
 Führen wir also eine ein neues Property `text` ein und füllen dieses mit eine String, können wir diesen in unserem Template ausgeben.
 
 ```typescript
 class InfoBoxComponent implements OnInit {
- text = 'Additional Info-Text on our Info Box! 🎊';
+text = 'Additional Info-Text on our Info Box! 🎊';
 
- constructor() { }
+constructor() { }
 
- ngOnInit() {
- }
+ngOnInit() {
+}
 
 }
 ```
 
 ```html
- <p>info-box works!</p>
- <p>{{text}}</p>
+<p>info-box works!</p>
+<p>{{text}}</p>
 ```
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Ausgabe der Info-Box Komponente mit unserem dynamischen Expression Text" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Ausgabe der Info-Box Komponente mit unserem dynamischen Expression Text" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
+/>
 
 Sollte sich die Property `text` ändern z.B. durch externe Events wird diese automatisch von Angular aktualisiert. Dieses Konzept nennt sich `Data-Binding`.
 
@@ -353,20 +353,20 @@ Hierzu setzen wir statt dem string `'true'` den Namen des Attributes in unserer 
 
 ```typescript
 class InfoBoxComponent implements OnInit {
- text = 'Additional Info-Text on our Info Box! 🎊';
- hidden = true;
+text = 'Additional Info-Text on our Info Box! 🎊';
+hidden = true;
 
- constructor() { }
+constructor() { }
 
- ngOnInit() {
- }
+ngOnInit() {
+}
 
 }
 ```
 
 ```html
- <p>info-box works!</p>
- <p [hidden]="hidden">{{text}}</p>
+<p>info-box works!</p>
+<p [hidden]="hidden">{{text}}</p>
 ```
 
 Um die Komponente nun durch User-Interaktion zu ändern, haben wie die Möglichkeit auf sogenannte `Events` zu hören und hierfür ebenfalls ein `Event-Binding` zu definieren.
@@ -382,15 +382,15 @@ Um es einfach zu halten nutzen wir in diesem Fall erstmal eine `Template-Express
 
 
 ```html
- <p>info-box works!</p>
- <button (click)="hidden=!hidden">
- <p [hidden]="true">{{text}}</p>
+<p>info-box works!</p>
+<button (click)="hidden=!hidden">
+<p [hidden]="true">{{text}}</p>
 ```
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Animation der Basis Show and Hide Infobox" data-src="info-box-toggle.gif" data-srcset="info-box-toggle.gif"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Animation der Basis Show and Hide Infobox" data-src="info-box-toggle.gif" data-srcset="info-box-toggle.gif"
+/>
 
 Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist das unabhängig davon, ob sie in Angular oder einem anderem Framework geschrieben sind.
 
@@ -400,50 +400,50 @@ Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit di
 
 ## Schleifen mit *ngFor
 
-Ein weiteres Core-Feature ist wie in jedem Framework die ausgabe von listenartigen Datenstrukturen.
+Ein weiteres Core-Feature ist wie in jedem Framework die ausgabe von listen artigen Datenstrukturen.
 Hierfür gibt es in Angular die Direktive `*ngFor`.
 
 > Direktiven sind HTML Attribute welche an DOM-Elementen genutzt werden können.
 Hierbei können wir zwischen `Attribute Directives` und  `Structural directives` unterscheiden.
-Attribute Directives verändern oder beinflussen das Verhalten eines Elements an dem sie angehangen werden wie z.B. `ngStyle` zum setzen von CSS-Styles auf Basis von Daten.
+Attribute Directives verändern oder beeinflussen das Verhalten eines Elements an dem sie angehangen werden wie z.B. `ngStyle` zum setzen von CSS-Styles auf Basis von Daten.
 Structural directives erzeugen oder entfernen DOM-Elemente wie z.B. `ngIf` oder `ngFor`.
 Strukturelle Direktiven werden mit dem Prefix `*` gekennzeichnet.
 
-Die Direktive ist angelehnt an eine For-Schleife und iterriert über eine listenartige Struktur und erzeugt für jedes Element eine Kopie des DOM Elements auf das es angewand wird.
+Die Direktive ist angelehnt an eine For-Schleife und iteriert über eine liste artige Struktur und erzeugt für jedes Element eine Kopie des DOM Elements auf das es angewandt wird.
 
 ```html
 <ul>
-    <li *ngFor="let book of books">
-        <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
-    </li>
+   <li *ngFor="let book of books">
+       <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
+   </li>
 </ul>
 ```
 
-Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und eine Liste, in unserem `books` definiert. Die Variable Buch enthält somit jeweils den Wert des aktuellen Listeneintrages.
-Wenn wir also in unserer Komponente eine Variable `books` mit einer Liste von Büchern definieren, erhalen wir hierfür 3 DOM-Elemente.
+Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und eine Liste, in unserem `books` definiert. Die Variable Buch enthält somit jeweils den Wert des aktuellen Listeneintrags.
+Wenn wir also in unserer Komponente eine Variable `books` mit einer Liste von Büchern definieren, erhalten wir hierfür 3 DOM-Elemente.
 
 ```typescript
 books = [
-    {
-      title: 'Book #1',
-      subtitle: 'Subtitle #1'
-    },
-    {
-      title: 'Book #2',
-      subtitle: 'Subtitle #2'
-    },
-    {
-      title: 'Book #3',
-      subtitle: 'Subtitle #3'
-    }
-  ];
+   {
+     title: 'Book #1',
+     subtitle: 'Subtitle #1'
+   },
+   {
+     title: 'Book #2',
+     subtitle: 'Subtitle #2'
+   },
+   {
+     title: 'Book #3',
+     subtitle: 'Subtitle #3'
+   }
+ ];
 ```
 
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Die liste der statischen Bücher in HTML ausgeben" data-src="static-list-of-books.png" data-srcset="static-list-of-books.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Die liste der statischen Bücher in HTML ausgeben" data-src="static-list-of-books.png" data-srcset="static-list-of-books.png"
+/>
 
 <!--
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Show a list of books</a>. </div>
@@ -451,14 +451,14 @@ books = [
 
 ## Der erste Service
 
-Wer genau aufgepasst hat dem ist aufgefallen, dass die Daten in einer Angular Anwendung nicht in die Komponene gehören.
+Wer genau aufgepasst hat dem ist aufgefallen, dass die Daten in einer Angular Anwendung nicht in die Komponente gehören.
 Wir vermischen hier die Anzeige-Logik mit der Verwaltung unserer Daten.
 Nehmen wir also ein kurzes Refactoring unserer Anwendung vor und extrahieren die Daten in einen separaten Service.
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Animation der Extraktion der Daten von der Komoponente in einen Service." data-src="extract-service.gif" data-srcset="extract-service.gif"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Animation der Extraktion der Daten von der Komponente in einen Service." data-src="extract-service.gif" data-srcset="extract-service.gif"
+/>
 
 Ein Service sollte sich immer um eine explizite Aufgabe kümmern und dementsprechend auch benannt werden.
 In unserem Fall wollen wie die Daten von Büchern verwalten.
@@ -472,30 +472,30 @@ $ ng generate service book-data
 ```typescript
 export class BookDataService {
 
-  books = [
-    {
-      title: 'Book #1 from Service',
-      subtitle: 'Subtitle #1'
-    },
-    {
-      title: 'Book #2 from Service',
-      subtitle: 'Subtitle #2'
-    },
-    {
-      title: 'Book #3 from Service',
-      subtitle: 'Subtitle #3'
-    }
-  ];
+ books = [
+   {
+     title: 'Book #1 from Service',
+     subtitle: 'Subtitle #1'
+   },
+   {
+     title: 'Book #2 from Service',
+     subtitle: 'Subtitle #2'
+   },
+   {
+     title: 'Book #3 from Service',
+     subtitle: 'Subtitle #3'
+   }
+ ];
 
-  constructor() { }
+ constructor() { }
 
-  getBooks() {
-    return this.books;
-  }
+ getBooks() {
+   return this.books;
+ }
 }
 ```
 
-Somit haben wir die Daten aus unser Komoponente gezogen.
+Somit haben wir die Daten aus unser Komponente gezogen.
 Die Frage ist jetzt nur - wie bekomme die die Daten nun wieder in meine Komponente verbunden?
 An dieser Stelle kommt der Begriff `Dependency Injection` ins Spiel.
 
@@ -503,12 +503,12 @@ An dieser Stelle kommt der Begriff `Dependency Injection` ins Spiel.
 
 Unter `Dependency Injection` versteht man ein Design-Pattern welches ebenfalls  `Inversion of Control` genannt wird. Hierbei geht es darum, dass die erforderliche Abhängigkeit (Dependency) nicht von der Aufrufenden Stelle selbst erzeugt wird, sondern diese Komponente die Kontrolle abgibt und lediglich definiert welche Abhängigkeiten bestehen.
 
-In unserem kleinen Beispiel erstellt also die `BookListComponent` nicht unsern Service, sondern gibt dem Angular Framework lediglich bescheid, dass sie einen `BookDataService` benötigt um zu funktionieren.
+In unserem kleinen Beispiel erstellt also die `BookListComponent` nicht unseren Service, sondern gibt dem Angular Framework lediglich bescheid, dass sie einen `BookDataService` benötigt um zu funktionieren.
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Angular DI erklärt indem die Komponente mit dem Injektor einen Dialog über ihre Bedürfnisse führt" data-src="di-explained-dialog.gif" data-srcset="di-explained-dialog.gif"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Angular DI erklärt indem die Komponente mit dem Injektor einen Dialog über ihre Bedürfnisse führt" data-src="di-explained-dialog.gif" data-srcset="di-explained-dialog.gif"
+/>
 
 <div class="alert alert-info">Hinweis: Dies ist eine sehr vereinfachte Darstellung von Dependency Injection in Angular, um das Grundkonzept zu verstehen. </div>
 
@@ -517,7 +517,7 @@ Dieser gibt der aufrufenden Stelle eine Referenz auf den angefragten Service, so
 
 Die Definition der Abhängigkeit wird hierbei über den Konstruktor abgebildet. In dem Beispiel unserer `BookListComponent` definieren wir die Abhängigkeit auf `BookDataService` und binden diesen an das Feld `bookData` unserer Komponente.
 
-<div class="alert alert-info">Hinweis: Wir benutzen hier die Typisierung von TypeScript indem wir `: BookDataService` nach unserer Variable schreiben. Dies bedeutet, dass die Variablr `bookData` den Typ `BookDataService` hat und ist essentiell für den Dependency Injection Mechanismus. An den anderen Stellen dieses Tutorials haben wir aufdie Typisierung nicht benutzt, um die Komplexität des Tutorials möglicht minimal zu halten.</div>
+<div class="alert alert-info">Hinweis: Wir benutzen hier die Typisierung von TypeScript indem wir `: BookDataService` nach unserer Variable schreiben. Dies bedeutet, dass die Variable `bookData` den Typ `BookDataService` hat und ist essentiell für den Dependency Injection Mechanismus. An den anderen Stellen dieses Tutorials haben wir auf die Typisierung nicht benutzt, um die Komplexität des Tutorials möglichst minimal zu halten.</div>
 
 Innerhalb des Konstruktors rufen wir dann die `getBooks()` Methode des Services auf und beschaffen uns unsere Daten.
 
@@ -525,11 +525,11 @@ Innerhalb des Konstruktors rufen wir dann die `getBooks()` Methode des Services 
 ```typescript
 export class BookListComponent {
 
-  books = [];
+ books = [];
 
-  constructor(private bookData: BookDataService) {
-    this.books = this.bookService.getBooks();
-   }
+ constructor(private bookData: BookDataService) {
+   this.books = this.bookService.getBooks();
+  }
 
 }
 ```
@@ -542,7 +542,7 @@ export class BookListComponent {
 
 Die aktuelle Version hat uns die Konzepte von Angular Stück für Stück näher erklärt. In der Realität werden Daten jedoch in  den meisten Fällen unsere Daten von einem Server asynchron nachgeladen.
 
-Wir ladenn diese Daten von einer Beispiel-API welche ihr mit folgendem Befehl starten könnt:
+Wir laden diese Daten von einer Beispiel-API welche ihr mit folgendem Befehl starten könnt:
 
 ```bash
 $ npx bookmonkey-api
@@ -550,24 +550,24 @@ JSON Server is running on port 4730
 ```
 Unter folgender URL könnt ihr euch nun die Daten ansehen, welche vom Server ausgegeben werden: <a href="http://localhost:4730/books" target="_blank">http://localhost:4730/books</a>
 
-Im nächsten Schritt wollen wir diese Daten aus unserem `BookDataService` herraus abrufen. Dazu benötigen wir den sogenannten `HttpClient` Service. Dieser bietet uns eine sehr einfache API um verschiedene Operationen auf eine HTTP-Schnittstelle auszuführen.
+Im nächsten Schritt wollen wir diese Daten aus unserem `BookDataService` heraus abrufen. Dazu benötigen wir den sogenannten `HttpClient` Service. Dieser bietet uns eine sehr einfache API um verschiedene Operationen auf eine HTTP-Schnittstelle auszuführen.
 
 Der Service ist Teil eines separaten Modules und muss explizit eingebunden werden. Wir erreichen dies, indem wir in der Datei `app.module.ts` das `HttpClientModule` importieren und im Array `imports` angeben.
 
-```typesscript
+```typescript
 // ...
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InfoBoxComponent,
-    BookListComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
+ declarations: [
+   AppComponent,
+   InfoBoxComponent,
+   BookListComponent
+ ],
+ imports: [
+   BrowserModule,
+   HttpClientModule
+ ],
 // ...
 ```
 
@@ -579,15 +579,15 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+ providedIn: 'root'
 })
 export class BookDataService {
 
-  constructor(private http: HttpClient) { }
+ constructor(private http: HttpClient) { }
 
-  getBooks() {
-    return this.http.get('http://localhost:4730/books')
-  }
+ getBooks() {
+   return this.http.get('http://localhost:4730/books')
+ }
 }
 
 ```
@@ -598,73 +598,73 @@ Der Service bietet uns die Methode `.get(url:string)` welcher wir den API-Endpoi
 
 <div class="alert alert-info">Hinweis: Wir gehen in diesem Tutorial davon aus, dass Asynchronität in JavaScript bereits bekannt ist. Es gibt dazu eine sehr gute Einführung in den <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous" target="_blank">Mozilla Web Docs über Asynchronous JavaScript</a>. </div>
 
-Der RÜckgabewert der der get-Methode des HTTP-Services liefert ein [Observable](https://angular.io/guide/observables-in-angular) zurück. Dies ist eine Datenstruktur,welche uns den Umgang mit asynchronen Daten erleichert. Angular nutzt dafür die [RxJS Observables](https://rxjs.dev/guide/observable).
+Der RÜckgabewert der der get-Methode des HTTP-Services liefert ein [Observable](https://angular.io/guide/observables-in-angular) zurück. Dies ist eine Datenstruktur,welche uns den Umgang mit asynchronen Daten erleichtert. Angular nutzt dafür die [RxJS Observables](https://rxjs.dev/guide/observable).
 
 Es hat sich als guter Stil etabliert Variablen und Felder welche asynchrone Datenstrukturen halten mit einem `$` postfix zu kennzeichnen. Es hat rein funktional keine Einfluss, hilft jedoch bei der langfristigen Zurechtfinden und Wartung eurer Anwendung.
 
 ```typescript
 export class BookListComponent {
 
-  books$: Observable;
+ books$: Observable;
 
-  constructor(private bookData: BookDataService) {
-    this.books$ = this.bookService.getBooks();
-   }
+ constructor(private bookData: BookDataService) {
+   this.books$ = this.bookService.getBooks();
+  }
 
 }
 ```
 
-Der Aufruf innerhalb unserer Komponente ändert sich also im Grunde nicht. Jedoch die Auswertung innerhalb unseres HTML-Templates muss etwas agepasst werden. Mit Hilfe einer sogenannten `async` Pipe können wir der `*ngFor` Direktive den Umgang mit der asynchronen Datenstruktur ermöglichen.
+Der Aufruf innerhalb unserer Komponente ändert sich also im Grunde nicht. Jedoch die Auswertung innerhalb unseres HTML-Templates muss etwas angepasst werden. Mit Hilfe einer sogenannten `async` Pipe können wir der `*ngFor` Direktive den Umgang mit der asynchronen Datenstruktur ermöglichen.
 
 ```html
 <ul>
-    <li *ngFor="let book of books$ | async">
-        <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
-    </li>
+   <li *ngFor="let book of books$ | async">
+       <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
+   </li>
 </ul>
 ```
 
-Die `asyc` Pipe in Verbindung mit `*ngFor` regestriert sich auf asynchrone Updates der `books$` Variable. Durch diese Anpassung unseres Templates können wir nun auch die Daten von unseren JSON-Server wie folgt anzeigen können:
+Die `async` Pipe in Verbindung mit `*ngFor` regestriert sich auf asynchrone Updates der `books$` Variable. Durch diese Anpassung unseres Templates können wir nun auch die Daten von unseren JSON-Server wie folgt anzeigen können:
 
 <img
- class="lazy img-fluid img-rounded"
- src="/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern aus dem HTTP-Backend" data-src="http-list-of-books.png" data-srcset="http-list-of-books.png"
- />
+class="lazy img-fluid img-rounded"
+src="/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern aus dem HTTP-Backend" data-src="http-list-of-books.png" data-srcset="http-list-of-books.png"
+/>
 <!--
 <div class="alert alert-success">👨‍💻👩‍💻Jetzt selber nachbauen im Classroom Task: <a href="#" target="_blank">Load data from local API</a>. </div>
 -->
 
 ## Fazit
 
-Angular ist in vielerlei Hinsicht sehr opinionated(meinungsstark). Dies beeutet, dass viele Entscheidungen über Architektur und Rendering dem/der Entwickler:in bereits abgenommen werden. Dies hat natürlich den Vorteil, dass sich das Projektteam 100% auf die Umsetzung von Features konzentrieren kann und nicht die Grundlegende Architektur eigenständig aufbauen muss.
+Angular ist in vielerlei Hinsicht sehr opinionated(meinungsstark). Dies bedeutet, dass viele Entscheidungen über Architektur und Rendering dem/der Entwickler:in bereits abgenommen werden. Dies hat natürlich den Vorteil, dass sich das Projektteam 100% auf die Umsetzung von Features konzentrieren kann und nicht die Grundlegende Architektur eigenständig aufbauen muss.
 
-Durch die sehr einheitliche Struktur von Angular Anwendungen lassen sich in Angular ausgebildete Entwickler:innen sehr schnell in das Projekt integrieren, da Angular Anwendungen stets einrer gewissen Struktur folgen. Dies ermöglicht die Skalierung von Entwickler:innen-Zeit auf dem Projekt deutlich besser als mit Individuallösungen der Architekrur wie in anderen Frameworks.
+Durch die sehr einheitliche Struktur von Angular Anwendungen lassen sich in Angular ausgebildete Entwickler:innen sehr schnell in das Projekt integrieren, da Angular Anwendungen stets einer gewissen Struktur folgen. Dies ermöglicht die Skalierung von Entwickler:innen-Zeit auf dem Projekt deutlich besser als mit Individuallösungen der Architektur wie in anderen Frameworks.
 
-Generell ist es für langlebige Enterprise Projekte sicherlich eine gute Option. Andere Frameworks wie React und Vue sollten aber ebenfalls in Betracht gezogen werden, um objekiv die beste Entscheidung für die aktuelle Herrausforderungen zu treffen.
+Generell ist es für langlebige Enterprise Projekte sicherlich eine gute Option. Andere Frameworks wie React und Vue sollten aber ebenfalls in Betracht gezogen werden, um objektiv die beste Entscheidung für die aktuelle Herausforderungen zu treffen.
 
 Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](/slack) mit über 2000 wunderbaren anderen Menschen! Zusammen lernt sich besser! :)
 
 
 <hr>
 <div class="workshop-hint text-center">
-  <div class="h3">Hat dir das Tutorial geholfen?</div>
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
-        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
-      </p>
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-          <button class="btn btn-danger">Jetzt weiter lernen</button>
-        </a>
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img
-      class="lazy img-fluid img-rounded"
-      src="/assets/img/placeholder-image.svg" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
-      />
-    </div>
-  </div>
+ <div class="h3">Hat dir das Tutorial geholfen?</div>
+ <div class="row mb-2">
+   <div class="col-xs-12 col-md-6">
+     <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+       schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+     </p>
+     <p class="text-center">
+       <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+         <button class="btn btn-danger">Jetzt weiter lernen</button>
+       </a>
+     </p>
+   </div>
+   <div class="col-xs-12 col-md-6">
+     <img
+     class="lazy img-fluid img-rounded"
+     src="/assets/img/placeholder-image.svg" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
+     />
+   </div>
+ </div>
 </div>
 <hr>
