@@ -624,7 +624,7 @@ Durch die sehr einheitliche Struktur von Angular Anwendungen lassen sich in Angu
 
 Generell ist es für langlebige Enterprise Projekte sicherlich eine gute Option. Andere Frameworks wie React und VueJS sollten aber ebenfalls in Betracht gezogen werden, um objektiv die beste Entscheidung für die aktuelle Herausforderungen zu treffen.
 
-Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](/slack) mit über 2000 wunderbaren anderen Menschen! Zusammen lernt sich besser! :)
+Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Slack Chat](/slack) mit über 2000 wunderbaren anderen Menschen! Zusammen lernt sich besser! :)
 
 
 <hr>
