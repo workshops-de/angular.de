@@ -618,7 +618,7 @@ src="/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern 
 
 ## Fazit
 
-Angular ist in vielerlei Hinsicht sehr opinionated(meinungsstark). Dies bedeutet, dass viele Entscheidungen über Architektur und Rendering dem/der Entwickler:in bereits abgenommen werden. Dies hat natürlich den Vorteil, dass sich das Projektteam 100% auf die Umsetzung von Features konzentrieren kann und nicht die Grundlegende Architektur eigenständig aufbauen muss.
+Angular ist in vielerlei Hinsicht sehr opinionated(meinungsstark). Das bedeutet, dass viele Entscheidungen über Architektur und Rendering dem/der Entwickler:in bereits abgenommen werden. Dies hat natürlich den Vorteil, dass sich das Projektteam 100% auf die Umsetzung von Features konzentrieren kann und nicht die grundlegende Architektur eigenständig aufbauen muss.
 
 Durch die sehr einheitliche Struktur von Angular Anwendungen lassen sich in Angular ausgebildete Entwickler:innen sehr schnell in das Projekt integrieren, da Angular Anwendungen stets einer gewissen Struktur folgen. Dies ermöglicht die Skalierung von Entwickler:innen-Zeit auf dem Projekt deutlich besser als mit Individuallösungen der Architektur wie in anderen Frameworks.
 
