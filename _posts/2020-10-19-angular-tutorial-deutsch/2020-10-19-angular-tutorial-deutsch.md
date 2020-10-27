@@ -49,7 +49,7 @@ Angular ist ein sehr erfolgreiches, clientseitiges JavaScript-Web-Framework zur 
 
 
 ### Unterschiede zu VueJS und React
-Alle drei Bibliotheken bzw Frameworks haben ihre Daseinsberechtigung, Stärken und Schwächen. Je nach Use-Case sollte hier entschieden werden, welche der Alternativen die beste Basis für das aktuelle Projekt liefert.
+Alle drei Bibliotheken bzw. Frameworks haben ihre Daseinsberechtigung, Stärken und Schwächen. Je nach Use-Case sollte hier entschieden werden, welche der Alternativen die beste Basis für das aktuelle Projekt liefert.
 
 **Angular** zielt hierbei ganz klar auf die professionelle Entwicklung von Enterprise Software. Durch klare Vorgaben in Struktur und den Einsatz von Generatoren können langfristig wartbare und skalierbare Softwarelösungen erstellt werden. Konzepte wie Dependency Injection und ein Fokus auf TDD sind seit der ersten Stunde von Angular im Core verankert. Durch die klare Struktur von Projekten ist hierbei explizit die Skalierbarkeit von neuen Entwickler:innen hervorzuheben. Durch dieses Massive Grundgerüst wirkt Angular auf den ersten Blick oft etwas schwergewichtig - überzeugt jedoch in Production durch systematische Optimierungen und Erweiterbarkeit.
 
@@ -57,11 +57,11 @@ Alle drei Bibliotheken bzw Frameworks haben ihre Daseinsberechtigung, Stärken u
 
 **VueJS** bedient die Anforderungen zwischen diesen beiden Frameworks. Indem das Framework auf einen Generator und klare Strukturen setzt begünstigt es ebenfalls die Skalierung von Projekt-Teams. Allerdings versucht VueJS gleichzeitig sehr leichtgewichtig zu bleiben und möglichst wenig "Framework-Magic" einzubringen. Es ist also die simple aber strukturiere Mittellösung.
 
-Dies ist meine persönliche Einschätzung und ich habe bereits sehr gut mit allen dieser Frameworks gearbeitet. Es kommt individuell auf die Problemstellung und das Team an. Falls ihr gerade Neu im Bereich Web seid kann ich euch auch sehr unseren [Moderne Webentwicklung und Frontend-Architekur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, welcher euch einen Überblick in die moderne Webentwicklung von heute aufzeigt.
+Dies ist meine persönliche Einschätzung und ich habe bereits sehr gut mit allen dieser Frameworks gearbeitet. Es kommt individuell auf die Problemstellung und das Team an. Falls ihr gerade neu im Bereich Web seid kann ich euch auch sehr unseren [Moderne Webentwicklung und Frontend-Architekur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, welcher euch einen Überblick in die moderne Webentwicklung von heute aufzeigt.
 
 
 ### Motivation
-Angular selbst hat die Ursprünge in 2009, im "wilden Westen" der Web Anwendungsentwicklung. Seitdem ist viel passiert - keine Angst, ich werde jetzt hier keine Geschichtsstunde starten. Es geht eher um den Punkt: In der wilden Welt von JavaScript Frameworks wo gefühlt jeden Tag 10 neue Frameworks raus kommmen ... wie konnte sich Angular auch seit über 10 Jahren noch als eines der erfolgreichsten Frameworks beweisen?
+Angular selbst hat die Ursprünge in 2009, im "wilden Westen" der Web Anwendungsentwicklung. Seitdem ist viel passiert - keine Angst, ich werde jetzt hier keine Geschichtsstunde starten. Es geht eher um den Punkt: In der wilden Welt von JavaScript Frameworks wo gefühlt jeden Tag 10 neue Frameworks erscheinen ... wie konnte sich Angular auch seit über 10 Jahren noch als eines der erfolgreichsten Frameworks beweisen?
 Dies lässt sich wahrscheinlich am einfachsten mit der Mission von Angular beschreiben:
 
 * Apps that users ❤️ to use.
@@ -73,7 +73,7 @@ Neben diesen ist aber der Fokus auf Qualität und Enterprise ebenfalls klar zu s
 Google selber selbst nutzt nach eigenen Angaben Angular in über 1600 Projekten ein.
 (Google Teams nutzen übrigens AUCH React und VueJS für Projekte wo dieser Stack besser passt).
 
-In 2016 hat sich das Angular-Team für ein kompletten Rewrite in TypeScript entschieden.
+In 2016 hat sich das Angular-Team für einen kompletten Rewrite in TypeScript entschieden.
 Damals wurde die Entscheidung größtenteils negativ wahrgenommen und von anderen Framework Benutzern zerrissen.
 
 <img
@@ -128,7 +128,7 @@ Dieser Befehl installiert die `Angular-CLI` global auf eurem Rechner und ermögl
 
 ## Generieren der Angular App
 
-Die Angular-CLI wird genutzt um neue Strukturen innerhalb unser Anwendungen zu generieren, anstatt wie oft in Projekten die Basis-Strukturen zu kopieren und über potentielle Fehler bei der Umbenennung zu stolpern. Es ist ein mächtiges Werkzeug welches euch mit `ng  --help` eine ausführlichen Hilfetext anbietet.
+Die Angular-CLI wird genutzt um neue Strukturen innerhalb unser Anwendungen zu generieren, anstatt wie oft in Projekten die Basis-Strukturen zu kopieren und über potentielle Fehler bei der Umbenennung zu stolpern. Es ist ein mächtiges Werkzeug welches euch mit `ng  --help` einen ausführlichen Hilfetext anbietet.
 
 Um unsere erste Anwendung zu generieren verwenden wir den `new` command welcher als Argument den Namen eurer Anwendung entgegennimmt. Hierbei werdet ihr gefragt ob ihr das `Routing Module` installieren wollt: Ja. Weiterhin welches Stylesheet Format ihr nutzen wollt: Hierbei wählt ihr bitte SCSS.
 
@@ -179,7 +179,7 @@ In Angular gibt es zwei primäre Bestandteile des Frameworks mit welchen wir uns
 
 ### Komponenten
 
-Angular Komponenten sind die sogenannten "building blocks" jeder Anwendung. Die verschiedenen logischen  Bausteiner einer Anwendung werden also in Komponenten aufgeteilt. Jeder dieser Komponenten übernimmt dabei eine bestimmte Funktion und wird als eigenes HTML-Element definiert.
+Angular Komponenten sind die sogenannten "building blocks" jeder Anwendung. Die verschiedenen logischen  Bausteine einer Anwendung werden also in Komponenten aufgeteilt. Jeder dieser Komponenten übernimmt dabei eine bestimmte Funktion und wird als eigenes HTML-Element definiert.
 
 <img
 class="lazy img-fluid img-rounded"
@@ -197,7 +197,7 @@ src="/assets/img/placeholder-image.svg" alt="Beispiel ToDo App welche die Anwend
 
 <div class="alert alert-info">Hinweis: Diese Darstellung ist noch nicht 100% korrekt und dient in vereinfachter Form der schrittweisen Erklärung. 🙂</div>
 
-Wie ihr in diesem kleinen Beispiel einer ToDo-Liste seht, gibt es für die verschiedenen Bereiche eigene Elemente die in diesem Fall mit dem Prefix `todo-` eingeleitet werden. Wie ihr gut an der `todo-list` erkennt ist es möglich und auch absolut üblich eigene Komponenten ineinander zu verschachteln. Ziel ist es immer wiederverwendbare und wartbare Elemente zu bauen. Ws hierbei die richtige Komponentengröße ist werdet ihr in euren Projekten selber entscheiden müssen und mit wachsender Erfahrungen ein immer besseres Gefühl dafür bekommen. Bei Unsicherheit könnt ihr euch aber auch jederzeit in unserem [Slack](https://workshops.de/slack) bei uns melden.
+Wie ihr in diesem kleinen Beispiel einer ToDo-Liste seht, gibt es für die verschiedenen Bereiche eigene Elemente die in diesem Fall mit dem Prefix `todo-` eingeleitet werden. Wie ihr gut an der `todo-list` erkennt ist es möglich und auch absolut üblich eigene Komponenten ineinander zu verschachteln. Ziel ist es immer wiederverwendbare und wartbare Elemente zu bauen. Was hierbei die richtige Komponentengröße ist werdet ihr in euren Projekten selber entscheiden müssen und mit wachsender Erfahrung ein immer besseres Gefühl dafür bekommen. Bei Unsicherheit könnt ihr euch aber auch jederzeit in unserem [Slack](https://workshops.de/slack) bei uns melden.
 
 
 ### Services
@@ -223,14 +223,14 @@ data = [
 }
 ```
 
-Die eigentlichen Daten werden also aus einem Service referenziert, denn ggf werden auf Basis der aktuellen Todos auch noch andere Komponenten angezeigt wie z.B. eine Komponente welche  die aktuell offenen Todos zählt.
+Die eigentlichen Daten werden also aus einem Service referenziert, denn ggf. werden auf Basis der aktuellen Todos auch noch andere Komponenten angezeigt wie z.B. eine Komponente welche  die aktuell offenen Todos zählt.
 
 Als erste Übersicht soll dies an dieser Stelle reichen. Wir werden uns später Services noch einmal genauer ansehen.
 
 
 ## Die erste Komponente
 
-Wenn wir uns nun die Komponenten-Definition anschauen kommen wir das erste mal mit [TypeScript](https://typescript.org) in Berührung. TypeScript ist eine Erweiterung von JavaScript welche uns die Möglichkeit bietet die Daten unserer Anwendung explizit zu typisieren. Weiterhin führt diese Meta-Sprache auch Features ein die es in JavaScript (noch) nicht gibt wie `Decorators`. TypeScript "transpiled" unseren geschriebenen Quellcode, sodass der Browser nachher wieder ganz normales JavaScript sieht und interpretieren kann. Es ist also ein Feature welches uns als Entwickler:innen die tägliche Arbeit angenehmer macht.
+Wenn wir uns nun die Komponenten-Definition anschauen kommen wir das erste Mal mit [TypeScript](https://typescript.org) in Berührung. TypeScript ist eine Erweiterung von JavaScript welche uns die Möglichkeit bietet die Daten unserer Anwendung explizit zu typisieren. Weiterhin führt diese Meta-Sprache auch Features ein die es in JavaScript (noch) nicht gibt wie `Decorators`. TypeScript "transpiled" unseren geschriebenen Quellcode, sodass der Browser nachher wieder ganz normales JavaScript sieht und interpretieren kann. Es ist also ein Feature welches uns als Entwickler:innen die tägliche Arbeit angenehmer macht.
 
 > **Klassen** wurden in ES2015 eingeführt, um Konzepte wie unter anderem Vererbung und Konstruktoren nicht mehr über Prototypen abbilden zu müssen. Diese können nun über eine einfache und saubere Syntax erstellt werden.
 
@@ -281,8 +281,8 @@ ngOnInit() {
 }
 ```
 
-Hier sehen wir wie erwartet eine Komponente. Unser Selektor hat den automatischen Prefix `app-` bekommen. Somit ist unsere neue Komponente nun unter dem HTML-Tag `<app-info-box></app-info-box>` nutzbar. Der Einstiegspunkt unser kompletten Anwendung ist ebenfalls eine Komponente mit dem Namen `AppComponent`.
-Um unsere frisch generierte Komponente anzuzeigen, müssen wir diese in dem Template unser Anwendung aufrufen. Hierzu geht ihr in die Datei `app.component.html`, löscht dort den kompletten derzeitigen Inhalt und fügt eure Komponente via HTML-Tag ein.
+Hier sehen wir wie erwartet eine Komponente. Unser Selektor hat den automatischen Prefix `app-` bekommen. Somit ist unsere neue Komponente nun unter dem HTML-Tag `<app-info-box></app-info-box>` nutzbar. Der Einstiegspunkt unserer kompletten Anwendung ist ebenfalls eine Komponente mit dem Namen `AppComponent`.
+Um unsere frisch generierte Komponente anzuzeigen, müssen wir diese in dem Template unserer Anwendung aufrufen. Hierzu geht ihr in die Datei `app.component.html`, löscht dort den kompletten derzeitigen Inhalt und fügt eure Komponente via HTML-Tag ein.
 
 ```html
 <app-info-box></app-info-box>
@@ -299,7 +299,7 @@ Diese werden mit doppelten geschweiften Klammern eingeleitet und auch wieder ges
 
    {{ expression }}
 
-Eine Expression wird von Angular dynamisch auf basis der aktuellen Properties eurer Klasse ausgewertet.
+Eine Expression wird von Angular dynamisch auf Basis der aktuellen Properties eurer Klasse ausgewertet.
 Führen wir also eine ein neues Property `text` ein und füllen dieses mit eine String, können wir diesen in unserem Template ausgeben.
 
 ```typescript
@@ -363,7 +363,7 @@ ngOnInit() {
 
 Um die Komponente nun durch User-Interaktion zu ändern, haben wie die Möglichkeit auf sogenannte `Events` zu hören und hierfür ebenfalls ein `Event-Binding` zu definieren.
 Event-Bindings werden in Angular über Runde Klammern definiert welche den Namen des Events enthalten.
-Wenn wir nun also auf das [click Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) eines eines HTML-Elements hören wollen können wir das wie folgt erreichen.
+Wenn wir nun also auf das [click Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) eines HTML-Elements hören wollen können wir das wie folgt erreichen.
 
 ```html
 <button (click)="">
@@ -389,7 +389,7 @@ Wir können natürlich auch jedes andere Event wie z.B. `keyup` benutzen. Mit di
 
 ## Schleifen mit *ngFor
 
-Ein weiteres Core-Feature ist wie in jedem Framework die ausgabe von listen artigen Datenstrukturen.
+Ein weiteres Core-Feature ist wie in jedem Framework die Ausgabe von listen-artigen Datenstrukturen.
 Hierfür gibt es in Angular die Direktive `*ngFor`.
 
 > Direktiven sind HTML Attribute welche an DOM-Elementen genutzt werden können.
@@ -481,7 +481,7 @@ export class BookDataService {
 }
 ```
 
-Somit haben wir die Daten aus unser Komponente gezogen.
+Somit haben wir die Daten aus unserer Komponente gezogen.
 Die Frage ist jetzt nur - wie bekomme die die Daten nun wieder in meine Komponente verbunden?
 An dieser Stelle kommt der Begriff `Dependency Injection` ins Spiel.
 
@@ -489,7 +489,7 @@ An dieser Stelle kommt der Begriff `Dependency Injection` ins Spiel.
 
 Unter `Dependency Injection` versteht man ein Design-Pattern welches ebenfalls  `Inversion of Control` genannt wird. Hierbei geht es darum, dass die erforderliche Abhängigkeit (Dependency) nicht von der Aufrufenden Stelle selbst erzeugt wird, sondern diese Komponente die Kontrolle abgibt und lediglich definiert welche Abhängigkeiten bestehen.
 
-In unserem kleinen Beispiel erstellt also die `BookListComponent` nicht unseren Service, sondern gibt dem Angular Framework lediglich bescheid, dass sie einen `BookDataService` benötigt um zu funktionieren.
+In unserem kleinen Beispiel erstellt also die `BookListComponent` nicht unseren Service, sondern gibt dem Angular Framework lediglich Bescheid, dass sie einen `BookDataService` benötigt um zu funktionieren.
 
 <img
 class="lazy img-fluid img-rounded"
@@ -575,15 +575,15 @@ export class BookDataService {
 
 ```
 
-Der Service bietet uns die Methode `.get(url:string)` welcher wir den API-Endpoint für unsere Abfrage angeben können. Wir nutzen hier die Adresse des lokal gestarten JSON-Server.
+Der Service bietet uns die Methode `.get(url:string)` welcher wir den API-Endpoint für unsere Abfrage angeben können. Wir nutzen hier die Adresse des lokal gestarteten JSON-Server.
 
 ### Umgang mit Asynchronität
 
 <div class="alert alert-info">Hinweis: Wir gehen in diesem Tutorial davon aus, dass Asynchronität in JavaScript bereits bekannt ist. Es gibt dazu eine sehr gute Einführung in den <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous" target="_blank">Mozilla Web Docs über Asynchronous JavaScript</a>. </div>
 
-Der RÜckgabewert der der get-Methode des HTTP-Services liefert ein [Observable](https://angular.io/guide/observables-in-angular) zurück. Dies ist eine Datenstruktur,welche uns den Umgang mit asynchronen Daten erleichtert. Angular nutzt dafür die [RxJS Observables](https://rxjs.dev/guide/observable).
+Der Rückgabewert der der get-Methode des HTTP-Services liefert ein [Observable](https://angular.io/guide/observables-in-angular) zurück. Dies ist eine Datenstruktur, welche uns den Umgang mit asynchronen Daten erleichtert. Angular nutzt dafür die [RxJS Observables](https://rxjs.dev/guide/observable).
 
-Es hat sich als guter Stil etabliert Variablen und Felder welche asynchrone Datenstrukturen halten mit einem `$` postfix zu kennzeichnen. Es hat rein funktional keine Einfluss, hilft jedoch bei der langfristigen Zurechtfinden und Wartung eurer Anwendung.
+Es hat sich als guter Stil etabliert Variablen und Felder welche asynchrone Datenstrukturen halten mit einem `$` postfix zu kennzeichnen. Es hat rein funktional keinen Einfluss, hilft jedoch bei der langfristigen Zurechtfinden und Wartung eurer Anwendung.
 
 ```typescript
 export class BookListComponent {
@@ -607,7 +607,7 @@ Der Aufruf innerhalb unserer Komponente ändert sich also im Grunde nicht. Jedoc
 </ul>
 ```
 
-Die `async` Pipe in Verbindung mit `*ngFor` regestriert sich auf asynchrone Updates der `books$` Variable. Durch diese Anpassung unseres Templates können wir nun auch die Daten von unseren JSON-Server wie folgt anzeigen können:
+Die `async` Pipe in Verbindung mit `*ngFor` registriert sich auf asynchrone Updates der `books$` Variable. Durch diese Anpassung unseres Templates können wir nun auch die Daten von unseren JSON-Server wie folgt anzeigen können:
 
 <img
 class="lazy img-fluid img-rounded"
@@ -622,7 +622,7 @@ Angular ist in vielerlei Hinsicht sehr opinionated(meinungsstark). Dies bedeutet
 
 Durch die sehr einheitliche Struktur von Angular Anwendungen lassen sich in Angular ausgebildete Entwickler:innen sehr schnell in das Projekt integrieren, da Angular Anwendungen stets einer gewissen Struktur folgen. Dies ermöglicht die Skalierung von Entwickler:innen-Zeit auf dem Projekt deutlich besser als mit Individuallösungen der Architektur wie in anderen Frameworks.
 
-Generell ist es für langlebige Enterprise Projekte sicherlich eine gute Option. Andere Frameworks wie React und VueJS sollten aber ebenfalls in Betracht gezogen werden, um objektiv die beste Entscheidung für die aktuelle Herausforderungen zu treffen.
+Generell ist es für langlebige Enterprise Projekte sicherlich eine gute Option. Andere Frameworks wie React und VueJS sollten aber ebenfalls in Betracht gezogen werden, um objektiv die beste Entscheidung für die aktuellen Herausforderungen zu treffen.
 
 Wenn Ihr euch weiter mit uns und anderen Austauschen wollt, kommt in unseren [Slack Chat](/slack) mit über 2000 wunderbaren anderen Menschen! Zusammen lernt sich besser! :)
 
