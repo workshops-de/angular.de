@@ -275,8 +275,7 @@ export class InfoBoxComponent implements OnInit {
 
 constructor() { }
 
-ngOnInit() {
-}
+ngOnInit() {}
 
 }
 ```
@@ -350,8 +349,7 @@ hidden = true;
 
 constructor() { }
 
-ngOnInit() {
-}
+ngOnInit() {}
 
 }
 ```
