@@ -21,7 +21,6 @@
           var visitorId = result.visitorId;
           var gaProperty = '{{ site.ga_property }}';
           var disableStr = 'ga-disable-' + gaProperty;
-          console.log(visitorId);
 
           if (document.cookie.indexOf(disableStr + '=true') > -1) {
             window[disableStr] = true;
