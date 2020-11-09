@@ -512,7 +512,7 @@ export class BookListComponent {
  books = [];
 
  constructor(private bookData: BookDataService) {
-   this.books = this.bookService.getBooks();
+   this.books = this.bookData.getBooks();
   }
 
 }
@@ -589,7 +589,7 @@ export class BookListComponent {
  books$: Observable;
 
  constructor(private bookData: BookDataService) {
-   this.books$ = this.bookService.getBooks();
+   this.books$ = this.bookData.getBooks();
   }
 
 }
