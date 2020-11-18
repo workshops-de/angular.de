@@ -364,7 +364,7 @@ Event-Bindings werden in Angular über Runde Klammern definiert welche den Namen
 Wenn wir nun also auf das [click Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) eines HTML-Elements hören wollen können wir das wie folgt erreichen.
 
 ```html
-<button (click)="">Button Text</button>
+<button (click)="someFunction()">Button Text</button>
 ```
 
 Innerhalb dieser Definition haben wir nun die Möglichkeit ein sogenanntes `Template-Statement` zu definieren. Dies kann sowohl eine `Template-Expression` sein welche z.B. direkt Änderungen an Attributen eurer Klasse macht oder eine Referenz auf eine Methode in eurer Klasse.
