@@ -38,7 +38,7 @@ Als Template-Sprache setzt AngularJS auf **erweiterbares HTML**. Wir können zu 
 
 **Low-Level-Operationen:** Wenn wir jQuery benutzen, müssen wir immer wieder die gleichen Dinge tun - DOM-Manipulationen/-Selektionen. Haben wir ein neues Element in ein Array eingefügt, müssen wir in jQuery selbst dafür sorgen, dass wir z.B. die entsprechende Liste im DOM finden (Selektion) und auch dort das Element eintragen (Manipulation). Mit AngularJS beschreiben wir nur, dass wir eine Liste im DOM mit einem Array verknüpfen wollen. Ab da synchronisiert AngularJS diese selbständig. Keine überflüssigen IDs und Klassen. Kein Boilerplate-Code mehr.
 
-Der ursprüngliche Autor, Miško Hevery, hat großen Wert auf **Testbarkeit gelegt**. Dies bezieht sich nicht nur auf die sehr gute Testabdeckung für das Framework selbst. Auch der Entwickler selbst soll seine Anwendung einfach testen können. Wenn man sich an den *Angular-Weg* hält, sind Tests wirklich sehr einfach zu schreiben.
+Der ursprüngliche Autor, Miško Hevery, hat großen Wert auf **Testbarkeit gelegt**. Dies bezieht sich nicht nur auf die sehr gute Testabdeckung für das Framework selbst. Auch Entwickler:innen selbst sollen ihre Anwendung einfach testen können. Wenn man sich an den *Angular-Weg* hält, sind Tests wirklich sehr einfach zu schreiben.
 
 ## Was unterscheidet AngularJS grundlegend von anderen Frameworks?
 
