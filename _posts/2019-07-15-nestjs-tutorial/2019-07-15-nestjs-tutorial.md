@@ -8,7 +8,7 @@ categories: "nestjs tutorial nodejs"
 ---
 
 Dieses Tutorial erklärt euch die Grundlagen des Frameworks NestJS. Wir werden einige Code Beispiele benutzen die ihr via [Git Repository](https://github.com/angularjs-de/angular-de-nestjs-tutorial) auf eurem eigenen Rechner ausprobieren könnt.
-Dieses Tutorial richtet sich an Entwicklerinnen und Entwickler, welche die Grundlagen des Webs, Client-Server Architektur und Rest-Schnittstellen bereits verstanden haben.
+Dieses Tutorial richtet sich an Entwickler:innen, welche die Grundlagen des Webs, Client-Server Architektur und Rest-Schnittstellen bereits verstanden haben.
 Ziel dieses Tutorials ist es, zu zeigen wie eine Rest-API mit Nest gebaut werden kann.
 Wir benutzen hierbei als Datenbank eine PostgreSQL Instanz, es können aber auch andere (NoSQL) Datenbanken wie MongoDB genau so einfach angebunden werden. Weiterhin wird ein lauffähiges NodeJS in Version 10 oder höher für dieses Tutorial vorausgesetzt.
 
@@ -44,13 +44,13 @@ Die Aufteilung in atomare und funktionale Bausteine in unseren Anwendungen ermö
 Die oben genannten Vorteile gelten meist für alle der genannten Frameworks. Welche Vorteile bietet uns dann NestJS? Hierbei kommt es, wie so oft, immer auf die spezifische Projektsituation an. NestJS kann eine besonders gute Wahl in Verbindung mit einem modernen Frontend-Stack wie Angular, React oder Vue sein.
 
 ### Die gleiche Programmiersprache
-Durch die Benutzung von TypeScript(JavaScript) sowohl im Frontend als auch im Backend, müssen Entwickler, welche an beiden Projekten arbeiten, nicht ständig zwischen zwei Sprachen und Konzepten hin und her wechseln. Das spart enorm viel kognitive Energie welche sinnvoller eingesetzt werden kann.
+Durch die Benutzung von TypeScript(JavaScript) sowohl im Frontend als auch im Backend, müssen Entwickler:innen, welche an beiden Projekten arbeiten, nicht ständig zwischen zwei Sprachen und Konzepten hin und her wechseln. Das spart enorm viel kognitive Energie welche sinnvoller eingesetzt werden kann.
 
 ### Wiederverwenden von DTOs
 Unter dem Begriff DTO versteht man ein Data-Transfer-Objekt. Dies wird benutzt um die Serialisierung und De-Serialisierung bei Netzwerk-Kommunikation klar zu definieren. Im Fall einer Client-Server-Anwendung müssen diese Definitionen und Funktionen also jeweils auf beiden Seiten implementiert und synchron gehalten werden. Ein typischer Projektaufbau mit NestJS erlaubt aber die gleichzeitige Verwendung dieser Interface-Definitionen. Somit hat man eine klare Stelle für diese Definitionen und reduziert so die Gefahr einer potentielle zeitfressenden Fehlerquellen enorm.
 
 ### Ähnliche Struktur
-Nest ist sehr stark durch moderne Plattformen wie Angular inspiriert. Sowohl die Entwicklungsumgebung, die Laufzeitumgebung, als auch die Build-Prozesse sind sehr ähnlich im Front und Backend. Es kann also viel gelerntes Wissen direkt wiederverwendet werden. Die oftmals strikte Trennung zwischen Backend- und Frontend-EntwicklerInnen kann aufgeweicht werden und eine bessere Kommunikation fördern.
+Nest ist sehr stark durch moderne Plattformen wie Angular inspiriert. Sowohl die Entwicklungsumgebung, die Laufzeitumgebung, als auch die Build-Prozesse sind sehr ähnlich im Front und Backend. Es kann also viel gelerntes Wissen direkt wiederverwendet werden. Die oftmals strikte Trennung zwischen Backend- und Frontend-Entwickler:innen kann aufgeweicht werden und eine bessere Kommunikation fördern.
 
 ### Ähnliche Konzepte
 Sehr stark ausgeprägt in Verbindung mit Angular sind die gemeinsamen Konzepte und Paradigmen, welche genutzt werden, um die Architektur zu definieren. Geführt durch einen Generator(welcher auf Schematics basiert) können sowohl NestJS-Core als auch Third-Party-Module einfach integriert und aktualisiert werden. Die Benutzung von Dependency Injection, Decorators und Modulen ermöglicht ein Wiederverwenden von vielen Wissensbausteinen.
@@ -430,7 +430,7 @@ Dies passiert, wenn ihr euren Server über `npm run start:dev` startet. Diese Op
 ```
 
 ## Fazit
-Zusammenfassend würde ich behaupten: NestJS schließt endlich eine Lücke für Backend-Entwickler die sich mit anderen NodeJS-Frameworks wie Express bisher eher schwer getan haben.
+Zusammenfassend würde ich behaupten: NestJS schließt endlich eine Lücke für Backend-Entwickler:innen die sich mit anderen NodeJS-Frameworks wie Express bisher eher schwer getan haben.
 Die Konzepte fügen sich sehr angenehm an bereits bestehende Konzepte aus der Angular oder auch Java Spring Welt. Die Lernkurve ist relativ flach und es werden viele Module mitgeliefert welche die tägliche Arbeit durch eine angenehme Abstraktion sehr erleichern.
 Des Weiteren legt das Framework ein starken Fokus auf Test, wodurch es für professionelle Projekte ein oft schmerzhaften Punkt von Beginn an löst.
 Die ersten Schritte gehen leicht von der Hand und machen Spaß auf mehr!
