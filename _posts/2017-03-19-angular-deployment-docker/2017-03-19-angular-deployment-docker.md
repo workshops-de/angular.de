@@ -6,7 +6,7 @@ published_at: 2017-03-19 00:00:01.000000Z
 categories: "angular angular2 angular4 docker deployment"
 ---
 
-Welcher Web-Entwickler kennt nicht die guten alten Zeiten, in welchen Webserver sehr aufwendig aufgesetzt werden mussten. Jeder aus dieser Zeit kann bestätigen, dass dies alles andere als einfach war.
+Welche:r Web-Entwickler:in kennt nicht die guten alten Zeiten, in welchen Webserver sehr aufwendig aufgesetzt werden mussten. Jeder aus dieser Zeit kann bestätigen, dass dies alles andere als einfach war.
 
 Inzwischen gibt es aber Möglichkeiten, hierbei wesentlich flexibler zu agieren. Daher wollen wir uns in diesem Artikel das Zusammenspiel von Docker, Node, Unit-Testing mit einer Angular App ansehen. Ziel soll es sein, dass ein Deployment vollständig automatisiert ab dem Punkt des Code Check-In stattfindet. Allerdings nur dann, wenn alle Tests erfolgreich durchgeführt wurden. Folglich - wir wollen eine Deployment-Pipe aufsetzen.
 
@@ -179,7 +179,7 @@ Nachdem wir nun die einzelnen Baustene kennen lernen durften, müssen wir uns da
 
 Wie ist denn eigentlich der grobe Ablauf hierfür?
 
-Zunächst checkt der Entwickler neuen Code ein. Anschließend durchläuft dieser alle Tests, um dann nach deren Bestehen die App automatisch zu deployen.
+Zunächst checkt der/die Entwickler:in den neuen Code ein. Anschließend durchläuft dieser alle Tests, um dann nach deren Bestehen die App automatisch zu deployen.
 
 Aber wie bekommen wir das hin? Das Schlüsselwort hierfür lautet ```Webhooks```, welche alle Bausteine der Pipe letztlich verbinden sollen. Eine sehr einfache Beschreibung eines Webhooks ist auf [Wikipedia](https://de.wikipedia.org/wiki/WebHooks) zu finden.
 
