@@ -586,7 +586,7 @@ Es hat sich als guter Stil etabliert Variablen und Felder welche asynchrone Date
 ```typescript
 export class BookListComponent {
 
- books$: Observable;
+ books$: Observable<Object>;
 
  constructor(private bookData: BookDataService) {
    this.books$ = this.bookData.getBooks();
