@@ -32,8 +32,10 @@ jobs:
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
+        --env JEKYLL_ENV=production
+        --env YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod -R 777 /srv/jekyll && JEKYLL_ENV=production jekyll build"
+        jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod -R 777 /srv/jekyll && jekyll build"
 
     - name: Deploy
       if: github.ref == 'refs/heads/master'
