@@ -20,16 +20,16 @@ jobs:
     - name: Clone repository
       uses: actions/checkout@v2
 
-    # - name: Cache
-    #   uses: actions/cache@v2.1.2
-    #   with:
-    #     path: ~/.firebase, ~/.jekyll-cache, ~/vendor/bundle
-    #     key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-gems-
+    - name: Cache
+      uses: actions/cache@v2.1.2
+      with:
+        path: ~/.firebase, ~/.jekyll-cache, ~/vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
 
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && JEKYLL_ENV=production jekyll build"
+        jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && JEKYLL_ENV=production jekyll build"
