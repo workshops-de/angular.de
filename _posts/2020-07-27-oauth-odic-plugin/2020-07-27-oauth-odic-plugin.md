@@ -124,7 +124,7 @@ Nach der Installation mit npm (``npm install angular-oauth2-oidc``) lässt sie s
 export class AppModule {}
 ```
 
-Der Parameter ``sendAccessToken`` gibt an, dass die Bibliothek das abgerufene Access-Token bei jedem mit Angular durchgeführten HTTP-Anfrage anhängen soll. Dazu kommt intern ein ``HttpInterceptor`` zum Einsatz. Damit das Token nicht aus Versehen an die falschen APIs gesendet werden, müssen jene, die es erhalten dürfen, im Array ``allowedUrls`` eingetragen werden. Hierzu reicht das Hinterlegen eines Präfixes. Im betrachteten Fall erhalten alle APIs, deren URLs mit [http://www.angular.at/api/](http://www.angular.at/api/) beginnen, das Token.
+Der Parameter ``sendAccessToken`` gibt an, dass die Bibliothek das abgerufene Access-Token bei jedem mit Angular durchgeführten HTTP-Anfrage anhängen soll. Dazu kommt intern ein ``HttpInterceptor`` zum Einsatz. Damit das Token nicht aus Versehen an die falschen APIs gesendet werden, müssen jene, die es erhalten dürfen, im Array ``allowedUrls`` eingetragen werden. Hierzu reicht das Hinterlegen eines Präfixes. Im betrachteten Fall erhalten alle APIs, deren URLs mit ``http://www.angular.at/api/`` beginnen, das Token.
 
 An dieser Stelle soll betont werden, dass die hier betrachteten Mechanismen nur bei Einsatz von HTTPS als sicher angesehen werden können. Aus Gründen der Vereinfachung kommt bei dem hier gezeigten Beispiel, das lediglich der Veranschaulichung dient, lediglich HTTP zum Einsatz.
 

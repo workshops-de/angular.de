@@ -473,6 +473,5 @@ Starte die App und schaue Dir die Ausgabe auf der Konsole an, dort sollte jetzt 
 
 Deine App ist jetzt von Electron umgeben und Du kannst auf das Betriebssystem zugreifen, wie in einer richtigen Desktop Applikation.
 Ich hoffe Dir hat die Anleitung Spaß gemacht und vor allem, dass sie Dir etwas gebracht hat.
-Das Repository für diese Anleitung findest Du unter [AngularElectron](https://github.com/EsSpricht/AngularElectron).
 
 Viel Erfolg mit Angular und Electron.
