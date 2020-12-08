@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: Build Jekyll and Deploy to Firebase
 
 on:
   push:
@@ -33,3 +33,9 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod -R 777 /srv/jekyll && JEKYLL_ENV=production jekyll build"
+
+    - name: Deploy
+      if: github.ref == 'refs/heads/master'
+      uses: doonstore/firebase-deploy@v1
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
