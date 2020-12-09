@@ -1,4 +1,4 @@
-# angular.de
+# Angular.DE
 
 Requires Ruby 2.5+
 
