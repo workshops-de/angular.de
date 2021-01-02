@@ -135,22 +135,48 @@ Um unsere erste Anwendung zu generieren, verwenden wir den `new` command, welche
 ```bash
 $ ng new angular-de-tutorial
 
-? Would you like to add Angular routing? No
-? Which stylesheet format would you like to use? SCSS
+? Do you want to enforce stricter type checking and stricter bundle budgets in the workspace?
+  This setting helps improve maintainability and catch bugs ahead of time.
+  For more information, see https://angular.io/strict
+  No
+? Would you like to add Angular routing? 
+  No
+? Which stylesheet format would you like to use? 
+  SCSS
+```
+
+> In diesem Tutorial verzichten wir auf den Strict Mode von Angular und TypeScript, damit wir vollen Fokus auf die Angular Features legen können.
+
+Wenn du die Angular CLI später verwendest um Code zu erzeugen, oder das Projekt auszuführen, stellt die CLI die Frage, ob du deine Nutzungsdaten anonymisiert zur Verfügung stellen möchtest, um die Angular CLI zu verbessern.
+
+```bash
+? Would you like to share anonymous usage data about this project with the Angular Team at
+Google under Google’s Privacy Policy at https://policies.google.com/privacy? For more
+details and how to change this setting, see http://angular.io/analytics. Yes|No
 ```
 
 Nun werden automatisch die Projektstrukturen für euch angelegt. Dies inkludiert eine Startseite, eine Komponente, die ersten End2End Tests, Linter-Regeln, GitIgnore-Regeln und eine TypeScript Konfiguration.
 
 ```bash
-CREATE angular-de-tutorial/angular.json (3671 bytes)
-CREATE angular-de-tutorial/package.json (1296 bytes)
-CREATE angular-de-tutorial/README.md (1034 bytes)
-CREATE angular-de-tutorial/tsconfig.json (543 bytes)
-CREATE angular-de-tutorial/tslint.json (1953 bytes)
+CREATE angular-de-tutorial/angular.json (3809 bytes)
+CREATE angular-de-tutorial/package.json (1209 bytes)
+CREATE angular-de-tutorial/README.md (1026 bytes)
+CREATE angular-de-tutorial/.editorconfig (274 bytes)
+CREATE angular-de-tutorial/.gitignore (631 bytes)
+CREATE angular-de-tutorial/tsconfig.json (737 bytes)
+CREATE angular-de-tutorial/tslint.json (3185 bytes)
+CREATE angular-de-tutorial/.browserslistrc (703 bytes)
 ...
-CREATE angular-de-tutorial/e2e/tsconfig.json (214 bytes)
-CREATE angular-de-tutorial/e2e/src/app.e2e-spec.ts (652 bytes)
-CREATE angular-de-tutorial/e2e/src/app.po.ts (301 bytes)
+CREATE angular-de-tutorial/src/app/app.module.ts (314 bytes)
+CREATE angular-de-tutorial/src/app/app.component.scss (0 bytes)
+CREATE angular-de-tutorial/src/app/app.component.html (25725 bytes)
+CREATE angular-de-tutorial/src/app/app.component.spec.ts (979 bytes)
+CREATE angular-de-tutorial/src/app/app.component.ts (224 bytes)
+...
+CREATE angular-de-tutorial/e2e/protractor.conf.js (904 bytes)
+CREATE angular-de-tutorial/e2e/tsconfig.json (274 bytes)
+CREATE angular-de-tutorial/e2e/src/app.e2e-spec.ts (670 bytes)
+CREATE angular-de-tutorial/e2e/src/app.po.ts (274 bytes)
 ```
 
 Nach dem Generieren werden ebenfalls notwendige Pakete via `npm` installiert. Dies kann durchaus einige Minuten dauern. Ist die Installation abgeschlossen, könnt ihr die Entwicklungsumgebung starten.
@@ -399,6 +425,8 @@ Strukturelle Direktiven werden mit dem Prefix `*` gekennzeichnet.
 Die Direktive ist angelehnt an eine For-Schleife, iteriert über eine listenartige Struktur und erzeugt für jedes Element eine Kopie des DOM-Elements, auf das es angewandt wird.
 
 ```html
+<!-- book-list.component.html -->
+
 <ul>
    <li *ngFor="let book of books">
        <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
@@ -407,7 +435,13 @@ Die Direktive ist angelehnt an eine For-Schleife, iteriert über eine listenarti
 ```
 
 Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und eine Liste, in unserem `books` definiert. Die Variable Buch enthält somit jeweils den Wert des aktuellen Listeneintrags.
-Wenn wir also in unserer Komponente eine Variable `books` mit einer Liste von Büchern definieren, erhalten wir hierfür 3 DOM-Elemente.
+
+Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und eine Liste, in unserem `books` definiert. Die Variable Buch enthält somit jeweils den Wert des aktuellen Listeneintrags.
+
+Um `*ngFor` auszuprobieren erzeugen wir eine neue Komponente mit der Angular CLI.
+Dazu führen wir den command `ng generate component book-list` aus.
+Da mit wie Komponente im Browser angezeig wird, fügen wir das Tag `<app-book-list></app-book-list>` in das Template der `app.component.html` ein.
+Wenn wir also in der `BookListComponent` (siehe _book-list.component.ts_) eine Variable `books` mit einer Liste von Büchern definieren, erhalten wir hierfür 3 DOM-Elemente.
 
 ```typescript
 books = [
