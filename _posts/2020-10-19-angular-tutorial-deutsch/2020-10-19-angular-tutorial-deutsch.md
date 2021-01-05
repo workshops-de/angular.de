@@ -400,7 +400,7 @@ Um es einfach zu halten, nutzen wir in diesem Fall erstmal eine `Template-Expres
 ```html
 <p>info-box works!</p>
  <button (click)="hidden=!hidden">Toggle</button>
-<p [hidden]="true">{{text}}</p>
+<p [hidden]="hidden">{{text}}</p>
 ```
 
 <img
