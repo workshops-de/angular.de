@@ -15,12 +15,17 @@
       },
       {
         "source": "/slack*",
-        "destination": "https://workshops.de/slack",
+        "destination": "https://workshops.de/join-discord",
+        "type": 301
+      },
+      {
+        "source": "/discord*",
+        "destination": "https://workshops.de/join-discord",
         "type": 301
       },
       {
         "source": "/chat*",
-        "destination": "https://angular.de/slack",
+        "destination": "https://angular.de/discord",
         "type": 301
       },
       {
