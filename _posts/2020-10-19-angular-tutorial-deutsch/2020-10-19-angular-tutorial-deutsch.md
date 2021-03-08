@@ -13,7 +13,7 @@ Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular. Wir behande
 
 Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalte der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript).
 
-Unsere Didaktik behandelt dabei die Motivation, die Theorie, und dann den Praxis-Teil. Ihr könnt hierbei alle Aufgaben selber programmieren und über unseren Workshops.DE Classroom Hilfestsellungen und Musterlösungen für die Aufgaben erhalten.
+Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil. Ihr könnt hierbei alle Aufgaben selber programmieren und über unseren Workshops.DE Classroom Hilfestellungen und Musterlösungen für die Aufgaben erhalten.
 
 <img src="/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="classroom-example.png" data-srcset="classroom-example.png"
 />
@@ -58,7 +58,7 @@ Alle drei Bibliotheken, beziehungsweise Frameworks, haben ihre Daseinsberechtigu
 
 **ReactJS** zielt hierbei eher auf einen sehr minimalen Layer auf Komponenten-Ebene ab und ermöglicht/erfordert das Konzipieren einer eigenen Architektur von Grund auf. Das bietet sehr flexible Möglichkeiten, um für individuelle Problemstellungen sehr explizite Lösungen zu bauen. Es gibt eine Auswahl an verschiedensten Modulen für die verschiedenen Anforderungen. Der Aufwand der Integration und Pflege ist hier höher als in Angular, allerdings ist das Projekt dadurch oftmals auch simpler und sehr leichtgewichtig.
 
-**VueJS** bedient die Anforderungen zwischen diesen beiden Frameworks. Indem das Framework auf einen Generator und klare Strukturen setzt, begünstigt es ebenfalls die Skalierung von Projekt-Teams. Allerdings versucht VueJS gleichzeitig sehr leichtgewichtig zu bleiben und möglichst wenig "Framework-Magic" einzubringen. Es ist also die simple aber strukturierte Mittellösung.
+**VueJS** bedient die Anforderungen zwischen diesen beiden Frameworks. Indem das Framework auf einen Generator und klare Strukturen setzt, begünstigt es ebenfalls die Skalierung von Projekt-Teams. Allerdings versucht VueJS gleichzeitig sehr leichtgewichtig zu bleiben und möglichst wenig "Framework-Magic" einzubringen. Es ist also die simple, aber strukturierte Mittellösung.
 
 Dies ist meine persönliche Einschätzung und ich habe bereits sehr gut mit allen diesen Frameworks gearbeitet. Es kommt individuell auf die Problemstellung und das Team an. Falls ihr gerade neu im Bereich Web seid, kann ich euch auch sehr unseren [Moderne Webentwicklung und Frontend-Architekur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, welcher euch einen Überblick über die moderne Webentwicklung von heute aufzeigt.
 
@@ -115,7 +115,7 @@ In diesem Tutorial werden wir uns primär um das Framework, die Angular CLI und 
 Beginnen wir nun mit der Installation von NodeJS.
 NodeJS ist die sogenannte "JavaScript Runtime" und dafür zuständig, Programme auf unserem Rechner auszuführen, welche in der Sprache JavaScript geschrieben sind, wie z.B. das Command-Line-Interface von Angular, welches wir gleich nutzen werden.
 
-Ihr könnt NodeJS über folgenden Link herrunterladen und installieren: [https://nodejs.org/download/](https://nodejs.org/download/)
+Ihr könnt NodeJS über folgenden Link herunterladen und installieren: [https://nodejs.org/download/](https://nodejs.org/download/)
 
 Mit NodeJS wird ebenfalls das Kommandozeilenwerkzeug `npm` installiert, welches uns ermöglicht, weitere NodeJS Pakete auf unserem Rechner zu installieren.
 
@@ -198,7 +198,7 @@ src="/assets/img/placeholder-image.svg" alt="Die Webansicht von ng serve nach de
 
 ## Komponenten und Services
 
-In Angular gibt es zwei primäre Bestandteile des Frameworks, mit welchen wir uns zuerst auseinander setzen.
+In Angular gibt es zwei primäre Bestandteile des Frameworks, mit welchen wir uns zuerst auseinandersetzen.
 
 **Komponenten** sind Anzeigeelemente. Sie werden als eigene HTML-Elemente definiert. Abhängig der definierten Anzeige-Logik und den aktuellen Daten stellen diese Elemente den Zustand der Anwendung dar.
 
@@ -274,8 +274,8 @@ src="/assets/img/placeholder-image.svg" alt="Beispiel einer Item-Komponenten-Def
 
 Unsere erste Komponente wird eine statische Infobox sein. Um diese zu generieren, nutzen wir wieder die Angular-CLI.
 Ihr könnt hierzu einen neuen Terminal öffnen oder den laufenden `ng serve` kurzzeitig stoppen.
-Der Serve-Prozess erkennt aber automatisch Veränderungen innerhalb eures Quellcode und kompiliert die jeweils aktuelle Version ihrer Anwendung in wenigen Sekunden.
-Ich würde euch also empfehlen, einen zweiten Terminal zu öffnen und folgenden Befehl zu benutzen.
+Der Serve-Prozess erkennt aber automatisch Veränderungen innerhalb eures Quellcodes und kompiliert die jeweils aktuelle Version ihrer Anwendung in wenigen Sekunden.
+Ich würde euch also empfehlen, ein zweites Terminal zu öffnen und folgenden Befehl zu benutzen:
 
 ```bash
 $ ng generate component info-box
@@ -426,11 +426,9 @@ Die Direktive ist angelehnt an eine For-Schleife, iteriert über eine listenarti
 
 Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und eine Liste, in unserem `books` definiert. Die Variable Buch enthält somit jeweils den Wert des aktuellen Listeneintrags.
 
-Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und eine Liste, in unserem `books` definiert. Die Variable Buch enthält somit jeweils den Wert des aktuellen Listeneintrags.
-
-Um `*ngFor` auszuprobieren erzeugen wir eine neue Komponente mit der Angular CLI.
+Um `*ngFor` auszuprobieren, erzeugen wir eine neue Komponente mit der Angular CLI.
 Dazu führen wir den command `ng generate component book-list` aus.
-Da mit wie Komponente im Browser angezeig wird, fügen wir das Tag `<app-book-list></app-book-list>` in das Template der `app.component.html` ein.
+Damit die Komponente im Browser angezeigt wird, fügen wir das Tag `<app-book-list></app-book-list>` in das Template der `app.component.html` ein.
 Wenn wir also in der `BookListComponent` (siehe _book-list.component.ts_) eine Variable `books` mit einer Liste von Büchern definieren, erhalten wir hierfür 3 DOM-Elemente.
 
 ```typescript
