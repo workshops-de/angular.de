@@ -4,13 +4,22 @@
       <div class="col-6 col-sm-3 mb-2">
         <div class="h4 text-muted mb-2">Angular.DE</div>
         <small>
-          <span class="font-weight-bolder">Powered by <a href="https://workshops.de">Workshops.DE</a></span>.<br>
-          Copyright © Symetics {{ site.time | date: '%Y' }}.<br>
-          Alle Rechte vorbehalten.
+          <span class="font-weight-bolder">Powered by <a href="https://workshops.de">Workshops.DE</a></span>.
         </small>
       </div>
       <div class="col-6 col-sm-3 mb-2">
-        <div class="h6 text-uppercase text-muted">Seiten</div>
+        <div class="h6 text-uppercase text-muted">Navigation</div>
+        <ul class="list-unstyled">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="/consulting/">Consulting</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase text-muted">Communities</div>
         <ul class="list-unstyled">
           <li><a href="/schulungen/angular-intensiv/">Schulungen</a></li>
           <li><a href="https://reactjs.de" target="_blank">ReactJS.DE</a></li>
@@ -21,7 +30,7 @@
         </ul>
       </div>
       <div class="col-6 col-sm-3 mb-2">
-        <div class="h6 text-uppercase text-muted">Follow us</div>
+        <div class="h6 text-uppercase text-muted">Folge uns hier</div>
         <ul class="list-unstyled">
           <li>
             <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
@@ -35,11 +44,20 @@
           <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
         </ul>
       </div>
-      <div class="col-6 col-sm-3 mb-2">
-        <div class="h6 text-uppercase text-muted">Rechtliches</div>
-        <ul class="list-unstyled">
-          <li><a href="/impressum/">Impressum</a></li>
-          <li><a href="/datenschutz/">Datenschutz</a></li>
+    </div>
+    <hr />
+    <div class="row align-items-center text-muted">
+      <div class="col-6 small">
+        Copyright © {{ site.time | date: '%Y' }} Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Datenschutz</a>
+          </li>
         </ul>
       </div>
     </div>
