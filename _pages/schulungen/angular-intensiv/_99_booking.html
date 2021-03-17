@@ -40,7 +40,7 @@
       <div class="col-8">
         <div class="row">
           <div class="col-sm-9">
-            <a class="underlined" href="{{ event.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list" target="_blank">
+            <a class="underlined" href="{{ event.url }}&utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list" target="_blank">
               Intensiv-Schulung · <span class="d-none d-sm-inline">{% assign m = event.startDate | date: "%-m" %} {% case m %} {% when '1' %}Januar {% when '2' %}Februar
                 {% when '3' %}März {% when '4' %}April {% when '5' %}Mai {% when '6' %}Juni {% when '7' %}Juli {% when '8'
                 %}August {% when '9' %}September {% when '10' %}Oktober {% when '11' %}November {% when '12' %}Dezember {%
@@ -102,7 +102,7 @@
             {% endif %}
           </div>
           <div class="col-sm-3 text-right">
-            <a class="btn btn-success btn-sm btn-cta shadow" href="{{ event.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list#booking" target="_blank">anmelden</a>
+            <a class="btn btn-success btn-sm btn-cta shadow" href="{{ event.offers.url }}?utm_source=https://angular.de/schulungen/angular-intensiv/&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list#booking" target="_blank">anmelden</a>
           </div>
         </div>
       </div>
