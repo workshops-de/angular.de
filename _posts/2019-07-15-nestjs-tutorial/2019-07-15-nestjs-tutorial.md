@@ -62,10 +62,10 @@ Sehr stark ausgeprägt in Verbindung mit Angular sind die gemeinsamen Konzepte u
     <div class="col-xs-12 col-md-6">
       <p>
         Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und Spaß machen. Wir bieten euch auch
-        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">NestJS Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">NestJS Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
       </p>
       <p class="">
-        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
           <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
         </a>
       </p>
@@ -451,10 +451,10 @@ Danke fürs lesen!
     <div class="col-xs-12 col-md-6">
       <p>
         Nicht jeder lernt am besten aus Büchern und Artikeln. Lernen darf interaktiv sein und Spaß machen. Wir bieten euch auch
-        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular.de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">NestJS Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">NestJS Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
       </p>
       <p class="">
-        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular.de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
           <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
         </a>
       </p>
