@@ -12,8 +12,7 @@
           Die genauen Start- und Endzeiten findest du, wenn du auf einen Termin klickst.
         </p>
         <p>
-          <strong>Remote:</strong> Unsere Remote Schulungen finden meist über 5 halbe Tage statt. Typische Zeiten sind am Vormittag von 9 bis 13 Uhr oder am Nachmittag von 14-17 Uhr.<br>
-          Diese 5 Tage müssen auch nicht an einem Stück passieren. Es macht oftmals Sinn in 3 Tagen die Grundlagen zu lernen, danach 1-2 Wochen das Wissen Sacken zu lassen und erste Erfahrungen zu machen und danach weitere 2 Tage intensiv auf fortgeschrittene Themen und Fragen einzugehen.
+          <strong>Remote:</strong> Unsere öffentlichen Remote Schulungen finden in der Regel über 6 halbe Tage am Vormittag von 9 bis 12 Uhr statt.
         </p>
         <p>
           Andere Variationen sind natürlich auch sehr flexibel umzusetzen und können gerne gemeinsam erarbeitet werden.
@@ -23,6 +22,9 @@
 
     {% for event in site.data.events.angular-intensiv limit:6 %}
     <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
+      <div class="d-none d-md-block col-1">
+        KW{{ event.startDate | date: "%W" }}
+      </div>
       <div class="col-4">
         <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span class="mr-2" itemprop="endDate" content="{{ event.endDate | date: " %Y-%m-%d " }}">{{ event.endDate | date: "%d.%m.%Y" }}</span>
         {% if event.bookingsStatus == "BOOKED" %}
@@ -37,7 +39,7 @@
         <span class="badge c-badge-free">Noch freie Plätze</span>
         {% endif %}
       </div>
-      <div class="col-8">
+      <div class="col-8 col-md-7">
         <div class="row">
           <div class="col-sm-9">
             <a class="underlined" href="{{ event.url }}&utm_source=angular_de&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list" target="_blank">
@@ -109,10 +111,10 @@
     </div>
     {% endfor %}
     <div class="row mb-2 mt-4">
-      <div class="col-4">
-        <span>Individuell <span class="small d-block d-lg-inline">(Standarddauer 3 Tage)</span></span>
+      <div class="col-4 col-md-5">
+        <span>Individuell <span class="small d-block d-lg-inline">(Standarddauer 3-6 Tage)</span></span>
       </div>
-      <div class="col-8">
+      <div class="col-8 col-md-7">
         <div class="row">
           <div class="col-sm-9">
             <a class="text-unstyled" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript/inhouse?utm_source=angular_de?utm_campaign=website-link-inhouse&utm_medium=link&utm_content=workshops-list" target="_blank"> <span class="sr-only">Angular &amp; TypeScript</span> Firmenschulung Inhouse</a>
