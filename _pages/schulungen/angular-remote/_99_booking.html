@@ -41,10 +41,7 @@
         <div class="row">
           <div class="col-sm-9">
             <a class="underlined" href="{{ event.url }}&utm_source=angular_de&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list" target="_blank">
-              {{event.topic}} {{event.type}}<span class="d-none d-sm-inline"></span> · {% assign m = event.startDate | date: "%-m" %} {% case m %} {% when '1' %}Januar {% when '2' %}Februar
-                {% when '3' %}März {% when '4' %}April {% when '5' %}Mai {% when '6' %}Juni {% when '7' %}Juli {% when '8'
-                %}August {% when '9' %}September {% when '10' %}Oktober {% when '11' %}November {% when '12' %}Dezember {%
-                endcase %}</span>
+              {{event.topic}} {{event.type}}
             </a>
             <span class="d-block d-lg-inline">
               {% if event.location.address.addressLocality != 'Remote' %}
