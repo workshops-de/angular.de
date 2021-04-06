@@ -32,7 +32,7 @@
                   <div class="col-sm-9">
                     <a class="underlined" href="{{ event.url }}&utm_source=angular_de&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list"
                       target="_blank">
-                      Intensiv-Schulung<span class="d-none d-sm-inline">· {% assign m = event.startDate | date: "%-m"
+                      {{event.topic}} {{event.type}}<span class="d-none d-sm-inline">· {% assign m = event.startDate | date: "%-m"
                         %} {% case m %} {% when '1' %}Januar {% when '2' %}Februar
                         {% when '3' %}März {% when '4' %}April {% when '5' %}Mai {% when '6' %}Juni {% when '7' %}Juli
                         {% when '8'
