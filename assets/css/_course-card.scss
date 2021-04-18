@@ -9,6 +9,12 @@
   color: #495057;
   text-decoration: none;
 
+  .course-card-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: $dark;
+  }
+
   &:hover {
     color: #495057;
     text-decoration: none;

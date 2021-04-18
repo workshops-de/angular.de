@@ -6,7 +6,7 @@
 // $enable-shadows: true;
 
 // Font / Typographie
-$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Source Sans Variable", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 $font-size-base: 1.1rem;
 $line-height-base: 1.618;
@@ -60,7 +60,7 @@ $carousel-control-width: 6%;
 // Imports
 //
 @import "mixins/underline";
-@import "fonts/font-source-sans";
+@import "fonts/font-source-variable";
 @import "fonts/font-awesome";
 @import "bootstrap/bootstrap";
 @import "cookieconsent";
