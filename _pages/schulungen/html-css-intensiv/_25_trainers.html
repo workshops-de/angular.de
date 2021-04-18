@@ -1,0 +1,64 @@
+<section class="copy-section py-6" ad-fader="">
+  <div class="container">
+    {% include_relative _includes/_section_header.html cols="11"
+         feature="Trainer:innen"
+         benefit="Lerne von den Besten."
+    %}
+
+    <div class="row mb-5">
+      <div class="col-10">
+        Seit 2013 schulen wir Entwickler:innen im Bereich Web-Technologien. Um die bestmöglichen Schulungen zu geben, haben wir uns als Trainer:innen-Team
+        zusammengeschlossen. Somit arbeiten wir gemeinsam an Materialien und Didaktik für unsere Teilnehmer.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div id="carouselTrainers" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div class="carousel-inner pb-4">
+            <div class="carousel-item active">
+              <div class="row">
+                {% include_relative _includes/_trainer.html name="Robin Böhm" %}
+                {% include_relative _includes/_trainer.html name="Martina Kraus" %}
+                {% include_relative _includes/_trainer.html name="David Müllerchen"%}
+                {% include_relative _includes/_trainer.html name="Peter Müller" %}
+                {% include_relative _includes/_trainer.html name="Aaron Czichon" %}
+                {% include_relative _includes/_trainer.html name="Timo Korinth" %}
+                {% include_relative _includes/_trainer.html name="Gregor Woiwode" %}
+                {% include_relative _includes/_trainer.html name="Christoph Hoeller" %}
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                {% include_relative _includes/_trainer.html name="Sebastian Kleinschmager" %}
+                {% include_relative _includes/_trainer.html name="Peter Bouda" %}
+                {% include_relative _includes/_trainer.html name="Christian Liebel" %}
+                {% include_relative _includes/_trainer.html name="Erfan Nazmehr" %}
+                {% include_relative _includes/_trainer.html name="Pawel Sawicki" %}
+                {% include_relative _includes/_trainer.html name="Nico König" %}
+                {% include_relative _includes/_trainer.html name="Marcel Ploch" %}
+                {% include_relative _includes/_trainer.html name="Johannes Busch" %}
+              </div>
+            </div>
+          </div>
+          <ol class="carousel-indicators">
+            <li data-target="#carouselTrainers" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselTrainers" data-slide-to="1"></li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <p class="mb-">
+          Unter anderem sind wir:
+        </p>
+        <ul class="c-checked-list">
+          <li><strong>Google-Developer-Experts</strong></li>
+          <li>Erfahrene Softwareentwickler mit Fokus Web-Technologien</li>
+          <li>Buch- und Artikel-Autoren</li>
+          <li>Aktive Mitglieder der Web-Community</li>
+          <li>Organisatoren von Meetups und Konferenzen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
