@@ -1,11 +1,13 @@
-  <a href="/schulungen/{{ include.permalink }}/" class="list-group-item-action row p-0 border-0 mb-5">
-        <div class="col-sm-12 col-lg-3 text-center pt-3">
-          <img class="c-course-img" src="/assets/img/workshops/logo-{{ include.logo }}.svg" alt="Logo für {{ include.title }}">
-        </div>
-        <div class="col-sm-12 col-lg-9">
-          <h2 class="mt-0">{{ include.title }}</h2>
-          <div style="max-width: 600px;">
-            {{ include.description }}
-          </div>
-        </div>
+<div class="col mb-4">
+  <a href="/schulungen/{{ include.permalink }}/" class="course-card h-100">
+    <div class="row | align-items-center | mb-4">
+      <div class="col-auto">
+        <img class="course-card-image" src="/assets/img/workshops/logo-{{ include.logo }}.svg" alt="Logo für {{ include.title }}">
+      </div>
+      <div class="col">
+        <h2 class="course-card-title | h3 | m-0">{{ include.title }}</h2>
+      </div>
+    </div>
+    {{ include.description }}
   </a>
+</div>
