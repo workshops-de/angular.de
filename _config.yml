@@ -4,6 +4,7 @@ url: "https://angular.de" # the base hostname & protocol for your site, e.g. htt
 twitter_username: jekyllrb
 github_username:  jekyll
 ga_property: "UA-39010393-1"
+gtm_property: "GTM-T5VPDDK"
 permalink: /artikel/:slug/
 repository_url: "https://github.com/symetics/angular.de"
 ws_course_id: 4
