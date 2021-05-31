@@ -4,7 +4,7 @@
     <div class="col-md-4">
       <a href="{{ post.url }}" class="rounded c-img-post"
         style="background-image: url('/artikel/{{post.slug}}/{{ post.header_image }}');">
-        <span class="sr-only">{{ post.title }}</span>
+        <span class="visually-hidden">{{ post.title }}</span>
         <span class="c-post-categories ms-2">
           {% for category in post.categories %}
             <span class="text-uppercase">{{ category }}</span>
@@ -27,7 +27,7 @@
         <p class="mb-4 mt-3 text-muted">
           {{post.description}}
         </p>
-        <a class="btn btn-secondary btn-sm px-4" href="{{ post.url }}">Artikel <span class="sr-only">{{post.title}}</span> lesen &rsaquo;</a>
+        <a class="btn btn-secondary btn-sm px-4" href="{{ post.url }}">Artikel <span class="visually-hidden">{{post.title}}</span> lesen &rsaquo;</a>
       </div>
     </div>
   </div>

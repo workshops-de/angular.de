@@ -23,14 +23,14 @@ pagination:
       <li class="page-item">
         <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Zurück">
           <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Zurück</span>
+          <span class="visually-hidden">Zurück</span>
         </a>
       </li>
       {% else %}
       <li class="page-item disabled">
         <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Zurück">
           <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Zurück</span>
+          <span class="visually-hidden">Zurück</span>
         </a>
       </li>
     {% endif %}
@@ -45,14 +45,14 @@ pagination:
       <li class="page-item">
         <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Weiter">
           <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Weiter</span>
+          <span class="visually-hidden">Weiter</span>
         </a>
       </li>
       {% else %}
       <li class="page-item disabled">
         <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Weiter">
           <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Weiter</span>
+          <span class="visually-hidden">Weiter</span>
         </a>
       </li>
     {% endif %}

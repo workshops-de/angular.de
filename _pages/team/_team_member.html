@@ -19,7 +19,7 @@
           <h2 class="h3">{{ user.name }}</h2>
           <p>{{ user.intro }}</p>
           {% if user.why_angular_de_team %}
-          <a class="text-muted" href="/team/{{user.permalink}}/">Mehr<span class="sr-only"> über {{ user.name }}</span> erfahren ...</a>
+          <a class="text-muted" href="/team/{{user.permalink}}/">Mehr<span class="visually-hidden"> über {{ user.name }}</span> erfahren ...</a>
           {% endif %}
         </div>
       </div>
