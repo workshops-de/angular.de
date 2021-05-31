@@ -28,11 +28,11 @@
         <div class="uk-panel uk-panel-box">
           <div class="uk-panel-title">Circuit Breaker State and Consecutive Failures</div>
           <div class="uk-margin">The Circuit Breaker has a timeout of 1 second, trips at 3 consecutive failures and cools off within 5 seconds.</div>
-          <div ng-class="{'uk-badge-warning': cbFailureCount > 0 && !cbFailuresReachedLimit,
-              'uk-badge-danger': cbFailuresReachedLimit}"
+          <div ng-class="{'uk-bg-warning': cbFailureCount > 0 && !cbFailuresReachedLimit,
+              'uk-bg-danger': cbFailuresReachedLimit}"
               class="uk-badge uk-badge-notification">{{cbFailureCount}}</div>
           <div
-              ng-class="{'uk-badge-danger': cbState == 'OPEN', 'uk-badge-warning': cbState == 'HALF_OPEN'}"
+              ng-class="{'uk-bg-danger': cbState == 'OPEN', 'uk-bg-warning': cbState == 'HALF_OPEN'}"
               class="uk-badge">
             {{cbState}}
           </div>
