@@ -27,7 +27,7 @@
       </div>
       <div class="col-4">
         <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">
-          {{ event.startDate | date: "%d.%m" }}</span> - <span class="mr-2" itemprop="endDate" content="{{ event.endDate | date: " %Y-%m-%d " }}"></span>{{ event.endDate | date: "%d.%m.%Y" }}</span>
+          {{ event.startDate | date: "%d.%m" }}</span> - <span class="me-2" itemprop="endDate" content="{{ event.endDate | date: " %Y-%m-%d " }}"></span>{{ event.endDate | date: "%d.%m.%Y" }}</span>
         {% if event.bookingsStatus == "BOOKED" %}
           <span class="badge badge-danger">ausgebucht</span>
         {% elsif event.bookingsStatus == "ONE_LEFT" %}
