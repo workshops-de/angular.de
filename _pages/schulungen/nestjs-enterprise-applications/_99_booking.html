@@ -29,13 +29,13 @@
         <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">
           {{ event.startDate | date: "%d.%m" }}</span> - <span class="me-2" itemprop="endDate" content="{{ event.endDate | date: " %Y-%m-%d " }}"></span>{{ event.endDate | date: "%d.%m.%Y" }}</span>
         {% if event.bookingsStatus == "BOOKED" %}
-          <span class="badge badge-danger">ausgebucht</span>
+          <span class="badge bg-danger">ausgebucht</span>
         {% elsif event.bookingsStatus == "ONE_LEFT" %}
-          <span class="badge badge-danger">Nur noch 1 Platz</span>
+          <span class="badge bg-danger">Nur noch 1 Platz</span>
         {% elsif event.bookingsStatus == "FEW_TICKETS_LEFT" %}
-          <span class="badge badge-danger">Fast ausgebucht</span>
+          <span class="badge bg-danger">Fast ausgebucht</span>
         {% elsif event.bookingsStatus == "SOME_TICKETS_LEFT" %}
-          <span class="badge badge-warning">Wenige Plätze frei</span>
+          <span class="badge bg-warning">Wenige Plätze frei</span>
         {% elsif event.bookingsStatus == "TICKETS_LEFT" %}
           <span class="badge c-badge-free">Noch freie Plätze</span>
         {% endif %}
@@ -66,7 +66,7 @@
               {% endif %}
               <span>
                 {% if event.early_bird == true %}
-                  <span class="badge badge-info">Frühbucher Rabatt</span>
+                  <span class="badge bg-info">Frühbucher Rabatt</span>
                 {% endif %}
               </span>
             </span>
