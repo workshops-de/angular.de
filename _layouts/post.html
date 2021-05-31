@@ -20,7 +20,7 @@ layout: base
       <div class="col-md-12 col-lg-8 mb-2">
         <h1 class="header-post-title">{{ page.title }}</h1>
         <span>{{ page.author }}</span>
-        <span class="ml-1 mr-1">•</span>
+        <span class="ms-1 me-1">•</span>
         {% include _reading_time.html text=page.content %}
       </div>
     </div>
@@ -32,7 +32,7 @@ layout: base
 
     <div class="row mb-5">
       <div class="col-lg-3 d-none d-lg-block">
-        <div class="position-sticky c-top-4 ml-2">
+        <div class="position-sticky c-top-4 ms-2">
           <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
           <nav id="toc" data-toggle="toc"></nav>
           <hr>
@@ -55,17 +55,17 @@ layout: base
           <small>
             {% for category in page.categories %}
             <span class="text-uppercase">{{category}}</span>
-            {% unless forloop.last %}<span class="ml-1 mr-1">•</span>{% endunless %}
+            {% unless forloop.last %}<span class="ms-1 me-1">•</span>{% endunless %}
             {% endfor %}
-            <span class="ml-1 mr-1">|</span>
+            <span class="ms-1 me-1">|</span>
             {{ page.author }}
             {% if author.twitter %}
             <a href="https://twitter.com/{{ author.twitter }}" target="_blank" style="margin-bottom: 5px;">
               <img src="/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
             </a>
             {% endif %}
-            <span class="ml-1 mr-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
-            <span class="ml-1 mr-1">|</span>
+            <span class="ms-1 me-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
+            <span class="ms-1 me-1">|</span>
             {% include _reading_time.html text=page.content %}
           </small>
         </p>

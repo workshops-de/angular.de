@@ -5,10 +5,10 @@
       <a href="{{ post.url }}" class="rounded c-img-post"
         style="background-image: url('/artikel/{{post.slug}}/{{ post.header_image }}');">
         <span class="sr-only">{{ post.title }}</span>
-        <span class="c-post-categories ml-2">
+        <span class="c-post-categories ms-2">
           {% for category in post.categories %}
             <span class="text-uppercase">{{ category }}</span>
-            {% unless forloop.last %}<span class="ml-1 mr-1">•</span>{% endunless %}
+            {% unless forloop.last %}<span class="ms-1 me-1">•</span>{% endunless %}
           {% endfor %}
         </span>
       </a>
@@ -19,8 +19,8 @@
           <a href="{{ post.url }}" class="text-body">{{post.title}}</a>
         </h2>
         <small class="text-muted">
-          {{ post.author }} <span class="ml-1 mr-1">•</span> <time>{{ post.published_at | date: "%d.%m.%Y" }}</time>
-          <span class="ml-1 mr-1">|</span>
+          {{ post.author }} <span class="ms-1 me-1">•</span> <time>{{ post.published_at | date: "%d.%m.%Y" }}</time>
+          <span class="ms-1 me-1">|</span>
           {% include _reading_time.html text=post.content %}
         </small>
 
