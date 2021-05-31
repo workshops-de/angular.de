@@ -1,14 +1,16 @@
 <div class="col-sm-6 p-0">
-  <a class="embed-responsive embed-responsive-16by9 d-flex align-items-center c-img-grayscale-70 c-bg-img-cover-center lazy"
+  <a class="ratio ratio-16x9 d-flex c-img-grayscale-70 c-bg-img-cover-center lazy"
     style="background-image: url('/assets/img/placeholder-image.svg');"
     href="{{ post.url }}"
     data-style="background-image: url('/artikel/{{ post.slug }}/{{ post.header_image }}')"
     >
-    <div class="text-center w-100 h2 text-white">
-      <p>
-        {{ post.title }}
-      </p>
-      <button class="btn btn-outline-white">Hier weiterlesen</button>
+    <div class="d-flex align-items-center">
+      <div class="text-center w-100 h2 text-white">
+        <p>
+          {{ post.title }}
+        </p>
+        <button class="btn btn-outline-white">Hier weiterlesen</button>
+      </div>
     </div>
   </a>
 </div>
