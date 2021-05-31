@@ -24,6 +24,14 @@ $black:  #000;
 $white:  #fff;
 $yiq-contrasted-threshold:  195;
 
+// Containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
 // Spacers
 $spacer: 1rem;
 $spacers: ();
