@@ -37,6 +37,9 @@ $spacers: map-merge((
   6: ($spacer * 6)
 ), $spacers);
 
+// Links
+$link-decoration: none;
+
 // Cards
 $card-cap-bg: $white;
 $card-border-color: $white;
