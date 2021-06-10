@@ -31,7 +31,7 @@ Alle 26 Test-Specs zum selber ausprobieren und ändern findest du in diesem [Plu
 
 ## Einführung in Jasmine
 
-Jasmine ist ein Open-Source-Test-Framwork von [Pivotal Labs](https://pivotal.io/labs).
+Jasmine ist ein Open-Source-Test-Framwork.
 Die verwendete DSL(domain specific language) verfolgt die Grundsätze des behaviour-driven-developments, somit ist es sehr leicht hiermit natürlich-sprachliche Tests zu definieren.
 
 ### Generelle Konzepte der Jasmine-DSL
@@ -366,7 +366,7 @@ export class LanguagesServiceHttp {
 
 ```
 
-In diesem Fall verwendet es `http.get()`, um eine JSON-Datei zu lesen. Danach haben wir *[Observable.map](https://github.com/ReactiveX/RxJS/blob/master/src/operator/map.ts)* verwendet, um die Antwort in das Endergebins mit `json()` umzuwandeln.
+In diesem Fall verwendet es `http.get()`, um eine JSON-Datei zu lesen. Danach haben wir *[Observable.map](https://github.com/ReactiveX/rxjs/blob/master/src/internal/operators/map.ts)* verwendet, um die Antwort in das Endergebins mit `json()` umzuwandeln.
 
 Unser Test sieht dem vorherigen ziemlich ähnlich. Der Hauptunterschied besteht in der Verwendung eines asynchronen Tests, wie wir es mit der Komponente aufgrund des Abonnements gemacht haben.
 
