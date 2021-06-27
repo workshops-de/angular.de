@@ -1,16 +1,17 @@
 footer {
-  border-top: #eceff3 1px solid;
+  color: $footer-color;
+  background-color: $footer-background;
   padding: $spacer*3 0 $spacer*4;
 
   li a { font-size: $small-font-size; }
 
   a {
-    color: #888;
+    color: $footer-link-color !important;
 
     &:hover,
     &:focus {
-      color: #bbb;
-      text-decoration: none;
+      color: $footer-link-color-hover !important;
+      text-decoration: underline;
     }
   }
 }
