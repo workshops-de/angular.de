@@ -60,6 +60,42 @@
   }
 }
 
+.c-img-bg-backdrop {
+  -webkit-transition: all 300ms;
+  -webkit-filter: #{ "grayscale(20%)" };
+  -webkit-filter: #{ "grayscale(0.2)" };
+  filter: #{ "grayscale(20%)" };
+  filter: gray;
+  transition: 0.2s;
+
+  &:hover {
+    -webkit-filter: #{ "grayscale(0%)" };
+    -webkit-filter: #{ "grayscale(0)" };
+    filter: #{ "grayscale(0%)" };
+    filter: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    transition: 0.2s;
+  }
+
+  &:hover:after {
+    background: rgba(0, 0, 0, .3);
+  }
+
+  > * {
+    position: relative;
+    z-index: 100
+  }
+}
+
 
 .img-trainer {
   border-radius: 10%;
