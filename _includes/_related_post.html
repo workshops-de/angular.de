@@ -4,13 +4,11 @@
     href="{{ post.url }}"
     data-style="background-image: url('/artikel/{{ post.slug }}/{{ post.header_image }}')"
     >
-    <div class="d-flex align-items-center">
+    <div class="d-flex flex-column align-items-center justify-content-center">
       <div class="text-center w-100 h2 text-white">
-        <p>
-          {{ post.title }}
-        </p>
-        <button class="btn btn-outline-white">Hier weiterlesen</button>
+        {{ post.title }}
       </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
     </div>
   </a>
 </div>
