@@ -1,19 +1,47 @@
 .navbar-wrapper {
   background-color: #fff;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
 }
 
 .navbar-banner {
   font-size: 1rem;
   text-align: center;
   padding: .6rem 1.2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
 
-.navbar-ajs {
-  background-color: #fff;
+.navbar-main {
+  padding-top: .65em;
+  padding-bottom: .65em;
+  background-color: #dd1b17;
 
+  .nav-link {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: rgba(255,255,255,1);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+
+    @include media-breakpoint-up(md) {
+      padding-right: 1rem !important;
+      padding-left: 1rem !important;
+      margin: 0 0.5rem;
+    }
+
+    &:hover {
+      background: rgba(0,0,0,.15) !important;
+      border-radius: 10px;
+    }
+  }
+
+  .active {
+    .nav-link {
+      background: rgba(0,0,0,.1);
+      border-radius: 10px;
+    }
+  }
+}
+
+.navbar-ajs {
   .nav-link {
     position: relative;
     display: inline-block;
@@ -39,15 +67,22 @@
 
   .nav-item.active {
     .nav-link:before {
-      // background-color: $red;
       visibility: visible;
       transform: scaleX(0.8);
+    }
+  }
+
+  &.navbar-dark {
+    .nav-link {
+      &:before {
+        background-color: $navbar-dark-hover-color;
+      }
     }
   }
 }
 
 .form-inline .navbar-search {
-  width: 2.5em;
+  width: 2.4em;
   border: 0;
   border-radius: 9999px;
   transition: all 0.2s;
