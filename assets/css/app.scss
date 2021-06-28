@@ -15,7 +15,7 @@ $headings-font-weight: 600;
 $code-font-size: .875em;
 
 // Theme Colors
-$primary:#3e7aad; // #4eafca
+$primary: #1565c0; // #4eafca
 $black:  #000;
 $white:  #fff;
 $yiq-contrasted-threshold:  195;
@@ -66,6 +66,8 @@ $line-height-base: 1.618;
 $headings-margin-bottom: 1.1rem;
 $carousel-control-width: 6%;
 
+$btn-primary-color: $white;
+
 $footer-link-color: #bbb;
 $footer-link-color-hover: #bbb;
 $footer-color: #fff;
@@ -77,6 +79,7 @@ $footer-background: #262a2f;
 @import "fonts/font-source-variable";
 @import "fonts/font-awesome";
 @import "bootstrap/bootstrap";
+@import "buttons";
 @import "cookieconsent";
 @import "inputs";
 @import "image-loader";
