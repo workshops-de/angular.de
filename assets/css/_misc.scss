@@ -13,6 +13,10 @@ h6,
   word-wrap: break-word; // for mobile
 }
 
+body {
+  line-height: calc(1.5em + .2vw);
+}
+
 :focus {
   outline: 3px dotted #003c8f !important;
 }
