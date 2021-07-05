@@ -13,7 +13,7 @@ sitemap: false
     {% for post in site.posts %}
       {% if post.categories contains 'tutorial' %}
         <div class="col-12 col-md-6 mb-2">
-          {% include _post_card.html %}
+          {% include shared/_post_card.html %}
         </div>
       {% endif %}
     {% endfor %}
@@ -31,7 +31,7 @@ sitemap: false
       {% else %}
         {% if post.categories contains 'angular' %}
         <div class="col-12 col-md-6 mb-2">
-          {% include _post_card.html %}
+          {% include shared/_post_card.html %}
         </div>
         {% endif %}
       {% endif %}

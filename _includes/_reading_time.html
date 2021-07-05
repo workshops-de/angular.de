@@ -1,7 +1,0 @@
-{% assign words = include.text | number_of_words %}
-
-{% if words < 360 %}
-  1 Minute
-{% else %}
-  {{ words | divided_by:180 }} Minuten
-{% endif %}

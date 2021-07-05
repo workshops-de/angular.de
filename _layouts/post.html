@@ -21,7 +21,7 @@ layout: base
         <h1 class="header-post-title">{{ page.title }}</h1>
         <span>{{ page.author }}</span>
         <span class="ms-1 me-1">•</span>
-        {% include _reading_time.html text=page.content %}
+        {% include shared/_reading_time.html text=page.content %}
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ layout: base
             {% endif %}
             <span class="ms-1 me-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
             <span class="ms-1 me-1">|</span>
-            {% include _reading_time.html text=page.content %}
+            {% include shared/_reading_time.html text=page.content %}
           </small>
         </p>
 
@@ -81,7 +81,7 @@ layout: base
       <div class="col-md-12 col-lg-8 mb-2">
         <div class="row">
           <div class="col-sm-12 col-md-6 mb-2">
-            {% include _post_author.html %}
+            {% include shared/_post_author.html %}
           </div>
           <div class="col-sm-12 col-md-6 mb-2">
             <p>
@@ -99,6 +99,6 @@ layout: base
   </article>
 
   <div class="row justify-content-md-center no-gutters mt-6">
-    {% include _related_posts.html %}
+    {% include shared/_related_posts.html %}
   </div>
 </main>
