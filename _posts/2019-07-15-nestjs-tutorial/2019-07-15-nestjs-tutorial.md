@@ -15,7 +15,7 @@ Wir benutzen hierbei als Datenbank eine PostgreSQL Instanz, es können aber auch
 ## Was ist NestJS?
 Der starke Einfluss von Angular bringt Konzepte wie Dependency Injection, Separation of Concerns und einen mächtigen Generator, welcher eine klare Architektur ermöglicht. Das auch über verschiedene Projektteams hinweg. NestJS liefert endlich eine gute Lösung für serverseitige NodeJS Implementierungen in Enterprise Projekten. In den meisten Fällen wird es benutzt, um API Endpoints für Frontends bereitzustellen.
 
-<img src="/assets/img/placeholder-image.svg" alt="Client Server API Illustration" class="lazy center" data-src="client-server-api.png" data-srcset="client-server-api.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Client Server API Illustration" class="lazy center" data-src="client-server-api.png" data-srcset="client-server-api.png"
  />
 
 
@@ -75,7 +75,7 @@ Sehr stark ausgeprägt in Verbindung mit Angular sind die gemeinsamen Konzepte u
       style="margin-top:-20px"
       data-src="/assets/img/workshops/workshops-attendees.png"
       data-srcset="/assets/img/workshops/workshops-attendees.png"
-       src="/assets/img/placeholder-image.svg" alt="Teilnehmer in unser Intensiv Schulung">
+       src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer in unser Intensiv Schulung">
     </div>
   </div>
 </div>
@@ -84,13 +84,13 @@ Sehr stark ausgeprägt in Verbindung mit Angular sind die gemeinsamen Konzepte u
 ## Konzepte
 NestJS hat viele Bausteine, jedoch sind einige davon essentiell um die grundlegende Funktionsweise des Frameworks zu verstehen. Genau diesen Konzepten werden wir uns als nächstes widmen. Es handelt sich hierbei um Controller, Services und Module. Um diese zu erklären nutzen wir einen minimalen Projekt-Aufbau einer Client/Server Architektur die auf einer Rest-Schnittstelle basiert.
 
-<img src="/assets/img/placeholder-image.svg" alt="Client Server API Illustration" class="lazy center" data-src="client-server-api.png" data-srcset="client-server-api.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Client Server API Illustration" class="lazy center" data-src="client-server-api.png" data-srcset="client-server-api.png"
  />
 
 ### Controller
 Das erste Konzept, welches wir uns ansehen, sind die Controller. Controller sind Klassen, welche sich um die Annahme und die Verarbeitung eines Requests kümmern. In einer typischen Anwendung haben wir einen Controller für jeden sogenannten Endpoint. Es kann mehrere Endpoints in einer Anwendung geben, welche natürlich auch verschachtelt auftreten können.
 
-<img src="/assets/img/placeholder-image.svg" alt="Client request to an API and controller routing" class="lazy center" data-src="nestjs-api-controller.png" data-srcset="nestjs-api-controller.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Client request to an API and controller routing" class="lazy center" data-src="nestjs-api-controller.png" data-srcset="nestjs-api-controller.png"
  />
 
 In unserem Beispiel haben wir eine API, welche drei Endpoints anbietet: Books, Events und Auth. In unserem Fall schauen wir uns den Events Endpoint an. Der EventController implementiert Funktionen, welche uns ermöglichen verschiedene Operationen auf eine Event Ressource auszuführen.
@@ -100,7 +100,7 @@ GET       /api/events/1   findOne
 PUT       /api/events/1   update
 DELETE    /api/events/1   update
 
-<img src="/assets/img/placeholder-image.svg" alt="Client request to an API and controller routing" class="lazy center" data-src="nestjs-eventcontroller.png" data-srcset="nestjs-eventcontroller.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Client request to an API and controller routing" class="lazy center" data-src="nestjs-eventcontroller.png" data-srcset="nestjs-eventcontroller.png"
  />
 
 Diese Art von Schnittstellen werden oftmals als CRUD-Schnittstelle bezeichnet. Der Controller an dieser Stelle ist ausschließlich für die simple Definition der API Schnittstelle und dem Aufruf von Service-Funktionen zuständig, welche unseren Datenzugriff atomar kapseln.
@@ -111,13 +111,13 @@ Das Konzept eines Services ermöglicht es uns, Funktionalitäten wie z.B. Zugrif
 
 Der EventService an dieser stelle enthält die notwendigen Konfigurationen um die Operationen auf einer beliebigen Datenbank für uns auszuführen. Mit Hilfe von Dependency Injection können wir den Service sehr einfach in unserem `EventController` zur Verfügung stellen ohne eine explizite Bindung eingehen zu müssen. Im Testfall kann dieser so durch ein Stub- oder Mock-Objekt ausgetauscht werden.
 
-<img src="/assets/img/placeholder-image.svg" alt="Client request to an API and controller routing" class="lazy center-80" data-src="nestjs-controller-di.png" data-srcset="nestjs-controller-di.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Client request to an API and controller routing" class="lazy center-80" data-src="nestjs-controller-di.png" data-srcset="nestjs-controller-di.png"
  />
 
 ### Module
 Die bisher gezeigten Konzepte von Controllern und Services können wir in fachlichen Modulen zusammenfassen. Dies hat den Vorteil, dass wir klare Grenzen zwischen Fachlichkeiten definieren und auch bestimmte Module an anderen Stellen oder Projekten wiederverwenden können.
 
-<img src="/assets/img/placeholder-image.svg" alt="Client request to an API and controller routing" class="lazy center-80" data-src="nestjs-module.png" data-srcset="nestjs-module.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Client request to an API and controller routing" class="lazy center-80" data-src="nestjs-module.png" data-srcset="nestjs-module.png"
  />
 
 ## Installation der CLI
@@ -463,7 +463,7 @@ Danke fürs lesen!
       <img class="img-fluid img-rounded lazy"
       data-src="/assets/img/workshops/workshops-attendees-2.jpg"
       data-srcset="/assets/img/workshops/workshops-attendees-2.jpg"
-       src="/assets/img/placeholder-image.svg" alt="Teilnehmer in unser Intensiv Schulung">
+       src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer in unser Intensiv Schulung">
     </div>
   </div>
 </div>

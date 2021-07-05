@@ -24,7 +24,7 @@ Die Welt ändert sich ... und das auch zum Positiven! Durch die aktuellen Entwic
 
 
 
-<img src="/assets/img/placeholder-image.svg" alt="Abschlussfoto des Angular & TypeScript Remote Workshops März 2020" class="lazy center-80" data-src="remote-workshop-teilnehmer.jpg" data-srcset="remote-workshop-teilnehmer.jpg">
+<img src="/shared/assets/img/placeholder-image.svg" alt="Abschlussfoto des Angular & TypeScript Remote Workshops März 2020" class="lazy center-80" data-src="remote-workshop-teilnehmer.jpg" data-srcset="remote-workshop-teilnehmer.jpg">
 
 <p class="text-center">*Abschlussfoto des Angular & TypeScript Remote Workshops März 2020*</p>
 
@@ -32,7 +32,7 @@ Die Welt ändert sich ... und das auch zum Positiven! Durch die aktuellen Entwic
 ## Wie sehen Remote-Schulungen aus?
 Mit eurer Hilfe beim Twitter-Voting haben wir den beste Zeitpunkt herausgefunden. Hierbei haben die Halbtags-Schulungen mit 68% gewonnen, mit leichter Tendenz zu den Nachmittagsterminen.
 
-<img src="/assets/img/placeholder-image.svg" alt="Unser Twitter Voting über Remote Workshops" class="lazy center-80" data-src="twitter-voting-5-tage-workshops.png" data-srcset="twitter-voting-5-tage-workshops.png">
+<img src="/shared/assets/img/placeholder-image.svg" alt="Unser Twitter Voting über Remote Workshops" class="lazy center-80" data-src="twitter-voting-5-tage-workshops.png" data-srcset="twitter-voting-5-tage-workshops.png">
 <p class="text-center"><i>Unser Twitter Voting über Remote Workshops</i></p>
 
 
@@ -44,7 +44,7 @@ Um an Remote-Schulungen teilzunehmen, bieten wir euch ein virtuelles Klassenzimm
 * virtuelles Whiteboard
 * (optional) Aufzeichnungen und Transkripte
 
-<img src="/assets/img/placeholder-image.svg" alt="Angular Remote-Schulung in Video Konferenz" class="lazy center-80" data-src="workshops-de-video-call-example.png" data-srcset="workshops-de-video-call-example.png">
+<img src="/shared/assets/img/placeholder-image.svg" alt="Angular Remote-Schulung in Video Konferenz" class="lazy center-80" data-src="workshops-de-video-call-example.png" data-srcset="workshops-de-video-call-example.png">
 <p class="text-center"><i>Angular Remote-Schulung in Video Konferenz</i></p>
 
 Unsere Schulungen fokussieren einen sehr starken Hands-On-Anteil, was bedeutet, dass die TeilnehmerInnen einen Praxis-Anteil von ca 60% haben, in dem selber an einem Projekt gearbeitet wird. Hierbei kann bei Bedarf der Trainer jederzeit per Remote-Desktop Verbindung eingeladen werden um Fragen zu beantworten und essentielle Tipps zu geben. Durch sogenannte virtuelle Breakout-Sessions können wir auch Pair-Programming und separierte Betreuung innerhalb eines Kurses schnell und unkompliziert einrichten. Dabei lässt sich der Kurs in verschiedene virtuelle Räume aufteilen um Gruppenarbeit zu ermöglichen.
@@ -69,7 +69,7 @@ Seit 2015 entwickeln wir dazu ein virtuelles Lernsystem welches einen Online-Zug
 * Didaktisch für Lernerfolg optimiert
 
 
-<img src="/assets/img/placeholder-image.svg" alt="Unser Twitter Voting über Remote Workshops" class="lazy center-80" data-src="workshops-de-classroom.png" data-srcset="workshops-de-classroom.png">
+<img src="/shared/assets/img/placeholder-image.svg" alt="Unser Twitter Voting über Remote Workshops" class="lazy center-80" data-src="workshops-de-classroom.png" data-srcset="workshops-de-classroom.png">
 <p class="text-center"><i>Demo-Classroom</i></p>
 
 ## Trainer Community mit über 30 Trainern:innen

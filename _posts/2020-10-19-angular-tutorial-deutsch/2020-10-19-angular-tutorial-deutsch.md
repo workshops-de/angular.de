@@ -15,7 +15,7 @@ Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. D
 
 Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil. Ihr könnt hierbei alle Aufgaben selber programmieren und über unseren Workshops.DE Classroom Hilfestellungen und Musterlösungen für die Aufgaben erhalten.
 
-<img src="/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="classroom-example.png" data-srcset="classroom-example.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="classroom-example.png" data-srcset="classroom-example.png"
 />
 
 ### Was wirst du in diesem Tutorial lernen?
@@ -39,7 +39,7 @@ Wir werden hierbei die Motivation und den theoretischen Background kurz einleite
 <p class="text-center">
 <img
 style="max-width:40%"
-src="/assets/img/placeholder-image.svg" alt="Beispielansicht unserer Anwendung die in diesem Tutorial gemeinsam gebaut wird. Eine Liste an Büchern welche von einem Server geladen wird."
+src="/shared/assets/img/placeholder-image.svg" alt="Beispielansicht unserer Anwendung die in diesem Tutorial gemeinsam gebaut wird. Eine Liste an Büchern welche von einem Server geladen wird."
 class="lazy img-fluid img-rounded" data-src="preview-bookmonkey-app.png" data-srcset="preview-bookmonkey-app.png"
 />
 </p>
@@ -80,7 +80,7 @@ In 2016 hat sich das Angular-Team für einen kompletten Rewrite in TypeScript en
 Damals wurde die Entscheidung größtenteils negativ wahrgenommen und von anderen Framework-Benutzern zerrissen.
 
 <img
-src="/assets/img/placeholder-image.svg" alt="Angular Historie - Ein Zeitstrahl, welcher sich 2016 in zwei Zweige aufgeteilt hat. AngularJS und Angular."
+src="/shared/assets/img/placeholder-image.svg" alt="Angular Historie - Ein Zeitstrahl, welcher sich 2016 in zwei Zweige aufgeteilt hat. AngularJS und Angular."
 class="lazy img-fluid img-rounded" data-src="angular-history.png" data-srcset="angular-history.png"
 />
 
@@ -88,7 +88,7 @@ Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele ander
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche." data-src="release-cycle.png" data-srcset="release-cycle.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche." data-src="release-cycle.png" data-srcset="release-cycle.png"
 />
 
 ### Die Angular Plattform
@@ -105,7 +105,7 @@ Das Ökosystem von Angular ist sehr groß. Die Basis bildet hierbei das Core-Fra
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Angular Platform Overview. Viele verschiedene Blöcke mit Modulen wie Forms, OWA, HTTP, I81n, Language Services, Router, Animcations  Cli, Components und dem Core Framework selber." data-src="angular-platform-overview.png" data-srcset="angular-platform-overview.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Angular Platform Overview. Viele verschiedene Blöcke mit Modulen wie Forms, OWA, HTTP, I81n, Language Services, Router, Animcations  Cli, Components und dem Core Framework selber." data-src="angular-platform-overview.png" data-srcset="angular-platform-overview.png"
 />
 
 In diesem Tutorial werden wir uns primär um das Framework, die Angular CLI und Komponenten kümmern.
@@ -193,7 +193,7 @@ Eure Basisanwendung ist nun generiert und kann im Browser unter http://localhost
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Die Webansicht von ng serve nach dem generieren der Angular Anwedung." data-src="first-ng-serve.png" data-srcset="first-ng-serve.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Die Webansicht von ng serve nach dem generieren der Angular Anwedung." data-src="first-ng-serve.png" data-srcset="first-ng-serve.png"
 />
 
 ## Komponenten und Services
@@ -210,7 +210,7 @@ Angular Komponenten sind die sogenannten "building blocks" jeder Anwendung. Die 
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Beispiel ToDo App, welche die Anwendung in verschiedene logische Bausteine unterteilt wie Title, ItemList und Items." data-src="basic-todo-component-annotated.png" data-srcset="basic-todo-component-annotated.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Beispiel ToDo App, welche die Anwendung in verschiedene logische Bausteine unterteilt wie Title, ItemList und Items." data-src="basic-todo-component-annotated.png" data-srcset="basic-todo-component-annotated.png"
 />
 
 ```html
@@ -231,7 +231,7 @@ Für Daten und Logik, die nicht zwingend nur an eine Komponente gekoppelt sind, 
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Beispiel der Beziehung von Angular Komponenten und Services." data-src="angular-component-service-simple-example.png" data-srcset="angular-component-service-simple-example.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Beispiel der Beziehung von Angular Komponenten und Services." data-src="angular-component-service-simple-example.png" data-srcset="angular-component-service-simple-example.png"
 />
 
 ```typescript
@@ -269,7 +269,7 @@ Eine Komponenten-Definition besteht primär aus folgenden Bestandteilen:
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Beispiel einer Item-Komponenten-Definition der eben gezeigten ToDo App" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Beispiel einer Item-Komponenten-Definition der eben gezeigten ToDo App" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
 />
 
 Unsere erste Komponente wird eine statische Infobox sein. Um diese zu generieren, nutzen wir wieder die Angular-CLI.
@@ -340,7 +340,7 @@ class InfoBoxComponent implements OnInit {
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Ausgabe der Info-Box Komponente mit unserem dynamischen Expression Text" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Ausgabe der Info-Box Komponente mit unserem dynamischen Expression Text" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
 />
 
 Sollte sich die Property `text` ändern, z. B. durch externe Events, wird diese automatisch von Angular aktualisiert. Dieses Konzept nennt sich `Data-Binding`.
@@ -396,7 +396,7 @@ Um es einfach zu halten, nutzen wir in diesem Fall erstmal eine `Template-Expres
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Animation der Basis Show and Hide Infobox" data-src="info-box-toggle.gif" data-srcset="info-box-toggle.gif"
+src="/shared/assets/img/placeholder-image.svg" alt="Animation der Basis Show and Hide Infobox" data-src="info-box-toggle.gif" data-srcset="info-box-toggle.gif"
 />
 
 Wir können natürlich auch jedes andere Event, wie z. B. `keyup` benutzen. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist unabhängig davon, ob sie in Angular oder einem anderen Framework geschrieben sind.
@@ -450,7 +450,7 @@ books = [
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Die liste der statischen Bücher in HTML ausgeben" data-src="static-list-of-books.png" data-srcset="static-list-of-books.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bücher in HTML ausgeben" data-src="static-list-of-books.png" data-srcset="static-list-of-books.png"
 />
 
 ## Der erste Service
@@ -461,7 +461,7 @@ Nehmen wir also ein kurzes Refactoring unserer Anwendung vor und extrahieren die
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Animation der Extraktion der Daten von der Komponente in einen Service." data-src="extract-service.gif" data-srcset="extract-service.gif"
+src="/shared/assets/img/placeholder-image.svg" alt="Animation der Extraktion der Daten von der Komponente in einen Service." data-src="extract-service.gif" data-srcset="extract-service.gif"
 />
 
 Ein Service sollte sich immer um eine explizite Aufgabe kümmern und dementsprechend auch benannt werden.
@@ -510,7 +510,7 @@ In unserem kleinen Beispiel erstellt also die `BookListComponent` nicht unseren 
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Angular DI erklärt indem die Komponente mit dem Injektor einen Dialog über ihre Bedürfnisse führt" data-src="di-explained-dialog.gif" data-srcset="di-explained-dialog.gif"
+src="/shared/assets/img/placeholder-image.svg" alt="Angular DI erklärt indem die Komponente mit dem Injektor einen Dialog über ihre Bedürfnisse führt" data-src="di-explained-dialog.gif" data-srcset="di-explained-dialog.gif"
 />
 
 <div class="alert alert-info">Hinweis: Dies ist eine sehr vereinfachte Darstellung von Dependency Injection in Angular, um das Grundkonzept zu verstehen. </div>
@@ -634,7 +634,7 @@ Die `async` Pipe in Verbindung mit `*ngFor` registriert sich auf asynchrone Upda
 
 <img
 class="lazy img-fluid img-rounded"
-src="/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern aus dem HTTP-Backend" data-src="http-list-of-books.png" data-srcset="http-list-of-books.png"
+src="/shared/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern aus dem HTTP-Backend" data-src="http-list-of-books.png" data-srcset="http-list-of-books.png"
 />
 
 ## Fazit
@@ -664,7 +664,7 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
    <div class="col-xs-12 col-md-6">
      <img
      class="lazy img-fluid img-rounded"
-     src="/assets/img/placeholder-image.svg" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
+     src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
      />
    </div>
  </div>

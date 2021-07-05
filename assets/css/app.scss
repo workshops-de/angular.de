@@ -59,6 +59,7 @@ $carousel-indicator-active-bg: $primary;
 
 // Settings
 $navbar-brand-font-size: 1rem;
+$navbar-main-background: #1565c0;
 $navbar-light-color: rgba($black, .54);
 $navbar-dark-color: rgba($white, 1);
 $navbar-dark-hover-color: rgba($white, 1);
@@ -74,36 +75,7 @@ $footer-background: #262a2f;
 
 // Imports
 //
-@import "mixins/underline";
-@import "fonts/font-source-variable";
-@import "fonts/font-awesome";
-@import "bootstrap/bootstrap";
-@import "buttons";
-@import "cookieconsent";
-@import "inputs";
-@import "image-loader";
-@import "navbar";
-@import "footer";
-@import "rouge-highlight";
-@import "headroom";
-@import "copy";
-@import "google-search";
-@import "header";
-@import "sticky";
-@import "post";
-@import "checked-list";
-@import "stars";
-@import "code";
-@import "content";
-@import "img-utilities";
-@import "newsletter";
-@import "bootstrap-toc";
-@import "misc";
-@import "ratings";
-@import "clients";
-@import "ng-de-header";
-@import "jobs";
-@import "course-card";
+@import "../../shared/theme/theme";
 
 // Nothing else
 // Pay 10 Euros if you commit sth. here

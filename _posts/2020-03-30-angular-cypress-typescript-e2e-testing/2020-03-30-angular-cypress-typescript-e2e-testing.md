@@ -38,7 +38,7 @@ Ohne an dieser Stelle auf alle Details einzugehen, ist dadurch Cypress nicht nur
 
 Zusätzlich zu all diesen Besonderheiten hat Cypress eine *Developer Experience* (*DX*), die kaum zu toppen ist. Habt ihr jemals eine [Fehlermeldung](https://www.cypress.io/blog/2017/07/26/good-error-messages/) gesehen, die euch genau sagt, was ihr falsch gemacht habt, euch aufzeigt, welche Abhängigkeiten hinzugefügt werden müssen und euch darüber hinaus noch zu einer verständliche Dokumentation leitet, die das Problem im Detail beschreibt? So fühlt sich Cypress an: Es ist gemacht von Entwicklern für Entwickler.
 
-<img src="/assets/img/placeholder-image.svg" alt="Cypress Fehlermeldung auf dem Build-Server, die genau sagt, wie der Fehler zu beheben sei" class="lazy" data-src="02-ci-error.png" data-srcset="02-ci-error.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Cypress Fehlermeldung auf dem Build-Server, die genau sagt, wie der Fehler zu beheben sei" class="lazy" data-src="02-ci-error.png" data-srcset="02-ci-error.png"
  />
 
 Gleich werden wir Cypress für ein frisches, mit der CLI erstelltes Angular Projekt installieren. Wir werden ein paar E2E Test schreiben und sie am Ende von einem automatisierten Build-System laufen lassen. Die Gesamtheit dieser Schritte sollte nicht länger als 60 Minuten in Anspruch nehmen. Wir werden versuchen, die Schritte so kurz wie möglich zu halten und existierende Werkzeuge wie [Angular Schematics](https://angular.io/guide/schematics), Bibliotheken oder bekannte Vorlagen zu unserem Vorteil einzusetzen.
@@ -87,12 +87,12 @@ npm run e2e
 
 Cypress erkennt, dass es zum ersten Mal ausgeführt wird. Es verifiziert seine Installation und fügt ein paar grundlegende Beispieldateien hinzu. Nachdem die Oberfläche startet, können wir bereits einen Test sehen, der für uns erstellt wurde.
 
-<img src="/assets/img/placeholder-image.svg" alt="Cypress Oberfläche nach cy:open oder e2e" class="lazy" data-src="03-cy-open.png" data-srcset="03-cy-open.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Cypress Oberfläche nach cy:open oder e2e" class="lazy" data-src="03-cy-open.png" data-srcset="03-cy-open.png"
  />
 
 Der Test wird ausgeführt, sobald wir ihn auswählen. Initial wird er fehlschlagen, weil wir tatsächlich noch nichts wirklich testen. Das werden wir nun beheben.
 
-<img src="/assets/img/placeholder-image.svg" alt="Fehlschlagender Test, der aktuell noch nicht implementiert ist" class="lazy" data-src="04-cy-test.png" data-srcset="04-cy-test.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Fehlschlagender Test, der aktuell noch nicht implementiert ist" class="lazy" data-src="04-cy-test.png" data-srcset="04-cy-test.png"
  />
 
 # Erste Tests<a name="tests"></a>
@@ -150,7 +150,7 @@ Cypress hat eine Menge toller Funktionalitäten und Möglichkeiten. Wir können 
 
 Lassen wir unsere Testreihe nochmal laufen, sollten wir sehen, wie sich Cypress durch jedes Szenario durchklickt. Unsere 3 Prüfungen sollten diesmal gelingen. ✔✔✔
 
-<img src="/assets/img/placeholder-image.svg" alt="Unsere erste Cypress Testreihe erfolgreich laufen lassen" class="lazy" data-src="05-cy-workflow.gif" data-srcset="05-cy-workflow.gif"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Unsere erste Cypress Testreihe erfolgreich laufen lassen" class="lazy" data-src="05-cy-workflow.gif" data-srcset="05-cy-workflow.gif"
  />
 
 # Continuous Integration aufsetzen<a name="ci"></a>
@@ -202,7 +202,7 @@ workflows:
 
 Die Pipeline hat nur eine Aufgabe: Führe alle E2E Tests aus. Der aktuelle Git-Branch wird ausgecheckt, alle Abhängigkeiten inklusive Caching installiert, der Applikations-Server wird gestartet und die Tests werden ausgeführt. Zusätzlich werden standardmäßig Videos des Testdurchlaufs und Screenshots (im Falle von fehlschlagenden Tests) aufgezeichnet und am Ende als CircleCI Artefakte zur späteren Analyse hochgeladen.*
 
-<img src="/assets/img/placeholder-image.svg" alt="CircleCI Dashboard" class="lazy" data-src="06-circleci.png" data-srcset="06-circleci.png">
+<img src="/shared/assets/img/placeholder-image.svg" alt="CircleCI Dashboard" class="lazy" data-src="06-circleci.png" data-srcset="06-circleci.png">
 
 <iframe class="" width="100%" height="315" src="https://www.youtube-nocookie.com/embed/w3BVGdNIhFg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -211,7 +211,7 @@ Die Schritte in dieser Anleitung sind sehr minimal gehalten. Ihr könntet euer e
 
 Wartet, bis ihr eure ersten echten Cypress Tests für eure Anwendung schreibt. Ihr werdet Spaß haben!
 
-<img src="/assets/img/placeholder-image.svg" alt="Animiertes Bild, das eine überwältigte Person zeigt" class="lazy center" data-src="08-mind-blown.gif" data-srcset="08-mind-blown.gif"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Animiertes Bild, das eine überwältigte Person zeigt" class="lazy center" data-src="08-mind-blown.gif" data-srcset="08-mind-blown.gif"
  />
 
 Ich hoffe, ihr konntet etwas nützliches aus dem Artikel ziehen. Bei Fragen oder Anmerkungen, lasst es mich wissen. Rückmeldung ist immer sehr willkommen!

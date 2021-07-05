@@ -10,6 +10,8 @@ permalink: /artikel/:slug/
 repository_url: "https://github.com/symetics/angular.de"
 ws_course_id: 4
 
+plugins_dir: ["_plugins/", "shared/plugins/"]
+
 collections:
   books:
     output: true
@@ -36,6 +38,10 @@ defaults:
       layout: "page"
   - scope:
       path: "assets"
+    values:
+      sitemap: false
+  - scope:
+      path: "shared/assets"
     values:
       sitemap: false
 

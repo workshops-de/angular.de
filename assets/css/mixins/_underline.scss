@@ -1,7 +1,0 @@
-@mixin underline($color, $position: $font-size-base + 0.1rem, $size: 3px) {
-  text-decoration: none;
-  background-image: linear-gradient(to bottom, rgba(#fff,0) 75%, $color 75%);
-  background-repeat: repeat-x;
-  background-position: 0 $position;
-  background-size: $size $size;
-}
