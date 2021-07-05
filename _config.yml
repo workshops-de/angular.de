@@ -8,7 +8,6 @@ gtm_property: "GTM-T5VPDDK"
 utm_source: "angular_de"
 permalink: /artikel/:slug/
 repository_url: "https://github.com/symetics/angular.de"
-ws_course_id: 4
 
 plugins_dir: ["_plugins/", "shared/plugins/"]
 
