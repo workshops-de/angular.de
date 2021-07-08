@@ -21,7 +21,7 @@ gem 'fastimage'
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem 'jekyll-autoprefixer', '~> 1.0'
-  gem 'jekyll-feed', '~> 0.13'
+  gem 'jekyll-feed'
   gem 'jekyll-sitemap'
   gem 'jekyll-paginate-v2'
   gem 'jekyll-postfiles'
