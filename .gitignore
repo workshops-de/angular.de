@@ -4,7 +4,6 @@ _site
 .jekyll-cache
 .firebase
 .DS_Store
-_includes/_events_jsonld.json
 _includes/_course_reviews.json
 _data/events/*.json
 _data/related_events/*.json
