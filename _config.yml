@@ -1,5 +1,6 @@
 title: Angular.DE
 description: ""
+topic: Angular
 url: "https://angular.de" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: angular_de
 github_username:  jekyll
@@ -8,6 +9,11 @@ gtm_property: "GTM-T5VPDDK"
 utm_source: "angular_de"
 permalink: /artikel/:slug/
 repository_url: "https://github.com/symetics/angular.de"
+
+navigation:
+  banner:
+    message: "10% Rabatt auf alle Workshops.DE Schulungen mit dem Code: <b>ANGULARDE10</b>"
+    href: "https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=portal-discount&utm_medium=banner&utm_content=workshops-overview"
 
 plugins_dir: ["_plugins/", "shared/plugins/"]
 
