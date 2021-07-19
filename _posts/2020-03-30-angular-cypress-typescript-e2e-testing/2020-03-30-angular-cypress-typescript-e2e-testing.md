@@ -222,7 +222,7 @@ Der Quellcode für diese Anleitung ist auf GitHub zu finden:
 ### Quellen und Hinweise<a name="references"></a>
 Für andere CI-System könnte man unser vorher definiertes npm Skript nutzen. Jedoch müssten wir uns dann um all die zusätzlichen Hilfsmittel selbst kümmern. Falls ihr bereits eine weit entwickelte Pipeline habt, könnte es ein einfacherer Weg sein, nur dieses eine Skript zu integrieren.
 
-- [Englisher Orginigal Artikel von David](https://dev.to/angular/ci-ready-e2e-tests-for-angular-with-cypress-and-typescript-in-under-60-minutes-4f30)
+- [Englischer Originalartikel von David](https://dev.to/angular/ci-ready-e2e-tests-for-angular-with-cypress-and-typescript-in-under-60-minutes-4f30)
 - [Offizielle Angular Dokumentation](https://angular.io/docs)
 - [Briebug Cypress Schematic](https://github.com/briebug/cypress-schematic)
 - [Offizielle Cypress Dokumentation](https://docs.cypress.i)
