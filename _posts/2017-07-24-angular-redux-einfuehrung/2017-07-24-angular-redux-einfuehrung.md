@@ -24,7 +24,7 @@ Redux wird oft zusammen mit React verwendet, ist aber nicht an ein bestimmtes Fr
 
 Redux baut auf Flux-Pattern auf. Für dieses Tutorial braucht ihr aber keine Erfahrung.
 Wir werden alle Grundlagen hiermit behandeln.
-In diesem Artikel werden wir ein Todo-Listen-Beispiel aus React verwenden, welches aus dem neusten Redux-Videokurs von [Dan Abramov](https://medium.com/@dan_abramov) stammt.
+In diesem Artikel werden wir ein Todo-Listen-Beispiel aus React verwenden, welches aus dem neuesten Redux-Videokurs von [Dan Abramov](https://medium.com/@dan_abramov) stammt.
 
 
 ## Warum nicht ngRX
