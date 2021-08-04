@@ -49,7 +49,7 @@ Alle Quelltexte findet ihr auf [GitHub](https://github.com/angularjs-de/ionic-tu
         <div class="col-xs-12 col-md-6">
             <img class="img-fluid img-rounded"
                  src="workshops-attendees.png"
-                 alt="Teilnehmer in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
+                 alt="Teilnehmer:innen in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
         </div>
     </div>
 </div>
@@ -1002,7 +1002,7 @@ Link zum [Quellcode](https://github.com/angularjs-de/ionic-pizza-service/tree/ma
       </p>
   </div>
   <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
   </div>
 </div>
 </div>

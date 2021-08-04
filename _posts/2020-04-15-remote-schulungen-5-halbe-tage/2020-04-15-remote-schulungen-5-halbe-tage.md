@@ -12,9 +12,9 @@ categories: "angular remote schulung"
 > TL;DR
 > Neues Workshop-Format: Lerne die Grundlagen von Angular u.a. in unserem 5-Halbtage-Workshop. Nächster Termin bereits nächste Woche!
 
-Die Welt ändert sich ... und das auch zum Positiven! Durch die aktuellen Entwicklungen konnten wir neue Workshop-Angebote testen, welche auf sehr positives Feedback unser Teilnehmer stoßen. Durch den Fokus auf Home-Office haben wir einen 5-Tages-Teilzeit-Workshop entwickelt. Dieser bietet euch die Möglichkeit neue Fähigkeiten zu erlangen, ohne komplett in euren Projekten auszufallen. Trotzdem könnt ihr die Vorteile einer Live-Schulung wahrnehmen und gemeinsam in der Gruppe lernen und euch bei Fragen direkt an eure/n Trainer/in wenden.
+Die Welt ändert sich ... und das auch zum Positiven! Durch die aktuellen Entwicklungen konnten wir neue Workshop-Angebote testen, welche auf sehr positives Feedback unser Teilnehmer:innen stoßen. Durch den Fokus auf Home-Office haben wir einen 5-Tages-Teilzeit-Workshop entwickelt. Dieser bietet euch die Möglichkeit neue Fähigkeiten zu erlangen, ohne komplett in euren Projekten auszufallen. Trotzdem könnt ihr die Vorteile einer Live-Schulung wahrnehmen und gemeinsam in der Gruppe lernen und euch bei Fragen direkt an eure/n Trainer/in wenden.
 
-**Einige Vorteile die uns Teilnehmer berichten sind:**
+**Einige Vorteile die uns Teilnehmer:innen berichten sind:**
 
 * Kümmert euch Vormittags um eure Kindern im “Homeschooling”
 * Lernt in angenehmen kurzen Blöcken

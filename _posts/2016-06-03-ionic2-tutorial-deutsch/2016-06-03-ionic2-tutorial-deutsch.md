@@ -59,7 +59,7 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
       </p>
     </div>
     <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
     </div>
   </div>
 </div>
@@ -686,7 +686,7 @@ Viel Spaß beim Ausprobieren und Entwickeln der eigenen App!
       </p>
     </div>
     <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
   </div>
 </div>

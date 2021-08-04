@@ -12,7 +12,7 @@ canonical_url: https://www.sidion.de/lernen/sidion-labor/blog/Angular-TypeScript
 von Michael Wellner.
 
 Vom 12.02. - 14.02.2020 war ich auf dem "Angular & TypeScript Intensiv Workshop" von workshops.de / angular.de in Berlin.
-Ich bin aktuell in einem Angular Projekt tätig, weshalb ich schon etwas Vorwissen mitbrachte. Nach einer kurzen Vorstellung des Trainers und der geplanten Inhalte, hatte jeder Teilnehmer die Möglichkeit sich vorzustellen. Was ziemlich cool ist, es gibt ein Online Portal, zu dem die Teilnehmer Zugriff haben und sich während und auch nach dem Workshop noch Folien und Aufgaben anschauen können und sich zusätzlich noch per Chat austauschen können.
+Ich bin aktuell in einem Angular Projekt tätig, weshalb ich schon etwas Vorwissen mitbrachte. Nach einer kurzen Vorstellung des Trainers und der geplanten Inhalte, hatte jeder/jede Teilnehmer:in die Möglichkeit sich vorzustellen. Was ziemlich cool ist, es gibt ein Online Portal, zu dem die Teilnehmer:innen Zugriff haben und sich während und auch nach dem Workshop noch Folien und Aufgaben anschauen können und sich zusätzlich noch per Chat austauschen können.
 
 ## Einleitung
 Da der Trainer sich auch mit React auskennt, wurde zu Beginn natürlich erst mal diskutiert, warum man sich denn für Angular entscheiden sollte. Die Folien sagten so Dinge wie: Baut auf Erfahrungen von AngularJS auf, bietet dem Entwickler Unterstützung das Richtige zu tun, versucht sich sehr nah an Web Standards zu halten, hat eine gute Wartbarkeit und es gibt ganzheitliche Lösungen für bekannte Herausforderungen wie z.B. i18n oder Animations.

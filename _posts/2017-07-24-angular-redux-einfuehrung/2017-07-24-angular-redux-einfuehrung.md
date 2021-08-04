@@ -54,7 +54,7 @@ ngRx enthält noch Erweiterungen wie `Observables`, welche die Beispiele an dies
       </p>
     </div>
     <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="/assets/img/workshops/teilnehmer-workshop.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="/assets/img/workshops/teilnehmer-workshop.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
   </div>
 </div>
@@ -513,7 +513,7 @@ Lass uns überprüfen, wie sich eine Redux-Anwendung in verschiedenen Stadien ve
       </p>
     </div>
     <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="/assets/img/workshops/teilnehmer-workshop.png" alt="Teilnehmer in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+      <img class="img-fluid img-rounded" src="/assets/img/workshops/teilnehmer-workshop.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
     </div>
   </div>
 </div>

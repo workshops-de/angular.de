@@ -75,7 +75,7 @@ Sehr stark ausgeprägt in Verbindung mit Angular sind die gemeinsamen Konzepte u
       style="margin-top:-20px"
       data-src="/assets/img/workshops/workshops-attendees.png"
       data-srcset="/assets/img/workshops/workshops-attendees.png"
-       src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer in unser Intensiv Schulung">
+       src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in unser Intensiv Schulung">
     </div>
   </div>
 </div>
@@ -463,7 +463,7 @@ Danke fürs lesen!
       <img class="img-fluid img-rounded lazy"
       data-src="/assets/img/workshops/workshops-attendees-2.jpg"
       data-srcset="/assets/img/workshops/workshops-attendees-2.jpg"
-       src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer in unser Intensiv Schulung">
+       src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in unser Intensiv Schulung">
     </div>
   </div>
 </div>
