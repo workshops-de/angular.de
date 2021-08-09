@@ -20,11 +20,11 @@
       </div>
     </div>
 
-    <div class="row mb-3">
-      <div class="col-4 col-md-5">
+    <div class="row mb-4 mb-md-3">
+      <div class="col-12 col-md-5">
         <span>Individuell <span class="small d-block d-lg-inline">(Standarddauer {{ include.duration }}-{{ include.duration | times: "2") }} Tage)</span></span>
       </div>
-      <div class="col-8 col-md-7">
+      <div class="col-12 col-md-7">
         <div class="row">
           <div class="col-sm-9">
             <a class="text-unstyled" href="https://workshops.de/seminare-schulungen-kurse/{{ include.slug }}/inhouse?utm_source={{ site.utm_source }}&utm_campaign=undefined&utm_medium=button&utm_content=workshops-list" target="_blank"> <span class="visually-hidden">{{ include.topic }}</span> Firmenschulung Inhouse</a>
@@ -33,18 +33,19 @@
             </span>
             <span class="small d-inline d-sm-none"> Auf Anfrage </span>
           </div>
-          <div class="col-sm-3 text-end">
+          <div class="col-sm-3 text-md-end">
             <a class="btn btn-primary btn-sm w-100 shadow" href="https://workshops.de/seminare-schulungen-kurse/{{ include.slug }}/inhouse?utm_source={{ site.utm_source }}&utm_campaign=undefined&utm_medium=button&utm_content=workshops-list" target="_blank"><span class="visually-hidden">{{ include.topic }} Inhouse</span> Zur Anfrage</a>
           </div>
         </div>
       </div>
     </div>
     {% for event in site.data.events[include.data_key] %}
-    <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
+    <hr />
+    <div class="row mb-4 mb-md-2" itemscope="" itemtype="http://schema.org/Event">
       <div class="d-none d-md-block col-1">
         KW{{ event.startDate | date: "%W" }}
       </div>
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span class="me-2" itemprop="endDate" content="{{ event.endDate | date: " %Y-%m-%d " }}">{{ event.endDate | date: "%d.%m.%Y" }}</span>
         {% if event.bookingsStatus == "BOOKED" %}
         <span class="badge bg-danger">ausgebucht</span>
@@ -58,8 +59,8 @@
         <span class="badge c-badge-free">Noch freie Plätze</span>
         {% endif %}
       </div>
-      <div class="col-8 col-md-7">
-        <div class="row">
+      <div class="col-12 col-md-7">
+        <div class="row gy-2 gy-sm-0">
           <div class="col-sm-9">
             <a class="underlined" href="{{ event.url }}&utm_source={{ site.utm_source }}&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list" target="_blank">
               {{event.topic}} {{event.type}}
@@ -132,11 +133,12 @@
       </div>
       <div class="collapse mt-2" id="related_events">
         {% for event in site.data.related_events[include.data_key] limit:6 %}
-        <div class="row mb-2" itemscope="" itemtype="http://schema.org/Event">
+        <hr />
+        <div class="row mb-4 mb-md-2" itemscope="" itemtype="http://schema.org/Event">
           <div class="d-none d-md-block col-1">
             KW{{ event.startDate | date: "%W" }}
           </div>
-          <div class="col-4">
+          <div class="col-12 col-md-4">
             <span itemprop="startDate" content="{{ event.startDate | date: " %Y-%m-%d " }}">{{ event.startDate | date: "%d.%m" }}</span> - <span class="me-2" itemprop="endDate" content="{{ event.endDate | date: " %Y-%m-%d " }}">{{ event.endDate | date: "%d.%m.%Y" }}</span>
             {% if event.bookingsStatus == "BOOKED" %}
             <span class="badge bg-danger">ausgebucht</span>
@@ -150,8 +152,8 @@
             <span class="badge c-badge-free">Noch freie Plätze</span>
             {% endif %}
           </div>
-          <div class="col-8 col-md-7">
-            <div class="row">
+          <div class="col-12 col-md-7">
+            <div class="row gy-2 gy-sm-0">
               <div class="col-sm-9">
                 <a class="underlined" href="{{ event.url }}&utm_source={{ site.utm_source }}&utm_campaign=website-link-event-date&utm_medium=button&utm_content=workshops-list" target="_blank">
                   {{event.topic}} {{event.type}}
@@ -221,7 +223,7 @@
       </div>
     {% endif %}
     <hr>
-    <div class="text-muted smaller text-end d-flex justify-content-end">Unsere Workshops werden durchgeführt von <span class="d-inline-flex align-items-center"><img class="ms-1 me-1" alt="Workshops Logo" src="/shared/assets/img/workshops-de-logo.svg" height="16"> <a class="text-workshops" href="https://workshops.de/?utm_source={{ site.utm_source }}&utm_campaign=website-link-right-bottom&utm_medium=link&utm_content=workshops-list" target="_blank" rel="noopener">Workshops.DE</a></span></div>
+    <div class="text-muted smaller text-start text-md-end d-flex justify-content-end">Unsere Workshops werden durchgeführt von <span class="d-inline-flex align-items-center"><img class="ms-1 me-1" alt="Workshops Logo" src="/shared/assets/img/workshops-de-logo.svg" height="16"> <a class="text-workshops" href="https://workshops.de/?utm_source={{ site.utm_source }}&utm_campaign=website-link-right-bottom&utm_medium=link&utm_content=workshops-list" target="_blank" rel="noopener">Workshops.DE</a></span></div>
     <!-- /.col~ -->
     <!-- /.row -->
   </div>
