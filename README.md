@@ -11,7 +11,7 @@ Requires Ruby 2.5+
 bundle install
 ```
 
-## Runing locally
+## Running locally
 
 ```
 $ jekyll s --incremental
@@ -21,4 +21,12 @@ $ jekyll s --incremental
 
 ```
 $ docker build -t anguarjs-de .
+```
+
+## Shared module
+
+We're using a git submodule to share files like templates, images and themes across all workshops_de portals. Use following command to pull and update the repository including submodule.
+
+```
+$ git pull --recurse-submodules
 ```
