@@ -101,7 +101,7 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
      </p>
      <p class="text-center">
        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
-         <button class="btn btn-danger">Jetzt weiter lernen</button>
+         <button class="btn btn-danger">Zur Angular Intesiv Schulung</button>
        </a>
      </p>
    </div>
@@ -487,7 +487,7 @@ src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bü
      </p>
      <p class="text-center">
        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-mid">
-         <button class="btn btn-danger">Jetzt weiter lernen</button>
+         <button class="btn btn-danger">Zur Angular Intesiv Schulung</button>
        </a>
      </p>
    </div>
@@ -705,7 +705,7 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
      </p>
      <p class="text-center">
        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-         <button class="btn btn-danger">Jetzt weiter lernen</button>
+         <button class="btn btn-danger">Zur Angular Intesiv Schulung</button>
        </a>
      </p>
    </div>
