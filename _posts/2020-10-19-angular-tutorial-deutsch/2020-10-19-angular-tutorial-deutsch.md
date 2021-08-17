@@ -91,6 +91,30 @@ class="lazy img-fluid img-rounded"
 src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche." data-src="release-cycle.png" data-srcset="release-cycle.png"
 />
 
+<hr>
+<div class="workshop-hint text-center">
+ <div class="h3">Angular noch schneller lernen?</div>
+ <div class="row mb-2">
+   <div class="col-xs-12 col-md-6">
+     <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+       schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+     </p>
+     <p class="text-center">
+       <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
+         <button class="btn btn-danger">Jetzt weiter lernen</button>
+       </a>
+     </p>
+   </div>
+   <div class="col-xs-12 col-md-6">
+     <img
+     class="lazy img-fluid img-rounded"
+     src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
+     />
+   </div>
+ </div>
+</div>
+<hr>
+
 ### Die Angular Plattform
 
 Das Ökosystem von Angular ist sehr groß. Die Basis bildet hierbei das Core-Framework. Hier sind die fundamentalen Konzepte implementiert, die für moderne Webanwendungen essenziell sind. Zwei weitere Core-Konzepte, die jedoch separat nutzbar sind, sind die Angular-CLI und die Verwaltung von Komponenten. Diese bilden die Kernfunktionalitäten, welche in fast jeder Anwendung benötigt werden. Weitere Module lassen sich _optional einbinden_, falls ihr diese benötigt:
@@ -452,6 +476,30 @@ books = [
 class="lazy img-fluid img-rounded"
 src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bücher in HTML ausgeben" data-src="static-list-of-books.png" data-srcset="static-list-of-books.png"
 />
+
+<hr>
+<div class="workshop-hint text-center">
+ <div class="h3">Angular noch schneller lernen?</div>
+ <div class="row mb-2">
+   <div class="col-xs-12 col-md-6">
+     <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-mid">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+       schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+     </p>
+     <p class="text-center">
+       <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-mid">
+         <button class="btn btn-danger">Jetzt weiter lernen</button>
+       </a>
+     </p>
+   </div>
+   <div class="col-xs-12 col-md-6">
+     <img
+     class="lazy img-fluid img-rounded"
+     src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
+     />
+   </div>
+ </div>
+</div>
+<hr>
 
 ## Der erste Service
 
