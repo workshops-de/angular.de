@@ -574,7 +574,7 @@ Innerhalb des Konstruktors rufen wir dann die `getBooks()` Methode des Services 
 
 ```typescript
 export class BookListComponent {
-  books = [];
+   books: { title: string; subtitle: string; }[];
 
   constructor(private bookData: BookDataService) {
     this.books = this.bookData.getBooks();
@@ -653,7 +653,7 @@ Es hat sich als guter Stil etabliert, Variablen und Felder, welche asynchrone Da
 
 ```typescript
 export class BookListComponent {
-  books$: Observable<Object>;
+  books$: Observable<any>;
 
   constructor(private bookData: BookDataService) {
     this.books$ = this.bookData.getBooks();
