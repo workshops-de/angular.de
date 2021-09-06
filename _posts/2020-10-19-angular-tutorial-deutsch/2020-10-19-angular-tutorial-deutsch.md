@@ -158,7 +158,7 @@ Die Angular-CLI wird genutzt, um neue Strukturen innerhalb unserer Anwendungen z
 Um unsere erste Anwendung zu generieren, verwenden wir den `new` command, welcher als Argument den Namen eurer Anwendung entgegennimmt. Hierbei werdet ihr gefragt, ob ihr das `Routing Module` installieren wollt: Nein. Weiterhin, welches Stylesheet Format ihr nutzen wollt: Hierbei wählt ihr bitte SCSS.
 
 ```bash
-$ ng new angular-de-tutorial
+$ ng new angular-de-tutorial --strict false
 
 ? Do you want to enforce stricter type checking and stricter bundle budgets in the workspace?
   This setting helps improve maintainability and catch bugs ahead of time.
