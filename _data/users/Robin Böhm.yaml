@@ -2,9 +2,13 @@ permalink: robinboehm
 name: Robin Böhm
 gravatar_uid: e9e044629f5324a4a3c27302f0d4efcc
 github: robinboehm
-city: Essen
+twitter: robinboehm
+city: Berlin
 team: true
+intro: >
+  Gründer von Angular.DE<br>
+  Entwickler, Trainer und Buch-Autor
 bio: >
-  Robin Böhm ist leidenschaftlicher Softwareentwickler, Berater und Autor in den Bereichen JavaScript und Web. Er beschäftigt sich seit einigen Jahren intensiv mit der Erstellung client-seitiger Web-Applikationen. Er hat das erste deutschsprachige Buch zum Thema AngularJS geschrieben und ist Mitgründer der Platform AngularJS.DE.
-
-  Du bist interessiert an Beratung , Coaching oder einer Schulung im Bereich JavaScript und AngularJS? Sende mir einfach eine Nachricht! :)
+  Robin beschäftigt sich seit 2012 intensiv mit der Erstellung client-seitiger Web-Applikationen.
+  2014 hat er das erste deutschsprachige Buch zum Thema AngularJS geschrieben und ist Mitgründer der Platform Angular.DE.
+  Mit seinem Schulungs-Team hat er bereits über 1200 Unternehmen den erfolgreichen Start mit Angular ermöglicht.

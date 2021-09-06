@@ -1,0 +1,7 @@
+ports:
+  - port: 4000
+    onOpen: open-preview
+
+tasks:
+  - before: bundle install
+    command: bundle exec jekyll serve --trace

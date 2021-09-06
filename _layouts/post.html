@@ -3,75 +3,97 @@ layout: base
 ---
 
 {% for user_hash in site.data.users %}
-  {% if page.author == user_hash[1].name %}
-    {% assign author = user_hash[1] %}
-  {% endif %}
+{% if page.author == user_hash[1].name %}
+{% assign author = user_hash[1] %}
+{% endif %}
 {% endfor %}
 
-<div class="header header-post background-gradient-overlay">
-  <div class="header header-post hidden-print"
-       style="background-image: url('{{page.header_image}}');"></div>
-  <div class="container text-wrapper" style="text-align: center;">
-    <h1 class="header-post-title">{{ page.title }}</h1>
-    <div class="header-post-author">
-      {% if page.author %}
-      von {{ author.name }}
-      {% endif %}
+<div class="header header-post shadow-sm d-flex align-items-center justify-content-center mb-5" style="background-image: url('{{page.header_image}}');">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 d-none d-lg-block"></div>
+      <div class="col-md-12 col-lg-8">
+        <h1 class="header-post-title">{{ page.title }}</h1>
+        <span>{{ page.author }}</span>
+        <span class="ms-1 me-1">•</span>
+        {% include shared/_reading_time.html text=page.content %}
+      </div>
     </div>
-    <p>
-      <a class="btn btn-sm btn-info" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
-        <i class="fa fa-github" aria-hidden="true"></i>
-          Diesen Artikel auf GitHub verbessern
-      </a>
-    </p>
   </div>
 </div>
 
-<div class="container">
-  <main role="main">
+<main role="main">
+  <article lang="{{ page.language }}" class="container">
 
-    <div class="row justify-content-md-center">
-      <div class="col-md-12 col-lg-8 mb-2">
-        {{ content }}
-
-        <div class="row">
-          <div class="col-sm-12 col-md-6 mb-2">
-            {% include _author.html %}
+    <div class="row mb-5">
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <hr>
+          <div class="lead text-center">
+            Nichts verpassen?
           </div>
-          <div class="col-sm-12 col-md-6 mb-2">
-            <p>
-              <a class="btn btn-sm btn-info" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
-              <i class="fa fa-github" aria-hidden="true"></i>
-                Diesen Artikel auf GitHub verbessern
-                </a>
-            </p>
+          <div class="text-center">
+            <a class="btn btn-sm btn-primary mt-3" href="/newsletter/redirect/article" target="_blank">
+              Zum Newsletter anmelden! <br>
+              💌
+            </a>
           </div>
         </div>
-        <br>
+        <div class="position-sticky c-top-4">
 
-          <div id="disqus_thread"></div>
-          <script>
-              var disqus_config = function () {
-                  this.page.url = "{{ site.url }}{{ page.url}}";
-                  console.log(this.page.url);
-                  this.page.identifier = "{{post.slug}}";
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-8 mb-2">
+        <p class="text-muted">
+          <small>
+            {% for category in page.categories %}
+            <span class="text-uppercase">{{category}}</span>
+            {% unless forloop.last %}<span class="ms-1 me-1">•</span>{% endunless %}
+            {% endfor %}
+            <span class="ms-1 me-1">|</span>
+            {{ page.author }}
+            {% if author.twitter %}
+            <a href="https://twitter.com/{{ author.twitter }}" target="_blank" style="margin-bottom: 5px;">
+              <img src="/shared/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
+            </a>
+            {% endif %}
+            <span class="ms-1 me-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
+            <span class="ms-1 me-1">|</span>
+            {% include shared/_reading_time.html text=page.content %}
+          </small>
+        </p>
 
-              };
-              (function () { // DON'T EDIT BELOW THIS LINE
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://angularjs-de.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-              })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-              Disqus.</a></noscript>
 
-
-        <div class="hidden-print">
-          {% include _related_articles.html %}
+        <div class="c-content">
+          {{ content }}
         </div>
       </div>
     </div>
-  </main>
-</div>
+    <div class="row justify-content-md-center">
+      <div class="col-lg-2 d-none d-lg-block"></div>
+      <div class="col-md-12 col-lg-8 mb-2">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 mb-2">
+            {% include shared/_post_author.html %}
+          </div>
+          <div class="col-sm-12 col-md-6 mb-2">
+            <p>
+              <a class="btn btn-sm btn-primary" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
+                Diesen Artikel auf GitHub verbessern
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <br>
+
+      </div>
+    </div>
+  </article>
+
+  <div class="row justify-content-md-center no-gutters mt-6">
+    {% include shared/_related_posts.html %}
+  </div>
+</main>

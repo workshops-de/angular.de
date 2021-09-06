@@ -1,0 +1,149 @@
+{
+  "hosting": {
+    "public": "_site",
+    "cleanUrls": true,
+    "trailingSlash": true,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/feed",
+        "destination": "https://angular.de/feed.xml",
+        "type": 301
+      },
+      {
+        "source": "/newsletter/redirect/footer*",
+        "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[21477][1]=1&group[26094][512]=1",
+        "type": 301
+      },
+      {
+        "source": "/newsletter/redirect/article*",
+        "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[21477][32768]=1&group[26094][512]=1",
+        "type": 301
+      },
+      {
+        "source": "/newsletter/redirect*",
+        "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[26094][512]=1",
+        "type": 301
+      },
+      {
+        "source": "/slack*",
+        "destination": "https://workshops.de/join-discord",
+        "type": 301
+      },
+      {
+        "source": "/discord*",
+        "destination": "https://workshops.de/join-discord",
+        "type": 301
+      },
+      {
+        "source": "/chat*",
+        "destination": "https://angular.de/discord",
+        "type": 301
+      },
+      {
+        "source": "/schulungen/angular-advanced/",
+        "destination": "https://angular.de/schulungen/angular-enterprise-applications/",
+        "type": 301
+      },
+      {
+        "source": "/workshops/",
+        "destination": "https://angular.de/schulungen/",
+        "type": 301
+      },
+      {
+        "source": "/workshops/*",
+        "destination": "https://angular.de/schulungen/",
+        "type": 301
+      },
+      {
+        "source": "/inhouse-workshop-anfrage",
+        "destination": "https://angular.de/inhouse-workshop/",
+        "type": 301
+      },
+      {
+        "source": "/veranstaltungen*",
+        "destination": "https://angular.de/schulungen/",
+        "type": 301
+      },
+      {
+        "source": "/entwickler*",
+        "destination": "https://angular.de/",
+        "type": 301
+      },
+      {
+        "source": "/consulting*",
+        "destination": "https://angular.de/",
+        "type": 301
+      },
+      {
+        "source": "/projekte*",
+        "destination": "https://angular.de/",
+        "type": 301
+      },
+      {
+        "source": "/classroom/:room_id*",
+        "destination": "https://workshops.de/classroom/:room_id*",
+        "type": 301
+      },
+      {
+        "source": "/buch/:id*",
+        "destination": "https://angular.de/buecher/angularjs-buch/:id*",
+        "type": 301
+      },
+      {
+        "source": "/blog/:id*",
+        "destination": "https://angular.de/artikel/:id",
+        "type": 301
+      },
+      {
+        "source": "/artikel/angular2-bootstrap-scss-angular-cli*",
+        "destination": "https://angular.de/artikel/angular-bootstrap-scss-angular-cli/",
+        "type": 301
+      },
+      {
+        "source": "/artikel/angular2-tutorial-deutsch*",
+        "destination": "https://angular.de/artikel/angular-tutorial-deutsch/",
+        "type": 301
+      },
+      {
+        "source": "/artikel/ngupgrade-migration-angularjs-angular2*",
+        "destination": "https://angular.de/artikel/ngupgrade-migration-angularjs-angular/",
+        "type": 301
+      },
+      {
+        "source": "/artikel/angular2-routing-tutorial-deutsch*",
+        "destination": "https://angular.de/artikel/angular-routing-tutorial-deutsch/",
+        "type": 301
+      },
+      {
+        "source": "/artikel/way-into-tech",
+        "destination": "https://angular.de/artikel/david-muellerchen-my-way-into-tech/",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800"
+          }
+        ]
+      },
+      {
+        "source": "/assets/mirror/**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, follow"
+          }
+        ]
+      }
+    ]
+  }
+}

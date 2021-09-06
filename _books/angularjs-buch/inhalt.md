@@ -1,6 +1,6 @@
 ---
 number: 3.10
-title: ngController
+title: ngController - erste Berührungen mit Scopes
 part: Basisapplikation
 description: Lerne, was ngController ist und erstelle eine erste Liste mit ngRepeat.
 progress: 20

@@ -2,25 +2,25 @@
 layout: base
 ---
 
-{% assign sorted_chapters = (site.books | sort: 'number') %}
+{% assign sorted_chapters = site.books | sort: 'number' %}
 
 {% for links in sorted_chapters  %}
 {% if forloop.first %}
-	{% assign first = links %}
+  {% assign first = links %}
 {% endif %}
 {% if forloop.last %}
-	{% assign last = links %}
+  {% assign last = links %}
 {% endif %}
   {% if links.title == page.title %}
-	{% unless forloop.first %}
-		{% assign prevurl = prev.url %}
-		{% assign prevtitle = prev.title %}
-	{% endunless %}
-	{% unless forloop.last %}
-		{% assign next = sorted_chapters[forloop.index] %}
-		{% assign nexturl = next.url %}
-		{% assign nexttitle = next.title %}
-	{% endunless %}
+  {% unless forloop.first %}
+    {% assign prevurl = prev.url %}
+    {% assign prevtitle = prev.title %}
+  {% endunless %}
+  {% unless forloop.last %}
+    {% assign next = sorted_chapters[forloop.index] %}
+    {% assign nexturl = next.url %}
+    {% assign nexttitle = next.title %}
+  {% endunless %}
   {% endif %}
   {% assign prev = links %}
 {% endfor %}
@@ -39,7 +39,7 @@ layout: base
     <h1>{{ page.title }}</h1>
 
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-9 c-content">
         {{ content }}
 
         <br>
@@ -60,7 +60,7 @@ layout: base
             {% endif %}
           </div>
         </div>
-        <p>
+        <p class="text-center">
           <a href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">Dieses Kapitel auf GitHub erweitern oder verbessern</a>
         </p>
       </div>

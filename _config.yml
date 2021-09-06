@@ -1,12 +1,21 @@
-title: AngularJS.DE
+title: Angular.DE
 description: ""
-url: "https://angularjs.de" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+topic: Angular
+url: "https://angular.de" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: angular_de
 github_username:  jekyll
 ga_property: "UA-39010393-1"
+gtm_property: "GTM-T5VPDDK"
+utm_source: "angular_de"
 permalink: /artikel/:slug/
-repository_url: "https://github.com/workshops-de/angularjs.de"
-ws_course_id: 4
+repository_url: "https://github.com/symetics/angular.de"
+
+navigation:
+  banner:
+    message: "10% Rabatt auf alle Workshops.DE Schulungen mit dem Code: <b>ANGULARDE10</b>"
+    href: "https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=portal-discount&utm_medium=banner&utm_content=workshops-overview"
+
+plugins_dir: ["_plugins/", "shared/plugins/"]
 
 collections:
   books:
@@ -21,6 +30,9 @@ defaults:
       path: "_posts" # an empty string here means all files in the project
     values:
       layout: "post"
+      header_image: "header.jpg"
+      toc: true
+      language: "de"
   - scope:
       path: "_books" # an empty string here means all files in the project
     values:
@@ -29,12 +41,22 @@ defaults:
       path: "_pages" # an empty string here means all files in the project
     values:
       layout: "page"
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
+  - scope:
+      path: "shared/assets"
+    values:
+      sitemap: false
+
+
 
 pagination:
   enabled: true
   per_page: 5
   permalink: '/seite/:num/'
-  title: ':title - Seite :num von :max'
+  title: ':title - Seite :num'
   limit: 0
   sort_field: 'date'
   sort_reverse: true
@@ -44,7 +66,10 @@ markdown: kramdown
 sass:
   style: :compressed
   sass_dir: assets/css
-gems:
+  sourcemap: never
+autoprefixer:
+  only_production: true
+plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate-v2
@@ -54,3 +79,9 @@ exclude:
   - Dockerfile
   - .gitignore
   - nginx.conf
+  - cloudbuild.yaml
+  - firebase-debug.log
+
+# webrick:
+#   headers:
+#     Content-Security-Policy: "style-src 'self'"

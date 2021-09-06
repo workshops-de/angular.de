@@ -1,7 +1,0 @@
-{% assign words = post.content | number_of_words %}
-
-{% if words < 360 %}
-  1 Minute
-{% else %}
-  <span class="fa fa-hourglass-o"></span>&nbsp; {{ words | divided_by:180 }} Minuten
-{% endif %}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 396 416" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-19.8635,-5.93174)">
+        <g id="Layer_1">
+            <g id="Angular.DE">
+                <g id="angular-de-logo">
+                    <g id="Shape" transform="matrix(1,0,0,1,19.8635,5.93174)">
+                        <path d="M35.937,323.668L7.037,76.168L195.737,8.468L388.837,74.268L358.037,322.568L195.737,407.668L35.937,323.668Z" style="fill:rgb(221,27,22);fill-rule:nonzero;"/>
+                    </g>
+                    <path id="Shape1" serif:id="Shape" d="M408.7,80.2L215.6,14.4L215.6,413.6L377.9,328.5L408.7,80.2Z" style="fill:rgb(166,18,13);fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    <g id="Layer_2">
+        <path id="Shape_2_" d="M249.1,228L195.8,251.6L139.6,251.6L113.1,314.2L64,315.1L195.7,37.5L249.1,228ZM243.9,216.1L196.1,126.5L156.9,214.6L195.8,214.6L243.9,216.1Z" style="fill:rgb(51,51,51);fill-rule:nonzero;"/>
+        <path id="Shape_3_" d="M195.7,37.5L196.1,126.5L240.6,214.7L195.8,214.7L195.7,251.6L257.6,251.7L286.5,315.1L333.5,315.9L195.7,37.5Z" style="fill:rgb(26,26,26);fill-rule:nonzero;"/>
+    </g>
+    <g id="Layer_3">
+        <path d="M318.8,175.3C315.6,168.8 311.2,163.6 305.8,159.7C300.4,155.8 294.4,153.7 287.9,153.3C281.4,152.9 275,154.3 268.6,157.4L245.4,168.8L280.7,241L304.4,229.4C310.6,226.3 315.6,222.1 319.2,216.6C322.8,211.2 324.8,205.1 325,198.5C325.2,191.9 323.7,185.3 320.5,178.7L318.8,175.3ZM306.4,205.1C305.5,210 302.5,213.6 297.5,216.1L291.5,219.1L269.3,173.7L275.1,170.8C280.2,168.3 285,168.2 289.4,170.4C293.8,172.6 297.7,177.2 301.1,184.2L302.6,187.3C306.1,194.3 307.3,200.3 306.4,205.1Z" style="fill:white;fill-rule:nonzero;"/>
+        <path d="M343.5,172.2L370.9,158.8L364.6,145.9L337.2,159.3L329.8,144.1L362.2,128.2L355.6,114.8L305.8,139.1L341.1,211.3L373.8,195.3L376,177.7L352,189.4L343.5,172.2Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+</svg>

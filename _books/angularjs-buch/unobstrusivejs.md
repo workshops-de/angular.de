@@ -1,6 +1,7 @@
 ---
 number: 6.20
 title: Unobtrusive JavaScript
+description: Lerne, warum AngularJS nicht auf Unobstrusive JavaScript setzt und wie trotzdem der Quellcode wartbar bleibt.
 part: Konzepte und Hintergründe
 progress: 95
 ---

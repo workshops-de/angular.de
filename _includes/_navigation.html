@@ -1,42 +1,55 @@
-<nav data-headroom-top="" class="navbar navbar-inverse bg-inverse navbar-toggleable-sm fixed-top headroom headroom--top headroom--not-bottom">
-  <div class="container">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/">
-      <img alt="AngularJS.DE" heigth="30" src="/assets/img/angularjs-de-logo.svg" width="30">
-    </a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item {% if page.url contains '/artikel' %}active{% endif %}">
-          <a class="nav-link" href="/artikel/">Artikel</a>
-        </li>
-        <li class="nav-item {% if page.url contains '/tutorials' %}active{% endif %}">
-          <a class="nav-link" href="/tutorials/">Tutorials</a>
-        </li>
-       <li class="nav-item">
-          <a class="nav-link" href="http://community.angularjs.de" target="_blank">
-            Forum
-          </a>
-        </li>
-        <li class="nav-item {% if page.url contains '/workshops' %}active{% endif %}">
-          <a class="nav-link" href="/workshops/angular-intensiv/">Schulung</a>
-        </li>
-        <li class="nav-item {% if page.url contains '/consulting' %}active{% endif %}">
-          <a class="nav-link" href="/consulting/">Consulting</a>
-        </li>
-      </ul>
+<div class="navbar-wrapper">
+  <nav class="navbar navbar-dark navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4 img-grayscale-100" href="/">
+        <img alt="Angular.DE" src="/assets/img/logo-white.svg" width="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item {% if page.url contains '/artikel' %}active{% endif %}">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/tutorials' %}active{% endif %}">
+            <a class="nav-link" href="/tutorials/">Tutorials</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/schulungen' %}active{% endif %}">
+            <a class="nav-link" href="/schulungen/">Schulungen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/consulting" target="_blank">Consulting</a>
+          </li>
+          <li class="nav-item dropdown{% if page.url contains '/ng-de-konferenz' %} active{% endif %}">
+            <a class="nav-link" href="#" id="navbarCourseDropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Community
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarCourseDropdown">
+              <a class="dropdown-item" href="/meetups/">Meetups</a>
+              <a class="dropdown-item" href="/videos/">Videos</a>
+              <!-- <a class="dropdown-item" href="/ng-de-konferenz/">NG-DE Konferenz</a> -->
+              <a class="dropdown-item" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/jobs" target="_blank">Jobs</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item {% if page.url contains '/jobs' %}active{% endif %}">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="text" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
 
-      <ul class="navbar-nav mr-2">
-        <li class="nav-item">
-          <a class="nav-link" href="https://slack.angularjs.de" alt="Slack">
-            <img src="https://slack.angularjs.de/badge.svg" alt="Angular Slack" />
-          </a>
-        </li>
-      </ul>
-      <form class="form-inline" action="/suche/" method="GET">
-        <input name="q" class="form-control navbar-search" type="text" placeholder="Suche">
-      </form>
-    </div>
-  </div>
-</nav>
+{% include shared/_navigation_banner.html %}
+</div>

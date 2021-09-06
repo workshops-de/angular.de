@@ -1,0 +1,47 @@
+name: Build Jekyll and Deploy to Firebase
+
+on:
+  push:
+    branches-ignore:
+      - "dependabot/**"
+  pull_request:
+  schedule:
+  - cron: "0 2 * * *"
+
+env:
+  JEKYLL_ENV: production
+  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Cache
+      uses: actions/cache@v2.1.2
+      with:
+        path: ~/.firebase, ~/.jekyll-cache, ~/vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        --env JEKYLL_ENV=production \
+        --env YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }} \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod -R 777 /srv/jekyll && jekyll build"
+
+    - name: Deploy
+      if: github.ref == 'refs/heads/master'
+      uses: doonstore/firebase-deploy@v1
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_PROJECT: 'default'

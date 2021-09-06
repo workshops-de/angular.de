@@ -1,45 +1,81 @@
 ---
 ---
+// 🔝 those lines above are needed by jekyll
 
-// Variables
-//
-$font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// General
+// $enable-shadows: true;
 
-$border-radius: 0;
-$border-radius-sm: 0;
-$border-radius-lg: 0;
+// Font / Typographie
+$font-family-sans-serif: "Source Sans Variable", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+$font-size-base: 1.1rem;
 $line-height-base: 1.618;
-$headings-margin-bottom: 1.1rem;
-$card-cap-bg: #fff;
+$headings-font-weight: 600;
 
-$brand-primary:         #0386c9;
-$brand-success:         #43ac6a;
-$brand-warning:         #e99002;
-$brand-danger:          #f04124;
-$brand-info:            #5bc0de;
+$code-font-size: .875em;
+
+// Theme Colors
+$primary: #1565c0; // #4eafca
+$black:  #000;
+$white:  #fff;
+$yiq-contrasted-threshold:  195;
+
+// Containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+// Spacers
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 6)
+), $spacers);
+
+// Links
+$link-decoration: none;
+
+// Cards
+$card-cap-bg: $white;
+$card-border-color: $white;
+
+// Pagination
+$pagination-border-width: 0;
+$pagination-padding-y: 1rem;
+$pagination-padding-x: 1rem;
+
+// Carousel
+$carousel-indicator-height: 5px;
+$carousel-indicator-active-bg: $primary;
+
+// Settings
+$navbar-brand-font-size: 1rem;
+$navbar-main-background: #1565c0;
+$navbar-light-color: rgba($black, .54);
+$navbar-dark-color: rgba($white, 1);
+$navbar-dark-hover-color: rgba($white, 1);
+$headings-margin-bottom: 1.1rem;
+$carousel-control-width: 6%;
+
+$btn-primary-color: $white;
+
+$footer-link-color: #bbb;
+$footer-link-color-hover: #bbb;
+$footer-color: #fff;
+$footer-background: #262a2f;
 
 // Imports
 //
-
-@import "bootstrap";
-@import "mixins";
-@import "font-source-sans";
-@import 'font-playfair';
-@import "font-awesome";
-@import "inputs";
-@import "turbolinks";
-@import "image-loader";
-@import "navigation";
-@import "footer";
-@import "rouge-highlight";
-@import "headroom";
-@import "google-search";
-@import "header";
-@import "sticky";
-@import "col-count";
-@import "post";
-@import "code";
-@import "unsorted-crap";
+@import "../../shared/theme/theme";
 
 // Nothing else
 // Pay 10 Euros if you commit sth. here

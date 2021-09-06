@@ -10,7 +10,7 @@ AngularJS ist von Haus aus kompatibel zum Internet Explorer ab Version 9. Kompat
 
 Die Kompatibilität mit älteren Versionen des Internet Explorers bricht an zwei Stellen. Zum Einen fehlt eine vollständige JavaScript-Unterstützung und zum Anderen treten Probleme mit HTML-Elementen von AngularJS auf.
 
-### JavaScript-Erweiterungen (IE6 / IE7)
+## JavaScript-Erweiterungen (IE6 / IE7)
 
 AngularJS benötigt JSON.stringify. Da JSON erst ab dem Internet Explorer 8 [unterstützt](https://blogs.msdn.microsoft.com/ie/2008/09/10/native-json-in-ie8/) unterstützt wird, müssen wir ältere Versionen mit so genannten Polyfills nachrüsten. Dies sind Bibliotheken, die Funktionen in JavaScript implementieren, welche in neueren Browsern nativ vorhanden sind.
 
@@ -27,7 +27,7 @@ ACHTUNG: JSON3 muss vor AngularJS geladen werden.
 </head>
 ```
 
-### HTML-Elemente (IE6-8)
+## HTML-Elemente (IE6-8)
 
 Im HTML-Bereich krankt die Unterstützung für AngularJS an den gleichen Problemen wie HTML5. Ältere Versionen des Internet Explorers können mit unbekannten Elementen nicht richtig umgehen und sortieren diese im DOM falsch ein. AngularJS benutzt eigene Elemente, wie z.B. `<ng-include>` oder `<ng-view>`, die in älteren HTML-Standards fehlen. Damit der Internet Explorer diese Elemente korrekt behandelt, müssen sie diesem vor der ersten Benutzung bekannt gemacht werden.
 
