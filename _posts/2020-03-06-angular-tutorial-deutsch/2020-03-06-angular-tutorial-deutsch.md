@@ -264,49 +264,6 @@ const user = {
 console.log("Hi my name is", user.name); // Hi my name is Tom
 ```
 
-Wir legen unseres Fokus mal auf diese 3 Zeilen:
-
-```ts
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch(err => console.error(err));
-```
-
-Hier passiert das entscheidende.
-Die Angular Platform wird gestartet und es wird ein Modul angegeben womit die Platform hochfahren soll.
-
-Um zu verstehen was hier passiet, muss man sich Javascript Applikationen wie sie heute geschrieben werden ansehen.
-
-Fast alle JavaScript Frameworks unterstützen Komponentenbasierte Anwendungen.
-Im prinzip kann man sich eine Anwendung vorsellen wie eine html Tabele.
-
-```html
-<table>
-  <thead>
-    <tr>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td></td>
-    </tr>
-  </tfoot>
-</table>
-```
-
-Alles begint in dem `table` Tag und wird immer weiter verfeinert.
-Das bedeutet Ich muss nur definieren wo die Tabelle stehen soll, um den Rest kümmert sich die Tabelle selbst.
-So verhält es sich auch mit Komponentbassierten Anwendungen wie solchen die mit Angular gebaut wurden.
-Die Angular Platform fährt das Hauptmodul hoch und dieses Modul kummert sich um alles andere.
-
-Damit sind wir schon beim ersten element von Angular welches wir uns anschauen wollen.
-
 ### NgModule
 
 ### Component
