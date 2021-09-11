@@ -613,65 +613,9 @@ Diese Methode binden wir an das CustomEvent `selected` der ListeComponent binden
 ></app-liste>
 ```
 
-Um nun den `selectedUser` an die DetailsComponnet zu über geben, sollte kein Problem darstellen. Wiederholt einfach die Schritte mit dem `Input`.
-
-Hier mein Code dazu:
-
-##### Die AppComponent
-
-```html
-<app-liste
-  [usersliste]="users"
-  (selected)="setSelectedUser($event)"
-></app-liste>
-<app-details [user]="selectedUser"></app-details>
-```
-
-##### DetailsComponent
-
-```ts
-import { Component, Input } from "@angular/core";
-
-@Component({
-  selector: "app-details",
-  template: `
-    <h2>Name: {{ user.name }}</h2>
-    <h3>Birth Year: {{ user.birth_year }}</h3>
-    <h3>height: {{ user.height }}</h3>
-    <h3>Hair Color: {{ user.hair_color }}</h3>
-    <h3>Skin Color: {{ user.skin_color }}</h3>
-    <h3>Gender: {{ user.gender }}</h3>
-  `
-})
-export class DetailsComponent {
-  @Input() user;
-}
-```
-
-Wenn wir jetzt auf einen Listeneintrag klicken, werden die Details dazu angezeigt.
-
-Aber wenn wir uns die Entwicklerkonsole vom Browser anschauen, ist sie voller Fehler!.
-
-> <label style="color:red">ERROR TypeError: Cannot read property 'name' of undefined
-
-    at DetailsComponent_Template ...</label>
-
-Das Problem ist, wir versuchen auf daten zuzugreifen, die nicht da sind. Initial ist `selectedUser` nicht definiert (`undefined`).
-Aber hier gibt es einen einfachen trick.
-Wir haben weiter oben die Strucktur Direktive `*ngIf` kennengelernt. diese wollen wir hier nutzen um `selectedUser` zu prüfen.
-
-```html
-<app-details *ngIf="selectedUser" [user]="selectedUser"></app-details>
-```
-
-Damit werden die Details aus demTemplate rausgenommen, regelrecht rausgeschnitten, wenn `selectedUser` falsy ist.
-
-> Grundsätzlich gilt: Wann immer wir im Template auf Daten zugreifen die zu einem beliebigen Zeitpunkt nicht verfügbar sind (asynchron, gelöscht,...) sollte mit `*ngIf` deren Existenz überprüft werden.
-
 ### Service
 
 In einer Applikation kommen die Nutzerdaten aber selten (bis nie) aus der GUI. Wir wollen auch hier die Nutzer aus einem Backend laden.
-Die Daten wollen wir von der offenen API (https://swapi.co/api/people) laden.
 
 #### HTTPClient
 
