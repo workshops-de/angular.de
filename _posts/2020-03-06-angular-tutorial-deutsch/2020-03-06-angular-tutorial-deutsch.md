@@ -78,12 +78,11 @@ Die CLI kann uns in vileer hinsicht interstützen. Vorrausgesetzt wir kennen den
 hier mal die Befehle, welche für dieses Tutorial interessant sind Befehlen:
 (Alle Befehle werden mit ng aufgerufen und viele akzepziren zusatzliche Parameter)
 
-| Befehl   | Beschreibung                                                                                                                                                                                                                 |
-| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| new      | Erstellt einen neuen Arbeitsbereich und eine erste Angular-App                                                                                                                                                               |
-| serve    | Baut die app und stellt sie über einen lokalen Entwicklungsserver (der teil der CLI ist) unter `http://localhost:4200/` zur verfügung. Bei jeder Dateiänderungen wird neugebaut und der Browser läd die App automatisch neu. |
-| generate | Generiert Angular Elemente                                                                                                                                                                                                   |
-| build    | Bauen der Anwendung um sie anschliessend zu deployen                                                                                                                                                                         |
+| Befehl   | Beschreibung                                                   |
+| -------- | -------------------------------------------------------------- |
+| new      | Erstellt einen neuen Arbeitsbereich und eine erste Angular-App |
+| generate | Generiert Angular Elemente                                     |
+| build    | Bauen der Anwendung um sie anschliessend zu deployen           |
 
 Es gibt noch viel mehr Befehle, um z.B. Test oder Code checks auszuführen.
 
@@ -135,19 +134,7 @@ CREATE angular-de-tutorial/e2e/src/app.po.ts (301 bytes)
 ```
 
 Wiw lange dieser Vorgang dauert, hängt von der Rechenleistung eures Rechners und der Netzwerkgeschwindigkeit ab.
-Bei mir zuhause dauert das ca 40s, im W-Lan im ICE kann es auch mal 5m dauern, wobei m für Minuten steht :).
-
-Anschliessend können wir die Entwicklungsumgebung starten, wir müssen und mit der Console im Order der soeben Generierten App befinden.
-
-```bash
-cd angular-de-tutorial
-ng serve
-```
-
-Wir sollten dann folgende ausgebe sehen
-`Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ : Compiled successfully.`
-
-Dann hat alles geklappt und wir konne im Browser `http://localhost:4200/` aufrufen.
+Bei mir zuhause dauert das ca 40s, im ICE kann es auch mal 5m dauern, wobei m für minuten steht :).
 
 ### Bootstrapping
 
