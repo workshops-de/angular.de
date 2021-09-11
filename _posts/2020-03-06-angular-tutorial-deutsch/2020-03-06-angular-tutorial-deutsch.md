@@ -309,39 +309,7 @@ Damit sind wir schon beim ersten element von Angular welches wir uns anschauen w
 
 ### NgModule
 
-Das Hauptmodul ist in unserem Fall das AppModule.
-
-```ts
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule {}
-```
-
-In diesem Modul definieren wir potentielle Abhängigkeiten zu anderen Modulen und die Haupt-Komponente unserer Anwendung die `AppComponent`.
-Ihr könnt euch ein `NgModule` auch als Dependency-Container vorstellen.
-
-Angular nutzt für alle Elemente Klassen und Decoratoren um Metadaten zu definieren.
-
-> **Klassen** wurden in ES2015 eingeführt, um Konzepte wie unter anderem Vererbung und Konstruktoren nicht mehr über Prototypen abbilden zu müssen. Diese können nun über eine einfache und saubere Syntax erstellt werden.
-
-> **Decorator** sind strukturierte Meta-Daten einer Klasse. Ihr kennt diese vielleicht aus anderen Programmiersprachen wie z.B. Java. Das eigentliche fachliche Verhalten der Komponente bilden wir innerhalb der Klasse mit Methoden ab. Somit haben wir das Model und die Anzeige-Logik der Komponente sehr sauber getrennt.
-
 ### Component
-
----
-
-- was sind komponenten
-- wie sehen sie aud
-- woraus bestehen sie
-- was machne sie
-
----
-
-Angular lehnt sich deutlich an die offiziellen Web-Components an. Deshalb liegt es auf der Hand, dass wir einfach ein neues HTML-Element einführen welches unsere Anwendung an dieser Stelle für uns generiert. In unserem Fall unsere Pizza-Anwendung.
 
 ### Service
 
