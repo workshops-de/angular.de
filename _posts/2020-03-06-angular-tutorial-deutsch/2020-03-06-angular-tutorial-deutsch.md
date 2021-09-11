@@ -402,12 +402,12 @@ Damit ist es möglich, Daten aus derm Controller in der View anzuzeigen. Diese A
 
 Wir wollen ja eine Userliste anzeige, dafür benötigen wir User. Ich habe mir erlaubt eine Nutzerliste aus der Starwars API zu holen. Diese werden wir **vorerst** in unserer AppComponent ablegen.
 
-Ihr könnt euch die Daten von [hier](./user.json) kopieren und im Klassenattribut `users` ablegen.
+Ihr könnt euch di Daten von [hier](./user.json) kopieren und im Klassenattribut `data` ablegen.
 
 ```ts
 export class AppComponent {
   title = 'angular-de-tutorial';
-  users = [
+  data = [
     {
       "name": "Luke Skywalker",
       ...
@@ -418,61 +418,23 @@ export class AppComponent {
 
 Wenn wir diese daten jetzt anzeigen wollen wissen wir, dass wir dies als expression tun können.
 
-`{{users}}`
+```ts
+{
+  {
+    data;
+  }
+}
+```
 
 Aber Objekte werden von Angular als Text geparst und alles was wir sehen ist
 
 `[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]`
-Wir könnte auf ein bestimtes Attribute der Userliste zugreifen.
-`{{ users[0].name }}`
-
-Damit wird de Name des Ersten Nutzers (Luke Skywalker) ausgegeben.
-
-Aber wir wollen doch die Liste der User ausgeben.
-Hierfür können wir eine sogenannte Strucktur Direktive nutzen.
-Eine Direktive ist eine Angular Funktionalität mit der man die View verändern kann. Eine Struktur Direktive nimmt ein DOM element und kann diesen Modifiziert wiedergeben. Direktivern werden im Template angewendet.
-
-### NgFor NgIf
-
-In Angular gibt es zwei Strucktur Direktiven.
-`*ngIf` und `*ngFor`.
-
-#### Das \* Symbol in Angular
-
-Das Asterisk-Zeichen stellt die Kurzschreibweise einer strukturellen Direktive dar.
-
-#### NgIf
-
-Mit dieser Direktive können DOM Elemente abhängig von konditionen ein und ausgeblendet werden.
-
-```html
-<label *ngIf="true">Moin</label>
-```
-
-#### NgFor
-
-Mit dieser Direktive können wir über eine Liste iterieren und ein DOM ELement beliebig heufig kopieren.
-
-> Im Prinzip steckt dahinter eine for-of schleife wie wir sie aus JavaScript kennen.
-
-```ts
-users = [...]
-for(let user of users){
-  console.log(user.name)
-}
-```
-
-In der Kopie des Dom Elements haben wir zugriff auf die Schleifenvarialbe.
-
-```html
-<ul>
-  <li *ngFor="let user of users">{{ user.name }}</li>
-</ul>
-```
 
 ### Service
 
 #### HTTPClient
+
+### NgFor NgIf
 
 #### Input
 
