@@ -34,8 +34,15 @@
               <a class="dropdown-item" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://workshops.de/jobs" target="_blank">Jobs</a>
+          <li class="nav-item dropdown{% if page.url contains '/autor-werden' %} active{% endif %}">
+            <a class="nav-link" href="#" id="navbarMoreDropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Mehr
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarMoreDropdown">
+              <a class="dropdown-item" href="https://workshops.de/jobs">Werde Trainer:in</a>
+              <a class="dropdown-item" href="/autor-werden/">Werde Autor:in</a>
+            </div>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
