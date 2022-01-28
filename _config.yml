@@ -43,6 +43,11 @@ defaults:
     values:
       layout: "page"
   - scope:
+      path: "opengraph"
+    values:
+      image: true
+      sitemap: false
+  - scope:
       path: "assets"
     values:
       sitemap: false
@@ -82,6 +87,7 @@ exclude:
   - nginx.conf
   - cloudbuild.yaml
   - firebase-debug.log
+  # - shared
 
 # webrick:
 #   headers:

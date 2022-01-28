@@ -1,0 +1,20 @@
+{
+  "name": "angular.de",
+  "version": "1.0.0",
+  "description": "Requires Ruby 2.5+",
+  "main": "opengraph.js",
+  "devDependencies": {
+    "canvas": "^2.9.0",
+    "commander": "^8.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/symetics/angular.de.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/symetics/angular.de/issues"
+  },
+  "homepage": "https://angular.de"
+}
