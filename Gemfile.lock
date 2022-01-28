@@ -13,7 +13,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    execjs (2.8.1)
+    execjs (2.7.0)
     fastimage (2.2.6)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
