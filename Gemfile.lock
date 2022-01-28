@@ -21,7 +21,7 @@ GEM
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     http_parser.rb (0.8.0)
-    i18n (1.9.0)
+    i18n (1.9.1)
       concurrent-ruby (~> 1.0)
     jekyll (4.2.1)
       addressable (~> 2.4)
