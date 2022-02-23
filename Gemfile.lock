@@ -95,7 +95,7 @@ PLATFORMS
 DEPENDENCIES
   execjs (= 2.7.0)
   fastimage
-  jekyll (~> 4.2.0)
+  jekyll (~> 4.2.1)
   jekyll-autoprefixer (~> 1.0)
   jekyll-feed
   jekyll-paginate-v2
