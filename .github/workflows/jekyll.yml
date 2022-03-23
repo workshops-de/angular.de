@@ -41,12 +41,15 @@ jobs:
           ${{ runner.OS }}-
 
     - name: Use Node.js
-      uses: actions/setup-node@v1
-      with: { node-version: '17.x' }
+      uses: actions/setup-node@v2
+      with:
+        node-version: '17'
+        cache: 'npm'
 
     - name: Use Ruby
-      uses: actions/setup-ruby@v1
-      with: { ruby-version: '3.1.1' }
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
 
     - name: Install dependencies 🔧
       run:  |
