@@ -32,3 +32,5 @@ end
 
 gem "webrick", "~> 1.7"
 gem 'execjs', '2.7.0'
+gem "rickshaw", "~> 0.5.0"
+
