@@ -1,5 +1,6 @@
 _site
 node_modules
+opengraph/*
 .sass-cache
 .jekyll-metadata
 .jekyll-cache
