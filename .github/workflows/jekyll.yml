@@ -23,25 +23,51 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Cache
-      uses: actions/cache@v2.1.2
+    - name: Cache Bundler 💾
+      uses: actions/cache@v2
       with:
         path: ~/.firebase, ~/.jekyll-cache, ~/vendor/bundle
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
+          
+    - name: Cache NPM packages 💾
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
 
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        --env JEKYLL_ENV=production \
-        --env YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }} \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod -R 777 /srv/jekyll && jekyll build"
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with: { node-version: '12.x' }
 
-    - name: Deploy
-      if: github.ref == 'refs/heads/master'
-      uses: doonstore/firebase-deploy@v1
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        FIREBASE_PROJECT: 'default'
+    - name: Use Ruby
+      uses: actions/setup-ruby@v1
+      with: { ruby-version: '2.7.3' }
+
+    - name: Install dependencies 🔧
+      run:  |
+        npm ci
+        bundle config set path vendor/bundle
+        bundle install --jobs 4 --retry 3
+        
+    - name: Build 🏗
+      run: bundle exec jekyll build --trace
+
+#     - name: Build the site in the jekyll/builder container
+#       run: |
+#         docker run \
+#         --env JEKYLL_ENV=production \
+#         --env YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }} \
+#         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+#         jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod -R 777 /srv/jekyll && jekyll build"
+
+#     - name: Deploy
+#       if: github.ref == 'refs/heads/master'
+#       uses: doonstore/firebase-deploy@v1
+#       env:
+#         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+#         FIREBASE_PROJECT: 'default'
