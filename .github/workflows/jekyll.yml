@@ -68,9 +68,9 @@ jobs:
 #         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
 #         jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod -R 777 /srv/jekyll && jekyll build"
 
-#     - name: Deploy
-#       if: github.ref == 'refs/heads/master'
-#       uses: doonstore/firebase-deploy@v1
-#       env:
-#         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-#         FIREBASE_PROJECT: 'default'
+    - name: Deploy
+      if: github.ref == 'refs/heads/master'
+      uses: doonstore/firebase-deploy@v1
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_PROJECT: 'default'
