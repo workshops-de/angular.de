@@ -10,7 +10,7 @@ hotjar_id: "2596713"
 utm_source: "angular_de"
 permalink: /artikel/:slug/
 repository_url: "https://github.com/symetics/angular.de"
-og_generator_enabled: false
+og_generator_enabled: true
 
 navigation:
   banner:
