@@ -44,6 +44,11 @@ defaults:
     values:
       layout: "page"
   - scope:
+      path: "opengraph"
+    values:
+      image: true
+      sitemap: false
+  - scope:
       path: "assets"
     values:
       sitemap: false
