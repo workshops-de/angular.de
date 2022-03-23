@@ -1,3 +1,4 @@
+require 'fileutils'
 require 'rest-client'
 require 'rickshaw'
 
@@ -16,6 +17,10 @@ module Jekyll
         slug = context["page"]["slug"]
         id = context["page"]["id"].to_sha1
         filename = "#{slug}_#{id}"
+
+        unless(File.directory?("#{Dir.pwd}/opengraph/#{@outputDir}"))
+          FileUtils.mkdir_p "#{Dir.pwd}/opengraph/#{@outputDir}"
+        end
 
         # Check if the file already exists in the 'opengraph' foldler, return early if it does
         if(File.exist?("#{Dir.pwd}/opengraph/#{@outputDir}#{filename}.jpg"))
@@ -37,7 +42,7 @@ module Jekyll
         site = context.registers[:site]
 
         # Add the file to the list of static_files needed to be copied to the _site
-        # site.static_files << Jekyll::StaticFile.new(site, site.source, "/opengraph/#{@outputDir}", "#{filename}.jpg")
+        site.static_files << Jekyll::StaticFile.new(site, site.source, "/opengraph/#{@outputDir}", "#{filename}.jpg")
 
         "/opengraph/#{@outputDir}#{filename}.jpg"
       else
