@@ -87,6 +87,11 @@
                 <span class="badge bg-info"><small>Frühbucher Rabatt</small></span>
                 {% endif %}
               </span>
+              <span>
+                {% if event.women_only == true %}
+                <span class="badge bg-womenonly"><small>Women only</small></span>
+                {% endif %}
+              </span>
             </span>
             <meta itemprop="name" content="{% if include.icon %}{{ include.icon }}{% else %}📅{% endif %} {{ event.topic }} {{ event.type }}">
             <meta itemprop="description" content="{{ event.description }}">
@@ -178,6 +183,11 @@
                   <span>
                     {% if event.early_bird == true %}
                     <span class="badge bg-info"><small>Frühbucher Rabatt</small></span>
+                    {% endif %}
+                  </span>
+                  <span>
+                    {% if event.women_only == true %}
+                    <span class="badge bg-womenonly"><small>Women only</small></span>
                     {% endif %}
                   </span>
                 </span>
