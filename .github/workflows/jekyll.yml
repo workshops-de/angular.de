@@ -30,7 +30,7 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-          
+
     - name: Cache NPM packages 💾
       uses: actions/cache@v2
       with:
@@ -56,17 +56,9 @@ jobs:
         npm ci
         bundle config set path vendor/bundle
         bundle install --jobs 4 --retry 3
-        
+
     - name: Build 🏗
       run: bundle exec jekyll build --trace
-
-#     - name: Build the site in the jekyll/builder container
-#       run: |
-#         docker run \
-#         --env JEKYLL_ENV=production \
-#         --env YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }} \
-#         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-#         jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod -R 777 /srv/jekyll && jekyll build"
 
     - name: Deploy
       if: github.ref == 'refs/heads/master'
