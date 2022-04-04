@@ -11,14 +11,14 @@ language: "en"
 ---
 
 
-# David's way into tech
+## David's way into tech
 
 I've been asked a lot about how I became a developer.
 So I decided to write about my journey.
 
 This is a very personal post, so almost no technical content, just personal experience.
 
-## 1997 -2004
+### 1997 -2004
 
 In my last year at school, I had to make a decision. I have had almost a plan for what to do with my life. I want to become a Sound engineer.
 Therefore I either needed a high school diploma or completed vocational training.
@@ -27,7 +27,7 @@ The training company was awesome.
 I learned so much and enjoyed the topic.
 What I loved the most: Fixing TVs and VCRs. After my training, I moved to Hamburg in order to start a job in a small workshop.
 
-## 2004
+### 2004
 
 At this time I realized that most of the televisions in the shop became flat TVs.
 So, after two years I quit that job and joined a company that made aircraft electronics. Passenger control units and entertainment systems for several companies such as Boing, Airbus, Bombardier...
@@ -53,7 +53,7 @@ It grew over time and I added more Information to me. After some weeks, I was wo
 That was the day someone introduced JavaScript to me. This was back in 2004. The developers around me told me to learn something serious not that toy. However, I fell in love with JavaScript, so I didn't listen. Turns out, I was going to be right.
 Since then I've learned a lot of cool stuff, but most importantly, I learned how to learn and how important a mentor can be.
 
-## 2014
+### 2014
 
 I can't remember how I started with AngularJS but I can remember the day when I had my first attempt with Angular2. It was at around alpha-52.
 At this time, I had already started doing workshops at my employer at the time and I wrote blog posts on how to do web technologies.
@@ -66,13 +66,13 @@ But he was very nice and asked me to join the community. He also asked me, if I'
 
 This was the beginning of very successful collaboration and we became friends.
 
-## 2016
+### 2016
 
 In 2016, the first conference organizer reached out to me to have me as a speaker. I was totally scared because of my English skills. Then I found talk by [Manfred Steyer](https://www.angulararchitects.io/) on YouTube and his confidence on stage gave me courage on doing this. Later that year, I finally met him in person and thanked him for his silent mentorship.
 We started collaborating and we became friends.
 At this time some Developers from the Angular Community recognized me and encouraged me to send an application to the Google Developer Expert program.
 
-## 2017
+### 2017
 
 In 2017 I decided to give it a go as a freelancer. At the same time, my GDE application was approved and I was announced as a GDE in Angular and web Technologies.
 
