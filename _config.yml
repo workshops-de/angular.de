@@ -4,9 +4,7 @@ topic: Angular
 url: "https://angular.de" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: angular_de
 github_username:  jekyll
-ga_property: "UA-39010393-1"
 gtm_property: "GTM-T5VPDDK"
-hotjar_id: "2596713"
 utm_source: "angular_de"
 permalink: /artikel/:slug/
 repository_url: "https://github.com/symetics/angular.de"
@@ -56,8 +54,6 @@ defaults:
       path: "shared/assets"
     values:
       sitemap: false
-
-
 
 pagination:
   enabled: true
