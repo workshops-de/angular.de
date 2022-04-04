@@ -21,7 +21,7 @@ plugins_dir: ["_plugins/", "shared/plugins/"]
 
 collections:
   books:
-    output: true
+    output: false
     permalink: /buecher/:path/
   pages:
     output: true
