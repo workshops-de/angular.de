@@ -1,6 +1,7 @@
 require 'fileutils'
 require 'rest-client'
 require 'rickshaw'
+require 'cgi'
 
 module Jekyll
   class OGFilter < Liquid::Tag
@@ -33,7 +34,7 @@ module Jekyll
           else
             "#{Dir.pwd}/opengraph/default.png"
           end
-          script = "node #{Dir.pwd}/opengraph.js -t \"#{context["page"]["title"]}\" -d '#{context["page"]["date"].strftime("%e %B %Y")}' -a '#{context["page"]["author"]}' -b '#{background}' -o '#{Dir.pwd}/opengraph/#{@outputDir}#{filename}.jpg'"
+          script = "node #{Dir.pwd}/opengraph.js -t \"#{CGI.unescapeHTML(context["page"]["title"])}\" -d '#{context["page"]["date"].strftime("%e %B %Y")}' -a '#{context["page"]["author"]}' -b '#{background}' -o '#{Dir.pwd}/opengraph/#{@outputDir}#{filename}.jpg'"
           puts script
           system(script)
         end
