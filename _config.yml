@@ -12,7 +12,7 @@ og_generator_enabled: true
 
 navigation:
   banner:
-    message: "10% Rabatt auf alle Workshops.DE Schulungen mit dem Code: <b>ANGULARDE10</b>"
+    message: "Wir bieten nun einen <b>Gruppenrabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei."
     href: "https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=portal-discount&utm_medium=banner&utm_content=workshops-overview"
 
 plugins_dir: ["_plugins/", "shared/plugins/"]
