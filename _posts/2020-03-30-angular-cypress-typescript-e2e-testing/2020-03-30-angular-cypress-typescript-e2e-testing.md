@@ -51,30 +51,30 @@ npx @angular/cli new <app-name>
 ```
 
 # Cypress aufsetzen<a name="setup"></a>
-Um Cypress zusammen mit TypeScript so schnell wie möglich aufzusetzen, nutzen wir eine von [BrieBug](https://www.npmjs.com/package/@briebug/cypress-schematic) entwickelte Schematic.
+Um Cypress zusammen mit TypeScript so schnell wie möglich aufzusetzen, nutzen wir die vom [Cypress-Team](https://www.npmjs.com/package/@cypress/schematic) entwickelte Schematic.
 
 Im Wurzelverzeichnis des Angular Projekts öffnen wir das Terminal und geben folgenden Befehl ein:
 
 ```sh
-ng add @briebug/cypress-schematic --addCypressTestScripts
+ng add @cypress/schematic
 ```
 
 Falls die CLI nicht global installiert ist, könnte es sein, dass der `ng` Befehl nicht direkt verfügbar ist. Wir können den Aufruf des lokalen `ng` aus der `package.json` erzwingen:
 
 ```sh
 # Falls 'ng' allein nicht gefunden werden konnte
-npm run ng -- add @briebug/cypress-schematic
+npm run ng -- add @cypress/schematic
 ```
 
 Wir können ohne Bedenken Protractor entfernen, weil es vollständig ersetzt wird. Während der Installation werden ein paar Binardateien heruntergeladen, da der Cypress Test-Runner eine in [Electron](https://www.electronjs.org/) gepackte Oberfläche ist.
 
-Durch die Verwendung des Parameters `--addCypressTestScripts` werden zwei nützliche npm Skripte hinzugefügt, die das Arbeiten mit Cypress komfortabler machen: Eins, um die E2E Tests mit, das andere, um die Tests ohne die Benutzeroberfläche auszuführen.
+Bei der Installation wurden zwei nützliche npm Skripte hinzugefügt, die das Arbeiten mit Cypress komfortabler machen: Eins, um die E2E Tests mit, das andere, um die Tests ohne die Benutzeroberfläche auszuführen.
 
 ```json
     // package.json Skripte
 
-    "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
 ```
 
 Würde man eines dieser Skripte alleinstehend laufen lassen, würde der Test zunächst fehlschlagen, weil er versuchen würde auf *http://localhost:4200* zu navigieren, wo aktuell noch nichts bereitgestellt wird. Um das zu beheben, können wir ein zweites Konsolenfenster öffnen und unsere Angular Applikation vorher mit `npm start` bereitstellen.
@@ -87,7 +87,7 @@ npm run e2e
 
 Cypress erkennt, dass es zum ersten Mal ausgeführt wird. Es verifiziert seine Installation und fügt ein paar grundlegende Beispieldateien hinzu. Nachdem die Oberfläche startet, können wir bereits einen Test sehen, der für uns erstellt wurde.
 
-<img src="/shared/assets/img/placeholder-image.svg" alt="Cypress Oberfläche nach cy:open oder e2e" class="lazy" data-src="03-cy-open.png" data-srcset="03-cy-open.png"
+<img src="/shared/assets/img/placeholder-image.svg" alt="Cypress Oberfläche nach cypress:open oder e2e" class="lazy" data-src="03-cy-open.png" data-srcset="03-cy-open.png"
  />
 
 Der Test wird ausgeführt, sobald wir ihn auswählen. Initial wird er fehlschlagen, weil wir tatsächlich noch nichts wirklich testen. Das werden wir nun beheben.
