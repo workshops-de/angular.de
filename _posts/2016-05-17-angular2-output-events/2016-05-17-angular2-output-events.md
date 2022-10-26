@@ -57,7 +57,7 @@ Es besteht auch die Möglichkeit eigene Events zu erzeugen, diese auszuführen u
 
 ### Components/Directives
 
-In Angular können Standart-DOM-Events sehr einfach genutzt werden. Dazu schreibt ihr das Event, was abgefangen werden soll, in die bereits aus dem Einführungsartikel bekannten `()` (Output) Klammern. Als Wert setzt ihr eine Expression, worunter auch Funktionsaufrufe zählen.
+In Angular können Standard-DOM-Events sehr einfach genutzt werden. Dazu schreibt ihr das Event, was abgefangen werden soll, in die bereits aus dem Einführungsartikel bekannten `()` (Output) Klammern. Als Wert setzt ihr eine Expression, worunter auch Funktionsaufrufe zählen.
 
 ```javascript
 @Component({
@@ -73,7 +73,7 @@ export class MyClickClass {
 }
 ```
 
-Darüber hinaus lassen sich auch eigene Events - in Angular Ouputs genannt - erzeugen. Diese werdet ihr später hauptsächlich benötigen, um Daten aus einer Komponente an ihre Elternkomponente weiterzureichen. Ein Anwendungsbeispiele dafür sind sogenannte *Dummy*-Komponenten/Direktiven, welche sich vor allem für Formulare anbieten. Die eigentliche Komponente nutzt eine weitere Komponente, die sich nur um das Formular an sich kümmert. Sie hält das Formular-Template, die Validierungslogik und gibt der Elternkomponente bescheid wann und was am Ende abgeschickt werden soll.
+Darüber hinaus lassen sich auch eigene Events - in Angular Outputs genannt - erzeugen. Diese werdet ihr später hauptsächlich benötigen, um Daten aus einer Komponente an ihre Elternkomponente weiterzureichen. Ein Anwendungsbeispiele dafür sind sogenannte *Dummy*-Komponenten/Direktiven, welche sich vor allem für Formulare anbieten. Die eigentliche Komponente nutzt eine weitere Komponente, die sich nur um das Formular an sich kümmert. Sie hält das Formular-Template, die Validierungslogik und gibt der Elternkomponente bescheid wann und was am Ende abgeschickt werden soll.
 
 *Hinweis: Erstellt eigene `Outputs`, um Daten an Elternkomponenten weiterzugeben.*
 
