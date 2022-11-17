@@ -1,3 +1,13 @@
+---
+title: Angular 15 Features
+description: Angular 15 ist da und es wurden wieder viele neue Features hinzugefügt.
+author: "David Müllerchen"
+published_at: 2020-11-16 15:00:00
+header_source: https://unsplash.com/photos/cxoR55-bels
+header_image: header.jpg
+categories: "angular update"
+---
+
 # Angular 15 ist da!
 
 Angular 15 ist da und es wurden wieder viele neue Features hinzugefügt.
