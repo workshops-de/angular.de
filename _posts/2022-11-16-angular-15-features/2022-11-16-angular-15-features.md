@@ -96,10 +96,19 @@ Das bringt uns direkt zum Router. Dieser kann jetzt auch ohne die Verwendung von
 Dafür wird der Router beim bootstraping als Provider übergeben. Auch die schon vertrauten Optionen die sonst der `forRoot` übergeben wurde sind weiter verfügbar.
 
 ```ts
+export const lazyRoutes: Routes = [{ path: "", component: PrivateComponent }];
+```
+
+```ts
 const aboutRoutes: Routes = [
   {
     path: "about",
     component: AboutComponent,
+  },
+  {
+    path: "private",
+    loadChildren: () =>
+      import("./feature/private").then((routes) => routes.lazyRoutes),
   },
 ];
 
