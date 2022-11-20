@@ -96,7 +96,7 @@ PLATFORMS
 DEPENDENCIES
   execjs (= 2.7.0)
   fastimage
-  jekyll (~> 4.2.1)
+  jekyll (~> 4.2.2)
   jekyll-autoprefixer (~> 1.0)
   jekyll-feed
   jekyll-paginate-v2
@@ -107,7 +107,7 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 RUBY VERSION
-   ruby 3.1.1p18
+   ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.6
+   2.3.7
