@@ -12,8 +12,8 @@ og_generator_enabled: true
 
 navigation:
   banner:
-    message: "Wir bieten nun einen <b>Gruppenrabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei."
-    href: "https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=portal-discount&utm_medium=banner&utm_content=workshops-overview"
+    message: "Werde <b>Tester:in</b> und sicher dir einen <b>Preisvorteil</b> für unsere Masterclass! Sei unter den ersten 100 Tester:innen unserer Angular Masterclass und zahle <b>1.399 €*</b> statt 2.299 €."
+    href: "https://workshops.de/masterclass?utm_source=angular_de&utm_campaign=portal-discount&utm_medium=banner&utm_content=page-masterclass"
 
 plugins_dir: ["_plugins/", "shared/plugins/"]
 
