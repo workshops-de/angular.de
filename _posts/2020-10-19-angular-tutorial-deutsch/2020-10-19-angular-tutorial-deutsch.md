@@ -2,7 +2,7 @@
 title: "Angular-Tutorial für Einsteiger"
 description: "Tutorial zu Angular, dem JavaScript-Framework. Wir gehen mit euch Schritt für Schritt die Konzepte des Frameworks anhand eines Beispiels durch."
 author: "Robin Böhm"
-published_at: 2020-10-19 08:00:00.000000Z
+published_at: 2022-10-19 08:00:00.000000Z
 categories: "tutorial angular"
 tutorial_page_order: "1"
 ---
