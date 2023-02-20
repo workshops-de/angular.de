@@ -11,7 +11,6 @@ Jekyll::Hooks.register :site, :after_init do |site|
     'Angular-Frankfurt',
     'angular-cologne',
     'angular-heidelberg',
-    'Angular-Kiel',
     'Angular-Meetup-Dresden',
     'Angular-Munich',
     'Swiss-Angular',

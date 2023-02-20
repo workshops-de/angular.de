@@ -9,7 +9,9 @@ opengraph/*
 _includes/_course_reviews.json
 _data/events/*.json
 _data/related_events/*.json
+_data/course_trainers/*.json
 _data/course.json
 _data/meetups.json
+_data/trainers.json
 _data/videos.json
 firebase-debug.log

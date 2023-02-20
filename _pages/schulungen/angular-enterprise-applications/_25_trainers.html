@@ -18,33 +18,40 @@
           <div class="carousel-inner pb-4">
             <div class="carousel-item active">
               <div class="row">
-                {% include_relative _includes/_trainer.html name="Robin Böhm" %}
-                {% include_relative _includes/_trainer.html name="Sascha Brink" %}
-                {% include_relative _includes/_trainer.html name="David Müllerchen"%}
-                {% include_relative _includes/_trainer.html name="Peter Müller" %}
-                {% include_relative _includes/_trainer.html name="Aaron Czichon" %}
-                {% include_relative _includes/_trainer.html name="Timo Korinth" %}
-                {% include_relative _includes/_trainer.html name="Gregor Woiwode" %}
-                {% include_relative _includes/_trainer.html name="Christoph Hoeller" %}
+                {% for trainer in site.data.trainers limit:8 %}
+                  {% assign trainer_name = trainer.givenName | append: " " | append: trainer.familyName %}
+                  {% include_relative _includes/_trainer.html name=trainer_name image=trainer.image %}
+                {% endfor %}
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="row">
-                {% include_relative _includes/_trainer.html name="Sebastian Kleinschmager" %}
-                {% include_relative _includes/_trainer.html name="Peter Bouda" %}
-                {% include_relative _includes/_trainer.html name="Christian Liebel" %}
-                {% include_relative _includes/_trainer.html name="Erfan Nazmehr" %}
-                {% include_relative _includes/_trainer.html name="Pawel Sawicki" %}
-                {% include_relative _includes/_trainer.html name="Nico König" %}
-                {% include_relative _includes/_trainer.html name="Marcel Ploch" %}
-                {% include_relative _includes/_trainer.html name="Johannes Busch" %}
+
+            {% if site.data.trainers.size > 8 %}
+              <div class="carousel-item">
+                <div class="row">
+                  {% for trainer in site.data.trainers limit:8 offset: continue %}
+                    {% assign trainer_name = trainer.givenName | append: " " | append: trainer.familyName %}
+                    {% include_relative _includes/_trainer.html name=trainer_name image=trainer.image %}
+                  {% endfor %}
+                </div>
               </div>
-            </div>
+            {% endif %}
+
+            {% if site.data.trainers.size > 16 %}
+              <div class="carousel-item">
+                <div class="row">
+                  {% for trainer in site.data.trainers limit:8 offset: continue %}
+                    {% assign trainer_name = trainer.givenName | append: " " | append: trainer.familyName %}
+                    {% include_relative _includes/_trainer.html name=trainer_name image=trainer.image %}
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
           </div>
-          <ol class="carousel-indicators">
-            <li data-target="#carouselTrainers" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselTrainers" data-slide-to="1"></li>
-          </ol>
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselTrainers" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            {% if site.data.trainers.size > 8 %}<button type="button" data-bs-target="#carouselTrainers" data-bs-slide-to="1"></button>{% endif %}
+            {% if site.data.trainers.size > 16 %}<button type="button" data-bs-target="#carouselTrainers" data-bs-slide-to="2"></button>{% endif %}
+          </div>
         </div>
       </div>
       <div class="col-12 col-md-6">
