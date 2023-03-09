@@ -8,7 +8,7 @@ header_image: header.jpg
 categories: "angular update"
 ---
 
-## Angular 15 ist da!
+## Angular 15 ist da
 
 Angular 15 ist da und es wurden wieder viele neue Features hinzugefügt.
 
