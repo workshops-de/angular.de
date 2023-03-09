@@ -74,20 +74,14 @@ layout: base
     <div class="row justify-content-md-center">
       <div class="col-lg-2 d-none d-lg-block"></div>
       <div class="col-md-12 col-lg-8 mb-2">
-        <div class="row">
-          <div class="col-sm-12 col-md-6 mb-2">
-            {% include shared/_post_author.html %}
-          </div>
-          <div class="col-sm-12 col-md-6 mb-2">
-            <p>
-              <a class="btn btn-sm btn-primary" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
-                Diesen Artikel auf GitHub verbessern
-              </a>
-            </p>
-          </div>
+        <div class="mb-4">
+          {% include shared/_post_author.html %}
         </div>
-
-        <br>
+        <div class="mb-2 text-end">
+          <a class="btn btn-sm btn-primary" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
+            Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
 
       </div>
     </div>
