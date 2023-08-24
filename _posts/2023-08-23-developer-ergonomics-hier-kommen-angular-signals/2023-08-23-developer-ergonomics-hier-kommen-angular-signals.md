@@ -10,13 +10,13 @@ categories: "angular signals update"
 
 ## Das Angular 16 Update
 
-Vielleicht hast Du es mitbekommen: Mit Angular 16 wurde das, gemessen am Umfang, größte Update nach dem initialen Release von Angular veröffentlicht. Neben Features wie Hydration oder dem Support für Typescript 5.0 enthält das Update drei Reactivity Primitives und damit einen Mechanismus für Reaktivität. Sarah Drasnger, Director of Engineering bei Google, spricht auf [Twitter bzw. X](https://twitter.com/sarah_edo/status/1628065696247857152) sogar von einer Angular Renaissance.
+Vielleicht hast Du es mitbekommen: Mit Angular 16 wurde das, gemessen am Umfang, größte Update nach dem initialen Release von Angular veröffentlicht. Neben Features wie [Non-Destructive Hydration](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d#:~:text=of%20full%20app-,non%2Ddestructive%20hydration,-!) oder dem Support für Typescript 5.0 enthält das Update drei Reactivity Primitives und damit einen Mechanismus für Reaktivität. Sarah Drasnger, Director of Engineering bei Google, spricht auf [Twitter bzw. X](https://twitter.com/sarah_edo/status/1628065696247857152) sogar von einer Angular Renaissance.
 
 ## Motivation hinter Signals
 
-Während andere Frameworks bereits länger Mechanismen für Reaktivität anbieten, ist es bei Angular eine Neuheit. Signals sollen Angular leichtgewichtiger machen und in Zukunft auch ermöglichen, ohne Zone.js zu arbeiten. Mit Signals soll Angular fähig werden, genau zu wissen, welche Komponenten aktualisiert werden müssen.
+Während andere Frameworks bereits länger _Reactive Primitives_ anbieten, ist es bei Angular eine Neuheit. Signals sollen Angular leichtgewichtiger machen und in Zukunft auch ermöglichen, ohne Zone.js zu arbeiten. Mit Signals soll der Angular Change-Detection emöglicht werden, fein granularer zu arbeiten und wirklich nur Neuerungen oder Änderungen zu rendern, anstatt den kompletten Component-Tree überprüfen zu müssen.
 
-Beim aktuellen Ansatz für Change Detection mit Zone.js ist der Trigger für Change Detection, dass sich Zone.js meldet mit der Information "Etwas `könnte` sich geändert haben". Zone.js patched die Browser-APIs und kriegt damit immer, wenn sich irgendwas ändert, was eine Änderung hervorrufen könnte (etwa ein Button-Klick), eine Benachrichtigung. Auf diese Benachrichtigung reagiert Angular mit Change Detection, denn es könnte sich etwas geändert haben. Also wird ein  Dirty-Check der ganzen Komponente gemacht, um zu schauen was aktualisiert werden muss. Der bisherige Ansatz für Change Detection mit Zone.js hat in der Vergangenheit sehr gut funktioniert, er bringt allerdings Nachteile mit sich, u. A. für leichtgewichtige Web Components. Mit der Idee von Signals verlässt Angular diesen Ansatz, indem es präzise weiß, was sich geändert hat und somit den Dirty-Check der ganzen Komponente überspringen kann, um direkt die Views zu aktualisieren, an denen sich etwas geändert hat.
+Beim aktuellen Ansatz für Change Detection mit Zone.js ist der Trigger für Change Detection, dass sich Zone.js meldet mit der Information "Etwas `könnte` sich geändert haben". Zone.js patched die Browser-APIs und kriegt damit immer, wenn sich irgendwas ändert, was eine Änderung hervorrufen könnte (etwa ein Button-Klick), eine Benachrichtigung. Auf diese Benachrichtigung reagiert Angular mit Change Detection, denn es könnte sich etwas geändert haben. Also wird der gesamte Komponentenbaum überprüft, um zu schauen was aktualisiert werden muss. Der bisherige Ansatz für Change Detection mit Zone.js hat in der Vergangenheit sehr gut funktioniert, er bringt allerdings Nachteile mit sich, u. A. für leichtgewichtige Web Components. Mit der Idee von Signals verlässt Angular diesen Ansatz, indem es präzise weiß, was sich geändert hat und somit den Dirty-Check der ganzen Komponente überspringen kann, um direkt die Views zu aktualisieren, an denen sich etwas geändert hat.
 
 RxJS hat in Angular Anwendungen zwei Kernaufgaben: die Koordination von asynchronen Events, also den Umgang mit Race Conditions und komplexen asynchronen Dataflows, und es ist gleichzeitig auch einfach ein reaktiver Baustein. Für das zweitere bietet Angular mit Signals eine Alternative. Während RxJS schon immer Teil von Angular war, hat sich das Angular Team entschieden mit Signals einen anderen Weg zu gehen als ein bisher bekanntes `BehaviourSubject` zu benutzen. Im weiteren Verlauf des Artikels gehe ich noch auf die Abgrenzung zu RxJS ein.
 
@@ -24,7 +24,7 @@ RxJS hat in Angular Anwendungen zwei Kernaufgaben: die Koordination von asynchro
 
 Ein Signal in Angular hält immer einen Wert und Konsumenten können diesen Wert lesen. Ein Signal ist ein zyklischer Prozess und jedes Mal, wenn es seinen Zyklus durchläuft, produziert er eine bestimmte Menge an Informationen.
 
-Ist also eine bestimmte Komponente ein Consumer des Signals, weil es die Informationen benötigt, so wird der Consumer informiert über Änderungen.
+Ist also eine bestimmte Komponente ein Consumer des Signals, weil es die Informationen benötigt, so wird der Consumer informiert über Änderungen. Wie auch RxJS implementiert ein Signal das [Observer-Pattern](https://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)), setzt dieses technisch allerdings anders um.
 
 Angular unterscheidet bei den Signals zwischen „Writable Signals“ und „Computed Signals“.
 
@@ -44,13 +44,13 @@ Die API eines Writable Signals bietet vier Methoden:
 
 Lass uns nun ein Writable Signal und damit unser erstes Signal erstellen.
 
-Schritt 1: Wir importieren die Funktion signal von `@angular/core`. Diese Funktion erlaubt es uns, ein Writable Signal zu erstellen. Füge dazu einfach den Import am Anfang der Datei hinzu, in der Du das Computed Signal erstellen möchtest:
+**Schritt 1**: Wir importieren die Funktion signal von `@angular/core`. Diese Funktion erlaubt es uns, ein Writable Signal zu erstellen. Füge dazu einfach den Import am Anfang der Datei hinzu, in der Du das Computed Signal erstellen möchtest:
 
 ```
 import { signal } from "@angular/core"
 ```
 
-Schritt 2: Nun können wir das Writable Signal erstellen. Dazu nutzen wir die importierte Funktion signal.
+**Schritt 2**: Nun können wir das Writable Signal erstellen. Dazu nutzen wir die importierte Funktion signal.
 
 Beim Erstellen eines Writable Signals lässt sich der initiale Wert des Signals mitgeben, ähnlich wie bei der Instanziierung von einem `BehaviourSubject`.
 
@@ -63,7 +63,7 @@ invoices = signal([]);
 
 Schauen wir uns das Beispiel oben an, sehen wir, dass die API von Signals sehr ähnlich der von RxJS ist. Ein erster Unterschied lässt sich erkennen im Zugriff auf den jeweiligen Wert. Während der Zugriff auf Observables / Subjects im Template z. B. über die async-Pipe funktioniert, lässt sich der Zugriff auf Signals über einen einfachen und direkten Funktionsaufruf lösen.
 
-Schritt 3: Wir greifen im Template unserer Komponente auf den Wert des Signals zu.
+**Schritt 3**: Wir greifen im Template unserer Komponente auf den Wert des Signals zu.
 
 ```
 <!-- Signals -->
@@ -74,7 +74,7 @@ Du kannst erkennen, dass der Zugriff hier ähnlich, wenn auch anders, funktionie
 
 Nun lass uns dem Signal auch einen Wert geben.
 
-Schritt 4: Wir implementieren eine Methode zum Setzen des Werts des Signals.
+**Schritt 4**: Wir implementieren eine Methode zum Setzen des Werts des Signals.
 
 ```
 addInvoice(invoice: Invoice) {
@@ -97,13 +97,13 @@ Computed Signals sind Signale, die ihre Werte aus einem oder mehreren Eingabe-Si
 
 Bei der Erstellung von Computed Signals unterscheidet sich der Ansatz stark vom RxJS-Ansatz. Während man in RxJS die Berechnung eines Werts mit einer pipe und unterschiedlichen RxJS-Operatoren durchführt, funktioniert es bei Signals mit einer Funktion `computed`, die dann entsprechend Wert berechnet.
 
-Schritt 1: Wir importieren signal und computed von @angular/core. Diese Funktionen erlauben es uns, Writable und Computed Signals zu erstellen. Füge dazu einfach den Import am Anfang der Datei hinzu, in der Du das Computed Signal erstellen möchtest:
+**Schritt 1**: Wir importieren signal und computed von @angular/core. Diese Funktionen erlauben es uns, Writable und Computed Signals zu erstellen. Füge dazu einfach den Import am Anfang der Datei hinzu, in der Du das Computed Signal erstellen möchtest:
 
 ```
 import { signal, computed } from '@angular/core;
 ```
 
-Schritt 2: Nun können wir das Computed Signal erstellen. Dazu nutzen wir die importierte Funktion computed und
+**Schritt 2**: Nun können wir das Computed Signal erstellen. Dazu nutzen wir die importierte Funktion computed und
 
 ```
 import { signal, computed } from '@angular/core;
@@ -148,18 +148,19 @@ Würden sich also mit diesem Ansatz die Streams `permissions$` und `isAuthentica
 
 Effects sind Operationen, die immer dann ausgeführt werden, wenn sich ein oder mehrere Signalwerte ändern. Ähnlich wie berechnete Signale verfolgen Effekte ihre Abhängigkeiten dynamisch. Sie wissen also, von welchen Signalen sie abhängen. Lass uns nun einen Effect erstellen.
 
-Schritt 1: Wir importieren die Funktion effect von @angular/core.
+**Schritt 1**: Wir importieren die Funktion effect von @angular/core.
 
 ```
 import { effect } from '@angular/core';
 ```
 
-Schritt 2: Wir erstellen den Effect.
+**Schritt 2**: Wir erstellen den Effect.
 
 ```
-effect(() => {
-  console.log(`Aktueller Login-Status: ${ isAuthenticated() }`);
-});
+@Component({ ... })
+export class MyComponent {
+  effect(() => console.log(`Aktueller Login-Status: ${ isAuthenticated() }`);
+}
 ```
 
 Nachdem der Effect einmal ausgeführt wurde mit dem initialen Wert von `isAuthenticated`, wird er nun immer dann einen Log in der Konsole erstellen, wenn sich der Wert von isAuthenticated ändert.
@@ -175,7 +176,7 @@ Die meisten Entwickler beginnen mit imperativer Programmierung weil es allgemein
 
 Um von reaktiver imperativer Programmierung mit Sigals zu reaktiver deklarativer Programmierung zu wechseln bietet Angular auch entsprechende Funktionen: `fromObservable` und `fromSignal` erlauben es, Observables zu Signals bzw. Signals zu Observables zu transformieren.
 
-Demnächst wird es sogar möglich sein, Signal-based Inputs zu nutzen. Mithilfe der Input Transforms, die mit 16.1 veröffentlicht wurden, lassen sich Inputs ganz einfach als Signals benutzen.
+Demnächst wird es sogar möglich sein, Signal-based Inputs zu nutzen ([Hier geht's zum RFC](https://github.com/angular/angular/discussions/49682)). Mithilfe der Input Transforms, die mit Angular 16.1 veröffentlicht wurden, lassen sich Inputs ganz einfach als Signals benutzen.
 
 ```
 @Component({
@@ -193,4 +194,4 @@ Die Property `clientName` ist vom Typ `Signal<string|undefined>` und beinhaltet 
 
 ## Zusammenfassung
 
-Aktuell sind Signals zwar noch in der Developer Preview aber im Ganzen lässt sich erkennen, dass Angular mit Signals den Weg in eine Zukunft ohne Zone.js geht. Dazu wird die Arbeit mit Signals allerdings nicht unbedingt notwendig. Man kann sie eher als eine Möglichkeit betrachten, imperativ reaktiv zu programmieren.
+Aktuell sind Signals zwar noch in der Developer Preview aber im Ganzen lässt sich erkennen, dass Angular mit Signals den Weg in eine Zukunft ohne Zone.js geht. Dazu wird die Arbeit mit Signals allerdings nicht unbedingt notwendig. Man kann sie eher als eine Möglichkeit betrachten, deklarativ reaktiv zu programmieren.
