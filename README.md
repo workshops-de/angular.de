@@ -58,7 +58,7 @@ We're using a git submodule to share files like templates, images and themes acr
 ```
 $ git pull --recurse-submodules
 ```
-
+  
 ### 5. Pull Request
 Createa a [Pull Request](https://help.github.com/articles/creating-a-pull-request/) to describe and propose your changes to this repository.
 If you don't know what Pull Requests(PR) all about you should check out [this article](https://help.github.com/articles/about-pull-requests/).
