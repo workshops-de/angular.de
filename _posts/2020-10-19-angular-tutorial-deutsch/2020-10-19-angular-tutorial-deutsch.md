@@ -18,6 +18,12 @@ Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-
 <img src="/shared/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="classroom-example.png" data-srcset="classroom-example.png"
 />
 
+<div class="alert alert-light" role="alert">
+Lerne mit unserer Angular Lifetime Schulung.
+Dein deutschsprachiges Intensiv-Videotraining in Kombination mit wöchentlichem Live-Call mit deinen Trainern und Trainerinnen. Und das beste dabei: Lebenslangen Zugriff auf alle Materialien, Videos und Musterlösungen, inklusive regelmäßiger Updates.
+https://workshops.de/lifetime/angular
+</div>
+
 ### Was wirst du in diesem Tutorial lernen?
 
 Dieses Tutorial zeigt dir die grundlegenden Bestandteile einer Angular-Anwendung anhand eines praktischen Beispiels, welches du selber implementieren oder mit fertigen Musterlösungen nutzen und verändern kannst.
@@ -101,7 +107,7 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
      </p>
      <p class="text-center">
        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
-         <button class="btn btn-danger">Zur Angular Intesiv Schulung</button>
+         <button class="btn btn-danger">Zur Angular Intensiv Schulung</button>
        </a>
      </p>
    </div>
@@ -487,7 +493,7 @@ src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bü
      </p>
      <p class="text-center">
        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-mid">
-         <button class="btn btn-danger">Zur Angular Intesiv Schulung</button>
+         <button class="btn btn-danger">Zur Angular Intensiv Schulung</button>
        </a>
      </p>
    </div>
@@ -705,7 +711,7 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
      </p>
      <p class="text-center">
        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
-         <button class="btn btn-danger">Zur Angular Intesiv Schulung</button>
+         <button class="btn btn-danger">Zur Angular Intensiv Schulung</button>
        </a>
      </p>
    </div>
