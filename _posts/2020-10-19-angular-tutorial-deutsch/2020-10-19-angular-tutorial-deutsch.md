@@ -93,12 +93,22 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
 
 <hr>
 <div class="workshop-hint">
- <div class="h3">Angular noch schneller lernen?</div>
- <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
-   schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
- </p>
- <div class="row mb-4">
-   <div class="col-xs-12 col-md-6">
+  <div class="h3">Angular noch schneller lernen?</div>
+  <div class="row">
+    <div class="col-9">
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+      </p>
+    </div>
+    <div class="col-3">
+      <img
+      class="lazy img-fluid img-rounded"
+      src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
+      />
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-xs-12 col-md-6">
       <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
          <div class="d-flex align-items-center mb-2">
            <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
