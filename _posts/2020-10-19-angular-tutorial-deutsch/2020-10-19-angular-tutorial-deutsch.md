@@ -18,12 +18,6 @@ Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-
 <img src="/shared/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="classroom-example.png" data-srcset="classroom-example.png"
 />
 
-<div class="alert alert-success" role="alert">
-Lerne mit unserer Angular Lifetime Schulung.
-Dein deutschsprachiges Intensiv-Videotraining in Kombination mit wöchentlichem Live-Call mit deinen Trainern und Trainerinnen. Und das beste dabei: Lebenslangen Zugriff auf alle Materialien, Videos und Musterlösungen, inklusive regelmäßiger Updates.
-https://workshops.de/lifetime/angular
-</div>
-
 ### Was wirst du in diesem Tutorial lernen?
 
 Dieses Tutorial zeigt dir die grundlegenden Bestandteile einer Angular-Anwendung anhand eines praktischen Beispiels, welches du selber implementieren oder mit fertigen Musterlösungen nutzen und verändern kannst.
@@ -98,16 +92,16 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
 />
 
 <hr>
-<div class="workshop-hint text-center">
+<div class="workshop-hint">
  <div class="h3">Angular noch schneller lernen?</div>
  <div class="row mb-2">
    <div class="col-xs-12 col-md-6">
-     <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+     <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
      </p>
-     <p class="text-center">
+     <p>
        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
-         <button class="btn btn-danger">Zur Angular Intensiv Schulung</button>
+         <button class="btn btn-danger">Zur Angular & TypeScript Intensiv Schulung</button>
        </a>
      </p>
    </div>
@@ -120,6 +114,15 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
  </div>
 </div>
 <hr>
+
+
+
+<div class="alert alert-success" role="alert">
+Lerne mit unserer Angular Lifetime Schulung.
+Dein deutschsprachiges Intensiv-Videotraining in Kombination mit wöchentlichem Live-Call mit deinen Trainern und Trainerinnen. Und das beste dabei: Lebenslangen Zugriff auf alle Materialien, Videos und Musterlösungen, inklusive regelmäßiger Updates.
+https://workshops.de/lifetime/angular
+</div>
+
 
 ### Die Angular Plattform
 
