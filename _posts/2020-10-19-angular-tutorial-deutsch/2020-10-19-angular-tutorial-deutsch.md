@@ -113,7 +113,7 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
 <i class="fa fa-map-marker icon text-center text-primary | flex-shrink-0 | me-2"></i>
             Vor Ort, als auch Remote
           </div>
-          <div class="d-flex align-items-center mb-2"><i class="fa fa-language icon text-center text-primary | flex-shrink-0 | me-2"></i>Deutsch/Englisch möglich</div>
+          <div class="d-flex align-items-center mb-3"><i class="fa fa-language icon text-center text-primary | flex-shrink-0 | me-2"></i>Deutsch/Englisch möglich</div>
        <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
          Zur Angular & TypeScript Intensiv Schulung
        </a>
