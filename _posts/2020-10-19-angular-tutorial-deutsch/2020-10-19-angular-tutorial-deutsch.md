@@ -94,13 +94,13 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
 <hr>
 <div class="workshop-hint">
   <div class="h3">Angular noch schneller lernen?</div>
-  <div class="row">
-    <div class="col-9">
+  <div class="row mb-3">
+    <div class="col-8">
       <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-top">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
         schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
       </p>
     </div>
-    <div class="col-3">
+    <div class="col-4">
       <img
       class="lazy img-fluid img-rounded"
       src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
@@ -521,9 +521,19 @@ src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bü
 <hr>
 <div class="workshop-hint">
  <div class="h3">Angular noch schneller lernen?</div>
- <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-mid">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-mid">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
-   schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
- </p>
+  <div class="row mb-3">
+    <div class="col-8">
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-mid">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-mid">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+      </p>
+    </div>
+    <div class="col-4">
+      <img
+      class="lazy img-fluid img-rounded"
+      src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
+      />
+    </div>
+  </div>
  <div class="row mb-4">
    <div class="col-xs-12 col-md-6">
       <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
@@ -769,55 +779,65 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
 
 <hr>
 <div class="workshop-hint">
- <div class="h3">Hat dir das Tutorial geholfen?</div>
- <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-bottom">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-bottom">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
-   schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
- </p>
- <div class="row mb-4">
-   <div class="col-xs-12 col-md-6">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-3">
+    <div class="col-8">
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-bottom">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-bottom">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+      </p>
+    </div>
+    <div class="col-4">
+      <img
+      class="lazy img-fluid img-rounded"
+      src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
+      />
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-xs-12 col-md-6">
       <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Öffentliche Termine verfügbar
-         </div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-clock-o icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           3 ganze Tage oder 6 halbe Tage
-         </div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Vor Ort, als auch Remote
-         </div>
-         <div class="d-flex align-items-center mb-3">
-           <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Deutsch/Englisch möglich
-         </div>
-         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-text-article-bottom">
-           Zur Angular & TypeScript Schulung
-         </a>
-   </div>
-   <div class="col-xs-12 col-md-6">
+      <div class="d-flex align-items-center mb-2">
+        <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Öffentliche Termine verfügbar
+      </div>
+      <div class="d-flex align-items-center mb-2">
+        <i class="fa fa-clock-o icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        3 ganze Tage oder 6 halbe Tage
+      </div>
+      <div class="d-flex align-items-center mb-2">
+        <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Vor Ort, als auch Remote
+      </div>
+      <div class="d-flex align-items-center mb-3">
+        <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Deutsch/Englisch möglich
+      </div>
+      <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-text-article-bottom">
+        Zur Angular & TypeScript Schulung
+      </a>
+    </div>
+    <div class="col-xs-12 col-md-6">
       <div class="h5 | mb-3">Lifetime Schulung</div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Starte jederzeit
-         </div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-clock-o icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Lerntempo selbst bestimmen
-         </div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Remote, inkl. Live-Calls
-         </div>
-         <div class="d-flex align-items-center mb-3">
-           <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Kurssprache Deutsch
-         </div>
-         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-bottom">
-           Zur Angular Lifetime Schulung
-         </a>
-   </div>
- </div>
+      <div class="d-flex align-items-center mb-2">
+        <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Starte jederzeit
+      </div>
+      <div class="d-flex align-items-center mb-2">
+        <i class="fa fa-clock-o icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Lerntempo selbst bestimmen
+      </div>
+      <div class="d-flex align-items-center mb-2">
+        <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Remote, inkl. Live-Calls
+      </div>
+      <div class="d-flex align-items-center mb-3">
+        <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Kurssprache Deutsch
+      </div>
+      <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-bottom">
+        Zur Angular Lifetime Schulung
+      </a>
+    </div>
+  </div>
 </div>
 <hr>
