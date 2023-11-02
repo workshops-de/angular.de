@@ -100,15 +100,15 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
  <div class="row mb-2">
    <div class="col-xs-12 col-md-6">
      <div class="card">
-       <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
-         <button class="btn btn-danger">Zur Angular & TypeScript Intensiv Schulung</button>
+       <a class="btn btn-danger" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
+         Zur Angular & TypeScript Intensiv Schulung
        </a>
      </div>
    </div>
    <div class="col-xs-12 col-md-6">
      <div class="card">
-       <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
-         <button class="btn btn-danger">Zur Angular & TypeScript Intensiv Schulung</button>
+       <a class="btn btn-danger" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
+         Zur Angular & TypeScript Intensiv Schulung
        </a>
      </div>
    </div>
