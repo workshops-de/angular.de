@@ -102,7 +102,7 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
       <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
          <div class="d-flex align-items-center mb-2">
            <i class="fa fa-calendar icon text-center text-primary | flex-shrink-0 | me-2"></i>
-           8 Termine verfügbar
+           Öffentliche Termine verfügbar
          </div>
          <div class="d-flex align-items-center mb-2">
            <i class="fa fa-clock-o icon text-center text-primary | flex-shrink-0 | me-2"></i>
@@ -145,15 +145,6 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
  </div>
 </div>
 <hr>
-
-
-
-<div class="alert alert-success" role="alert">
-Lerne mit unserer Angular Lifetime Schulung.
-Dein deutschsprachiges Intensiv-Videotraining in Kombination mit wöchentlichem Live-Call mit deinen Trainern und Trainerinnen. Und das beste dabei: Lebenslangen Zugriff auf alle Materialien, Videos und Musterlösungen, inklusive regelmäßiger Updates.
-https://workshops.de/lifetime/angular
-</div>
-
 
 ### Die Angular Plattform
 
