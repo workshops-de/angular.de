@@ -759,7 +759,7 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
 
 <hr>
 <div class="workshop-hint">
- <div class="h3">h3">Hat dir das Tutorial geholfen?</div>
+ <div class="h3">Hat dir das Tutorial geholfen?</div>
  <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal sind dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-bottom">Angular & TypeScript Schulungen</a> als auch <a target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-bottom">Angular Lifetime Schulungen</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
    schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
  </p>
