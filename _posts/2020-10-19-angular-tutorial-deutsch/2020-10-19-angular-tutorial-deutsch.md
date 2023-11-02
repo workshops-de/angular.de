@@ -99,32 +99,48 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
  </p>
  <div class="row mb-2">
    <div class="col-xs-12 col-md-6">
-     <div>
-       <div class="h5 | mb-2">Öffentliche & Inhouse Schulung</div>
-          <div class="d-flex align-items-center mb-2">
-<i class="fa fa-calendar icon text-center text-primary | flex-shrink-0 | me-2"></i>
-8 Termine verfügbar
-          </div>
-          <div class="d-flex align-items-center mb-2">
-<i class="fa fa-clock-o icon text-center text-primary | flex-shrink-0 | me-2"></i>
-3 ganze Tage oder 6 halbe Tage
-          </div>
-          <div class="d-flex align-items-center mb-2">
-<i class="fa fa-map-marker icon text-center text-primary | flex-shrink-0 | me-2"></i>
-            Vor Ort, als auch Remote
-          </div>
-          <div class="d-flex align-items-center mb-3"><i class="fa fa-language icon text-center text-primary | flex-shrink-0 | me-2"></i>Deutsch/Englisch möglich</div>
-       <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
-         Zur Angular & TypeScript Intensiv Schulung
-       </a>
-     </div>
+      <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-calendar icon text-center text-primary | flex-shrink-0 | me-2"></i>
+           8 Termine verfügbar
+         </div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-clock-o icon text-center text-primary | flex-shrink-0 | me-2"></i>
+           3 ganze Tage oder 6 halbe Tage
+         </div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-map-marker icon text-center text-primary | flex-shrink-0 | me-2"></i>
+           Vor Ort, als auch Remote
+         </div>
+         <div class="d-flex align-items-center mb-3">
+           <i class="fa fa-language icon text-center text-primary | flex-shrink-0 | me-2"></i>
+           Deutsch/Englisch möglich
+         </div>
+         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
+           Zur Angular & TypeScript Intensiv Schulung
+         </a>
    </div>
    <div class="col-xs-12 col-md-6">
-     <div class="card">
-       <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
-         Zur Angular & TypeScript Intensiv Schulung
-       </a>
-     </div>
+      <div class="h5 | mb-3">Lifetime Schulung</div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-calendar icon text-center text-primary | flex-shrink-0 | me-2"></i>
+           Starte jederzeit
+         </div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-clock-o icon text-center text-primary | flex-shrink-0 | me-2"></i>
+           Lerntempo selbst bestimmen
+         </div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-map-marker icon text-center text-primary | flex-shrink-0 | me-2"></i>
+           Remote, inkl. Live-Calls
+         </div>
+         <div class="d-flex align-items-center mb-3">
+           <i class="fa fa-language icon text-center text-primary | flex-shrink-0 | me-2"></i>
+           Kurssprache Deutsch
+         </div>
+         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
+           Zur Angular Lifetime Schulung
+         </a>
    </div>
  </div>
 </div>
