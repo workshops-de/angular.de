@@ -99,7 +99,7 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
  </p>
  <div class="row mb-2">
    <div class="col-xs-12 col-md-6">
-     <div class="card">
+     <div>
        <div class="h5 | mb-2">Öffentliche & Inhouse Schulung</div>
           <div class="d-flex align-items-center mb-2">
 <i class="fa fa-calendar icon text-center text-primary | flex-shrink-0 | me-2"></i>
