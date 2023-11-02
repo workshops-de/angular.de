@@ -102,18 +102,18 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
      <div class="card">
        <div class="h3 | mb-3">Öffentliche & Inhouse Schulung</div>
           <div class="d-flex align-items-center mb-2">
-<i class="fas fa-calendar icon text-center text-primary | flex-shrink-0 | me-2"></i>
+<i class="fa fa-calendar icon text-center text-primary | flex-shrink-0 | me-2"></i>
 8 Termine verfügbar
           </div>
           <div class="d-flex align-items-center mb-2">
-<i class="fas fa-clock icon text-center text-primary | flex-shrink-0 | me-2"></i>
+<i class="fa fa-clock-o icon text-center text-primary | flex-shrink-0 | me-2"></i>
 3 ganze Tage oder 6 halbe Tage
           </div>
           <div class="d-flex align-items-center mb-2">
-<i class="fas fa-map-marker icon text-center text-primary | flex-shrink-0 | me-2"></i>
+<i class="fa fa-map-marker icon text-center text-primary | flex-shrink-0 | me-2"></i>
             Vor Ort, als auch Remote
           </div>
-          <div class="d-flex align-items-center mb-2"><i class="fas fa-earth-europe icon text-center text-primary | flex-shrink-0 | me-2"></i>Deutsch/Englisch möglich</div>
+          <div class="d-flex align-items-center mb-2"><i class="fa fa-language icon text-center text-primary | flex-shrink-0 | me-2"></i>Deutsch/Englisch möglich</div>
        <a class="btn btn-danger" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
          Zur Angular & TypeScript Intensiv Schulung
        </a>
