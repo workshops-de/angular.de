@@ -11,14 +11,14 @@ tutorial_page_order: "1"
 
 Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular. Wir behandeln hierbei Angular in der Version 2 und höher. Bewusst wird hierbei aber die Versionsnummer weggelassen, da das Framework nun semantische Versionierung benutzt. Kurz gesagt: Es ist einfach Angular.
 
-Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalte der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript).
+Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalte der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-intro) und unserer [Angular Lifetime Schulung]([https://workshops.de/seminare-schulungen-kurse/angular-typescript](https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-article-intro)).
 
 Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil. Ihr könnt hierbei alle Aufgaben selber programmieren und über unseren Workshops.DE Classroom Hilfestellungen und Musterlösungen für die Aufgaben erhalten.
 
 <img src="/shared/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="classroom-example.png" data-srcset="classroom-example.png"
 />
 
-<div class="alert alert-light" role="alert">
+<div class="alert alert-success" role="alert">
 Lerne mit unserer Angular Lifetime Schulung.
 Dein deutschsprachiges Intensiv-Videotraining in Kombination mit wöchentlichem Live-Call mit deinen Trainern und Trainerinnen. Und das beste dabei: Lebenslangen Zugriff auf alle Materialien, Videos und Musterlösungen, inklusive regelmäßiger Updates.
 https://workshops.de/lifetime/angular
