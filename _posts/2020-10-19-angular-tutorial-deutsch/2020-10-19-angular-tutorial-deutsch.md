@@ -553,7 +553,7 @@ src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bü
            <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
            Deutsch/Englisch möglich
          </div>
-         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-text-article-mid">
+         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-mid">
            Zur Angular & TypeScript Schulung
          </a>
    </div>
