@@ -676,11 +676,11 @@ Viel Spaß beim Ausprobieren und Entwickeln der eigenen App!
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-      <p> Noch schneller lernen geht nur in unseren <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Ionic und TypeScript Schulungen</a>.
+      <p> Noch schneller lernen geht nur in unseren <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-bottom">Ionic und TypeScript Schulungen</a>.
         In kleinen Gruppen bieten wir öffentliche und Inhouse Schulungen an, um dich möglichst effektiv in das Thema Ionic
         zu begleiten. </p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-bottom">
           <button class="btn btn-danger">Jetzt weiter lernen</button>
         </a>
       </p>
