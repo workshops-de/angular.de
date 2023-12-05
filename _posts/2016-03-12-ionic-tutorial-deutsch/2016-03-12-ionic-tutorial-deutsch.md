@@ -994,9 +994,9 @@ Link zum [Quellcode](https://github.com/angularjs-de/ionic-pizza-service/tree/ma
 <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-      <p>Wir haben bereits viele Projekte mit Ionic umgesetzt - nutze unserer Projekterfahrung! Wir geben regelmäßig Schulungen zum Thema <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-buttom">Ionic und TypeScript</a>, auch Inhouse. Im Kurs lernst du die Grundlagen und Konzepte des Ionic Frameworks und kannst die Fragen stellen, die dir direkt bei deiner Umsetzung helfen.</p>
+      <p>Wir haben bereits viele Projekte mit Ionic umgesetzt - nutze unserer Projekterfahrung! Wir geben regelmäßig Schulungen zum Thema <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-bottom">Ionic und TypeScript</a>, auch Inhouse. Im Kurs lernst du die Grundlagen und Konzepte des Ionic Frameworks und kannst die Fragen stellen, die dir direkt bei deiner Umsetzung helfen.</p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-buttom">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-bottom">
           <button class="btn btn-danger">Jetzt weiter lernen</button>
         </a>
       </p>
