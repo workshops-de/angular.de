@@ -4,7 +4,7 @@ description: Eine Einführung in Angular Signals in einfacher Sprache und mit pr
 author: "Lulëzim Ukaj"
 published_at: 2023-12-12 09:27:00.000000Z
 header_source: https://github.com/workshops-de/angular.de/assets/89625524/eccfe435-a877-4f81-9121-e48f1b0c666b
-header_image: tay.png
+header_image: header.png
 categories: "angular signals"
 ---
 
