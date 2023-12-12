@@ -79,6 +79,9 @@ export class SignalWarenkorbComponent implements OnInit {
 ```
 
 In diesem Beispiel verwenden wir in der Komponente ListComponent ein Signal mit dem Namen warenkorb. Das warenkorb-Signal speichert die Listenelemente und wird initial mit data gesetzt. Der “Add”-Button löst die addItm-Methode aus, die wiederum warenkorb reaktiv mit neuen Elementen aus data2 aktualisiert. Eine Aktualisierung wird durch warenkord.update ausgelöst, was das Echtzeit-Update im Template bewirkt. 
+
+Kudos an Dave aka [Webdave](https://webdave.de/start) für das [Code-Beispiel auf Stackblitz](https://stackblitz.com/edit/stackblitz-starters-cv9u63?file=src%2Fsignal-warenkorb.component.ts). Hier findest du den gesamten Angular Prototypen.
+
 ### Producer vs. Consumer in Angular 
 Producer und Consumer sind zwei grundlegende Konzepte in Angular, die für die Kommunikation zwischen Komponenten verwendet werden. Producer sind für die Erzeugung von Daten verantwortlich, während Consumer diese Daten verarbeiten. Beispiele für Producer sind Functions, Promises, oder Observables. Consumer verarbeiten diese Werte dann weiter. Natürlich können Producer auch gleichzeitig Consumer sein. Signals spielen eine entscheidende Rolle in diesem Muster, indem sie eine vereinfachte Schnittstelle zwischen Datenproduzenten und -konsumenten bieten.
 
@@ -150,6 +153,8 @@ Auch in diesem Beispiel können Nutzer:innen neue Elemente zu der Liste über de
 Ein BehaviorSubject ist eine Art von Observable, das zwei Hauptmerkmale hat:
 Anfänglicher Wert: Ein BehaviorSubject benötigt einen Anfangswert, den es seinen Abonnenten sofort zur Verfügung stellt, wenn sie sich abonnieren. Das bedeutet, dass jeder Abonnent sofort einen Wert erhält, wenn er sich abonniert, im Gegensatz zu normalen Observables, die möglicherweise keinen Wert senden, bis ein Ereignis eintritt.
 Speicherung des letzten Wertes: Ein BehaviorSubject speichert den letzten emittierten Wert und gibt diesen an jeden neuen Abonnenten weiter. Das ist nützlich, wenn Sie sicherstellen möchten, dass der Abonnent immer den aktuellen Stand eines Wertes hat, auch wenn er sich abonniert, nachdem der Wert emittiert wurde.
+
+Kudos an Dave aka [Webdave](https://webdave.de/start) für das [Code-Beispiel auf Stackblitz](https://stackblitz.com/edit/stackblitz-starters-cv9u63?file=src%2Fobservable-warenkorb.component.ts). Hier findest du den gesamten Angular Prototypen.
 
 ### Angular Signals vs. Observables in RxJS
 
