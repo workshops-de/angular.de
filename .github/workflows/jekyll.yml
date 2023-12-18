@@ -19,12 +19,12 @@ jobs:
 
     steps:
     - name: Clone repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         submodules: recursive
 
     - name: Cache Bundler 💾
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.firebase, ~/.jekyll-cache, ~/vendor/bundle
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
