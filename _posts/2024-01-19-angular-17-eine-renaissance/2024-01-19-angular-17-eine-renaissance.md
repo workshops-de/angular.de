@@ -123,9 +123,7 @@ Weitere Informationen zum Thema der Angular Signals findet ihr in den unsere ber
 
 ## Die neue Control Flow-Syntax:
 
-
-<iframe width="100%" height="360" src="(https://www.youtube.com/watch?v=ENf9sNckFbs" frameborder="0" allowfullscreen></iframe>
-
+<iframe class="" width="100%" height="315" src="https://www.youtube-nocookie.com/embed/ENf9sNckFbs" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Die neue Control Flow-Syntax in Angular 17 ist noch im Developer Preview. Sie ermöglicht eine direktere und effizientere Kontrolle über das Template einer Komponente. Dies ist ein signifikanter Fortschritt gegenüber der vorherigen Situation, in der Strukturdirektiven wie ngIf, ngFor und ngSwitch zwar für die Template-Kontrolle verwendet wurden, aber in einem anderen Kontext als die Komponente selbst standen. Diese Direktiven gehörten zwar zum Framework, aber nicht direkt zur Komponentenlogik, was zu einer Diskrepanz zwischen Komponentenlogik und Template-Kontrolle führte.
 
