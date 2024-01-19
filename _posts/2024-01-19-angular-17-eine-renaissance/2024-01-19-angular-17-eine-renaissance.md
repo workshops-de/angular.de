@@ -31,9 +31,9 @@ Das auffälligste Update ist mit Sicherheit das neue Logo. Angular verlässt sei
 
 <p class="text-center">
 <img
-style="max-width:60%"
-src="/shared/assets/img/placeholder-image.svg" alt="Eine Illustration von der neuen Angular.DEV Platform mit einer WebDave Tasse davor."
-class="lazy img-fluid img-rounded" data-src="angulardev-with-webdave.jpg" data-srcset="angulardev-with-webdave.jpg"
+style="max-width:100%"
+src="/shared/assets/img/placeholder-image.svg" alt="Die neue Angular.DEV Platform im Welcome Screen"
+class="lazy img-fluid img-rounded" data-src="angulardev-screenshot.jpg" data-srcset="angulardev-screenshot.jpg"
 />
 </p>
 
