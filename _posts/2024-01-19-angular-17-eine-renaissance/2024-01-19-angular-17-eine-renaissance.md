@@ -92,7 +92,13 @@ Weitere Informationen findest in der Angular Documentaion: [Getting started with
 
 ## Full App Non Destructive Hydration
 
-![Logo Angular Hydration](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/hydration.jpg?raw=true)
+<p class="text-center">
+<img
+style="max-width:60%"
+src="/shared/assets/img/placeholder-image.svg" alt="Logo Angular Hydration"
+class="lazy img-fluid img-rounded" data-src="hydration.jpg" data-srcset="hydration.jpg"
+/>
+</p>
 
 Die in Angular 16 eingeführte Full App Non-Destructive Hydration ermöglicht eine effizientere Synchronisation zwischen Backend und Frontend in Single-Page-Applikationen (SPAs). Ein Kernvorteil dieser Technologie ist die signifikante Reduzierung des "Flickerns", das normalerweise beim Übergang vom serverseitigen zum clientseitigen Rendering auftritt.
 
