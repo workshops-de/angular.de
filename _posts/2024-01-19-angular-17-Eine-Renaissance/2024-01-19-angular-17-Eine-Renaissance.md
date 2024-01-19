@@ -33,6 +33,7 @@ Ein weiteres primär visuelles Update ist die neue Angular-Präsenz im Web. [Ang
 Zunächst wollen wir kurz die vielen Tooling-Updates in Angular 17 betrachten. 
 
 Wie versprochen ist hier auch das Video von Webdave zum Anguglar 17 Update.
+
 <iframe width="100%" height="360" src="https://www.youtube.com/watch?v=tXsz5Z15yeY" frameborder="0" allowfullscreen></iframe>
 
 ### Standalone Routing Enabled by Default
@@ -83,7 +84,7 @@ Anstatt bei jedem Client-Start die gesamte DOM-Struktur neu zu rendern, nutzt An
 Durch die Wiederverwendung der serverseitig gerenderten DOM-Knoten verringert sich die Zeit, die benötigt wird, um die Anwendung zu rendern. Das Resultat ist ein schnelleres Initialrendering und flickerfreie Übergänge.
 Da keine Notwendigkeit besteht, neue DOM-Knoten zu erstellen, wird der Speicherverbrauch der Anwendung reduziert. Dies ist insbesondere für Geräte mit begrenzten Ressourcen, wie mobile Endgeräte, von Vorteil.
 
-[Weitere Informationen findest in der Angular Documentaion: Hydration](https://angular.io/guide/hydration)
+Mehr dazu findest in der Angular Documentaion: [Hydration](https://angular.io/guide/hydration)
 
 ## Stabile Implementierung von Signals
 
@@ -99,7 +100,6 @@ Weitere Informationen zum Thema der Angular Signals findet ihr in den unsere ber
 
 ## Die neue Control Flow-Syntax:
 
-Hier ist ein weiteres Video von Webdave speziell zum neuen Control Flow.
 
 <iframe width="100%" height="360" src="(https://www.youtube.com/watch?v=ENf9sNckFbs" frameborder="0" allowfullscreen></iframe>
 
@@ -119,7 +119,7 @@ Zum Beispiel kann eine Komponente nun direkt auf Änderungen im Template reagier
 }
 ```
 
-Diese Syntax bringt die Template-Kontrolle direkt in den Kontext der Komponente, wodurch eine sofortige Reaktion auf Zustands.
+[Hier findest du den Link zum passenden Stackblitz unseres Trainers Webdave](https://stackblitz.com/edit/angular-at-7tssno?file=package.json)
 
 ## Outro: Angular 17 – Eine neue Ära in der Developer Experience
 
@@ -135,11 +135,11 @@ Ja, und wir sind sogar bereits mitten in der "Angular Renaissance"!
 
 Betrachten wir die Entwicklung des Frameworks der letzten Jahre, wird eines deutlich: die Angular-User-Experience hatte mindestens eine ähnliche Priorität wie die Performance des Frameworks. Features wie Signals oder der neue Control Flow erhöhen nicht nur die Performance des Frameworks, sondern vereinfachen vor allem das Arbeiten mit Angular. Auch das neue moderne Design muss in dieser Logik gedacht werden.
 
-Die Entwicklung ist kein Zufall.Über die letzten Jahre hat sich das Angular-Team wieder verstärkt auf das Feedback und die Bedürfnisse der Angular-Community fokussiert und aktiv in die Weiterentwicklung des Frameworks integriert. Insbesondere die Ergebnisse der jährlichen Angular-Umfrage tragen zur Priorisierung für das nächste Jahr bei, wie es Minko Gechev selbst sagt:
+Die Entwicklung ist kein Zufall.Über die letzten Jahre hat sich das Angular-Team wieder verstärkt auf das Feedback und die Bedürfnisse der Angular-Community fokussiert und aktiv in die Weiterentwicklung des Frameworks integriert. Insbesondere die [Ergebnisse der jährlichen Angular-Umfrage](https://blog.angular.io/angular-developer-survey-2023-86372317c95f) tragen zur Priorisierung für das nächste Jahr bei, wie es Minko Gechev selbst sagt:
 
 >One of the strongest guiding indicators which has been highly influential in our prioritization process are the results from the Angular developer survey.
 
-Die Angular-Community hat gesprochen, und die Angular-User-Experience wurde in der Roadmap 2024 als oberste Priorität ausgerufen. Das Angular-Team will vor allem attraktiver für Anfänger werden. Dazu werden nach und nach alle funktionellen Pain Points abgearbeitet, um es angehenden Angular-Entwicklern so leicht wie möglich zu machen, in die Welt von Angular einzutauchen.
+Die Angular-Community hat gesprochen, und [die Angular-User-Experience wurde in der Roadmap 2024 als oberste Priorität ausgerufen](https://angular.dev/roadmap.). Das Angular-Team will vor allem attraktiver für Anfänger werden. Dazu werden nach und nach alle funktionellen Pain Points abgearbeitet, um es angehenden Angular-Entwicklern so leicht wie möglich zu machen, in die Welt von Angular einzutauchen.
 
 Das sind sehr gute Neuigkeiten für alle Mitglieder der Angular-Community, insbesondere für unsere deutsche [Angular.de Community](https://angular.de/)). Schließlich bedeutet es, dass wir aktiv an der Zukunft des Frameworks teilhaben können. Eure Diskussionen und euer Feedback haben offiziel die höchste Priorität im Hause Angular. Deshalb ermutigen wir euch: Engagiert euch in unserer [Angular Community auf Discord](https://workshops.de/join-discord). Nehmt Teil an unseren 18 Meetups, die insgesamt über 10.000 Angular-Entwicklerinnen und -Entwickler als Plattform für regelmäßigen Austausch dienen. Wir sind damit in Europa die Region mit den meisten Angular-Entwicklerinnen. 
 
