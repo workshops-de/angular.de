@@ -1,6 +1,6 @@
 ---
-title: "Der Beginn der Angular 17 Renaissance"
-description: “Ein Blogartikel über alle neuen Features und Updates in Angular 17, über Verbesserungen in Performance und Angular Developer Experience und die Angular Renaissance”.
+title: "Die Angular 17 Renaissance"
+description: “Ein Blogartikel über alle neuen Features und Updates in Angular 17, über Verbesserungen in Performance und Angular Developer Experience und die Angular Renaissance”
 author: "Lulëzim Ukaj"
 published_at: 2024-01-19 18:00:00
 header_source: https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Header.jpg?raw=true
@@ -26,7 +26,7 @@ Das auffälligste Update ist mit Sicherheit das neue Logo. Angular verlässt sei
 
 ![Angular.dev Portal](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Angulardev.jpg?raw=true)
 
-Ein weiteres primär visuelles Update ist die neue Angular-Präsenz im Web. Angular.dev löst damit angular.io als Hauptquelle für Informationen und Ressourcen ab. Das neue Portal hat ein völlig überarbeitetes neues Design bekommen und dient zukünftig als zentrale Anlaufstelle für alles rund um Angular. Das beinhaltet auch eine überarbeitete Dokumentation und eigene Tutorials. Darüber hinaus bietet angular.dev nun auch eine interaktive Lernumgebung, um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev ist ein weiterer Schritt, einen leichteren Einstieg insbesondere für Junior Entwickler und Quereinsteiger in das Framework zu ermöglichen. 
+Ein weiteres primär visuelles Update ist die neue Angular-Präsenz im Web. [Angular.dev](https://angular.dev/) löst damit Angular.io als Hauptquelle für Informationen und Ressourcen ab. Das neue Portal hat ein völlig überarbeitetes neues Design bekommen und dient zukünftig als zentrale Anlaufstelle für alles rund um Angular. Das beinhaltet auch eine überarbeitete Dokumentation und eigene Tutorials. Darüber hinaus bietet angular.dev nun auch eine interaktive Lernumgebung, um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev ist ein weiterer Schritt, einen leichteren Einstieg insbesondere für Junior Entwickler und Quereinsteiger in das Framework zu ermöglichen. 
 
 ## Tooling-Updates
 
@@ -56,9 +56,9 @@ Das Feature der "Deferrable Views", welches sich aktuell noch in Developer Previ
 
 Die Teile deiner Angular Anwendung, die nicht sofort im sichtbaren Bereich liegen, werden dadurch erst dann geladen und gerendert, wenn sie tatsächlich benötigt werden. Das schont Browser-Ressourcen in erheblichem Ausmaß, da nur die für den aktuellen Benutzerkontext relevanten Teile der Anwendung geladen werden. Hier hast du folgende Möglichkeiten:
 
-- on idle: Lädt Komponenten, wenn der Browser inaktiv ist.
-- on immediate: Lädt Komponenten sofort nach der Initialisierung.
-- on viewport: Lädt Komponenten, wenn sie in den sichtbaren Bereich des Bildschirms kommen.
+- **on idle**: Lädt Komponenten, wenn der Browser inaktiv ist.
+- **on immediate**: Lädt Komponenten sofort nach der Initialisierung.
+- **on viewport**: Lädt Komponenten, wenn sie in den sichtbaren Bereich des Bildschirms kommen.
 
 Die genannten Benchmarks sind bemerkenswert: bis zu 90% schnellere Laufzeiten und bis zu 87% schnellere Builds für hybrides Rendering sowie 67% für Client-seitiges Rendering.
 
