@@ -13,24 +13,24 @@ Wir leben im Zeitalter der Superlative. 'Größer, schneller, besser' war gester
 
 Aber was kommt eigentlich nach dem Superlativ? Die Antwort auf diese fast philosophische Frage hat uns jetzt Minko Gechev gegeben: eine Renaissance. Das ist ein Begriff, der wortwörtlich übersetzt die Wiedergeburt bedeutet und eine Erneuerung verspricht. Bereits Anfang 2023 hat Sarah Drasner, als Director of Engineering bei Google und Leiterin des Angular-Teams, die neue Ära der 'Angular Renaissance' auf X, ehemals Twitter, angekündigt. Und mit diesem Begriff hat jetzt auch der Technical Lead und Manager des Angular Teams das neue Update auf Angular 17 angekündigt.
 
-Was damit gemeint ist und ob das neue Update wirklich der Beginn einer neuen Ära ist, wollen wir uns in diesem Artikel zu Beginn des neuen Jahres nochmal gemeinsam anschauen. 
+Was damit gemeint ist und ob das neue Update wirklich der Beginn einer neuen Ära ist, wollen wir uns in diesem Artikel zu Beginn des neuen Jahres nochmal gemeinsam anschauen.
 
 Und das Beste: Wenn du bereits zu müde zum Lesen bist, kannst du dir das Ganze alternativ auch von unserem Trainer [Webdave](https://webdave.de/start) auf seinem Twitch-Kanal ansehen. Übrigens findest du alle Codebeispiele aus dem Video in [Webdaves Stackblitz](https://stackblitz.com/@web-dave)! Wie immer: Danke, Webdave!
 
 ## Angular hat ein neues Logo und Portal
 
 
-![Angular Logo](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Logo.jpg?raw=true)
+![Angular Logo](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/angular-logo.jpg?raw=true)
 
 Das auffälligste Update ist mit Sicherheit das neue Logo. Angular verlässt sein traditionell rotes Schild-Symbol, das mit AngularJS eingeführt wurde und auch nach der Neuentwicklung von Angular im Jahr 2016 beibehalten wurde. Stattdessen wurde nach unserer Meinung ein durchaus gelungenes stilisiertes "A" mit einem frischen und zukunftsorientierten Erscheinungsbild gewählt.
 
-![Angular.dev Portal](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Angulardev.jpg?raw=true)
+![Angular.dev Portal](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/angulardev-with-webdave.jpg?raw=true)
 
-Ein weiteres primär visuelles Update ist die neue Angular-Präsenz im Web. [Angular.dev](https://angular.dev/) löst damit Angular.io als Hauptquelle für Informationen und Ressourcen ab. Das neue Portal hat ein völlig überarbeitetes neues Design bekommen und dient zukünftig als zentrale Anlaufstelle für alles rund um Angular. Das beinhaltet auch eine überarbeitete Dokumentation und eigene Tutorials. Darüber hinaus bietet angular.dev nun auch eine interaktive Lernumgebung, um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev ist ein weiterer Schritt, einen leichteren Einstieg insbesondere für Junior Entwickler und Quereinsteiger in das Framework zu ermöglichen. 
+Ein weiteres primär visuelles Update ist die neue Angular-Präsenz im Web. [Angular.dev](https://angular.dev/) löst damit Angular.io als Hauptquelle für Informationen und Ressourcen ab. Das neue Portal hat ein völlig überarbeitetes neues Design bekommen und dient zukünftig als zentrale Anlaufstelle für alles rund um Angular. Das beinhaltet auch eine überarbeitete Dokumentation und eigene Tutorials. Darüber hinaus bietet angular.dev nun auch eine interaktive Lernumgebung, um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev ist ein weiterer Schritt, einen leichteren Einstieg insbesondere für Junior Entwickler und Quereinsteiger in das Framework zu ermöglichen.
 
 ## Tooling-Updates
 
-Zunächst wollen wir kurz die vielen Tooling-Updates in Angular 17 betrachten. 
+Zunächst wollen wir kurz die vielen Tooling-Updates in Angular 17 betrachten.
 
 Wie versprochen ist hier auch das Video von Webdave zum Anguglar 17 Update.
 
@@ -75,7 +75,7 @@ Weitere Informationen findest in der Angular Documentaion: [Getting started with
 
 ## Full App Non Destructive Hydration
 
-![Logo Angular Hydration](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Hydration.jpg?raw=true)
+![Logo Angular Hydration](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/hydration.jpg?raw=true)
 
 Die in Angular 16 eingeführte Full App Non-Destructive Hydration ermöglicht eine effizientere Synchronisation zwischen Backend und Frontend in Single-Page-Applikationen (SPAs). Ein Kernvorteil dieser Technologie ist die signifikante Reduzierung des "Flickerns", das normalerweise beim Übergang vom serverseitigen zum clientseitigen Rendering auftritt.
 
@@ -94,7 +94,7 @@ Signals sind insbesondere für Junior Angular-Entwickler*innen ein hilfreiches T
 
 Weitere Informationen zum Thema der Angular Signals findet ihr in den unsere bereits veröffentlichten Artikel auf Angular.de:
 
-[Developer Ergonomics mit Angular Signals](https://angular.de/artikel/developer-ergonomics-hier-kommen-angular-signals/) 
+[Developer Ergonomics mit Angular Signals](https://angular.de/artikel/developer-ergonomics-hier-kommen-angular-signals/)
 
 [Angular kurz erklärt: Signals](https://angular.de/artikel/angular-kurz-erklaert-signals/ )
 
@@ -141,6 +141,6 @@ Die Entwicklung ist kein Zufall.Über die letzten Jahre hat sich das Angular-Tea
 
 Die Angular-Community hat gesprochen, und [die Angular-User-Experience wurde in der Roadmap 2024 als oberste Priorität ausgerufen](https://angular.dev/roadmap.). Das Angular-Team will vor allem attraktiver für Anfänger werden. Dazu werden nach und nach alle funktionellen Pain Points abgearbeitet, um es angehenden Angular-Entwicklern so leicht wie möglich zu machen, in die Welt von Angular einzutauchen.
 
-Das sind sehr gute Neuigkeiten für alle Mitglieder der Angular-Community, insbesondere für unsere deutsche [Angular.de Community](https://angular.de/)). Schließlich bedeutet es, dass wir aktiv an der Zukunft des Frameworks teilhaben können. Eure Diskussionen und euer Feedback haben offiziel die höchste Priorität im Hause Angular. Deshalb ermutigen wir euch: Engagiert euch in unserer [Angular Community auf Discord](https://workshops.de/join-discord). Nehmt Teil an unseren 18 Meetups, die insgesamt über 10.000 Angular-Entwicklerinnen und -Entwickler als Plattform für regelmäßigen Austausch dienen. Wir sind damit in Europa die Region mit den meisten Angular-Entwicklerinnen. 
+Das sind sehr gute Neuigkeiten für alle Mitglieder der Angular-Community, insbesondere für unsere deutsche [Angular.de Community](https://angular.de/)). Schließlich bedeutet es, dass wir aktiv an der Zukunft des Frameworks teilhaben können. Eure Diskussionen und euer Feedback haben offiziel die höchste Priorität im Hause Angular. Deshalb ermutigen wir euch: Engagiert euch in unserer [Angular Community auf Discord](https://workshops.de/join-discord). Nehmt Teil an unseren 18 Meetups, die insgesamt über 10.000 Angular-Entwicklerinnen und -Entwickler als Plattform für regelmäßigen Austausch dienen. Wir sind damit in Europa die Region mit den meisten Angular-Entwicklerinnen.
 
 [Werde Teil unserer Community und gestalte die Zukunft mit!](https://workshops.de/join-discord)
