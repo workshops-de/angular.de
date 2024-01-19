@@ -1,5 +1,5 @@
 ---
-title: "Angular 17 - Eine Renaissance"
+title: "Der Beginn der Angular 17 Renaissance"
 description: “Ein Blogartikel über alle neuen Features und Updates in Angular 17, über Verbesserungen in Performance und Angular Developer Experience und die Angular Renaissance”.
 author: "Lulëzim Ukaj"
 published_at: 2024-01-19 19:27:00
