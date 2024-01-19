@@ -2,7 +2,7 @@
 title: "Der Beginn der Angular 17 Renaissance"
 description: “Ein Blogartikel über alle neuen Features und Updates in Angular 17, über Verbesserungen in Performance und Angular Developer Experience und die Angular Renaissance”.
 author: "Lulëzim Ukaj"
-published_at: 2024-01-19 19:27:00
+published_at: 2024-01-19 18:00:00
 header_source: https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Header.jpg?raw=true
 header_image: header.jpg
 categories: "angular update"
@@ -15,7 +15,7 @@ Aber was kommt eigentlich nach dem Superlativ? Die Antwort auf diese fast philos
 
 Was damit gemeint ist und ob das neue Update wirklich der Beginn einer neuen Ära ist, wollen wir uns in diesem Artikel zu Beginn des neuen Jahres nochmal gemeinsam anschauen. 
 
-Und das Beste: Wenn du bereits zu müde zum Lesen bist, kannst du dir das Ganze alternativ auch von unserem Trainer Webdave auf seinem Twitch-Kanal ansehen. Übrigens findest du alle Codebeispiele aus dem Video in Webdaves Stackblitz! Wie immer: Danke, Webdave!
+Und das Beste: Wenn du bereits zu müde zum Lesen bist, kannst du dir das Ganze alternativ auch von unserem Trainer [Webdave](https://webdave.de/start) auf seinem Twitch-Kanal ansehen. Übrigens findest du alle Codebeispiele aus dem Video in [Webdaves Stackblitz](https://stackblitz.com/@web-dave)! Wie immer: Danke, Webdave!
 
 ## Angular hat ein neues Logo und Portal
 
@@ -141,4 +141,6 @@ Die Entwicklung ist kein Zufall.Über die letzten Jahre hat sich das Angular-Tea
 
 Die Angular-Community hat gesprochen, und die Angular-User-Experience wurde in der Roadmap 2024 als oberste Priorität ausgerufen. Das Angular-Team will vor allem attraktiver für Anfänger werden. Dazu werden nach und nach alle funktionellen Pain Points abgearbeitet, um es angehenden Angular-Entwicklern so leicht wie möglich zu machen, in die Welt von Angular einzutauchen.
 
-Das sind sehr gute Neuigkeiten für alle Mitglieder der Angular-Community, insbesondere für uns bei Angular.de. Schließlich bedeutet es, dass wir aktiv an der Zukunft des Frameworks teilhaben können. Eure Diskussionen und euer Feedback haben die höchste Priorität im Hause Angular. Deshalb ermutigen wir euch: Engagiert euch in unserer Angular-Community auf Discord. Nehmt Teil an unseren 18 Meetups, die insgesamt über 10.000 Angular-Entwicklerinnen und -Entwickler als Plattform für regelmäßigen Austausch dienen. Wir sind damit in Europa die Region mit den meisten Angular-Entwicklerinnen. Werde Teil unserer Community und gestalte die Zukunft mit!
+Das sind sehr gute Neuigkeiten für alle Mitglieder der Angular-Community, insbesondere für unsere deutsche [Angular.de Community](https://angular.de/)). Schließlich bedeutet es, dass wir aktiv an der Zukunft des Frameworks teilhaben können. Eure Diskussionen und euer Feedback haben offiziel die höchste Priorität im Hause Angular. Deshalb ermutigen wir euch: Engagiert euch in unserer [Angular Community auf Discord](https://workshops.de/join-discord). Nehmt Teil an unseren 18 Meetups, die insgesamt über 10.000 Angular-Entwicklerinnen und -Entwickler als Plattform für regelmäßigen Austausch dienen. Wir sind damit in Europa die Region mit den meisten Angular-Entwicklerinnen. 
+
+[Werde Teil unserer Community und gestalte die Zukunft mit!](https://workshops.de/join-discord)
