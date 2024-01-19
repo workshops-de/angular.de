@@ -19,8 +19,13 @@ Und das Beste: Wenn du bereits zu müde zum Lesen bist, kannst du dir das Ganze 
 
 ## Angular hat ein neues Logo und Portal
 
-
-![Angular Logo](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/angular-logo.jpg?raw=true)
+<p class="text-center">
+<img
+style="max-width:40%"
+src="/shared/assets/img/placeholder-image.svg" alt="Das neue Angular Logo"
+class="lazy img-fluid img-rounded" data-src="angular-logo.jpg" data-srcset="angular-logo.jpg"
+/>
+</p>
 
 Das auffälligste Update ist mit Sicherheit das neue Logo. Angular verlässt sein traditionell rotes Schild-Symbol, das mit AngularJS eingeführt wurde und auch nach der Neuentwicklung von Angular im Jahr 2016 beibehalten wurde. Stattdessen wurde nach unserer Meinung ein durchaus gelungenes stilisiertes "A" mit einem frischen und zukunftsorientierten Erscheinungsbild gewählt.
 
