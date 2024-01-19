@@ -76,7 +76,13 @@ Die genannten Benchmarks sind bemerkenswert: bis zu 90% schnellere Laufzeiten un
 
 ## Integration von Vite und esbuild in Angular 17
 
-![Logos Vite und Esbuild](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/esbuild.jpg?raw=true)
+<p class="text-center">
+<img
+style="max-width:60%"
+src="/shared/assets/img/placeholder-image.svg" alt="Logos Vite und Esbuild"
+class="lazy img-fluid img-rounded" data-src="esbuild.jpg" data-srcset="esbuild.jpg"
+/>
+</p>
 
 Vite und Esbuild sind nun Standard in der Angular CLI für neue Projekte implementiert. Auch dieses Feature wurde bereits in der Version 16 zunächst in der Developer Preview eingeführt. Die standardmäßige Integration der Werkzeuge ist ein signifikanter Schritt nach vorn in Effizienz und Geschwindigkeit und markiert nicht weniger als einen Wendepunkt in der Build-Infrastruktur des Frameworks. Nach Angular-eigenen Zahlen werden bei der Nutzung von serverseitigem Rendering (SSR) und Static Site Generation (SSG) in ng build bis zu 87% schnellere Build-Zeiten und eine um 80% verbesserte Edit-Refresh-Schleife in ng serve gemeldet.
 
