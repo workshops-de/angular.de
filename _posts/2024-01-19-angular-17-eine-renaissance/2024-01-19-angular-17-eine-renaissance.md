@@ -45,7 +45,7 @@ Zunächst wollen wir kurz die vielen Tooling-Updates in Angular 17 betrachten.
 
 Wie versprochen ist hier auch das Video von Webdave zum Anguglar 17 Update.
 
-<iframe width="100%" height="360" src="https://www.youtube.com/watch?v=tXsz5Z15yeY" frameborder="0" allowfullscreen></iframe>
+<iframe class="" width="100%" height="315" src="https://www.youtube-nocookie.com/embed/tXsz5Z15yeY" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Standalone Routing Enabled by Default
 Die Angular CLI hat bedeutende Updates erfahren. Standalone-Projekte und Routing sind jetzt der neue Standard, und die erforderliche Node-Version wurde auf 18 aktualisiert. Besonders für Junior Entwickler werden dadurch die Einstiegshürden in komplexe Projekte gesenkt. Erfahrene Entwickler werden die gesteigerte Effizienz und Flexibilität schätzen, die durch diese Updates ermöglicht werden.
