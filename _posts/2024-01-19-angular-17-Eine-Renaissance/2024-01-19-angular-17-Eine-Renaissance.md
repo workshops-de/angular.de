@@ -3,7 +3,7 @@ title: "Angular 17 - Eine Renaissance"
 description: “Ein Blogartikel über alle neuen Features und Updates in Angular 17, über Verbesserungen in Performance und Angular Developer Experience und die Angular Renaissance”.
 author: "Lulëzim Ukaj"
 published_at: 2024-01-19 19:27:00
-header_source: 
+header_source: https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Header.jpg?raw=true
 header_image: header.jpg
 categories: "angular update"
 ---
@@ -18,7 +18,13 @@ Was damit gemeint ist und ob das neue Update wirklich der Beginn einer neuen Är
 Und das Beste: Wenn du bereits zu müde zum Lesen bist, kannst du dir das Ganze alternativ auch von unserem Trainer Webdave auf seinem Twitch-Kanal ansehen. Übrigens findest du alle Codebeispiele aus dem Video in Webdaves Stackblitz! Wie immer: Danke, Webdave!
 
 ## Angular hat ein neues Logo und Portal
+
+
+![Angular Logo](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Logo.jpg?raw=true)
+
 Das auffälligste Update ist mit Sicherheit das neue Logo. Angular verlässt sein traditionell rotes Schild-Symbol, das mit AngularJS eingeführt wurde und auch nach der Neuentwicklung von Angular im Jahr 2016 beibehalten wurde. Stattdessen wurde nach unserer Meinung ein durchaus gelungenes stilisiertes "A" mit einem frischen und zukunftsorientierten Erscheinungsbild gewählt.
+
+![Angular.dev Portal](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Angulardev.jpg?raw=true)
 
 Ein weiteres primär visuelles Update ist die neue Angular-Präsenz im Web. Angular.dev löst damit angular.io als Hauptquelle für Informationen und Ressourcen ab. Das neue Portal hat ein völlig überarbeitetes neues Design bekommen und dient zukünftig als zentrale Anlaufstelle für alles rund um Angular. Das beinhaltet auch eine überarbeitete Dokumentation und eigene Tutorials. Darüber hinaus bietet angular.dev nun auch eine interaktive Lernumgebung, um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev ist ein weiterer Schritt, einen leichteren Einstieg insbesondere für Junior Entwickler und Quereinsteiger in das Framework zu ermöglichen. 
 
@@ -50,22 +56,30 @@ Das Feature der "Deferrable Views", welches sich aktuell noch in Developer Previ
 
 Die Teile deiner Angular Anwendung, die nicht sofort im sichtbaren Bereich liegen, werden dadurch erst dann geladen und gerendert, wenn sie tatsächlich benötigt werden. Das schont Browser-Ressourcen in erheblichem Ausmaß, da nur die für den aktuellen Benutzerkontext relevanten Teile der Anwendung geladen werden. Hier hast du folgende Möglichkeiten:
 
-on idle: Lädt Komponenten, wenn der Browser inaktiv ist.
-on immediate: Lädt Komponenten sofort nach der Initialisierung.
-on viewport: Lädt Komponenten, wenn sie in den sichtbaren Bereich des Bildschirms kommen.
+- on idle: Lädt Komponenten, wenn der Browser inaktiv ist.
+- on immediate: Lädt Komponenten sofort nach der Initialisierung.
+- on viewport: Lädt Komponenten, wenn sie in den sichtbaren Bereich des Bildschirms kommen.
 
 Die genannten Benchmarks sind bemerkenswert: bis zu 90% schnellere Laufzeiten und bis zu 87% schnellere Builds für hybrides Rendering sowie 67% für Client-seitiges Rendering.
 
 ## Integration von Vite und esbuild in Angular 17
+
+![Logos Vite und Esbuild](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/esbuild.jpg?raw=true)
+
 Vite und Esbuild sind nun Standard in der Angular CLI für neue Projekte implementiert. Auch dieses Feature wurde bereits in der Version 16 zunächst in der Developer Preview eingeführt. Die standardmäßige Integration der Werkzeuge ist ein signifikanter Schritt nach vorn in Effizienz und Geschwindigkeit und markiert nicht weniger als einen Wendepunkt in der Build-Infrastruktur des Frameworks. Nach Angular-eigenen Zahlen werden bei der Nutzung von serverseitigem Rendering (SSR) und Static Site Generation (SSG) in ng build bis zu 87% schnellere Build-Zeiten und eine um 80% verbesserte Edit-Refresh-Schleife in ng serve gemeldet.
+
 In einem nächsten Patch- oder Minor Release werden zusätzlich Schemata zur automatischen Migration bestehender Projekte, die Hybrid-Rendering verwenden, bereitgestellt. Wer die neue Application Builder-Technologie jetzt schon testen möchte, dem bietet die Angular-Dokumentation eine entsprechende Hilfestellung.
 
 Weitere Informationen findest in der Angular Documentaion: [Getting started with the Angular CLI's new build system](https://angular.io/guide/esbuild)
 
 ## Full App Non Destructive Hydration
 
+![Logo Angular Hydration](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Hydration.jpg?raw=true)
+
 Die in Angular 16 eingeführte Full App Non-Destructive Hydration ermöglicht eine effizientere Synchronisation zwischen Backend und Frontend in Single-Page-Applikationen (SPAs). Ein Kernvorteil dieser Technologie ist die signifikante Reduzierung des "Flickerns", das normalerweise beim Übergang vom serverseitigen zum clientseitigen Rendering auftritt.
+
 Anstatt bei jedem Client-Start die gesamte DOM-Struktur neu zu rendern, nutzt Angular vorhandene serverseitig gerenderte DOM-Knoten. Wenn der Client die vom Server gerenderte HTML-Datei empfängt, identifiziert Angular diese existierenden DOM-Knoten und aktualisiert lediglich deren Eigenschaften und Attribute, anstatt eine vollständige Neuerstellung vorzunehmen.
+
 Durch die Wiederverwendung der serverseitig gerenderten DOM-Knoten verringert sich die Zeit, die benötigt wird, um die Anwendung zu rendern. Das Resultat ist ein schnelleres Initialrendering und flickerfreie Übergänge.
 Da keine Notwendigkeit besteht, neue DOM-Knoten zu erstellen, wird der Speicherverbrauch der Anwendung reduziert. Dies ist insbesondere für Geräte mit begrenzten Ressourcen, wie mobile Endgeräte, von Vorteil.
 
@@ -74,8 +88,10 @@ Da keine Notwendigkeit besteht, neue DOM-Knoten zu erstellen, wird der Speicherv
 ## Stabile Implementierung von Signals
 
 Angular Signals sind nun stabil und nicht länger nur in der Developer Preview verfügbar. Signals sind das neueste Tool in der reaktiven Programmierung in Angular. Sie wurden erstmals im Mai dieses Jahres mit dem Update auf Version 16 als Developer Preview eingeführt und haben sich nun mit der Veröffentlichung von Angular 17 als festes Standbein des Frameworks etabliert.
+
 Signals sind insbesondere für Junior Angular-Entwickler*innen ein hilfreiches Tool, da sie das reaktive Programmieren entscheidend erleichtern. Im Grunde sind sie - wie der Name es vermuten lässt - ein Signalgeber mit einem Wert, der alle verbundenen Consumer benachrichtigt, wenn sich dieser Wert ändert. Diese Werte können einfache Strings, ein Array oder auch komplexere Datentypen sein. Ändern sich diese Werte, werden automatisch alle Konsumenten informiert und aktualisieren ihre Werte. Im Vergleich zu Observables und RxJS bieten Angular Signals eine intuitivere und klarere Syntax. Dies führt zu einer verbesserten Lesbarkeit und Wartbarkeit des Codes und verbessert nebenbei auch signifikant die Leistung der Angular Anwendung.
-Weitere Informationen zum Thema der Angular Signals findet ihr in den beiden Artikeln auf Angular.de:
+
+Weitere Informationen zum Thema der Angular Signals findet ihr in den unsere bereits veröffentlichten Artikel auf Angular.de:
 
 [Developer Ergonomics mit Angular Signals](https://angular.de/artikel/developer-ergonomics-hier-kommen-angular-signals/) 
 
@@ -87,7 +103,9 @@ Hier ist ein weiteres Video von Webdave speziell zum neuen Control Flow.
 
 <iframe width="100%" height="360" src="(https://www.youtube.com/watch?v=ENf9sNckFbs" frameborder="0" allowfullscreen></iframe>
 
+
 Die neue Control Flow-Syntax in Angular 17 ist noch im Developer Preview. Sie ermöglicht eine direktere und effizientere Kontrolle über das Template einer Komponente. Dies ist ein signifikanter Fortschritt gegenüber der vorherigen Situation, in der Strukturdirektiven wie ngIf, ngFor und ngSwitch zwar für die Template-Kontrolle verwendet wurden, aber in einem anderen Kontext als die Komponente selbst standen. Diese Direktiven gehörten zwar zum Framework, aber nicht direkt zur Komponentenlogik, was zu einer Diskrepanz zwischen Komponentenlogik und Template-Kontrolle führte.
+
 Zum Beispiel kann eine Komponente nun direkt auf Änderungen im Template reagieren, ohne auf Umwege über Strukturdirektiven angewiesen zu sein. Ein Beispiel für diese neue Syntax könnte so aussehen:
 
 ```javascript
@@ -108,6 +126,7 @@ Diese Syntax bringt die Template-Kontrolle direkt in den Kontext der Komponente,
 Zusammenfassend können wir sagen, dass das Update auf Angular v17 eine Reihe von innovativen neuen Features und Tooling-Optimierungen mit sich gebracht hat. Im Ergebnis liefert das Angular Team wie gewohnt ein Paket signifikanter Performance-Boosts für das Framework. Damit zementiert Angular wieder einmal seinen Status als einer der Branchenführer für die professionelle Entwicklung von Enterprise Software.
 
 Das Highlight der Feature-Updates in Angular 17 ist mit Sicherheit der neue Control Flow. Dieser befindet sich noch in der Developer Preview. Das bedeutet, dass das Feature weitgehend stabil ist, aber das Angular Team in den nächsten Monaten weiter am Feature arbeiten und Details entsprechend dem Feedback aus der Angular-Community anpassen wird. Die Angular Signals hingegen sind nun stabil, genauso wie die Integration von Vite und Esbuild in die Angular CLI.
+
 Dieses Mal ging es jedoch um mehr als nur funktionelle Verbesserungen. Mit dem Update hat Angular auch einen neuen Look bekommen. Dazu gehören das neue Logo-Design, eine neue aktualisierte Dokumentation und insbesondere das neue Lernportal angular.dev.
 
 Ist das jetzt schon eine Renaissance oder der Beginn einer neuen Ära?
