@@ -21,7 +21,7 @@ Und das Beste: Wenn du bereits zu müde zum Lesen bist, kannst du dir das Ganze 
 
 <p class="text-center">
 <img
-style="max-width:40%"
+style="max-width:60%"
 src="/shared/assets/img/placeholder-image.svg" alt="Das neue Angular Logo"
 class="lazy img-fluid img-rounded" data-src="angular-logo.jpg" data-srcset="angular-logo.jpg"
 />
@@ -29,7 +29,13 @@ class="lazy img-fluid img-rounded" data-src="angular-logo.jpg" data-srcset="angu
 
 Das auffälligste Update ist mit Sicherheit das neue Logo. Angular verlässt sein traditionell rotes Schild-Symbol, das mit AngularJS eingeführt wurde und auch nach der Neuentwicklung von Angular im Jahr 2016 beibehalten wurde. Stattdessen wurde nach unserer Meinung ein durchaus gelungenes stilisiertes "A" mit einem frischen und zukunftsorientierten Erscheinungsbild gewählt.
 
-![Angular.dev Portal](https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/angulardev-with-webdave.jpg?raw=true)
+<p class="text-center">
+<img
+style="max-width:60%"
+src="/shared/assets/img/placeholder-image.svg" alt="Eine Illustration von der neuen Angular.DEV Platform mit einer WebDave Tasse davor."
+class="lazy img-fluid img-rounded" data-src="angulardev-with-webdave.jpg" data-srcset="angulardev-with-webdave.jpg"
+/>
+</p>
 
 Ein weiteres primär visuelles Update ist die neue Angular-Präsenz im Web. [Angular.dev](https://angular.dev/) löst damit Angular.io als Hauptquelle für Informationen und Ressourcen ab. Das neue Portal hat ein völlig überarbeitetes neues Design bekommen und dient zukünftig als zentrale Anlaufstelle für alles rund um Angular. Das beinhaltet auch eine überarbeitete Dokumentation und eigene Tutorials. Darüber hinaus bietet angular.dev nun auch eine interaktive Lernumgebung, um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev ist ein weiterer Schritt, einen leichteren Einstieg insbesondere für Junior Entwickler und Quereinsteiger in das Framework zu ermöglichen.
 
