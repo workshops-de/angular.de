@@ -47,6 +47,16 @@ Damit ihr die vielen bevorstehenden Updates im Hause Angular zum Thema Hydration
 Um es kurz und in zwei Sätzen zu sagen. Beim Server-Side Rendering (SSR) ist es die Aufgabe des Servers, deine Webanwendung zu rendern. Beim Client-Side Rendering findet das Rendering in deinem Browser, also auf Client-Seite, statt. Aber um das Ganze besser zu verstehen, werden wir uns die Prozesse des SSR und CSR genauer ansehen.
 
 ### Server-Side Rendering (SSR)
+
+<p class="text-center">
+<img
+style="max-width:60%"
+src="/shared/assets/img/placeholder-image.svg" alt=""
+class="lazy img-fluid img-rounded" data-src="ssr.jpg" data-srcset="ssr.jpg"
+/>
+</p>
+
+
 Beim Server-Side Rendering wird der Inhalt einer Webseite vorab auf dem Server gerendert und als vollständige HTML-Datei an den Browser des Benutzers geliefert. Dadurch wird die Webseite sofort sichtbar, sobald sie vom Browser geladen ist. Vorausgesetzt natürlich, es besteht eine anständige Internetverbindung.
 
 #### Die Funktionsweise von SSR im Detail:
