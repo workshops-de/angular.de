@@ -51,7 +51,7 @@ Um es kurz und in zwei Sätzen zu sagen. Beim Server-Side Rendering (SSR) ist es
 <p class="text-center">
 <img
 style="max-width:60%"
-src="/shared/assets/img/ssr.jpg" alt=""
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/cumulativeshift.jpg" alt=""
 class="lazy img-fluid img-rounded" data-src="ssr.jpg" data-srcset="ssr.jpg"
 />
 </p>
