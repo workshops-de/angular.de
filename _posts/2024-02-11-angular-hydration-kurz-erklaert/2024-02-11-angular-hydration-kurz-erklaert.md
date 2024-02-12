@@ -28,6 +28,14 @@ Angular selbst definiert den Begriff in seiner Dokumentation wie folgt:
 > ([Angular Documentation](https://angular.dev/guide/hydration#what-is-hydration))
 
 
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/Hydration.jpg" alt="Logo Angular Hydration"
+class="lazy img-fluid img-rounded" data-src="Hydration.jpg" data-srcset="Hydration.jpg"
+/>
+</p>
+
 Single-Page Applications (SPAs) bieten eine bessere Laufzeit-Performance als klassische Webanwendungen. Ist deine Webanwendung einmal geladen, werden alle Inhalte dynamisch aktualisiert, ohne dass die Website jedes Mal komplett neu gecatcht und gerendert werden muss. Das sorgt für eine flüssige und app-ähnliche User Experience. Allerdings muss der Browser dafür beim initialen Laden der Seite zusätzlich zum HTML große Mengen an JavaScript-Code laden. Dieser Prozess wird der "Initial Load" genannt und definiert den Zeitraum, bis eine Webseite nach deinem HTTP-Request für die User vollständig sichtbar und interaktiv ist.
 
 
@@ -113,7 +121,7 @@ Aber nach welchen Metriken wird eigentlich gemessen? Wann ist eine Webseite schn
 <p class="left">
 <img
 style="max-width:80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/vitals.jpg" alt=""
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/vitals.jpg" alt="Infografik Auflistung derWeb Core Vitals: Contentful Paint (LCP), dem First Input Delay (FID) und dem Cumulative Layout Shift (CLS)"
 class="lazy img-fluid img-rounded" data-src="vitals.jpg" data-srcset="vitals.jpg"
 />
 </p>
@@ -128,7 +136,7 @@ Der Fokus der Web Core Vitals (und damit haben diese auch den größten Einfluss
 <p class="left">
 <img
 style="max-width:80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/largestcontentfulpaint.jpg" alt=""
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/largestcontentfulpaint.jpg" alt="Infografik Darstellung des Largest Contentful Paint am Beispiel der Webansicht für Instagram"
 class="lazy img-fluid img-rounded" data-src="largestcontentfulpaint.jpg" data-srcset="largestcontentfulpaint.jpg"
 />
 </p>
@@ -138,7 +146,7 @@ Der LCP ist quasi der erste Eindruck deiner Seite. Gemessen wird, wie lange es d
 <p class="left">
 <img
 style="max-width:80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/cumulativeshift.jpg" alt=""
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/cumulativeshift.jpg" alt="Infografik CLS: Button verschiebt sich nach unten durch verzögerte Einblendung von Inhalten in Webansicht"
 class="lazy img-fluid img-rounded" data-src="cumulativeshift.jpg" data-srcset="cumulativeshift.jpg"
 />
 </p>
@@ -154,7 +162,7 @@ Angular unterstützt serverseitiges Rendering (SSR) bereits seit einiger Zeit du
 <p class="left">
 <img
 style="max-width:80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-destructive-hydration.gif" alt=""
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-destructive-hydration.gif" alt="Prozesses der destruktiven Hydration als Gif"
 class="lazy img-fluid img-rounded" data-src="gif-destructive-hydration.gif" data-srcset="gif-destructive-hydration.gif"
 />
 </p>
@@ -176,7 +184,7 @@ Die Full App Non-Destructive Hydration hat genau da angesetzt, indem das bereits
 <p class="left">
 <img
 style="max-width:80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-full-hydration.gif" alt=""
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-full-hydration.gif" alt="Prozesses der non-dedstructive Hydration als Gif"
 class="lazy img-fluid img-rounded" data-src="gif-full-hydration.gif" data-srcset="gif-full-hydration.gif"
 />
 </p>
@@ -197,7 +205,7 @@ Gleichzeitig hat sich die partielle Hydration in der Webentwicklung etabliert. H
 <p class="left">
 <img
 style="max-width:80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-partial-hydration.gif" alt=""
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-partial-hydration.gif" alt="Prozesses der partiellen Hydration als Gif"
 class="lazy img-fluid img-rounded" data-src="gif-partial-hydration.gif" data-srcset="gif-partial-hydration.gif"
 />
 </p>
