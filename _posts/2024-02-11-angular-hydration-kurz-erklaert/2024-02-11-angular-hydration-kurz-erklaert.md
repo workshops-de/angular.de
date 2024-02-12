@@ -78,7 +78,7 @@ Beim Server-Side Rendering wird der Inhalt einer Webseite vorab auf dem Server g
 
 
 Der entscheidende Vorteil des Server-Side Renderings liegt in einem deutlich verbesserten Initial Load der Webanwendung. Verkürzte Wartezeiten steigern die User Experience erheblich und verbessern das SEO-Ranking auf Google. Zudem ist die Anwendung auch auf langsamen Geräten oder bei schlechter Internetverbindung nutzbar, da der Server die Hauptlast des Renderings trägt.
-Die Medaille hat natürlich auch eine andere Seite. Das führt zu einer erhöhten Belastung des Servers, was insbesondere bei Webseiten mit hohem Traffic Auswirkungen auf Skalierbarkeit und Kosten haben kann.  Außerdem macht das SSR die Architektur deiner Webanwendungen komplexer, da einige Szenarien für das Rendering und die Zustandsverwaltung auf dem Server durchdacht werden müssen. Diese Komplexität ist mit mehr Entwicklungszeit und somit höheren Kosten verbunden. Auch die Wartung wird komplexer. Auch die Wartung wird damit komplexer. 
+Die Medaille hat natürlich auch eine andere Seite. Das führt zu einer erhöhten Belastung des Servers, was insbesondere bei Webseiten mit hohem Traffic Auswirkungen auf Skalierbarkeit und Kosten haben kann.  Außerdem macht das SSR die Architektur deiner Webanwendungen komplexer, da einige Szenarien für das Rendering und die Zustandsverwaltung auf dem Server durchdacht werden müssen. Diese Komplexität ist mit mehr Entwicklungszeit und somit höheren Kosten verbunden. Auch die Wartung wird damit komplexer. 
 Zusammenfassend kann gesagt werden, SSR ist besonders nützlich für content-orientierte Webanwendungen wie E-Commerce-Seiten, bei denen SEO-Rankings und schnelle Ladezeiten entscheidend sind.
 
 
