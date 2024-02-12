@@ -48,9 +48,9 @@ Um es kurz und in zwei Sätzen zu sagen. Beim Server-Side Rendering (SSR) ist es
 
 ### Server-Side Rendering (SSR)
 
-<p class="text-center">
+<p class="left">
 <img
-style="max-width:60%"
+style="max-width:100%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/ssr.jpg" alt=""
 class="lazy img-fluid img-rounded" data-src="ssr.jpg" data-srcset="ssr.jpg"
 />
@@ -78,9 +78,9 @@ Zusammenfassend kann gesagt werden, SSR ist besonders nützlich für content-ori
 
 ### Client-Side Rendering (CSR) erklärt
 
-<p class="text-center">
+<p class="left">
 <img
-style="max-width:60%"
+style="max-width:100%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/csr.jpg" alt=""
 class="lazy img-fluid img-rounded" data-src="csr.jpg" data-srcset="csr.jpg"
 />
@@ -110,9 +110,9 @@ Aber nach welchen Metriken wird eigentlich gemessen? Wann ist eine Webseite schn
 
 ## Web Core Vitals
 
-<p class="text-center">
+<p class="left">
 <img
-style="max-width:60%"
+style="max-width:80%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/vitals.jpg" alt=""
 class="lazy img-fluid img-rounded" data-src="vitals.jpg" data-srcset="vitals.jpg"
 />
@@ -125,9 +125,9 @@ Die Core Web Vitals sind ein wichtiger Faktor für das SEO-Ranking deiner Websei
 
 Der Fokus der Web Core Vitals (und damit haben diese auch den größten Einfluss auf dein SEO-Ranking) liegt dabei auf dem Largest Contentful Paint (LCP), dem First Input Delay (FID) und dem Cumulative Layout Shift (CLS). Sie messen, wie schnell Inhalte für den Nutzer sichtbar und interaktiv werden.
 
-<p class="text-center">
+<p class="left">
 <img
-style="max-width:60%"
+style="max-width:80%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/largestcontentfulpaint.jpg" alt=""
 class="lazy img-fluid img-rounded" data-src="largestcontentfulpaint.jpg" data-srcset="largestcontentfulpaint.jpg"
 />
@@ -135,9 +135,9 @@ class="lazy img-fluid img-rounded" data-src="largestcontentfulpaint.jpg" data-sr
 
 Der LCP ist quasi der erste Eindruck deiner Seite. Gemessen wird, wie lange es dauert, bis das größte Element auf deiner Webseite gerendert ist und für den User sichtbar wird. Meist handelt es sich dabei um ein Bild oder eine Grafik. Für eine gute Bewertung sollte der LCP innerhalb von 2,5 Sekunden nach dem ersten Laden der Seite erfolgen. Der CLS bewertet die visuelle Stabilität während des Ladeprozesses. Verschieben sich Elemente auf dem Bildschirm während des Renderings? Wir alle haben die Erfahrung gemacht, dass Bedienelemente während der Ladezeit im Layout sich plötzlich verschieben. Der FID misst die Zeit, die eine Seite benötigt, um auf den ersten Klick eines Links oder Buttons zu reagieren. Für eine gute Bewertung sollte die Seite eine FID von 100 Millisekunden oder weniger aufweisen.
 
-<p class="text-center">
+<p class="left">
 <img
-style="max-width:60%"
+style="max-width:80%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/cumulativeshift.jpg" alt=""
 class="lazy img-fluid img-rounded" data-src="cumulativeshift.jpg" data-srcset="cumulativeshift.jpg"
 />
@@ -151,9 +151,9 @@ Aber jetzt wieder zurück zu Angular und zur Full App Non-Destructive Hydration.
 
 Angular unterstützt serverseitiges Rendering (SSR) bereits seit einiger Zeit durch seine Libary Angular Universal. Dieser Prozess war jedoch bis zum Update auf Angular 16 destruktiv. Um zu verstehen, was das bedeutet, wollen wir uns den Prozess näher ansehen:
 
-<p class="text-center">
+<p class="left">
 <img
-style="max-width:60%"
+style="max-width:80%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-destructive-hydration.gif" alt=""
 class="lazy img-fluid img-rounded" data-src="gif-destructive-hydration.gif" data-srcset="gif-destructive-hydration.gif"
 />
@@ -173,9 +173,9 @@ Wie wir sehen können, zerstört Angular die bereits (im dritten Schritt) gerend
 
 Die Full App Non-Destructive Hydration hat genau da angesetzt, indem das bereits serverseitig gerenderte DOM-Markup wiederverwendet wird. “Non-destructive” meint nichts anderes, als dass das serverseitig gerenderte DOM-Markup nicht zerstört und wieder neu gerendert wird; stattdessen durchläuft Angular die DOM-Struktur, hängt Event-Listener an und bindet Daten, um das Rendering zu vervollständigen.
 
-<p class="text-center">
+<p class="left">
 <img
-style="max-width:60%"
+style="max-width:80%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-full-hydration.gif" alt=""
 class="lazy img-fluid img-rounded" data-src="gif-full-hydration.gif" data-srcset="gif-full-hydration.gif"
 />
@@ -194,9 +194,9 @@ Die Full App Non-Destructive Hydration war nur der erste Schritt einer grundsät
 
 Gleichzeitig hat sich die partielle Hydration in der Webentwicklung etabliert. Hierbei werden Komponenten, die nicht essentiell für die Seite sind oder sich nicht im Viewport befinden, verzögert geladen. Wichtige Begriffe in diesem Zusammenhang sind Lazy Loading und Deferrable Views. 
 
-<p class="text-center">
+<p class="left">
 <img
-style="max-width:60%"
+style="max-width:80%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/gif-partial-hydration.gif" alt=""
 class="lazy img-fluid img-rounded" data-src="gif-partial-hydration.gif" data-srcset="gif-partial-hydration.gif"
 />
