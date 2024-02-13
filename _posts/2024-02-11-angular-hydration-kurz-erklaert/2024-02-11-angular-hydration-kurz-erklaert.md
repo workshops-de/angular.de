@@ -31,8 +31,8 @@ Angular selbst definiert den Begriff in seiner Dokumentation wie folgt:
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/Hydration.jpg" alt="Logo Angular Hydration"
-class="lazy img-fluid img-rounded" data-src="Hydration.jpg" data-srcset="Hydration.jpg"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/hydration.jpg" alt="Logo Angular Hydration"
+class="lazy img-fluid img-rounded" data-src="hydration.jpg" data-srcset="hydration.jpg"
 />
 </p>
 
