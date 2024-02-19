@@ -18,19 +18,19 @@ Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-
 <b>kostenlosen Workshops.DE Lifetime Classroom zum Angular Tutorial</b>
 </a>
  mit Videos von  Hilfestellungen und Musterlösungen für die Aufgaben erhalten.
-
+<p class="text-center">
 <a target="_blank" href="https://lifetime.workshops.de/offers/QozcPo3a?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
   <img src="/shared/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Lifetime Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="kajabi-angular-tutorial.png" data-srcset="kajabi-angular-tutorial.png"
-  style="max-width:60%"
+  style="max-width:80%"
   />
 </a>
 
 <a target="_blank" href="https://lifetime.workshops.de/offers/QozcPo3a?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
   <img src="/shared/assets/img/placeholder-image.svg" alt="Beispiel Video zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="kajabi-video-angular-tutorial.png" data-srcset="kajabi-video-angular-tutorial.png"
-  style="max-width:60%"
+  style="max-width:80%"
   />
 </a>
-<p class="text-center">
+
   <a class="btn btn-primary" target="_blank" href="https://lifetime.workshops.de/offers/QozcPo3a?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-article-top">
             Zum kostenlosen Angular Tutorial Video Kurs
   </a>
