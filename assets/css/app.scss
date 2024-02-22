@@ -125,7 +125,7 @@ $footer-background: #262a2f;
 
 .navbar-banner {
   color: $white;
-  background: $primary;
+  background: #463fa6;
   box-shadow: none;
 
   a {
@@ -145,6 +145,9 @@ $footer-background: #262a2f;
 }
 
 .btn.btn-primary {
+  border-color: transparent;
+  border-left: 0;
+  border-right: 0;
   background: var(--pink-to-purple-horizontal-gradient);
 }
 
