@@ -15,7 +15,7 @@ $headings-font-weight: 600;
 $code-font-size: .875em;
 
 // Theme Colors
-$primary: #1565c0; // #4eafca
+$primary: #8514f5; // #4eafca
 $black:  #000;
 $white:  #fff;
 $yiq-contrasted-threshold:  195;
@@ -59,7 +59,7 @@ $carousel-indicator-active-bg: $primary;
 
 // Settings
 $navbar-brand-font-size: 1rem;
-$navbar-main-background: #1565c0;
+$navbar-main-background: #fff;
 $navbar-light-color: rgba($black, .54);
 $navbar-dark-color: rgba($white, 1);
 $navbar-dark-hover-color: rgba($white, 1);
@@ -76,6 +76,77 @@ $footer-background: #262a2f;
 // Imports
 //
 @import "../../shared/theme/theme";
+
+:root {
+  --bright-blue: oklch(51.01% .274 263.83);
+  --indigo-blue: oklch(51.64% .229 281.65);
+  --electric-violet: oklch(53.18% .28 296.97);
+  --french-violet: oklch(47.66% .246 305.88);
+  --vivid-pink: oklch(69.02% .277 332.77);
+  --hot-pink: oklch(59.91% .239 8.14);
+
+  --light-blue: color-mix(in srgb, var(--bright-blue), white 50%);
+  --light-violet: color-mix(in srgb, var(--electric-violet), white 65%);
+  --light-pink: color-mix(in srgb, var(--vivid-pink) 10%, white 80%);
+
+  --purple-to-blue-horizontal-gradient: linear-gradient( 90deg, var(--electric-violet) 0%, var(--bright-blue) 100% );
+  --purple-to-blue-vertical-gradient: linear-gradient( 0deg, var(--electric-violet) 0%, var(--bright-blue) 100% );
+  --pink-to-purple-horizontal-gradient: linear-gradient( 90deg, var(--vivid-pink) 0%, var(--electric-violet) 100% );
+  --pink-to-purple-vertical-gradient: linear-gradient( 0deg, var(--electric-violet) 0%, var(--vivid-pink) 100% );
+  --purple-to-light-purple-vertical-gradient: linear-gradient( 0deg, var(--french-violet) 0%, var(--light-violet) 100% );
+}
+
+.header.header-homepage {
+  background: #f6f5ff;
+  border: 0;
+}
+
+.header.header-tutorials {
+  background: #f6f5ff;
+  border: 0;
+}
+
+.header-workshop {
+  background: #f6f5ff;
+
+  &:before {
+    display: none;
+  }
+
+  h1,.h1,.copy-headline,h2,.h2 {
+    color: $body-color;
+  }
+}
+
+.navbar-main .nav-link {
+  color: #333;
+  text-shadow: none;
+}
+
+.navbar-banner {
+  color: $white;
+  background: $primary;
+  box-shadow: none;
+
+  a {
+    color: $white;
+  }
+}
+
+.form-inline .navbar-search {
+  &::placeholder {
+    color: $body-color;
+    text-shadow: none;
+  }
+}
+
+:focus {
+  outline: 3px dotted darken($primary, 10%) !important;
+}
+
+.btn.btn-primary {
+  background: var(--pink-to-purple-horizontal-gradient);
+}
 
 // Nothing else
 // Pay 10 Euros if you commit sth. here

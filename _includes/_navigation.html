@@ -1,8 +1,10 @@
 <div class="navbar-wrapper">
-  <nav class="navbar navbar-dark navbar-main navbar-expand-lg">
+  {% include shared/_navigation_banner.html %}
+
+  <nav class="navbar navbar-main navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand p-0 me-4 img-grayscale-100" href="/">
-        <img alt="Angular.DE" src="/assets/img/logo-white.svg" width="45">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE" src="/assets/img/logo.svg" width="45">
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,6 +59,4 @@
       </div>
     </div><!-- .container -->
   </nav>
-
-{% include shared/_navigation_banner.html %}
 </div>
