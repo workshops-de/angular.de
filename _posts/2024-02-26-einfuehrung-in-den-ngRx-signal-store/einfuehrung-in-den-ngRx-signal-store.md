@@ -4,8 +4,8 @@ description: In diesem Artikel stellen wir dir den neuen, leichtgewichtigen NgRx
 author: "Stefan Huber"
 published_at: 
 header_source: 
-header_image: 
-categories: ""
+header_image: header.jpg
+categories: "angular signals ngRx signal store"
 ---
 
 ## Einleitung
@@ -361,6 +361,14 @@ export const TodoStore = signalStore(
 Der NgRx Signal Store bietet eine leichtgewichtige, aber leistungsfähige Lösung für das Zustandsmanagement in Angular-Anwendungen. Durch seine Unterstützung für Signale ermöglicht er eine effiziente Verwaltung und Bereitstellung von Zustandsinformationen, wodurch die Entwicklung komplexer Anwendungen erleichtert wird. Die Verwendung des NgRx Signal Store kann dazu beitragen, die Codebasis zu strukturieren, die Wartbarkeit zu verbessern und die Entwicklungszeit zu verkürzen, indem er eine klare Trennung von Zustandslogik und Benutzerinteraktion ermöglicht. Und nicht zuletzt aufgrund der Erweiterungsmöglichkeiten bietet der NgRx Signal Store viel Flexibillität mit gleichzeitig weniger Boilerplate-Code. 
 
 ## Über den Autor: Stefan Huber
+
+<p class="left">
+<img
+style="max-width: 60%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-26-einfuehrung-in-den-ngRx-signal-store/stefanhuber.jpg" alt=„Portrait Stefan Huber“
+class="lazy img-fluid img-rounded" data-src=„stefanhuber.jpg" data-srcset=„stefanhuber.jpg"
+/>
+</p>
 
 Seit mehr als zwei Jahrzehnten widmet sich Stefan leidenschaftlich der Softwareentwicklung, sowohl in angestellter Position als auch als Gründer seiner eigenen Firma, CodersCube.at. Darüber hinaus teilt er sein Fachwissen und seine Erfahrungen in einem Blog, in dem er über aktuelle Programmierthemen schreibt, die ihn  besonders beschäftigen.
 
