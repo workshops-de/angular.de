@@ -16,10 +16,10 @@ Kurz nach dem Erscheinen von Angular 17 hat NgRx eine neue, leichtgewichtige Lö
 ## Grundlagen: Signal und State Management
 
 Ein **Signal** ist ein Wrapper um einen Wert, der interessierte Verbraucher benachrichtigen kann, wenn sich dieser Wert ändert. Signale können jeden Wert enthalten, von einfachen Grundelementen bis hin zu komplexen Datenstrukturen. Zum Thema Signals kannst du folgenden Artikel auf angular.de nachlesen: \
-[https://angular.de/artikel/angular-kurz-erklaert-signals/](https://angular.de/artikel/angular-kurz-erklaert-signals/)
+[Angular kurz erklärt: Signals](https://angular.de/artikel/angular-kurz-erklaert-signals/)
 
 Beim **State Mangement** geht es darum, den Status der gesamten Applikation für alle Komponenten zentral zu verwalten und bereitzustellen. Die Vorteile von zentralem State Management werden in diesem Artikel gut beschrieben:  \
-[https://www.hosteurope.de/blog/zentrales-state-management-fuer-angular/](https://www.hosteurope.de/blog/zentrales-state-management-fuer-angular/)
+[Hosteurope: Zentrales State Management für Angular](https://www.hosteurope.de/blog/zentrales-state-management-fuer-angular/)
 
 ## Vorteile des Signal Store
 
@@ -39,7 +39,7 @@ Ngrx stellt mit ngrx/store bereits eine Lösung für das State Management zur Ve
 
 ## Wie funktioniert der Signal Store?
 
-**Hinweis:** Das gesamte Beispiel kann auf [https://stackblitz.com/~/github.com/riget/todo-list-ngrx-signal-store](https://stackblitz.com/~/github.com/riget/todo-list-ngrx-signal-store) angesehen und getestet werden.
+**Hinweis:** Das gesamte Beispiel kann auf [Stackblitz](https://stackblitz.com/~/github.com/riget/todo-list-ngrx-signal-store) angesehen und getestet werden.
 
 
 ### Installation und Erstellung eines Stores
@@ -67,7 +67,7 @@ Der Signal Store wird grundlegend über folgende 4 Funktionen definiert:
 
 ### Erstellung eines Stores
 
-Für unser Beispiel wollen wir einen einfachen Todo-Store erstellen. Als API verwenden wir [https://dummyjson.com/](https://dummyjson.com/).  
+Für unser Beispiel wollen wir einen einfachen Todo-Store erstellen. Als API verwenden wir [Dummyjson](https://dummyjson.com/).  
 
 Um einen Store zu erstellen, rufen wir die signalStore-Methode auf:
 
@@ -362,14 +362,8 @@ Der NgRx Signal Store bietet eine leichtgewichtige, aber leistungsfähige Lösun
 
 ## Über den Autor: Stefan Huber
 
-<p class="left">
-<img
-style="max-width: 40%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-26-einfuehrung-in-den-ngRx-signal-store/stefanhuber.jpg" alt=„Portrait Stefan Huber“
-data-src=„stefanhuber.jpg" data-srcset=„stefanhuber.jpg"
-/>
-</p>
+![Stefan Huber(https://github.com/workshops-de/angular.de/assets/89625524/4f1fcab2-91a2-4759-8407-7f23c667062e)
 
 Seit mehr als zwei Jahrzehnten widmet sich Stefan leidenschaftlich der Softwareentwicklung, sowohl in angestellter Position als auch als Gründer seiner eigenen Firma, CodersCube.at. Darüber hinaus teilt er sein Fachwissen und seine Erfahrungen in einem Blog, in dem er über aktuelle Programmierthemen schreibt, die ihn  besonders beschäftigen.
 
-Web: [Coders Blog](https://www.codersblog.de)
+[Stefan Hubers Coders Blog](https://www.codersblog.de)
