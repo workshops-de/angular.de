@@ -372,4 +372,4 @@ data-src=„stefanhuber.jpg" data-srcset=„stefanhuber.jpg"
 
 Seit mehr als zwei Jahrzehnten widmet sich Stefan leidenschaftlich der Softwareentwicklung, sowohl in angestellter Position als auch als Gründer seiner eigenen Firma, CodersCube.at. Darüber hinaus teilt er sein Fachwissen und seine Erfahrungen in einem Blog, in dem er über aktuelle Programmierthemen schreibt, die ihn  besonders beschäftigen.
 
-Web: https://www.codersblog.de
+Web: (Coders Blog)[https://www.codersblog.de]
