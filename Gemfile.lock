@@ -8,6 +8,8 @@ GEM
     colorator (1.1.0)
     concurrent-ruby (1.2.3)
     domain_name (0.6.20240107)
+    down (5.4.1)
+      addressable (~> 2.8)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -15,6 +17,7 @@ GEM
     execjs (2.7.0)
     fastimage (2.3.0)
     ffi (1.16.3)
+    fileutils (1.7.2)
     forwardable-extended (2.6.0)
     google-protobuf (3.25.3-arm64-darwin)
     google-protobuf (3.25.3-x86_64-linux)
@@ -96,8 +99,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  down
   execjs (= 2.7.0)
   fastimage
+  fileutils
   jekyll (~> 4.3.3)
   jekyll-autoprefixer
   jekyll-feed
