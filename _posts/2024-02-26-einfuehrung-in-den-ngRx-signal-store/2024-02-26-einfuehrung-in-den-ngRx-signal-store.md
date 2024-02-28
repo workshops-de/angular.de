@@ -364,9 +364,9 @@ Der NgRx Signal Store bietet eine leichtgewichtige, aber leistungsfähige Lösun
 
 <p class="left">
 <img
-style="max-width: 20%"
+style="max-width: 40%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-02-26-einfuehrung-in-den-ngRx-signal-store/stefanhuber.jpg" alt=„Portrait Stefan Huber“
-class="lazy img-fluid img-rounded" data-src=„stefanhuber.jpg" data-srcset=„stefanhuber.jpg"
+data-src=„stefanhuber.jpg" data-srcset=„stefanhuber.jpg"
 />
 </p>
 
