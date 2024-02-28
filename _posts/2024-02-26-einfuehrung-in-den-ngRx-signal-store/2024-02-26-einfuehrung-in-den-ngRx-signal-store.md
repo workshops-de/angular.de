@@ -2,7 +2,7 @@
 title: "Einführung in den NgRx Signal Store"
 description: In diesem Artikel stellen wir dir den neuen, leichtgewichtigen NgRx Signal Store vor und zeigen dir wie du ihn in deinem Projekt verwenden kannst.
 author: "Stefan Huber"
-published_at: 
+published_at: 2024-02-28 11:27:00.000000Z
 header_source: 
 header_image: header.jpg
 categories: "angular signals ngRx signal store"
