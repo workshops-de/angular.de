@@ -3,7 +3,7 @@ title: "Einführung in den NgRx Signal Store"
 description: In diesem Artikel stellen wir dir den neuen, leichtgewichtigen NgRx Signal Store vor und zeigen dir wie du ihn in deinem Projekt verwenden kannst.
 author: "Stefan Huber"
 published_at: 2024-02-28 11:27:00.000000Z
-header_source: 
+header_source:
 header_image: header.jpg
 categories: "angular signals ngRx signal store"
 ---
@@ -67,7 +67,7 @@ Der Signal Store wird grundlegend über folgende 4 Funktionen definiert:
 
 ### Erstellung eines Stores
 
-Für unser Beispiel wollen wir einen einfachen Todo-Store erstellen. Als API verwenden wir [Dummyjson](https://dummyjson.com/).  
+Für unser Beispiel wollen wir einen einfachen Todo-Store erstellen. Als API verwenden wir [Dummyjson](https://dummyjson.com/).
 
 Um einen Store zu erstellen, rufen wir die signalStore-Methode auf:
 
@@ -96,7 +96,7 @@ Mit dem withMethods-Feature können wir nun eigene Funktionen hinzufügen. Diese
 // ...
 withMethods((store) => {
         const todoService = inject(TodoService);
-    
+
         return {
                 async loadAllTodos() {
                     const todoResult = await todoService.getItems();
@@ -305,7 +305,7 @@ export const TodoStore = signalStore(
     withEntities<TodoItem>()
 );
 ```
-Wie man sieht ist keine withState-Methode mehr notwendig, die withEntities-Methode liefert uns gleich folgende Eigenschaften: 
+Wie man sieht ist keine withState-Methode mehr notwendig, die withEntities-Methode liefert uns gleich folgende Eigenschaften:
 
 - ```ids: Signal<EntityId[]>```: die Ids aller Elemente
 - ```entities```: Signal<TodoItem[]>: ein Array aller Elemente
@@ -358,7 +358,7 @@ export const TodoStore = signalStore(
 
 
 ## Fazit
-Der NgRx Signal Store bietet eine leichtgewichtige, aber leistungsfähige Lösung für das Zustandsmanagement in Angular-Anwendungen. Durch seine Unterstützung für Signale ermöglicht er eine effiziente Verwaltung und Bereitstellung von Zustandsinformationen, wodurch die Entwicklung komplexer Anwendungen erleichtert wird. Die Verwendung des NgRx Signal Store kann dazu beitragen, die Codebasis zu strukturieren, die Wartbarkeit zu verbessern und die Entwicklungszeit zu verkürzen, indem er eine klare Trennung von Zustandslogik und Benutzerinteraktion ermöglicht. Und nicht zuletzt aufgrund der Erweiterungsmöglichkeiten bietet der NgRx Signal Store viel Flexibilität mit gleichzeitig weniger Boilerplate-Code. 
+Der NgRx Signal Store bietet eine leichtgewichtige, aber leistungsfähige Lösung für das Zustandsmanagement in Angular-Anwendungen. Durch seine Unterstützung für Signale ermöglicht er eine effiziente Verwaltung und Bereitstellung von Zustandsinformationen, wodurch die Entwicklung komplexer Anwendungen erleichtert wird. Die Verwendung des NgRx Signal Store kann dazu beitragen, die Codebasis zu strukturieren, die Wartbarkeit zu verbessern und die Entwicklungszeit zu verkürzen, indem er eine klare Trennung von Zustandslogik und Benutzerinteraktion ermöglicht. Und nicht zuletzt aufgrund der Erweiterungsmöglichkeiten bietet der NgRx Signal Store viel Flexibilität mit gleichzeitig weniger Boilerplate-Code.
 
 ## Über den Autor: Stefan Huber
 
