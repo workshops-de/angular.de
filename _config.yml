@@ -13,7 +13,7 @@ og_generator_enabled: true
 navigation:
   banner:
     message: "<b>Angular Lifetime</b>: Dein deutschsprachiger Intensiv-Videokurs in Kombination mit wöchentlichem Live-Call!"
-    href: "https://workshops.de/lifetime/angular?utm_source=angular_de&utm_campaign=portal_ads&utm_medium=banner&utm_content=page-lifetime"
+    href: "https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=portal_ads&utm_medium=banner&utm_content=page-lifetime"
 
 plugins_dir: ["_plugins/", "shared/plugins/"]
 
