@@ -15,6 +15,11 @@
         "type": 301
       },
       {
+        "source": "/presskit",
+        "destination": "https://drive.google.com/drive/u/0/folders/1oBPJM_iLpe3dptXseAHR928osXdWXYLE",
+        "type": 301
+      },
+      {
         "source": "/newsletter/redirect/footer*",
         "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[21477][1]=1&group[26094][512]=1",
         "type": 301
