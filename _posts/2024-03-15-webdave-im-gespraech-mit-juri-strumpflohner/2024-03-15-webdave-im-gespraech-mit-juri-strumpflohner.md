@@ -14,15 +14,15 @@ Hier kannst du dir das Gespräch mit Juri Strumpflohner und unserem Trainer Webd
 
 <iframe class="" width="100%" height="315" src="https://www.youtube.com/watch?v=0waHOk3hoUs" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Einleitung
+## Monorepos: Essentials in der modernen Webentwicklung
 
-In der modernen Webentwicklung nutzen Teams Monorepos für große Projekte, um ihre Codebasis zu verwalten. Monorepo steht kurz für "Monolithisches Repository" und bedeutet nichts anderes, als dass der gesamte Code für mehrere Projekte in einem einzigen Repository gespeichert wird. Zum Beispiel verwendet Google Monorepos für die Entwicklung seines Chrome Browsers. Das Chromium Project ist ein riesiges Open-Source-Projekt mit über 25 Millionen Codezeilen, das von über 2.000 Entwicklern aus der ganzen Welt gepflegt wird. Anstatt hier separate Repositories für jedes Feature oder Extension zu haben, werden alle Projekte unter einem Dach vereint.
+In der modernen Webentwicklung nutzen Teams Monorepos für große Projekte, um ihre Codebasis zu verwalten. Monorepo steht kurz für "Monolithisches Repository" und bedeutet nichts anderes, als dass der gesamte Code für mehrere Projekte in einem einzigen Repository gespeichert wird. Zum Beispiel verwendet Google Monorepos für die Entwicklung seines Chrome Browsers. [Das Chromium Project](https://www.chromium.org/chromium-projects/) ist ein riesiges Open-Source-Projekt mit über 25 Millionen Codezeilen, das von über 2.000 Entwicklern aus der ganzen Welt gepflegt wird. Anstatt hier separate Repositories für jedes Feature oder Extension zu haben, werden alle Projekte unter einem Dach vereint.
 
 Monorepos bieten viele Vorteile, bringen aber auch Herausforderungen mit sich. Wie schaffe ich es, dass ein riesiges Team effizient zusammenarbeiten kann? Genau hier setzen Juri Strumpflohner und das NX Team an. NX ist ein modernes Tool, das speziell für die Entwicklung in Monorepos entwickelt wurde. NX bietet eine Vielzahl von Funktionen, die euch dabei helfen können, effizienter und produktiver zu arbeiten.
 
 Welche sind das? Was ist Task Parallelisierung und Caching? Was sind bewährte Praktiken in der Softwareentwicklung in großen Teams? Welche realen Probleme löst in der Entwicklung?
 
-Darüber und über noch viel mehr haben sich Web Dave und  Juri Strumpflohner, Sr. Director of Developer Experience for Nx unterhalten. Wer Juri ist und wie Juri zum NX Team gestoßen ist, erfahrt ihr natürlich auch. Schaut euch das Videogespräch dazu an.
+Darüber und über noch viel mehr haben sich Web Dave und  Juri Strumpflohner, Sr. Director of Developer Experience for [Nx](https://nx.dev/) unterhalten. Wer Juri ist und wie Juri zum NX Team gestoßen ist, erfahrt ihr natürlich auch. Schaut euch das Videogespräch dazu an.
 
 In diesem Artikel zum Gespräch haben wir euch die Basics zusammengefasst und werden euch NX kurz vorstellen und euch einen Installation Guide aufgeschrieben. 
 
