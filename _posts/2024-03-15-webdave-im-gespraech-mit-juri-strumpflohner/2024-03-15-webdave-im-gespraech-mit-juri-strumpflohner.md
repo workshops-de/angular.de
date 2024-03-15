@@ -12,7 +12,7 @@ categories: "angular nx monorepo webdave interview"
 
 Hier kannst du dir das Gespräch mit Juri Strumpflohner und unserem Trainer Webdave ansehen!
 
-<iframe class="" width="100%" height="315" src="https://www.youtube.com/embed?v=0waHOk3hoUs" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0waHOk3hoUs?si=BK-FW1XuKsDm2Cjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Monorepos: Essentials in der modernen Webentwicklung
 
