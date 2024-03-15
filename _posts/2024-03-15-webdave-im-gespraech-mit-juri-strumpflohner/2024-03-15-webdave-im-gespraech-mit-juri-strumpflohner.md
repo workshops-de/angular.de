@@ -59,7 +59,7 @@ class="lazy img-fluid img-rounded" data-src="infographic.jpg" data-srcset="infog
 
 
 
-Das NX-Paket bietet technologieunabhängige Features wie workspace analysis, task running, caching, distribution, code generation, and automated code migrations. Plugins sind NPM-Pakete, die auf den Funktionen aufbauen, die das Nx-Paket bietet. Nx-Plugins enthalten code generators, executors, und eine automatisierte Code-Migration, um deine Werkzeuge up to date zu halten. Devkit ist ein Set von Hilfsmitteln zum Bauen von Nx-Plugins. Nx Cloud hilft dir, dein Projekt auf CI zu skalieren, indem es dir Remote-Caching und eine leichtere Aufgabenstellung bietet. Dazu werden GitHub, GitLab und BitBucket integriert und durchsuchbare, strukturierte Logs bereitgestellt. Nx Console ist eine Erweiterung für VSCode, IntelliJ und VIM. Sie bietet Code-Autovervollständigung, interaktive Generatoren, Visualisierungen des Arbeitsbereichs, leistungsstarke Refaktorisierungen und mehr. 
+Das NX-Paket bietet technologieunabhängige Features wie [workspace analysis](https://nx.dev/features/explore-graph), [task running](https://nx.dev/features/run-tasks), [caching](https://nx.dev/features/cache-task-results), [distribution](https://nx.dev/ci/features/distribute-task-execution), [code generation](https://nx.dev/features/generate-code), and [automated code migrations](https://nx.dev/features/automate-updating-dependencies). Plugins sind NPM-Pakete, die auf den Funktionen aufbauen, die das Nx-Paket bietet. Nx-Plugins enthalten Code Generatoren, Executer, und eine automatisierte Code-Migration, um deine Werkzeuge up to date zu halten. Devkit ist ein Set von Hilfsmitteln zum Bauen von Nx-Plugins. Nx Cloud hilft dir, dein Projekt auf CI zu skalieren, indem es dir Remote-Caching und eine leichtere Aufgabenstellung bietet. Dazu werden GitHub, GitLab und BitBucket integriert und durchsuchbare, strukturierte Logs bereitgestellt. Nx Console ist eine Erweiterung für VSCode, IntelliJ und VIM. Sie bietet Code-Autovervollständigung, interaktive Generatoren, Visualisierungen des Arbeitsbereichs, leistungsstarke Refaktorisierungen und mehr. 
 
 ## Installation von NX
 
@@ -120,6 +120,16 @@ Je nachdem, welchen Paketmanager du nutzt, musst du einen der folgenden Befehle 
 
 Der Vorteil einer globalen Installation von NX ist, dass du Befehle für NX nicht mit npx, yarn oder pnpm starten musst. Stattdessen leitet die globale Installation die Ausführung einfach an die lokale NX-Installation in deinem Projektverzeichnis weiter. Dadurch vermeidest du Probleme, die durch veraltete, global installierte Pakete entstehen könnten.
 
+## Weiterführende Links
+
+* [NX Dokumentation](https://nx.dev/getting-started/intro)
+* [NX Blog](https://nx.dev/blog)
+* [NX auf Youtube](https://www.youtube.com/@NxDevtools/videos)
+* [NX Community](https://nx.dev/community)
+* [Wie update ich meine NX Global Installation?](https://nx.dev/recipes/installation/update-global-installation)
+* [Wie installiere ich Nx in einem non-javascript Repo?](https://nx.dev/recipes/installation/install-non-javascript)
+* [Wie nutze ich NX für mein Angular Projekt?](https://nx.dev/recipes/angular)
+
 
 ## Juri Strumpflohner
 
@@ -130,16 +140,16 @@ class="lazy img-fluid img-rounded" data-src="profilepic.jpg" data-srcset="profil
 />
 
 
-Juri Strumpflohner ist Entwickler, Speaker, Content Creator und Sr. Director of Developer Experience for Nx.
-Juri ist Softwareentwickler seit über 15 Jahren, vom Backend bis hin zu Web-Apps. In dieser Zeit hat er sowohl in kleinen Startups als auch großen Unternehmen gearbeitet und als Softwarearchitekt auch Fortune-500-Unternehmen beraten. Als Google Developers Expert und Egghead instructor teilt er sein Wissen mit Leidenschaft und ist so eine führende Stimme in der Entwickler Community geworden.
-Du findest Juris Artikel auf seinem Blog juri.dev, seine Videokurse auf Egghead oder dem Nx YouTube Kanal oder auf unzähligen Konferenzen weltweit.
+[Juri Strumpflohner](https://juri.dev/about/) ist Entwickler, Speaker, Content Creator und Sr. Director of Developer Experience for Nx.
+Juri ist Softwareentwickler seit über 15 Jahren, vom Backend bis hin zu Web-Apps. In dieser Zeit hat er sowohl in kleinen Startups als auch großen Unternehmen gearbeitet und als Softwarearchitekt auch Fortune-500-Unternehmen beraten. Als [Google Developers Expert](https://developers.google.com/community/experts/directory?hl=de) und [Egghead instructor](https://egghead.io/) teilt er sein Wissen mit Leidenschaft und ist so eine führende Stimme in der Entwickler Community geworden.
+Du findest Juris Artikel auf seinem Blog [juri.dev](https://juri.dev/), seine [Videokurse auf Egghead](https://egghead.io/q/resources-by-juri-strumpflohner) oder [dem Nx YouTube Kanal](https://www.youtube.com/@NxDevtools/videos) oder auf unzähligen Konferenzen weltweit.
 
 
 Natürlich findest du Juri auch auf Social Media:
 
 
-X (bitte Social Media Plattform präzisieren)
-Twitch
-GitHub
-LinkedIn
+* [X (ehemals Twitter)](https://twitter.com/juristr)
+* [Twitch](https://www.twitch.tv/juridev)
+* [GitHub](https://github.com/juristr)
+* [LinkedIn](https://www.linkedin.com/in/juristr/)
 
