@@ -30,7 +30,7 @@ In diesem Artikel zum Gespräch haben wir euch die Basics zusammengefasst und we
 ## Was ist NX?
 
 
-<iframe class="" width="100%" height="315" src="https://www.youtube.com/embed?v=-_4WMl-Fn0w" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-_4WMl-Fn0w?si=-vSUyVCQC7ylxZTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 Nx ist ein Build-System mit integrierten Built-In-Tooling und fortgeschrittenen CI-Fähigkeiten. NX ist vor allem für Monorepos gedacht und hilft dir, diese sowohl lokal als auch auf CI zu pflegen und skalieren.
