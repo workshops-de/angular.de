@@ -134,7 +134,7 @@ Der Vorteil einer globalen Installation von NX ist, dass du Befehle für NX nich
 ## Juri Strumpflohner
 
 <img
-style="max-width: 80%"
+style="max-width: 40%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-03-15-webdave-im-gespraech-mit-juri-strumpflohner/profilepic.jpeg?raw=true " alt="Portrait Juri Strumpflohner"
 class="lazy img-fluid img-rounded" data-src="profilepic.jpg" data-srcset="profilepic.jpg"
 />
