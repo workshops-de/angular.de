@@ -5,7 +5,6 @@ author: "Michael Wellner"
 published_at: 2020-06-29 15:00:00
 header_source: https://unsplash.com/photos/idmvPhF8t4E
 categories: "angular remote schulung"
-canonical_url: https://www.sidion.de/lernen/sidion-labor/blog/Angular-TypeScript-Workshop.html
 ---
 
 ## Der Besuch eines Angular & TypeScript Workshops

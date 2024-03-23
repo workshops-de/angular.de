@@ -4,7 +4,6 @@ description: "Run an Angular webview in vscode."
 author: "François Guezengar"
 published_at: 2020-05-07 10:15:01.000000Z
 categories: "vscode nx angular"
-canonical_url: https://medium.com/@GrandSchtroumpf/vscode-extension-inside-a-nx-workspace-f9ad232a26e5
 language: "en"
 ---
 

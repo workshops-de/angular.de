@@ -5,12 +5,11 @@ author: "Nils Mehlhorn"
 published_at: 2020-08-10 13:00:00
 header_image: banner.png
 categories: "angular environments"
-canonical_url: https://nils-mehlhorn.de/posts/angular-environment-setup-testing 
 ---
 
 Die meisten professionellen Angular Anwendungen durchlaufen im Entwicklungszyklus mehrere Ausführungs-Umgebungen. Während die Unterschiede zwischen diesen Umgebungen für eine reibungslose Auslieferung möglichst gering gehalten werden sollten, muss sich deine Webapp wahrscheinlich auf einer Entwicklungsmaschine ein bisschen anders verhalten als im produktiven Betrieb.
 
-Angular bietet hierfür bereits eine Lösung namens [Environments](https://angular.io/guide/build#configuring-application-environments) an. Die funktionieren wie folgt: man legt eine beliebige Anzahl an Environment-Dateien in einem Ordner, bspw. `src/environments`, an: 
+Angular bietet hierfür bereits eine Lösung namens [Environments](https://angular.io/guide/build#configuring-application-environments) an. Die funktionieren wie folgt: man legt eine beliebige Anzahl an Environment-Dateien in einem Ordner, bspw. `src/environments`, an:
 ```
 src
 └── environments
@@ -171,12 +170,12 @@ import { Injectable, Inject } from '@angular/core';
 import { Environment } from '../environments/ienvironment'
 import { ENV } from '../environments/environment.provider'
 
-@Injectable() 
+@Injectable()
 export class UserService {
 
   constructor(@Inject(ENV) private env: Environment) {
   }
-  
+
   save(user: User): Observable<User> {
       if (this.env.production) {
         ...
@@ -184,7 +183,7 @@ export class UserService {
         ...
       }
   }
-  
+
 }
 ```
 
