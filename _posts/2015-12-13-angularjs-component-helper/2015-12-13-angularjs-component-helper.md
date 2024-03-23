@@ -29,7 +29,7 @@ controllerAs | An identifier name for a reference to the controller. | $ctrl
 
 <br/>
 
-Der Component-Helper bietet euch hierbei einen einfachen Wrapper für mit der Zeit recht komplex gewordene `.directive(...)` Funktion. Er ist ist also so ähnlich zu verstehen wie die Factory-, Service-, Value-Helper für die `.provider(...)` Funktion. Ihr könnt dieses Thema in unserem [Buch](/buecher/angularjs-buch/services/) nachlesen falls Ihr noch nicht wisst worüber ich rede.
+Der Component-Helper bietet euch hierbei einen einfachen Wrapper für mit der Zeit recht komplex gewordene `.directive(...)` Funktion. Er ist ist also so ähnlich zu verstehen wie die Factory-, Service-, Value-Helper für die `.provider(...)` Funktion. 
 
 Neben der Reduzierung von Komplexität ermöglicht uns der Helper ebenfalls das einfache Einhalten von *Best Practices* und nährt sich der Definition von Direktiven und Komponenten von Angular2 an. *Direktiven* sind hierbei generelle HTML-Erweiterung, welche Verhalten kapseln. *Komponenten* sind eine spezielle Art von Direktiven, welche ein eigenen (Shadow-)DOM besitzen und UI Widgets oder Anwendungs-Komponenten darstellen. Somit ist dies ein weiterer Schritt zur immer sanfter werdenden Migration zu Angular2.
 

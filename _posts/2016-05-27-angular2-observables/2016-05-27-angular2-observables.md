@@ -51,7 +51,7 @@ Wie eingangs erwähnt, müssen wir uns früher oder später auch mit Asynchonron
 
 **Callbacks**
 
-Wie wir schon ausführlich in userem [AngularJS-Buch im Kapitel Promises](/buecher/angularjs-buch/angularjs-promises/) erklärt haben, stellen uns Callbacks vor folgende Probleme, die auch normale JavaScript Events nicht lösen können. Hier noch einmal ein Überblick der Probleme:
+Wie wir schon ausführlich in userem AngularJS-Buch im Kapitel Promises erklärt haben, stellen uns Callbacks vor folgende Probleme, die auch normale JavaScript Events nicht lösen können. Hier noch einmal ein Überblick der Probleme:
 
 - komplexer, unleserlicher Code
 - keine Parallelität

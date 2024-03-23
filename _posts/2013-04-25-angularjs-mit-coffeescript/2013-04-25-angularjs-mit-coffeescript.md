@@ -106,5 +106,3 @@ app.service "NameService", People
 app.controller 'MainController', ($scope, NameService) ->
   $scope.names = NameService.names
 ```
-
-Wer mehr über die Konzepte von [Factory und Service](/buecher/angularjs-buch/services/) erfahren möchte, kann sein Wissen zu diesen Themen gerne vertiefen.

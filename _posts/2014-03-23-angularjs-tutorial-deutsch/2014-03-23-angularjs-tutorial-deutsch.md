@@ -299,7 +299,7 @@ Im derzeitigen Zustand ist unsere Tabelle beim Start der Applikation leer. Sobal
 
 Wir können nicht nur bestehende Services von AngularJS nutzen, sondern auch unsere Eigenen schreiben. Wenn wir einen kleinen Shop programmieren, darf natürlich der Warenkorb nicht fehlen. Wir wollen euch nur grundsätzlich zeigen, wie Services funktionieren und werden hier deshalb nur einen kleinen Teil der Funktionalität implementieren, nämlich das Hinzufügen von Artikeln und die Berechnung der Summe.
 
-Wir können Services auf verschiedene Arten definieren. An dieser Stelle stellen wir die wahrscheinlich am häufigsten verwendete Methode vor: der [Factory-Service](/buecher/angularjs-buch/services/).
+Wir können Services auf verschiedene Arten definieren. An dieser Stelle stellen wir die wahrscheinlich am häufigsten verwendete Methode vor: der Factory-Service.
 
 Services sind Singletons. Es existiert also immer nur eine Instanz jedes Services. Die Definition erfolgt wie beim Controller mithilfe einer Modulfunktion. In diesem Fall heißt diese Funktion factory().
 

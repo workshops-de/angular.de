@@ -18,9 +18,6 @@ navigation:
 plugins_dir: ["_plugins/", "shared/plugins/"]
 
 collections:
-  books:
-    output: true
-    permalink: /buecher/:path/
   pages:
     output: true
     permalink: /:name/

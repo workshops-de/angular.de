@@ -95,11 +95,6 @@
         "type": 301
       },
       {
-        "source": "/buch/:id*",
-        "destination": "https://angular.de/buecher/angularjs-buch/:id*",
-        "type": 301
-      },
-      {
         "source": "/blog/:id*",
         "destination": "https://angular.de/artikel/:id",
         "type": 301
