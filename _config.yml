@@ -12,7 +12,7 @@ og_generator_enabled: true
 
 navigation:
   banner:
-    message: "Sichere dir 10% Rabatt auf alle Öffentliche und Inhouse Schulungen mit dem Code 🐣🐰 <b>OSTERN</b>"
+    message: 'Sichere dir 10% Rabatt auf alle Öffentliche und Inhouse Schulungen mit dem Code 🐣🐰<br><span class="badge animation-wiggle bg-white text-dark text-shadow-none">OSTERN</span>'
     href: "https://workshops.de/seminare-schulungen-kurse?utm_source=angular_de&utm_campaign=portal_discount&utm_medium=banner&utm_content=workshops-overview"
 
 plugins_dir: ["_plugins/", "shared/plugins/"]
