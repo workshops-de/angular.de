@@ -123,6 +123,11 @@
         "source": "/artikel/way-into-tech",
         "destination": "https://angular.de/artikel/david-muellerchen-my-way-into-tech/",
         "type": 301
+      },
+      {
+        "source": "/buecher/*",
+        "destination": "https://angular.de",
+        "type": 301
       }
     ],
     "headers": [
