@@ -177,7 +177,7 @@ Jetzt steht uns nichts mehr im Weg auf unserer Reise zu den Ursprüngen der Webg
 ```
 
 
-[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/YISUVli19yzmmyW3KCmf/preview.html)
+[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/YISUVli19yzmmyW3KCmf/preview/)
 
 ### Es nervt auf Dauer, bitte ausschalten!
 
@@ -293,7 +293,7 @@ Die `request`-Funktion ist nur wenig anspruchsvoller: Mit [$q](https://docs.angu
 
 Den Code des Circuit Breakers will ich nicht in jedem Detail erklären, weil er überwiegend aus den alten Bekannten [filter](https://github.com/baconjs/bacon.js#observable-filter), [map](https://github.com/baconjs/bacon.js#observable-map) und [scan](https://github.com/baconjs/bacon.js#observable-scan) besteht. Der folgende Plunk demonstriert die Funktionsweise des Circuit Breakers und enthält den vollständigen Code.
 
-[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/VZbodliA86xSQotOxpKZ/preview.html)
+[Plunkr in neuem Fenster öffnen](/assets/mirror/embed.plnkr.co/VZbodliA86xSQotOxpKZ/preview/)
 
 
 Ich beleuchte deshalb nur die Stellen, an denen wir den neuen Funktionen [throttle](https://github.com/baconjs/bacon.js#observable-throttle), [merge](https://github.com/baconjs/bacon.js#stream-merge) und [slidingWindow](https://github.com/baconjs/bacon.js#observable-slidingwindow) begegnen.

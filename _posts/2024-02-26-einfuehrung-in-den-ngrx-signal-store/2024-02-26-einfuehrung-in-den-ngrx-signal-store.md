@@ -89,7 +89,7 @@ Wichtig zu betonen ist, alle in withState angegebenen Properties sind automatisc
 
 ### Funktionen dem Store hinzufügen
 
-Mit dem withMethods-Feature können wir nun eigene Funktionen hinzufügen. Diese Funktion erwartet eine Factory-Funktion als Eingabeargument welche ein Methodenwörterbuch zurückgeben muß. Auf den Store selbst, einschließlich zuvor definierter Zustände, berechneter Signale und Methoden, kann über die Factory-Eingabe zugegriffen werden:
+Mit dem withMethods-Feature können wir nun eigene Funktionen hinzufügen. Diese Funktion erwartet eine Factory-Funktion als Eingabeargument welche ein Methodenwörterbuch zurückgeben muss. Auf den Store selbst, einschließlich zuvor definierter Zustände, berechneter Signale und Methoden, kann über die Factory-Eingabe zugegriffen werden:
 
 
 ```ts
@@ -291,7 +291,7 @@ export const TodoStore = signalStore(
 );
 ```
 
-Mit withLoading() haben wir unser Feature dem Store hinzugefügt. In den danach folgenden Methoden wurde der Store bereits um die Funktionen unseres Features, nämlich setLoading() und setCompleted() erweitert, sodaß wir diese in den Methoden verwenden können.
+Mit withLoading() haben wir unser Feature dem Store hinzugefügt. In den danach folgenden Methoden wurde der Store bereits um die Funktionen unseres Features, nämlich setLoading() und setCompleted() erweitert, sodass wir diese in den Methoden verwenden können.
 
 **Hinweis:** Man muss hier auf die richtige Reihenfolge der Funktionen achten: würden wir withLoading() erst nach withMethods() hinzufügen, könnten wir das Feature nicht verwenden, da der Store noch nicht um dessen Eigenschaften erweitert wurde!
 
