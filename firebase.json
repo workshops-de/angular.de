@@ -125,7 +125,7 @@
         "type": 301
       },
       {
-        "source": "/buecher/*",
+        "source": "/buecher*",
         "destination": "https://angular.de",
         "type": 301
       }
