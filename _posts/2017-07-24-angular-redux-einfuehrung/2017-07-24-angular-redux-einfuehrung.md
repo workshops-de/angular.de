@@ -44,11 +44,11 @@ ngRx enthält noch Erweiterungen wie `Observables`, welche die Beispiele an dies
     <div class="col-xs-12 col-md-6">
       <p>
         Du möchtest Angular und Redux in deinem Projekt einsetzen, bist dir aber unsicher ob und wie du das am besten schaffst? Wir behandeln das Thema Redux mit ngRX intensiv in unserer
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source={{ site.utm_source }}&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-link">Angular
                     Advanced Schulung</a> und entwickeln mit dir gemeinsam Beispiele, die du direkt in deinem Projekt einsetzen kannst.
       </p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source={{ site.utm_source }}&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button">
           <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
         </a>
       </p>
@@ -503,11 +503,11 @@ Lass uns überprüfen, wie sich eine Redux-Anwendung in verschiedenen Stadien ve
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
       <p>
-        Gute Idee - vielleicht ist ja unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=link&utm_content=text-top">Angular
+        Gute Idee - vielleicht ist ja unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source={{ site.utm_source }}&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Angular
                                        Advanced Schulung</a> für dich das Richtige. Hier erstellen wir gemeinsam eine Beispiel-Anwendung mit ngRX und können individuell auf deine Anforderungen im Projekt eingehen.
       </p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-top">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source={{ site.utm_source }}&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button">
           <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
         </a>
       </p>
