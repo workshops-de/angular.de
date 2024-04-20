@@ -224,11 +224,11 @@ Daher - falls ich euer Interesse geweckt habe, kann ich euch nur empfehlen, sich
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
-      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source={{ site.utm_source }}&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Docker Schulungen</a> an um dich möglichst effektiv in das Thema zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht
+      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Docker Schulungen</a> an um dich möglichst effektiv in das Thema zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht
         googlen kannst, z.B. “Beste Weg, um meine Container zu strukturieren”. Wir können sie Dir beantworten. </p>
 
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source={{ site.utm_source }}&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button">
           <button class="btn btn-danger">Jetzt weiter lernen</button>
         </a>
       </p>
