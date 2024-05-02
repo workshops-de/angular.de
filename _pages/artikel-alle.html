@@ -12,7 +12,7 @@ sitemap: false
     {% for post in year.items %}
       <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
-        <span class="text-muted">von {{ post.author }}</span>
+        <span class="text-muted">von {{ post.author }}{% if post.co_author %} und {{ post.co_author }}{% endif %}</span>
         {% if post.noindex != true and jekyll.environment == "development" %}
           {% if post.description == undefined %}
             <span class="text-danger">

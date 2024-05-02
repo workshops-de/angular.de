@@ -1,11 +1,11 @@
 ---
 title: "Bonn ruft: ng-de & vuejs.de 2024 suchen Speaker – Call for Papers endet morgen."
 description: "Bonn wird im Oktober 2024 zum Hotspot für Angular- und Vue.js-Enthusiasten: Die ng-de und vuejs.de Konferenzen laden zum Austausch und Networking ein. Nutze die letzte Chance, beim Call for Papers dabei zu sein und präge mit deinem Wissen die Zukunft der Webentwicklung."
-author: "Lulëzim Ukaj"
+author: "Lulëzim Ukaj"\
 published_at: 2024-04-09 17:00:00
-header_source: 
+header_source:
 header_image: header.jpg
-categories: "angular vue ng-de vuejs conference call for paper"
+categories: "angular vuejs ng-de conference call-for-paper"
 ---
 
 
@@ -17,34 +17,34 @@ Vom 8. bis zum 11. Oktober 2024 verwandeln wir die Stadt Bonn, die traditionell 
 
 ## Call for Papers: Der Countdown läuft!
 
-Derzeit läuft unser Countdown für Call for Papers (CfP) für beide Konferenzen auf Hochtouren. Die ng-de und vuejs.de suchen nach Speakern, die bereit sind, ihr Wissen und ihre Leidenschaft mit der Community zu teilen. Egal, ob alte Hasen oder noch frisch hinter den Ohren in der Welt der Webentwicklung, viele von euch haben die Gelegenheit genutzt und spannende Themen eingereicht. Für alle anderen ist hier noch die letze Erinnerung: Ihr habt noch Zeit bis morgen, dem 10. April 2024 um 23:59 Uhr CET, eure Paper einzureichen und Teil des Speaker-Teams zu werden. Also seid mutig und schickt uns eure Paper!  
+Derzeit läuft unser Countdown für Call for Papers (CfP) für beide Konferenzen auf Hochtouren. Die ng-de und vuejs.de suchen nach Speakern, die bereit sind, ihr Wissen und ihre Leidenschaft mit der Community zu teilen. Egal, ob alte Hasen oder noch frisch hinter den Ohren in der Welt der Webentwicklung, viele von euch haben die Gelegenheit genutzt und spannende Themen eingereicht. Für alle anderen ist hier noch die letze Erinnerung: Ihr habt noch Zeit bis morgen, dem 10. April 2024 um 23:59 Uhr CET, eure Paper einzureichen und Teil des Speaker-Teams zu werden. Also seid mutig und schickt uns eure Paper!
 
 
 * Für die ng-de habt ihr die Möglichkeit, hier eure Paper einzureichen: [Ng-de: Call for Paper](https://ng-de.org/call-for-papers/)
 * Für die vuejs.de habt ihr die Möglichkeit, hier eure Paper einzureichen: [Vuejs.de: Call for Paper](https://conf.vuejs.de/call-for-paper/)
 
 
-## Wie sieht der Bewerbungsprozess aus?  
+## Wie sieht der Bewerbungsprozess aus?
 
 
-Wir folgen dem Prozess der jsconf.eu für die Auswahl der Vorträge. Das bedeutet, dass eure Paper zunächst anonymisiert werden, um eine unvoreingenommene Bewertung zu gewährleisten. Erst dann bewertet unsere Jury eure eingereichten Paper. Die Top-Beiträge werden anschließend de-anonymisiert, um eure Speaker-Biography mit in die endgültige Entscheidung einfließen zu lassen.  
+Wir folgen dem Prozess der jsconf.eu für die Auswahl der Vorträge. Das bedeutet, dass eure Paper zunächst anonymisiert werden, um eine unvoreingenommene Bewertung zu gewährleisten. Erst dann bewertet unsere Jury eure eingereichten Paper. Die Top-Beiträge werden anschließend de-anonymisiert, um eure Speaker-Biography mit in die endgültige Entscheidung einfließen zu lassen.
 
 
-Nach Abschluss des Bewertungsprozesses werden die Ergebnisse zusammengetragen und analysiert. Vorträge, die durchweg positive Bewertungen erhalten haben, werden für das Konferenzprogramm in Betracht gezogen. Bei Vorträgen, bei denen die Meinungen auseinandergehen, kann eine Diskussion innerhalb der Jury dazu führen, dass eine gemeinsame Entscheidung getroffen wird.  
+Nach Abschluss des Bewertungsprozesses werden die Ergebnisse zusammengetragen und analysiert. Vorträge, die durchweg positive Bewertungen erhalten haben, werden für das Konferenzprogramm in Betracht gezogen. Bei Vorträgen, bei denen die Meinungen auseinandergehen, kann eine Diskussion innerhalb der Jury dazu führen, dass eine gemeinsame Entscheidung getroffen wird.
 
 
-Dieser Prozess zielt darauf ab, eine ausgewogene und vielfältige Auswahl an Vorträgen für die Konferenz zu gewährleisten. Dabei spielen Faktoren wie Aktualität des Themas, Innovationsgrad, praktischer Nutzen für die Teilnehmenden und die Fähigkeit, komplexe Inhalte verständlich zu vermitteln, eine entscheidende Rolle.  
+Dieser Prozess zielt darauf ab, eine ausgewogene und vielfältige Auswahl an Vorträgen für die Konferenz zu gewährleisten. Dabei spielen Faktoren wie Aktualität des Themas, Innovationsgrad, praktischer Nutzen für die Teilnehmenden und die Fähigkeit, komplexe Inhalte verständlich zu vermitteln, eine entscheidende Rolle.
 
 
 Abschließend wird bei der endgültigen Auswahl der Vorträge auch darauf geachtet, dass eine Vielfalt an Perspektiven und Hintergründen vertreten ist. Dies soll nicht nur die Qualität des Konferenzprogramms steigern, sondern auch die Inklusivität und Breite der Developer-Community widerspiegeln.
 
 ## Tipps für eine erfolgreiche Einreichung: Wonach suchen wir?
 
-Damit dein Beitrag beim Call for Papers der ng-de und vuejs.de Konferenzen erfolgreich ist, sollte er am besten folgende Merkmale haben:  
+Damit dein Beitrag beim Call for Papers der ng-de und vuejs.de Konferenzen erfolgreich ist, sollte er am besten folgende Merkmale haben:
 
 
-- **Klarer und ansprechender Vortragstitel**: Dein Titel sollte informativ und gleichzeitig auch Neugier beim Publikum wecken. Vermeide daher immer generische Titel. Es ist am besten, dein Thema präzise und locker zusammenzufassen. Wenn es dir möglich ist, beziehe die Kernbotschaft deines Vortrags mit im Titel ein.  
-- **Detaillierte und überzeugende Beschreibung**: Deine Beschreibung des Vortrags ist entscheidend. Sie sollte nicht nur das Was und Warum der Vortragsthemen erklären, sondern auch aufzeigen, welchen Nutzen deine Zuhörer aus dem Ganzen ziehen können. Es ist wichtig, den Inhalt so detailliert wie möglich zu beschreiben: Was werden die Zuhörer lernen? Wie können sie das Gelernte in ihrer eigenen Arbeit anwenden?  
+- **Klarer und ansprechender Vortragstitel**: Dein Titel sollte informativ und gleichzeitig auch Neugier beim Publikum wecken. Vermeide daher immer generische Titel. Es ist am besten, dein Thema präzise und locker zusammenzufassen. Wenn es dir möglich ist, beziehe die Kernbotschaft deines Vortrags mit im Titel ein.
+- **Detaillierte und überzeugende Beschreibung**: Deine Beschreibung des Vortrags ist entscheidend. Sie sollte nicht nur das Was und Warum der Vortragsthemen erklären, sondern auch aufzeigen, welchen Nutzen deine Zuhörer aus dem Ganzen ziehen können. Es ist wichtig, den Inhalt so detailliert wie möglich zu beschreiben: Was werden die Zuhörer lernen? Wie können sie das Gelernte in ihrer eigenen Arbeit anwenden?
 - **Wer ist deine Zielgruppe?**: Mache dir Gedanken, wer dein Publikum ist. Die ng-de und vuejs.de Konferenzen haben ein Publikum mit vielen Interessen. Manche davon sind Einsteiger, andere Experten. Sei dir im Klaren darüber, für wen dein Vortrag gedacht ist und vor allem, warum er relevant ist. Eine gut definierte Zielgruppe hilft der Jury bei der Entscheidungsfindung.
 
 **Weitere Tipps zur Verbesserung deiner Chancen:**
@@ -55,7 +55,7 @@ Damit dein Beitrag beim Call for Papers der ng-de und vuejs.de Konferenzen erfol
 
 ## Gratuliere, dein Vortrag wurde ausgewählt!
 
-In diesem Fall übernehmen wir deine Reise- und Unterkunftskosten (für zwei Nächte) und natürlich auch das Konferenzticket. Zudem werden wir deinen Vortrag (video-)aufzeichnen und auf unserer Website und auf dem YouTube-Kanal der ng-de sowie der Vue.js veröffentlichen und über die sozialen Medien bewerben.  
+In diesem Fall übernehmen wir deine Reise- und Unterkunftskosten (für zwei Nächte) und natürlich auch das Konferenzticket. Zudem werden wir deinen Vortrag (video-)aufzeichnen und auf unserer Website und auf dem YouTube-Kanal der ng-de sowie der Vue.js veröffentlichen und über die sozialen Medien bewerben.
 
 
 Dein Vortrag darf maximal 30 Minuten lang sein. Es ist keine weitere Zeit für eine Frage- und Antwort-Runde vorgesehen. Du kannst ein Q&A aber innerhalb deines 30-minütigen Zeitfensters integrieren, sofern du es wünschst. Wichtig ist, dass alle Vorträge auf Englisch gehalten werden müssen.
@@ -76,14 +76,14 @@ Die ng-de und vuejs.de Konferenzen spielen eine wichtige Rolle in der deutschen 
 - **Die Zukunft mitgestalten**: Unsere Vorträge und Feedback-Sessions haben großen Einfluss auf die Ausrichtung der Frameworks. Unsere Community gestaltet die Technologien aktiv mit. Werde aktiver Teil der Zukunft!
 
 ## Ran an die Tasten – Deine Chance auf der ng-de und vuejs.de
-Hast du eine bahnbrechende Idee, ein spannendes Projekt oder einfach nur ein paar coole Tipps und Tricks, die du mit Gleichgesinnten teilen möchtest? Egal, ob du auf der Bühne stehen willst oder lieber im Hintergrund zuhören willst – Wir freuen uns auf dich. Die ng-de und vuejs.de sind in erster Linie ein Community-Fest. Nutze die Gelegenheit, dabei zu sein. Wir können es kaum erwarten, dich im Oktober in Bonn willkommen zu heißen.  
+Hast du eine bahnbrechende Idee, ein spannendes Projekt oder einfach nur ein paar coole Tipps und Tricks, die du mit Gleichgesinnten teilen möchtest? Egal, ob du auf der Bühne stehen willst oder lieber im Hintergrund zuhören willst – Wir freuen uns auf dich. Die ng-de und vuejs.de sind in erster Linie ein Community-Fest. Nutze die Gelegenheit, dabei zu sein. Wir können es kaum erwarten, dich im Oktober in Bonn willkommen zu heißen.
 
 
 Falls du Fragen hast oder mehr Infos brauchst, schreib uns einfach an info@ng-de.org. Lass uns zusammen die Webentwicklung rocken!
 
 ## Dabei sein ist alles – Dein Platz in der Community
 
-Auch wenn der Call for Papers für die ng-de und vuejs.de Konferenzen 2024 fast vorbei ist, endet damit nicht deine Gelegenheit, aktiver Teil der Community zu werden. Eine Konferenz endet nicht mit dem letzten Konferenztag. Über das ganze Jahr hinweg gibt es zahlreiche Möglichkeiten, sich einzubringen: sei es durch [Meetups](https://www.meetup.com/de-DE/angular-meetup-berlin/), [Workshops](https://workshops.de/schulungsthemen/vuejs?_gl=1*hzplxl*_up*MQ..*_ga*MTM1OTE3NDc4Ni4xNzEyNjY3Mzk4*_ga_E0Z1EPK01Y*MTcxMjY2NzM5Ny4xLjAuMTcxMjY2NzM5Ny4wLjAuOTgxMzYwMjAy) oder in unserer [Community auf Discord](https://workshops.de/join-discord).  
+Auch wenn der Call for Papers für die ng-de und vuejs.de Konferenzen 2024 fast vorbei ist, endet damit nicht deine Gelegenheit, aktiver Teil der Community zu werden. Eine Konferenz endet nicht mit dem letzten Konferenztag. Über das ganze Jahr hinweg gibt es zahlreiche Möglichkeiten, sich einzubringen: sei es durch [Meetups](https://www.meetup.com/de-DE/angular-meetup-berlin/), [Workshops](https://workshops.de/schulungsthemen/vuejs?_gl=1*hzplxl*_up*MQ..*_ga*MTM1OTE3NDc4Ni4xNzEyNjY3Mzk4*_ga_E0Z1EPK01Y*MTcxMjY2NzM5Ny4xLjAuMTcxMjY2NzM5Ny4wLjAuOTgxMzYwMjAy) oder in unserer [Community auf Discord](https://workshops.de/join-discord).
 
 
 Teile dein Wissen, deine Fragen und deine Projekte mit uns. Gemeinsam können wir nicht nur die Angular- und Vue.js-Landschaft in Deutschland, sondern auch die globale Webentwickler-Community bereichern und voranbringen. Bleib dran für kommende Events und Initiativen – es gibt immer eine Möglichkeit, sich einzubringen und zu engagieren.

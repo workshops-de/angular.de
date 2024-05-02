@@ -6,6 +6,9 @@ layout: base
 {% if page.author == user_hash[1].name %}
 {% assign author = user_hash[1] %}
 {% endif %}
+{% if page.co_author == user_hash[1].name %}
+{% assign co_author = user_hash[1] %}
+{% endif %}
 {% endfor %}
 
 <div class="header header-post header-gradient-overlay d-flex align-items-center justify-content-center mb-5" style="background-image: url('{{page.header_image}}');">
@@ -14,7 +17,7 @@ layout: base
       <div class="col-lg-3 d-none d-lg-block"></div>
       <div class="col-md-12 col-lg-8">
         <h1 class="header-post-title">{{ page.title }}</h1>
-        <span>{{ page.author }}</span>
+        <span>{{ page.author }}</span>{% if page.co_author %} und {{ page.co_author }}{% endif %}
         <span class="ms-1 me-1">•</span>
         {% include shared/_reading_time.html text=page.content %}
       </div>
@@ -59,6 +62,15 @@ layout: base
               <img src="/shared/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
             </a>
             {% endif %}
+            {% if page.co_author %}
+              <span class="ms-1 me-1">|</span>
+              {{ page.co_author }}
+              {% if co_author.twitter %}
+              <a href="https://twitter.com/{{ co_author.twitter }}" target="_blank" style="margin-bottom: 5px;">
+                <img src="/shared/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
+              </a>
+              {% endif %}
+            {% endif %}
             <span class="ms-1 me-1">•</span> <time>{{ page.published_at | date: "%d.%m.%Y" }}</time>
             <span class="ms-1 me-1">|</span>
             {% include shared/_reading_time.html text=page.content %}
@@ -76,6 +88,9 @@ layout: base
       <div class="col-md-12 col-lg-8 mb-2">
         <div class="mb-4">
           {% include shared/_post_author.html %}
+        </div>
+        <div class="mb-4">
+          {% include shared/_post_author.html author=co_author %}
         </div>
         <div class="mb-2 text-end">
           <a class="btn btn-sm btn-primary" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
