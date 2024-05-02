@@ -5,7 +5,7 @@ author: "Stefan Huber"
 published_at: 2024-02-28 11:27:00.000000Z
 header_source:
 header_image: header.jpg
-categories: "angular signals ngRx signal store"
+categories: "angular signals ngRx"
 ---
 
 ## Einleitung
