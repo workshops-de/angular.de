@@ -1,7 +1,7 @@
 ---
 title: "Bonn ruft: ng-de & vuejs.de 2024 suchen Speaker – Call for Papers endet morgen."
 description: "Bonn wird im Oktober 2024 zum Hotspot für Angular- und Vue.js-Enthusiasten: Die ng-de und vuejs.de Konferenzen laden zum Austausch und Networking ein. Nutze die letzte Chance, beim Call for Papers dabei zu sein und präge mit deinem Wissen die Zukunft der Webentwicklung."
-author: "Lulëzim Ukaj"\
+author: "Lulëzim Ukaj"
 published_at: 2024-04-09 17:00:00
 header_source:
 header_image: header.jpg
