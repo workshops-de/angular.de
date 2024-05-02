@@ -19,11 +19,28 @@ Mit einem Minor Update der Version 17 hat das Angular-Team ein neues Feature, [S
 
 ## Der @Input-Dekorator
 
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-05-02-angular-signal-inputs/1.jpg" alt="Infografik, die den Data Flow von einer Parentkomponente zur Childkomponente darstellt"
+class="lazy img-fluid img-rounded" data-src="1.jpg" data-srcset="1.jpg"
+/>
+</p>
+
 
 Der [@Input()-Dekorator](https://angular.dev/guide/components/inputs#customizing-inputs)  ist eines der meistgenutzten Features in Angular. Er ermöglicht es, Daten von einer Eltern- an ihre Kinderkomponente zu übertragen. Das ist einer der technischen Grundbausteine für wiederverwendbare und modulare UI-Komponenten und damit für skalierbare Web-Anwendungen in Angular. Traditionell gab es immer einiges manuell einzustellen und zu managen, wenn es darum ging, ein performantes State Management zu implementieren. Das ist zeitintensiv und erfordert auch tiefgreifende Kenntnisse der Web-Entwickler*innen. 
 
 
-Um das Ganze verständlicher zu machen, betrachten wir ein einfaches Code-Beispiel: 
+Um das Ganze verständlicher zu machen, betrachten wir ein einfaches Beispiel: 
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-05-02-angular-signal-inputs/2.jpg" alt="Grafische Darstellung einer Grußkarten Web-Anwendung bestehend aus zwei select-Elementen und einer Textbox"
+class="lazy img-fluid img-rounded" data-src="2.jpg" data-srcset="2.jpg"
+/>
+</p>
+
 
 
 Unsere Anwendung besteht aus zwei Dropdown-Menüs (`<select>`-Elementen) und soll einem Unternehmen helfen, Glückwunsch- oder Beileid-Nachrichten zu verfassen. Das erste Dropdown enthält eine Liste von Mitarbeitern, und das zweite Dropdown eine Liste von Anlässen wie Geburtstag, Todesfall, Geburt und Urlaub. Wir haben unsere Angular-Anwendung in eine Parent- und eine Child-Komponente aufgeteilt. Die Parent-Komponente (CongratsParentComponent) verwaltet die Auswahl von Namen und Anlässen aus den Dropdown-Menüs und gibt diese Werte an die Child-Komponente weiter. Die Child-Komponente (CongratsChildComponent) empfängt die ausgewählten Werte als Inputs und generiert eine passende Nachricht.
