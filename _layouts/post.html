@@ -89,9 +89,11 @@ layout: base
         <div class="mb-4">
           {% include shared/_post_author.html %}
         </div>
-        <div class="mb-4">
-          {% include shared/_post_author.html author=co_author %}
-        </div>
+        {% if page.co_author %}
+          <div class="mb-4">
+            {% include shared/_post_author.html author=co_author %}
+          </div>
+        {% endif %}
         <div class="mb-2 text-end">
           <a class="btn btn-sm btn-primary" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
             Diesen Artikel auf GitHub verbessern
