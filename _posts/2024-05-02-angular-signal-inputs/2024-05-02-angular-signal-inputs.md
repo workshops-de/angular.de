@@ -2,6 +2,7 @@
 title: "Signal Inputs: Jetzt wird die Kommunikation zwischen Eltern- und Kindelementen noch einfacher"
 description: "Signal Inputs in Angular: Eine innovative Methode, die die Kommunikation zwischen Parent- und Child-Komponenten vereinfacht und durch einen deklarativen, reaktiven Ansatz die Developer Experience verbessert."
 author: "Lulëzim Ukaj"
+co_author: "David Müllerchen"
 published_at: 
 header_source: 
 header_image: header.jpg
