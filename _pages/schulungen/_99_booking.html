@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    {% for event in site.data.events[include.data_key] limit:3 %}
+    {% for event in site.data.events[include.data_key] %}
     <hr class="d-block d-md-none" />
     <div class="row mb-4 mb-md-2" itemscope="" itemtype="http://schema.org/Event">
       <div class="d-none d-md-block col-1">
@@ -137,7 +137,7 @@
         <button class="btn btn-link btn-lg | fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#related_events" aria-expanded="false" aria-controls="collapseExample">» Termine aus verwandten Themen anzeigen</button>
       </div>
       <div class="collapse mt-2" id="related_events">
-        {% for event in site.data.related_events[include.data_key] limit:3 %}
+        {% for event in site.data.related_events[include.data_key] %}
         <hr class="d-block d-md-none" />
         <div class="row mb-4 mb-md-2" itemscope="" itemtype="http://schema.org/Event">
           <div class="d-none d-md-block col-1">
