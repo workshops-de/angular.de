@@ -12,7 +12,7 @@ og_generator_enabled: true
 
 navigation:
   banner:
-    message: "<strong>NG-DE</strong>: Die Angular Konferenz in Deutschland! Am 10.10. - 11.10.2024 im Maritim Hotel, Bonn. Sichere dein Ticket!"
+    message: "<strong>NG-DE</strong>: Die Angular Konferenz in Deutschland! Am 10.10. - 11.10.2024 im Maritim Hotel, Bonn. <b><u>Sichere dein Ticket!</u></b>"
     href: "https://ng-de.org?utm_source=angular_de&utm_campaign=conference2024&utm_medium=portal&utm_content=banner"
 
 plugins_dir: ["_plugins/", "shared/plugins/"]
