@@ -42,6 +42,13 @@ Das Ganze könnt ihr euch zusammen mit Webdave anschauen! Hier ist der Link zum 
 
 ## Zoneless Change Detection
 
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/zoneless.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Zoneless-Logo"
+class="lazy img-fluid img-rounded" data-src="zoneless.jpg" data-srcset="zoneless.jpg"
+/>
+</p>
 
 Die aufregendste Neuigkeit zum Major Release von Angular v18 ist die experimentelle Unterstützung für die Zoneless Change Detection. Das ist eine kleine Revolution. Angular beginnt sich von zone.js zu lösen. Auch wenn die Scheidung noch einige Zeit dauern wird, ist sie offiziell eingereicht. Das zeigt sich auch darin, dass Zone.js keine neuen Features mehr annimmt, einschließlich Patches für native Plattform-APIs. Niedrig priorisierte Fehlerbehebungen werden vom Team nicht mehr akzeptiert. [Das Angular-Team rät sogar dringend davon ab, Zone.js in Zukunft außerhalb des Kontexts von Angular-Anwendungen zu verwenden](https://www.npmjs.com/package/zone.js?activeTab=readme).
 
@@ -79,11 +86,15 @@ export class App {
 ```
 
 In diesem Beispiel bewirkt ein Klick auf den Button, dass die Methode handleClick aufgerufen wird, was den Signalwert aktualisiert und die UI entsprechend anpasst.
+
+
 ### Vorteile der Zoneless Change Detection?
 Die neue Zoneless Change Detection bietet viele Möglichkeiten für Entwickler/innen:
 Verbesserte Integration für Micro-Frontends und Interoperabilität mit anderen Frameworks.
 Schnelleres Rendering und bessere Laufzeitperformance.
 Vereinfachtes Debugging und lesbarere Stacktraces.
+
+
 ### Die Rolle von Signals für Zoneless
 Ein Kernaspekt von zoneless ist die Einführung von Signals, die eine direkte und reaktive Zustandsverwaltung ermöglichen. Signals sind entscheidend für die effiziente Steuerung der Änderungserkennung, da sie es ermöglichen, Zustände explizit zu aktualisieren, ohne dass zone.js jede Aktion überwachen muss. Dies führt zu einer deutlichen Performance-Steigerung und vereinfacht die Komponentenkommunikation durch klar definierte Datenflüsse.
 
@@ -123,6 +134,14 @@ export class SearchComponent {
 
 ## Updates der Angular DevTools
 
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/hydration.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Hydration-Logo"
+class="lazy img-fluid img-rounded" data-src="hydration.jpg" data-srcset="hydration.jpg"
+/>
+</p>
+
 Angular v18 bringt auch ein Update für die Angular DevTools. Die neueste Version der DevTools ermöglicht es Entwicklern, den Hydration-Status der Komponenten visuell zu verfolgen. Du findest jetzt neben jeder Komponente ein Icon, das den Hydrationstatus der Komponente anzeigt. Ein neuer Overlay-Modus zeigt an, welche Komponenten hydratisiert wurden und welche noch ausstehen. Sollten in der Anwendung Hydrationsfehler auftreten, sind diese in den Angular DevTools im Komponenten-Explorer leichter zu erkennen.
 
 ## Verbesserungen im Server-Side Rendering
@@ -136,6 +155,15 @@ Zu den neuen Features gehören die Unterstützung für i18n Hydration, ein verbe
 Ein Update gab es auch für den i18n Hydration Support. I18n ist ein Numeronym und heißt nichts anderes als “Internationalisation”. Gemeint ist damit ein Modul, das sowohl Inhalte als auch Attribute deiner HTML-Tags übersetzt. Lokalisierte Inhalte werden nun noch schneller geladen und rehydriert, was eine durchgehend flüssige User Experience über verschiedene Sprachen hinweg sicherstellt. Dies ist besonders wichtig für globale Anwendungen, die eine breite Nutzerbasis haben und schnelle Ladezeiten in verschiedenen Sprachen bieten müssen. Ein anderes Anwendungsgebiet ist die Accessibility, wenn es darum geht, ARIA Attribute zu übersetzen.
 
 ### Event Replay
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/wiz.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Wiz-Logo"
+class="lazy img-fluid img-rounded" data-src="wiz.jpg" data-srcset="wiz.jpg"
+/>
+</p>
+
 
 Angular und Googles internes Framework Wiz sollen langfristig zusammengeführt bzw. integriert werden, um ihre Features und Technologien zu vereinheitlichen. Das Ziel dieser Konvergenz ist natürlich, die besten Eigenschaften beider Frameworks zu kombinieren. Zur Erinnerung: Angular und Wiz haben bisher zwei verschiedene Anwendungsbereiche bedient. Wiz wurde vor allem für leistungsorientierte Consumer Apps genutzt, während Angular sich auf die Developer Experience konzentrierte.
 
@@ -154,6 +182,14 @@ bootstrapApplication(App, {
 
 ## Angular.dev ist das neue Zuhause
 
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/angulardev.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem AngularDev-Logo"
+class="lazy img-fluid img-rounded" data-src="angulardev.jpg" data-srcset="angulardev.jpg"
+/>
+</p>
+
 [Angular.dev](https://angular.dev/) wurde bereits mit dem Update auf Version 17 vorgestellt und löst nun endgültig [Angular.io](https://angular.io) als Hauptquelle für Informationen und Ressourcen ab. Alle Anfragen an angular.io werden nun automatisch auf angular.dev umgeleitet. Damit sichergestellt ist, dass alle bestehenden Links weiterhin funktionieren, werden eure Anfragen zu v17.angular.io weitergeleitet.
 
 Über das überarbeitete, neue Design, Dokumentation und die [Tutorials](https://angular.dev/tutorials/learn-angular) haben wir euch bereits berichtet. Richtig gut finden wir die [interaktive Lernumgebung](https://angular.dev/playground), um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev erleichtert insbesondere Junior Entwicklern und Quereinsteigern den Einstieg in das Framework.
@@ -161,6 +197,15 @@ bootstrapApplication(App, {
 ## Diese Features sind jetzt stabil
 
 ### Material 3
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/material.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Material-Logo"
+class="lazy img-fluid img-rounded" data-src="material.jpg" data-srcset="material.jpg"
+/>
+</p>
+
 
 Material 3 ist die neueste Iteration des bekannten Design Systems und nun offiziell stabil. Die Komponentenbibliothek wurde vor einigen Monaten als experimentelles Feature vorgestellt. Mit der Stabilisierung von Material 3 wurden auch neue Komponenten und Funktionen eingeführt. Dazu gehören neue Date- und Timepicker, eine verbesserte Navigation und neue Formularsteuerelemente. Dazu gibt es neue Themes, eine bessere Unterstützung für dunkle Modi und mehr Accessibility in den Komponenten.
 
@@ -211,6 +256,14 @@ Für Unternehmen gibt es nun das Early Access Programm. Wer daran teilnehmen mö
 
 ## Firebase App Hosting
 
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/firebase.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Firebase-Logo"
+class="lazy img-fluid img-rounded" data-src="firebase.jpg" data-srcset="firebase.jpg"
+/>
+</p>
+
 Um der gewachsenen Komplexität auch auf der Hosting-Ebene gerecht zu werden, gibt es auch gute Neuigkeiten aus dem Hause Firebase.
 
 Firebase hat "App Hosting" hilft dir beim Hosting von Angular- und Next.js-Anwendungen durch automatisches Bauen und Deployen von statischen Assets und dynamischen Inhalten. Die nahtlose Integration mit GitHub ermöglicht es, Änderungen direkt aus dem Repository zu deployen.
@@ -222,6 +275,14 @@ Durch die Integration in das breite Spektrum der Google Cloud-Produkte und durch
 Mehr Informationen gibt es dazu [hier](https://firebase.blog/posts/2024/05/introducing-app-hosting/).
 
 ## Community-Highlights
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/NGDE.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem NGDE-Logo"
+class="lazy img-fluid img-rounded" data-src="NGDE.jpg" data-srcset="NGDE.jpg"
+/>
+</p>
 
 In der Welt von Angular tut sich aber auch in der Community viel. Sie ist lebendiger denn je!
 
