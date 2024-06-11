@@ -279,8 +279,8 @@ Mehr Informationen gibt es dazu [hier](https://firebase.blog/posts/2024/05/intro
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/NGDE.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem NGDE-Logo"
-class="lazy img-fluid img-rounded" data-src="NGDE.jpg" data-srcset="NGDE.jpg"
+src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/ngde.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem NG-DE Logo"
+class="lazy img-fluid img-rounded" data-src="ngde.jpg" data-srcset="ngde.jpg"
 />
 </p>
 
