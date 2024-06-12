@@ -102,13 +102,15 @@ Ein Kernaspekt von zoneless ist die Einführung von Signals, die eine direkte un
 
 Unser persönliches Highlight in dieser Version sind die neuen Signal APIs, die jetzt im Developer Preview verfügbar sind. Diese APIs transformieren die Art und Weise, wie Werte in Komponenten gehandhabt werden, weg von klassischen Klassenattributen hin zu Signals. Das Ziel ist, Komponenten zu Signal-Komponenten weiterzuentwickeln, was die Change Detection revolutionieren könnte.
 Zu den Signal APIs gehören:
-input
-output
-viewChild
-viewChildren
-contentChild
-contentChildren
-model
+
+- input
+- output
+- viewChild
+- viewChildren
+- contentChild
+- contentChildren
+- model.
+  
 Bis auf model, das eine Kombination aus input und output darstellt und damit ein intuitives Two-Way-Binding ermöglicht, sind die anderen schnell erklärt: Sie ersetzen die bestehenden Dekoratoren durch Signale.
 Ein Beispiel:
 ```typescript
