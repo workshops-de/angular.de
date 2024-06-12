@@ -109,7 +109,7 @@ Zu den Signal APIs gehören:
 - viewChildren
 - contentChild
 - contentChildren
-- model.
+- model
   
 Bis auf model, das eine Kombination aus input und output darstellt und damit ein intuitives Two-Way-Binding ermöglicht, sind die anderen schnell erklärt: Sie ersetzen die bestehenden Dekoratoren durch Signale.
 Ein Beispiel:
