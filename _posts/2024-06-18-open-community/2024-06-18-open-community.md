@@ -5,7 +5,7 @@ author: "Lulëzim Ukaj"
 published_at: 
 header_source: 
 header_image: header.jpg
-categories: "angular open community"
+categories: "angular open-community"
 ---
 
 
