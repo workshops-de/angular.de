@@ -2,8 +2,8 @@
 title: "Open Community: Veröffentliche deinen Artikel für Angular.de!"
 description: "Entdecke 'Open Community' auf Angular.de – die neue Artikelserie für die Community aus der Community. Teile deinen Use Case, innovative Lösungen und Perspektiven aus aller Welt. Profitiere vom kollektiven Wissen und der Unterstützung erfahrener Entwickler"
 author: "Lulëzim Ukaj"
-published_at: 
-header_source: 
+published_at: 2024-06-18 09:27:00.000000Z
+header_source:
 header_image: header.jpg
 categories: "angular open-community"
 ---

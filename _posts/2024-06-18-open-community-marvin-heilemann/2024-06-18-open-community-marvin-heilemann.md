@@ -2,8 +2,8 @@
 title: "Open Community: Angular - Performance zwischen dynamisch gerenderten Komponenten per Template oder @switch"
 description: "Marvin Heilemann zeigt uns Methoden zur Optimierung der Render-Performance von dynamischen Komponenten in Angular durch fortschrittliche Control-Flow-Syntax und effektives Refactoring"
 author: "Marvin Heilemann"
-published_at: 
-header_source: 
+published_at: 2024-06-18 09:27:00.000000Z
+header_source:
 header_image: header.jpg
 categories: "angular rendering control-flow refactoring"
 ---
@@ -19,7 +19,7 @@ Das Formular-Modul bekommt aktuell eine JSON-Konfiguration, entweder vom Backend
 - **Der Feldtyp-Komponente**: rendert ein Eingabefelder basierend auf einer Typ-Property aus der Konfiguration
 
 
-Da Angular vor kurzem die Control-Flow Syntax herausgebracht hat, wollte ich diese auch hier nutzen. Aktuell rendert die Feld-Typ-Komponente die Eingabefelder per `ViewContainerRef.createComponent`. Die Komponenten liegen mit dem Typen in einem Objekt. Per `ViewChild` wird dann auf ein `ng-template` zugegriffen und anschließend das Eingabefeld dort hinein generiert. 
+Da Angular vor kurzem die Control-Flow Syntax herausgebracht hat, wollte ich diese auch hier nutzen. Aktuell rendert die Feld-Typ-Komponente die Eingabefelder per `ViewContainerRef.createComponent`. Die Komponenten liegen mit dem Typen in einem Objekt. Per `ViewChild` wird dann auf ein `ng-template` zugegriffen und anschließend das Eingabefeld dort hinein generiert.
 
 Das sieht in etwa so aus:
 
@@ -33,7 +33,7 @@ class TypeComponent {
   private readonly view!: ViewContainerRef;
 
   @Input({ required: true }) field!: FormFieldType;
-  
+
   ngAfterViewInit(): void {
     this.view.clear();
     this.view.createComponent(formFields[this.field.type]);
@@ -45,7 +45,7 @@ class TypeComponent {
 Nun, dieser Code-Teil ist bereits drei Jahre alt und ich wusste nicht, ob das hier noch eine moderne Lösung ist oder dem typischen Angular-Paradigma entspricht. Also wollte ich einen Vergleich haben zu einer anderen Methodik mit der neuen Control-Flow-Syntax: `@switch {}`. Dieser war vergleichsweise damals weitaus langsamer und komplexer zu bauen mit Typisierung.
 
 
-Da sich in Angular in den letzten Jahren viel getan hat, dachte ich, dass es doch sein kann, dass andere Methoden nun viel bessere Performance erzielen. Nun bin ich aber nicht sehr tief in der Materie zu Change Detection und Rendering in Angular an sich bewandert. 
+Da sich in Angular in den letzten Jahren viel getan hat, dachte ich, dass es doch sein kann, dass andere Methoden nun viel bessere Performance erzielen. Nun bin ich aber nicht sehr tief in der Materie zu Change Detection und Rendering in Angular an sich bewandert.
 
 Deshalb startete ich einen neuen Post in der mit im deutschen Raum bekanntesten Angular Community [Angular.de](www.angular.de). Hier habe ich mir, zusammen mit David Müllerchen aka Webdave, Gedanken darüber gemacht, was die richtige Herangehensweise wäre und wie die Performance in Angular am besten verglichen werden kann.
 
@@ -67,11 +67,11 @@ Da all meine Komponenten bekannt sind, war seine Antwort dann `@switch`. Da wir 
 ## Performance in Angular Vergleichen
 
 
-Auf dem Gebiet bin ich quasi neu, ich wusste zwar, dass es eine Angular-Erweiterung für Chromium-Browser gibt, nur hab ich sie noch nie genutzt. 
+Auf dem Gebiet bin ich quasi neu, ich wusste zwar, dass es eine Angular-Erweiterung für Chromium-Browser gibt, nur hab ich sie noch nie genutzt.
 
-Also war das der Anfang. Erweiterung installiert, App aufgemacht, “Profiler” geöffnet und gestartet. 
+Also war das der Anfang. Erweiterung installiert, App aufgemacht, “Profiler” geöffnet und gestartet.
 
-[Mehr zum Profiler der Angular Devtools erfährst du hier](https://angular.dev/tools/devtools#profile-your-application). 
+[Mehr zum Profiler der Angular Devtools erfährst du hier](https://angular.dev/tools/devtools#profile-your-application).
 
 Nach einigen Tests kam ich damit ganz gut klar. Wichtig war mir hier, dass ich die FPS sehen kann, wie lange Komponenten laden bis sie gerendert sind und wie sich die Werte verändern beim Ein- und Ausblenden (re-render) bzw. beim Hinzufügen von neuen Elementen oder entfernen.
 
@@ -96,7 +96,7 @@ component.setInput("options", this.options());
 Nachdem mein Use-Case nachgebaut war, baute ich noch etwas Style drum herum (ich habs gerne etwas Stylisch), ein paar Buttons zum ein- und ausblenden, zu generieren weitere Eingabefelder und Szenario-Beispiele zu generieren. In meinem Repl sind diese aber nur Text mit Signals, um es nicht zu Komplex zu gestalten.
 
 
-<aside> 
+<aside>
 🔥 Ein großes Plus, das Repl ist Zoneless (unsere App inzwischen auch) und nutzt ChangeDetection.OnPush.
 </aside>
 
@@ -110,7 +110,7 @@ Ich habe Anfangs mit 200 Elementen für beide Möglichkeiten gestartet. Hier bin
 Abweichungen können entstehen, je nachdem in welchem Browser getestet oder Gerät ein Szenario gestartet wird.
 
 
-<aside> 
+<aside>
 ℹ️ Den StackBlitz Browser, welcher als Splitview gestartet wird, kann auch als neues Tab geöffnet werden, was ein realeres Szenario darstellt, da es nicht als iFrame in StackBlitz geöffnet ist.
 </aside>
 

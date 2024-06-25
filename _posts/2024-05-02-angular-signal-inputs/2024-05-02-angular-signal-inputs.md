@@ -3,8 +3,8 @@ title: "Signal Inputs: Jetzt wird die Kommunikation zwischen Eltern- und Kindele
 description: "Signal Inputs in Angular: Eine innovative Methode, die die Kommunikation zwischen Parent- und Child-Komponenten vereinfacht und durch einen deklarativen, reaktiven Ansatz die Developer Experience verbessert."
 author: "Lulëzim Ukaj"
 co_author: "David Müllerchen"
-published_at: 
-header_source: 
+published_at: 2024-05-02 09:27:00.000000Z
+header_source:
 header_image: header.jpg
 categories: "angular signals input output"
 ---
@@ -26,10 +26,10 @@ class="lazy img-fluid img-rounded" data-src="2.jpg" data-srcset="2.jpg"
 </p>
 
 
-Der [@Input()-Dekorator](https://angular.dev/guide/components/inputs#customizing-inputs)  ist eines der meistgenutzten Features in Angular. Er ermöglicht es, Daten von einer Eltern- an ihre Kinderkomponente zu übertragen. Das ist einer der technischen Grundbausteine für wiederverwendbare und modulare UI-Komponenten und damit für skalierbare Web-Anwendungen in Angular. Traditionell gab es immer einiges manuell einzustellen und zu managen, wenn es darum ging, ein performantes State Management zu implementieren. Das ist zeitintensiv und erfordert auch tiefgreifende Kenntnisse der Web-Entwickler*innen. 
+Der [@Input()-Dekorator](https://angular.dev/guide/components/inputs#customizing-inputs)  ist eines der meistgenutzten Features in Angular. Er ermöglicht es, Daten von einer Eltern- an ihre Kinderkomponente zu übertragen. Das ist einer der technischen Grundbausteine für wiederverwendbare und modulare UI-Komponenten und damit für skalierbare Web-Anwendungen in Angular. Traditionell gab es immer einiges manuell einzustellen und zu managen, wenn es darum ging, ein performantes State Management zu implementieren. Das ist zeitintensiv und erfordert auch tiefgreifende Kenntnisse der Web-Entwickler*innen.
 
 
-Um das Ganze verständlicher zu machen, betrachten wir ein einfaches Beispiel: 
+Um das Ganze verständlicher zu machen, betrachten wir ein einfaches Beispiel:
 
 <p class="left">
 <img
@@ -107,15 +107,15 @@ export class CongratsChildComponent {
 
   generateMessage(employee: string, reason: string): string {
     switch(reason) {
-      case 'birthday': 
+      case 'birthday':
         return `Herzlichen Glückwunsch zum Geburtstag, ${employee}!`;
-      case 'death': 
+      case 'death':
         return `Unser tiefstes Beileid zum Verlust, betreffend ${employee}.`;
-      case 'birth': 
+      case 'birth':
         return `Herzlichen Glückwunsch zur Geburt, ${employee}!`;
-      case 'vacation': 
+      case 'vacation':
         return `Schönen Urlaub, ${employee}!`;
-      default: 
+      default:
         return 'Bitte wählen Sie einen Mitarbeiter und einen Grund aus.';
     }
   }
@@ -126,7 +126,7 @@ export class CongratsChildComponent {
 ## Wie machen Signal Inputs das Ganze leichter?
 
 
-Die neuen Signal Inputs in Angular machen es für Entwickler um einiges leichter, mit dynamischen Komponenten zu arbeiten. 
+Die neuen Signal Inputs in Angular machen es für Entwickler um einiges leichter, mit dynamischen Komponenten zu arbeiten.
 
 Anstatt wie in unserem Codebeispiel den @Input()-Dekorator und einen OnChanges-Lifecycle-Hook zu verwenden, bieten Signal Inputs eine direkte und reaktive Alternative.
 
@@ -242,12 +242,12 @@ Anstatt auf Änderungen manuell mit ngOnChanges zu reagieren, geben die Signal I
 ## Optionale vs. erforderliche Inputs
 Angular unterscheidet klar zwischen optionalen und erforderlichen Signal Inputs.
 ### Optionale Inputs
-Optionale Signal Inputs müssen nicht verwendet werden und können undefined sein. 
-Das ist für Szenarien gedacht, in denen Daten nicht an die Elternkomponente übergeben werden müssen. Beispielsweise hat das Input einen Default-Wert, der noch überschrieben werden kann. Das geschieht dann mit Hilfe der input()-Funktion. 
+Optionale Signal Inputs müssen nicht verwendet werden und können undefined sein.
+Das ist für Szenarien gedacht, in denen Daten nicht an die Elternkomponente übergeben werden müssen. Beispielsweise hat das Input einen Default-Wert, der noch überschrieben werden kann. Das geschieht dann mit Hilfe der input()-Funktion.
 
-**Außerdem wichtig:** 
+**Außerdem wichtig:**
 
-Wenn kein Wert angegeben wird, verwendet Angular per Default “undefined” als Wert. 
+Wenn kein Wert angegeben wird, verwendet Angular per Default “undefined” als Wert.
 
 
 Zurück zu unserem Beispiel: Angenommen, die Auswahl eines Mitarbeiters ist optional. Bei bestimmten Anlässen, wie bei einem Todesfall, soll der Name handschriftlich notiert werden:
@@ -261,7 +261,7 @@ class CongratsChildComponent {
 
 
 ### Erforderliche Inputs
-Erforderliche Signal Inputs hingegen müssen genutzt werden. Diese Inputs werden mit der input.required()-Funktion deklariert. Hier sollen vor allem Fehler durch fehlende Daten vermieden werden. 
+Erforderliche Signal Inputs hingegen müssen genutzt werden. Diese Inputs werden mit der input.required()-Funktion deklariert. Hier sollen vor allem Fehler durch fehlende Daten vermieden werden.
 
 
 In unserem Beispiel muss der Anlass für unsere Glückwunschkarte immer angegeben werden:
@@ -275,7 +275,7 @@ class CongratsChildComponent {
 
 
 ## Aliasing von Inputs
-Aliasing ermöglicht es dir, ein Input in der Parent-Komponente einen anderen Namen zu geben als in der Child-Komponente. Das hat den Vorteil, dass du die Namen verwenden kannst, die am besten zum internen Kontext oder zur Logik deiner Komponenten passen. In unserem Beispiel möchtest du den selectedEmployee-Input in der Child-Komponente als employeeName nutzen. Das kannst du über die Alias-Funktion der input()-Methode erreichen. 
+Aliasing ermöglicht es dir, ein Input in der Parent-Komponente einen anderen Namen zu geben als in der Child-Komponente. Das hat den Vorteil, dass du die Namen verwenden kannst, die am besten zum internen Kontext oder zur Logik deiner Komponenten passen. In unserem Beispiel möchtest du den selectedEmployee-Input in der Child-Komponente als employeeName nutzen. Das kannst du über die Alias-Funktion der input()-Methode erreichen.
 
 Betrachten wir wieder unser Grußkarten-Beispiel:
 
@@ -296,7 +296,7 @@ generateMessage() {
 ```
 
 
-Das Aliasing kann in bestimmten Fällen sinnvoll sein, um zum Beispiel Namenskonflikte zu vermeiden oder für Refactoring-Arbeiten. 
+Das Aliasing kann in bestimmten Fällen sinnvoll sein, um zum Beispiel Namenskonflikte zu vermeiden oder für Refactoring-Arbeiten.
 
 **ABER!**
 
@@ -309,7 +309,7 @@ Generell gilt, bei Aliases für @input - und @ output - Dekoratoren vorsichtig z
 
 
 ## Ableiten von Werten (Deriving)
-Das Ableiten von Werten (Deriving) mit Signal Inputs ermöglicht es, abgeleitete States oder Werte dynamisch zu erzeugen. Mit Hilfe der computed-Funktion lassen sich leicht neue, abgeleitete States erzeugen, ohne dass sie manuell eingestellt werden müssen. 
+Das Ableiten von Werten (Deriving) mit Signal Inputs ermöglicht es, abgeleitete States oder Werte dynamisch zu erzeugen. Mit Hilfe der computed-Funktion lassen sich leicht neue, abgeleitete States erzeugen, ohne dass sie manuell eingestellt werden müssen.
 
 In unserem fiktiven Beispiel könnten wir die computed-Funktion nutzen, um anhand des Mitarbeitergeschlechts unsere Glückwunschnachricht entsprechend abzuleiten. Je nachdem, ob der Name mit einem "a" endet (weiblich), soll die Grußbotschaft ein "liebe" oder "lieber" vor dem Text setzen:
 
@@ -367,10 +367,10 @@ birthDate = input('', {
 
 ## Fazit und Ausblick auf Signal Inputs
 
-Signal Inputs in Angular bieten ein neues Tool fürs Data Binding und State Management in komplexen Webanwendungen. Der große Vorteil der neuen Inputs liegt in ihrer reaktiven Natur. Anders als traditionelle @Input-Dekoratoren ermöglichen Signal Inputs eine automatische Change Detection. Das vereinfacht die Implementierung von dynamischen Benutzeroberflächen. Das wiederum spart Zeit und Ressourcen. 
+Signal Inputs in Angular bieten ein neues Tool fürs Data Binding und State Management in komplexen Webanwendungen. Der große Vorteil der neuen Inputs liegt in ihrer reaktiven Natur. Anders als traditionelle @Input-Dekoratoren ermöglichen Signal Inputs eine automatische Change Detection. Das vereinfacht die Implementierung von dynamischen Benutzeroberflächen. Das wiederum spart Zeit und Ressourcen.
 
 
-Die Signal sind Input sind ein weiterer Beweis, welchen Stellenwert die Developer Experience für das Angular Team dieses Jahr bekommen hat. Wir haben hier bereits oft davon gesprochen, eine verbesserte Developer Experience ist eines der Hauptziele dieses Jahr. Viele der neuen Angular Features müssen unter diesem Aspekt betrachtet werden. Während die Anforderungen an und die Komplexität der Webanwendungen gerade eher exponentiell zu steigen scheinen, reduzieren Signal Inputs den Boilerplate-Code. Das ist frischer Wind und macht Spaß. 
+Die Signal sind Input sind ein weiterer Beweis, welchen Stellenwert die Developer Experience für das Angular Team dieses Jahr bekommen hat. Wir haben hier bereits oft davon gesprochen, eine verbesserte Developer Experience ist eines der Hauptziele dieses Jahr. Viele der neuen Angular Features müssen unter diesem Aspekt betrachtet werden. Während die Anforderungen an und die Komplexität der Webanwendungen gerade eher exponentiell zu steigen scheinen, reduzieren Signal Inputs den Boilerplate-Code. Das ist frischer Wind und macht Spaß.
 Keep the Flow, Angular!
 
 
