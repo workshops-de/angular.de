@@ -5,7 +5,7 @@
   "main": "opengraph.js",
   "devDependencies": {
     "canvas": "^2.11.2",
-    "commander": "^11.1.0"
+    "commander": "^12.1.0"
   },
   "repository": {
     "type": "git",
