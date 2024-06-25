@@ -25,8 +25,7 @@ layout: base
         <p class="text-muted">
           <small>
             {% for category in page.categories %}
-            <span class="text-uppercase">{{category}}</span>
-            {% unless forloop.last %}<span class="ms-1 me-1">•</span>{% endunless %}
+            <span class="badge bg-secondary text-uppercase ">{{category}}</span>
             {% endfor %}
             <span class="ms-1 me-1">|</span>
             {{ page.author }}
