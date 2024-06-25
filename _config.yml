@@ -61,6 +61,17 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
 
+jekyll-archives:
+  enabled:
+    - categories
+    - year
+  layouts:
+    year: archive-year
+    category: archive-category
+  permalinks:
+    year: '/:year/'
+    category: '/kategorie/:name/'
+
 # Build settings
 markdown: kramdown
 sass:
@@ -73,6 +84,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate-v2
+  - jekyll-archives
 exclude:
   - Gemfile
   - Gemfile.lock

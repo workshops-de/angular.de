@@ -25,7 +25,7 @@ layout: base
         <p class="text-muted">
           <small>
             {% for category in page.categories %}
-            <span class="badge bg-secondary text-uppercase ">{{category}}</span>
+            <a href="/kategorie/{{category}}/" class="badge bg-secondary text-bg-secondary text-uppercase">{{category}}</a>
             {% endfor %}
             <span class="ms-1 me-1">|</span>
             {{ page.author }}
