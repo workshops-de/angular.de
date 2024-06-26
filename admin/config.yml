@@ -1,5 +1,6 @@
 # local_backend: true
 locale: 'de'
+logo_url: https://angular.de/assets/img/logo.svg
 backend:
   name: github
   repo: workshops-de/angular.de
