@@ -1,0 +1,40 @@
+# local_backend: true
+locale: 'de'
+backend:
+  name: github
+  repo: workshops-de/angular.de
+  open_authoring: true
+  commit_messages:
+    create: Create {{collection}} “{{slug}}”
+    update: Update {{collection}} “{{slug}}”
+    delete: Delete {{collection}} “{{slug}}”
+    uploadMedia: Upload “{{path}}”
+    deleteMedia: Delete “{{path}}”
+    openAuthoring: '{{message}}'
+media_folder: 'assets/uploads'
+publish_mode: editorial_workflow
+collections:
+  - name: 'article'
+    label: 'Artikel'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    path: '{{slug}}/{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Publish Date', name: 'published_at', widget: 'datetime' }
+      - { label: 'Header Source', name: 'header_source', widget: 'hidden', required: false}
+      - label: 'Header Image'
+        name: 'header_image'
+        widget: 'file'
+        media_library:
+          config:
+            max_file_size: 440000
+      - { label: 'Categories', name: 'categories', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+    sortable_fields: ['title', 'author', 'published_at']
