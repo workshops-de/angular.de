@@ -8,14 +8,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [ {
-      "source": "/oauth",
-      "function": {
-        "functionId": "oauth",
-        "region": "us-central1",
-        "pinTag": true
-      }
-    } ],
     "redirects": [
       {
         "source": "/feed",
