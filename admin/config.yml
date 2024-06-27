@@ -5,6 +5,8 @@ backend:
   name: github
   repo: workshops-de/angular.de
   open_authoring: true
+  base_url: https://us-central1-angular-de.cloudfunctions.net
+  auth_endpoint: /oauth/auth
   commit_messages:
     create: Create {{collection}} “{{slug}}”
     update: Update {{collection}} “{{slug}}”
