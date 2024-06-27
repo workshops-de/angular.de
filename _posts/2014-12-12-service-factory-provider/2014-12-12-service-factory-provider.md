@@ -2,7 +2,7 @@
 title: "Service, Factory und Provider verstehen"
 description: "Was ist der Unterschied? Wann brauch ich was? In diesem Artikel werden alle relevanten Wege zum Erzeugen von Services gezeigt und praktische Tipps gegeben."
 author: "Tilman Potthof"
-published_at: 2014-12-12 14:07:00.000000Z
+published_at: 2014-12-12 07:57:00.000000Z
 categories: "angularjs services"
 ---
 
