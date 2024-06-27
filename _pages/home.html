@@ -45,7 +45,7 @@ permalink: /
       <div class="card h-100">
         <a class="c-img-post" style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg');" href="/tutorials/"></a>
         <a class="card-body" href="/ng-de-konferenz/">
-          <div class="fw-bold">
+          <div class="fw-semibold">
             Angular-Tutorial für Einsteiger
           </div>
         </a>
@@ -65,7 +65,7 @@ permalink: /
         </a>
         <a class="card-body" href="/ng-de-konferenz/">
           <div class="text-muted">Angular Community Konferenz</div>
-          <span class="fw-bold">
+          <span class="fw-semibold">
             NG-DE ist die erste community-driven Angular Konferenz in Deutschland
           </span>
         </a>
@@ -83,7 +83,7 @@ permalink: /
         </a>
         <a class="card-body" href="/ng-de-konferenz/">
           <div class="text-muted">Angular Community Konferenz</div>
-          <span class="fw-bold">
+          <span class="fw-semibold">
             NG-DE ist die erste community-driven Angular Konferenz in Deutschland
           </span>
         </a>
@@ -115,7 +115,7 @@ permalink: /
 
   <section class="my-5">
     <h2>Community</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 gy-4 gx-5">
       <div class="col">
         <div class="card h-100">
           <a class="c-img-post" style="background-image: url('assets/img/ng-de/ng-de-mood-video.png');" href="/ng-de-konferenz/">
@@ -127,9 +127,9 @@ permalink: /
               <span class="text-uppercase">Mood Video</span>
             </span>
           </a>
-          <a class="card-body" href="/ng-de-konferenz/">
+          <a class="card-body px-0" href="/ng-de-konferenz/">
             <div class="text-muted">Angular Community Konferenz</div>
-            <span class="fw-bold">
+            <span class="fw-semibold">
               NG-DE ist die erste community-driven Angular Konferenz in Deutschland
             </span>
           </a>
@@ -146,9 +146,9 @@ permalink: /
               <span class="text-uppercase">Schweiz</span>
             </span>
           </a>
-          <a class="card-body" href="/meetups/">
+          <a class="card-body px-0" href="/meetups/">
             <div class="text-muted">Meetups in der DACH Region</div>
-            <span class="fw-bold">
+            <span class="fw-semibold">
               Finde dein Angular Meetup in deiner nähe oder gründe selbe eins!
             </span>
           </a>
@@ -165,9 +165,9 @@ permalink: /
               <span class="text-uppercase">Lernen</span>
             </span>
           </a>
-          <a class="card-body" href="/discord" rel="noopener nofollow">
+          <a class="card-body px-0" href="/discord" rel="noopener nofollow">
             <div class="text-muted">Dein Angular Discord auf Deutsch</div>
-            <span class="fw-bold">
+            <span class="fw-semibold">
               Tausche dich mit anderen über Herausforderungen, Lösungen und Events aus
             </span>
           </a>
@@ -177,7 +177,7 @@ permalink: /
   </section>
   <section class="my-5">
     <h2>Die neuesten Artikel</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 gy-4 gx-5">
       {% for post in site.posts limit:6 %}
       <div class="col">
         {% include shared/_post_card.html %}
