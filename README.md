@@ -53,10 +53,10 @@ bundle exec jekyll serve --incremental
 
 We're using a git submodule to share files like templates, images and themes across all workshops_de portals. Use following command to pull and update the repository including submodule.
 
-```
+```bash
 $ git pull --recurse-submodules
 ```
-  
+
 ### 5. Pull Request
 Createa a [Pull Request](https://help.github.com/articles/creating-a-pull-request/) to describe and propose your changes to this repository.
 If you don't know what Pull Requests(PR) all about you should check out [this article](https://help.github.com/articles/about-pull-requests/).

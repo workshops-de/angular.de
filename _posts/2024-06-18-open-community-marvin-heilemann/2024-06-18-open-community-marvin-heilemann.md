@@ -27,7 +27,7 @@ Da Angular vor kurzem die Control-Flow Syntax herausgebracht hat, wollte ich die
 Das sieht in etwa so aus:
 
 
-```
+```typescript
 @Component({
   template: `<ng-template #placeholder></ng-template>`,
 })
@@ -91,7 +91,7 @@ Für einen wirklichen Vergleich hab ich mir in Chrome noch den “Performance Mo
 Während ich für beide Möglichkeiten ein Repl geschrieben habe, kam ich auch schon in einige Fehler mit ComponentRef und Signals. Hier konnte ich mit Webdave’s Unterstützung dann herausfinden, wie man an die `component` Signals übergibt. Interessant dabei war, dass ich dazu nahezu nichts in der API Dokumentation von Angular fand, ggf. liegt das auch daran, dass das alles sehr neu ist und die Dokumentation und auf [angular.dev](https://angular.dev) zu finden ist.
 
 
-```
+```typescript
 component.setInput("options", this.options());
 ```
 

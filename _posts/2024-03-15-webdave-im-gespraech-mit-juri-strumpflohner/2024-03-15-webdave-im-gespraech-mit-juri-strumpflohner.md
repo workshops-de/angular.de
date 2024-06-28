@@ -24,7 +24,7 @@ Welche sind das? Was ist Task Parallelisierung und Caching? Was sind bewährte P
 
 Darüber und über noch viel mehr haben sich Web Dave und  Juri Strumpflohner, Sr. Director of Developer Experience for [Nx](https://nx.dev/) unterhalten. Wer Juri ist und wie Juri zum NX Team gestoßen ist, erfahrt ihr natürlich auch. Schaut euch das Videogespräch dazu an.
 
-In diesem Artikel zum Gespräch haben wir euch die Basics zusammengefasst und werden euch NX kurz vorstellen und euch einen Installation Guide aufgeschrieben. 
+In diesem Artikel zum Gespräch haben wir euch die Basics zusammengefasst und werden euch NX kurz vorstellen und euch einen Installation Guide aufgeschrieben.
 
 
 ## Was ist NX?
@@ -59,7 +59,7 @@ class="lazy img-fluid img-rounded" data-src="infographic.jpg" data-srcset="infog
 
 
 
-Das NX-Paket bietet technologieunabhängige Features wie [workspace analysis](https://nx.dev/features/explore-graph), [task running](https://nx.dev/features/run-tasks), [caching](https://nx.dev/features/cache-task-results), [distribution](https://nx.dev/ci/features/distribute-task-execution), [code generation](https://nx.dev/features/generate-code), and [automated code migrations](https://nx.dev/features/automate-updating-dependencies). Plugins sind NPM-Pakete, die auf den Funktionen aufbauen, die das Nx-Paket bietet. Nx-Plugins enthalten Code Generatoren, Executer, und eine automatisierte Code-Migration, um deine Werkzeuge up to date zu halten. Devkit ist ein Set von Hilfsmitteln zum Bauen von Nx-Plugins. Nx Cloud hilft dir, dein Projekt auf CI zu skalieren, indem es dir Remote-Caching und eine leichtere Aufgabenstellung bietet. Dazu werden GitHub, GitLab und BitBucket integriert und durchsuchbare, strukturierte Logs bereitgestellt. Nx Console ist eine Erweiterung für VSCode, IntelliJ und VIM. Sie bietet Code-Autovervollständigung, interaktive Generatoren, Visualisierungen des Arbeitsbereichs, leistungsstarke Refaktorisierungen und mehr. 
+Das NX-Paket bietet technologieunabhängige Features wie [workspace analysis](https://nx.dev/features/explore-graph), [task running](https://nx.dev/features/run-tasks), [caching](https://nx.dev/features/cache-task-results), [distribution](https://nx.dev/ci/features/distribute-task-execution), [code generation](https://nx.dev/features/generate-code), and [automated code migrations](https://nx.dev/features/automate-updating-dependencies). Plugins sind NPM-Pakete, die auf den Funktionen aufbauen, die das Nx-Paket bietet. Nx-Plugins enthalten Code Generatoren, Executer, und eine automatisierte Code-Migration, um deine Werkzeuge up to date zu halten. Devkit ist ein Set von Hilfsmitteln zum Bauen von Nx-Plugins. Nx Cloud hilft dir, dein Projekt auf CI zu skalieren, indem es dir Remote-Caching und eine leichtere Aufgabenstellung bietet. Dazu werden GitHub, GitLab und BitBucket integriert und durchsuchbare, strukturierte Logs bereitgestellt. Nx Console ist eine Erweiterung für VSCode, IntelliJ und VIM. Sie bietet Code-Autovervollständigung, interaktive Generatoren, Visualisierungen des Arbeitsbereichs, leistungsstarke Refaktorisierungen und mehr.
 
 ## Installation von NX
 
@@ -67,13 +67,13 @@ Das NX-Paket bietet technologieunabhängige Features wie [workspace analysis](ht
 
 Um einen neuen Nx workspace zu erstellen, verwende zunächst folgenden Befehl:
 
-```
+```bash
 npx create-nx-workspace
 ```
 
 Dieser Prozess führt dich durch das Setup und fragt, ob du einen Monorepo oder eine Standalone App bevorzugst und ob du mit einem leeren oder einer vorkonfigurierten Setup beginnen möchtest.
 
-```
+```bash
 npx create-nx-workspace@latest
 
 NX   Let's create a new workspace [https://nx.dev/getting-started/intro]
@@ -106,7 +106,7 @@ Falls du Nx zu einem bestehenden Repository hinzufügen möchtest:
 ```npx nx@latest init```
 
 
-Du kannst das Nx NPM-Paket auch manuell installieren und eine `nx.json` zur Konfiguration erstellen. 
+Du kannst das Nx NPM-Paket auch manuell installieren und eine `nx.json` zur Konfiguration erstellen.
 Lerne mehr, wie du Nx in einem bestehenden Projekt einsetzen kannst:
 
 ### Nx global installieren

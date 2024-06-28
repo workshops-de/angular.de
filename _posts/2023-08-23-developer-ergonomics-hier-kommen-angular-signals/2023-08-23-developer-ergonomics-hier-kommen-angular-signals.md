@@ -46,7 +46,7 @@ Lass uns nun ein Writable Signal und damit unser erstes Signal erstellen.
 
 **Schritt 1**: Wir importieren die Funktion signal von `@angular/core`. Diese Funktion erlaubt es uns, ein Writable Signal zu erstellen. Füge dazu einfach den Import am Anfang der Datei hinzu, in der Du das Computed Signal erstellen möchtest:
 
-```
+```typescript
 import { signal } from "@angular/core"
 ```
 
@@ -54,7 +54,7 @@ import { signal } from "@angular/core"
 
 Beim Erstellen eines Writable Signals lässt sich der initiale Wert des Signals mitgeben, ähnlich wie bei der Instanziierung von einem `BehaviourSubject`.
 
-```
+```typescript
 // Signals
 import { signal } from "@angular/core";
 
@@ -65,7 +65,7 @@ Schauen wir uns das Beispiel oben an, sehen wir, dass die API von Signals sehr �
 
 **Schritt 3**: Wir greifen im Template unserer Komponente auf den Wert des Signals zu.
 
-```
+```typescript
 <!-- Signals -->
 <p>Anzahl Rechnungen: {{ invoices().length }}</p>
 ```
@@ -76,7 +76,7 @@ Nun lass uns dem Signal auch einen Wert geben.
 
 **Schritt 4**: Wir implementieren eine Methode zum Setzen des Werts des Signals.
 
-```
+```typescript
 addInvoice(invoice: Invoice) {
     // Weg 1: Mutate
     this.invoices.mutate(invoices => invoices.push(invoice));
@@ -99,13 +99,13 @@ Bei der Erstellung von Computed Signals unterscheidet sich der Ansatz stark vom 
 
 **Schritt 1**: Wir importieren signal und computed von @angular/core. Diese Funktionen erlauben es uns, Writable und Computed Signals zu erstellen. Füge dazu einfach den Import am Anfang der Datei hinzu, in der Du das Computed Signal erstellen möchtest:
 
-```
+```typescript
 import { signal, computed } from '@angular/core;
 ```
 
 **Schritt 2**: Nun können wir das Computed Signal erstellen. Dazu nutzen wir die importierte Funktion computed und
 
-```
+```typescript
 import { signal, computed } from '@angular/core;
 
 const pageCount = computed(() => Math.ceil(this.invoiceCount() / 5));
@@ -117,7 +117,7 @@ Hurra! 🎉 Du hast ein Computed Signal angelegt. Der Zugriff auf das Signal fun
 
 Schauen wir uns nun an, wie sich Werte aus mehreren Signals ableiten lassen. Dazu erstellen wir wieder ein Computed Signal.
 
-```
+```typescript
 // Werte, aus denen wir ableiten wollen
 const permissions = signal(["create_invoice", "delete_invoices"]);
 const isAuthenticated = signal(false);
@@ -132,7 +132,7 @@ Das Beispiel zeigt das Signal canDeleteInvoice, welches seinen Wert von den beid
 
 Das Pendant zum obigen Beispiel wäre mit RxJS in etwa folgendes:
 
-```
+```typescript
 const permissions$ = new BehaviourSubject(["create_invoice", "delete_invoices"]);
 const isAuthenticated$ = new BehaviourSubject(false);
 
@@ -150,13 +150,13 @@ Effects sind Operationen, die immer dann ausgeführt werden, wenn sich ein oder 
 
 **Schritt 1**: Wir importieren die Funktion effect von @angular/core.
 
-```
+```typescript
 import { effect } from '@angular/core';
 ```
 
 **Schritt 2**: Wir erstellen den Effect.
 
-```
+```typescript
 @Component({ ... })
 export class MyComponent {
   effect(() => console.log(`Aktueller Login-Status: ${ isAuthenticated() }`);
@@ -178,7 +178,7 @@ Um von reaktiver imperativer Programmierung mit Sigals zu reaktiver deklarativer
 
 Demnächst wird es sogar möglich sein, Signal-based Inputs zu nutzen ([Hier geht's zum RFC](https://github.com/angular/angular/discussions/49682)). Mithilfe der Input Transforms, die mit Angular 16.1 veröffentlicht wurden, lassen sich Inputs ganz einfach als Signals benutzen.
 
-```
+```typescript
 @Component({
   signals: true,
   selector: 'invoices-overview',
