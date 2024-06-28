@@ -53,6 +53,12 @@ layout: base
         <div class="c-content">
           {{ content }}
         </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
       </div>
       <div class="col-lg-4 d-none d-lg-block">
         <div class="position-sticky c-top-4 ms-2">
@@ -73,26 +79,16 @@ layout: base
             </a>
           </div>
         </div>
-        <div class="position-sticky c-top-4">
-
-        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 col-lg-8 mb-2">
-        <div class="mb-4">
-          {% include shared/_post_author.html %}
-        </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        {% include shared/_post_author.html %}
         {% if page.co_author %}
-          <div class="mb-4">
+          <div class="mt-4">
             {% include shared/_post_author.html author=co_author %}
           </div>
         {% endif %}
-        <div class="mb-2 text-end">
-          <a class="btn btn-sm btn-primary" href="{{site.repository_url}}/edit/master/{{page.path}}" target="_blank">
-            Diesen Artikel auf GitHub verbessern
-          </a>
-        </div>
 
       </div>
     </div>
