@@ -42,8 +42,7 @@ const oauthApp = express()
 
 oauthApp.get('/auth', (req, res) => {
   const authorizationUri = oauth2.authorizeURL({
-    // redirect_uri: oauth.redirect_url,
-    redirect_uri: "https://us-central1-angular-de.cloudfunctions.net/oauth/callback",
+    redirect_uri: oauth.redirect_url || `https://${req.headers['x-forwarded-host']}/oauth/callback`,
     scope: oauth.scopes || 'repo,user',
     state: randomstring.generate(32)
   })
@@ -85,4 +84,10 @@ oauthApp.get('/', (req, res) => {
   res.redirect(301, `/oauth/auth`)
 })
 
-exports.oauth = functions.https.onRequest(oauthApp)
+// exports.oauth = functions.https.onRequest(oauthApp)
+
+// Create "main" function to host all other top-level functions
+const main = express();
+main.use('/oauth', oauthApp);
+
+exports.oauth = functions.https.onRequest(main);
