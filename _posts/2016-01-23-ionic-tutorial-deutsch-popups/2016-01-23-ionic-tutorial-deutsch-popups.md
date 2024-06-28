@@ -3,7 +3,7 @@ title: "Ionic Framework Tutorial - Umgang mit Popups"
 description: "Ihr wollt kurze Hinweistexte oder kurze Benutzerabfragen in eurer Ionic-App? Dann erfahrt ihr hier alles über Popups und deren Nutzung in Ionic."
 author: "Bengt Weiße"
 published_at: 2016-01-23 08:29:00.000000Z
-categories: "ionic angularjs turorial"
+categories: "ionic angularjs tutorial"
 ---
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/12-Popups) und [Live-Demo](https://angularjs-de.github.io/ionic-tutorial/12-Popups/#/order)
