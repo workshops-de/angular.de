@@ -7,7 +7,7 @@ github_username:  jekyll
 gtm_property: "GTM-T5VPDDK"
 utm_source: "angular_de"
 permalink: /artikel/:slug/
-repository_url: "https://github.com/symetics/angular.de"
+repository_url: "https://github.com/workshops-de/angular.de"
 og_generator_enabled: true
 
 navigation:
