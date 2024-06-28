@@ -10,10 +10,7 @@
     ],
     "rewrites": [ {
       "source": "/oauth/**",
-      "function": {
-        "functionId": "oauth",
-        "region": "us-central1"
-      }
+      "function": "oauth"
     } ],
     "redirects": [
       {
