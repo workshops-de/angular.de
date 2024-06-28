@@ -1,7 +1,8 @@
-<div id="carouselTestimonials" class="carousel slide carousel-fade" data-ride="carousel" style="max-height: 448px; overflow: hidden;">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselTestimonials" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselTestimonials" data-slide-to="1"></li>
+<div id="carouselTestimonials" class="carousel slide" data-ride="carousel" style="max-height: 448px; overflow: hidden;">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -49,14 +50,14 @@
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
-  </a>
+  </button>
 </div>
 
 <img src="/assets/img/schulungen/shared/testimonial-christianz-janz.png" width="1" height="1" alt="preload image" class="d-none" />
