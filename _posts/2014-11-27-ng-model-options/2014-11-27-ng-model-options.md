@@ -3,7 +3,7 @@ title: "Neue Optionen für ngModel in AngularJS 1.3"
 description: "Die Direktive ngModelOptions ermöglicht euch das Verhalten von ng-model zu konfigurieren. Welche Möglichkeiten ihr dabei habt zeigen wir euch in diesem Artikel."
 author: "Tilman Potthof"
 published_at: 2014-11-27 09:04:00.000000Z
-categories: "angularjs 1.3"
+categories: "angularjs update"
 ---
 
 AngularJS ist bekannt für sein einfaches bidirektionales Databinding.

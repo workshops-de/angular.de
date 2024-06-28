@@ -4,21 +4,21 @@ description: “Ein Blogartikel über alle neuen Features und Updates in Angular
 author: "Lulëzim Ukaj"
 co_author: "David Müllerchen"
 published_at: 2024-06-11 09:27:00.000000Z
-header_source: 
+header_source:
 header_image: header.jpg
-categories: "angular release update 18"
+categories: "angular release update"
 ---
 
 
 
-Es ist soweit: Angular v18 wurde veröffentlicht! 
+Es ist soweit: Angular v18 wurde veröffentlicht!
 
-Seit Beginn der Angular Renaissance gab es viele neue Features und Updates. Als Erstes ist einem sicherlich das neue Logo und das neue Portal [angular.dev](https://www.angular.dev) aufgefallen, das [angular.io](https://www.angular.io) als Hauptquelle für Informationen und Ressourcen abgelöst hat. Neben den visuellen Neuerungen gab es einige bahnbrechende – in diesem Fall ist das Wort durchaus angebracht – technische Updates. In diesem Zusammenhang sind vor allem die [Angular Signals](https://angular.dev/guide/signals) und [Full App Non-Destructive Hydration](https://angular.dev/guide/ssr#configure-server-side-rendering) zu nennen. Beide Features waren der Beginn einer Neuausrichtung im Bereich der Change Detection bzw. der gesamten Rendering-Strategie für das Framework. Insbesondere die Signals sind auf großes Interesse in der Angular Community gestoßen. 
+Seit Beginn der Angular Renaissance gab es viele neue Features und Updates. Als Erstes ist einem sicherlich das neue Logo und das neue Portal [angular.dev](https://www.angular.dev) aufgefallen, das [angular.io](https://www.angular.io) als Hauptquelle für Informationen und Ressourcen abgelöst hat. Neben den visuellen Neuerungen gab es einige bahnbrechende – in diesem Fall ist das Wort durchaus angebracht – technische Updates. In diesem Zusammenhang sind vor allem die [Angular Signals](https://angular.dev/guide/signals) und [Full App Non-Destructive Hydration](https://angular.dev/guide/ssr#configure-server-side-rendering) zu nennen. Beide Features waren der Beginn einer Neuausrichtung im Bereich der Change Detection bzw. der gesamten Rendering-Strategie für das Framework. Insbesondere die Signals sind auf großes Interesse in der Angular Community gestoßen.
 
-Mit dem Update auf Angular Version 18 scheint sich das Angular-Team darauf konzentriert zu haben, kurz innezuhalten und alle neuen Features zu stabilisieren. Oder wie Minko Gechev vom Angular-Team-Lead selbst sagt: 
+Mit dem Update auf Angular Version 18 scheint sich das Angular-Team darauf konzentriert zu haben, kurz innezuhalten und alle neuen Features zu stabilisieren. Oder wie Minko Gechev vom Angular-Team-Lead selbst sagt:
 
 
-„Over the past three releases, we’ve introduced a lot of new features and improvements. This time we focused on polishing the work we shipped.“ 
+„Over the past three releases, we’ve introduced a lot of new features and improvements. This time we focused on polishing the work we shipped.“
 
 
 Es geht darum, die Fortschritte zu bewerten und diese in die Gesamtstrategie einzuordnen, um eine stabile und kohärente Basis für spannende neue Experimente zu schaffen. Eines dieser lang ersehnten Experimente wurde nun auch in Angular 18 vorgestellt: die Zoneless Change Detection. Auch wenn das Feature bisher explizit als “experimental feature” geführt wird, ist das nicht weniger als eine kleine Revolution in der Change Detection. Wir werden uns in der näheren Zukunft ausführlich mit diesem Thema befassen.
@@ -26,13 +26,13 @@ Es geht darum, die Fortschritte zu bewerten und diese in die Gesamtstrategie ein
 
 Hier sind die Highlights dieses Releases kurz zusammengefasst:
 
-- Experimentelle Unterstützung für die zoneless Change Detection: 
+- Experimentelle Unterstützung für die zoneless Change Detection:
   Ein Schritt weg von zone.js, hin zu einer schlankeren, schnelleren Änderungserkennung.
-- Angular.dev avanciert zur neuen Heimat für Angular-Entwickler: 
+- Angular.dev avanciert zur neuen Heimat für Angular-Entwickler:
   Angular.dev löst nun endgültig angular.io als Plattform für Angular Entwickler ab. Sie bietet viel mehr als nur Dokumentation und ist ein interaktiver Spielplatz mit Tutorials und Lernumgebung.
-- Stabilisierung von Material 3, deferrable views und built-in Control Flow: 
+- Stabilisierung von Material 3, deferrable views und built-in Control Flow:
   Die Key Features des letzten Releases sind nun reif für den produktiven Einsatz und wurden um zahlreiche Verbesserungen ergänzt.
-- Fortschritte im Server-Side Rendering: 
+- Fortschritte im Server-Side Rendering:
   Verbesserter i18n Hydration-Support, Debugging mit visuellen Hinweisen, Hydration-Support in Angular Material und Event Replay, angetrieben von der gleichen Technologie, die auch Google Search nutzt.
 
 
@@ -98,7 +98,7 @@ Vereinfachtes Debugging und lesbarere Stacktraces.
 ### Die Rolle von Signals für Zoneless
 Ein Kernaspekt von zoneless ist die Einführung von Signals, die eine direkte und reaktive Zustandsverwaltung ermöglichen. Signals sind entscheidend für die effiziente Steuerung der Änderungserkennung, da sie es ermöglichen, Zustände explizit zu aktualisieren, ohne dass zone.js jede Aktion überwachen muss. Dies führt zu einer deutlichen Performance-Steigerung und vereinfacht die Komponentenkommunikation durch klar definierte Datenflüsse.
 
-## Signals 
+## Signals
 
 Unser persönliches Highlight in dieser Version sind die neuen Signal APIs, die jetzt im Developer Preview verfügbar sind. Diese APIs transformieren die Art und Weise, wie Werte in Komponenten gehandhabt werden, weg von klassischen Klassenattributen hin zu Signals. Das Ziel ist, Komponenten zu Signal-Komponenten weiterzuentwickeln, was die Change Detection revolutionieren könnte.
 Zu den Signal APIs gehören:
@@ -110,7 +110,7 @@ Zu den Signal APIs gehören:
 - contentChild
 - contentChildren
 - model
-  
+
 Bis auf model, das eine Kombination aus input und output darstellt und damit ein intuitives Two-Way-Binding ermöglicht, sind die anderen schnell erklärt: Sie ersetzen die bestehenden Dekoratoren durch Signale.
 Ein Beispiel:
 ```typescript
