@@ -8,8 +8,7 @@ author: Lulëzim Ukaj
 published_at: 2024-06-18 09:27:00.000000Z
 header_source: null
 header_image: header.jpg
-categories:
-  - angular rendering control-flow refactoring open-community
+categories: "angular rendering control-flow refactoring open-community"
 ---
 
 Oft frage ich mich, gerade für Anwendungen mit vielen dynamisch geladenen Komponenten, wie ich diese noch besser programmieren kann, um die Latenz oder Layout-Shifts zu verringern. Ich mache mir deshalb immer viele Gedanken, wie ich etwas programmiere, auch weil wir in Zukunft, bei mir im Unternehmen, ein Refactoring unseres Formular-Moduls planen. Deshalb wollte ich herausfinden, wo wir mit kleinen Änderungen bessere Render-Performance erzielen können. In diesem Artikel beschreibe ich mein Vorgehen und etwas unsere interne Modulstruktur.
