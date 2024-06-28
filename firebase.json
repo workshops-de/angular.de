@@ -9,7 +9,7 @@
       "**/node_modules/**"
     ],
     "rewrites": [ {
-      "source": "/auth/**",
+      "source": "/oauth/**",
       "function": {
         "functionId": "oauth",
         "region": "us-central1"
