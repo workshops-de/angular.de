@@ -25,7 +25,7 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     path: '{{slug}}/{{slug}}'
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
       - { label: 'Title', name: 'title', widget: 'string' }
@@ -72,3 +72,17 @@ collections:
       - { label: 'started_with_angular', name: 'started_with_angular', widget: 'hidden' }
       - { label: 'why_angular_de_team', name: 'why_angular_de_team', widget: 'hidden' }
       - { label: 'best_workshop_memory', name: 'best_workshop_memory', widget: 'hidden' }
+  # - name: 'pages'
+  #   label: 'Seiten'
+  #   label_singular: 'Seite'
+  #   files:
+  #     - label: 'Home Page'
+  #       name: 'home'
+  #       file: '_pages/home.html'
+  #       extension: 'html'
+  #       editor:
+  #         preview: false
+  #       fields:
+  #         - {label: Title, name: title, widget: string}
+  #         - {label: 'Description', name: description, widget: text}
+  #         - {label: Body, name: body, widget: text}
