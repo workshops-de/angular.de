@@ -30,7 +30,13 @@ collections:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - label: 'Author'
+        name: 'author'
+        widget: 'relation'
+        collection: 'authors'
+        search_fields: ['name']
+        value_field: '{{slug}}'
+        display_fields: ['name']
       - { label: 'Publish Date', name: 'published_at', widget: 'datetime' }
       - { label: 'Header Source', name: 'header_source', widget: 'hidden', required: false}
       - label: 'Header Image'
