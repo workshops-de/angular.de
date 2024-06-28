@@ -64,6 +64,7 @@ collections:
       - { label: 'Gravatar UID', name: 'gravatar_uid', hint: 'Erstelle deinen Gravatar hier https://de.gravatar.com/', widget: 'string', required: false }
       - { label: 'Github Handle', name: 'github', widget: 'string', required: false }
       - { label: 'Twitter Handle', name: 'twitter', widget: 'string', required: false }
+      - { label: 'workshops.de Profil', name: 'workshops_de', widget: 'string', hint: 'Dein Permalink auf workshops.de', required: false }
       - { label: 'Website', name: 'website', widget: 'string', required: false }
       - { label: 'Stadt', name: 'city', widget: 'string', required: false }
       - { label: 'Ist Team-Mitglied?', name: 'team', widget: 'boolean', required: false }
