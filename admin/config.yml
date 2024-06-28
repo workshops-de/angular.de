@@ -58,9 +58,9 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Permalink', name: 'permalink', widget: 'string' }
-      - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Gravatar UID', name: 'gravatar_uid', widget: 'string' }
+      - { label: 'Permalink', name: 'permalink', hint: 'z.B. robinboehm', widget: 'string' }
+      - { label: 'Name', name: 'name', hint: 'z.B. Robin Böhm', widget: 'string' }
+      - { label: 'Gravatar UID', name: 'gravatar_uid', hint: 'Erstelle deinen Gravatar hier https://de.gravatar.com/', widget: 'string' }
       - { label: 'Github Handle', name: 'github', widget: 'string' }
       - { label: 'Twitter Handle', name: 'twitter', widget: 'string' }
       - { label: 'Website', name: 'website', widget: 'string' }
@@ -68,8 +68,8 @@ collections:
       - { label: 'Ist Team-Mitglied?', name: 'team', widget: 'boolean' }
       - { label: 'Ist Trainer:in?', name: 'trainer', widget: 'boolean' }
       - { label: 'Ist Google Developer Expert?', name: 'gde', widget: 'boolean' }
-      - { label: 'Intro', name: 'intro', widget: 'hidden' }
       - { label: 'Bio', name: 'bio', widget: 'text' }
+      - { label: 'Intro', name: 'intro', widget: 'hidden' }
       - { label: 'started_with_angular', name: 'started_with_angular', widget: 'hidden' }
       - { label: 'why_angular_de_team', name: 'why_angular_de_team', widget: 'hidden' }
       - { label: 'best_workshop_memory', name: 'best_workshop_memory', widget: 'hidden' }
