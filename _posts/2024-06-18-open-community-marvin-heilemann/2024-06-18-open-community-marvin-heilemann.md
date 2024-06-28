@@ -5,7 +5,7 @@ description: Marvin Heilemann zeigt uns Methoden zur Optimierung der
   Render-Performance von dynamischen Komponenten in Angular durch
   fortschrittliche Control-Flow-Syntax und effektives Refactoring
 author: Lulëzim Ukaj
-published_at: 2024-06-18 09:27:00.000000Z
+published_at: 2024-06-18 09:30:00.000000Z
 header_source: null
 header_image: header.jpg
 categories: "angular rendering control-flow refactoring open-community"
