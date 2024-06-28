@@ -61,13 +61,14 @@ collections:
       - { label: 'Permalink', name: 'permalink', widget: 'string' }
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: 'Gravatar UID', name: 'gravatar_uid', widget: 'string' }
-      - { label: 'Github', name: 'github', widget: 'string' }
+      - { label: 'Github Handle', name: 'github', widget: 'string' }
+      - { label: 'Twitter Handle', name: 'twitter', widget: 'string' }
       - { label: 'Website', name: 'website', widget: 'string' }
       - { label: 'Stadt', name: 'city', widget: 'string' }
       - { label: 'Ist Team-Mitglied?', name: 'team', widget: 'boolean' }
       - { label: 'Ist Trainer:in?', name: 'trainer', widget: 'boolean' }
-      - { label: 'Ist GDE?', name: 'gde', widget: 'boolean' }
-      - { label: 'Intro', name: 'intro', widget: 'text' }
+      - { label: 'Ist Google Developer Expert?', name: 'gde', widget: 'boolean' }
+      - { label: 'Intro', name: 'intro', widget: 'hidden' }
       - { label: 'Bio', name: 'bio', widget: 'text' }
       - { label: 'started_with_angular', name: 'started_with_angular', widget: 'hidden' }
       - { label: 'why_angular_de_team', name: 'why_angular_de_team', widget: 'hidden' }
