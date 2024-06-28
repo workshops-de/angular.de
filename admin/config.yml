@@ -46,7 +46,7 @@ collections:
         media_library:
           config:
             max_file_size: 440000
-      - { label: 'Categories', name: 'categories', widget: 'list' }
+      - { label: 'Categories', name: 'categories', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
     sortable_fields: ['title', 'author', 'published_at']
   - name: 'authors'
