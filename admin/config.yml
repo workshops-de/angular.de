@@ -7,6 +7,7 @@ backend:
   open_authoring: true
   base_url: https://angular.de
   auth_endpoint: /oauth/auth
+  squash_merges: true
   commit_messages:
     create: Create {{collection}} “{{slug}}”
     update: Update {{collection}} “{{slug}}”
