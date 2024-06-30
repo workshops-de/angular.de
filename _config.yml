@@ -64,12 +64,9 @@ pagination:
 jekyll-archives:
   enabled:
     - categories
-    - year
   layouts:
-    year: archive-year
     category: archive-category
   permalinks:
-    year: '/:year/'
     category: '/kategorie/:name/'
 
 # Build settings
