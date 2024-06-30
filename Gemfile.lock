@@ -45,8 +45,6 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-archives (2.2.1)
-      jekyll (>= 3.6, < 5.0)
     jekyll-autoprefixer (1.0.2)
       autoprefixer-rails (~> 9.3)
     jekyll-feed (0.17.0)
@@ -109,7 +107,6 @@ DEPENDENCIES
   fastimage
   fileutils
   jekyll (~> 4.3.3)
-  jekyll-archives
   jekyll-autoprefixer
   jekyll-feed
   jekyll-paginate-v2
