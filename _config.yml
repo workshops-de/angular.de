@@ -61,13 +61,18 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
 
-jekyll-archives:
-  enabled:
-    - categories
-  layouts:
-    category: archive-category
-  permalinks:
-    category: '/kategorie/:name/'
+autopages:
+  enabled: true
+
+  categories:
+    layouts:
+      - 'autopage_category.html'
+    title: 'Artikel in #:cat'
+    permalink: '/kategorie/:cat'
+    silent: false
+    slugify:
+      mode: 'default'
+      case: true
 
 # Build settings
 markdown: kramdown
@@ -81,7 +86,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate-v2
-  - jekyll-archives
 exclude:
   - Gemfile
   - Gemfile.lock

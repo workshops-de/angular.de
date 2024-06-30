@@ -6,9 +6,9 @@ sitemap: false
 
 <main role="main">
   <div class="container pt-5">
-    <h1>#{{ page.title }} Artikel</h1>
+    <h1>Artikel in #{% if page.autopages %}{{page.autopages.display_name}}{% endif %}</h1>
     <ul class="posts">
-      {% for post in page.posts %}
+      {% for post in paginator.posts %}
         <li>
           <span class="post-date">{{ post.date | date: "%d.%m.%Y" }}</span>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
