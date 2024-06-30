@@ -73,6 +73,8 @@ autopages:
     slugify:
       mode: 'default'
       case: true
+  collections:
+    enabled: false
 
 # Build settings
 markdown: kramdown
