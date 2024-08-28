@@ -17,32 +17,30 @@ Nach einer wohlverdienten Sommerpause sind wir wieder da – und das mit einem e
 
 
 In diesem tollen Interview erzählt uns Mark von seiner persönlichen Reise, die ihn von seiner Kindheit in Chicago, Illinois, bis hin zu einer zentralen Rolle im Angular-Team geführt hat. Es gibt tiefe Einblicke in seine Karriere, seine Leidenschaft für die Fotografie, das Gitarrespielen, die Programmierung und seine Lernphilosophie.  
-Besonders spannend finden wir die Karrieretipps für Entwickler/innen, egal ob ihr am Anfang ihrer Laufbahn steht oder bereits erfahrene Profis seid.
 
+
+Besonders spannend finden wir die Karrieretipps für Entwickler/innen, egal ob ihr am Anfang ihrer Laufbahn steht oder bereits erfahrene Profis seid.
 
 ### Timestamps
 
-
-- **0:00** [Wer ist Mark Thomson?](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=0)
-- **6:13** [Der Weg in die Tech-Branche und was der Sega Megadrive damit zu tun hat.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=373)
-- **9:20** [Über Leidenschaft, das Fotografieren und die Schwierigkeit, motiviert zu bleiben.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=560)
-- **14:10** [Neue Dinge lernen: Vom Programmieren bis zu Kameras.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=850)
-- **23:38** [Karrierestart: Der Weg zu Google und Marks Erfolgsgeschichte.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=1418)
-- **27:41** [Flutter, Dart und die Unterschiede zu TypeScript.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=1661)
-- **33:38** [Marks Lieblingsfeatures in TypeScript.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2018)
-- **35:37** [Marks Rolle im Angular-Team.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2137)
-- **38:02** [Über Gemini Nano, Künstliche Intelligenz und die Rolle von Entwicklerinnen in der Zukunft.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2282)
-- **41:35** [Ist KI gefährlich?](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2495)
-- **47:19** [Marks Lieblingsfeatures in Angular: Deferrable Views und Signals.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2839)
-- **51:21** [Morning with Mark und das Erstellen von Videos.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3081)
-- **56:29** [Karrieretipps für Junior-Entwickler.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3389)
-- **59:28** [Karrieretipps für Senior-Entwickler.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3568)
-- **01:02:58** [Wo sieht sich Mark in 10 Jahren? Persönlich und beruflich.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3778)
-- **01:05:00** [Über Gitarren, gemeinsames Musizieren und die Bedeutung des lebenslangen Lernens.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3900)
-- **01:22:22** [Marks Anfänge in der Programmierung.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=4942)
-- **01:29:22** [Neue Features in Angular.](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=5362)
-
-
+- [0:00](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=0) Wer ist Mark Thomson?
+- [6:13](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=373) Der Weg in die Tech-Branche und was der Sega Megadrive damit zu tun hat.
+- [9:20](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=560) Über Leidenschaft, das Fotografieren und die Schwierigkeit, motiviert zu bleiben.
+- [14:10](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=850) Neue Dinge lernen: Vom Programmieren bis zu Kameras.
+- [23:38](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=1418) Karrierestart: Der Weg zu Google und Marks Erfolgsgeschichte.
+- [27:41](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=1661) Flutter, Dart und die Unterschiede zu TypeScript.
+- [33:38](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2018) Marks Lieblingsfeatures in TypeScript.
+- [35:37](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2137) Marks Rolle im Angular-Team.
+- [38:02](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2282) Über Gemini Nano, Künstliche Intelligenz und die Rolle von Entwicklerinnen in der Zukunft.
+- [41:35](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2495) Ist KI gefährlich?
+- [47:19](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2839) Marks Lieblingsfeatures in Angular: Deferrable Views und Signals.
+- [51:21](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3081) Morning with Mark und das Erstellen von Videos.
+- [56:29](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3389) Karrieretipps für Junior-Entwickler.
+- [59:28](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3568) Karrieretipps für Senior-Entwickler.
+- [01:02:58](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3778) Wo sieht sich Mark in 10 Jahren? Persönlich und beruflich.
+- [01:05:00](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3900) Über Gitarren, gemeinsames Musizieren und die Bedeutung des lebenslangen Lernens.
+- [01:22:22](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=4942) Marks Anfänge in der Programmierung.
+- [01:29:22](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=5362) Neue Features in Angular.
 
 
 Ob Junior oder Senior, Marks Ratschläge bieten wertvolle Orientierung für deine Karriere im Tech-Bereich. Schau rein und lass dich von seinen Erfahrungen und Insights inspirieren!
@@ -51,19 +49,13 @@ Ob Junior oder Senior, Marks Ratschläge bieten wertvolle Orientierung für dein
 ## Wer ist Mark Thomson?
 
 <img
-style="max-width: 20%"
+style="max-width: 40%"
 src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-08-26-webdave-im-gespraech-mit-mark-thompson/profilepic.jpg" alt="Portrait Mark Thompson"
 class="lazy img-fluid img-rounded" data-src="profilepic.jpg" data-srcset="profilepic.jpg"
 />
 
 
-
-
 Mark Thomson ist mehr als nur ein Mitglied des Angular-Teams – er ist ein inspirierender Public Speaker und bekannt für seine Leidenschaft, Menschen bei ihrer beruflichen Entwicklung zu fördern. 
-
-
-Doch anstatt nur darüber zu lesen, schaut euch das Interview selbst an. 
-
 
 Natürlich findest du Mark auch auf Social Media:
 
@@ -76,7 +68,6 @@ Natürlich findest du Mark auch auf Social Media:
 - [Mark Thompson auf Medium](https://medium.com/@markathompson) 
 
 
-Wir freuen uns darauf, nach der Sommerpause wieder voll durchzustarten und dir viele weitere spannende Artikel rund ums Thema Angular zu bieten. Kudos an unseren Trainer und einen unserer Lieblings-Streamer @webdave für dieses inspirierende Interview.
-
+Wir freuen uns darauf, nach der Sommerpause wieder voll durchzustarten und dir viele weitere spannende Artikel rund ums Thema Angular zu bieten. Kudos an unseren Trainer und einen unserer Lieblings-Streamer [Webdave](https://webdave.de/start) für dieses inspirierende Interview.
 
 Wie immer, werde Teil unserer wachsenden Community!
