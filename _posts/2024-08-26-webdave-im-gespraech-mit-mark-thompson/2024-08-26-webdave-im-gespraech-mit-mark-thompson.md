@@ -9,7 +9,6 @@ categories: "angular open-community"
 ---
 
 
-## Das Interview mit Mark Thompson
 Nach einer wohlverdienten Sommerpause sind wir wieder da – und das mit einem echten Highlight! Zum Start haben wir ein exklusives Interview für euch mit Mark Thomson, Transformational Public Speaker und Mitglied des Angular-Teams bei Google.
 
 
@@ -50,7 +49,6 @@ Ob Junior oder Senior, Marks Ratschläge bieten wertvolle Orientierung für dein
 
 
 ## Wer ist Mark Thomson?
-
 
 <img
 style="max-width: 20%"
