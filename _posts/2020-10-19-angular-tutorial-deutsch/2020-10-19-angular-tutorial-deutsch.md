@@ -14,24 +14,24 @@ Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular. Wir behande
 Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalte der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-intro) und unserer [Angular Lifetime Schulung](https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-intro).
 
 Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil. Ihr könnt hierbei alle Aufgaben selber programmieren und über unseren
-<a target="_blank" href="https://lifetime.workshops.de/offers/QozcPo3a?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">
+<a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-tutorial-masterclass/angular-tutorial-masterclass/event_bookings/new?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">
 <b>kostenlosen Workshops.DE Lifetime Classroom zum Angular Tutorial</b>
 </a>
  mit Videos von  Hilfestellungen und Musterlösungen für die Aufgaben erhalten.
 <p class="text-center">
-<a target="_blank" href="https://lifetime.workshops.de/offers/QozcPo3a?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-picture">
+<a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-tutorial-masterclass/angular-tutorial-masterclass/event_bookings/new?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-picture">
   <img src="/shared/assets/img/placeholder-image.svg" alt="Beispiel für Aufgaben zum Tutorial in unserem Lifetime Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="kajabi-angular-tutorial.png" data-srcset="kajabi-angular-tutorial.png"
   style="max-width:80%"
   />
 </a>
 
-<a target="_blank" href="https://lifetime.workshops.de/offers/QozcPo3a?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-picture">
+<a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-tutorial-masterclass/angular-tutorial-masterclass/event_bookings/new?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-picture">
   <img src="/shared/assets/img/placeholder-image.svg" alt="Beispiel Video zum Tutorial in unserem Classroom  auf Workshops.de" class="lazy img-fluid img-rounded" data-src="kajabi-video-angular-tutorial.png" data-srcset="kajabi-video-angular-tutorial.png"
   style="max-width:80%"
   />
 </a>
 
-  <a class="btn btn-primary" target="_blank" href="https://lifetime.workshops.de/offers/QozcPo3a?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
+  <a class="btn btn-primary" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-tutorial-masterclass/angular-tutorial-masterclass/event_bookings/new?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
     Zum kostenlosen Angular Tutorial Video Kurs
   </a>
 </p>
