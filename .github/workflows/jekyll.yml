@@ -6,7 +6,7 @@ on:
       - "dependabot/**"
   pull_request:
   schedule:
-  - cron: "0 2 * * *"
+    - cron: "0 2 * * *"
 
 env:
   JEKYLL_ENV: production
@@ -14,65 +14,64 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone repository
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
-    - name: Cache Bundler 💾
-      uses: actions/cache@v3
-      with:
-        path: ~/.firebase, ~/.jekyll-cache, ~/vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
+      - name: Cache Bundler 💾
+        uses: actions/cache@v3
+        with:
+          path: ~/.firebase, ~/.jekyll-cache, ~/vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
 
-    - name: Cache NPM packages 💾
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-node-
-          ${{ runner.OS }}-
+      - name: Cache NPM packages 💾
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
 
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
-        cache: 'npm'
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22"
+          cache: "npm"
 
-    - name: Use Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        bundler-cache: true
+      - name: Use Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
 
-    - name: Install dependencies 🔧
-      run:  |
-        npm ci
-        bundle config set path vendor/bundle
-        bundle install --jobs 4 --retry 3
+      - name: Install dependencies 🔧
+        run: |
+          npm ci
+          bundle config set path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
-    - name: Build 🏗
-      run: bundle exec jekyll build --trace
+      - name: Build 🏗
+        run: bundle exec jekyll build --trace
 
-    - name: Deploy to Firebase
-      if: github.ref == 'refs/heads/master'
-      uses: FirebaseExtended/action-hosting-deploy@v0
-      with:
-        repoToken: '${{ secrets.GITHUB_TOKEN }}'
-        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAR_DE }}'
-        channelId: live
-        projectId: angular-de
+      - name: Deploy to Firebase
+        if: github.ref == 'refs/heads/master'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAR_DE }}"
+          channelId: live
+          projectId: angular-de
 
-    - name: Deploy Preview to Firebase
-      if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-      uses: FirebaseExtended/action-hosting-deploy@v0
-      with:
-        repoToken: '${{ secrets.GITHUB_TOKEN }}'
-        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAR_DE }}'
-        projectId: angular-de
+      - name: Deploy Preview to Firebase
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAR_DE }}"
+          projectId: angular-de
