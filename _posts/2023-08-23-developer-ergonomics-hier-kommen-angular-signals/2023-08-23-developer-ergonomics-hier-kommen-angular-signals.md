@@ -10,7 +10,7 @@ categories: "angular signals update"
 
 ## Das Angular 16 Update
 
-Vielleicht hast Du es mitbekommen: Mit Angular 16 wurde das, gemessen am Umfang, größte Update nach dem initialen Release von Angular veröffentlicht. Neben Features wie [Non-Destructive Hydration](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d#:~:text=of%20full%20app-,non%2Ddestructive%20hydration,-!) oder dem Support für Typescript 5.0 enthält das Update drei Reactivity Primitives und damit einen Mechanismus für Reaktivität. Sarah Drasnger, Director of Engineering bei Google, spricht auf [Twitter bzw. X](https://twitter.com/sarah_edo/status/1628065696247857152) sogar von einer Angular Renaissance.
+Vielleicht hast Du es mitbekommen: Mit Angular 16 wurde das, gemessen am Umfang, größte Update nach dem initialen Release von Angular veröffentlicht. Neben Features wie [Non-Destructive Hydration](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d#:~:text=of%20full%20app-,non%2Ddestructive%20hydration,-!){:rel="noopener noreferrer nofollow"} oder dem Support für Typescript 5.0 enthält das Update drei Reactivity Primitives und damit einen Mechanismus für Reaktivität. Sarah Drasnger, Director of Engineering bei Google, spricht auf [Twitter bzw. X](https://twitter.com/sarah_edo/status/1628065696247857152){:rel="noopener noreferrer nofollow"} sogar von einer Angular Renaissance.
 
 ## Motivation hinter Signals
 
@@ -24,7 +24,7 @@ RxJS hat in Angular Anwendungen zwei Kernaufgaben: die Koordination von asynchro
 
 Ein Signal in Angular hält immer einen Wert und Konsumenten können diesen Wert lesen. Ein Signal ist ein zyklischer Prozess und jedes Mal, wenn es seinen Zyklus durchläuft, produziert er eine bestimmte Menge an Informationen.
 
-Ist also eine bestimmte Komponente ein Consumer des Signals, weil es die Informationen benötigt, so wird der Consumer informiert über Änderungen. Wie auch RxJS implementiert ein Signal das [Observer-Pattern](https://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)), setzt dieses technisch allerdings anders um.
+Ist also eine bestimmte Komponente ein Consumer des Signals, weil es die Informationen benötigt, so wird der Consumer informiert über Änderungen. Wie auch RxJS implementiert ein Signal das [Observer-Pattern](https://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)){:rel="noopener noreferrer nofollow"}, setzt dieses technisch allerdings anders um.
 
 Angular unterscheidet bei den Signals zwischen „Writable Signals“ und „Computed Signals“.
 
@@ -141,7 +141,7 @@ const canDeleteInvoice$ = combineLatest([permissions$, isAuthenticated$]).pipe(
 );
 ```
 
-Würden sich also mit diesem Ansatz die Streams `permissions$` und `isAuthenticated$` aktualiseren, so kann es durchaus passieren, dass unerwartete Ergebnisse herauskommen: Angenommen der Benutzer wird angemeldet (isAuthenticated$ wird `true` emitten) und die Berechtigung "createInvoice" wird entzogen zur gleichen Zeit. Das würde kurzzeitig dazu führen, dass `canDeleteInvoices$` true emitted bevor es dann mit dem Emit von `permissions$` wieder `false` wird. Man nennt das auch das [Diamond-Problem](https://de.wikipedia.org/wiki/Diamond-Problem).
+Würden sich also mit diesem Ansatz die Streams `permissions$` und `isAuthenticated$` aktualiseren, so kann es durchaus passieren, dass unerwartete Ergebnisse herauskommen: Angenommen der Benutzer wird angemeldet (isAuthenticated$ wird `true` emitten) und die Berechtigung "createInvoice" wird entzogen zur gleichen Zeit. Das würde kurzzeitig dazu führen, dass `canDeleteInvoices$` true emitted bevor es dann mit dem Emit von `permissions$` wieder `false` wird. Man nennt das auch das [Diamond-Problem](https://de.wikipedia.org/wiki/Diamond-Problem){:rel="noopener noreferrer nofollow"}.
 
 
 ## Effects

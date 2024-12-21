@@ -444,7 +444,7 @@ case TodoActions.SET_CURRENT_FILTER:
 ```
 
 ### Die Todo-Liste anzeigen
-Wir verwenden eine untergeordnete Komponente  todo, um ein einzelnes Todo zu verkapseln, das einige Eigenschaften als Attribute (id, abgeschlossen) und die Beschreibung (Text) als Inhalt übergibt. Dieses Muster ist als [Container Component](https://medium.com/@learnreact/container-components-c0e67432e005) bekannt.
+Wir verwenden eine untergeordnete Komponente  todo, um ein einzelnes Todo zu verkapseln, das einige Eigenschaften als Attribute (id, abgeschlossen) und die Beschreibung (Text) als Inhalt übergibt. Dieses Muster ist als [Container Component](https://medium.com/@learnreact/container-components-c0e67432e005){:rel="noopener noreferrer nofollow"} bekannt.
 
 ```javascript
 //src/todoList.ts
@@ -520,6 +520,6 @@ Lass uns überprüfen, wie sich eine Redux-Anwendung in verschiedenen Stadien ve
 
 
 
-Dies ist eine Übersetzung und Überarbeitung von Gerard's großartigem Artikel [Angular — Introduction to Redux](https://medium.com/google-developer-experts/angular-2-introduction-to-redux-1cf18af27e6e)
+Dies ist eine Übersetzung und Überarbeitung von Gerard's großartigem Artikel [Angular — Introduction to Redux](https://medium.com/google-developer-experts/angular-2-introduction-to-redux-1cf18af27e6e){:rel="noopener noreferrer nofollow"}
 
 Benutze diese Links für die finalen Lösungen: [Demo](https://embed.plnkr.co/6UJUYh7nbyU3TMS2Xd6l/) - [Source](https://plnkr.co/edit/6UJUYh7nbyU3TMS2Xd6l?p=preview)

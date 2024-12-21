@@ -156,7 +156,7 @@ Ja, und wir sind sogar bereits mitten in der "Angular Renaissance"!
 
 Betrachten wir die Entwicklung des Frameworks der letzten Jahre, wird eines deutlich: die Angular-User-Experience hatte mindestens eine ähnliche Priorität wie die Performance des Frameworks. Features wie Signals oder der neue Control Flow erhöhen nicht nur die Performance des Frameworks, sondern vereinfachen vor allem das Arbeiten mit Angular. Auch das neue moderne Design muss in dieser Logik gedacht werden.
 
-Die Entwicklung ist kein Zufall.Über die letzten Jahre hat sich das Angular-Team wieder verstärkt auf das Feedback und die Bedürfnisse der Angular-Community fokussiert und aktiv in die Weiterentwicklung des Frameworks integriert. Insbesondere die [Ergebnisse der jährlichen Angular-Umfrage](https://blog.angular.io/angular-developer-survey-2023-86372317c95f) tragen zur Priorisierung für das nächste Jahr bei, wie es Minko Gechev selbst sagt:
+Die Entwicklung ist kein Zufall.Über die letzten Jahre hat sich das Angular-Team wieder verstärkt auf das Feedback und die Bedürfnisse der Angular-Community fokussiert und aktiv in die Weiterentwicklung des Frameworks integriert. Insbesondere die [Ergebnisse der jährlichen Angular-Umfrage](https://blog.angular.io/angular-developer-survey-2023-86372317c95f){:rel="noopener noreferrer nofollow"} tragen zur Priorisierung für das nächste Jahr bei, wie es Minko Gechev selbst sagt:
 
 >One of the strongest guiding indicators which has been highly influential in our prioritization process are the results from the Angular developer survey.
 
