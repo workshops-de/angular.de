@@ -35,7 +35,7 @@ In diesem Artikel beschränken wir uns auf Services.
 
 * Ein moderner Browser mit einer JavaScript Konsole
    * [Chrome – Öffnen der Konsole](https://developers.google.com/web/tools/chrome-devtools/console/#opening-the-console)
-   * [Firefox – Öffnen der Konsole](https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Opening_the_Web_Console)
+   * [Firefox – Öffnen der Konsole](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)
 * Eine Angular Anwendung zum experimentieren
    * [Angular TodoMVC](http://todomvc.com/examples/angularjs/#/)
    * Irgendeine andere Angular Anwendung

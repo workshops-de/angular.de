@@ -62,7 +62,7 @@ Hier mal eine Erklärung der Tags, welche ich in diesem Dockerfile anwende:
 
 - `MAINTAINER`: Hiermit definiert Ihr den Urheber des Images. Hier kann Name und / oder E-Mailadresse angegeben werden.
 
-- `COPY`: Mit diesem Befehl könnt Ihr Daten während des Build Prozesses von euerem lokalen System in den Dockercontainer kopieren. In diesem Beispiel kopiere ich das komplette Projekt in den Container. Dies hat den Vorteil, dass man dadurch den kompletten Build der Applikation innerhalb des Containers laufen lassen kann. Etwas weiter unten kopiere ich noch die Konfigurationsdatei von nginx in den jeweiligen Pfad, an welchem [nginx](https://www.nginx.com/) diese Datei erwartet.
+- `COPY`: Mit diesem Befehl könnt Ihr Daten während des Build Prozesses von euerem lokalen System in den Dockercontainer kopieren. In diesem Beispiel kopiere ich das komplette Projekt in den Container. Dies hat den Vorteil, dass man dadurch den kompletten Build der Applikation innerhalb des Containers laufen lassen kann. Etwas weiter unten kopiere ich noch die Konfigurationsdatei von nginx in den jeweiligen Pfad, an welchem [nginx](https://www.f5.com/go/product/welcome-to-nginx) diese Datei erwartet.
 
 - `WORKDIR`: Hiermit gebt Ihr den Pfad des Arbeitsverzeichnisses innerhalb des Containers an. Folglich werden alle künftigen Befehle innerhalb dieses Pfades stattfindenden.
 
