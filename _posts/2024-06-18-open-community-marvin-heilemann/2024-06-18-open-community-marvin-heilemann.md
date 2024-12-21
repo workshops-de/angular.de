@@ -50,7 +50,7 @@ Nun, dieser Code-Teil ist bereits drei Jahre alt und ich wusste nicht, ob das hi
 
 Da sich in Angular in den letzten Jahren viel getan hat, dachte ich, dass es doch sein kann, dass andere Methoden nun viel bessere Performance erzielen. Nun bin ich aber nicht sehr tief in der Materie zu Change Detection und Rendering in Angular an sich bewandert.
 
-Deshalb startete ich einen neuen Post in der mit im deutschen Raum bekanntesten Angular Community [Angular.de](https://www.angular.de). Hier habe ich mir, zusammen mit David Müllerchen aka Webdave, Gedanken darüber gemacht, was die richtige Herangehensweise wäre und wie die Performance in Angular am besten verglichen werden kann.
+Deshalb startete ich einen neuen Post in der mit im deutschen Raum bekanntesten Angular Community [Angular.de](https://angular.de). Hier habe ich mir, zusammen mit David Müllerchen aka Webdave, Gedanken darüber gemacht, was die richtige Herangehensweise wäre und wie die Performance in Angular am besten verglichen werden kann.
 
 
 ## Vor- und Nachteile der Möglichkeiten
