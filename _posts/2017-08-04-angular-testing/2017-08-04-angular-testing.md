@@ -444,7 +444,7 @@ describe('MockBackend: LanguagesServiceHttp', () => {
 ```
 Auf unserem Test bauen wir unsere gemockte Antwort (Zeilen 23-25), also wenn wir endlich den Anruf zu unserem Service machen, bekommt man die erwarteten Ergebnisse.
 
-*„Beachte: Wir müssen async nicht benutzen, weil MockBackend sich synchron verhält. Danke an [Pascal Precht](https://medium.com/@pascalprecht), der das erwähnt hat.“*
+*„Beachte: Wir müssen async nicht benutzen, weil MockBackend sich synchron verhält. Danke an [Pascal Precht](https://medium.com/@pascalprecht){:rel="noopener noreferrer nofollow"}, der das erwähnt hat.“*
 
 ### 5. Eine Directive testen
 
@@ -774,7 +774,7 @@ In diesem Fall überprüfen wir, dass wir mit dem Abonnement auf dem `EventEmitt
 
 Alle Tests, die in diesem Beitrag enthalten waren, und noch mehr findest auf [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
 
-Das ist alles! Danke fürs Lesen! Hast du fragen? Wenn ja dann benachrichtige mich auf [@gerardsans](https://medium.com/google-developer-experts/angular-2-testing-guide-a485b6cb1ef0).
+Das ist alles! Danke fürs Lesen! Hast du fragen? Wenn ja dann benachrichtige mich auf [@gerardsans](https://medium.com/google-developer-experts/angular-2-testing-guide-a485b6cb1ef0){:rel="noopener noreferrer nofollow"}.
 
 ### Willst du mehr?
 

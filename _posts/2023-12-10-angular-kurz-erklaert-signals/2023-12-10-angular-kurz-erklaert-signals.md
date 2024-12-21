@@ -12,7 +12,7 @@ categories: "angular signals"
 
 ## Neue Reaktivität in Angular: Signals
 
-Angular Signals sind das neue Tool in der reaktiven Programmierung mit Angular. Sie wurden erstmals im Mai dieses Jahres mit dem Update auf Version 16 als Developer Preview eingeführt und haben sich nun mit der Veröffentlichung von Angular 17 als festes Standbein des Frameworks etabliert. 
+Angular Signals sind das neue Tool in der reaktiven Programmierung mit Angular. Sie wurden erstmals im Mai dieses Jahres mit dem Update auf Version 16 als Developer Preview eingeführt und haben sich nun mit der Veröffentlichung von Angular 17 als festes Standbein des Frameworks etabliert.
 
 Signals sind insbesondere für Junior Angular-Entwickler*innen ein hilfreiches Tool, da sie das reaktive Programmieren entscheidend erleichtern. Im Grunde sind sie - wie der Name es vermuten lässt - ein Signalgeber mit einem Wert, der alle verbundenen Consumer benachrichtigt, wenn sich dieser Wert ändert. Diese Werte können einfache Strings, ein Array oder auch komplexere Datentypen sein. Ändern sich diese Werte, werden automatisch alle Konsumenten informiert und aktualisieren ihre Werte. Im Vergleich zu Observables und RxJS bieten Angular Signals eine intuitivere und klarere Syntax. Dies führt zu einer verbesserten Lesbarkeit und Wartbarkeit des Codes und verbessert nebenbei auch signifikant die Leistung der Angular Anwendung.
 
@@ -78,11 +78,11 @@ export class SignalWarenkorbComponent implements OnInit {
 
 ```
 
-In diesem Beispiel verwenden wir in der Komponente ListComponent ein Signal mit dem Namen warenkorb. Das warenkorb-Signal speichert die Listenelemente und wird initial mit data gesetzt. Der “Add”-Button löst die addItm-Methode aus, die wiederum warenkorb reaktiv mit neuen Elementen aus data2 aktualisiert. Eine Aktualisierung wird durch warenkord.update ausgelöst, was das Echtzeit-Update im Template bewirkt. 
+In diesem Beispiel verwenden wir in der Komponente ListComponent ein Signal mit dem Namen warenkorb. Das warenkorb-Signal speichert die Listenelemente und wird initial mit data gesetzt. Der “Add”-Button löst die addItm-Methode aus, die wiederum warenkorb reaktiv mit neuen Elementen aus data2 aktualisiert. Eine Aktualisierung wird durch warenkord.update ausgelöst, was das Echtzeit-Update im Template bewirkt.
 
 Kudos an Dave aka [Webdave](https://webdave.de/start) für das [Code-Beispiel auf Stackblitz](https://stackblitz.com/edit/stackblitz-starters-cv9u63?file=src%2Fsignal-warenkorb.component.ts). Hier findest du den gesamten Angular Prototypen.
 
-### Producer vs. Consumer in Angular 
+### Producer vs. Consumer in Angular
 Producer und Consumer sind zwei grundlegende Konzepte in Angular, die für die Kommunikation zwischen Komponenten verwendet werden. Producer sind für die Erzeugung von Daten verantwortlich, während Consumer diese Daten verarbeiten. Beispiele für Producer sind Functions, Promises, oder Observables. Consumer verarbeiten diese Werte dann weiter. Natürlich können Producer auch gleichzeitig Consumer sein. Signals spielen eine entscheidende Rolle in diesem Muster, indem sie eine vereinfachte Schnittstelle zwischen Datenproduzenten und -konsumenten bieten.
 
 <img width="701" alt="Producerconsumer" src="https://github.com/workshops-de/angular.de/assets/89625524/db178dc6-ec3a-4007-acff-a9a2395db569">
@@ -90,14 +90,14 @@ Producer und Consumer sind zwei grundlegende Konzepte in Angular, die für die K
 
 In unserem Code-Beispiel oben können wir ebenfalls zwischen einem Producer und einem Consumer unterscheiden:
 
-Als Producer können wir die addItm-Methode benennen. Sie wird immer dann aufgerufen, wenn Nutzer:innen auf unseren "Add"-Button klicken. Mit ihr erzeugen wir neue Daten. Das ist in unserem Beispiel das Hinzufügen eines neuen Listenelements aus data2. 
+Als Producer können wir die addItm-Methode benennen. Sie wird immer dann aufgerufen, wenn Nutzer:innen auf unseren "Add"-Button klicken. Mit ihr erzeugen wir neue Daten. Das ist in unserem Beispiel das Hinzufügen eines neuen Listenelements aus data2.
 
 Der Consumer in diesem Beispiel ist das Template der Komponente, das auf diese Daten reagiert und sie anzeigt. Jedes Mal, wenn das warenkorb-Signal durch die addItm-Methode aktualisiert wird, wird die Liste im Template entsprechend aktualisiert.
 
 ### Observer vs. Observables in RxJS
 
 Für erfahrene Angular-Entwickler*innen sind diese Konzepte ein alltäglicher Bestandteil ihrer Arbeit. "Observer" und "Observable" sind in der Bibliothek RxJS, die eng mit Angular integriert ist, zentrale Konzepte für die reaktive Programmierung und die Verwaltung von Datenströmen. Observer und Observables sind die reaktiven Äquivalente von Consumer und Producer. Der Observer ist der Consumer, der die Daten vom Observable empfängt. Das Observable ist der Producer, der die Daten an den Observer aussendet. Man spricht in diesem Zusammenhang auch von Subscriptions und Push. Dieses Beziehungsmuster bildet das Herzstück der reaktiven Programmierung in Angular.
-Zur Veranschaulichung betrachten wir wieder unser Code-Beispiel mit dem Warenkorb in unserem Onlineshop des Vertrauens. Dieses Mal setzen wir das ganze “klassisch” mit Hilfe der Bibliothek RxJS um. 
+Zur Veranschaulichung betrachten wir wieder unser Code-Beispiel mit dem Warenkorb in unserem Onlineshop des Vertrauens. Dieses Mal setzen wir das ganze “klassisch” mit Hilfe der Bibliothek RxJS um.
 ```ts
 import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
@@ -160,21 +160,21 @@ Kudos an Dave aka [Webdave](https://webdave.de/start) für das [Code-Beispiel au
 
 Unterscheiden sich dann Angular Signals und Observer/Observables in RxJS überhaupt?
 
-Ein "Observer" ist ein Objekt mit Callbacks, das auf die Werte reagiert, die von einem Observable geliefert werden. Es enthält in der Regel drei Hauptmethoden: next(), error() und complete(). Die next() muss aufgerufen werden, um jeden neuen Wert im Datenstrom zu verarbeiten. Die error() wird aufgerufen, wenn im Datenstrom ein Fehler auftritt, und die complete() signalisiert das Ende des Datenstroms. Bisher musste aber für jedes Observable immer manuell eine Subscription gesetzt und gemanagt werden. Das ist nicht nur zeitintensiv und code-lastig, sondern erfordert auch tiefgreifende Kenntnisse der Web-Entwickler*in in RxJS. 
+Ein "Observer" ist ein Objekt mit Callbacks, das auf die Werte reagiert, die von einem Observable geliefert werden. Es enthält in der Regel drei Hauptmethoden: next(), error() und complete(). Die next() muss aufgerufen werden, um jeden neuen Wert im Datenstrom zu verarbeiten. Die error() wird aufgerufen, wenn im Datenstrom ein Fehler auftritt, und die complete() signalisiert das Ende des Datenstroms. Bisher musste aber für jedes Observable immer manuell eine Subscription gesetzt und gemanagt werden. Das ist nicht nur zeitintensiv und code-lastig, sondern erfordert auch tiefgreifende Kenntnisse der Web-Entwickler*in in RxJS.
 
 ![meme](https://github.com/workshops-de/angular.de/assets/89625524/b2842b3b-cc1f-43e0-b410-54ea6c0b4f6e)
 
-Angular Signals übermitteln ihre Werte (im Gegensatz zu den Datenströmen bei Observables!) automatisch und müssen nicht manuell ein- und abgestellt werden. Das spart nicht nur wertvolle Arbeitszeit, sondern erleichtert auch den Einstieg für angehende Angular Entwickler*innen! 
+Angular Signals übermitteln ihre Werte (im Gegensatz zu den Datenströmen bei Observables!) automatisch und müssen nicht manuell ein- und abgestellt werden. Das spart nicht nur wertvolle Arbeitszeit, sondern erleichtert auch den Einstieg für angehende Angular Entwickler*innen!
 
 Ist das also der Anfang vom Ende von RxJS in Angular?
 
-Jein! 
+Jein!
 
 ![rxjs](https://github.com/workshops-de/angular.de/assets/89625524/4f1fcab2-91a2-4759-8407-7f23c667062e)
 
 Für Aufgaben, bei denen es um fortlaufende und asynchrone Datenströme geht, sind Observables in Angular immer noch die erste Wahl. RxJS bietet eine umfangreiche API, mit der Entwickler*innen asynchrone Datenflüsse filtern, transformieren und kombinieren können. Ein Beispiel für asynchrone Ereignisse in Angular ist eine HTTP-Anfrage, die Daten von einem Server holt. Diese Anfrage gibt ein Observable zurück, das irgendwann in der Zukunft ein Ergebnis liefert. Dies macht Observables flexibler und mächtiger in komplexen asynchronen Szenarien gegenüber Angular Signals. In absehbarer Zeit wird sich das wohl auch nicht ändern.
 
->Oder in einfacher Sprache: 
+>Oder in einfacher Sprache:
 >
 >Stell dir Observables in Angular wie einen Wasserhahn vor, aus dem Wasser (Daten) in einem kontinuierlichen Fluss kommt. Dieser Wasserfluss kann schnell oder langsam sein, und manchmal kommen auch größere Wassermengen auf einmal heraus – das ist wie bei asynchronen Daten, sie kommen nicht immer alle auf einmal.
 >Angular Signals sind eher wie ein Lichtschalter, der einfach an oder aus ist. Sie sind gut, um einfache Dinge schnell zu erledigen.
@@ -188,7 +188,7 @@ Der andere große Vorteil der Angular Signals ist, dass für die Change Detectio
 
 Was heißt das? Um das besser einzuordnen, werden wir die Begriffe Change Detection und View kurz erklären.
 
-Change Detection ist der Mechanismus, der Statusänderungen in der Ansicht unserer Anwendung erkennt und die HMTL-Browseransicht entsprechend aktualisiert. Als Beispiel: Wenn du im Online-Shop deines Vertrauens Produkte in den Warenkorb legst, sorgt die Change Detection Angular dafür, dass die Änderungen auch in deiner HTML-Ansicht angezeigt werden. 
+Change Detection ist der Mechanismus, der Statusänderungen in der Ansicht unserer Anwendung erkennt und die HMTL-Browseransicht entsprechend aktualisiert. Als Beispiel: Wenn du im Online-Shop deines Vertrauens Produkte in den Warenkorb legst, sorgt die Change Detection Angular dafür, dass die Änderungen auch in deiner HTML-Ansicht angezeigt werden.
 
 Die visuelle Darstellung einer Komponente wird in Angular eine "View" genannt. Angular Views sind hierarchisch aufgebaut. Das bedeutet, dass Sie eine Haupt-View (oder auch Root-View) haben, in die andere Views eingebettet sind. Diese Verschachtelung kann mehrere Ebenen tiefgehen, was es ermöglicht, komplexe Anwendungen aus kleineren, wiederverwendbaren Teilen zu erstellen. Wenn wir in unserem Beispiel mit dem Warenkorb bleiben: Ein Warenkorb besteht aus verschiedenen Elementen. Oft haben wir einen Button in der Navigationsleiste, dann die Ansicht im Main Bereich, die oft aus einer Tabelle, einer Liste, diversen Buttons und anderen Bedienelementen besteht. Jeder dieser sichtbaren Teile kann in Angular eine eigene "View" sein.
 
@@ -198,7 +198,7 @@ Bisher gab es zwei Hauptstrategien für die Change Detection in Angular: Default
 
 ![cddefault](https://github.com/workshops-de/angular.de/assets/89625524/5d94cee5-c49c-48cf-9efa-b99e89d35320)
 
-In der Default Methode prüft Angular bei jedem Auslöser, ob sich die Daten geändert haben, d.h. bei jeder Änderung wird der gesamte Komponentenbaum der App überprüft. Auslöser können ein Klick oder eine Tastatureingabe - in unserem Beispiel war das der Warenkorb für unseren Online Shop - oder aber HTTP-Anfragen durch HttpClient und Timer wie setTimeout. 
+In der Default Methode prüft Angular bei jedem Auslöser, ob sich die Daten geändert haben, d.h. bei jeder Änderung wird der gesamte Komponentenbaum der App überprüft. Auslöser können ein Klick oder eine Tastatureingabe - in unserem Beispiel war das der Warenkorb für unseren Online Shop - oder aber HTTP-Anfragen durch HttpClient und Timer wie setTimeout.
 
 ### Change Detection On-Push Strategy
 
@@ -210,9 +210,9 @@ Die OnPush-Strategie sagt Angular, dass es nur dann prüfen soll, ob sich Daten 
 
 ![cdsignals](https://github.com/workshops-de/angular.de/assets/89625524/0aafc509-ef2e-4490-8530-2f6344e0206b)
 
-Verwenden wir nun stattdessen Signals, muss die Change Detection nur noch die Views aktualisieren, die die Liste der Produkte darstellt. Außerdem kann das Signal von mehreren Komponenten abonniert werden. Damit können wir mit geringem Aufwand auch Änderungen für das Warenkorb-Icon im Hauptmenü an die Shop-Besucher kommunizieren. 
+Verwenden wir nun stattdessen Signals, muss die Change Detection nur noch die Views aktualisieren, die die Liste der Produkte darstellt. Außerdem kann das Signal von mehreren Komponenten abonniert werden. Damit können wir mit geringem Aufwand auch Änderungen für das Warenkorb-Icon im Hauptmenü an die Shop-Besucher kommunizieren.
 
->Oder in einfacher Sprache: 
+>Oder in einfacher Sprache:
 >
 >Wir können die Change Detection in Angular anhand eines Briefkastens veranschaulichen.
 >In der Default Change Detection sind wir uns nicht sicher, wann die Post kommt. Daher gehen wir ständig hinaus und überprüfen den Briefkasten, selbst wenn kein neuer Brief angekommen ist. Das ist ineffizient, weil Sie viel Energie und Zeit verbrauchen, nur um festzustellen, dass das nichts Neues ist.
@@ -240,20 +240,20 @@ Wie immer laden wir euch ein, Teil unserer [Angular Community auf Discord](https
 
 ### Signals/Realitivity/Producer-Consumer-Pattern
 
-- [How to build an event emitter in JavaScript - educative.io](https://www.educative.io/answers/how-to-build-an-event-emitter-in-javascript)  
+- [How to build an event emitter in JavaScript - educative.io](https://www.educative.io/answers/how-to-build-an-event-emitter-in-javascript)
 
-- [How Angular Signals Solves an Age-Old Problem - betterprogramming.pub](https://betterprogramming.pub/how-angular-signals-solves-an-age-old-problem-ae7ec60f042f)  
+- [How Angular Signals Solves an Age-Old Problem - betterprogramming.pub](https://betterprogramming.pub/how-angular-signals-solves-an-age-old-problem-ae7ec60f042f)
 
-- [Angular’s Signal Revolution: Effortless Change Detection Explained - netbasal.com](https://netbasal.com/angulars-signal-revolution-effortless-change-detection-explained-unveiling-the-inner-workings-8a5e44c95b65)  
+- [Angular’s Signal Revolution: Effortless Change Detection Explained - netbasal.com](https://netbasal.com/angulars-signal-revolution-effortless-change-detection-explained-unveiling-the-inner-workings-8a5e44c95b65)
 
 ### Change Detection
 
-- [Deep dive into the OnPush change detection strategy in Angular - Max Koretskyi](https://medium.com/angular-in-depth/deep-dive-into-the-onpush-change-detection-strategy-in-angular-fab5e4da1d69)  
+- [Deep dive into the OnPush change detection strategy in Angular - Max Koretskyi](https://medium.com/angular-in-depth/deep-dive-into-the-onpush-change-detection-strategy-in-angular-fab5e4da1d69){:rel="noopener noreferrer nofollow"}
 
-- [Understating Angular Change Detection with example - DHANANJAY KUMAR](https://debugmode.net/2018/06/05/understating-angular-change-detection-with-example/)  
-  [https://www.thinktecture.com/en/angular/whats-the-hype-onpush/](https://www.thinktecture.com/en/angular/whats-the-hype-onpush/)  
+- [Understating Angular Change Detection with example - DHANANJAY KUMAR](https://debugmode.net/2018/06/05/understating-angular-change-detection-with-example/)
+  [https://www.thinktecture.com/en/angular/whats-the-hype-onpush/](https://www.thinktecture.com/en/angular/whats-the-hype-onpush/)
 
-- [Future of Change Detection in Angular with Signals - Thomas Laforge](https://medium.com/ngconf/future-of-change-detection-in-angular-with-signals-fb367b66a232)  
+- [Future of Change Detection in Angular with Signals - Thomas Laforge](https://medium.com/ngconf/future-of-change-detection-in-angular-with-signals-fb367b66a232){:rel="noopener noreferrer nofollow"}
 
 ### Memes
 

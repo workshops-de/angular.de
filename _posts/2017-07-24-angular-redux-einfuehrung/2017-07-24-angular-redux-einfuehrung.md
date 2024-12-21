@@ -16,14 +16,14 @@ Redux ist die bekannteste und beliebste Implementierung von diesem Pattern.
 
 ## Was ist Redux?
 
-Version 3 von [Redux](https://github.com/rackt/redux) gibt es seit weniger als einem Jahr, aber es hat sich bereits als sehr erfolgreich erwiesen.
-Inspiriert von [Flux](https://facebook.github.io/flux/) und [Elm](http://elm-lang.org/) wird es verwendet, um den Anwendungsstatus zu händeln und es effektiv an die Benutzeroberfläche zu binden.
+Version 3 von [Redux](https://github.com/rackt/redux){:rel="noopener noreferrer nofollow"} gibt es seit weniger als einem Jahr, aber es hat sich bereits als sehr erfolgreich erwiesen.
+Inspiriert von [Flux](https://facebook.github.io/flux/){:rel="noopener noreferrer nofollow"} und [Elm](http://elm-lang.org/){:rel="noopener noreferrer nofollow"} wird es verwendet, um den Anwendungsstatus zu händeln und es effektiv an die Benutzeroberfläche zu binden.
 Redux ermöglicht außerdem mit wenig Aufwand Features wie *hot reloading* oder *time travel*.
 Redux wird oft zusammen mit React verwendet, ist aber nicht an ein bestimmtes Framework gebunden.
 
 Redux baut auf Flux-Pattern auf. Für dieses Tutorial braucht ihr aber keine Erfahrung.
 Wir werden alle Grundlagen hiermit behandeln.
-In diesem Artikel werden wir ein Todo-Listen-Beispiel aus React verwenden, welches aus dem neuesten Redux-Videokurs von [Dan Abramov](https://medium.com/@dan_abramov) stammt.
+In diesem Artikel werden wir ein Todo-Listen-Beispiel aus React verwenden, welches aus dem neuesten Redux-Videokurs von [Dan Abramov](https://medium.com/@dan_abramov){:rel="noopener noreferrer nofollow"} stammt.
 
 
 ## Warum nicht ngRX
