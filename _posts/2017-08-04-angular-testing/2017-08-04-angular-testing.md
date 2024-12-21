@@ -180,7 +180,7 @@ describe('Service: LanguagesService', () => {
 
 ```
 
-Zuerst laden wir die für unsere Tests benötigten Abhängigkeiten mit `TestBed.configureTestingModule`. Dann benutzen wir *[inject](https://angular.io/api/testing/inject-function)* auf auf unsere Spezifikation, um automatisch jede Abhängigkeit zu instanziieren.
+Zuerst laden wir die für unsere Tests benötigten Abhängigkeiten mit `TestBed.configureTestingModule`. Dann benutzen wir *[inject](https://v17.angular.io/api/testing/inject-function)* auf auf unsere Spezifikation, um automatisch jede Abhängigkeit zu instanziieren.
 
 Wir können jetzt die Injektion umgestalten, damit wir das nicht für jede Spezifikation wiederholen brauchen.
 
@@ -227,13 +227,13 @@ Das zweite Beispiel ist asynchron, da es mit externen Vorlagen und css XHR-Anruf
   }));
 
 ```
-Wir können *[async](https://angular.io/api/core/testing/index/async-function)* verwenden, wenn Abhängigkeiten eine asynchrone Handhabung beinhalten. Dies wird intern eine Zone erstellen und jede asynchrone Verarbeitung „behandeln“.
+Wir können *[async](https://v17.angular.io/api/core/testing/index/async-function)* verwenden, wenn Abhängigkeiten eine asynchrone Handhabung beinhalten. Dies wird intern eine Zone erstellen und jede asynchrone Verarbeitung „behandeln“.
 
 *„Abhängig von deinem Build-Setup können deine Vorlagen und CSS alle innenliegend (inlined) sein, so dass sie den synchronen Ansatz sicher verwenden können.“*
 
 ### Testen Checkliste
 
-- Welche Art von Test? [Isolated](https://angular.io/guide/testing#!#isolated-unit-tests), [shallow](https://angular.io/guide/testing#!#shallow-component-test) oder [integration Test](https://vsavkin.com/three-ways-to-test-angular-2-components-dcea8e90bd8d).
+- Welche Art von Test? [Isolated](https://v17.angular.io/guide/testing#!#isolated-unit-tests), [shallow](https://v17.angular.io/guide/testing#!#shallow-component-test) oder [integration Test](https://vsavkin.com/three-ways-to-test-angular-2-components-dcea8e90bd8d).
 
 - Kann ich Mocks, Stubs oder Spies benutzen? Abhängigkeiten sollten durch eigene Tests abgedeckt werden. Mit ihnen kannst du deine Tests boosten, ohne an Wirksamkeit zu verlieren.
 
@@ -243,7 +243,7 @@ Wir können *[async](https://angular.io/api/core/testing/index/async-function)* 
 
 ### 1. Eine Komponente testen
 
-Nehmen wir eine einfache Komponente, die eine Begrüßungsnachricht mit einer *[@Input()](https://angular.io/api/core/Input-var)* - Eigenschaft rendert.
+Nehmen wir eine einfache Komponente, die eine Begrüßungsnachricht mit einer *[@Input()](https://v17.angular.io/api/core/Input)* - Eigenschaft rendert.
 
 ```javascript
 // Usage:    <greeter name="Joe"></greeter>
@@ -448,7 +448,7 @@ Auf unserem Test bauen wir unsere gemockte Antwort (Zeilen 23-25), also wenn wir
 
 ### 5. Eine Directive testen
 
-Directives in Angular sind eine spezifische Art von Komponente mit in der Regel keiner begleitenden Ansicht. Wir verwenden eine [AttributDirective](https://angular.io/guide/attribute-directives), `logClicks`, die protokoliieren, wie viele Klicks wir auf dem `host element` machen, damit du deine Idee erfassen kannst.
+Directives in Angular sind eine spezifische Art von Komponente mit in der Regel keiner begleitenden Ansicht. Wir verwenden eine [AttributDirective](https://v17.angular.io/guide/attribute-directives), `logClicks`, die protokoliieren, wie viele Klicks wir auf dem `host element` machen, damit du deine Idee erfassen kannst.
 
 ```javascript
 // Example: <div log-clicks></div>
@@ -529,7 +529,7 @@ In diesem Test haben wir `fakeAsync` und `tick` verwendet. Mit `fakeAsync` wird 
 
 ### 6. Ein Pipe testen
 
-Pipes sind Funktionen, die Eingabedaten in ein vom Benutzer lesbares Format umwandeln können. Wir schreiben eine benutzerdefinierte Pipe `capitalise` mit dem Standard *[String.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)*. Das ist der Einfachheit halber, da Angular eine eigene [UpperCasePipe](https://angular.io/api/common/UpperCasePipe-class)-Implementierung hat.
+Pipes sind Funktionen, die Eingabedaten in ein vom Benutzer lesbares Format umwandeln können. Wir schreiben eine benutzerdefinierte Pipe `capitalise` mit dem Standard *[String.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)*. Das ist der Einfachheit halber, da Angular eine eigene [UpperCasePipe](https://v17.angular.io/api/common/UpperCasePipe-class)-Implementierung hat.
 
 ```javascript
 import {Pipe, PipeTransform} from '@angular/core';

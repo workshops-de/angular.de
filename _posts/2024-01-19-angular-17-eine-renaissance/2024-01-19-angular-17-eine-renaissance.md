@@ -88,7 +88,7 @@ Vite und Esbuild sind nun Standard in der Angular CLI für neue Projekte impleme
 
 In einem nächsten Patch- oder Minor Release werden zusätzlich Schemata zur automatischen Migration bestehender Projekte, die Hybrid-Rendering verwenden, bereitgestellt. Wer die neue Application Builder-Technologie jetzt schon testen möchte, dem bietet die Angular-Dokumentation eine entsprechende Hilfestellung.
 
-Weitere Informationen findest in der Angular Documentaion: [Getting started with the Angular CLI's new build system](https://angular.io/guide/esbuild)
+Weitere Informationen findest in der Angular Documentaion: [Getting started with the Angular CLI's new build system](https://v17.angular.io/guide/esbuild)
 
 ## Full App Non Destructive Hydration
 
@@ -107,7 +107,7 @@ Anstatt bei jedem Client-Start die gesamte DOM-Struktur neu zu rendern, nutzt An
 Durch die Wiederverwendung der serverseitig gerenderten DOM-Knoten verringert sich die Zeit, die benötigt wird, um die Anwendung zu rendern. Das Resultat ist ein schnelleres Initialrendering und flickerfreie Übergänge.
 Da keine Notwendigkeit besteht, neue DOM-Knoten zu erstellen, wird der Speicherverbrauch der Anwendung reduziert. Dies ist insbesondere für Geräte mit begrenzten Ressourcen, wie mobile Endgeräte, von Vorteil.
 
-Mehr dazu findest in der Angular Documentaion: [Hydration](https://angular.io/guide/hydration)
+Mehr dazu findest in der Angular Documentaion: [Hydration](https://v17.angular.io/guide/hydration)
 
 ## Stabile Implementierung von Signals
 

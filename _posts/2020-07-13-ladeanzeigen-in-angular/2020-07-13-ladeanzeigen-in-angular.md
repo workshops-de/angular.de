@@ -45,7 +45,7 @@ Eine dazugehöriges View-Template könnte wie folgt aussehen:
 <loading-indicator *ngIf="loading"></loading-indicator>
 ```
 
-Nun kann unsere Komponente für die meisten Aufrufe, welche auf diese Art Daten direkt in der View darstellen, mithilfe der [AsyncPipe](https://angular.io/api/common/AsyncPipe) wie folgt vereinfacht werden:
+Nun kann unsere Komponente für die meisten Aufrufe, welche auf diese Art Daten direkt in der View darstellen, mithilfe der [AsyncPipe](https://v17.angular.io/api/common/AsyncPipe) wie folgt vereinfacht werden:
 
 ``` typescript
 export class UserComponent implements OnInit  {
@@ -107,7 +107,7 @@ Aber lasst uns schauen, was wir machen können, wenn uns die zwei Zeilen zum exp
 
 ### Ansatz mit HTTP Interceptor
 
-Häufig wird empfohlen einen [HttpInterceptor](https://angular.io/api/common/http/HttpInterceptor) zu verwenden um nachzuhalten, ob irgendwelche HTTP-Aufrufe aktuell verarbeitet werden. Ein solcher Interceptor könnte wie folgt aussehen:
+Häufig wird empfohlen einen [HttpInterceptor](https://v17.angular.io/api/common/http/HttpInterceptor) zu verwenden um nachzuhalten, ob irgendwelche HTTP-Aufrufe aktuell verarbeitet werden. Ein solcher Interceptor könnte wie folgt aussehen:
 
 ``` typescript
 @Injectable()

@@ -99,7 +99,7 @@ Durch den `--lab` Parameter erhaltet ihr eine Gegenüberstellung vom Layout eure
 
 ## Anlegen einer App
 
-In diesem Tutorial versuchen wir uns weitestgehend an den [Angular 2 Style-Guide](https://angular.io/styleguide "Angular 2 Style-Guide") zu halten.
+In diesem Tutorial versuchen wir uns weitestgehend an den [Angular 2 Style-Guide](https://v17.angular.io/styleguide "Angular 2 Style-Guide") zu halten.
 
 Nachdem wir erfolgreich ein Projekt angelegt und es schon angesehen haben, sollten wir verstehen, wie wir selbst eine App anlegen können. Dazu schauen wir uns einmal den Inhalt unseres Projekt-Ordners an.
 

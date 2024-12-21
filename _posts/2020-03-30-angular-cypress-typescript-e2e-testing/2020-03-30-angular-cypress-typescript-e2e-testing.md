@@ -15,12 +15,17 @@ categories: "cypress testing typescript"
 *Quelle (frei übersetzt): https://www.guru99.com/end-to-end-testing.html*
 
 # Überblick
-- [Was ist Cypress?](#cypress)
-- [Vorbedingungen](#pre)
-- [Cypress aufsetzen](#setup)
-- [Erste Tests](#tests)
-- [Continuous Integration aufsetzen](#ci)
-- [Fazit und Quellen](#summary)
+- [Bevor wir starten: Was ist ein E2E Test?](#bevor-wir-starten-was-ist-ein-e2e-test)
+- [Überblick](#überblick)
+- [Was ist Cypress](#was-ist-cypress)
+- [Vorbedingungen](#vorbedingungen)
+- [Cypress aufsetzen](#cypress-aufsetzen)
+- [Erste Tests](#erste-tests)
+  - [Nutzerverhalten testen](#nutzerverhalten-testen)
+- [Continuous Integration aufsetzen](#continuous-integration-aufsetzen)
+  - [Circle CI](#circle-ci)
+- [Fazit](#fazit)
+    - [Quellen und Hinweise](#quellen-und-hinweise)
 
 Früher habe ich in der Frontend Entwicklung mit [.NET und WPF von Microsoft](https://docs.microsoft.com/en-US/dotnet/framework/wpf/) gearbeitet und erinnere mich noch gut an die Zeiten, in denen wir kostenintensive Frameworks zum Schreiben von End-to-End Tests für unsere Projekte evaluiert haben. Nach vielen Wochen, sogar Monaten der Evaluation, der Entwicklung von speziellem *Glue-Code* oder einer eigenen Test-Infrastruktur auf Basis existierender Werkzeuge, hatten wir es endlich geschafft, unsere E2E Tests zum Laufen zu bekommen. Leider waren sie ziemlich brüchig und sind oft fehlgeschlagen. Wir mussten händische Anpassungen machen oder hatten Probleme mit unzuverlässigen Test-Runnern in unserer Continuous Integration Pipeline.
 
@@ -41,10 +46,10 @@ Zusätzlich zu all diesen Besonderheiten hat Cypress eine *Developer Experience*
 <img src="/shared/assets/img/placeholder-image.svg" alt="Cypress Fehlermeldung auf dem Build-Server, die genau sagt, wie der Fehler zu beheben sei" class="lazy" data-src="02-ci-error.png" data-srcset="02-ci-error.png"
  />
 
-Gleich werden wir Cypress für ein frisches, mit der CLI erstelltes Angular Projekt installieren. Wir werden ein paar E2E Test schreiben und sie am Ende von einem automatisierten Build-System laufen lassen. Die Gesamtheit dieser Schritte sollte nicht länger als 60 Minuten in Anspruch nehmen. Wir werden versuchen, die Schritte so kurz wie möglich zu halten und existierende Werkzeuge wie [Angular Schematics](https://angular.io/guide/schematics), Bibliotheken oder bekannte Vorlagen zu unserem Vorteil einzusetzen.
+Gleich werden wir Cypress für ein frisches, mit der CLI erstelltes Angular Projekt installieren. Wir werden ein paar E2E Test schreiben und sie am Ende von einem automatisierten Build-System laufen lassen. Die Gesamtheit dieser Schritte sollte nicht länger als 60 Minuten in Anspruch nehmen. Wir werden versuchen, die Schritte so kurz wie möglich zu halten und existierende Werkzeuge wie [Angular Schematics](https://v17.angular.io/guide/schematics), Bibliotheken oder bekannte Vorlagen zu unserem Vorteil einzusetzen.
 
 # Vorbedingungen<a name="pre"></a>
-Diese Anleitung setzt voraus, dass wir bereits mit einem standardmäßigen Angular 9 Projekt arbeiten. Falls dies noch nicht der Fall ist, können wir ein neues mit der [Angular CLI](https://angular.io/cli/new) erstellen. Wenn wir die CLI nicht global installiert haben, können wir uns den [`npx`](https://www.npmjs.com/package/npx) Befehl zu Nutze machen, der die CLI temporär installiert:
+Diese Anleitung setzt voraus, dass wir bereits mit einem standardmäßigen Angular 9 Projekt arbeiten. Falls dies noch nicht der Fall ist, können wir ein neues mit der [Angular CLI](https://v17.angular.io/cli/new) erstellen. Wenn wir die CLI nicht global installiert haben, können wir uns den [`npx`](https://www.npmjs.com/package/npx) Befehl zu Nutze machen, der die CLI temporär installiert:
 
 ```sh
 npx @angular/cli new <app-name>
@@ -79,7 +84,7 @@ Bei der Installation wurden zwei nützliche npm Skripte hinzugefügt, die das Ar
 
 Würde man eines dieser Skripte alleinstehend laufen lassen, würde der Test zunächst fehlschlagen, weil er versuchen würde auf *http://localhost:4200* zu navigieren, wo aktuell noch nichts bereitgestellt wird. Um das zu beheben, können wir ein zweites Konsolenfenster öffnen und unsere Angular Applikation vorher mit `npm start` bereitstellen.
 
-Glücklicherweise passt die vorherige Schematic den `e2e` Befehl so an, dass dies für uns automatisch von einem sogenannten [CLI Builder](https://angular.io/guide/cli-builder) durchgeführt wird. Mit folgendem Befehl liefern wir die Anwendung aus und lassen den Test dagegen laufen:
+Glücklicherweise passt die vorherige Schematic den `e2e` Befehl so an, dass dies für uns automatisch von einem sogenannten [CLI Builder](https://v17.angular.io/guide/cli-builder) durchgeführt wird. Mit folgendem Befehl liefern wir die Anwendung aus und lassen den Test dagegen laufen:
 
 ```sh
 npm run e2e
@@ -223,7 +228,7 @@ Der Quellcode für diese Anleitung ist auf GitHub zu finden:
 Für andere CI-System könnte man unser vorher definiertes npm Skript nutzen. Jedoch müssten wir uns dann um all die zusätzlichen Hilfsmittel selbst kümmern. Falls ihr bereits eine weit entwickelte Pipeline habt, könnte es ein einfacherer Weg sein, nur dieses eine Skript zu integrieren.
 
 - [Englischer Originalartikel von David](https://dev.to/angular/ci-ready-e2e-tests-for-angular-with-cypress-and-typescript-in-under-60-minutes-4f30)
-- [Offizielle Angular Dokumentation](https://angular.io/docs)
+- [Offizielle Angular Dokumentation](https://v17.angular.io/docs)
 - [Briebug Cypress Schematic](https://github.com/briebug/cypress-schematic)
 - [Offizielle Cypress Dokumentation](https://docs.cypress.i)
 - [CircleCI](https://circleci.com/)

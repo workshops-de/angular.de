@@ -9,7 +9,7 @@ categories: "angular environments"
 
 Die meisten professionellen Angular Anwendungen durchlaufen im Entwicklungszyklus mehrere Ausführungs-Umgebungen. Während die Unterschiede zwischen diesen Umgebungen für eine reibungslose Auslieferung möglichst gering gehalten werden sollten, muss sich deine Webapp wahrscheinlich auf einer Entwicklungsmaschine ein bisschen anders verhalten als im produktiven Betrieb.
 
-Angular bietet hierfür bereits eine Lösung namens [Environments](https://angular.io/guide/build#configuring-application-environments) an. Die funktionieren wie folgt: man legt eine beliebige Anzahl an Environment-Dateien in einem Ordner, bspw. `src/environments`, an:
+Angular bietet hierfür bereits eine Lösung namens [Environments](https://v17.angular.io/guide/build#configuring-application-environments) an. Die funktionieren wie folgt: man legt eine beliebige Anzahl an Environment-Dateien in einem Ordner, bspw. `src/environments`, an:
 ```
 src
 └── environments
@@ -51,7 +51,7 @@ export const environment = {
 
 Manchmal unterscheidet sich auch der Pfad unter dem der Backend-Server erreichbar ist (hier `apiPath` genannt). Für Eigenschaften die an vielen Stellen gebraucht werden, deren Wert aber in jeder Umgebung gleich ist, kann übrigens besser ein einziger File names `constants.ts` angelegt werden. Das spart unnötigen Mehrfachaufwand.
 
- Um nun in der Anwendung immer das richtige Environment für verschiedene Builds zu verwenden, legen wir jeweils eine Build-Konfiguration in der `angular.json` an. In jeder Konfiguration richten wir ein [File Replacement](https://angular.io/guide/build#configure-target-specific-file-replacements) ein, welches `environment.ts` immer durch eine spezifische Alternative wie `environment.prod.ts` austauscht:
+ Um nun in der Anwendung immer das richtige Environment für verschiedene Builds zu verwenden, legen wir jeweils eine Build-Konfiguration in der `angular.json` an. In jeder Konfiguration richten wir ein [File Replacement](https://v17.angular.io/guide/build#configure-target-specific-file-replacements) ein, welches `environment.ts` immer durch eine spezifische Alternative wie `environment.prod.ts` austauscht:
 
 ```json
 "architect": {
@@ -134,9 +134,9 @@ Wenn wir das für alle Environments machen, profitieren wir ganz leicht vom Typ-
 
 Manchmal möchte man gerne umgebungspezifische Tests durchführen. Vielleicht um einen Error-Handler zu testen, welcher während der Entwicklung nur zur Konsole loggen, in Produktion aber die [Fehler zu einem Server weiterleiten soll](https://nils-mehlhorn.de/posts/angular-error-tracking-with-sentry). Da Environments meist einfach importiert sind, ist es etwas schwieriger diese für Tests zu mocken (sprich, durch ein Testdouble zu ersetzen). Das können wir ändern!
 
-Die Architektur von Angular-Anwendungen basiert auf dem Prinzip der [Dependency Injection](https://angular.io/guide/dependency-injection) (DI). Das heißt, dass eine Klasse (bspw. eine Komponente oder ein Service) zum Zeitpunkt der Instanziierung mit allem versorgt wird, was diese benötigt. Angular löst also alle Abhängigkeiten zu anderen Instanzen auf und *injiziert* sie in den Konstruktor der Klasse. Das erlaubt es uns die Abhängigkeiten leicht durch Testdouble auszutauschen.
+Die Architektur von Angular-Anwendungen basiert auf dem Prinzip der [Dependency Injection](https://v17.angular.io/guide/dependency-injection) (DI). Das heißt, dass eine Klasse (bspw. eine Komponente oder ein Service) zum Zeitpunkt der Instanziierung mit allem versorgt wird, was diese benötigt. Angular löst also alle Abhängigkeiten zu anderen Instanzen auf und *injiziert* sie in den Konstruktor der Klasse. Das erlaubt es uns die Abhängigkeiten leicht durch Testdouble auszutauschen.
 
-Wenn wir unser Environment nun auch über Dependency Injection bereitstellen, sind wir also auch in der Lage, umgebungsspezifische Testfälle durchzuführen. Hierzu erstellen wir noch eine weitere Datei `environment.provider.ts`, in welcher wir ein [InjectionToken](https://angular.io/api/core/InjectionToken) definieren. Normalerweise benutzt Angular den Klassennamen um Abhängkeiten aufzulösen, aber weil unser Environment nur ein TypeScript Interface ist (welches zur Laufzeit nicht mehr existiert), müssen wir stattdessen ein solches Token als Ersatz bereitstellen. Zusätzlich, weil ein Interface auch keinen Konstrukt hat, den Angular aufrufen könnte, legen wir noch eine Factory-Methode an, die eine Environment-Instanz zurückgibt. Letztendlich sieht der Code in `environment.provider.ts` dann so aus:
+Wenn wir unser Environment nun auch über Dependency Injection bereitstellen, sind wir also auch in der Lage, umgebungsspezifische Testfälle durchzuführen. Hierzu erstellen wir noch eine weitere Datei `environment.provider.ts`, in welcher wir ein [InjectionToken](https://v17.angular.io/api/core/InjectionToken) definieren. Normalerweise benutzt Angular den Klassennamen um Abhängkeiten aufzulösen, aber weil unser Environment nur ein TypeScript Interface ist (welches zur Laufzeit nicht mehr existiert), müssen wir stattdessen ein solches Token als Ersatz bereitstellen. Zusätzlich, weil ein Interface auch keinen Konstrukt hat, den Angular aufrufen könnte, legen wir noch eine Factory-Methode an, die eine Environment-Instanz zurückgibt. Letztendlich sieht der Code in `environment.provider.ts` dann so aus:
 
 ```typescript
 import {InjectionToken} from '@angular/core'
@@ -163,7 +163,7 @@ import {ENV, getEnv} from '../environments/environment.provider'
 export class AppModule { }
 ```
 
-Anstatt nun direkt aus `environment.ts` zu importieren, injiizieren wir das Environment in jede Klasse, welche umgebungsspezifische Informationen benötigt. Hierzu verwendet man den [Inject](https://angular.io/api/core/Inject) Decorator mit unserem Token wie folgt:
+Anstatt nun direkt aus `environment.ts` zu importieren, injiizieren wir das Environment in jede Klasse, welche umgebungsspezifische Informationen benötigt. Hierzu verwendet man den [Inject](https://v17.angular.io/api/core/Inject) Decorator mit unserem Token wie folgt:
 
 ```typescript
 import { Injectable, Inject } from '@angular/core';
@@ -187,7 +187,7 @@ export class UserService {
 }
 ```
 
-Um dann einen Mock für das Environment während eines Tests zu nutzen, können wir entweder direkt den [Klassen-Konstruktor verwenden](https://angular.io/guide/testing-services) oder einen alternativen [Provider über Angular's TestBed bereitstellen](https://angular.io/guide/testing-components-basics):
+Um dann einen Mock für das Environment während eines Tests zu nutzen, können wir entweder direkt den [Klassen-Konstruktor verwenden](https://v17.angular.io/guide/testing-services) oder einen alternativen [Provider über Angular's TestBed bereitstellen](https://v17.angular.io/guide/testing-components-basics):
 
 ```typescript
 import { ENV } from '../environments/environment.provider'
