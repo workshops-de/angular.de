@@ -16,7 +16,7 @@ Nach einer wohlverdienten Sommerpause sind wir wieder da – und das mit einem e
 
 
 
-In diesem tollen Interview erzählt uns Mark von seiner persönlichen Reise, die ihn von seiner Kindheit in Chicago, Illinois, bis hin zu einer zentralen Rolle im Angular-Team geführt hat. Es gibt tiefe Einblicke in seine Karriere, seine Leidenschaft für die Fotografie, das Gitarrespielen, die Programmierung und seine Lernphilosophie.  
+In diesem tollen Interview erzählt uns Mark von seiner persönlichen Reise, die ihn von seiner Kindheit in Chicago, Illinois, bis hin zu einer zentralen Rolle im Angular-Team geführt hat. Es gibt tiefe Einblicke in seine Karriere, seine Leidenschaft für die Fotografie, das Gitarrespielen, die Programmierung und seine Lernphilosophie.
 
 
 Besonders spannend finden wir die Karrieretipps für Entwickler/innen, egal ob ihr am Anfang ihrer Laufbahn steht oder bereits erfahrene Profis seid.
@@ -55,17 +55,17 @@ class="lazy img-fluid img-rounded" data-src="profilepic.jpg" data-srcset="profil
 />
 
 
-Mark Thomson ist mehr als nur ein Mitglied des Angular-Teams – er ist ein inspirierender Public Speaker und bekannt für seine Leidenschaft, Menschen bei ihrer beruflichen Entwicklung zu fördern. 
+Mark Thomson ist mehr als nur ein Mitglied des Angular-Teams – er ist ein inspirierender Public Speaker und bekannt für seine Leidenschaft, Menschen bei ihrer beruflichen Entwicklung zu fördern.
 
 Natürlich findest du Mark auch auf Social Media:
 
 
-- [Mark Thompson auf X](https://x.com/marktechson)
-- [Mark Thompson auf Instagram](https://www.instagram.com/marktechson)
-- [Mark Thompson auf YouTube](https://www.youtube.com/@marktechson)
-- [Mark Thompson auf Github](https://github.com/MarkTechson)
-- [Mark Thompson auf LinkedIn](https://www.linkedin.com/in/marktechson)
-- [Mark Thompson auf Medium](https://medium.com/@markathompson) 
+- [Mark Thompson auf X](https://x.com/marktechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf Instagram](https://www.instagram.com/marktechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf YouTube](https://www.youtube.com/@marktechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf Github](https://github.com/MarkTechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf LinkedIn](https://www.linkedin.com/in/marktechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf Medium](https://medium.com/@markathompson){:rel="noopener noreferrer nofollow"}
 
 
 Wir freuen uns darauf, nach der Sommerpause wieder voll durchzustarten und dir viele weitere spannende Artikel rund ums Thema Angular zu bieten. Kudos an unseren Trainer und einen unserer Lieblings-Streamer [Webdave](https://webdave.de/start) für dieses inspirierende Interview.
