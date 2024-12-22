@@ -38,15 +38,14 @@ Weitere Quellen zum Verständnis von Web Workern:
 
 *   Offizielle W3C Spezifikation: <http://www.w3.org/TR/workers/>
 *   Wikipedia-Artikel: [Web Worker][5]
-*   Artikel auf Developer.com: [7 Things You Need To Know About Web Workers][6]
 
-Web Worker werden von allen modernen (inklusive fast aller mobilen) Browsern unterstützt. Eine Übersicht hierzu bietet [Can I use...][7]
+Web Worker werden von allen modernen (inklusive fast aller mobilen) Browsern unterstützt. Eine Übersicht hierzu bietet [Can I use...][6]
 
 ## Web Worker in einer AngularJS-Applikation
 
 Die Behandlung von Web Workern in monkkee habe ich jüngst als Mini-Open-Source-Projekt ausgelagert. monkkee nutzt nun den ausgelagerten Code als AngularJS-Modul und verwendet einen fertigen Service per Dependency Injection.
 
-Das Projekt heißt [webworkerpool.js][8] und ermöglicht es, einen Pool an Workern zu verwalten. Die maximale Anzahl an Workern lässt sich konfigurieren. Wird ein Worker benötigt, wird dieser dem Pool entnommen. Sobald dieser mit seiner Aufgabe fertig ist, kommt er in den Pool zurück. Falls keine Worker verfügbar sind, werden die Aufträge in eine Warteschlange eingestellt. Ob Aufträge direkt oder später ausgeführt werden, ist für den Auftraggeber bedeutungslos, da die Promise API (**$q**) zum Einsatz kommt.
+Das Projekt heißt [webworkerpool.js][7] und ermöglicht es, einen Pool an Workern zu verwalten. Die maximale Anzahl an Workern lässt sich konfigurieren. Wird ein Worker benötigt, wird dieser dem Pool entnommen. Sobald dieser mit seiner Aufgabe fertig ist, kommt er in den Pool zurück. Falls keine Worker verfügbar sind, werden die Aufträge in eine Warteschlange eingestellt. Ob Aufträge direkt oder später ausgeführt werden, ist für den Auftraggeber bedeutungslos, da die Promise API (**$q**) zum Einsatz kommt.
 
 Die Anzahl der Worker ist sehr wichtig. Für monkkee kommen aktuell maximal 8 gleichzeitige Worker zum Einsatz. Beim Spielen mit hohen Zahl habe ich einen Browser auch schon zum Absturz gebracht. Abhängig von den Aufgaben ist also ein sinnvoller Wert zu wählen.
 
@@ -95,7 +94,7 @@ Weitere Codebeispiele bieten die Jasmine-Specs des Projekts.
 
 ## Installation von webworkerpool.js
 
-Im [dist-Ordner][9] des Github-Projekts befinden sich mehrere Dateien. Für den Einsatz mit Angular ist webworkerpool-core-angular.js oder die komprimierte Versionwebworkerpool-core-angular.min.js am Besten geeignet.
+Im [dist-Ordner][8] des Github-Projekts befinden sich mehrere Dateien. Für den Einsatz mit Angular ist webworkerpool-core-angular.js oder die komprimierte Versionwebworkerpool-core-angular.min.js am Besten geeignet.
 
 ## Fazit
 
@@ -110,7 +109,6 @@ Durch den Einsatz der WebWorkerPool.js-Bibliothek lassen sich sehr einfach mehre
  [3]: angularjs-web-worker-monkkee.png
  [4]: angularjs-web-worker-communication.png
  [5]: http://en.wikipedia.org/wiki/Web_worker
- [6]: http://www.developer.com/lang/jscript/7-things-you-need-to-know-about-web-workers.html
- [7]: https://caniuse.com/#feat=webworkers
- [8]: https://github.com/bjoerne2/webworkerpool.js
- [9]: https://github.com/bjoerne2/webworkerpool.js/tree/master/dist
+ [6]: https://caniuse.com/#feat=webworkers
+ [7]: https://github.com/bjoerne2/webworkerpool.js
+ [8]: https://github.com/bjoerne2/webworkerpool.js/tree/master/dist

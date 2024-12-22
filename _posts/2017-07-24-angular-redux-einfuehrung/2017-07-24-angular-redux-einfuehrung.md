@@ -103,7 +103,7 @@ Alle *Reducers* müssen [reine Funktionen](https://en.wikipedia.org/wiki/Pure_fu
 * Sie produzieren keine *side effects* (z.B.: mutierter Zustand, Anrufe zum Backend)
 
 Reducers erschaffen bei Änderungen immer ein neues State-Objekt, um Nebenwirkungen zu vermeiden.
-Eine erweiterte Option ist, eine Bibliothek wie [immutable.js](https://immutable-js.github.io/immutable-js/) zu verwenden.
+Eine erweiterte Option ist, eine Bibliothek wie [immutable.js](https://immutable-js.com/) zu verwenden.
 Somit können Komponenten, die auf diesen State zugreifen, anhand der Object-Referenz entscheiden, ob sie neu rendern oder nicht.
 Denn nur wenn der State durch ein neues Object dargestellt wird, hat sich der State verändert.
 

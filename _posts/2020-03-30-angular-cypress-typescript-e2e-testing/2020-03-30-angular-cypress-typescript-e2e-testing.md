@@ -230,5 +230,5 @@ Für andere CI-System könnte man unser vorher definiertes npm Skript nutzen. Je
 - [Englischer Originalartikel von David](https://dev.to/angular/ci-ready-e2e-tests-for-angular-with-cypress-and-typescript-in-under-60-minutes-4f30)
 - [Offizielle Angular Dokumentation](https://v17.angular.io/docs)
 - [Briebug Cypress Schematic](https://github.com/briebug/cypress-schematic)
-- [Offizielle Cypress Dokumentation](https://docs.cypress.i)
+- [Offizielle Cypress Dokumentation](https://docs.cypress.io)
 - [CircleCI](https://circleci.com/)
