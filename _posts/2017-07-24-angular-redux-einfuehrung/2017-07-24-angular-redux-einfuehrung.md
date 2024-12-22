@@ -198,7 +198,7 @@ Wir haben Abhängigkeiten importiert (Zeilen 2-5) und realisieren dann `appStore
 Schlussendlich haben wir die normale Angular `bootstrap`  Methode mit unserem Modul `AppModule` (Zeile 21) verwendet.
 
 
-*Du kannst bei [Angular Modulen](https://angular.dev/guide/ngmodule) (angular.io) mehr darüber lesen, wie ngModules funktionieren*
+*Du kannst bei [Angular Modulen](https://v17.angular.io/guide/ngmodules) (angular.io) mehr darüber lesen, wie ngModules funktionieren*
 
 
 Wir melden unseren Store in diesem simplen Beispiel über ein String Token an.
