@@ -152,7 +152,7 @@ IonicModule.forRoot(PizzaAppComponent, {
 
 ## Zugriff auf native Schnittstellen
 
-Mit [*ngCordova*](http://ngcordova.com/) machte Ionic ein wichtigen Schritt nach vorne, um hybride App-Entwicklung noch weiter zu vereinheitlichen und zu vereinfachen. Sie stellen damit eine Schnittstelle zu zahlreichen Cordova-Plugins her und geben dem Ionic/Angular-Entwickler eine einheitliche API für alle.
+Mit *ngCordova* machte Ionic ein wichtigen Schritt nach vorne, um hybride App-Entwicklung noch weiter zu vereinheitlichen und zu vereinfachen. Sie stellen damit eine Schnittstelle zu zahlreichen Cordova-Plugins her und geben dem Ionic/Angular-Entwickler eine einheitliche API für alle.
 
 Für Ionic 2 und TypeScript gibt es dafür ein extra Modul mit dem Namen `ionic-native`. Darüber erhaltet ihr Zugriff auf verschiedenste Cordova-Plugins. Sucht euch einfach das gewünschte Plugin aus der [Liste unterstützter APIs](http://ionicframework.com/docs/v2/native/) heraus. Installiert das Plugin über die CLI und importiert das entsprechende Modul.
 

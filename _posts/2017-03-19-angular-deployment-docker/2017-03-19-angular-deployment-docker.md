@@ -143,7 +143,7 @@ deployment:
 
 ### Nightly Builds mit Circle CI
 
-Mit Circle CI besteht auch die Möglichkeit sogenannte Nightly-Builds durchzuführen. Dies ist vor allem dann sinnvoll, wenn man sehr aufwendige E2E Tests beispielsweise über [SauceLabs](https://saucelabs.com/) durchführen möchte.
+Mit Circle CI besteht auch die Möglichkeit sogenannte Nightly-Builds durchzuführen. Dies ist vor allem dann sinnvoll, wenn man sehr aufwendige E2E Tests beispielsweise über [SauceLabs](https://saucelabs.com/){:rel="noopener noreferrer nofollow"} durchführen möchte.
 
 Um dies zu realisieren, muss die API von Circle CI z.B. per Scheduler angetriggert werden. Dies wird mit Hilfe eines POSTS durchgeführt. Innerhalb dieses Requests kann man Informationen mitliefern, die Circle CI erkennen lässt, dass es sich um einen Nightly Build handelt.
 
@@ -151,13 +151,13 @@ Mehr hierzu findet Ihr unter der Doc vom [Circle CI](https://circleci.com/docs/)
 
 ## 3. Sauce Labs für eure E2E Tests
 
-[SauceLabs](https://saucelabs.com/) ist ein Clouddienst, welcher es ermöglicht cross-browser-testing innerhalb der Cloud durchzuführen. Als Framework in Zusammenhang mit Angular empfiehlt sich hier [Protractor](http://www.protractortest.org/#/) im Zusammenspiel mit [Jasmine](https://jasmine.github.io/). Der Vorteil ist, dass man hier sämtliche Betriebssysteme und Browser auf Abruf erhält und dort seine Tests laufen lassen kann.
+[SauceLabs](https://saucelabs.com/){:rel="noopener noreferrer nofollow"} ist ein Clouddienst, welcher es ermöglicht cross-browser-testing innerhalb der Cloud durchzuführen. Als Framework in Zusammenhang mit Angular empfiehlt sich hier [Protractor](http://www.protractortest.org/#/){:rel="noopener noreferrer nofollow"} im Zusammenspiel mit [Jasmine](https://jasmine.github.io/){:rel="noopener noreferrer nofollow"}. Der Vorteil ist, dass man hier sämtliche Betriebssysteme und Browser auf Abruf erhält und dort seine Tests laufen lassen kann.
 
 Falls euch dieses Thema tiefer interessieren sollte, empfehle ich euch meinen Artikel [Angular E2E Tests mit Protractor und Sauce Labs](/artikel/angular-e2e-protractor-test-saucelabs/). Hier beschreibe ich Schritt für Schritt die Anwendung von SauceLabs.
 
 ## 4. Dockercloud als Continuous Delivery Umgebung
 
-Mit [Dockercloud](https://hub.docker.com) (ehemals Tutum) hat Docker eine Umgebung geschaffen, in welcher sich diese Dockercontainer mit ihren Applikationen sehr einfach von Dockerhub herunterladen, starten und veröffentlichen lassen. Als Basis lassen sich Machinedroplets von Digital Ocean, AWS o.ä. als Node in Dockercloud verlinken.
+Mit [Dockercloud](https://hub.docker.com){:rel="noopener noreferrer nofollow"} (ehemals Tutum) hat Docker eine Umgebung geschaffen, in welcher sich diese Dockercontainer mit ihren Applikationen sehr einfach von Dockerhub herunterladen, starten und veröffentlichen lassen. Als Basis lassen sich Machinedroplets von Digital Ocean, AWS o.ä. als Node in Dockercloud verlinken.
 
 ### Arbeiten mit unterschiedlichen Stacks
 
@@ -204,7 +204,7 @@ Wie ihr erkennen könnt, gibt es zwei Auslöser, welche die Automatismen anwerfe
 
 => Ziel erreicht: Die Codeänderung ist sofort im Developmentstack verfügbar, sofern die Tests dies zugelassen haben.
 
-Ihr könnt direkt beim Check-In abfangen, dass nur dann eingecheckt werden kann, wenn alle Test erfolgreich waren. Hierfür gibt es das NPM Modul [pre-commit](https://www.npmjs.com/package/pre-commit). Dieses Modul lässt erst dann den Commit zu, wenn die in der ```package.json```definierten pre-commits ohne Fehler durchlaufen sind.
+Ihr könnt direkt beim Check-In abfangen, dass nur dann eingecheckt werden kann, wenn alle Test erfolgreich waren. Hierfür gibt es das NPM Modul [pre-commit](https://www.npmjs.com/package/pre-commit){:rel="noopener noreferrer nofollow"}. Dieses Modul lässt erst dann den Commit zu, wenn die in der ```package.json```definierten pre-commits ohne Fehler durchlaufen sind.
 
 ### Ablauf beim zeitgesteuerten Build via Scheduler
 

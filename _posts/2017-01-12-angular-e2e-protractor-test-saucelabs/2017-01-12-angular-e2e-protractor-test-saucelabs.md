@@ -6,7 +6,7 @@ published_at: 2017-01-12 08:00:00.000000Z
 categories: "angular angular2 angular4 testing"
 ---
 
-Die innovative Entwicklung der Web Welt bietet inzwischen eine ganze Menge an Möglichkeiten, testgetriebene Entwicklungen durchzuführen. Neben den Komponententests mittels [Karma](https://karma-runner.github.io) und [PhantomJs](http://phantomjs.org/), nehmen wir heute End2End Tests mit Hilfe von [Protractor](http://www.protractortest.org/#/) genauer unter die Lupe. Um anschließend eine Testabdeckung über verschiedene Browser und deren Versionen zu erreichen, wollen wir das ganze zusammen mit dem Cloud Dienst von [SauceLabs](https://saucelabs.com/) realiseren.
+Die innovative Entwicklung der Web Welt bietet inzwischen eine ganze Menge an Möglichkeiten, testgetriebene Entwicklungen durchzuführen. Neben den Komponententests mittels [Karma](https://karma-runner.github.io){:rel="noopener noreferrer nofollow"} und [PhantomJs](http://phantomjs.org/){:rel="noopener noreferrer nofollow"}, nehmen wir heute End2End Tests mit Hilfe von [Protractor](http://www.protractortest.org/#/){:rel="noopener noreferrer nofollow"} genauer unter die Lupe. Um anschließend eine Testabdeckung über verschiedene Browser und deren Versionen zu erreichen, wollen wir das ganze zusammen mit dem Cloud Dienst von [SauceLabs](https://saucelabs.com/){:rel="noopener noreferrer nofollow"} realiseren.
 
 ## Warum E2E Tests? Vor- und Nachteile
 
@@ -44,11 +44,11 @@ Nähere und die aktuellsten Informationen findet Ihr auf der Github Page von [Pr
 
 ### Sauce Labs
 
-Um sich das Thema Cross-Browser Testing deutlich zu vereinfachen, bietet [SauceLabs](https://saucelabs.com/) für die E2E Tests hier eine spitzen Integrationsmöglichkeit für Protractor. [SauceLabs](https://saucelabs.com/) bietet einen Selenium Dienst in der Cloud an, mit welchem alle aktuellsten Browser und Versionen von Protractor angesprochen werden können. Die zu testenden Browser werden in Protractor definiert und beim Starten der Tests an den Seleniumdienst von [SauceLabs](https://saucelabs.com/) übergeben.
+Um sich das Thema Cross-Browser Testing deutlich zu vereinfachen, bietet [SauceLabs](https://saucelabs.com/){:rel="noopener noreferrer nofollow"} für die E2E Tests hier eine spitzen Integrationsmöglichkeit für Protractor. [SauceLabs](https://saucelabs.com/){:rel="noopener noreferrer nofollow"} bietet einen Selenium Dienst in der Cloud an, mit welchem alle aktuellsten Browser und Versionen von Protractor angesprochen werden können. Die zu testenden Browser werden in Protractor definiert und beim Starten der Tests an den Seleniumdienst von [SauceLabs](https://saucelabs.com/){:rel="noopener noreferrer nofollow"} übergeben.
 
 ![Protractor-Angular-Test-Sauce Labs](e2e-testing-angular-protractor.png)
 
-Dieser Dienst erstellt eine virtuelle Maschine mit der genannten Browserversion und führt darin die definierten Test-Suites durch. Darüber hinaus werden die Tests von [SauceLabs](https://saucelabs.com/) aufgezeichnet, sowie Screenshots erstellt. Diese können hinterher sehr bequem innerhalb der UI von SauceLabs angesehen werden. Dies vereinfacht das Debugging bei der Suche von Fehlern deutlich. Hat man sich zusätzlich eine Deployment-Pipe innerhalb seiner Architektur aufgesetzt, kann man mit dem Ergebnis dieser Tests ein Deployment durchführen oder auch verhindern.
+Dieser Dienst erstellt eine virtuelle Maschine mit der genannten Browserversion und führt darin die definierten Test-Suites durch. Darüber hinaus werden die Tests von [SauceLabs](https://saucelabs.com/){:rel="noopener noreferrer nofollow"} aufgezeichnet, sowie Screenshots erstellt. Diese können hinterher sehr bequem innerhalb der UI von SauceLabs angesehen werden. Dies vereinfacht das Debugging bei der Suche von Fehlern deutlich. Hat man sich zusätzlich eine Deployment-Pipe innerhalb seiner Architektur aufgesetzt, kann man mit dem Ergebnis dieser Tests ein Deployment durchführen oder auch verhindern.
 
 ## Testprojekt
 
@@ -124,7 +124,7 @@ In diesem JSON werden die zu testenden Browser definiert. Das Objekt hat insgesa
 }
 ```
 
-Die genaue Definition für die Konfiguration der SauceLab Browser findet ihr im SauceLabs [Platform Configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/). Zudem möchte ich euch dennoch die Keys kurz erklären:
+Die genaue Definition für die Konfiguration der SauceLab Browser findet ihr im SauceLabs [Platform Configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/){:rel="noopener noreferrer nofollow"}. Zudem möchte ich euch dennoch die Keys kurz erklären:
 
 *   `browserName` (string)
 Der Name des Browsers, welcher verwendet werden soll.
