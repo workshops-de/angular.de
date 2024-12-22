@@ -60,7 +60,7 @@ Zusätzlich, zu dem Verzicht von Directives, Controller und Factorys, sollte auc
 });
 ```
 
-Was sicherlich auch immer hilfreich ist, sich den [Style-Guide](https://angular.io/), von dem Angular-Core-Team, anzuschauen. Natürlich bezieht sich der Style-Guide auf Angular, trotzdem können viele Prinzipien auch für AngularJS übernommen werden – der Migration kann es nur helfen.
+Was sicherlich auch immer hilfreich ist, sich den [Style-Guide](https://angular.dev/), von dem Angular-Core-Team, anzuschauen. Natürlich bezieht sich der Style-Guide auf Angular, trotzdem können viele Prinzipien auch für AngularJS übernommen werden – der Migration kann es nur helfen.
 
 ## Die Migration: Big-Bang oder Baby-Steps
 

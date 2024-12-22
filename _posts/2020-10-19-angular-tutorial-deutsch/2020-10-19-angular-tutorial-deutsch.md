@@ -221,7 +221,7 @@ $ ng new angular-de-tutorial --strict false
 
 ? Do you want to enforce stricter type checking and stricter bundle budgets in the workspace?
   This setting helps improve maintainability and catch bugs ahead of time.
-  For more information, see https://angular.io/strict
+  For more information, see https://angular.dev/strict
   No
 ? Would you like to add Angular routing?
   No
