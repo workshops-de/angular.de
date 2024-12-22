@@ -70,7 +70,7 @@ Die Einbindung in euerm Projekt erfolgt dann über die [nomodule Syntax](https:/
  />
 Bildquelle: https://dev.to/lacolaco/differential-loading-a-new-feature-of-angular-cli-v8-4jl
 
-Wenn ihr wissen wollt welche Browser von euer Regel inkludiert und welche exkludiert sind bietet das Projekt dieses [Browserlist Online Tool](https://browserl.ist/?q=%3E+1%25%2C+last+2+Chrome+versions%2C+IE+11%2C+Firefox+ESR%2C+not+dead%2C+not+IE+9-11).
+Wenn ihr wissen wollt welche Browser von euer Regel inkludiert und welche exkludiert sind bietet das Projekt dieses [Browserlist Online Tool](https://browsersl.ist/#q=%3E+1%25%2C+last+2+Chrome+versions%2C+IE+11%2C+Firefox+ESR%2C+not+dead%2C+not+IE+9-11).
 
 <img src="/shared/assets/img/placeholder-image.svg" alt="BrowserList Example output of supported modern browsers" class="lazy" data-src="browserlist-web.png" data-srcset="browserlist-web.png"
  />

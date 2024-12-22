@@ -366,7 +366,7 @@ export class LanguagesServiceHttp {
 
 ```
 
-In diesem Fall verwendet es `http.get()`, um eine JSON-Datei zu lesen. Danach haben wir *[Observable.map](https://github.com/ReactiveX/rxjs/blob/master/src/internal/operators/map.ts)* verwendet, um die Antwort in das Endergebins mit `json()` umzuwandeln.
+In diesem Fall verwendet es `http.get()`, um eine JSON-Datei zu lesen. Danach haben wir *[Observable.map](https://github.com/ReactiveX/rxjs/blob/master/packages/rxjs/src/internal/operators/map.ts)* verwendet, um die Antwort in das Endergebins mit `json()` umzuwandeln.
 
 Unser Test sieht dem vorherigen ziemlich ähnlich. Der Hauptunterschied besteht in der Verwendung eines asynchronen Tests, wie wir es mit der Komponente aufgrund des Abonnements gemacht haben.
 
