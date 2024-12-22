@@ -97,7 +97,7 @@ selector: 'song-track',
 ### Native Encapsulation (Shadow DOM)
 
 Bei diesem Encapsulation-Mode nutzen wir den `Native Shadow DOM` für eine bestimmte Komponente.
-Je nach Browser ist dies [v1 der Spezifikation](https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom) (Chrome).
+Je nach Browser ist dies [v1 der Spezifikation](https://web.dev/articles/shadowdom-v1?hl=en) (Chrome).
 
 ```javascript
 @Component({
