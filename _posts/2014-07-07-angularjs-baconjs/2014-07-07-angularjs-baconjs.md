@@ -371,7 +371,7 @@ Zum Abschluss gebe ich einige Empfehlungen, die helfen sollen, Fallstricke zu um
 
 * **Werte nicht ändern!** Für uns hat sich bewährt, die Werte in den Strömen als unveränderlich zu behandeln. Sonst riskieren wir schwer nachvollziehbare Seiteneffekte.
 
-* **Zeitabhängige Operationen kapseln!** Testen von asynchronem Verhalten ist ein Graus und Konstrukte wie [Jasmines Clock](http://jasmine.github.io/2.0/introduction.html#section-Mocking_the_JavaScript_Timeout_Functions) sind bestenfalls Krücken. Wir lagern asynchrone Operationen meist gemäß dem [Strategie-Muster](http://de.wikipedia.org/wiki/Strategie_(Entwurfsmuster)) aus.
+* **Zeitabhängige Operationen kapseln!** Testen von asynchronem Verhalten ist ein Graus und Konstrukte wie Jasmines Clock sind bestenfalls Krücken. Wir lagern asynchrone Operationen meist gemäß dem [Strategie-Muster](http://de.wikipedia.org/wiki/Strategie_(Entwurfsmuster)) aus.
 
 Beim Circuit Breaker würden wir die oben vorgestellte `throttle`-Operation wie folgt kapseln:
 
