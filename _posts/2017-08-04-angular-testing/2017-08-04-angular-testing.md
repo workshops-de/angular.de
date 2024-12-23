@@ -25,7 +25,7 @@ In diesem Artikel werden wir folgendes abdecken:
 
 - Testbeispiele: `Components`, `Services`, `Http+MockBackend`, `Directives`, `Pipes`, `Routes`, `Observables` und `EventEmitter`.
 
-Alle 26 Test-Specs zum selber ausprobieren und ändern findest du in diesem [Plunker](https://next.plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
+Alle 26 Test-Specs zum selber ausprobieren und ändern findest du in diesem [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?preview).
 
 *„Wir haben in diesem Beispielen [Jasmine](https://jasmine.github.io/) verwendet, es ist aber problemlos Möglich auch andere Test-Frameworks wie [Mocha](https://mochajs.org/) zu verwenden.*
 
@@ -772,7 +772,7 @@ describe('EventEmitter: Counter', () => {
 ```
 In diesem Fall überprüfen wir, dass wir mit dem Abonnement auf dem `EventEmitter` `increment` oder `decrement` benutzen, da es ein Observable aussetzt. Wir lösen die verschiedenen Werte aus, indem wir die Änderungsmethode anrufen und unsere Erwartungen im nächsten Rückruf überprüfen.
 
-Alle Tests, die in diesem Beitrag enthalten waren, und noch mehr findest auf [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?p=preview).
+Alle Tests, die in diesem Beitrag enthalten waren, und noch mehr findest auf [Plunker](https://plnkr.co/edit/jm6T17qPbzM8abmRMckw?preview).
 
 Das ist alles! Danke fürs Lesen! Hast du fragen? Wenn ja dann benachrichtige mich auf [@gerardsans](https://medium.com/google-developer-experts/angular-2-testing-guide-a485b6cb1ef0){:rel="noopener noreferrer nofollow"}.
 
