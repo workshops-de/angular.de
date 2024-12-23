@@ -123,7 +123,7 @@ Abweichungen können entstehen, je nachdem in welchem Browser getestet oder Ger�
 <p class="left">
     <img
         style="max-width: 80%"
-        src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/szenario1typea.jpg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 15ms"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 15ms"
         class="lazy img-fluid img-rounded" data-src="szenario1typea.jpg" data-srcset="szenario1typea.jpg"
     />
     <br>
@@ -134,7 +134,7 @@ Abweichungen können entstehen, je nachdem in welchem Browser getestet oder Ger�
 <p class="left">
     <img
         style="max-width: 80%"
-        src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/szenario1typeb.jpg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 14ms"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 14ms"
         class="lazy img-fluid img-rounded" data-src="szenario1typeb.jpg" data-srcset="szenario1typeb.jpg"
     />
     <br>
@@ -151,7 +151,7 @@ Darüber hinaus sieht man, dass beide Initials so gut wie gleich sind, was die F
 <p class="left">
     <img
         style="max-width: 80%"
-        src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/szenario2typea.jpg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 17ms"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 17ms"
         class="lazy img-fluid img-rounded" data-src="szenario2typea.jpg" data-srcset="szenario2typea.jpg"
     />
     <br>
@@ -162,7 +162,7 @@ Darüber hinaus sieht man, dass beide Initials so gut wie gleich sind, was die F
 <p class="left">
     <img
         style="max-width: 80%"
-        src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/szenario2typeb.jpg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 12ms"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 12ms"
         class="lazy img-fluid img-rounded" data-src="szenario2typeb.jpg" data-srcset="szenario2typeb.jpg"
     />
     <br>
@@ -179,7 +179,7 @@ Hier sieht man ganz gut, dass Type A ein wenig schlechter performt als Type B. D
 <p class="left">
     <img
         style="max-width: 80%"
-        src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/szenario3typea.jpg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 4ms"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 4ms"
         class="lazy img-fluid img-rounded" data-src="szenario3typea.jpg" data-srcset="szenario3typea.jpg"
     />
     <br>
@@ -190,7 +190,7 @@ Hier sieht man ganz gut, dass Type A ein wenig schlechter performt als Type B. D
 <p class="left">
     <img
         style="max-width: 80%"
-        src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/szenario3typeb.jpg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 3ms"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 3ms"
         class="lazy img-fluid img-rounded" data-src="szenario3typeb.jpg" data-srcset="szenario3typeb.jpg"
     />
     <br>

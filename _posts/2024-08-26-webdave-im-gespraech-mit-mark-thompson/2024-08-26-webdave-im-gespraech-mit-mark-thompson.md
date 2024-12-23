@@ -50,7 +50,7 @@ Ob Junior oder Senior, Marks Ratschläge bieten wertvolle Orientierung für dein
 
 <img
 style="max-width: 40%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-08-26-webdave-im-gespraech-mit-mark-thompson/profilepic.jpg" alt="Portrait Mark Thompson"
+src="/shared/assets/img/placeholder-image.svg" alt="Portrait Mark Thompson"
 class="lazy img-fluid img-rounded" data-src="profilepic.jpg" data-srcset="profilepic.jpg"
 />
 

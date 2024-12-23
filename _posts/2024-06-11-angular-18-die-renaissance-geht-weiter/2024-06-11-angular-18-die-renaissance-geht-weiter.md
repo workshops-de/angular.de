@@ -45,7 +45,7 @@ Das Ganze könnt ihr euch zusammen mit Webdave anschauen! Hier ist der Link zum 
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/zoneless.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Zoneless-Logo"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Zoneless-Logo"
 class="lazy img-fluid img-rounded" data-src="zoneless.jpg" data-srcset="zoneless.jpg"
 />
 </p>
@@ -139,7 +139,7 @@ export class SearchComponent {
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/hydration.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Hydration-Logo"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Hydration-Logo"
 class="lazy img-fluid img-rounded" data-src="hydration.jpg" data-srcset="hydration.jpg"
 />
 </p>
@@ -161,7 +161,7 @@ Ein Update gab es auch für den i18n Hydration Support. I18n ist ein Numeronym u
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/wiz.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Wiz-Logo"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Wiz-Logo"
 class="lazy img-fluid img-rounded" data-src="wiz.jpg" data-srcset="wiz.jpg"
 />
 </p>
@@ -187,7 +187,7 @@ bootstrapApplication(App, {
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/angulardev.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem AngularDev-Logo"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem AngularDev-Logo"
 class="lazy img-fluid img-rounded" data-src="angulardev.jpg" data-srcset="angulardev.jpg"
 />
 </p>
@@ -203,7 +203,7 @@ class="lazy img-fluid img-rounded" data-src="angulardev.jpg" data-srcset="angula
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/material.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Material-Logo"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Material-Logo"
 class="lazy img-fluid img-rounded" data-src="material.jpg" data-srcset="material.jpg"
 />
 </p>
@@ -261,7 +261,7 @@ Für Unternehmen gibt es nun das Early Access Programm. Wer daran teilnehmen mö
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/firebase.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Firebase-Logo"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Firebase-Logo"
 class="lazy img-fluid img-rounded" data-src="firebase.jpg" data-srcset="firebase.jpg"
 />
 </p>
@@ -281,7 +281,7 @@ Mehr Informationen gibt es dazu [hier](https://firebase.blog/posts/2024/05/intro
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-06-11-angular-18-die-renaissance-geht-weiter/ngde.jpg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem NG-DE Logo"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem NG-DE Logo"
 class="lazy img-fluid img-rounded" data-src="ngde.jpg" data-srcset="ngde.jpg"
 />
 </p>

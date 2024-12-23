@@ -3,7 +3,7 @@ title: "Die Angular 17 Renaissance"
 description: “Ein Blogartikel über alle neuen Features und Updates in Angular 17, über Verbesserungen in Performance und Angular Developer Experience und die Angular Renaissance”
 author: "Lulëzim Ukaj"
 published_at: 2024-01-19 16:00:28.000000Z
-header_source: https://github.com/workshops-de/angular.de/blob/master/_posts/2024-01-19-angular-17-Eine-Renaissance/Header.jpg?raw=true
+header_source: https://raw.githubusercontent.com/workshops-de/angular.de/refs/heads/master/_posts/2024-01-19-angular-17-eine-renaissance/header.jpg
 header_image: header.jpg
 categories: "angular update"
 ---

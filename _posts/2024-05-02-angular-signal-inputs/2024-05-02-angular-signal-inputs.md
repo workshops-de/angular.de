@@ -20,7 +20,7 @@ Mit einem Minor Update der Version 17 hat das Angular-Team ein neues Feature, [S
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-05-02-angular-signal-inputs/2.jpg" alt="Infografik, die den Data Flow von einer Parentkomponente zur Childkomponente darstellt"
+src="/shared/assets/img/placeholder-image.svg" alt="Infografik, die den Data Flow von einer Parentkomponente zur Childkomponente darstellt"
 class="lazy img-fluid img-rounded" data-src="2.jpg" data-srcset="2.jpg"
 />
 </p>
@@ -34,7 +34,7 @@ Um das Ganze verständlicher zu machen, betrachten wir ein einfaches Beispiel:
 <p class="left">
 <img
 style="max-width: 80%"
-src="https://github.com/workshops-de/angular.de/blob/master/_posts/2024-05-02-angular-signal-inputs/1.jpg" alt="Grafische Darstellung einer Grußkarten Web-Anwendung bestehend aus zwei select-Elementen und einer Textbox"
+src="/shared/assets/img/placeholder-image.svg" alt="Grafische Darstellung einer Grußkarten Web-Anwendung bestehend aus zwei select-Elementen und einer Textbox"
 class="lazy img-fluid img-rounded" data-src="1.jpg" data-srcset="1.jpg"
 />
 </p>
