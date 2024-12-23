@@ -192,7 +192,7 @@ class="lazy img-fluid img-rounded" data-src="angulardev.jpg" data-srcset="angula
 />
 </p>
 
-[Angular.dev](https://angular.dev/) wurde bereits mit dem Update auf Version 17 vorgestellt und löst nun endgültig Angular.io als Hauptquelle für Informationen und Ressourcen ab. Alle Anfragen an angular.io werden nun automatisch auf angular.dev umgeleitet. Damit sichergestellt ist, dass alle bestehenden Links weiterhin funktionieren, werden eure Anfragen zu [v17.angular.io](https://v17.angular.io/) weitergeleitet.
+[Angular.dev](https://angular.dev/) wurde bereits mit dem Update auf Version 17 vorgestellt und löst nun endgültig Angular.io als Hauptquelle für Informationen und Ressourcen ab. Alle Anfragen an angular.io werden nun automatisch auf angular.dev umgeleitet. Damit sichergestellt ist, dass alle bestehenden Links weiterhin funktionieren, werden eure Anfragen zu [v17.angular.io](https://angular.dev/) weitergeleitet.
 
 Über das überarbeitete, neue Design, Dokumentation und die [Tutorials](https://angular.dev/tutorials/learn-angular) haben wir euch bereits berichtet. Richtig gut finden wir die [interaktive Lernumgebung](https://angular.dev/playground), um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev erleichtert insbesondere Junior Entwicklern und Quereinsteigern den Einstieg in das Framework.
 
