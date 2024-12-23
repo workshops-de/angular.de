@@ -85,7 +85,7 @@ Kudos an Dave aka [Webdave](https://webdave.de/start) für das [Code-Beispiel au
 ### Producer vs. Consumer in Angular
 Producer und Consumer sind zwei grundlegende Konzepte in Angular, die für die Kommunikation zwischen Komponenten verwendet werden. Producer sind für die Erzeugung von Daten verantwortlich, während Consumer diese Daten verarbeiten. Beispiele für Producer sind Functions, Promises, oder Observables. Consumer verarbeiten diese Werte dann weiter. Natürlich können Producer auch gleichzeitig Consumer sein. Signals spielen eine entscheidende Rolle in diesem Muster, indem sie eine vereinfachte Schnittstelle zwischen Datenproduzenten und -konsumenten bieten.
 
-<img width="701" alt="Producerconsumer" src="https://github.com/workshops-de/angular.de/assets/89625524/db178dc6-ec3a-4007-acff-a9a2395db569">
+<img width="701" alt="Producerconsumer" src="289555519-db178dc6-ec3a-4007-acff-a9a2395db569.png">
 
 
 In unserem Code-Beispiel oben können wir ebenfalls zwischen einem Producer und einem Consumer unterscheiden:
@@ -162,7 +162,7 @@ Unterscheiden sich dann Angular Signals und Observer/Observables in RxJS überha
 
 Ein "Observer" ist ein Objekt mit Callbacks, das auf die Werte reagiert, die von einem Observable geliefert werden. Es enthält in der Regel drei Hauptmethoden: next(), error() und complete(). Die next() muss aufgerufen werden, um jeden neuen Wert im Datenstrom zu verarbeiten. Die error() wird aufgerufen, wenn im Datenstrom ein Fehler auftritt, und die complete() signalisiert das Ende des Datenstroms. Bisher musste aber für jedes Observable immer manuell eine Subscription gesetzt und gemanagt werden. Das ist nicht nur zeitintensiv und code-lastig, sondern erfordert auch tiefgreifende Kenntnisse der Web-Entwickler*in in RxJS.
 
-![meme](https://github.com/workshops-de/angular.de/assets/89625524/b2842b3b-cc1f-43e0-b410-54ea6c0b4f6e)
+![meme](289555721-b2842b3b-cc1f-43e0-b410-54ea6c0b4f6e.png)
 
 Angular Signals übermitteln ihre Werte (im Gegensatz zu den Datenströmen bei Observables!) automatisch und müssen nicht manuell ein- und abgestellt werden. Das spart nicht nur wertvolle Arbeitszeit, sondern erleichtert auch den Einstieg für angehende Angular Entwickler*innen!
 
@@ -170,7 +170,7 @@ Ist das also der Anfang vom Ende von RxJS in Angular?
 
 Jein!
 
-![rxjs](https://github.com/workshops-de/angular.de/assets/89625524/4f1fcab2-91a2-4759-8407-7f23c667062e)
+![rxjs](289555948-4f1fcab2-91a2-4759-8407-7f23c667062e.png)
 
 Für Aufgaben, bei denen es um fortlaufende und asynchrone Datenströme geht, sind Observables in Angular immer noch die erste Wahl. RxJS bietet eine umfangreiche API, mit der Entwickler*innen asynchrone Datenflüsse filtern, transformieren und kombinieren können. Ein Beispiel für asynchrone Ereignisse in Angular ist eine HTTP-Anfrage, die Daten von einem Server holt. Diese Anfrage gibt ein Observable zurück, das irgendwann in der Zukunft ein Ergebnis liefert. Dies macht Observables flexibler und mächtiger in komplexen asynchronen Szenarien gegenüber Angular Signals. In absehbarer Zeit wird sich das wohl auch nicht ändern.
 
@@ -184,7 +184,7 @@ Für Aufgaben, bei denen es um fortlaufende und asynchrone Datenströme geht, si
 
 Der andere große Vorteil der Angular Signals ist, dass für die Change Detection nicht mehr der gesamte Komponentenbaum der Anwendung überprüft werden muss. Es werden nur noch direkt die Views aktualisiert, an denen sich etwas geändert hat. Das ist signifikant performativer und ressourcenschonender.
 
-![observables](https://github.com/workshops-de/angular.de/assets/89625524/56621d85-219a-4500-b162-d1f5e0707bda)
+![observables](289556051-56621d85-219a-4500-b162-d1f5e0707bda.jpg)
 
 Was heißt das? Um das besser einzuordnen, werden wir die Begriffe Change Detection und View kurz erklären.
 
@@ -196,19 +196,19 @@ Bisher gab es zwei Hauptstrategien für die Change Detection in Angular: Default
 
 ### Change Detection Default Strategy
 
-![cddefault](https://github.com/workshops-de/angular.de/assets/89625524/5d94cee5-c49c-48cf-9efa-b99e89d35320)
+![cddefault](289556098-5d94cee5-c49c-48cf-9efa-b99e89d35320.gif)
 
 In der Default Methode prüft Angular bei jedem Auslöser, ob sich die Daten geändert haben, d.h. bei jeder Änderung wird der gesamte Komponentenbaum der App überprüft. Auslöser können ein Klick oder eine Tastatureingabe - in unserem Beispiel war das der Warenkorb für unseren Online Shop - oder aber HTTP-Anfragen durch HttpClient und Timer wie setTimeout.
 
 ### Change Detection On-Push Strategy
 
-![cdonpush](https://github.com/workshops-de/angular.de/assets/89625524/c5437628-2ad0-464d-94c7-1348a5b3508d)
+![cdonpush](289556158-c5437628-2ad0-464d-94c7-1348a5b3508d.gif)
 
 Die OnPush-Strategie sagt Angular, dass es nur dann prüfen soll, ob sich Daten geändert haben, wenn sich die Eingabedaten der Komponente (das sind die sogenannten Input Properties) geändert haben. Das hat den Vorteil, dass nur noch die Views aktualisiert werden, bei denen sich etwas geändert hat. Es hat aber den Nachteil, dass für jede Komponente die Change Detection Strategie manuell mit Hilfe von Observables auf On Push gesetzt werden muss.
 
 ### Change Detection Signals
 
-![cdsignals](https://github.com/workshops-de/angular.de/assets/89625524/0aafc509-ef2e-4490-8530-2f6344e0206b)
+![cdsignals](289556198-0aafc509-ef2e-4490-8530-2f6344e0206b.gif)
 
 Verwenden wir nun stattdessen Signals, muss die Change Detection nur noch die Views aktualisieren, die die Liste der Produkte darstellt. Außerdem kann das Signal von mehreren Komponenten abonniert werden. Damit können wir mit geringem Aufwand auch Änderungen für das Warenkorb-Icon im Hauptmenü an die Shop-Besucher kommunizieren.
 
