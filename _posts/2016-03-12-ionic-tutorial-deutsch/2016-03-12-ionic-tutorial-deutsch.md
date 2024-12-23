@@ -344,7 +344,7 @@ Alle Events erhalten folgende Parameter:
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/04-BaseComponents) / [Demo](https://angularjs-de.github.io/ionic-tutorial/04-BaseComponents/#/order)
 
-Bisher sieht unsere App noch so gar nicht nach einer mobilen Anwendung aus. Ionic stellt genau für diesen Zweck eine Reihe von vorgefertigten Direktiven zur Verfügung. Dabei sollte beachtet werden, dass damit auch in vielen Fällen zusätzliche Funktionen verknüpft sind. Wird nur das Styling der Komponenten genutzt existieren dafür häufig bereits vorgefertigte Alternativen mit reinem [CSS](http://ionicframework.com/docs/components/ "CSS Komponenten").
+Bisher sieht unsere App noch so gar nicht nach einer mobilen Anwendung aus. Ionic stellt genau für diesen Zweck eine Reihe von vorgefertigten Direktiven zur Verfügung. Dabei sollte beachtet werden, dass damit auch in vielen Fällen zusätzliche Funktionen verknüpft sind. Wird nur das Styling der Komponenten genutzt existieren dafür häufig bereits vorgefertigte Alternativen mit reinem [CSS](https://ionicframework.com/docs/components/ "CSS Komponenten").
 
 Als Basis einer Ionic-App stehen drei Komponenten zur Verfügung:
 
@@ -607,7 +607,7 @@ Nach dem gleichen Prinzip können auch Buttons oder Bilder ausgerichtet und ange
    - Avatar: zeigt automatisch einen runden Bildauschnitt
    - Thumbnail: kleine Vorschauansicht
 
- Eine vollständige Dokumentation dazu findet ihr in den [Ionic-Docs](http://ionicframework.com/docs/components/#list).
+ Eine vollständige Dokumentation dazu findet ihr in den [Ionic-Docs](https://ionicframework.com/docs/api/list).
 
 Natürlich hat Ionic auch daran gedacht, dass Listen in nativen Apps viel mehr können als nur Daten auflisten. So können Einträge umsortiert oder über Gesten erweiterte Funktionalitäten angesteuert werden. Ionic bietet genau dafür eigene Direktiven und Services an.
 
