@@ -76,7 +76,7 @@ Indem wir die Template-Referenz `indicator` über das `else` Schlüsselwort an d
 ## Ladeanzeige für Aktionen
 
 
-Wenn wir Aktionen wie das Erstellen eines Nutzers beim Klick auf einen Button durchführen möchten, kommen wir mit der AsyncPipe nicht weiter. Hier müssen wir immernoch in der Komponente manuell subscriben, da wir meist keine sinnvolle Möglichkeit haben, das resultierende Observable an die View zu binden.
+Wenn wir Aktionen wie das Erstellen eines Nutzers beim Klick auf einen Button durchführen möchten, kommen wir mit der AsyncPipe nicht weiter. Hier müssen wir immer noch in der Komponente manuell subscriben, da wir meist keine sinnvolle Möglichkeit haben, das resultierende Observable an die View zu binden.
 
 Zunächst sei gesagt, dass es völlig in Ordnung ist, hier wieder auf den Ansatz mit dem Lade-Flag zurückzugreifen - auch wenn manche anderes behaupten mögen. Lasst euch nicht vorzeitig auf unnötige Optimierungen ein nur um ein bisschen Redundanz zu vermeiden. Häufig ist es wichtiger, dass Code einfach zu verstehen, zu testen und auch zu [löschen](https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to) ist.
 

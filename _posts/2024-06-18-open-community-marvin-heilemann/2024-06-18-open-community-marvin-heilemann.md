@@ -171,7 +171,7 @@ Darüber hinaus sieht man, dass beide Initials so gut wie gleich sind, was die F
 
 
 Dieses Szenario weicht kaum vom ersten ab, hier werden nur zusätzlich “Eingabefelder” hinzugefügt und wieder entfernt. Dies würde in unserem Fall simulieren, wenn eine Formularaktion, ein anderes Feld ein- und ausblendet oder verändert.
-Hier sieht man ganz gut, dass Type A ein wenig schlechter performt als Type B. Das könnte unteranderem daran liegen, dass Angular evtl. die Komponente nicht richtig Cacht, da sie im Template nicht existiert.
+Hier sieht man ganz gut, dass Type A ein wenig schlechter performt als Type B. Das könnte unter anderem daran liegen, dass Angular evtl. die Komponente nicht richtig Cacht, da sie im Template nicht existiert.
 
 
 ### Szenario 3
