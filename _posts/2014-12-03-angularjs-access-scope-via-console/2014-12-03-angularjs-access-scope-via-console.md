@@ -19,7 +19,7 @@ Wir verwenden wieder die gleichen Werkzeuge wie im ersten Teil.
 Hier noch mal die Übersicht:
 
 * Ein moderner Browser mit einer JavaScript Konsole
-   * [Chrome – Öffnen der Konsole](https://developers.google.com/web/tools/chrome-devtools/console/#opening_the_console)
+   * [Chrome – Öffnen der Konsole](https://developer.chrome.com/docs/devtools/console/reference#open)
    * [Firefox – Öffnen der Konsole](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)
 * Eine Angular Anwendung zum experimentieren
    * [Angular TodoMVC](https://todomvc.com/examples/angularjs_require/#/)
@@ -73,7 +73,7 @@ var $scopeFromJQuery = jQuery("#todoapp").scope();
 
 ### Die $0 Variable
 
-Die Chrome [Command Line API](https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference) bietet einen weiteren sehr einfachen Weg an, auf Elemente zuzugreifen.
+Die Chrome [Command Line API](https://developer.chrome.com/docs/devtools/console/utilities) bietet einen weiteren sehr einfachen Weg an, auf Elemente zuzugreifen.
 Durch die Variable `$0` erhält man Zugriff auf das Element, das man in der Element-Anzeige gerade ausgewählt hat.
 Um den dazugehörigen Scope zu laden kann man `angular.element($0).scope()` ähnlich zu den Beispielen oben verwenden.
 

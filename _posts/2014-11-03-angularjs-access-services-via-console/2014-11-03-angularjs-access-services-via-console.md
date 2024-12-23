@@ -34,7 +34,7 @@ In diesem Artikel beschränken wir uns auf Services.
 ## Unser Experimentierkasten
 
 * Ein moderner Browser mit einer JavaScript Konsole
-   * [Chrome – Öffnen der Konsole](https://developers.google.com/web/tools/chrome-devtools/console/#opening-the-console)
+   * [Chrome – Öffnen der Konsole](https://developer.chrome.com/docs/devtools/console/reference#open)
    * [Firefox – Öffnen der Konsole](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)
 * Eine Angular Anwendung zum experimentieren
    * [Angular TodoMVC](https://todomvc.com/examples/angularjs_require/#/)
