@@ -63,7 +63,7 @@ Der Vorteil ist die einfache Nutzung von Webtechnologien, wie HTML5, CSS3 und Ja
 
 ### Cordova, PhoneGap und Ionic CLI
 
-Den Zugriff auf native Schnittstellen oder Dienste und Komponenten des mobilen Gerätes erhält der Entwickler mit [Apache Cordova](https://cordova.apache.org/ "Cordova") oder [Adobe PhoneGap](http://phonegap.com/ "PhoneGap").
+Den Zugriff auf native Schnittstellen oder Dienste und Komponenten des mobilen Gerätes erhält der Entwickler mit [Apache Cordova](https://cordova.apache.org/ "Cordova") oder [Adobe PhoneGap](https://github.com/phonegap/phonegap-cli "PhoneGap").
 Beide Anbieter stellen ein CLI bereit, über das alle wichtigen Schritte ausgeführt werden können.
 
  - Projekt anlegen
@@ -72,7 +72,7 @@ Beide Anbieter stellen ein CLI bereit, über das alle wichtigen Schritte ausgef�
  - Plugin suchen
  - Projekt bauen (finale App, z.B. als .apk-Datei)
 
-Cordova ist OpenSource und die Basis für PhoneGap. Adobe behält sich jedoch vor eigene Änderungen an PhoneGap vorzunehmen. Dadurch konnte der Dienst [PhoneGap Build](https://build.phonegap.com/ "PhoneGap Build") entstehen mit dem Anwendungen direkt in der Cloud gebaut werden. Besonders für iOS-Apps ist der Dienst eine große Hilfe, da diese auf einem Mac kompiliert werden müssen.
+Cordova ist OpenSource und die Basis für PhoneGap. Adobe behält sich jedoch vor eigene Änderungen an PhoneGap vorzunehmen. Dadurch konnte der Dienst [PhoneGap Build](https://github.com/phonegap/phonegap-cli "PhoneGap Build") entstehen mit dem Anwendungen direkt in der Cloud gebaut werden. Besonders für iOS-Apps ist der Dienst eine große Hilfe, da diese auf einem Mac kompiliert werden müssen.
 
 Ionic soll zukünftig ein Rundum-Paket liefern. Dazu zählen bereits eigene Services, wie Push-Nachrichten oder Analytics, aber auch eine eigene App-Verwaltung, um jederzeit die eigenen Apps ausprobieren und vorzuführen können.
 
