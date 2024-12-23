@@ -29,7 +29,7 @@ Ein weiteres Werkzeug, das sich in diesem Kontext sehr gut eignet und aktuell ei
 
 > Zu beachten ist hierbei, dass die URL zu unserer Anwendung ohne die Raute angegeben wird, da das Mapping auf die Web-Ressourcen hierüber läuft und diese ohne Raute aufgerufen werden.
 
-Darüber hinaus benötigen wir hierfür die [Chrome-Erweiterung *JetBrains IDE Support*](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji), die sich über den Chrome Web Store installieren lässt. Ist dies getan, können wir unsere Anwendung im *Debug Modus starten* (Shift+F9). Es öffnet sich der Browser und führt unsere Web-Anwendung aus. Die Haltepunkte können wir nun bequem innerhalb der IDE setzen. Erreicht die Anwendung einen der definierten Haltepunkt, wird die Ausführung angehalten.
+Darüber hinaus benötigen wir hierfür die Chrome-Erweiterung *JetBrains IDE Support* (Die Erweiterung exisitert leider nicht mehr), die sich über den Chrome Web Store installieren lässt. Ist dies getan, können wir unsere Anwendung im *Debug Modus starten* (Shift+F9). Es öffnet sich der Browser und führt unsere Web-Anwendung aus. Die Haltepunkte können wir nun bequem innerhalb der IDE setzen. Erreicht die Anwendung einen der definierten Haltepunkt, wird die Ausführung angehalten.
 
 ![Chrome Developer Tools](richtig-debuggen-idea-breakpoint.png)
 
