@@ -22,7 +22,7 @@ Hier noch mal die Übersicht:
    * [Chrome – Öffnen der Konsole](https://developers.google.com/web/tools/chrome-devtools/console/#opening_the_console)
    * [Firefox – Öffnen der Konsole](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)
 * Eine Angular Anwendung zum experimentieren
-   * [Angular TodoMVC](http://todomvc.com/examples/angularjs/#/)
+   * [Angular TodoMVC](https://todomvc.com/examples/angularjs_require/#/)
    * Irgendeine andere Angular Anwendung
 
 ## Zugriff auf Scopes
@@ -123,7 +123,7 @@ $scope.$$watchers = [];
 
 ### Zählen der `$$watchers`
 
-Kürzlich habe ich ein interessantes Beispiel gefunden, in dem das `$$watchers` Array dazu verwendet wird, alle Watcher in einer Anwendung zu zählen (Quelle: [“The Top 10 Mistakes AngularJS Developers Make”](http://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make#7-too-many-watchers)).
+Kürzlich habe ich ein interessantes Beispiel gefunden, in dem das `$$watchers` Array dazu verwendet wird, alle Watcher in einer Anwendung zu zählen (Quelle: The Top 10 Mistakes AngularJS Developers Make (Nicht verlinkt, da es die Quelle leider nicht mehr gibt)).
 Ich habe das Original-Beispiel noch etwas aufgeräumt und funktional umgestaltet.
 Auf jeden Fall bekommt man einen guten Eindruck, wie man die internen Attribute zur tieferen Analyse einer Anwendung einsetzen kann.
 

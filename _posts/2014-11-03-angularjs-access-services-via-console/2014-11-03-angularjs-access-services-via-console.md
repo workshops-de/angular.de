@@ -37,13 +37,13 @@ In diesem Artikel beschränken wir uns auf Services.
    * [Chrome – Öffnen der Konsole](https://developers.google.com/web/tools/chrome-devtools/console/#opening-the-console)
    * [Firefox – Öffnen der Konsole](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)
 * Eine Angular Anwendung zum experimentieren
-   * [Angular TodoMVC](http://todomvc.com/examples/angularjs/#/)
+   * [Angular TodoMVC](https://todomvc.com/examples/angularjs_require/#/)
    * Irgendeine andere Angular Anwendung
 
 ## Services Laden
 
 Jetzt haben wir alles zusammen, um loszulegen.
-Man muss nur die [TodoMVC](http://todomvc.com/examples/angularjs/#/) Anwendung öffnen, sowie die Browser Konsole auf der Seite.
+Man muss nur die [TodoMVC](https://todomvc.com/examples/angularjs_require/#/) Anwendung öffnen, sowie die Browser Konsole auf der Seite.
 Normalerweise werden Angular Services für andere Komponenten per Dependency Injection bereitgestellt.
 In der Konsole müssen wir dies manuell erreichen.
 Die Funktion `angular.injector()` erwartet ein Array von Modulnamen und gibt einen `injector` zurück, mit dem man Services über ihnen Namen laden kann.
