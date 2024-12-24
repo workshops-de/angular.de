@@ -1,9 +1,7 @@
 ---
 title: "Open Community: Angular - Performance zwischen dynamisch gerenderten
   Komponenten per Template oder @switch"
-description: Marvin Heilemann zeigt uns Methoden zur Optimierung der
-  Render-Performance von dynamischen Komponenten in Angular durch
-  fortschrittliche Control-Flow-Syntax und effektives Refactoring
+description: Marvin Heilemann erklärt, wie dynamische Angular-Komponenten durch Control-Flow-Syntax und Refactoring optimiert gerendert werden können.
 author: Lulëzim Ukaj
 published_at: 2024-06-18 09:30:00.000000Z
 header_source: null

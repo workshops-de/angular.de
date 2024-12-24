@@ -1,6 +1,6 @@
 ---
 title: "Angular 18 - Die Renaissance geht weiter"
-description: “Ein Blogartikel über alle neuen Features und Updates in Angular 18, über die Zoneless Change Detection und die Angular Developer Experience und die Angular Renaissance."
+description: Alle neuen Features und Updates in Angular 18, über die Zoneless Change Detection und die Angular Developer Experience und die Angular Renaissance."
 author: "Lulëzim Ukaj"
 co_author: "David Müllerchen"
 published_at: 2024-06-11 09:27:00.000000Z
