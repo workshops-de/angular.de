@@ -1,6 +1,6 @@
 ---
 title: "Angular kurz erklärt: Hydration"
-description: Eine Einführung in Angulars Full App Non-Destructive Hydration in einfacher Sprache. Außerdem beleuchten wir die Prozesse hinter dem Server-Side- und Client-Side-Rendering, die Web Core Vitals und zeigen, warum die Full App Non-Destructive Hydration in Angular ein Meilenstein ist .
+description: "Einführung in Angulars Full App Non-Destructive Hydration: Server- & Client-Side-Rendering, Web Core Vitals & warum es ein Meilenstein ist."
 author: "Lulëzim Ukaj"
 published_at: 2024-02-12 11:27:00.000000Z
 header_source:
