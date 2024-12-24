@@ -1,6 +1,6 @@
 ---
 title: "Angular kurz erklärt: Signals"
-description: Eine Einführung in Angular Signals in einfacher Sprache und mit praxisnahen Beispielen. Außerdem zeigen wir den Unterschied gegenüber RxJS Observables und warum die Change Detection in Angular-Anwendungen dadurch verbessert wird.
+description: "Einführung in Angular Signals: Praxisnahe Beispiele, Unterschiede zu RxJS Observables und Vorteile für die Change Detection in Angular."
 author: "Lulëzim Ukaj"
 published_at: 2023-12-12 09:27:00.000000Z
 header_source: https://github.com/workshops-de/angular.de/assets/89625524/eccfe435-a877-4f81-9121-e48f1b0c666b

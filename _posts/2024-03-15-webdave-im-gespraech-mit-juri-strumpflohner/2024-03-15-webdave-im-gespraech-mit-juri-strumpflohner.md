@@ -1,6 +1,6 @@
 ---
 title: "Webdave im Gespräch mit: Juri Strumpflohner"
-description: Unser Trainer Webdave ist im Gespräch mit Juri Strumpflohner, dem Sr. Director of Developer Experience für Nx. Erfahre etwas über Juri, Nx und wie eine Entwicklungsarbeit in großen Teams durch effizientes Monorepo-Management erleichtert wird.
+description: "Webdave im Gespräch mit Juri Strumpflohner, Sr. Director Developer Experience für Nx: Insights zu Nx & Monorepo-Management in großen Teams."
 author: "Lulëzim Ukaj"
 published_at: 2024-03-15 11:27:00.000000Z
 header_source:
