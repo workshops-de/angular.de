@@ -1,6 +1,6 @@
 ---
 title: "Generierte Navigation mit AngularJS und Bootstrap"
-description: "Automatisches Erzeugen der Navigation mit AngularJS und Bootstrap auf Basis euer Routingkonfiguration. Wir erklären, wie es geht und geben euch fertige Beispiele."
+description: "Automatische Navigation mit AngularJS & Bootstrap: Navigation basierend auf eurer Routingkonfiguration erstellen – mit Anleitung & Beispielen."
 author: "Tilman Potthof"
 published_at: 2014-11-17 11:52:00.000000Z
 categories: "angularjs bootstrap"
