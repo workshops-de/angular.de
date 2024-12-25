@@ -7,17 +7,17 @@ header_source: https://unsplash.com/photos/w7ZyuGYNpRQ
 categories: "angular oAuth"
 ---
 
-# Single Sign-on mit OAuth 2 und OpenId Connect
+## Single Sign-on mit OAuth 2 und OpenId Connect
 
 Die wenigsten Geschäftsanwendungen kommen ohne Authentifizierung und Autorisierung aus. Häufig müssen bestehende Identity-Lösungen wie Active Directory oder LDAP-Systeme integriert werden, um Single-Sign-on zu ermöglichen. In modernen Web-Anwendungen muss der Client auch das Recht erhalten, im Namen des angemeldeten Benutzers auf Services zuzugreifen. All diese Anforderungen lassen sich elegant mit Security-Tokens lösen.
 
 Dieser Artikel zeigt, wie Token-basierte Sicherheit in einer Angular-Anwendung genutzt werden kann. Dazu kommen die populären Standards OAuth 2 und OpenId Connect  sowie die Bibliothek [angular-oauth2-oidc](https://www.npmjs.com/package/angular-oauth2-oidc) zum Einsatz. Das verwendete Beispiel findet sich [hier](https://github.com/manfredsteyer/oauth2-oidc-demo)
 
-# OAuth 2 und OpenId Connect
+## OAuth 2 und OpenId Connect
 
 Wer sich heutzutage mit Token-basierter Sicherheit beschäftigt, kommt wohl kaum an den beiden populären Standards [OAuth 2](https://oauth.net/2/) und [OpenId Connect](http://openid.net/connect/) vorbei. Sie beschreiben unter anderem, wie sich ein Benutzer bei einem verteilten System anmelden kann und wie ein Client das Recht erhält, im Namen des Benutzers Services zu konsumieren. Dazu kommt, dass diese Standards direkt auf HTTPS aufsetzen und sich somit wunderbar für leichtgewichtige Web API eignen.
 
-## OAuth 2
+### OAuth 2
 
 Die erste Version von OAuth wurde 2006 von Twitter und Ma.gnolia entwickelt. Das Ziel war es, Benutzern die Möglichkeit zu geben, einen Teil ihrer Rechte an einen Client weiterzugeben, ohne das eigene Passwort mit ihm zu teilen. Somit können zum Beispiel Anwendungen das Recht erhalten, im Namen des Benutzers Services aufzurufen.
 
@@ -41,7 +41,7 @@ Diese vom Prinzip her einfache Vorgehensweise hat mehrere Vorteile:
 
 Das Format des Access-Tokens sowie die Maßnahmen, die der Resource Server zum Validieren des Tokens unternimmt, sind von OAuth 2 nicht näher beschriebene Implementierungsdetails. Häufig kommen digitale Signaturen zum Einsatz, damit der Ressource Server einfach prüfen kann, ob das Token von einem vertrauenswürdigen Authorization Server stammt. Alternativ dazu könnte das Token auch nur aus einer nicht vorhersehbaren Id bestehen, mit der der Ressource Server sich nochmals an den Authorization Server wendet.
 
-## Benutzer mit OpenId Connect authentifizieren
+### Benutzer mit OpenId Connect authentifizieren
 
 Als Ergänzung zu OAuth 2 definiert OpenId Connect (OIDC) unter anderem, wie der Client Informationen über den Benutzer bekommen kann. Diesen Aspekt deckt OAuth 2 nicht ab, denn selbst das ausgestellte Access Token muss für den Client nicht lesbar sein. Dazu spezifiziert OIDC unter anderem ein sogenanntes Id-Token, das der Client zusätzlich zum Access-Token erhalten kann. Während das Access-Token zum Zugriff auf das Backend bestimmt ist, kann der Client aus dem Id-Token direkt Informationen über den Benutzer entnehmen (Abbildung 2).
 
@@ -50,7 +50,7 @@ Als Ergänzung zu OAuth 2 definiert OpenId Connect (OIDC) unter anderem, wie der
 
 Im Gegensatz zu Access-Tokens bei OAuth 2 ist der Aufbau von Id-Tokens vorgegeben. Es handelt sich dabei immer um ein JSON Web Token (JWT), welches signiert und/oder verschlüsselt sein kann. Zusätzlich definiert OIDC einen sogenannten Userinfo Endpunkt. Dabei handelt es sich um einen Service, der dem Client weitere Informationen zum aktuellen Benutzer preis gibt, sofern dieser das erhaltene Access-Token vorweisen kann.
 
-## JSON Web Token
+### JSON Web Token
 
 Beim durch OpenID Connect beschriebenen Identitäts-Token handelt es sich um ein JSON Web Token (JWT). Ein JWT beinhaltet unter anderem ein JSON-basiertes Objekt mit Claims. Dabei handelt es sich um Name/Wert-Paare, die ein Subjekt beschreiben, zum Beispiel einen Benutzer. Daneben existieren Claims, die Informationen über das Token selbst liefern, darunter den Zeitraum, indem das Token gültig ist, oder die Audience des Tokens. Dieses Claims-Set kann der Aussteller signieren und/oder verschlüsseln. Nachfolgend findet sich ein Beispiel für ein signiertes JWT. Es besteht aus drei BASE64-codierten Abschnitten, die durch einen Punkt zu trennen sind. Zur besseren Lesbarkeit wurden in diesem Listing Zeilenumbrüche eingefügt und der zweite und dritte Teil unter Verwendung von Auslassungszeichen abgekürzt.
 
@@ -92,14 +92,14 @@ Die Claims ``nbf`` (Not Before) und ``exp`` (Expiration Time), die einen UNIX-Ti
 
 Während sich Aussteller und Konsumenten von Claims bilateral auf die zu verwendenden Claim-Namen einigen können, macht es Sinn, zu prüfen, ob es für den gewünschten Zweck bereits offiziell definierte Namen gibt, um Kollisionen sowie Missverständnisse zu vermeiden. Eine gute erste Anlaufstelle dafür ist die [OpenID Connect-Spezifikation](http://openid.net/connect). Darüber hinaus kann der Aussteller auch öffentliche Bezeichner, zum Beispiel URLs, als Namen für Claims heranziehen.
 
-## Protokoll-Flüsse (Flows)
+### Protokoll-Flüsse (Flows)
 
 Für verschiedene Anwendungsfälle definieren OAuth 2 und OIDC sogenannte Flows. Diese legen fest, welche Nachrichten auszutauschen sind, damit der Client die erwähnten Tokens erhält. Das aktuelle [Best Current Practice Dokument](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13) der OAuth-Working-Group empfiehlt den sogenannten Authorization Code Flow in Kombination mit dem Verfahren [PKCE](https://oauth.net/2/pkce/) für Single Page Applications. Darauf ist auch bei der Konfiguration des gewählten Authorization Servers zu achten.
 
 Wer sich für die Protokoll-Details dieses Flows interessiert, wird in der [OAuth 2 Spezifikation](https://oauth.net/2/) fündig. Dieser Artikel nutzt zur Automatisierung der damit einhergehenden Details die Bibliothek [angular-oauth2-oidc](https://www.npmjs.com/package/angular-oauth2-oidc), sodass man sich damit nicht belasten muss.
 
 
-## Umsetzung in Angular
+### Umsetzung in Angular
 
 Die Bibliothek [angular-oauth2-oidc](https://www.npmjs.com/package/angular-oauth2-oidc) erfreut sich einer weiten Verbreitung und wurde mit mehreren verschiedenen Authorization Servern getestet, um sicherzustellen, dass keine Überanpassung an einen bestimmten Hersteller stattfindet. Dabei handelt es sich um den [IdentityServer](https://identityserver.io/) für .NET, [Keycloak](https://www.keycloak.org/) von RedHat und der Cloud-Lösung [Auth0](https://auth0.com/). Außerdem ist sie von der [OpenId Connect Foundation](https://openid.net/foundation/) zertifiziert, was zu weiterem Vertrauen führt.
 
@@ -201,7 +201,6 @@ Das bedeutet, dass zum einen die Tokens verworfen werden, aber auch, dass durch 
 
 Die Methode ``getIdentityClaims`` liefert Key/Value-Pairs, die den Benutzer beschreiben:
 
-
 ```typescript
 const claims = this.oauthService.getIdentityClaims();
 if (!claims) return null;
@@ -210,13 +209,11 @@ return claims['given_name'];
 
 Um die Funktionsweise zu prüfen, reichtes, nach dem Anmelden die Claims zu beziehen sowie einen HTTP-Service aufzurufen. Im letzteren Fall sollte die Bibliothek das Access-Token über den HTTP-Header Authorization übersenden.
 
-# Fazit
+## Fazit
 
 OAuth 2 ist ein etablierter Industriestandard zum Anfordern von Tokens, die einem Client im Namen des Benutzers Zugriff auf das Backend gewähren. OpenId Connect baut darauf auf und versorgt den Client mit Informationen über den Benutzer.
 
 Durch den Einsatz von Token ergeben sich einige Vorteile: Der Benutzer kann sich mit einem zentralen Konto bei mehreren Anwendungen anmelden und die Anwendung muss sich nicht um das Verwalten eigener Konten kümmern. Im Gegensatz zum Einsatz von Cookies können verschiedene Origins zum Einsatz kommen und XSRF Attacken sind ausgeschlossen.
 
-
 ---
 Manfred Steyer ist Trainer und Berater mit Fokus auf Angular sowie Google Developer Expert und Trusted Collaborator im Angular-Team. Er schreibt für O’Reilly, das deutsche Java-Magazin und Heise Developer. Unter https://angulararchitects.io bietet er Angular Schulungen und Beratung im gesamten deutschsprachigen Raum an.
-
