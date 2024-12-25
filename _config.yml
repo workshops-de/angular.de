@@ -76,6 +76,10 @@ autopages:
   collections:
     enabled: false
 
+extlinks:
+  attributes: {rel: "noreferrer noopener nofollow", target: _blank}
+  rel_exclude: ['angular.de', 'vuejs.de', 'reactjs.de', 'workshops.de', 'webdave.de', 'ng-de.org', 'conf.vuejs.de']
+
 # Build settings
 markdown: kramdown
 sass:
