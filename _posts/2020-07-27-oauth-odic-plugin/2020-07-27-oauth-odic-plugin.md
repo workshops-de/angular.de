@@ -7,8 +7,6 @@ header_source: https://unsplash.com/photos/w7ZyuGYNpRQ
 categories: "angular oAuth"
 ---
 
-## Single Sign-on mit OAuth 2 und OpenId Connect
-
 Die wenigsten Geschäftsanwendungen kommen ohne Authentifizierung und Autorisierung aus. Häufig müssen bestehende Identity-Lösungen wie Active Directory oder LDAP-Systeme integriert werden, um Single-Sign-on zu ermöglichen. In modernen Web-Anwendungen muss der Client auch das Recht erhalten, im Namen des angemeldeten Benutzers auf Services zuzugreifen. All diese Anforderungen lassen sich elegant mit Security-Tokens lösen.
 
 Dieser Artikel zeigt, wie Token-basierte Sicherheit in einer Angular-Anwendung genutzt werden kann. Dazu kommen die populären Standards OAuth 2 und OpenId Connect  sowie die Bibliothek [angular-oauth2-oidc](https://www.npmjs.com/package/angular-oauth2-oidc) zum Einsatz. Das verwendete Beispiel findet sich [hier](https://github.com/manfredsteyer/oauth2-oidc-demo)
