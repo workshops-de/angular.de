@@ -238,7 +238,7 @@ Wie immer laden wir euch ein, Teil unserer [Angular Community auf Discord](https
 
 ## Quellen
 
-### Signals/Realitivity/Producer-Consumer-Pattern
+### Quellen: Signals/Realitivity/Producer-Consumer-Pattern
 
 - [How to build an event emitter in JavaScript - educative.io](https://www.educative.io/answers/how-to-build-an-event-emitter-in-javascript){:rel="noopener noreferrer nofollow"}
 
@@ -246,7 +246,7 @@ Wie immer laden wir euch ein, Teil unserer [Angular Community auf Discord](https
 
 - [Angular’s Signal Revolution: Effortless Change Detection Explained - netbasal.com](https://netbasal.com/angulars-signal-revolution-effortless-change-detection-explained-unveiling-the-inner-workings-8a5e44c95b65){:rel="noopener noreferrer nofollow"}
 
-### Change Detection
+### Quellen: Change Detection
 
 - [Deep dive into the OnPush change detection strategy in Angular - Max Koretskyi](https://medium.com/angular-in-depth/deep-dive-into-the-onpush-change-detection-strategy-in-angular-fab5e4da1d69){:rel="noopener noreferrer nofollow"}
 
@@ -255,7 +255,7 @@ Wie immer laden wir euch ein, Teil unserer [Angular Community auf Discord](https
 
 - [Future of Change Detection in Angular with Signals - Thomas Laforge](https://medium.com/ngconf/future-of-change-detection-in-angular-with-signals-fb367b66a232){:rel="noopener noreferrer nofollow"}
 
-### Memes
+### Quellen: Memes
 
 - [Angular Memes - github.com](https://github.com/dzhavat/angular-memes){:rel="noopener noreferrer nofollow"}
 
