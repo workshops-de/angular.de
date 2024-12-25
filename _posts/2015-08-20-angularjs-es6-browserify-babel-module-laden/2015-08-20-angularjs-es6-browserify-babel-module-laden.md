@@ -1,6 +1,6 @@
 ---
 title: "ES6 mit Browserify und Babel in AngularJS"
-description: "In diesem Artikel zeige ich ein paar kleine Erweiterungen, die Euch die Entwicklung mit AngularJS erleichtern und gleichzeitig auf die Zukunft mit Angular2 vorbereiten."
+description: "In diesem Artikel zeige ich kleine Erweiterungen, die Euch die Entwicklung mit AngularJS erleichtern und auf die Zukunft mit Angular2 vorbereiten."
 author: "Robin Böhm"
 published_at: 2015-08-20 08:58:00.000000Z
 categories: "angularjs"

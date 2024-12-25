@@ -1,6 +1,6 @@
 ---
 title: Developer Ergonomics mit Angular Signals
-description: In diesem Artikel erfährst Du, warum das Angular Team sich für Signals entschieden hat, wie Du Signals in Deiner Anwendung einsetzen kannst und was es für die Zukunft von RxJS im Kontext von Angular bedeutet.
+description: "Warum das Angular-Team auf Signals setzt: Einsatz in Deiner Anwendung und Auswirkungen auf die Zukunft von RxJS in Angular."
 author: "Philipp Escher"
 published_at: 2023-08-23 15:00:00
 header_source: https://unsplash.com/de/fotos/xXiKQ2AavlY

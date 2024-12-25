@@ -1,6 +1,6 @@
 ---
 title: "Webdave im Gespräch mit: Mark Thompson (aka. @marktechson)"
-description: "Webdave spricht mit Mark Thomson, Angular-Teammitglied bei Google, über Karriere, KI, neue Angular-Features & wertvolle Tipps. Inspiration für Entwickler – jetzt ansehen!"
+description: "Webdave spricht mit Mark Thomson, Angular-Teammitglied bei Google, über Karriere, KI, neue Angular-Features & wertvolle Tipps."
 author: "Lulëzim Ukaj"
 published_at: 2024-08-28 15:27:00.000000Z
 header_source:

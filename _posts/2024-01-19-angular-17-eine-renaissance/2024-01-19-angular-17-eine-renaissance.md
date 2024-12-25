@@ -1,6 +1,6 @@
 ---
 title: "Die Angular 17 Renaissance"
-description: “Ein Blogartikel über alle neuen Features und Updates in Angular 17, über Verbesserungen in Performance und Angular Developer Experience und die Angular Renaissance”
+description: "Alles zu Angular 17: Neue Features, Performance-Optimierungen, bessere Developer Experience und die Angular Renaissance im Überblick."
 author: "Lulëzim Ukaj"
 published_at: 2024-01-19 16:00:28.000000Z
 header_source: https://raw.githubusercontent.com/workshops-de/angular.de/refs/heads/master/_posts/2024-01-19-angular-17-eine-renaissance/header.jpg
@@ -9,6 +9,7 @@ categories: "angular update"
 ---
 
 ## Einleitung
+
 Wir leben im Zeitalter der Superlative. 'Größer, schneller, besser' war gestern. Heute ist es “am größten, am schnellsten, am besten”. Technologische Fortschritte müssen in nicht weniger als Superlativen gemessen werden, um Aufsehen zu erregen. Das gilt natürlich auch für die Welt der Frameworks. Und Angular nimmt da keine Sonderstellung ein. Folgerichtig wurde das Update auf Angular 16 im Mai dieses Jahres als das größte Update seit dem initialen Release des Frameworks beworben. Und nicht ohne Grund, denn das Update hatte es in sich: das signalbasierte Reaktivitätsmodell, die Full-App Non-Destructive Hydration, die Unterstützung von TypeScript 5.0 und vieles mehr.
 
 Aber was kommt eigentlich nach dem Superlativ? Die Antwort auf diese fast philosophische Frage hat uns jetzt Minko Gechev gegeben: eine Renaissance. Das ist ein Begriff, der wortwörtlich übersetzt die Wiedergeburt bedeutet und eine Erneuerung verspricht. Bereits Anfang 2023 hat Sarah Drasner, als Director of Engineering bei Google und Leiterin des Angular-Teams, die neue Ära der 'Angular Renaissance' auf X, ehemals Twitter, angekündigt. Und mit diesem Begriff hat jetzt auch der Technical Lead und Manager des Angular Teams das neue Update auf Angular 17 angekündigt.
@@ -48,16 +49,20 @@ Wie versprochen ist hier auch das Video von Webdave zum Anguglar 17 Update.
 <iframe class="" width="100%" height="315" src="https://www.youtube-nocookie.com/embed/tXsz5Z15yeY" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Standalone Routing Enabled by Default
+
 Die Angular CLI hat bedeutende Updates erfahren. Standalone-Projekte und Routing sind jetzt der neue Standard, und die erforderliche Node-Version wurde auf 18 aktualisiert. Besonders für Junior Entwickler werden dadurch die Einstiegshürden in komplexe Projekte gesenkt. Erfahrene Entwickler werden die gesteigerte Effizienz und Flexibilität schätzen, die durch diese Updates ermöglicht werden.
 
 ### View Transition API
+
 Die neue View Transition API erlaubt eine verbesserte Steuerung beim Laden und Darstellen von Grafiken. Diese Funktion bietet Entwicklern mehr Flexibilität und Kontrolle über die visuellen Aspekte ihrer Anwendungen. Vor allem dynamische und reaktionsfähige visuelle Elemente lassen sich mit größerer Präzision steuern. Das ist besonders relevant für Anwendungen mit komplexen visuellen Elementen, wie eingebetteten Maps in einer Booking-Anwendung.
 
 ### Component Decorator und Styles Management
+
 Mit den Updates am Component Decorator und der Einführung von individuellen Styles und Templates haben Entwickler jetzt die Möglichkeit, ihre individuellen Styles direkt in Komponenten zu integrieren.
 Dadurch werden weniger HTTP-Requests für externe Stylesheets benötigt, was wiederum die Initialladezeit deiner Anwendung verbessern kann.
 
 ### Deferrable Views
+
 Das Feature der "Deferrable Views", welches sich aktuell noch in Developer Preview befindet, ermöglicht neue Möglichkeiten für das Lazy Loading von Komponenten. Mit Hilfe von `@defer`-Blöcken können Entwickler das Laden und Rendern von Komponenten gezielt verzögern:
 
 ```html
