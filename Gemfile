@@ -9,7 +9,7 @@ ruby RUBY_VERSION
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem 'jekyll', '~> 4.3.3'
+gem 'jekyll', '~> 4.4.0'
 gem 'rest-client'
 gem 'fastimage'
 gem 'down'
