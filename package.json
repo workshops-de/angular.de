@@ -4,7 +4,7 @@
   "description": "Requires Ruby 2.5+",
   "main": "opengraph.js",
   "devDependencies": {
-    "canvas": "^3.0.0-rc2",
+    "canvas": "^3.1.0",
     "commander": "^12.1.0"
   },
   "repository": {

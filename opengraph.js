@@ -51,8 +51,8 @@ loadImage(data.background).then((image) => {
   ctx.fillStyle = '#ffffff';
   ctx.fillText(data.author, 80, 555);
 
-  loadImage('./shared/assets/img/workshops-de-logo-full.svg').then(logo => {
-    ctx.drawImage(logo, 920, 510, 200, 200 * logo.height / logo.width);
+  loadImage('./assets/img/logo-with-poweredby-white.png').then(logo => {
+    ctx.drawImage(logo, 820, 490, 300, 300 * logo.height / logo.width);
 
     const out = fs.createWriteStream(data.output);
     const stream = canvas.createJPEGStream();
