@@ -11,6 +11,8 @@ on:
 env:
   JEKYLL_ENV: production
   YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+  MEETUP_CLIENT_ID: ${{ secrets.MEETUP_CLIENT_ID }}
+  MEETUP_CLIENT_SECRET: ${{ secrets.MEETUP_CLIENT_SECRET }}
 
 jobs:
   build:
