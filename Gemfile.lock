@@ -19,14 +19,29 @@ GEM
     eventmachine (1.2.7)
     execjs (2.7.0)
     fastimage (2.4.0)
+    ffi (1.17.1-aarch64-linux-gnu)
+    ffi (1.17.1-aarch64-linux-musl)
+    ffi (1.17.1-arm-linux-gnu)
+    ffi (1.17.1-arm-linux-musl)
     ffi (1.17.1-arm64-darwin)
+    ffi (1.17.1-x86_64-darwin)
     ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1-x86_64-linux-musl)
     fileutils (1.7.3)
     forwardable-extended (2.6.0)
-    google-protobuf (4.29.3-arm64-darwin)
+    google-protobuf (4.30.1)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.29.3-x86_64-linux)
+    google-protobuf (4.30.1-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.1-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.1-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.1-x86_64-linux)
       bigdecimal
       rake (>= 13)
     http-accept (1.7.0)
@@ -68,7 +83,7 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.9.1)
+    json (2.10.2)
     kramdown (2.5.1)
       rexml (>= 3.3.9)
     kramdown-parser-gfm (1.1.0)
@@ -77,16 +92,28 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    logger (1.6.5)
+    logger (1.6.6)
     mercenary (0.4.0)
-    mime-types (3.6.0)
+    mime-types (3.6.1)
       logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2025.0204)
+    mime-types-data (3.2025.0318)
     netrc (0.11.0)
-    nokogiri (1.18.2-arm64-darwin)
+    nokogiri (1.18.4-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.2-x86_64-linux-gnu)
+    nokogiri (1.18.4-aarch64-linux-musl)
+      racc (~> 1.4)
+    nokogiri (1.18.4-arm-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.18.4-arm-linux-musl)
+      racc (~> 1.4)
+    nokogiri (1.18.4-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.4-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.4-x86_64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.18.4-x86_64-linux-musl)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -101,22 +128,44 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rexml (3.4.0)
+    rexml (3.4.1)
     rickshaw (0.5.0)
     rouge (4.5.1)
     safe_yaml (1.0.5)
-    sass-embedded (1.83.4-arm64-darwin)
-      google-protobuf (~> 4.29)
-    sass-embedded (1.83.4-x86_64-linux-gnu)
-      google-protobuf (~> 4.29)
+    sass-embedded (1.86.0-aarch64-linux-gnu)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-aarch64-linux-musl)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-arm-linux-gnueabihf)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-arm-linux-musleabihf)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-arm64-darwin)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-x86_64-darwin)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-x86_64-linux-musl)
+      google-protobuf (~> 4.30)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     unicode-display_width (2.6.0)
     webrick (1.9.1)
 
 PLATFORMS
-  arm64-darwin-23
+  aarch64-linux
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-gnueabihf
+  arm-linux-musl
+  arm-linux-musleabihf
+  arm64-darwin
+  x86_64-darwin
   x86_64-linux
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   down
@@ -138,4 +187,4 @@ RUBY VERSION
    ruby 3.3.3p89
 
 BUNDLED WITH
-   2.3.26
+   2.5.14
