@@ -3,7 +3,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
   require 'json'
   require 'base64'
   require 'openssl'
-  require 'jwt'  # You may need to add the 'jwt' gem to your Gemfile
+  require 'jwt'
 
   puts "Fetching meetups..."
   filename = '_data/meetups.json'
