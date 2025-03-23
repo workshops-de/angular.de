@@ -49,7 +49,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
       begin
         puts "Using JWT authentication flow..."
         # Read the private key
-        private_key_rsa = OpenSSL::PKey::RSA.new(private_key)
+        private_key_rsa = OpenSSL::PKey::RSA.new(Base64.decode64(private_key))
 
         # Create JWT payload
         payload = {
