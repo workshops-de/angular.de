@@ -49,7 +49,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
       begin
         puts "Using JWT authentication flow..."
         # Read the private key
-        private_key = OpenSSL::PKey::RSA.new(private_key)
+        private_key_rsa = OpenSSL::PKey::RSA.new(private_key)
 
         # Create JWT payload
         payload = {
@@ -67,7 +67,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
         }
 
         # Sign the JWT
-        signed_jwt = JWT.encode(payload, private_key, 'RS256', headers)
+        signed_jwt = JWT.encode(payload, private_key_rsa, 'RS256', headers)
         puts "JWT generated successfully"
 
         # Exchange JWT for access token
