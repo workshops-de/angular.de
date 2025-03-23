@@ -8,7 +8,7 @@ newsletter: false
 {% assign sum = 0 %}
 {% assign count = 0 %}
 {% for meetup in site.data.meetups %}
-{% assign sum = sum | plus: meetup.members %}
+{% assign sum = sum | plus: meetup.memberships.count %}
 {% assign count = count | plus: 1 %}
 {% endfor %}
 
