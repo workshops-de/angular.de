@@ -12,10 +12,10 @@ og_generator_enabled: true
 
 navigation:
   banner:
-    message: 'Sichere dir 10% Rabatt auf alle Schulungen mit dem Code 🐣🐰<br><span class="badge animation-wiggle bg-white text-dark text-shadow-none">OSTERN25</span>'
-    href: "https://workshops.de/veranstaltungen?utm_source=angular_de&utm_campaign=easter_discount&utm_medium=banner&utm_content=workshops-overview"
-    #message: "Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei."
-    #href: "https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner"
+    #message: 'Sichere dir 10% Rabatt auf alle Schulungen mit dem Code 🐣🐰<br><span class="badge animation-wiggle bg-white text-dark text-shadow-none">OSTERN25</span>'
+    #href: "https://workshops.de/veranstaltungen?utm_source=angular_de&utm_campaign=easter_discount&utm_medium=banner&utm_content=workshops-overview"
+    message: "Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei."
+    href: "https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner"
 
 plugins_dir: ["_plugins/", "shared/plugins/"]
 
