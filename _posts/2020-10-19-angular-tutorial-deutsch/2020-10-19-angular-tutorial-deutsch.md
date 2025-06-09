@@ -1,15 +1,15 @@
 ---
-title: "Angular-Tutorial für Einsteiger"
-description: "Tutorial zu Angular, dem JavaScript-Framework. Wir gehen mit euch Schritt für Schritt die Konzepte des Frameworks anhand eines Beispiels durch."
+title: "Angular 20 Tutorial für Einsteiger"
+description: "Tutorial zu Angular 20, dem modernen JavaScript-Framework. Wir gehen mit euch Schritt für Schritt die neuesten Konzepte des Frameworks anhand eines Beispiels durch."
 author: "Robin Böhm"
-published_at: 2024-02-19 08:00:00.000000Z
+published_at: 2025-07-09 08:00:00.000000Z
 categories: "tutorial angular"
 tutorial_page_order: "1"
 ---
 
 ## Einführung
 
-Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular. Wir behandeln hierbei Angular in der Version 2 und höher. Bewusst wird hierbei aber die Versionsnummer weggelassen, da das Framework nun semantische Versionierung benutzt. Kurz gesagt: Es ist einfach Angular.
+Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular in der neuesten Version 20. Angular 20 bringt viele spannende Neuerungen mit sich, darunter Standalone Components als Standard, verbesserte Template-Syntax mit Template Literals, Zoneless Change Detection und vieles mehr. Das Framework nutzt semantische Versionierung und wird kontinuierlich weiterentwickelt.
 
 Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalte der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-intro).
 
@@ -18,19 +18,20 @@ Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-
 
 ### Was wirst du in diesem Tutorial lernen?
 
-Dieses Tutorial zeigt dir die grundlegenden Bestandteile einer Angular-Anwendung anhand eines praktischen Beispiels, welches du selber implementieren oder mit fertigen Musterlösungen nutzen und verändern kannst.
+Dieses Tutorial zeigt dir die grundlegenden Bestandteile einer Angular 20-Anwendung anhand eines praktischen Beispiels, welches du selber implementieren oder mit fertigen Musterlösungen nutzen und verändern kannst.
 
 Wir werden hierbei folgende Themen behandeln:
 
-- Was ist Angular?
+- Was ist Angular 20?
 - Unterschiede zu React und Vue
-- Installation von Angular
-- Komponenten
+- Installation von Angular 20
+- Standalone Components (Standard in Angular 20)
+- Template Literals und moderne Template-Syntax
 - Expressions und Schleifen
 - Event- & Property-Binding
-- Services
-- Dependency-Injection
-- Anbinden einer Rest-API
+- Services und Dependency-Injection
+- Zoneless Change Detection
+- Anbinden einer Rest-API mit modernen APIs
 
 Wir werden hierbei die Motivation und den theoretischen Background kurz einleiten, uns jedoch primär auf praktische Beispiele konzentrieren. Wir werden eine kleine Anwendung bauen, welche uns eine Liste von Daten von einer REST-API ausliest und diese anzeigt.
 
@@ -44,9 +45,18 @@ class="lazy img-fluid img-rounded" data-src="preview-bookmonkey-app.png" data-sr
 
 <div class="alert alert-success">Dieser Artikel und unser Portal ist open-source. Wenn ihr Vorschläge zur Verbesserung des Artikels habt, fühlt euch jederzeit herzlich willkommen, euch über unser <a href="https://github.com/workshops-de/angular.de" target="_blank">GitHub Repo</a> zu beteiligen. Wir freuen uns über jeden Input! </div>
 
-## Was ist Angular?
+## Was ist Angular 20?
 
-Angular ist ein sehr erfolgreiches, clientseitiges JavaScript-Web-Framework zur Erstellung von Single-Page-Webanwendungen. Es reiht sich neben den anderen großen Frameworks für Single Page Applications ein. Wobei das nicht ganz stimmt, da Angular sich mittlerweile sogar eher zur Plattform weiterentwickelt hat. Es beinhaltet neben der reinen "API" zur Anwendungsentwicklung mittlerweile auch Entwicklungs-Werkzeuge, Generatoren und mitgelieferte Architektur-Konzepte und stellt somit eine Ready-to-Rock Lösung um Enterprise-Anwendungen zu entwickeln dar. Es reiht sich neben den beiden anderen erfolgreichen Frontend Frameworks [React](https://reactjs.de) und [VueJS](https://vuejs.de) ein.
+Angular 20 ist die neueste Version des sehr erfolgreichen, clientseitigen JavaScript-Web-Frameworks zur Erstellung von Single-Page-Webanwendungen. Angular hat sich mittlerweile zu einer vollständigen Plattform weiterentwickelt, die neben der reinen "API" zur Anwendungsentwicklung auch moderne Entwicklungs-Werkzeuge, Generatoren und durchdachte Architektur-Konzepte bietet.
+
+**Wichtige Neuerungen in Angular 20:**
+- **Standalone Components als Standard**: Keine NgModules mehr erforderlich
+- **Template Literals**: Moderne Template-Syntax mit Template Strings
+- **Zoneless Change Detection**: Bessere Performance ohne Zone.js
+- **Verbesserte TypeScript-Integration**: Bessere Type-Checking in Templates
+- **Moderne Testing-Tools**: Experimentelle Unterstützung für Vitest
+
+Angular reiht sich neben den beiden anderen erfolgreichen Frontend Frameworks [React](https://reactjs.de) und [VueJS](https://vuejs.de) ein, bietet aber durch seine opinionated Architektur besonders für Enterprise-Anwendungen klare Vorteile.
 
 ### Unterschiede zu VueJS und React
 
@@ -93,20 +103,14 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
 <div class="workshop-hint">
   <div class="h3">Angular noch schneller lernen?</div>
   <div class="row mb-3">
-    <div class="col-8">
+    <div class="col-12">
       <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
         schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
       </p>
     </div>
-    <div class="col-4">
-      <img
-      class="lazy img-fluid img-rounded"
-      src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
-      />
-    </div>
   </div>
   <div class="row mb-4">
-    <div class="col-xs-12 col-md-12">
+    <div class="col-12">
       <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
          <div class="d-flex align-items-center mb-2">
            <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
@@ -151,43 +155,84 @@ src="/shared/assets/img/placeholder-image.svg" alt="Angular Platform Overview. V
 
 In diesem Tutorial werden wir uns primär um das Framework, die Angular CLI und Komponenten kümmern.
 
-## Vorbereitung & Installation
+## Vorbereitung & Installation für Angular 20
 
-Beginnen wir nun mit der Installation von NodeJS.
-NodeJS ist die sogenannte "JavaScript Runtime" und dafür zuständig, Programme auf unserem Rechner auszuführen, welche in der Sprache JavaScript geschrieben sind, wie z.B. das Command-Line-Interface von Angular, welches wir gleich nutzen werden.
+Beginnen wir nun mit der Installation der erforderlichen Tools für Angular 20.
 
-Ihr könnt NodeJS über folgenden Link herunterladen und installieren: [https://nodejs.org/download/](https://nodejs.org/download/)
+### System-Anforderungen für Angular 20
 
-Mit NodeJS wird ebenfalls das Kommandozeilenwerkzeug `npm` installiert, welches uns ermöglicht, weitere NodeJS Pakete auf unserem Rechner zu installieren.
+**Node.js**: Angular 20 benötigt eine aktuelle Node.js Version:
+- **Node.js**: `^20.11.1` || `^22.11.0` || `^24.0.0`
+- **TypeScript**: `>=5.8.0 <5.9.0`
+- **RxJS**: `^6.5.3` || `^7.4.0`
+
+Ihr könnt die neueste Node.js Version über folgenden Link herunterladen und installieren: [https://nodejs.org/download/](https://nodejs.org/download/)
+
+Mit Node.js wird ebenfalls das Kommandozeilenwerkzeug `npm` installiert, welches uns ermöglicht, weitere Node.js Pakete auf unserem Rechner zu installieren.
 
 <div class="alert alert-info">Hinweis: Falls ihr spezielle Proxy Einstellungen benötigt, könnt ihr diese in der <a href="https://docs.npmjs.com/misc/config#https-proxy" target="_blank">NPM Dokumentation für HTTPS Proxies</a> nachlesen.</div>
 
+### Angular CLI 20 installieren
+
 Nachdem ihr die Installation erfolgreich abgeschlossen habt, könnt ihr nun über euren Terminal folgenden Befehl ausführen:
 
-npm i -g @angular/cli bookmonkey-api
+```bash
+npm i -g @angular/cli@20 bookmonkey-api
+```
 
-Dieser Befehl installiert die `Angular-CLI` global auf eurem Rechner und ermöglicht euch somit nach der Installation mit dem Kommandozeilenwerkzeug `ng` zu arbeiten. Als zweites Paket wird das Paket `bookmonkey-api` installiert, welches uns als simulierter Backend-Server in unserem Beispiel dient.
+Dieser Befehl installiert die `Angular CLI Version 20` global auf eurem Rechner und ermöglicht euch somit nach der Installation mit dem Kommandozeilenwerkzeug `ng` zu arbeiten. Als zweites Paket wird das Paket `bookmonkey-api` installiert, welches uns als simulierter Backend-Server in unserem Beispiel dient.
+
+### Überprüfung der Installation
+
+Überprüft eure Installation mit:
+
+```bash
+ng version
+```
+
+Ihr solltet eine Ausgabe ähnlich dieser sehen:
+
+```
+Angular CLI: 20.0.0
+Node: 22.11.0
+Package Manager: npm 10.9.0
+OS: darwin x64
+
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.2000.0
+@angular-devkit/core         20.0.0
+@angular-devkit/schematics   20.0.0
+@schematics/angular          20.0.0
+```
 
 ## Generieren der Angular App
 
 Die Angular-CLI wird genutzt, um neue Strukturen innerhalb unserer Anwendungen zu generieren, anstatt wie oft in Projekten die Basis-Strukturen zu kopieren und über potenzielle Fehler bei der Umbenennung zu stolpern. Es ist ein mächtiges Werkzeug, welches euch mit `ng --help` einen ausführlichen Hilfetext anbietet.
 
-Um unsere erste Anwendung zu generieren, verwenden wir den `new` command, welcher als Argument den Namen eurer Anwendung entgegennimmt. Hierbei werdet ihr gefragt, ob ihr das `Routing Module` installieren wollt: Nein. Weiterhin, welches Stylesheet Format ihr nutzen wollt: Hierbei wählt ihr bitte SCSS.
+Um unsere erste Anwendung zu generieren, verwenden wir den `new` command, welcher als Argument den Namen eurer Anwendung entgegennimmt. In Angular 20 werden euch neue Optionen angeboten:
 
 ```bash
-$ ng new angular-de-tutorial --strict false
+$ ng new angular-de-tutorial
 
-? Do you want to enforce stricter type checking and stricter bundle budgets in the workspace?
-  This setting helps improve maintainability and catch bugs ahead of time.
-  For more information, see https://angular.dev/strict
-  No
-? Would you like to add Angular routing?
+? Would you like to use zoneless change detection? (y/N)
+  Yes
+? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)?
   No
 ? Which stylesheet format would you like to use?
   SCSS
 ```
 
-> In diesem Tutorial verzichten wir auf den Strict Mode von Angular und TypeScript, damit wir vollen Fokus auf die Angular Features legen können.
+**Wichtige Änderungen in Angular 20:**
+- **Zoneless Change Detection**: Wir empfehlen "Yes" für bessere Performance
+- **SSR und SSG**: Angular 20 bietet erweiterte Server-Side Rendering Optionen
+- **Standalone Components**: Sind jetzt der Standard (keine separate Frage mehr)
+- **Strict Mode**: Ist jetzt standardmäßig aktiviert für bessere Code-Qualität
+
+> In Angular 20 sind Standalone Components der Standard und NgModules optional geworden. Dies vereinfacht die Entwicklung erheblich.
 
 Wenn du die Angular CLI später verwendest um Code zu erzeugen, oder das Projekt auszuführen, stellt die CLI die Frage, ob du deine Nutzungsdaten anonymisiert zur Verfügung stellen möchtest, um die Angular CLI zu verbessern.
 
@@ -334,6 +379,7 @@ Die für uns aktuell relevanten Dateien sind zur Zeit die `info-box.component.ts
   selector: "app-info-box",
   templateUrl: "./info-box.component.html",
   styleUrls: ["./info-box.component.scss"],
+  // standalone: true ist jetzt der Standard in Angular 20
 })
 export class InfoBoxComponent implements OnInit {
   constructor() {}
@@ -342,8 +388,28 @@ export class InfoBoxComponent implements OnInit {
 }
 ```
 
-Hier sehen wir wie erwartet eine Komponente. Unser Selektor hat den automatischen Prefix `app-` bekommen. Somit ist unsere neue Komponente nun unter dem HTML-Tag `<app-info-box></app-info-box>` nutzbar. Der Einstiegspunkt unserer kompletten Anwendung ist ebenfalls eine Komponente mit dem Namen `AppComponent`.
-Um unsere frisch generierte Komponente anzuzeigen, müssen wir diese in dem Template unserer Anwendung aufrufen. Hierzu geht ihr in die Datei `app.component.html`, löscht dort den kompletten derzeitigen Inhalt und fügt eure Komponente via HTML-Tag ein.
+Hier sehen wir wie erwartet eine Standalone Component. Unser Selektor hat den automatischen Prefix `app-` bekommen. Somit ist unsere neue Komponente nun unter dem HTML-Tag `<app-info-box></app-info-box>` nutzbar.
+
+**Wichtig in Angular 20**: Da Standalone Components jetzt der Standard sind, müssen wir die Komponente direkt in der `AppComponent` importieren. Der Einstiegspunkt unserer kompletten Anwendung ist ebenfalls eine Standalone Component mit dem Namen `AppComponent`.
+
+Um unsere frisch generierte Komponente anzuzeigen, müssen wir diese zuerst in der `AppComponent` importieren und dann in dem Template aufrufen. Hierzu geht ihr in die Datei `app.component.ts` und fügt den Import hinzu:
+
+```typescript
+import { Component } from '@angular/core';
+import { InfoBoxComponent } from './info-box/info-box.component';
+
+@Component({
+  selector: 'app-root',
+  imports: [InfoBoxComponent], // Hier importieren wir unsere Komponente
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'angular-de-tutorial';
+}
+```
+
+Anschließend geht ihr in die Datei `app.component.html`, löscht dort den kompletten derzeitigen Inhalt und fügt eure Komponente via HTML-Tag ein.
 
 ```html
 <app-info-box></app-info-box>
@@ -353,13 +419,27 @@ Wenn ihr nun eure Anwendung wieder im Browser öffnet, solltet ihr die Ausgabe `
 Ihr könnt an dieser Stelle gerne mit eurem Template in `info-box.component.html` etwas herumspielen und auch mehrere dieser Info-Boxen erzeugen, indem ihr den HTML-Tag in eurem App-Template einfach kopiert.
 Ein historischer Moment – nehmt euch ein paar Sekunden Zeit, um eure erste eigene Komponente zu bewundern. 😉
 
-## Expressions
+## Expressions und Template Literals
 
 Eine Komponente mit statischen Inhalten ist natürlich nur sehr begrenzt in einer Anwendung nutzbar.
 Um variable Daten anzuzeigen, nutzt Angular sogenannte Expressions in den Templates.
 Diese werden mit doppelten geschweiften Klammern eingeleitet und auch wieder geschlossen.
 
 {{ expression }}
+
+**Neu in Angular 20: Template Literals**
+Angular 20 unterstützt jetzt Template Literals direkt in den Templates, was die String-Verarbeitung erheblich vereinfacht:
+
+```html
+<!-- Traditionelle Expressions -->
+<p>{{text}}</p>
+
+<!-- Neue Template Literals in Angular 20 -->
+<p>{{ `Hallo ${name}, heute ist ${day}!` }}</p>
+
+<!-- Template Literals mit Pipes -->
+<p>{{ `Willkommen ${name}` | uppercase }}</p>
+```
 
 Eine Expression wird von Angular dynamisch auf Basis der aktuellen Properties eurer Klasse ausgewertet.
 Führen wir also ein neues Property `text` ein und füllen dieses mit einem String, können wir diesen in unserem Template ausgeben.
@@ -469,7 +549,27 @@ Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und 
 
 Um `*ngFor` auszuprobieren, erzeugen wir eine neue Komponente mit der Angular CLI.
 Dazu führen wir den command `ng generate component book-list` aus.
-Damit die Komponente im Browser angezeigt wird, fügen wir das Tag `<app-book-list></app-book-list>` in das Template der `app.component.html` ein.
+
+**Wichtig in Angular 20**: Da wir Standalone Components verwenden, müssen wir die neue Komponente in der `AppComponent` importieren:
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { InfoBoxComponent } from './info-box/info-box.component';
+import { BookListComponent } from './book-list/book-list.component';
+
+@Component({
+  selector: 'app-root',
+  imports: [InfoBoxComponent, BookListComponent], // BookListComponent hinzufügen
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'angular-de-tutorial';
+}
+```
+
+Anschließend fügen wir das Tag `<app-book-list></app-book-list>` in das Template der `app.component.html` ein.
 Wenn wir also in der `BookListComponent` (siehe _book-list.component.ts_) eine Variable `books` mit einer Liste von Büchern definieren, erhalten wir hierfür 3 DOM-Elemente.
 
 ```typescript
@@ -503,15 +603,10 @@ src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bü
         schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
       </p>
     </div>
-    <div class="col-4">
-      <img
-      class="lazy img-fluid img-rounded"
-      src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
-      />
-    </div>
+
   </div>
  <div class="row mb-4">
-   <div class="col-xs-12 col-md-12">
+   <div class="col-12">
       <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
          <div class="d-flex align-items-center mb-2">
            <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
@@ -640,23 +735,37 @@ Unter folgender URL könnt ihr euch nun die Daten ansehen, welche vom Server aus
 
 Im nächsten Schritt wollen wir diese Daten aus unserem `BookDataService` heraus abrufen. Dazu benötigen wir den sogenannten `HttpClient` Service. Dieser bietet uns eine sehr einfache API, um verschiedene Operationen auf eine HTTP-Schnittstelle auszuführen.
 
-Der Service ist Teil eines separaten Modules und muss explizit eingebunden werden. Wir erreichen dies, indem wir in der Datei `app.module.ts` das `HttpClientModule` importieren und im Array `imports` angeben.
+**Wichtige Änderung in Angular 20**: Da wir Standalone Components verwenden, gibt es keine `app.module.ts` mehr. Stattdessen konfigurieren wir HTTP-Services in der `main.ts`:
 
 ```typescript
-// ...
-import {HttpClientModule} from '@angular/common/http';
+// main.ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { AppComponent } from './app/app.component';
 
-@NgModule({
- declarations: [
-   AppComponent,
-   InfoBoxComponent,
-   BookListComponent
- ],
- imports: [
-   BrowserModule,
-   HttpClientModule
- ],
-// ...
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideHttpClient(), // HTTP-Client Provider hinzufügen
+    // Weitere Providers...
+  ]
+});
+```
+
+Alternativ können wir den `HttpClient` auch direkt in der Komponente importieren, die ihn benötigt:
+
+```typescript
+// book-list.component.ts
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-book-list',
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.scss']
+})
+export class BookListComponent {
+  // ...
+}
 ```
 
 Ist dies erledigt, kennt unser `Injector` auch einen Service vom Typ `HttpClient`, welchen wir nun über den Konstruktor unseres `BookDataService` einbinden können.
@@ -721,13 +830,210 @@ class="lazy img-fluid img-rounded"
 src="/shared/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern aus dem HTTP-Backend" data-src="http-list-of-books.png" data-srcset="http-list-of-books.png"
 />
 
+## Zoneless Change Detection - Die Zukunft von Angular
+
+Eine der wichtigsten Neuerungen in Angular 20 ist die **Zoneless Change Detection**. Diese revolutionäre Änderung verbessert die Performance erheblich und vereinfacht das Debugging.
+
+### Was ist Zoneless Change Detection?
+
+Traditionell nutzte Angular Zone.js, um automatisch zu erkennen, wann sich Daten ändern und die Benutzeroberfläche aktualisiert werden muss. Mit Zoneless Change Detection wird dieser Mechanismus durch ein moderneres, signal-basiertes System ersetzt.
+
+**Vorteile von Zoneless:**
+- **Bessere Performance**: Bis zu 40-50% Verbesserung bei LCP (Largest Contentful Paint)
+- **Kleinere Bundle-Größe**: Zone.js wird nicht mehr benötigt
+- **Saubere Stack Traces**: Einfacheres Debugging ohne Zone.js-Overhead
+- **Bessere Interoperabilität**: Einfachere Integration mit anderen Frameworks
+
+### Zoneless in der Praxis
+
+Wenn ihr bei der Projekt-Erstellung "Yes" für Zoneless Change Detection gewählt habt, ist euer Projekt bereits konfiguriert. Falls nicht, könnt ihr es nachträglich aktivieren:
+
+```typescript
+// main.ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideZonelessChangeDetection(), // Zoneless aktivieren
+    // Weitere Providers...
+  ]
+});
+```
+
+**Wichtig**: Mit Zoneless Change Detection müsst ihr bei manuellen Änderungen explizit Change Detection triggern:
+
+```typescript
+import { ChangeDetectorRef, inject } from '@angular/core';
+
+export class MyComponent {
+  private cdr = inject(ChangeDetectorRef);
+
+  updateData() {
+    // Daten ändern
+    this.data = newData;
+
+    // Change Detection manuell triggern
+    this.cdr.markForCheck();
+  }
+}
+```
+
+Oder noch besser: Nutzt Angular Signals, die automatisch Change Detection triggern:
+
+```typescript
+import { signal } from '@angular/core';
+
+export class MyComponent {
+  data = signal('initial value');
+
+  updateData() {
+    // Signals triggern automatisch Change Detection
+    this.data.set('new value');
+  }
+}
+```
+
+## Moderne Testing-Tools in Angular 20
+
+Angular 20 bringt experimentelle Unterstützung für moderne Testing-Tools mit sich. Während Karma deprecated wurde, bietet Angular 20 neue Optionen für das Testen.
+
+### Vitest - Der neue Test Runner
+
+**Vitest** ist ein schneller, moderner Test Runner, der in Angular 20 experimentell unterstützt wird:
+
+```bash
+# Vitest zu einem bestehenden Projekt hinzufügen
+ng add @angular/vitest
+
+# Oder bei der Projekt-Erstellung
+ng new my-app --test-runner=vitest
+```
+
+**Vorteile von Vitest:**
+- **Extrem schnell**: Bis zu 10x schneller als Karma
+- **ESM-nativ**: Moderne JavaScript-Module-Unterstützung
+- **Hot Module Reload**: Tests werden bei Änderungen automatisch neu ausgeführt
+- **TypeScript-Support**: Keine zusätzliche Konfiguration nötig
+
+### Beispiel-Test mit Vitest
+
+```typescript
+// book-list.component.spec.ts
+import { describe, it, expect } from 'vitest';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BookListComponent } from './book-list.component';
+
+describe('BookListComponent', () => {
+  let component: BookListComponent;
+  let fixture: ComponentFixture<BookListComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [BookListComponent] // Standalone Component importieren
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(BookListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should display books', () => {
+    component.books = [
+      { title: 'Test Book', subtitle: 'Test Subtitle' }
+    ];
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement;
+    expect(compiled.textContent).toContain('Test Book');
+  });
+});
+```
+
+### Testing mit Signals
+
+Signals vereinfachen das Testen erheblich:
+
+```typescript
+import { signal } from '@angular/core';
+import { describe, it, expect } from 'vitest';
+
+describe('Signal Testing', () => {
+  it('should update signal value', () => {
+    const count = signal(0);
+
+    expect(count()).toBe(0);
+
+    count.set(5);
+    expect(count()).toBe(5);
+
+    count.update(val => val + 1);
+    expect(count()).toBe(6);
+  });
+});
+```
+
 ## Fazit
 
-Angular ist in vielerlei Hinsicht sehr opinionated (meinungsstark). Dies bedeutet, dass viele Entscheidungen über Architektur und Rendering dem/der Entwickler:in bereits abgenommen werden. Dies hat natürlich den Vorteil, dass sich das Projektteam zu 100% auf die Umsetzung von Features konzentrieren kann und nicht die grundlegende Architektur eigenständig aufbauen muss.
+Angular 20 markiert einen wichtigen Meilenstein in der Evolution des Frameworks. Mit Standalone Components als Standard, Template Literals, Zoneless Change Detection und vielen weiteren Verbesserungen wird die Entwicklung moderner Webanwendungen noch effizienter und angenehmer.
 
-Durch die sehr einheitliche Struktur von Angular Anwendungen lassen sich in Angular ausgebildete Entwickler:innen sehr schnell in das Projekt integrieren, da Angular Anwendungen stets einer gewissen Struktur folgen. Dies macht die Skalierung von Entwickler:innen-Zeit auf dem Projekt deutlich einfacher als mit Individuallösungen der Architektur in anderen Frameworks.
+**Die wichtigsten Vorteile von Angular 20:**
 
-Generell ist es für langlebige Enterprise Projekte sicherlich eine gute Option. Andere Frameworks wie React und VueJS sollten aber ebenfalls in Betracht gezogen werden, um objektiv die beste Entscheidung für die aktuellen Herausforderungen zu treffen.
+- **Vereinfachte Architektur**: Standalone Components eliminieren die Komplexität von NgModules
+- **Bessere Performance**: Zoneless Change Detection reduziert Overhead und verbessert die Laufzeit-Performance
+- **Moderne Template-Syntax**: Template Literals machen String-Verarbeitung intuitiver
+- **Verbesserte Developer Experience**: Bessere TypeScript-Integration und moderne Testing-Tools
+- **Enterprise-Ready**: Bewährte Architektur-Konzepte für skalierbare Anwendungen
+
+Angular bleibt in vielerlei Hinsicht sehr opinionated (meinungsstark), was besonders für Enterprise-Projekte von Vorteil ist. Die einheitliche Struktur und die klaren Architektur-Vorgaben ermöglichen es Teams, sich voll auf die Feature-Entwicklung zu konzentrieren.
+
+### Ausblick: Was kommt nach Angular 20?
+
+Angular entwickelt sich kontinuierlich weiter. Hier sind einige spannende Features, die in zukünftigen Versionen erwartet werden:
+
+**Signal Forms** (geplant für Angular 21+):
+```typescript
+// Zukünftige Signal-basierte Forms API
+const userForm = signalForm({
+  name: signalControl(''),
+  email: signalControl('', [emailValidator]),
+  age: signalControl(0, [minValidator(18)])
+});
+
+// Reactive Updates
+effect(() => {
+  console.log('Form value:', userForm.value());
+  console.log('Form valid:', userForm.valid());
+});
+```
+
+**Selectorless Components** (in Entwicklung):
+```typescript
+// Zukünftige Syntax ohne Selektoren
+import { MyComponent } from './my-component';
+
+@Component({
+  template: `
+    <!-- Direkte Nutzung ohne Selektor -->
+    <MyComponent [data]="myData" />
+  `
+})
+export class AppComponent {
+  // ...
+}
+```
+
+**Weitere geplante Features:**
+- **Verbesserte HMR (Hot Module Reload)**: Noch schnellere Entwicklungszyklen
+- **Erweiterte Accessibility Primitives**: Bessere Unterstützung für barrierefreie Anwendungen
+- **Nitro-Integration**: Verbesserte SSR-Optionen und Deployment-Flexibilität
+
+Generell ist Angular 20 für langlebige Enterprise Projekte eine ausgezeichnete Wahl. Andere Frameworks wie React und VueJS sollten aber ebenfalls in Betracht gezogen werden, um objektiv die beste Entscheidung für die aktuellen Herausforderungen zu treffen.
 
 Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Discord Chat](/discord) mit über 2000 wunderbaren anderen Menschen! Zusammen lernt es sich besser! :)
 
@@ -735,20 +1041,14 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
 <div class="workshop-hint">
   <div class="h3">Hat dir das Tutorial geholfen?</div>
   <div class="row mb-3">
-    <div class="col-8">
+    <div class="col-12">
       <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
         schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
       </p>
     </div>
-    <div class="col-4">
-      <img
-      class="lazy img-fluid img-rounded"
-      src="/shared/assets/img/placeholder-image.svg" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung" data-src="workshops-attendees.png" data-srcset="workshops-attendees.png"
-      />
-    </div>
   </div>
   <div class="row mb-4">
-    <div class="col-xs-12 col-md-12">
+    <div class="col-12">
       <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
       <div class="d-flex align-items-center mb-2">
         <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
