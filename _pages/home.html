@@ -13,13 +13,7 @@ permalink: /
       <div class="col-12 col-sm-9">
         <div class="pe-lg-4 me-lg-4 text-center text-sm-start">
           <p class="lead text-muted">
-            {%   assign today = site.time | date: '%s'      %}
-            {%   assign start = '01-01-2013 00:00:00' | date: '%s'  %}
-            {%   assign secondsSince = today | minus: start     %}
-            {%   assign hoursSince = secondsSince | divided_by: 60 | divided_by: 60     %}
-            {%   assign daysSince = hoursSince | divided_by: 24  %}
-            {%   assign yearsSince = daysSince | divided_by: 365  %}
-            Seit {{yearsSince}} Jahren alle Infos zu Angular auf Deutsch!
+            Alles Rund um das Framework auf Deutsch!
           </p>
           <h1 class="header-homepage-title">Alles rund um Angular</h1>
           <div class="mt-2 mt-md-4">
@@ -40,24 +34,15 @@ permalink: /
 
 <main class="container">
   <section class="my-5">
-    <h2>Deine Angular Community</h2>
-    <p>
-      Angular.DE ist ein Community-Portal von <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=website&utm_content=home_page" target="_blank">workshops.de</a>. Seit 2013 bieten wir euch hier Tutorials, Artikel und <a href="schulungen/"> Schulungen</a> rund um das Angular Framework.
-      Gestartet durch unsere Begeisterung für die modernen Möglichkeiten der Webentwicklung hat sich mittlerweile eine ganze Community dazu entwickelt.
-      Mit mittlerweile <a href="meetups/">18 Meetups</a>, die insgesamt über 10.000 Angular-Entwickler:innen als Platform für regelmäßigen austausch dienen, sind wir damit in Europa die Region mit den meisten Angular Entwicklern.
-      Regelmäßig werden neue Bücher und Artikel zu dem Thema auf Deutsch veröffentlicht.
-      Auch auf Konferenzen ist das Thema nicht mehr wegzudenken.
-      Seit 2019 gibt es mit der <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=website&utm_content=home_page">NG-DE Konferenz</a> auch die erste Angular-Konferenz in Deutschland mit 400+ Teilnehmern.
-    </p>
-
-    <p>
-      Wir sind eine offene Community die jeden Willkommen heißt der sich einbringen möchte oder eine Frage hat.
-      Der meiste Austausch passiert dabei über unseren <a href="https://angular.de/discord" rel="noopener nofollow">Angular Community Discord</a> mit fast 2000 Mitgliedern.
-      Du hast spannende Themen über welche du dich austauschen willst oder sogar ein Artikel schreiben möchtest?
-      Dann bist du hier genau richtig. Lasst uns voneinander lernen und die Herausforderungen in unseren Projekten gemeinsam meistern.
-    </p>
+    <h2>Die neuesten Artikel</h2>
+    <div class="row row-cols-1 row-cols-md-3 gy-4 gx-5">
+      {% for post in site.posts limit:6 %}
+      <div class="col">
+        {% include shared/_post_card.html %}
+      </div>
+      {% endfor %}
+    </div>
   </section>
-
   <section class="my-5">
     <h2>Community</h2>
     <div class="row row-cols-1 row-cols-md-3 gy-4 gx-5">
@@ -121,13 +106,21 @@ permalink: /
     </div>
   </section>
   <section class="my-5">
-    <h2>Die neuesten Artikel</h2>
-    <div class="row row-cols-1 row-cols-md-3 gy-4 gx-5">
-      {% for post in site.posts limit:6 %}
-      <div class="col">
-        {% include shared/_post_card.html %}
-      </div>
-      {% endfor %}
-    </div>
+    <h2>Deine Angular Community</h2>
+    <p>
+      Angular.DE ist ein Community-Portal von <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=website&utm_content=home_page" target="_blank">workshops.de</a>. Seit 2013 bieten wir euch hier Tutorials, Artikel und <a href="schulungen/"> Schulungen</a> rund um das Angular Framework.
+      Gestartet durch unsere Begeisterung für die modernen Möglichkeiten der Webentwicklung hat sich mittlerweile eine ganze Community dazu entwickelt.
+      Mit mittlerweile <a href="meetups/">18 Meetups</a>, die insgesamt über 10.000 Angular-Entwickler:innen als Platform für regelmäßigen austausch dienen, sind wir damit in Europa die Region mit den meisten Angular Entwicklern.
+      Regelmäßig werden neue Bücher und Artikel zu dem Thema auf Deutsch veröffentlicht.
+      Auch auf Konferenzen ist das Thema nicht mehr wegzudenken.
+      Seit 2019 gibt es mit der <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=website&utm_content=home_page">NG-DE Konferenz</a> auch die erste Angular-Konferenz in Deutschland mit 400+ Teilnehmern.
+    </p>
+
+    <p>
+      Wir sind eine offene Community die jeden Willkommen heißt der sich einbringen möchte oder eine Frage hat.
+      Der meiste Austausch passiert dabei über unseren <a href="https://angular.de/discord" rel="noopener nofollow">Angular Community Discord</a> mit fast 2000 Mitgliedern.
+      Du hast spannende Themen über welche du dich austauschen willst oder sogar ein Artikel schreiben möchtest?
+      Dann bist du hier genau richtig. Lasst uns voneinander lernen und die Herausforderungen in unseren Projekten gemeinsam meistern.
+    </p>
   </section>
 </main>
