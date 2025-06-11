@@ -117,10 +117,6 @@ src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. M
            Öffentliche Termine verfügbar
          </div>
          <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-clock-o icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           3 ganze Tage oder 6 halbe Tage
-         </div>
-         <div class="d-flex align-items-center mb-2">
            <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
            Vor Ort, als auch Remote
          </div>
@@ -613,10 +609,6 @@ src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bü
            Öffentliche Termine verfügbar
          </div>
          <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-clock-o icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           3 ganze Tage oder 6 halbe Tage
-         </div>
-         <div class="d-flex align-items-center mb-2">
            <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
            Vor Ort, als auch Remote
          </div>
@@ -1053,10 +1045,6 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
       <div class="d-flex align-items-center mb-2">
         <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
         Öffentliche Termine verfügbar
-      </div>
-      <div class="d-flex align-items-center mb-2">
-        <i class="fa fa-clock-o icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-        3 ganze Tage oder 6 halbe Tage
       </div>
       <div class="d-flex align-items-center mb-2">
         <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
