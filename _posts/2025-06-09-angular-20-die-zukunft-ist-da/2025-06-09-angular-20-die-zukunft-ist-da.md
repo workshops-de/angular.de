@@ -30,17 +30,9 @@ Diese Version ist mehr als nur ein Update - sie ist eine Neuausrichtung hin zu e
 
 Das Ganze könnt ihr euch zusammen mit unserem Team anschauen! Hier ist das Video zum Angular 20 Release:
 
-<iframe class="" width="100%" height="315" src="https://www.youtube.com/embed/PLACEHOLDER?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="" width="100%" height="315" src="https://www.youtube-nocookie.com/embed/FcDamOe1qxA?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Standalone Components sind jetzt Standard
-
-<p class="left">
-<img
-style="max-width: 80%"
-src="/shared/assets/img/placeholder-image.svg" alt="Illustration der neuen Standalone Components Architektur"
-class="lazy img-fluid img-rounded" data-src="standalone.jpg" data-srcset="standalone.jpg"
-/>
-</p>
 
 Die größte Veränderung in Angular 20 ist der Wechsel zu Standalone Components als Standard. NgModules sind nicht mehr erforderlich und werden nur noch für Legacy-Unterstützung bereitgestellt. Diese Änderung vereinfacht die Angular-Architektur erheblich und macht den Einstieg für neue Entwickler deutlich einfacher.
 
@@ -77,14 +69,6 @@ Das Angular-Team hat einen automatisierten Migrationspfad bereitgestellt. Beim U
 - **Intuitivere Lernkurve**: Weniger Konzepte für Einsteiger
 
 ## Zoneless Change Detection in Developer Preview
-
-<p class="left">
-<img
-style="max-width: 80%"
-src="/shared/assets/img/placeholder-image.svg" alt="Illustration der Zoneless Change Detection Architektur"
-class="lazy img-fluid img-rounded" data-src="zoneless.jpg" data-srcset="zoneless.jpg"
-/>
-</p>
 
 Nach dem experimentellen Status in Angular 18 und 19 hat Zoneless Change Detection nun Developer Preview erreicht. Diese Technologie befreit Angular von der Abhängigkeit zu Zone.js und bringt signifikante Performance-Verbesserungen.
 
@@ -143,14 +127,6 @@ export class MyComponent {
 
 ## Template Literals revolutionieren Templates
 
-<p class="left">
-<img
-style="max-width: 80%"
-src="/shared/assets/img/placeholder-image.svg" alt="Illustration der neuen Template Literals Syntax"
-class="lazy img-fluid img-rounded" data-src="templates.jpg" data-srcset="templates.jpg"
-/>
-</p>
-
 Angular 20 führt native Unterstützung für Template Literals in Angular-Templates ein. Diese lang ersehnte Funktion macht String-Verarbeitung in Templates deutlich intuitiver und näher an Standard-JavaScript.
 
 ### Neue Möglichkeiten mit Template Literals
@@ -189,14 +165,6 @@ Angular 20 unterstützt jetzt auch moderne JavaScript-Operatoren direkt in Templ
 ```
 
 ## Modernisierte Test-Infrastruktur mit Vitest
-
-<p class="left">
-<img
-style="max-width: 80%"
-src="/shared/assets/img/placeholder-image.svg" alt="Illustration der Vitest Integration"
-class="lazy img-fluid img-rounded" data-src="vitest.jpg" data-srcset="vitest.jpg"
-/>
-</p>
 
 Mit der Deprecation von Karma führt Angular 20 experimentelle Unterstützung für Vitest ein - einen modernen, schnellen Test-Runner, der die Zukunft des Testens in Angular darstellt.
 
@@ -287,14 +255,6 @@ Der Angular Compiler bietet jetzt erweiterte Diagnostics:
 
 ## Stabilisierte Signal APIs
 
-<p class="left">
-<img
-style="max-width: 80%"
-src="/shared/assets/img/placeholder-image.svg" alt="Illustration der stabilisierten Signal APIs"
-class="lazy img-fluid img-rounded" data-src="signals.jpg" data-srcset="signals.jpg"
-/>
-</p>
-
 Mit Angular 20 sind alle fundamentalen Signal APIs offiziell stabil und production-ready:
 
 ### Alle Signal Primitives sind stabil
@@ -345,14 +305,6 @@ export class MyComponent {
 ```
 
 ## Incremental Hydration wird stabil
-
-<p class="left">
-<img
-style="max-width: 80%"
-src="/shared/assets/img/placeholder-image.svg" alt="Illustration der Incremental Hydration"
-class="lazy img-fluid img-rounded" data-src="hydration.jpg" data-srcset="hydration.jpg"
-/>
-</p>
 
 Nach dem Developer Preview in Angular 19 ist Incremental Hydration nun stabil und bereit für den produktiven Einsatz.
 
@@ -471,27 +423,12 @@ export class AppComponent {}
 
 ## Community und Ökosystem
 
-<p class="left">
-<img
-style="max-width: 80%"
-src="/shared/assets/img/placeholder-image.svg" alt="Illustration der Angular Community"
-class="lazy img-fluid img-rounded" data-src="community.jpg" data-srcset="community.jpg"
-/>
-</p>
-
 Die Angular Community ist lebendiger denn je! Angular 20 wird auf wichtigen Konferenzen weltweit präsentiert:
 
 - **[NG-DE Conference](https://ng-de.org/)** - November 5-7, 2025 in Berlin
 - **[ng-conf](https://ng-conf.org/)** - Die größte Angular-Konferenz
 - **[Angular Belgrade](https://angularbelgrade.org/)** - Europäische Angular-Community
 - **[NGPoland](https://ng-poland.pl/)** - Polens Angular-Gathering
-
-### Wiz-Integration schreitet voran
-
-Die Zusammenführung mit Googles internem Wiz-Framework zeigt weitere Fortschritte:
-- **YouTube** nutzt bereits Angular Signals im Production
-- **Google Fonts** läuft komplett zoneless
-- **Google Search** Features fließen in Angular ein
 
 ## Fazit: Angular 20 - Ein Meilenstein der Moderne
 
