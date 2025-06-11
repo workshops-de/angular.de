@@ -4,13 +4,13 @@ description: "Die NG-DE Conference 2025 findet vom 5.-7. November in Berlin stat
 author: "Robin Böhm"
 published_at: 2025-06-11 10:00:00.000000Z
 header_source:
-header_image: header.png
+header_image: header.jpg
 categories: "conference community angular ng-de"
 ---
 
 **Die NG-DE Conference kehrt zurück nach Berlin!** Vom **5.-7. November 2025** verwandelt sich der GLS Campus Berlin wieder in das Epizentrum der deutschsprachigen Angular-Community. Als [Workshops.DE](https://workshops.de) freuen wir uns riesig, als Veranstalter die nächste Ausgabe der community-getriebenen Angular-Konferenz präsentieren zu können.
 
-Die NG-DE ist **die** Angular-Konferenz in Deutschland - ein Ort, an dem sich Entwickler:innen und Angular-Enthusiasten aus ganz Europa treffen, um die neuesten Entwicklungen zu diskutieren und die Zukunft von Angular mitzugestalten.
+Die [NG-DE](https://ng-de.org/) ist **die** Angular-Konferenz in Deutschland - ein Ort, an dem sich Entwickler:innen und Angular-Enthusiasten aus ganz Europa treffen, um die neuesten Entwicklungen zu diskutieren und die Zukunft von Angular mitzugestalten.
 
 > "Die NG-DE ist das Herz der deutschsprachigen Angular-Community. Hier entstehen die Ideen, die morgen die Angular-Welt bewegen werden." - Robin Böhm, CEO Workshops.DE
 
@@ -157,6 +157,6 @@ Das traditionelle Evening Event am ersten Conference-Tag ist legendär! Bei Drin
 
 ## Fazit
 
-Die NG-DE 2025 ist **das** Angular-Event des Jahres - drei Tage voller Expertise, Community und Innovation. Als [Workshops.DE](https://workshops.de) freuen wir uns darauf, euch in Berlin zu empfangen!
+Die NG-DE 2025 ist **das** Angular-Event des Jahres - drei Tage voller Expertise, Community und Innovation.
 
 **Seid ihr dabei?** Die Angular-Community wartet auf euch!
