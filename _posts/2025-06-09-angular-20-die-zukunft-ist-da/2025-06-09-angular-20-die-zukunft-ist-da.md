@@ -2,8 +2,7 @@
 title: "Angular 20 - Die Zukunft ist da"
 description: "Angular 20 bringt Standalone Components als Standard, Template Literals, Zoneless Change Detection und viele weitere revolutionäre Features für moderne Webentwicklung."
 author: "Robin Böhm"
-co_author: "David Müllerchen"
-published_at: 2025-06-09 09:00:00.000000Z
+published_at: 2025-06-10 09:00:00.000000Z
 header_source:
 header_image: header.jpg
 categories: "angular release update"
