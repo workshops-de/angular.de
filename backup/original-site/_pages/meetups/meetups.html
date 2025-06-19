@@ -1,0 +1,57 @@
+---
+title: Deine Meetups in Deutschland, Österreich & Schweiz
+description: Auf dieser Seite findet ihr eine Liste von allen Meetups in der DACH Region! Finde dein Meetup in deiner Nähe!
+layout: base
+newsletter: false
+---
+
+{% assign sum = 0 %}
+{% assign count = 0 %}
+{% for meetup in site.data.meetups %}
+{% assign sum = sum | plus: meetup.memberships.count %}
+{% assign count = count | plus: 1 %}
+{% endfor %}
+
+
+
+<header class="header">
+  <div class="header__content">
+    <img class="header__logo" src="{{ "/assets/img/logo.svg" | prepend: site.baseurl }}" alt="ng-de Conference Logo" title="ng-de Conference Logo">
+    <h1 class="header__title">Angular Meetups in DACH</h1>
+    <h2 class="header__description">Bereits {{ sum }} Mitglieder! Sei dabei!</h2>
+  </div>
+</header>
+
+<div class="container">
+  <div class="lead mb-5">
+    <h3 class="lead__headline">Werde Teil der Angular Community aus Deutschland, Österreich und der Schweiz</h3>
+    <p class="lead__content">
+      Neben den technischen Features wird innerhalb der Angular Community ein starker Fokus auf die Gemeinschaft und den Austausch gelegt.
+      Mit {{count}} Meetups sind wir im deutsprachingen Bereich überall in Deutschland vertreten!
+      Gemeinsam lernen und wachsen, jeder ist willkommen!
+      Wir haben vergessen dein Meetup hier aufzulisten? Kein Problem! Schick uns einfach eine Mail oder melde dich via Twitter bei uns!
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    {% for meetup in site.data.meetups %}
+    <div class="card h-100 col-lg-4 col-md-6 col-12">
+      <a class="c-img-post" style="height: 150px; background-image: url('{{ meetup.logo.source }}');" href="{{ meetup.link }}">
+        <span class="c-post-categories">
+          <span class="text-uppercase">{{meetup.city}}</span>
+        </span>
+      </a>
+      <a class="card-body" href="{{ meetup.link }}" target="_blank">
+        <div class="text-muted">{{ meetup.memberships.count }} {{ meetup.customMemberLabel }}</div>
+        <span class="fw-bold">
+          {{ meetup.name }}
+        </span>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<hr>
+{% include shared/_discord.html %}

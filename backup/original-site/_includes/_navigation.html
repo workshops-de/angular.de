@@ -1,0 +1,46 @@
+<div class="navbar-wrapper">
+  {% include shared/_navigation_banner.html %}
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item {% if page.url contains '/artikel' %}active{% endif %}">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/artikel/angular-tutorial-deutsch/' %}active{% endif %}">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/schulungen' %}active{% endif %}">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item {% if page.url contains '/ng-de-konferenz' %}active{% endif %}">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/team' %}active{% endif %}">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item {% if page.url contains '/jobs' %}active{% endif %}">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>

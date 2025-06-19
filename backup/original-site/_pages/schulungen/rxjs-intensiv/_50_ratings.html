@@ -1,0 +1,56 @@
+<section class="copy-section py-6 ratings" itemscope="" itemtype="http://schema.org/Product" ad-fader="">
+  <script type="application/ld+json">
+    {% include _course_reviews.json %}
+  </script>
+
+  <meta itemprop="name" content="{{site.data.course.name}}" />
+  <div class="container">
+    {% include shared/_section_header.html cols="11"
+         feature="Bewertungen"
+         benefit="Die Meinung unserer Teilnehmer:innen zählt."
+    %}
+
+    <div class="row mb-5">
+      <div class="col-10">
+        <p itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+          Nach jeder Schulung bitten wir unsere Teilnehmer:innen um Feedback. Aus insgesamt <span itemprop="ratingCount" content="{{site.data.course.aggregateRating.reviewCount}}">{{site.data.course.aggregateRating.reviewCount}}</span>
+          abgegeben Bewertungen erreichen wir aktuell eine durchschnittliche <strong>Bewertung von
+            <span itemprop="ratingValue" content="{{site.data.course.aggregateRating.ratingValue | round: 1}}">
+              {{site.data.course.aggregateRating.ratingValue | round: 1 | replace: '.', ','}} Sternen.
+            </span></strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="row gy-5 gx-4">
+      <div class="col-12 col-md-6">
+        {% include_relative _includes/_rating.html
+            stars=4
+            quote="Unfassbar, was im Frontendbereich mittlerweile alles möglich ist!"
+            date="Berlin, 12.06.2019"
+        %}
+      </div>
+      <div class="col-12 col-md-6">
+        {% include_relative _includes/_rating.html
+            stars=5
+            quote="Sehr empfehlenswert!!!"
+            date="München, 19.06.2019"
+        %}
+      </div>
+      <div class="col-12 col-md-6">
+        {% include_relative _includes/_rating.html
+            stars=5
+            quote="Sehr guter Workshop und geballte Fachkompetenz bei allen Trainern."
+            date="Berlin, 07.09.2019"
+        %}
+      </div>
+      <div class="col-12 col-md-6">
+        {% include_relative _includes/_rating.html
+            stars=5
+            quote="Habe viel gelernt, vor allem dadurch, dass man viel selbst ausprobieren konnte."
+            date="Koblenz, 09.09.2019"
+        %}
+      </div>
+    </div>
+  </div>
+</section>
