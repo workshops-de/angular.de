@@ -30,7 +30,7 @@ defaults:
     values:
       layout: "post"
       header_image: "header.jpg"
-      toc: true
+      toc: false
       language: "de"
   - scope:
       path: "_books" # an empty string here means all files in the project
