@@ -70,9 +70,7 @@ class="lazy img-fluid img-rounded" data-src="main-stage.jpg" data-srcset="main-s
 />
 </p>
 
-Am 6. und 7. November wird es richtig spannend. Mark Thompson vom offiziellen Angular Team bei Google wird die Konferenz mit seiner Keynote eröffnen. Das ist immer ein besonderer Moment – wenn jemand aus dem Kern-Team von Angular über die Zukunft des Frameworks spricht, hörst du Dinge, die du nirgendwo anders erfährst.
-
-Das Programm ist prall gefüllt mit Insights, die du sofort in deiner täglichen Arbeit verwenden kannst. Robin Götz zeigt, wie spartan shadcn/ui und Radix zu Angular bringt. Marko Stanimirović erklärt die drei Dimensionen von NgRx Signals. Manfred Steyer spricht über die Resource API und httpResource – das missing Link in Angulars Signal Story.
+Am 6. und 7. November wird es richtig spannend. Mark Thompson vom offiziellen Angular Team bei Google wird die Konferenz mit seiner Keynote eröffnen. Das ist immer ein besonderer Moment – wenn jemand aus dem Kern-Team von Angular über die Zukunft des Frameworks spricht. Ich find es richtig klasse das wir dieses Jahr sogar 3 Speaker:innen aus dem Angular Core Team für unsere Konferenz begeistern konnten.
 
 ## Die Location: Hotel Oderberger
 
