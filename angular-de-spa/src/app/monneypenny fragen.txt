@@ -1,0 +1,53 @@
+Workshop
+FRAGEN UND ANTWORTEN
+VORGESTELLTE TOOLS UND METHODEN
+Vorgestellte Tools und Methoden
+Workshop bietet freie Session mit Einblicken in verschiedene Werkzeugkonzepte und Tools
+Sally und Fireflies wurden als potenzielle Tools untersucht, aber keine vollständig überzeugte Lösung gefunden.
+Lukas erwähnt frühe Computertechnologie: Palm Computer mit Schrifterkennung
+KI-Geschäftsautomatisierung wird als Kernthema vorgestellt, mit Fokus auf Einblicke und Reiseerfahrungen
+Chatbot-Einrichtung zur Nachrichtensammlung und Social-Media-Promptgenerierung mit Herausforderungen der Informationskuration.
+Generierungstool erlaubt finale Versionen zu erstellen und einzeln zu verändern
+Das Tool wird als Ideengenerator genutzt, der erste Versionen von Inhalten erstellen kann.
+Ein Tool zur schnellen Präsentationserstellung, das nachträgliche Textbearbeitung und Anpassungen ermöglicht
+KI-Tool wird als Ideengeber verwendet, mit Möglichkeit zur Qualitätsanpassung
+Large Language Models sind KI-Modelle mit verschiedenen Varianten, wie OpenAI, die als Basis dienen können
+Robin zeigt Beispiel, wie KI-Agenten Informationen verarbeiten und weiterleiten können
+Diskussion über potenzielle Notwendigkeit von Chat-Assistenten und Agenten
+Möglichkeit des Trainings eines eigenen KI-Modells wird angesprochen
+Ein interessantes Tool wurde von Robin vorgestellt, das eine Verbindung zu google.com hat.
+next Orbit ai bietet ein Dashboard zur Sichtbarkeit von Marken in KI-Assistenten
+Tools zur Optimierung von Landing Pages für KI-Plattformen werden vorgestellt
+Robin erwähnte Tuning als möglichen Ansatz oder Methode
+Ein letztes Tool wurde als sehr spannend angekündigt, jedoch ohne weitere Details.
+Ein Tool wurde erwähnt, das bereits seit langer Zeit existiert und möglicherweise für Ranking verwendet wird.
+Rachil hat Cloud AI-Tool untersucht und dessen Synchronisationsfunktionen als positiv hervorgehoben.
+Robin bewertet Cloud als deutlich besser in Kreativität und Aufgabenadaption im Vergleich zu ChatGPT.
+Workshop präsentierte ein breites Spektrum von Möglichkeiten und Ansätzen in der KI-Technologie.
+Die Präsentation könnte für manche Teilnehmer überwältigend oder komplex sein.
+Aktuell existiert ein Chat-Konto mit 3 Millionen Chats und wenige custom GPTs wurden entwickelt.
+Nächster wichtiger Schritt ist der Aufbau von custom GPTs für verschiedene Unternehmensbereiche.
+Robin berichtet, dass Mitarbeiter durch KI-Tools bessere Ausdrucksmöglichkeiten entwickeln.
+KI-Integration soll Partizipation und Verständnis ermöglichen, ohne Angst vor der Technologie.
+Fragen und Antworten
+Robin bittet darum, dass pro Team eine Person einen kurzen Überblick und Erwartungen an den Workshop gibt
+Offene Frage nach interessanten Chat-Assistenten wurde gestellt
+Jessica fragt, ob man Brand Guidelines in dem Tool hochladen kann.
+M bestätigt, dass man das tun könnte.
+Diskussion über Tool-Fähigkeiten: Ideengenerierung, Inhaltsproduktion und technische Einschränkungen.
+Jessica fragt nach Tools zur Tracking von Markenwahrnehmung in KI-Assistenten
+Es gab eine Frage zur Kombination von etwas mit alten Suchen.
+Der Sprecher fragte nach Fragen oder Anmerkungen vom Publikum.
+Bedenken von Freelancern bezüglich Datenschutz und Toolnutzung bei sensiblen Informationen.
+Falko fragt Robin nach Netzwerkeffekten in Cloud-Diensten, Robin bestätigt kurz.
+Falko sucht Entscheidungskriterien für AI-Tools; Robin betont Marktvolatilität.
+Rachil lobt die Synchronisationsmöglichkeiten der KI-Tools.
+Robin stellt Frage zur Bedeutung der Unterscheidung verschiedener Kategorien
+Falko fragt nach experimentellen Tools und möglichen Funktionen.
+Nachfrage zu Exportfunktionen und Mitnehmen von Memories.
+Robin argumentiert, dass KI möglicherweise langfristig Energie einsparen könnte, z.B. durch autonomes Fahren.
+Diskussion über potenzielle Energieeffizienz durch Quantencomputer.
+Julia fragt nach Schwerpunktthemen für zukünftige Workshops mit Relevanz für das Unternehmen.
+Robin schlägt vor, gemeinsam zu entscheiden, wer die Themenorganisation übernimmt.
+Falko fragt nach Robins Einschätzung der KI-Entwicklung in den nächsten Jahren.
+Isabell fragt nach KI's Energieverbrauch und Nachhaltigkeit.
