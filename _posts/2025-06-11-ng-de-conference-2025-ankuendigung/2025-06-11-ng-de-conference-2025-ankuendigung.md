@@ -74,8 +74,6 @@ Am 6. und 7. November wird es richtig spannend. Mark Thompson vom offiziellen An
 
 Das Programm ist prall gefüllt mit Insights, die du sofort in deiner täglichen Arbeit verwenden kannst. Robin Götz zeigt, wie spartan shadcn/ui und Radix zu Angular bringt. Marko Stanimirović erklärt die drei Dimensionen von NgRx Signals. Manfred Steyer spricht über die Resource API und httpResource – das missing Link in Angulars Signal Story.
 
-Besonders interessant finde ich den Talk von Younes Jaaidi und Rainer Hahnekamp über Component Testing mit Playwright. Das ist genau die Art von praktischem Wissen, die uns alle weiterbringt.
-
 ## Die Location: Hotel Oderberger
 
 <p class="left">
@@ -122,7 +120,7 @@ Berlin ist perfekt dafür geeignet. Die Stadt hat ein ausgezeichnetes ÖPNV-Netz
 
 ## Warum du dabei sein solltest
 
-Ehrlich gesagt, die NG-DE ist für mich das Highlight des Jahres. Es ist diese einzigartige Kombination aus technischer Exzellenz und menschlicher Wärme, die du nur selten findest. Du lernst nicht nur die neuesten Angular-Features kennen, sondern knüpfst Kontakte, die oft ein Leben lang halten.
+Die NG-DE ist für mich das Highlight des Jahres. Es ist diese einzigartige Kombination aus technischer Exzellenz und menschlicher Wärme, die du nur selten findest. Du lernst nicht nur die neuesten Angular-Features kennen, sondern knüpfst Kontakte, die oft ein Leben lang halten.
 
 Wenn du mit Angular arbeitest oder planst, es zu tun, gibt es keinen besseren Ort, um auf dem neuesten Stand zu bleiben. Hier erfährst du aus erster Hand, wohin sich das Framework entwickelt, welche Best Practices wirklich funktionieren und wie andere Entwickler ähnliche Herausforderungen lösen wie du.
 
