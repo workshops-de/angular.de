@@ -59,6 +59,46 @@
         "type": 301
       },
       {
+        "source": "/schulungen/angular-enterprise-applications/",
+        "destination": "https://angular.de/schulungen/angular-intensiv/",
+        "type": 301
+      },
+      {
+        "source": "/schulungen/angular-remote/",
+        "destination": "https://angular.de/schulungen/angular-intensiv/",
+        "type": 301
+      },
+      {
+        "source": "/schulungen/html-css-intensiv/",
+        "destination": "https://angular.de/schulungen/angular-intensiv/",
+        "type": 301
+      },
+      {
+        "source": "/schulungen/modern-angular-2025/",
+        "destination": "https://angular.de/schulungen/angular-intensiv/",
+        "type": 301
+      },
+      {
+        "source": "/schulungen/nestjs-enterprise-applications/",
+        "destination": "https://angular.de/schulungen/angular-intensiv/",
+        "type": 301
+      },
+      {
+        "source": "/schulungen/rxjs-intensiv/",
+        "destination": "https://angular.de/schulungen/angular-intensiv/",
+        "type": 301
+      },
+      {
+        "source": "/schulungen",
+        "destination": "https://angular.de/schulungen/angular-intensiv/",
+        "type": 301
+      },
+      {
+        "source": "/schulungen/",
+        "destination": "https://angular.de/schulungen/angular-intensiv/",
+        "type": 301
+      },
+      {
         "source": "/workshops/",
         "destination": "https://angular.de/schulungen/",
         "type": 301
