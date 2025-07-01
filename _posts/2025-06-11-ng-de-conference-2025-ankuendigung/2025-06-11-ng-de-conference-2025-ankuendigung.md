@@ -114,14 +114,6 @@ Das Evening Event am ersten Conference-Tag ist legendär. Bei leckerem veganen E
 
 Es ist faszinierend zu beobachten, wie sich Menschen aus ganz verschiedenen Bereichen zusammenfinden. Startup-Gründer reden mit Enterprise-Architekten, Freelancer tauschen sich mit Angestellten aus großen Unternehmen aus. Jeder bringt seine eigene Perspektive mit und alle lernen voneinander.
 
-## Ticket-Information: Jetzt zugreifen!
-
-Die Early Bird Phase läuft noch bis zum 1. Juli, also hast du noch etwas Zeit. Aber ich würde nicht zu lange warten – die NG-DE ist bekannt dafür, dass sie schnell ausverkauft ist.
-
-Du hast verschiedene Optionen: Workshop Only für 599 Euro (statt 699 Euro), Conference Only für 799 Euro (statt 899 Euro) oder das Full Package Conference + Workshop für 1099 Euro (statt 1199 Euro). Das Full Package ist definitiv der beste Deal, wenn du das Maximum aus der Konferenz herausholen willst.
-
-Was besonders cool ist: Du sparst bei jedem Ticket 100 Euro, solange du Early Bird kaufst. Das ist eine echte Ersparnis, die sich lohnt.
-
 ## Nachhaltigkeit ist uns wichtig
 
 Wir nehmen Nachhaltigkeit ernst. Das heißt nicht nur, dass wir komplett auf vegane Verpflegung setzen – was übrigens fantastisch schmeckt und allen Teilnehmern zugute kommt, egal welche Ernährungsgewohnheiten sie haben. Wir arbeiten auch papierlos, nutzen energieeffiziente Locations und ermutigen alle, mit öffentlichen Verkehrsmitteln anzureisen.
