@@ -98,7 +98,7 @@
               {% else %}
               <meta itemprop="availability" content="https://schema.org/SoldOut">
               {% endif %}
-              <link itemprop="url" content="{{event.offers.url}}">
+              <link itemprop="url" content="{{event.url}}">
               <meta itemprop="price" content="{{event.offers.price.coef}}">
               <meta itemprop="priceCurrency" content="{{event.offers.priceCurrency}}">
               <meta itemprop="validFrom" content="{{event.validFrom}}">
@@ -111,7 +111,7 @@
             {% endif %}
           </div>
           <div class="col-sm-3 text-end">
-            <a class="btn btn-primary btn-sm w-100" href="{{ event.offers.url }}?utm_source=angular_de&utm_campaign=website-link-event-date&utm_medium=portal&utm_content=workshops-list&portal=angular-de#booking" target="_blank">Zur Buchung</a>
+            <a class="btn btn-primary btn-sm w-100" href="{{ event.url }}?utm_source=angular_de&utm_campaign=website-link-event-date&utm_medium=portal&utm_content=workshops-list&portal=angular-de#booking" target="_blank">Zur Buchung</a>
           </div>
         </div>
       </div>
@@ -196,7 +196,7 @@
                   {% else %}
                   <meta itemprop="availability" content="https://schema.org/SoldOut">
                   {% endif %}
-                  <link itemprop="url" content="{{event.offers.url}}">
+                  <link itemprop="url" content="{{event.url}}">
                   <meta itemprop="price" content="{{event.offers.price.coef}}">
                   <meta itemprop="priceCurrency" content="{{event.offers.priceCurrency}}">
                   <meta itemprop="validFrom" content="{{event.validFrom}}">
@@ -209,7 +209,7 @@
                 {% endif %}
               </div>
               <div class="col-sm-3 text-end">
-                <a class="btn btn-primary btn-sm w-100 shadow" href="{{ event.offers.url }}?utm_source=angular_de&utm_campaign=website-link-event-date&utm_medium=portal&utm_content=workshops-list&portal=angular-de#booking" target="_blank">Zur Buchung</a>
+                <a class="btn btn-primary btn-sm w-100 shadow" href="{{ event.url }}?utm_source=angular_de&utm_campaign=website-link-event-date&utm_medium=portal&utm_content=workshops-list&portal=angular-de#booking" target="_blank">Zur Buchung</a>
               </div>
             </div>
           </div>
