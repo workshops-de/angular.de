@@ -8,13 +8,9 @@ header_image: header.jpg
 categories: "conference community angular ng-de"
 ---
 
-**Die NG-DE Conference kehrt zurück nach Berlin!** Vom **5.-7. November 2025** verwandelt sich der GLS Campus Berlin wieder in das Epizentrum der deutschsprachigen Angular-Community. Als [Workshops.DE](https://workshops.de) freuen wir uns riesig, als Veranstalter die nächste Ausgabe der community-getriebenen Angular-Konferenz präsentieren zu können.
+Es ist wieder soweit! Die NG-DE Conference kehrt nach Berlin zurück und ich könnte nicht aufgeregter sein. Vom 5. bis 7. November 2025 verwandelt sich das Hotel Oderberger am GLS Campus Berlin in das absolute Zentrum der deutschsprachigen Angular-Community.
 
-Die [NG-DE](https://ng-de.org/) ist **die** Angular-Konferenz in Deutschland - ein Ort, an dem sich Entwickler:innen und Angular-Enthusiasten aus ganz Europa treffen, um die neuesten Entwicklungen zu diskutieren und die Zukunft von Angular mitzugestalten.
-
-> "Die NG-DE ist das Herz der deutschsprachigen Angular-Community. Hier entstehen die Ideen, die morgen die Angular-Welt bewegen werden." - Robin Böhm, CEO Workshops.DE
-
-## Eine Konferenz von der Community für die Community
+Als [Workshops.DE](https://workshops.de) sind wir unglaublich stolz darauf, diese besondere Konferenz zu veranstalten. Die [NG-DE](https://ng-de.org/) ist weit mehr als nur eine weitere Tech-Konferenz – sie ist das Herz unserer Community, ein Ort wo sich leidenschaftliche Entwicklerinnen und Entwickler treffen, um die Zukunft von Angular gemeinsam zu gestalten.
 
 <p class="left">
 <img
@@ -24,52 +20,47 @@ class="lazy img-fluid img-rounded" data-src="community-gathering.jpg" data-srcse
 />
 </p>
 
-### Was macht die NG-DE besonders?
+## Was macht die NG-DE so besonders?
 
-- **Community-driven**: Inhalte direkt aus der Praxis
-- **Nachhaltig**: 100% vegane Verpflegung und papierlos
-- **Inklusiv**: Barrierefreier Zugang für alle
-- **Vernetzt**: Intensive Networking-Möglichkeiten
+Wenn du schon einmal bei der NG-DE warst, weißt du es bereits. Falls nicht, lass mich dir erklären, warum diese Konferenz so einzigartig ist. Es ist diese besondere Mischung aus tiefen technischen Einblicken und echter menschlicher Verbindung, die du nirgendwo anders findest.
 
-## Das Programm 2025: Angular-Expertise auf höchstem Niveau
+Die NG-DE ist durch und durch community-getrieben. Das heißt, die Inhalte kommen direkt aus der Praxis – von Menschen, die täglich mit Angular arbeiten und echte Probleme lösen. Hier gibt es keine Marketing-Präsentationen oder oberflächlichen Demos. Stattdessen teilen Expertinnen und Experten ihre ehrlichen Erfahrungen, ihre Fehler und ihre Erfolge.
 
-### Tag 1 (5. November): Workshop Day - Hands-on Learning
+Was mich persönlich besonders begeistert: Wir haben uns Nachhaltigkeit auf die Fahnen geschrieben. Du bekommst nicht nur fantastisches veganes Essen, sondern wir arbeiten komplett papierlos und sorgen dafür, dass alle Bereiche barrierefrei zugänglich sind. Das ist uns wirklich wichtig.
 
-Der Workshop Day bietet vier intensive 8-stündige Workshops, die tief in die modernsten Angular-Technologien eintauchen:
+## Der Workshop-Tag: Hands-on Learning vom Feinsten
 
-#### 🏗️ Modern Angular Architectures - 2025 Edition
-**Trainer**: Manfred Steyer & Rainer Hahnekamp (Angular Architects)
+Der 5. November gehört ganz den Workshops. Acht intensive Stunden, in denen du tief in modernste Angular-Technologien eintauchen kannst. Wir haben ein fantastisches Line-up zusammengestellt:
 
-Meistert moderne Architektur-Patterns für skalierbare Enterprise-Anwendungen:
-- **Nx Workspaces** für Monorepo-Architekturen
-- **Micro Frontends** für modulare Anwendungen
-- **Signal Store** für effiziente Zustandsverwaltung
+### Modern Angular Architectures - 2025 Edition
 
-#### 🤖 Agent-Driven Coding: Developer Productivity mit Cursor
-**Trainer**: Robin Böhm & Gregor Woiwode (Workshops.DE)
+Manfred Steyer und Michael Egger-Zikes führen dich durch die Zukunft der Angular-Architektur. Du lernst, wie du mit Signal Store effiziente Zustandsverwaltung umsetzt, Micro Frontends für modulare Anwendungen entwickelst und skalierbare Enterprise-Architekturen baust, die auch in zehn Jahren noch Sinn machen.
 
-Revolutioniert euren Workflow mit KI-gestützter Entwicklung:
-- **10x produktiver** mit Cursor IDE und AI-Modellen
-- **Automatische Code-Standards** durch Rule Files
-- **Optimale Prompt-Strategien** für AI Code Generation
+### Agentic AI Engineering with Angular
 
-#### ⚡ Angular Performance mit Modern Reactivity und SSR
-**Trainer**: Michael Hladky & Enea Jahollari
+Das ist der Workshop, auf den ich mich am meisten freue. Robin Böhm und Gregor Woiwode zeigen dir, wie du intelligente Angular-Anwendungen mit autonomen AI-Agenten und modernen Entwicklungs-Workflows baust. Wir reden hier nicht über theoretische Konzepte, sondern über echte, praktische Umsetzung von AI in deinen Angular-Projekten.
 
-Maximiert die Performance eurer Angular-Anwendungen:
-- **Browser Render Pipeline** verstehen und optimieren
-- **JavaScript Event Loop** meistern
-- **Server-Side Rendering** und Defer-Strategien
+### Angular Performance based on Modern Reactivity and SSR
 
-#### 🛡️ Security in Angular Applications
-**Trainerin**: Martina Kraus
+Michael Hladky und Enea Jahollari nehmen die Performance deiner Angular-Anwendungen auseinander. Du verstehst endlich, wie der Browser-Render-Pipeline funktioniert, meisterst die JavaScript Event Loop und optimierst die User Experience mit defer und Server-Side Rendering.
 
-Baut sichere Angular-Anwendungen in einer unsicheren Welt:
-- **XSS-Prevention** und Browser-Security
-- **Content Security Policy** richtig implementieren
-- **OAuth 2.1** und sichere Token-Handhabung
+### Mastering NgRx SignalStore
 
-### Tag 2-3 (6.-7. November): Conference Days - Inspiration und Innovation
+Wenn du NgRx SignalStore wirklich verstehen willst, ist das dein Workshop. Marko Stanimirović und Rainer Hahnekamp – beide aus dem NgRx Team – führen dich von den Grundprinzipien bis zu fortgeschrittenen Patterns. Du lernst, wie du RxJS optimal mit SignalStore integrierst und custom Features entwickelst.
+
+### Hands On: Security in Angular Applications
+
+Martina Kraus macht Sicherheit greifbar. Du lernst nicht nur die Theorie, sondern übst an echten Angriffsszenarios. Content Security Policy, XSS-Prevention, OAuth 2.1 – nach diesem Workshop weißt du, wie du deine Angular-Anwendungen wirklich sicher machst.
+
+### Web Accessibility: Requirements, Implementation, and Testing
+
+Maria Korneeva zeigt dir, wie du barrierefreie Webanwendungen entwickelst, die nicht nur rechtliche Anforderungen erfüllen, sondern wirklich inklusiv sind. Du lernst WCAG-Guidelines zu verstehen und umzusetzen, und bekommst praktische Testing-Tools an die Hand.
+
+### Pragmatic Angular Testing
+
+Younes Jaaidi hat einen anderen Ansatz zum Testen. Statt dich mit komplexen Mocking-Frameworks zu quälen, lernst du, Tests zu schreiben, die wirklich nützlich sind. Tests, die sich auf das Verhalten konzentrieren, nicht auf Implementierungsdetails. Tests, die auch nach Refactorings noch funktionieren.
+
+## Die Conference-Tage: Inspiration und Innovation
 
 <p class="left">
 <img
@@ -79,55 +70,35 @@ class="lazy img-fluid img-rounded" data-src="main-stage.jpg" data-srcset="main-s
 />
 </p>
 
-#### 🎯 Keynote vom Angular Team
-Das **offizielle Angular Team von Google** wird die neuesten Entwicklungen und die Roadmap für 2025/2026 präsentieren. Ein absolutes Muss für jeden Angular-Entwickler!
+Am 6. und 7. November wird es richtig spannend. Mark Thompson vom offiziellen Angular Team bei Google wird die Konferenz mit seiner Keynote eröffnen. Das ist immer ein besonderer Moment – wenn jemand aus dem Kern-Team von Angular über die Zukunft des Frameworks spricht, hörst du Dinge, die du nirgendwo anders erfährst.
 
-## Die Location: GLS Campus Berlin
+Das Programm ist prall gefüllt mit Insights, die du sofort in deiner täglichen Arbeit verwenden kannst. Robin Götz zeigt, wie spartan shadcn/ui und Radix zu Angular bringt. Marko Stanimirović erklärt die drei Dimensionen von NgRx Signals. Manfred Steyer spricht über die Resource API und httpResource – das missing Link in Angulars Signal Story.
+
+Besonders interessant finde ich den Talk von Younes Jaaidi und Rainer Hahnekamp über Component Testing mit Playwright. Das ist genau die Art von praktischem Wissen, die uns alle weiterbringt.
+
+## Die Location: Hotel Oderberger
 
 <p class="left">
 <img
 style="max-width: 80%"
-src="/shared/assets/img/placeholder-image.svg" alt="GLS Campus Berlin Location"
+src="/shared/assets/img/placeholder-image.svg" alt="Hotel Oderberger Location"
 class="lazy img-fluid img-rounded" data-src="venue-berlin.jpg" data-srcset="venue-berlin.jpg"
 />
 </p>
 
-Die Konferenz findet im **GLS Campus Berlin** statt (Kastanienallee 82, 10435 Berlin) - einem modernen, nachhaltigen und vollständig barrierefreien Veranstaltungsort im Herzen Berlins. Die Location bietet:
+Die Location ist einfach perfekt. Das Hotel Oderberger in der Oderberger Str. 57 in Prenzlauer Berg bietet nicht nur moderne Konferenzräume, sondern auch dieses besondere Berlin-Feeling. Du bist mittendrin in einem der coolsten Viertel der Stadt, nur fünf Minuten vom Mauerpark entfernt.
 
-- **Barrierefreier Zugang** zu allen Bereichen
-- **Moderne Technik** für optimale Präsentationserfahrung
-- **Zentrale Lage** mit hervorragender Anbindung an öffentliche Verkehrsmittel
+Das Beste: Alles ist komplett barrierefrei zugänglich. Wir wollen, dass sich wirklich jede und jeder bei uns wohlfühlt und teilnehmen kann. Die Technik ist auf dem neuesten Stand, die Anbindung an die öffentlichen Verkehrsmittel ist hervorragend.
 
-## Nachhaltigkeit & Inklusion
+## Unsere Speaker: Die Crème de la Crème
 
-- **100% vegetarische Verpflegung** für alle Teilnehmer:innen
-- **Papierlose Konferenz** mit digitalen Lösungen
-- **Barrierefreier Zugang** zu allen Bereichen
-- **ÖPNV-freundliche Location** in Berlin Mitte
+Die Speaker-Liste liest sich wie das Who's Who der Angular-Welt. Neben Mark Thompson vom Angular Team haben wir Jens Kühlers, ebenfalls vom Angular Team, und Matthieu Riegler mit dabei. Das sind die Menschen, die Angular täglich weiterentwickeln.
 
-## Ticket-Information: Early Bird läuft noch!
+Aus der DACH-Region kommen absolute Koryphäen wie Manfred Steyer von Angular Architects, Christian Liebel von Thinktecture, und Michael Hladky von Push-based.io. Und natürlich sind wir von Workshops.DE auch mit Robin Böhm und Gregor Woiwode vertreten.
 
-Die **Early Bird Phase** läuft noch bis zum 1. Juli! Nutzt die Gelegenheit und sichert euch jetzt eure Tickets:
+Was mir besonders gefällt: Wir haben eine wunderbare Mischung aus internationalen Größen und lokalen Experten. Younes Jaaidi von Marmicode, Enea Jahollari von Push-based.io, Marko Stanimirović vom NgRx Core Team – das sind alles Menschen, die du normalerweise nur auf großen internationalen Konferenzen triffst.
 
-## Unsere Speaker: Angular-Koryphäen aus der ganzen Welt
-
-Die NG-DE 2025 versammelt die absolute Elite der Angular-Community:
-
-### 🌟 International Speakers
-- **Jens Kühlers** (Angular Team, Google)
-- **Younes Jaaidi** (Google Developer Expert, Marmicode)
-- **Enea Jahollari** (Google Developer Expert, Push-based.io)
-- **Marko Stanimirović** (NgRx Core Team)
-
-### 🇩🇪 DACH Region Experts
-- **Manfred Steyer** (Angular Architects)
-- **Rainer Hahnekamp** (Angular Architects)
-- **Christian Liebel** (Thinktecture)
-- **Martina Kraus** (Independent Consultant)
-- **Michael Hladky** (Push-based.io)
-- **Robin Böhm** & **Gregor Woiwode** (Workshops.DE)
-
-## Community-Networking: Wo Ideen zu Realität werden
+## Community und Networking
 
 <p class="left">
 <img
@@ -137,26 +108,34 @@ class="lazy img-fluid img-rounded" data-src="networking.jpg" data-srcset="networ
 />
 </p>
 
-Die NG-DE ist berühmt für ihre entspannte und offene Atmosphäre. Hier entstehen:
+Aber weißt du, was die NG-DE wirklich ausmacht? Es sind die Menschen und die Gespräche zwischen den Sessions. Die NG-DE hat diese entspannte, offene Atmosphäre, in der echte Verbindungen entstehen. Ich habe hier schon so viele spannende Menschen kennengelernt, neue Projekte gestartet und Freundschaften geschlossen.
 
-- **Neue Freundschaften** zwischen Angular-Enthusiasten
-- **Job-Opportunities** und Karrierechancen
-- **Open Source Collaborationen** für die Community
-- **Mentoring-Beziehungen** zwischen erfahrenen und neuen Entwickler:innen
-- **Innovative Projektideen** durch interdisziplinäre Gespräche
+Das Evening Event am ersten Conference-Tag ist legendär. Bei leckerem veganen Essen und Drinks führst du die Gespräche fort, die in den Sessions angefangen haben. Hier entstehen oft die besten Ideen, hier knüpfst du Kontakte, die deine Karriere voranbringen können.
 
-### Evening Event: Mehr als nur Networking
+Es ist faszinierend zu beobachten, wie sich Menschen aus ganz verschiedenen Bereichen zusammenfinden. Startup-Gründer reden mit Enterprise-Architekten, Freelancer tauschen sich mit Angestellten aus großen Unternehmen aus. Jeder bringt seine eigene Perspektive mit und alle lernen voneinander.
 
-Das traditionelle Evening Event am ersten Conference-Tag ist legendär! Bei Drinks und leckerem (veganem) Food entstehen die besten Gespräche, tiefere Verbindungen und oft die Grundlage für zukünftige Projekte.
+## Ticket-Information: Jetzt zugreifen!
 
-### 🎯 Eure nächsten Schritte:
+Die Early Bird Phase läuft noch bis zum 1. Juli, also hast du noch etwas Zeit. Aber ich würde nicht zu lange warten – die NG-DE ist bekannt dafür, dass sie schnell ausverkauft ist.
 
-1. **[Tickets sichern](https://ng-de.org/)** - Early Bird bis 1. Juli!
-2. **Save the Date** - 5.-7. November 2025, Berlin
-3. **Newsletter abonnieren** - für Updates und News
+Du hast verschiedene Optionen: Workshop Only für 599 Euro (statt 699 Euro), Conference Only für 799 Euro (statt 899 Euro) oder das Full Package Conference + Workshop für 1099 Euro (statt 1199 Euro). Das Full Package ist definitiv der beste Deal, wenn du das Maximum aus der Konferenz herausholen willst.
 
-## Fazit
+Was besonders cool ist: Du sparst bei jedem Ticket 100 Euro, solange du Early Bird kaufst. Das ist eine echte Ersparnis, die sich lohnt.
 
-Die NG-DE 2025 ist **das** Angular-Event des Jahres - drei Tage voller Expertise, Community und Innovation.
+## Nachhaltigkeit ist uns wichtig
 
-**Seid ihr dabei?** Die Angular-Community wartet auf euch!
+Wir nehmen Nachhaltigkeit ernst. Das heißt nicht nur, dass wir komplett auf vegane Verpflegung setzen – was übrigens fantastisch schmeckt und allen Teilnehmern zugute kommt, egal welche Ernährungsgewohnheiten sie haben. Wir arbeiten auch papierlos, nutzen energieeffiziente Locations und ermutigen alle, mit öffentlichen Verkehrsmitteln anzureisen.
+
+Berlin ist perfekt dafür geeignet. Die Stadt hat ein ausgezeichnetes ÖPNV-Netz, du kommst überall hin, ohne ein Auto zu brauchen. Und das Hotel Oderberger liegt so zentral, dass du zu Fuß oder mit dem Fahrrad viele der Berliner Sehenswürdigkeiten erreichen kannst.
+
+## Warum du dabei sein solltest
+
+Ehrlich gesagt, die NG-DE ist für mich das Highlight des Jahres. Es ist diese einzigartige Kombination aus technischer Exzellenz und menschlicher Wärme, die du nur selten findest. Du lernst nicht nur die neuesten Angular-Features kennen, sondern knüpfst Kontakte, die oft ein Leben lang halten.
+
+Wenn du mit Angular arbeitest oder planst, es zu tun, gibt es keinen besseren Ort, um auf dem neuesten Stand zu bleiben. Hier erfährst du aus erster Hand, wohin sich das Framework entwickelt, welche Best Practices wirklich funktionieren und wie andere Entwickler ähnliche Herausforderungen lösen wie du.
+
+Die drei Tage vergehen wie im Flug. Du gehst nach Hause mit einem Kopf voller neuer Ideen, einem Notizbuch voller praktischer Tipps und einem Netzwerk von Menschen, die genauso leidenschaftlich über Angular sprechen wie du.
+
+Also, sichert dir jetzt dein Ticket auf [ng-de.org](https://ng-de.org/), markiert euch den 5. bis 7. November 2025 im Kalender und freut euch auf drei unvergessliche Tage in Berlin. Die Angular-Community wartet auf dich!
+
+Wir sehen uns in Berlin!
