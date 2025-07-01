@@ -88,11 +88,11 @@ Das Beste: Alles ist komplett barrierefrei zugänglich. Wir wollen, dass sich wi
 
 ## Unsere Speaker: Die Crème de la Crème
 
-Die Speaker-Liste liest sich wie das Who's Who der Angular-Welt. Neben Mark Thompson vom Angular Team haben wir Jens Kühlers, ebenfalls vom Angular Team, und Matthieu Riegler mit dabei. Das sind die Menschen, die Angular täglich weiterentwickeln.
+Neben Mark Thompson vom Angular Team haben wir Jens Kühlers, ebenfalls vom Angular Team, und Matthieu Riegler mit dabei. Das sind die Menschen, die Angular täglich weiterentwickeln.
 
 Aus der DACH-Region kommen absolute Koryphäen wie Manfred Steyer von Angular Architects, Christian Liebel von Thinktecture, und Michael Hladky von Push-based.io. Und natürlich sind wir von Workshops.DE auch mit mir und Gregor Woiwode vertreten.
 
-Was mir besonders gefällt: Wir haben eine wunderbare Mischung aus internationalen Größen und lokalen Experten. Younes Jaaidi von Marmicode, Enea Jahollari von Push-based.io, Marko Stanimirović vom NgRx Core Team – das sind alles Menschen, die du normalerweise nur auf großen internationalen Konferenzen triffst.
+Was mir besonders gefällt: Wir haben eine wunderbare Mischung aus internationalen Größen und lokalen Experten. Younes Jaaidi von Marmicode, Enea Jahollari von Push-based.io, Marko Stanimirović vom NgRx Core Team.
 
 ## Community und Networking
 
