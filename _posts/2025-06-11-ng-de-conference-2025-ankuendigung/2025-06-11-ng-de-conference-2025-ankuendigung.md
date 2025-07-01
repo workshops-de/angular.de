@@ -38,7 +38,7 @@ Manfred Steyer und Michael Egger-Zikes führen dich durch die Zukunft der Angula
 
 ### Agentic AI Engineering with Angular
 
-Das ist der Workshop, auf den ich mich am meisten freue. Robin Böhm und Gregor Woiwode zeigen dir, wie du intelligente Angular-Anwendungen mit autonomen AI-Agenten und modernen Entwicklungs-Workflows baust. Wir reden hier nicht über theoretische Konzepte, sondern über echte, praktische Umsetzung von AI in deinen Angular-Projekten.
+Das ist der Workshop, auf den ich mich am meisten freue. Ich und Gregor Woiwode zeigen dir, wie du intelligente Angular-Anwendungen mit autonomen AI-Agenten und modernen Entwicklungs-Workflows baust. Wir reden hier nicht über theoretische Konzepte, sondern über echte, praktische Umsetzung von AI in deinen Angular-Projekten.
 
 ### Angular Performance based on Modern Reactivity and SSR
 
@@ -94,7 +94,7 @@ Das Beste: Alles ist komplett barrierefrei zugänglich. Wir wollen, dass sich wi
 
 Die Speaker-Liste liest sich wie das Who's Who der Angular-Welt. Neben Mark Thompson vom Angular Team haben wir Jens Kühlers, ebenfalls vom Angular Team, und Matthieu Riegler mit dabei. Das sind die Menschen, die Angular täglich weiterentwickeln.
 
-Aus der DACH-Region kommen absolute Koryphäen wie Manfred Steyer von Angular Architects, Christian Liebel von Thinktecture, und Michael Hladky von Push-based.io. Und natürlich sind wir von Workshops.DE auch mit Robin Böhm und Gregor Woiwode vertreten.
+Aus der DACH-Region kommen absolute Koryphäen wie Manfred Steyer von Angular Architects, Christian Liebel von Thinktecture, und Michael Hladky von Push-based.io. Und natürlich sind wir von Workshops.DE auch mit mir und Gregor Woiwode vertreten.
 
 Was mir besonders gefällt: Wir haben eine wunderbare Mischung aus internationalen Größen und lokalen Experten. Younes Jaaidi von Marmicode, Enea Jahollari von Push-based.io, Marko Stanimirović vom NgRx Core Team – das sind alles Menschen, die du normalerweise nur auf großen internationalen Konferenzen triffst.
 
