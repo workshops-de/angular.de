@@ -33,10 +33,83 @@
     </div>
     <div class="row">
       <div class="col-12 mx-auto my-auto text-center">
-        <a class="btn btn-primary" href="#Schulungen">
-          Termine, Inhouse, Remote &rsaquo;
+        <a class="btn btn-primary sticky-cta-button" href="#Schulungen" id="sticky-cta">
+          Direkt zu den Schulungen
         </a>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+.sticky-cta-button {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1010;
+}
+
+.sticky-cta-button.sticky-mode {
+  position: fixed;
+  top: 53px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  min-width: 280px;
+}
+
+.sticky-cta-button.sticky-mode:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .sticky-cta-button.sticky-mode {
+    min-width: auto;
+    width: calc(100vw - 40px);
+    max-width: 300px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  let isSticky = false;
+  const stickyButton = document.getElementById('sticky-cta');
+
+  function toggleStickyButton() {
+    if (!stickyButton) return;
+
+    const header = stickyButton.closest('.header-workshop');
+    if (!header) return;
+
+    const headerBottom = header.offsetTop + header.offsetHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > headerBottom - 100 && !isSticky) {
+      isSticky = true;
+      stickyButton.classList.add('sticky-mode');
+    } else if (scrollTop <= headerBottom - 100 && isSticky) {
+      isSticky = false;
+      stickyButton.classList.remove('sticky-mode');
+    }
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Small delay to ensure all elements are rendered
+    setTimeout(toggleStickyButton, 100);
+  });
+
+  // Listen for scroll events with throttling
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        toggleStickyButton();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+</script>
