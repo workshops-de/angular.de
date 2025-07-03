@@ -24,17 +24,90 @@ Nehmen wir ein praktisches Beispiel: Deine App reagiert träge auf Benutzereinga
 
 Diese Transparenz war bisher nur mit aufwändigen Workarounds oder zusätzlichen Tools möglich. Jetzt gehört sie zum Standard-Werkzeugkasten jedes Angular-Entwicklers.
 
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="chrome custom track"
+class="lazy img-fluid img-rounded" data-src="chrome_custom_track.webp" data-srcset="chrome_custom_track.webp"
+/>
+</p>
+
 ## Die Praxis: So nutzt du den Custom Profiling Track
 
-Der Einstieg könnte nicht einfacher sein. Öffne deine Angular-App im Chrome Browser und die DevTools. In der Konsole gibst du einfach `ng.enableProfiling()` ein – das war's schon! Ab sofort werden Angular-spezifische Events in der Performance-Timeline der Chrome DevTools angezeigt.
+Der Einstieg könnte nicht einfacher sein – Angular bietet dir zwei Wege, um das Profiling zu aktivieren:
+
+### Option 1: Spontanes Profiling mit der Console
+Öffne deine Angular-App im Chrome Browser und die DevTools. In der Konsole gibst du einfach `ng.enableProfiling()` ein – das war's schon! Ab sofort werden Angular-spezifische Events in der Performance-Timeline der Chrome DevTools angezeigt. Diese Methode ist perfekt für spontane Performance-Checks oder wenn du eine bereits laufende App analysieren möchtest.
+
+### Option 2: Profiling von Anfang an
+Für umfassende Analysen, die auch den App-Start erfassen, solltest du das Profiling direkt in deinen Bootstrap-Code integrieren. Das ist besonders wertvoll, wenn du Performance-Probleme beim initialen Laden der App vermutest:
+
+```typescript
+import { enableProfiling } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { MyApp } from './my-app';
+
+// Profiling VOR dem Bootstrap aktivieren,
+// um alle Startup-Prozesse zu erfassen
+enableProfiling();
+bootstrapApplication(MyApp);
+```
+
+**Wichtiger Hinweis:** Angular Profiling funktioniert ausschließlich im Development-Mode. In der Produktion werden die Profiling-Funktionen automatisch deaktiviert.
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="chrome custom track"
+class="lazy img-fluid img-rounded" data-src="profile-change-detection.png" data-srcset="profile-change-detection.png"
+/>
+</p>
 
 Was du dann siehst, ist beeindruckend: Die Timeline zeigt dir nicht nur die üblichen JavaScript-Ausführungen und Rendering-Prozesse, sondern auch Angular-spezifische Marker. Du erkennst genau, wann Change Detection läuft, wie lange sie dauert und welche Komponenten betroffen sind. Besonders hilfreich sind die visuellen Hinweise auf Template-Updates – endlich siehst du schwarz auf weiß, welche Teile deiner UI tatsächlich neu gerendert werden.
 
-Ein typischer Workflow sieht so aus: Du startest die Aufzeichnung in den DevTools, interagierst mit deiner App (klickst Buttons, navigierst zwischen Routen, triggst Animationen) und stoppst dann die Aufzeichnung. In der Timeline findest du nun detaillierte Informationen zu jedem Change-Detection-Zyklus, kannst in die Flame Charts zoomen und die Ausführungszeiten einzelner Komponenten analysieren.
+### Das geniale Color-Coding-System
+
+Angular nutzt ein intelligentes Farbsystem, um verschiedene Typen von Tasks zu unterscheiden:
+
+- **🟦 Blau** markiert TypeScript-Code, den du als Entwickler geschrieben hast – Services, Komponenten-Konstruktoren, Lifecycle-Hooks und ähnliches
+- **🟪 Lila** kennzeichnet Template-Code, der vom Angular-Compiler transformiert wurde – hier siehst du deine HTML-Templates in Aktion
+- **🟩 Grün** zeigt Entry-Points und Auslöser für Code-Ausführung – das sind die Gründe, warum bestimmter Code überhaupt läuft
+
+Diese Farbkodierung ist ein Game-Changer für das Debugging. Du erkennst sofort, ob ein Performance-Problem in deinem eigenen Code (blau), in Template-Rendering (lila) oder in Framework-internen Prozessen (grün) liegt.
+
+### Angular vs. Third-Party Code unterscheiden
+
+Ein besonders wertvolles Feature ist die klare Trennung zwischen Angular-Code und anderen Scripten auf derselben Seite. Wenn deine App träge reagiert, siehst du sofort, ob das Problem in deiner Angular-Anwendung liegt oder ob andere JavaScript-Bibliotheken den Browser blockieren. In der Timeline bleiben die Angular-spezifischen Tracks leer, wenn Third-Party-Code läuft – ein deutliches Signal, wo du mit der Optimierung ansetzen solltest.
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="chrome custom track"
+class="lazy img-fluid img-rounded" data-src="profile-angular-vs-3rd-party.png" data-srcset="profile-angular-vs-3rd-party.png"
+/>
+</p>
+
+### Recording-Workflow in der Praxis
+
+Ein typischer Workflow sieht so aus: Du startest die Aufzeichnung mit dem **Record**-Button in den Chrome DevTools Performance Panel, interagierst mit deiner App (klickst Buttons, navigierst zwischen Routen, triggst Animationen) und stoppst dann die Aufzeichnung. In der Timeline findest du nun detaillierte Informationen zu jedem Change-Detection-Zyklus, kannst in die Flame Charts zoomen und die Ausführungszeiten einzelner Komponenten analysieren.
+
+**Pro-Tipp:** Nutze kurze, fokussierte Aufzeichnungen für spezifische User-Interaktionen. Eine 30-sekündige Aufzeichnung mit einem klaren Fokus (z.B. "Button-Click und Formular-Validierung") ist oft wertvoller als eine minutenlange Aufzeichnung mit verschiedenen Aktionen.
 
 ## Die versteckten Performance-Killer aufspüren
 
 Mit dem Custom Profiling Track werden plötzlich Probleme sichtbar, die vorher im Verborgenen lagen. Ein klassisches Beispiel sind überflüssige Change-Detection-Zyklen. Vielleicht hast du eine Komponente, die bei jedem MouseMove-Event die Change Detection triggert, obwohl sich gar keine Daten ändern. Oder du entdeckst, dass eine bestimmte Pipe bei jedem Zyklus neu berechnet wird, weil sie nicht als pure markiert ist.
+
+### Typische Performance-Szenarien verstehen
+
+Die Angular-Dokumentation zeigt uns drei typische Profiling-Szenarien, die du in der Praxis immer wieder antreffen wirst:
+
+**Application Bootstrapping:** Der App-Start besteht meist aus blauen Triggern (wie `bootstrapApplication`, Root-Komponenten-Instanziierung, initiale Change Detection) gefolgt von grünen DI-Service-Instanziierungen. Hier siehst du, welche Services beim Start wie viel Zeit beanspruchen.
+
+**Component Execution:** Die Verarbeitung einer Komponente zeigt sich typischerweise als blauer Entry-Point, gefolgt von lila Template-Ausführung. Templates können wiederum grüne Direktiven-Instanziierungen und Lifecycle-Hook-Ausführungen auslösen.
+
+**Change Detection:** Ein Change-Detection-Zyklus besteht aus einem oder mehreren blauen Synchronisations-Durchläufen, wobei jeder Durchlauf eine Teilmenge der Komponenten durchläuft. Hier wird's richtig spannend: Du siehst sofort, welche Komponenten am Change-Detection-Zyklus teilnehmen und welche übersprungen werden (meist OnPush-Komponenten, die nicht als dirty markiert sind).
+
+**Achtung:** Wenn du mehrere Synchronisations-Durchläufe in einem Change-Detection-Zyklus siehst, deutet das darauf hin, dass während der Change Detection State verändert wird. Das solltest du unbedingt vermeiden, da es die Performance stark beeinträchtigt und im schlimmsten Fall zu Endlosschleifen führen kann.
 
 Besonders aufschlussreich ist die Analyse von Event-Ketten. Du klickst einen Button und plötzlich siehst du in der Timeline, wie sich eine Kaskade von Change-Detection-Zyklen durch deine gesamte Komponenten-Hierarchie zieht. Mit dem Custom Profiling Track kannst du genau nachvollziehen, welches Event der Auslöser war und welche Komponenten unnötigerweise mitgerissen werden.
 
