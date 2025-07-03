@@ -4,7 +4,7 @@ description: "Mit Angular 20 kommt ein Game-Changer für Performance-Optimierung
 author: "Robin Böhm"
 published_at: 2025-07-03 10:00:00.000000Z
 header_source:
-header_image: header.png
+header_image: header.jpg
 categories: "angular performance devtools profiling"
 ---
 
