@@ -323,8 +323,7 @@ web-codegen-scorer eval --env=angular-example --framework=angular
 
 **Angular-spezifische Ressourcen:**
 - 📚 [GitHub Repository](https://github.com/angular/web-codegen-scorer)
-- 🅰️ [Angular-spezifische Dokumentation](https://github.com/angular/web-codegen-scorer/blob/main/docs/angular-guide.md)
-- 🎥 [Angular-Tutorials](https://github.com/angular/web-codegen-scorer#angular-examples)
+- 🅰️ [Dokumentation](https://github.com/angular/web-codegen-scorer/blob/main/docs/)
 
 Die Zukunft der Angular-Entwicklung ist KI-unterstützt und messbar. Mit Web Codegen Scorer wird jeder generierte Angular-Code zum Qualitätscode – versprochen vom Angular-Team selbst!
 
