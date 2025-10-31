@@ -80,7 +80,7 @@ Falls du Fragen hast oder mehr Infos brauchst, schreib uns einfach an info@ng-de
 
 ## Dabei sein ist alles – Dein Platz in der Community
 
-Auch wenn der Call for Papers für die ng-de und vuejs.de Konferenzen 2024 fast vorbei ist, endet damit nicht deine Gelegenheit, aktiver Teil der Community zu werden. Eine Konferenz endet nicht mit dem letzten Konferenztag. Über das ganze Jahr hinweg gibt es zahlreiche Möglichkeiten, sich einzubringen: sei es durch [Meetups](https://www.meetup.com/de-DE/angular-meetup-berlin/), [Workshops](https://workshops.de/schulungsthemen/vuejs?_gl=1*hzplxl*_up*MQ..*_ga*MTM1OTE3NDc4Ni4xNzEyNjY3Mzk4*_ga_E0Z1EPK01Y*MTcxMjY2NzM5Ny4xLjAuMTcxMjY2NzM5Ny4wLjAuOTgxMzYwMjAy) oder in unserer [Community auf Discord](https://workshops.de/join-discord).
+Auch wenn der Call for Papers für die ng-de und vuejs.de Konferenzen 2024 fast vorbei ist, endet damit nicht deine Gelegenheit, aktiver Teil der Community zu werden. Eine Konferenz endet nicht mit dem letzten Konferenztag. Über das ganze Jahr hinweg gibt es zahlreiche Möglichkeiten, sich einzubringen: sei es durch [Meetups](https://www.meetup.com/de-DE/angular-meetup-berlin/), [Workshops](https://workshops.de/schulungsthemen/vuejs) oder in unserer [Community auf Discord](https://workshops.de/join-discord).
 
 
 Teile dein Wissen, deine Fragen und deine Projekte mit uns. Gemeinsam können wir nicht nur die Angular- und Vue.js-Landschaft in Deutschland, sondern auch die globale Webentwickler-Community bereichern und voranbringen. Bleib dran für kommende Events und Initiativen – es gibt immer eine Möglichkeit, sich einzubringen und zu engagieren.
