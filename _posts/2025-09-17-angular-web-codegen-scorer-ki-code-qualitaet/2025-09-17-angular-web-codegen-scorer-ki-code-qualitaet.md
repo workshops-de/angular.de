@@ -2,7 +2,7 @@
 title: "Angular Web Codegen Scorer: Wie das Angular-Team KI-generierten Code revolutioniert"
 description: "Das Angular-Team stellt ein bahnbrechendes Open-Source Tool vor, das speziell für die systematische Bewertung von KI-generiertem Angular-Code entwickelt wurde"
 author: "Robin Böhm"
-published_at: null
+published_at:
 header_source:
 header_image: header.jpg
 categories: "angular ki code-quality testing tools automation llm typescript"
