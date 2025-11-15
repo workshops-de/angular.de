@@ -12,6 +12,28 @@ module Jekyll
       @outputDir = text.strip.length > 0 ? text.strip + '/' : '';
     end
 
+    private
+
+    def is_external_url?(url)
+      url.start_with?('http://', 'https://')
+    end
+
+    def resolve_background_image(context)
+      if context["page"]["header_image"]
+        header_image = context["page"]["header_image"]
+        if is_external_url?(header_image)
+          header_image
+        else
+          # Local image path - combine with the page's directory
+          "#{File.expand_path("..", context["page"]["path"])}/#{header_image}"
+        end
+      else
+        "#{Dir.pwd}/opengraph/default.png"
+      end
+    end
+
+    public
+
     def render(context)
       if(@enabled) then
         # This creates an image id hash from the page id in Jekyll
@@ -29,14 +51,19 @@ module Jekyll
         else
           # Using Node Canvas
           # the script to be called with the formatted title, and resolving filename
-          background = if(context["page"]["header_image"]) then
-            "#{File.expand_path("..", context["page"]["path"])}/#{context["page"]["header_image"]}"
-          else
-            "#{Dir.pwd}/opengraph/default.png"
-          end
+          background = resolve_background_image(context)
           script = "node #{Dir.pwd}/opengraph.js -t \"#{CGI.unescapeHTML(context["page"]["title"])}\" -d '#{context["page"]["date"].strftime("%e %B %Y")}' -a '#{context["page"]["author"]}' -b '#{background}' -o '#{Dir.pwd}/opengraph/#{@outputDir}#{filename}.jpg'"
-          puts script
-          system(script)
+
+          # Debug logging
+          puts "OG Filter: Processing #{context["page"]["title"]}"
+          puts "OG Filter: Background image: #{background} #{is_external_url?(background) ? '(external)' : '(local)'}"
+          puts "OG Filter: Command: #{script}"
+
+          # Execute the script and capture the result
+          result = system(script)
+          unless result
+            puts "OG Filter: Warning - opengraph.js execution failed for #{filename}"
+          end
         end
 
         # Get the site variable
