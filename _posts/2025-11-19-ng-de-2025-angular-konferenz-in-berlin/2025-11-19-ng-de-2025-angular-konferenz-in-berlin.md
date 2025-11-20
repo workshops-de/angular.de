@@ -169,8 +169,8 @@ Bis dahin: Keep coding, keep learning, und vor allem – bleibt dieser großarti
 ## Mehr von uns
 
 - 🎓 **[Angular Schulungen bei Workshops.DE](https://workshops.de/schulungen/angular/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=training-cta)** – Erweitere dein Angular-Wissen mit unseren Experten
-- 🎯 **[NG-DE 2026 Ankündigung](https://ng-de.org/2026/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=next-year-cta)** – Sichere dir jetzt schon deinen Early-Bird-Platz
-- 🤖 **[AI & Angular Workshops](https://workshops.de/schulungen/ai-angular/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=ai-cta)** – Die Zukunft der Web-Entwicklung
+- 🎯 **[NG-DE 2026 Newsletter](https://ng-de.org/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=next-year-cta)** – Sichere dir jetzt schon deinen Early-Bird-Platz
+- 🤖 **[AI & Angular Workshops](https://workshops.de/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=ai-cta)** – Die Zukunft der Web-Entwicklung
 
 Wir sehen uns spätestens 2026 wieder in Berlin!
 
