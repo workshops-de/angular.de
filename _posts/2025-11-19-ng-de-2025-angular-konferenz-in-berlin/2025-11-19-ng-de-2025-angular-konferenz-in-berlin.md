@@ -10,6 +10,12 @@ categories: "conference community angular ng-de recap"
 
 Wow, was für eine Konferenz! Noch immer bin ich völlig geflasht von den drei unglaublichen Tagen, die wir gemeinsam vom 5. bis 7. November im wunderschönen Hotel Oderberger am GLS Campus Berlin verbracht haben. Die NG-DE 2025 hat wieder einmal bewiesen, dass die Angular-Community einfach die Beste ist. Fast 450 begeisterte Teilnehmer:innen, erstklassige Speaker:innen und eine Stimmung, die einfach unbeschreiblich war – lasst uns gemeinsam auf diese fantastische Konferenz zurückblicken!
 
+## Von angular.de zu Workshops.DE: Eine Reise durch die deutsche Angular-Geschichte
+
+Die NG-DE Konferenz wird von **Workshops.DE** organisiert – einem IT-Schulungsunternehmen mit tiefen Wurzeln in der deutschen Angular-Community. Die Geschichte begann 2012, als ich das erste deutsche Angular-Buch schrieb und daraufhin angular.de gründete. Was als Plattform für Angular-Wissen und Community-Building startete, entwickelte sich über die Jahre zu einem führenden Schulungsunternehmen.
+
+Heute ist Workshops.DE ein etablierter Player im Bereich IT-Weiterbildung, doch das Herz schlägt nach wie vor für Angular und moderne Web-Entwicklung. Mit dem Aufkommen von AI-Technologien erweitern wir kontinuierlich unser Angebot und bringen die neuesten Innovationen in die deutsche Entwickler-Community. Die NG-DE Konferenz ist dabei unser jährliches Highlight – ein Ort, wo Tradition und Innovation aufeinandertreffen und die Angular-Community zusammenkommt.
+
 <p class="left">
 <img
 style="max-width: 80%"
