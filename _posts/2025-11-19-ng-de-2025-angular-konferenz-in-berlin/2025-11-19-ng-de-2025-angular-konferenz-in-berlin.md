@@ -12,9 +12,9 @@ Wow, was für eine Konferenz! Noch immer bin ich völlig geflasht von den drei u
 
 ## Von angular.de zu Workshops.DE: Eine Reise durch die deutsche Angular-Geschichte
 
-Die NG-DE Konferenz wird von **Workshops.DE** organisiert – einem IT-Schulungsunternehmen mit tiefen Wurzeln in der deutschen Angular-Community. Die Geschichte begann 2012, als ich das erste deutsche Angular-Buch schrieb und daraufhin angular.de gründete. Was als Plattform für Angular-Wissen und Community-Building startete, entwickelte sich über die Jahre zu einem führenden Schulungsunternehmen.
+Die [NG-DE Konferenz](https://ng-de.org/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=organizer-intro) wird von **Workshops.DE** organisiert – einem IT-Schulungsunternehmen mit tiefen Wurzeln in der deutschen Angular-Community. Die Geschichte begann 2012, als ich das erste deutsche Angular-Buch schrieb und daraufhin angular.de gründete. Was als Plattform für Angular-Wissen und Community-Building startete, entwickelte sich über die Jahre zu einem führenden Schulungsunternehmen.
 
-Heute ist Workshops.DE ein etablierter Player im Bereich IT-Weiterbildung, doch das Herz schlägt nach wie vor für Angular und moderne Web-Entwicklung. Mit dem Aufkommen von AI-Technologien erweitern wir kontinuierlich unser Angebot und bringen die neuesten Innovationen in die deutsche Entwickler-Community. Die NG-DE Konferenz ist dabei unser jährliches Highlight – ein Ort, wo Tradition und Innovation aufeinandertreffen und die Angular-Community zusammenkommt.
+Heute ist [Workshops.DE](https://workshops.de/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=company-description) ein etablierter Player im Bereich IT-Weiterbildung, doch das Herz schlägt nach wie vor für Angular und moderne Web-Entwicklung. Mit dem Aufkommen von AI-Technologien erweitern wir kontinuierlich unser Angebot und bringen die neuesten Innovationen in die deutsche Entwickler-Community. Die NG-DE Konferenz ist dabei unser jährliches Highlight – ein Ort, wo Tradition und Innovation aufeinandertreffen und die Angular-Community zusammenkommt.
 
 <p class="left">
 <img
@@ -165,6 +165,12 @@ An dieser Stelle möchte ich mich bei allen bedanken, die diese fantastische Kon
 Wer die Talks verpasst hat oder noch einmal Revue passieren lassen möchte: Alle Sessions werden nach und nach auf unserem [YouTube-Channel](https://www.youtube.com/@ng-de) veröffentlicht. Abonniert den Kanal, um nichts zu verpassen!
 
 Bis dahin: Keep coding, keep learning, und vor allem – bleibt dieser großartigen Community treu!
+
+## Mehr von uns
+
+- 🎓 **[Angular Schulungen bei Workshops.DE](https://workshops.de/schulungen/angular/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=training-cta)** – Erweitere dein Angular-Wissen mit unseren Experten
+- 🎯 **[NG-DE 2026 Ankündigung](https://ng-de.org/2026/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=next-year-cta)** – Sichere dir jetzt schon deinen Early-Bird-Platz
+- 🤖 **[AI & Angular Workshops](https://workshops.de/schulungen/ai-angular/?utm_source=angular.de&utm_medium=blog&utm_campaign=ng-de-2025-recap&utm_content=ai-cta)** – Die Zukunft der Web-Entwicklung
 
 Wir sehen uns spätestens 2026 wieder in Berlin!
 
