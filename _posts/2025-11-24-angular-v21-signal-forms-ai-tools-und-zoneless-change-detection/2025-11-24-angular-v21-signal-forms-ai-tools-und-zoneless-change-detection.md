@@ -136,14 +136,14 @@ Angular v21 ist mehr als nur ein reguläres Update - es markiert einen wichtigen
 - Angular v21 Release Event: https://angular.dev/events/v21
 
 ### Review-Bewertung:
-**Änderungsschwere**: MINOR
-**Code-Beispiele verifiziert**: ✅ JA (1 kritischer Fehler korrigiert)
-**Technische Fakten verifiziert**: ✅ JA (Performance-Claims präzisiert)
-**Artikelqualität**: HOCH (nach Korrekturen)
+- **Änderungsschwere**: MINOR
+- **Code-Beispiele verifiziert**: ✅ JA (1 kritischer Fehler korrigiert)
+- **Technische Fakten verifiziert**: ✅ JA (Performance-Claims präzisiert)
+- **Artikelqualität**: HOCH (nach Korrekturen)
 
 ### Empfehlungen:
 💡 Der Artikel ist nach den Korrekturen technisch korrekt und publikationsreif
 💡 Signal Forms Code-Beispiel ist bewusst vereinfacht - für Production würden komplexere Patterns benötigt
 💡 Zoneless ist ein Major Feature - die Korrektur war kritisch für die technische Korrektheit
-**Konfidenz-Level**: HIGH
-**Artikel ready to publish**: ✅ TRUE
+- **Konfidenz-Level**: HIGH
+- **Artikel ready to publish**: ✅ TRUE
