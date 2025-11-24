@@ -122,12 +122,12 @@ Angular v21 ist mehr als nur ein reguläres Update - es markiert einen wichtigen
    - Hinweis: Offizielle Dokumentation spricht von Build-Optimierungen, aber ohne exakte Prozentzahlen
 
 ### Verifizierte technische Fakten:
-✅ Release-Datum: 19. November 2025 (korrekt)
-✅ Signal Forms: Verfügbar und stabil in v21
-✅ Zoneless Change Detection: Produktionsreif und standardmäßig aktiviert
-✅ HttpClient: By default in neuen Projekten enthalten
-✅ MCP Server: AI-Tool verfügbar
-✅ Migration Command: `ng update @angular/cli @angular/core` (korrekt)
+- ✅ Release-Datum: 19. November 2025 (korrekt)
+- ✅ Signal Forms: Verfügbar und stabil in v21
+- ✅ Zoneless Change Detection: Produktionsreif und standardmäßig aktiviert
+- ✅ HttpClient: By default in neuen Projekten enthalten
+- ✅ MCP Server: AI-Tool verfügbar
+- ✅ Migration Command: `ng update @angular/cli @angular/core` (korrekt)
 
 ### Verifikationsquellen:
 - Offizielle Angular v21 Blog-Ankündigung: https://blog.angular.dev/announcing-angular-v21-57946c34f14b
