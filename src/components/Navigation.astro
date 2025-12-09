@@ -182,7 +182,7 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
 <!-- Google Translate Script -->
 <script is:inline>
   // Google Translate initialization
-  function googleTranslateElementInit() {
+  window.googleTranslateElementInit = function() {
     new google.translate.TranslateElement({
       pageLanguage: 'de',
       includedLanguages: 'en',

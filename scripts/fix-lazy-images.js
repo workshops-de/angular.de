@@ -82,7 +82,7 @@ function fixLazyImages() {
       }
 
       // Remove 'lazy' from class attribute
-      newAttributes = newAttributes.replace(/class="([^"]*)"/g, (m, classValue) => {
+      newAttributes = newAttributes.replace(/class="([^"]*)"/g, (_match, classValue) => {
         const newClass = classValue
           .split(/\s+/)
           .filter(c => c !== 'lazy')

@@ -44,8 +44,8 @@ if (user.twitter) sameAs.push(`https://twitter.com/${user.twitter}`);
   <PersonJsonLd
     name={user.name}
     image={gravatarUrl}
-    jobTitle={user.intro}
-    description={user.bio}
+    jobTitle={user.intro || undefined}
+    description={user.bio || undefined}
     url={`${siteConfig.url}/team/${permalink}/`}
     sameAs={sameAs}
   />

@@ -16,7 +16,7 @@ const {
   name = courseData.name,
   description = courseData.description,
   image = courseData.image?.[0] || 'https://angular.de/assets/img/workshops/logo-angular-typescript-schulung.svg',
-  sku = courseData.sku || 'angular-typescript',
+  sku = (courseData as any).sku || 'angular-typescript',
 } = Astro.props;
 
 // Build the product schema
@@ -63,5 +63,5 @@ const productSchema = {
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(productSchema)} />
 

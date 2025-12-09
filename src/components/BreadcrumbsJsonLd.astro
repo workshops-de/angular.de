@@ -31,5 +31,5 @@ const breadcrumbSchema = {
 ---
 
 {breadcrumbItems.length > 1 && (
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 )}

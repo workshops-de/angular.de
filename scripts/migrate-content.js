@@ -46,7 +46,7 @@ function copyDir(src, dest) {
 }
 
 // Transform Jekyll frontmatter to Astro format
-function transformFrontmatter(content, postSlug) {
+function transformFrontmatter(content, _postSlug) {
   // Extract frontmatter
   const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
   if (!fmMatch) return content;
