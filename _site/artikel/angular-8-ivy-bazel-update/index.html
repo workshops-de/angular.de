@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Angular 8 - Neue Features und Anleitung zum Update | Angular.DE</title>
+  
+  <meta name="description" content="Mit Angular 8 kommen neue Features wie Ivy, Differential Loading, Lazy Loading und ein kleiner Breaking Change bei der ViewChild Direktive.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angular-8-ivy-bazel-update/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Angular 8 - Neue Features und Anleitung zum Update - Angular.DE">
+
+
+
+  <meta property="og:description" content="Mit Angular 8 kommen neue Features wie Ivy, Differential Loading, Lazy Loading und ein kleiner Breaking Change bei der ViewChild Direktive.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angular-8-ivy-bazel-update/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Angular 8 - Neue Features und Anleitung zum Update - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Mit Angular 8 kommen neue Features wie Ivy, Differential Loading, Lazy Loading und ein kleiner Breaking Change bei der ViewChild Direktive.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angular-8-ivy-bazel-update/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Angular 8 - Neue Features und Anleitung zum Update"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Angular 8 - Neue Features und Anleitung zum Update" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Angular 8 - Neue Features und Anleitung zum Update</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angular/" class="badge bg-secondary text-bg-secondary text-uppercase">angular</a>
+            
+            <a href="/kategorie/release/" class="badge bg-secondary text-bg-secondary text-uppercase">release</a>
+            
+            <a href="/kategorie/update/" class="badge bg-secondary text-bg-secondary text-uppercase">update</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Robin Böhm
+            
+            <a href="https://twitter.com/robinboehm" target="_blank" style="margin-bottom: 5px;">
+              <img src="/shared/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
+            </a>
+            
+            
+            <span class="ms-1 me-1">•</span> <time>21.06.2018</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  10 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>In diesem Artikel wollen wir uns der neuen Angular Version widmen und wie ihr euer Projekt mit Hilfe der CLI auf die Version 8 anheben könnt. Es gibt sehr viele Neuigkeiten welche großen Einfluss auf unsere Angular-Projekte haben. Die gute Nachricht ist: Diese kommen mit keinen bzw. minimalen Breaking-Changes und automatischer Migration dank Schematics.</p>
+
+<h2 id="neue-features-in-angular-8">Neue Features in Angular 8</h2>
+
+<p>Jedoch zuerst einmal eine Übersicht was euch unter anderen alles in der neuen Angular v8 erwartet:</p>
+
+<h3 id="angular-ivy-support">Angular Ivy Support</h3>
+<p>Lange haben wir darauf warten müssen, doch jetzt ist es soweit. Die neue Render Engine Ivy ist endlich released, allerdings müsst ihr diese aktivieren da sie in Version 8 noch als optionales Feature mitgeliefert wird.</p>
+
+<p>Ihr habt verschiedene Möglichkeiten Ivy zu aktivieren.</p>
+
+<p>Via Flag beim erstellen eines neuen Projektes:</p>
+
+<pre><code class="language-cmd">ng new awesome-app --enable-ivy
+</code></pre>
+
+<p>Oder in eurer <code class="language-plaintext highlighter-rouge">tsconfig.app.json</code> in euern bereits existierenden Projekt.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"angularCompilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"enableIvy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Da sich aus Sicht von uns Framework-Usern hierbei kaum etwas ändert, werde ich in diesem Artikel nicht weiter auf Ivy eingehen. Jedoch habe ich ein Meetup Talk welchen ihr euch dazu gerne ansehen könnt der die Interna von Ivy erklärt.</p>
+
+<p><a href="https://www.youtube.com/watch?v=aRZaE0b2HFk" target="_blank" rel="noreferrer noopener">Robin Böhm, Angular Ruhr Ivy</a></p>
+
+<h3 id="differential-loading">Differential loading</h3>
+<p>Dieses Feature ermöglicht euch je nach Browser nur die Bundles auszuliefern, welche auch benötigt werden. Nutzt ihr also ein sogenannten legacy Browser der zwingend ES5 benötigt bekommt dieser ein anderes Bundle als ein neuerer evergreen Browser wie z.B. die aktuellen Versionen von Firefox, Edge oder Chrome. Diese sind oftmals wesentlich kleiner und effizienter als der “alte ES5 Code”. Als Beispiel nutzt das Angular Team ihre eigene Webseite und zeigt hierbei Optimierungen bis 20%.</p>
+
+<p><img src="/shared/assets/img/placeholder-image.svg" alt="Angular.IO saves up to 20% with Ivy" class="lazy" data-src="differential-loading-savings.png" data-srcset="differential-loading-savings.png">
+Bildquelle: https://blog.angularindepth.com/embrace-yourself-angular-8-is-coming-1bf187c8f0bf</p>
+
+<p>Um dieses Feature zu nutzen könnt ihr eins euer Projekt mit einer sogenannten <a href="https://github.com/browserslist/browserslist" rel="noreferrer noopener" target="_blank">Browserlist Konfiguration</a> erweitern. Explizit heißt das, dass ihr in eure <code class="language-plaintext highlighter-rouge">package.json</code> den entsprechenden Eintrag angefügt oder eine neue Datei mit dem Namen <code class="language-plaintext highlighter-rouge">browserlist</code> anlegt (präferiert, da diese Datei auch vom SEO crawler gelesen wird). Eine Beispielkonfiguration könnte z.B. so aussehen:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"browserslist"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"last 1 version"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"&gt; 1%"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"maintained node versions"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"not dead"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Mit der neuen Version der CLI werden im Build-Prozess nun verschiedene Versionen für die verschiedenen Browser erstellt, je nachdem was ihr als “modern” und “legacy” Browser definiert habt. Die Browserlist ist hierbei die “modern” Version und das in der <code class="language-plaintext highlighter-rouge">tsconfig.json</code> eingetragene target ist die älteste legacy Version die unterstützt werden soll.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es2015"</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Die Einbindung in euerm Projekt erfolgt dann über die <a href="https://jakearchibald.com/2017/es-modules-in-browsers/#nomodule-for-backwards-compatibility" rel="noreferrer noopener" target="_blank">nomodule Syntax</a> im Browser. Dies wird aber automatisch über den Build-Prozess für euch erledigt.</p>
+
+<p><img src="/shared/assets/img/placeholder-image.svg" alt="Example Network Requests for Differential Loading" class="lazy" data-src="differential-loading-network.png" data-srcset="differential-loading-network.png">
+Bildquelle: https://dev.to/lacolaco/differential-loading-a-new-feature-of-angular-cli-v8-4jl</p>
+
+<p>Wenn ihr wissen wollt welche Browser von euer Regel inkludiert und welche exkludiert sind bietet das Projekt dieses <a href="https://browsersl.ist/#q=%3E+1%25%2C+last+2+Chrome+versions%2C+IE+11%2C+Firefox+ESR%2C+not+dead%2C+not+IE+9-11" rel="noreferrer noopener" target="_blank">Browserlist Online Tool</a>.</p>
+
+<p><img src="/shared/assets/img/placeholder-image.svg" alt="BrowserList Example output of supported modern browsers" class="lazy" data-src="browserlist-web.png" data-srcset="browserlist-web.png"></p>
+
+<h3 id="web-worker-unterstützung">Web Worker Unterstützung</h3>
+<p>Ihr habt bestimmt schon einiges von Web-Workern gehört. Hinter diesem Begriff verbringt sich ein Browser Feature welches uns in der Single-threaded Sprache JavaScript ermöglicht doch eine Art von Multi Threading zu nutzen. Wir können dabei neue Threads, sogenannte Web-Worker, erstellen und hierbei über die Message-Queues der jeweiligen Prozesse miteinander Kommunizieren und so Arbeit vom Main-Thread auslagern. Dies ist sinnvoll für lange Berechnungen, da diese sonst ebenfalls z.B. den Render-Zyklus euer Anwendung blocken. Durch die Unterstützung von Web-Workern in Angular Version 8 könnt ihr nun bequem davon profitieren und intensive Berechnungen auslagern und auch parallel ausführen lassen. Wobei Angular hierbei lediglich die Benutzung von WebWorkern erkennt und diese ein separate bundles ausgelagert, welche nur nachgeladen werden wenn diese auch benutzt werden. Der Worker selbst läuft jedoch nicht im Angular Context.</p>
+
+<p>Um ein Worker zu erstellen könnt ihr wie bei allen anderen Features die CLI benutzen um euch die entsprechenden Dateien und Erweiterungen generieren zu lassen.</p>
+
+<pre><code class="language-cmd">ng generate worker calculate-pi
+</code></pre>
+
+<p>Die Implementierung des Workers ist dann relativ einfach. Ihr registriert ein EventListener welcher auf das Event <code class="language-plaintext highlighter-rouge">message</code> hört. Dieses nimmt den Payload des Events und nutz diesen als Argumente für die Ausführung der langlebigen Funktion <code class="language-plaintext highlighter-rouge">calculatePi</code>. Der Rückgabewert dieser Funltion wird über die Funktion <code class="language-plaintext highlighter-rouge">postMessage</code> weitergegeben.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">calculatePi</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./calculate-pi</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="p">({</span> <span class="nx">args</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nf">calculatePi</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">digits</span><span class="p">);</span>
+  <span class="nf">postMessage</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>In z.B. euerm Service könnt ihr nun ein Worker registrieren. Es werden hierbei verschiedene Modulsysteme unterstützt, für unseren Fall verwenden wir die Konfiguration <code class="language-plaintext highlighter-rouge">module</code> für ein ECMAScript Module. Das Ergebnis des Workers können wir über ein EventListener auf den EventTyp <code class="language-plaintext highlighter-rouge">message</code> erhalten. Um den Worker zu starten arbeiten wir auch hier einfach mit <code class="language-plaintext highlighter-rouge">postMessage</code> was unsere eben definierte Datei anstößt und uns die Nachkommastellen von PI berechnet.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Worker</span><span class="p">(</span><span class="dl">'</span><span class="s1">./calculate-pi.worker</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">module</span><span class="dl">'</span><span class="p">});</span>
+<span class="nx">worker</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">worker result</span><span class="dl">'</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">worker</span><span class="p">.</span><span class="nf">postMessage</span><span class="p">({</span><span class="na">digits</span><span class="p">:</span> <span class="mi">5</span><span class="p">});</span>
+</code></pre></div></div>
+
+<p>Die Angular-CLI sorgt dafür das die jeweiligen Worker in eigene Bundles ausgelagert werden und nur nachgeladen werden wenn sie auch benutzt werden. Das spart wieder ein wenig Ladezeit und beschleunigt eurer initiale Ladezeit euer Anwendung.</p>
+
+<h3 id="neue-lazy-loading--code-spitting-syntax">Neue Lazy-Loading / Code-Spitting Syntax</h3>
+<p>Endlich wird der kryptische String abgelöst mit welchem wir bisher in unser Routing-Konfiguration Module definiert haben welche wir dynamisch Nachladen und somit als extra Bundle gebaut haben möchten. Dies klappt nun endlich über die native Browserfunktion <code class="language-plaintext highlighter-rouge">import()</code> was es sowohl webpack, den Browsern als auch unseren IDEs einfacher macht damit umzugehen.</p>
+
+<p><img src="/shared/assets/img/placeholder-image.svg" alt="Git Diff about router updates" class="lazy" data-src="git-diff-routerupdate-v8.png" data-srcset="git-diff-routerupdate-v8.png"></p>
+
+<p>Durch die neue Syntax kann nun auch unsere IDE eine korrekte statische Analyse durchführen und beliebte “typos” an dieser Stelle direkt aufdecken und uns viel Zeit sparen! Ein Weiterer Vorteil ist, dass nun auch Code-Bundling und Optimierung mit den Standard-Webpack-Modulen durchgeführt werden können und kein zusätzlicher Buildprozess dafür speziell für Angular genutzt werden muss.</p>
+
+<h3 id="bazel">Bazel</h3>
+<p>Eine weitere Neuheit ist das Werkzeug Bazel, das Build System was Google intern benutzt und nun als open-source auch der Angular Community bereit stellt. Ein großer Vorteil hierbei ist die Unterstützung von inkrementellen Builds. Dies beschleunigt die Kompilierung eures Projektes massiv, da nur Dateien neu gebaut welche sich auch geändert haben.</p>
+
+<p>Ein weiteres Feature welches für große Projekte und Enterpise-Teams sehr interessant ist, ist die Möglichkeit den Build in der Cloud auszuführen und innerhalb eines Teams einen gemeinsamen Cache zu benutzen. Wenn also einer eurer Teamkollegen/innen bereits das Paket bzw den Sourcecode gebaut habt, greift ihr einfach auf die bereits gecachte Version zurück und spart euch Zeit und Rechenpower.</p>
+
+<p>Testen könnt ihr das experimentelle Build System indem ihr bazel installiert und ein neues Projekt damit generiert.</p>
+
+<pre><code class="language-cmd">npm i -g @angular/bazel
+ng new awesome-app --collection=@angular/bazel
+</code></pre>
+
+<h3 id="breaking-changes-bei-viewchild-und-contentchild">Breaking Changes bei ViewChild und ContentChild</h3>
+
+<p>Ein kleinen Breaking Change bringt diese Version doch mit sich und zwar in den Direktiven <code class="language-plaintext highlighter-rouge">ViewChild</code> und <code class="language-plaintext highlighter-rouge">ContentChild</code>. Hierbei handelt es sich um eine Korrektur des inkonsistenten Verhaltens in Verbindung mit Strukturellen Direktiven wie <code class="language-plaintext highlighter-rouge">ngIf</code> oder <code class="language-plaintext highlighter-rouge">ngFor</code>. Wurden diese benutzt, war die Referenz erst im LifeCycle ngAfterViewInit/ngAfterContentInit zur Verfügung. Wurden Sie nicht benutzt bereits in ngOnInit. Dies hat an vielen Stellen zur Verwirrung geführt. Wenn ihr weitere Details wollt könnt ihr diese am besten im <a href="https://github.com/angular/angular/pull/28810" rel="noreferrer noopener" target="_blank">PullRequest</a> nachlesen.</p>
+
+<p>Ab Version 8 könnt ihr nun explizit angeben wann diese Auflösung erfolgen soll. Der Defaultwert ist <code class="language-plaintext highlighter-rouge">static: true</code>, was bedeutet ihr habt das ElementRef bereits zum LifeCyce <code class="language-plaintext highlighter-rouge">ngOnInit</code> zur Verfügung. Mit <code class="language-plaintext highlighter-rouge">static: false</code> setzt ihr das alte Verhalten bzw. nutzt es wenn ihr strukturelle Direktiven nutzt.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">tooltip</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">static</span><span class="p">:</span> <span class="kc">false</span> <span class="p">})</span>
+<span class="nx">paragraph</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Wenn ihr euer Projekt mit <code class="language-plaintext highlighter-rouge">ng update</code> auf die neueste Version anhebt, versucht die Migration den richtigen Wert automatisch zu wählen (Das ist übrigens der gleiche Algorithmus der die Zuweisung bisher zur Laufzeit versucht). Falls dies nicht Möglich oder unklar ist, wird ein <code class="language-plaintext highlighter-rouge">TODO</code> Kommentar an dieser Stelle eingefügt.</p>
+
+<h2 id="updateanleitung">Updateanleitung</h2>
+<h3 id="welche-schritte-muss-ich-durchführen-um-mein-projekt-auf-die-neueste-version-upzudaten">Welche Schritte muss ich durchführen um mein Projekt auf die neueste Version upzudaten?</h3>
+
+<p>Der einfachste Weg ist wie immer über <code class="language-plaintext highlighter-rouge">update.angular.io</code> wo ihr eine Schritt für Schritt Anleitung bekommt egal von welcher Version ihr zu v8 updatet. Ich gehe hier nur auf das Update von v7 auf v8 ein.</p>
+
+<p>Die meisten Schritte werden durch <code class="language-plaintext highlighter-rouge">ng update</code> für euch automatisch gemacht. Allerdings könnte es einige kleinere Migrationen nach sich ziehen da wir ebenfalls auf TypeScript Version 3.4 und Node auf Version 12+ updaten müssen.  An eurem Angular Code selber sind die Änderungen sehr gering, daher lasst uns doch einmal anschauen was passiert wenn wir <code class="language-plaintext highlighter-rouge">ng upgrade</code> ausführen.</p>
+
+<pre><code class="language-cmd">ng update @angular/cli @angular/core
+</code></pre>
+
+<p>Nachdem wir diesen Befehl ausgeführt haben werden automatisch unsere Pakete auf die neueste Version aktualisiert und notwendige Änderungen an eurem Code vorgenommen.</p>
+
+<p><img src="/shared/assets/img/placeholder-image.svg" alt="ng update example run on an angular v7 project" class="lazy" data-src="ng-update.gif" data-srcset="ng-update.gif"></p>
+
+<p>Nach der Migration nutzt ihr die neue Angular Version und eure potentiellen Breaking Changes wurden erwartungsgemäß automatisch migriert bzw. mit einem ToDo versehen.</p>
+
+<p><img src="/shared/assets/img/placeholder-image.svg" alt="Git Diff for the updated package.json to angular v8" class="lazy" data-src="git-diff-package-json.png" data-srcset="git-diff-package-json.png"></p>
+
+<h2 id="fazit">Fazit</h2>
+<p>Bei dieser Version hat das Angular Team ganze Arbeit geleistet. Durch die neue Engine Ivy wird das Framework um einiges schneller - und das an vielen Stellen. Sowohl der Build als auch die Ladezeiten für den Endnutzer sind deutlich beschleunigt. Das alles kommt mit absolut kleinem Breaking-Change für uns Entwickler, was eine wahnsinnige Leistung ist. Ivy wird auch noch zu Angular v9 weiterentwickelt und ist auf unser Feedback aus der “echten Welt” angewiesen. Darum empfehle ich Ivy gerne einmal eine Chance zu geben und früh das Feedback via GitHub zurückfließen zu lassen, damit wir gemeinsam das Framework weiter für neue Herausforderungen stärken können.</p>
+
+<p>Beim Update-Prozess merkt man nun ganz stark die Stärken von Schematics und die Auswirkungen auf große (Enterprise-)Projekte. Die gesparte Arbeitszeit und vermeidung potentieller Fehler durch eine automatische Migration macht das Update zu einem absoluten “nobrainer” und sollte für fast jeden Projekt problemlos durchzuführen sein. Angular v8 ist ein sehr gelungenes Release des Angular Teams! Vielen Dank dafür!</p>
+
+<p>Wenn ihr mehr über Angular lernen wollt, schaut euch gerne unsere <a href="/schulungen/angular-intensiv/">Angular Schulungen für Einsteiger</a> und für <a href="/schulungen/angular-enterprise-applications/">Fortgeschrittene Angular Entwickler</a> an. Es gibt sowohl öffentliche Termine in Berlin, Essen, München, Stuttgart und Hamburg als auch In-House Schulungen wo wir direkt zu euch kommen.</p>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2019-06-20-angular-8-ivy-bazel-update/2019-06-20-angular-8-ivy-bazel-update.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Robin Böhm" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/e9e044629f5324a4a3c27302f0d4efcc-160x160.jpg"
+      data-srcset="/assets/img/gravatars/e9e044629f5324a4a3c27302f0d4efcc-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Robin Böhm
+    </p>
+    
+      <p class="text-muted small">
+        Robin beschäftigt sich seit 2012 intensiv mit der Erstellung client-seitiger Web-Applikationen. 2014 hat er das erste deutschsprachige Buch zum Thema AngularJS geschrieben und ist Mitgründer der Platform Angular.DE. Mit seinem Schulungs-Team hat er bereits über 1200 Unternehmen den erfolgreichen Start mit Angular ermöglicht.
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/robinboehm" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+        <a href="https://twitter.com/robinboehm" class="btn btn-sm btn-outline-secondary" target="_blank">Twitter</a>
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ng-de-conference-2025-ankuendigung/"
+    data-style="background-image: url('/artikel/ng-de-conference-2025-ankuendigung/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NG-DE Conference 2025 wieder in Berlin
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

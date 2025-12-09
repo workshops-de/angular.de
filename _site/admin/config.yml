@@ -1,0 +1,91 @@
+# local_backend: true
+locale: 'de'
+logo_url: https://angular.de/assets/img/logo.svg
+backend:
+  name: github
+  repo: workshops-de/angular.de
+  open_authoring: true
+  base_url: https://angular.de
+  auth_endpoint: /oauth/auth
+  squash_merges: true
+  commit_messages:
+    create: Create {{collection}} “{{slug}}”
+    update: Update {{collection}} “{{slug}}”
+    delete: Delete {{collection}} “{{slug}}”
+    uploadMedia: Upload “{{path}}”
+    deleteMedia: Delete “{{path}}”
+    openAuthoring: '{{message}}'
+media_folder: 'assets/uploads'
+publish_mode: editorial_workflow
+collections:
+  - name: 'article'
+    label: 'Artikel'
+    label_singular: 'Artikel'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    path: '{{slug}}/{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - label: 'Author'
+        name: 'author'
+        widget: 'relation'
+        collection: 'authors'
+        search_fields: ['name']
+        value_field: '{{slug}}'
+        display_fields: ['name']
+      - { label: 'Publish Date', name: 'published_at', widget: 'datetime' }
+      - { label: 'Header Source', name: 'header_source', widget: 'hidden', required: false}
+      - label: 'Header Image'
+        name: 'header_image'
+        widget: 'file'
+        media_library:
+          config:
+            max_file_size: 440000
+      - { label: 'Categories', name: 'categories', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+    sortable_fields: ['title', 'author', 'published_at']
+  - name: 'authors'
+    label: 'Autoren'
+    label_singular: 'Autor'
+    folder: '_data/users/'
+    create: true
+    slug: '{{slug}}'
+    extension: yaml
+    editor:
+      preview: false
+    fields:
+      - { label: 'Permalink', name: 'permalink', hint: 'z.B. robinboehm', widget: 'string' }
+      - { label: 'Name', name: 'name', hint: 'z.B. Robin Böhm', widget: 'string' }
+      - { label: 'Gravatar UID', name: 'gravatar_uid', hint: 'Erstelle deinen Gravatar hier https://de.gravatar.com/', widget: 'string', required: false }
+      - { label: 'Github Handle', name: 'github', widget: 'string', required: false }
+      - { label: 'Twitter Handle', name: 'twitter', widget: 'string', required: false }
+      - { label: 'workshops.de Profil', name: 'workshops_de', widget: 'string', hint: 'Dein Permalink auf workshops.de', required: false }
+      - { label: 'Website', name: 'website', widget: 'string', required: false }
+      - { label: 'Stadt', name: 'city', widget: 'string', required: false }
+      - { label: 'Ist Team-Mitglied?', name: 'team', widget: 'boolean', required: false }
+      - { label: 'Ist Trainer:in?', name: 'trainer', widget: 'boolean', required: false }
+      - { label: 'Ist Google Developer Expert?', name: 'gde', widget: 'boolean', required: false }
+      - { label: 'Bio', name: 'bio', widget: 'text' }
+      - { label: 'Intro', name: 'intro', widget: 'hidden', required: false }
+      - { label: 'started_with_angular', name: 'started_with_angular', widget: 'hidden', required: false }
+      - { label: 'why_angular_de_team', name: 'why_angular_de_team', widget: 'hidden', required: false }
+      - { label: 'best_workshop_memory', name: 'best_workshop_memory', widget: 'hidden', required: false }
+  # - name: 'pages'
+  #   label: 'Seiten'
+  #   label_singular: 'Seite'
+  #   files:
+  #     - label: 'Home Page'
+  #       name: 'home'
+  #       file: '_pages/home.html'
+  #       extension: 'html'
+  #       editor:
+  #         preview: false
+  #       fields:
+  #         - {label: Title, name: title, widget: string}
+  #         - {label: 'Description', name: description, widget: text}
+  #         - {label: Body, name: body, widget: text}

@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Funktionale Reaktive Programmierung mit Bacon.js | Angular.DE</title>
+  
+  <meta name="description" content="Dieser Artikel soll Euch Funktionale Reaktive Programmierung näher bringen, damit Ihr komplexe Interaktionen mit einfachem, kompaktem Code umsetzen könnt.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angularjs-baconjs/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Funktionale Reaktive Programmierung mit Bacon.js - Angular.DE">
+
+
+
+  <meta property="og:description" content="Dieser Artikel soll Euch Funktionale Reaktive Programmierung näher bringen, damit Ihr komplexe Interaktionen mit einfachem, kompaktem Code umsetzen könnt.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angularjs-baconjs/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Funktionale Reaktive Programmierung mit Bacon.js - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Dieser Artikel soll Euch Funktionale Reaktive Programmierung näher bringen, damit Ihr komplexe Interaktionen mit einfachem, kompaktem Code umsetzen könnt.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angularjs-baconjs/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Funktionale Reaktive Programmierung mit Bacon.js"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Funktionale Reaktive Programmierung mit Bacon.js" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Funktionale Reaktive Programmierung mit Bacon.js</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angularjs/" class="badge bg-secondary text-bg-secondary text-uppercase">angularjs</a>
+            
+            <a href="/kategorie/reactive/" class="badge bg-secondary text-bg-secondary text-uppercase">reactive</a>
+            
+            <a href="/kategorie/observables/" class="badge bg-secondary text-bg-secondary text-uppercase">observables</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Ramy Hardan
+            
+            
+            <span class="ms-1 me-1">•</span> <time>07.07.2014</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  20 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Dieser Artikel soll Euch Funktionale Reaktive Programmierung näher bringen und in Verbindung mit AngularJS schmackhaft machen, damit Ihr komplexe Interaktionen mit einfachem, kompaktem Code umsetzen könnt.</p>
+
+<h2 id="was-ist-funktionale-reaktive-programmierung">Was ist Funktionale Reaktive Programmierung?</h2>
+
+<p>Wer schon Formeln in Excel verwendet hat oder Databinding in AngularJS nutzt, kam bereits in den Genuss reaktiver Programmierung. Wir brauchen uns nicht selbst um die Aktualisierung des Zustands bei Änderungen zu kümmern, sondern überlassen diese Aufgabe der Plattform. Voraussetzung ist, dass wir ihr vorher die Abhängigkeiten zwischen den Daten beibringen.</p>
+
+<p>In AngularJS definieren wir Abhängigkeiten zwischen Scope (Model) und DOM (View) meist über Direktiven, z.B. <em>ngModel</em>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">ng-model=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Damit haben wir AngularJS beigebracht, das Eingabefeld zu beobachten und alle Änderungen an den Scope weiterzuleiten und dort den <code class="language-plaintext highlighter-rouge">username</code> entsprechend aufzufrischen (ebenso in umgekehrter Richtung). Das Entscheidende dabei ist, dass es sich nicht um einen One-Night-Stand handelt, sondern um eine dauerhafte Beziehung: Jeder beobachtet den anderen und reagiert, wenn sich etwas beim Partner ändert.</p>
+
+<p>Hier sind wir schon im Kern reaktiver Programmierung: Sie konzentriert sich auf Zustandsänderungen über die Zeit hinweg und nicht nur auf den aktuellen Zustand.</p>
+
+<p>Etwas abstrakter ließe sich das obige Beispiel so schreiben:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">scope</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">dom</span><span class="p">.</span><span class="nx">input</span>
+</code></pre></div></div>
+
+<p>Im nicht-reaktiven Zusammenhang wäre dies eine einfache Zuweisung: “Weise der Variablen <code class="language-plaintext highlighter-rouge">scope.username</code> einmalig den aktuellen Wert der Variablen <code class="language-plaintext highlighter-rouge">dom.input</code> zu.”</p>
+
+<p>Bei reaktiver Programmierung bedeutet der Ausdruck: “Beobachte ständig jede Änderung in <code class="language-plaintext highlighter-rouge">dom.input</code> und leite sie an <code class="language-plaintext highlighter-rouge">scope.username</code> weiter.” Wegen dieser Eigenschaft hat sich die Bezeichnung <em>Observable</em> für solche dynamischen Datentypen durchgesetzt. Das <em>Observable</em> ist der funktionale Bruder des objektorientierten <a href="https://de.wikipedia.org/wiki/Beobachter_(Entwurfsmuster)" rel="noreferrer noopener" target="_blank">Observer-Entwurfsmusters</a>.</p>
+
+<p>Die Werte eines <em>Observable</em> sind also nie einfach, sondern immer Ströme von Werten über die Zeit. Wenn ich z.B. <code class="language-plaintext highlighter-rouge">Ramy</code> in das Eingabefeld tippe, dann könnte <code class="language-plaintext highlighter-rouge">dom.input</code> den Wert <code class="language-plaintext highlighter-rouge">...'R'....'a'..'m'...'y'..</code> haben, je nachdem, wann ich die Tasten drücke. Die Punkte entsprechen jeweils einer Zeiteinheit.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>Synchron</td>
+      <td>Asynchron</td>
+    </tr>
+    <tr>
+      <td>Ein Wert</td>
+      <td>
+<img src="baconjs-1.png" alt="Bild"><br>Datentyp: z.B. Number</td>
+      <td>
+<img src="baconjs-3.png" alt="Bild"><br>Datentyp: Promise/Future</td>
+    </tr>
+    <tr>
+      <td>Viele Werte</td>
+      <td>
+<img src="baconjs-2.png" alt="Bild"><br>Datentyp: Array/Object</td>
+      <td>
+<img src="baconjs-4.png" alt="Bild"><br>Datentyp: Observable</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Das war der reaktive Teil, es fehlt noch der funktionale. Auf den Ereignisströmen lassen sich Funktionen definieren, deren Ergebnisse wiederum Ereignisströme sind. So können wir Ströme  kombinieren und zu einer “Kanalisation” ausbauen, um komplexes Verhalten abzubilden.</p>
+
+<p>Wie das konkret in JavaScript aussieht, schauen wir uns am Beispiel von <a href="http://baconjs.github.io/" rel="noreferrer noopener" target="_blank">Bacon.js</a> an.</p>
+
+<h2 id="was-ist-baconjs">Was ist Bacon.js?</h2>
+
+<p><a href="http://baconjs.github.io/" rel="noreferrer noopener" target="_blank">Bacon.js</a> ermöglicht Funktionale Reaktive Programmierung in JavaScript. Beginnen wir mit einem Beispiel:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">tickStream</span> <span class="o">=</span> <span class="nx">Bacon</span><span class="p">.</span><span class="nf">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Der Wert von <code class="language-plaintext highlighter-rouge">tickStream</code> ist ein <a href="https://github.com/baconjs/bacon.js#eventstream" rel="noreferrer noopener" target="_blank">EventStream</a>, in dem alle 500 Millisekunden eine <code class="language-plaintext highlighter-rouge">1</code> erscheint.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span>
+</code></pre></div></div>
+
+<p>Bacon.js liefert viele Funktionen, die Komposition von Strömen ermöglichen. Aus dem <code class="language-plaintext highlighter-rouge">tickStream</code> wollen wir nun einen neuen Strom erzeugen, der abwechselnd <code class="language-plaintext highlighter-rouge">0</code> und <code class="language-plaintext highlighter-rouge">1</code> enthält, statt nur <code class="language-plaintext highlighter-rouge">1</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">tickStream</span> <span class="o">=</span> <span class="nx">Bacon</span><span class="p">.</span><span class="nf">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">aggregate</span><span class="p">,</span> <span class="nx">tick</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">aggregate</span> <span class="o">!==</span> <span class="nx">tick</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">ticktackStream</span> <span class="o">=</span> <span class="nx">tickStream</span><span class="p">.</span><span class="nf">scan</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">aggregator</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Die Funktion <a href="https://github.com/baconjs/bacon.js#observable-scan" rel="noreferrer noopener" target="_blank">scan</a> aggregiert Werte eines Stroms. Dazu übergibt man ihr einen Startwert und eine Aggregierungsfunktion. Die Aggregierungsfunktion erhält als Argumente das Ergebnis ihres letzten Aufrufs (bzw. den Startwert beim ersten Aufruf) und den aktuellen Wert des Stroms. In unserem Beispiel sehen die Aufrufe von <code class="language-plaintext highlighter-rouge">aggregator</code> so aus:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="mi">1</span>  <span class="c1">// Startwert von scan,         1. Wert aus tickStream</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="mi">0</span>  <span class="c1">// 1. Ergebnis von aggregator, 2. Wert aus tickStream</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="mi">1</span>  <span class="c1">// 2. Ergebnis von aggregator, 3. Wert aus tickStream</span>
+</code></pre></div></div>
+<p>usw.</p>
+
+<p>Unsere beiden Ströme enthalten also folgende Werte:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">tickStream</span><span class="p">:</span>      <span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span>
+    <span class="nx">ticktackStream</span><span class="p">:</span> <span class="mi">0</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">0</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span>
+</code></pre></div></div>
+
+<p>Das Ergebnis von <code class="language-plaintext highlighter-rouge">scan</code> ist streng genommen kein <em>EventStream</em>, sondern eine <em>Property</em>. Der Unterschied ist, dass eine <em>Property</em> einen aktuellen Wert (und ggf. einen Startwert) besitzt. Sie entspricht dem Konzept der überwachten Properties im Scope und ermöglicht die leichte Integration mit AngularJS, wie wir später sehen werden.</p>
+
+<p>Da <code class="language-plaintext highlighter-rouge">ticktackStream</code> einen aktuellen Wert hat, benennen wir ihn um und korrigieren unser Schaubild:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">tickStream</span><span class="p">:</span>    <span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span>
+    <span class="nx">ticktackProp</span><span class="p">:</span> <span class="mi">00000111110000011111</span>
+</code></pre></div></div>
+
+<p><em>EventStream</em> und <em>Property</em> sind lediglich unterschiedliche Sichtweisen auf veränderliche Werte. Anfangs verwirrt diese Unterscheidung eher, die jeweiligen Einsatzzwecke werden aber mit der Zeit klarer. Mit <code class="language-plaintext highlighter-rouge">eventStream.toProperty()</code> bzw. <code class="language-plaintext highlighter-rouge">property.changes()</code> können wir beruhigenderweise immer eine Sicht gegen die andere tauschen.</p>
+
+<p>Im nächsten Abschnitt verheiraten wir Bacon.js mit AngularJS und erwecken ein lange und schmerzlich vermisstes HTML-Element wieder zum Leben.</p>
+
+<h2 id="wie-bleiben-wir-mit-angularjs-im-fluss">Wie bleiben wir mit AngularJS im Fluss?</h2>
+
+<p>Glücklicherweise ebnet uns das Modul <a href="https://github.com/lauripiispanen/angular-bacon" rel="noreferrer noopener" target="_blank">angular-bacon</a> einen bequemen Weg, AngularJS und Bacon.js miteinander zu verbinden:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">baconProperty</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nf">$watchAsProperty</span><span class="p">(</span><span class="dl">'</span><span class="s1">scopePropertyName</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// AngularJS -&gt; Bacon.js</span>
+<span class="nx">baconPropertyOrStream</span><span class="p">.</span><span class="nf">digest</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="dl">'</span><span class="s1">scopePropertyName</span><span class="dl">'</span><span class="p">)</span>        <span class="c1">// Bacon.js -&gt; AngularJS</span>
+</code></pre></div></div>
+
+<p>So können wir z.B. in unseren AngularJS-Controllern Properties aus dem Scope als Bacon.js-Properties nutzen und reaktiv weiterprogrammieren. Betten wir unseren bisherigen Bacon.js-Code also in einen Controller ein und binden den aktuellen Wert von <code class="language-plaintext highlighter-rouge">ticktackProp</code> an eine Scope-Property <code class="language-plaintext highlighter-rouge">ticktack</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span> <span class="dl">'</span><span class="s1">baconDemo</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">angular-bacon</span><span class="dl">'</span><span class="p">]</span> <span class="p">).</span><span class="nf">controller</span><span class="p">(</span> <span class="dl">'</span><span class="s1">baconCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">tickStream</span> <span class="o">=</span> <span class="nx">Bacon</span><span class="p">.</span><span class="nf">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">aggregate</span><span class="p">,</span> <span class="nx">tick</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">aggregate</span> <span class="o">!==</span> <span class="nx">tick</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span>
+    <span class="p">};</span>
+    <span class="kd">var</span> <span class="nx">ticktackProp</span> <span class="o">=</span> <span class="nx">tickStream</span><span class="p">.</span><span class="nf">scan</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">aggregator</span><span class="p">);</span>
+
+    <span class="nx">ticktackProp</span><span class="p">.</span><span class="nf">digest</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ticktack</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Da <code class="language-plaintext highlighter-rouge">ticktack</code> jetzt im Scope liegt, können wir sie wie gewohnt in AngularJS nutzen:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">ng-controller=</span><span class="s">"baconCtrl"</span><span class="nt">&gt;</span>
+  Ticktack: {{ticktack}}
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<h3 id="zurück-in-die-90er-die-wiederbelebung-von-blink">Zurück in die 90er: Die Wiederbelebung von &lt;blink&gt;</h3>
+
+<p>Sogar <a href="https://www.google.de/search?q=blink+tag" rel="noreferrer noopener" target="_blank">Google vermisst &lt;blink&gt;</a>. Erwecken wir es also wieder zum Leben. Dazu erstellen wir eine Direktive <code class="language-plaintext highlighter-rouge">blink</code>, deren Sichtbarkeit wir über <a href="https://docs.angularjs.org/api/ng/directive/ngStyle" rel="noreferrer noopener" target="_blank">ng-style</a> mit Hilfe unserer <code class="language-plaintext highlighter-rouge">ticktackProp</code> wechseln.</p>
+
+<p>Im ersten Schritt erzeugen wir aus unserer <code class="language-plaintext highlighter-rouge">ticktackProp</code> mundgerechte CSS-Happen für <a href="https://docs.angularjs.org/api/ng/directive/ngStyle" rel="noreferrer noopener" target="_blank">ng-style</a> und binden sie an den Scope:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">toVisibility</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ticktackVal</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">ticktackVal</span> <span class="p">?</span> <span class="p">{</span><span class="na">visibility</span><span class="p">:</span><span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">}</span> <span class="p">:</span> <span class="p">{</span><span class="na">visibility</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">};</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">blinkProp</span> <span class="o">=</span> <span class="nx">ticktackProp</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">toVisibility</span><span class="p">);</span>
+
+<span class="nx">blinkProp</span><span class="p">.</span><span class="nf">digest</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blinkCss</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Die von <a href="https://github.com/baconjs/bacon.js#observable-map" rel="noreferrer noopener" target="_blank">map</a> erzeugte neue Bacon.js-Property <code class="language-plaintext highlighter-rouge">blinkProp</code> enthält alle mit der Funktion <code class="language-plaintext highlighter-rouge">toVisibility</code> abgebildeten Werte aus <code class="language-plaintext highlighter-rouge">ticktackProp</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ticktackProp</span><span class="p">:</span> <span class="mi">00000111110000011111</span>
+<span class="nx">blinkProp</span><span class="p">:</span>    <span class="nx">hhhhhvvvvvhhhhhvvvvv</span>
+</code></pre></div></div>
+
+<p>Im Scope haben wir nun eine Property <code class="language-plaintext highlighter-rouge">blinkCss</code> mit CSS-Daten, die wir für unsere Direktive nutzen:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">baconDemo</span><span class="dl">'</span><span class="p">).</span><span class="nf">directive</span><span class="p">(</span> <span class="dl">'</span><span class="s1">blink</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">restrict</span><span class="p">:</span> <span class="dl">'</span><span class="s1">E</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">transclude</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;div ng-style="blinkCss" ng-transclude&gt;&lt;/div&gt;</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Jetzt steht uns nichts mehr im Weg auf unserer Reise zu den Ursprüngen der Webgestaltung:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">ng-controller=</span><span class="s">"baconCtrl"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;blink&gt;</span>This should blink<span class="nt">&lt;/blink&gt;</span>
+  This shouldn't
+  <span class="nt">&lt;blink&gt;</span>This should blink, too<span class="nt">&lt;/blink&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p><a href="/assets/mirror/embed.plnkr.co/YISUVli19yzmmyW3KCmf/preview/">Plunkr in neuem Fenster öffnen</a></p>
+
+<h3 id="es-nervt-auf-dauer-bitte-ausschalten">Es nervt auf Dauer, bitte ausschalten!</h3>
+
+<p>Geben wir nun dem Nutzer die Möglichkeit, das Gezappel auf dem Bildschirm mit einem Button ab- und anzuschalten. Dazu definieren wir einen Button:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">ng-controller=</span><span class="s">"baconCtrl"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">ng-click=</span><span class="s">"shouldBlink = !shouldBlink"</span><span class="nt">&gt;</span>Blink: {{shouldBlink}}<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;blink&gt;</span>This should blink<span class="nt">&lt;/blink&gt;</span>
+  This shouldn't
+  <span class="nt">&lt;blink&gt;</span>This should blink, too<span class="nt">&lt;/blink&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>Ich habe mich hier für eine schmutzige Abkürzung entschieden und die Button-Logik gleich im <a href="https://docs.angularjs.org/api/ng/directive/ngClick" rel="noreferrer noopener" target="_blank">ng-click</a>-Attribut implementiert. Der Button setzt also beim Klicken <code class="language-plaintext highlighter-rouge">shouldBlink</code> im Scope abwechselnd auf <code class="language-plaintext highlighter-rouge">true</code> oder <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<p>Um das Blinken zu stoppen, setzen wir im ersten Versuch gleich an der Wurzel an und filtern den <code class="language-plaintext highlighter-rouge">tickStream</code>, damit er nur tickt, wenn <code class="language-plaintext highlighter-rouge">shouldBlink</code> den Wert <code class="language-plaintext highlighter-rouge">true</code> hat.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">controller</span><span class="p">(</span> <span class="dl">'</span><span class="s1">baconCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$scope</span><span class="p">.</span><span class="nx">shouldBlink</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">shouldBlinkProp</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nf">$watchAsProperty</span><span class="p">(</span><span class="dl">'</span><span class="s1">shouldBlink</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">tickStream</span> <span class="o">=</span> <span class="nx">Bacon</span><span class="p">.</span><span class="nf">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nf">filter</span><span class="p">(</span><span class="nx">shouldBlinkProp</span><span class="p">);</span>
+  <span class="c1">// Der Rest bleibt unverändert</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Mit <a href="https://github.com/baconjs/bacon.js#observable-filter" rel="noreferrer noopener" target="_blank">filter</a> erlaubt uns Bacon.js, nur bestimmte Werte in einem Strom durchzulassen. Neben einer Filterfunktion können wir auch, wie hier, eine Property übergeben. Ist sie <code class="language-plaintext highlighter-rouge">true</code>, dürfen die Werte des Stroms passieren, sonst nicht:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Bacon</span><span class="p">.</span><span class="nx">interval</span><span class="p">:</span>  <span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span>
+<span class="nx">shouldBlinkProp</span><span class="p">:</span> <span class="nx">tttttttttttffffffffffftttttttt</span>
+<span class="nx">tickStream</span><span class="p">:</span>      <span class="p">....</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span><span class="p">..............</span><span class="mi">1</span><span class="p">....</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<p>Wer mit dem Button etwas herumspielt, wird einen Fehler entdecken. Schalte ich das Blinken aus, während die blinkenden Elemente gerade nicht sichtbar sind, bleiben sie dauerhaft verborgen. Damit die blinkenden Elemente bei ausgeschaltetem Blinken immer sichtbar sind, haken wir uns an anderer Stelle im Strom ein:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">tickTackWithSwitch</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">latestTicktack</span><span class="p">,</span> <span class="nx">shouldBlinkCurrently</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">shouldBlinkCurrently</span> <span class="p">?</span> <span class="nx">latestTicktack</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">blinkProp</span> <span class="o">=</span> <span class="nx">ticktackProp</span>
+                <span class="p">.</span><span class="nf">combine</span><span class="p">(</span><span class="nx">shouldBlinkProp</span><span class="p">,</span> <span class="nx">tickTackWithSwitch</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">toVisibility</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Mit <a href="https://github.com/baconjs/bacon.js#observable-combine" rel="noreferrer noopener" target="_blank">combine</a> erzeugen wir aus 2 Strömen einen neuen. Der neue Strom entsteht durch verschmelzen der jeweils letzten Werte jedes Stroms, die wir an eine entsprechende Kombinierungsfunktion verfüttern (<code class="language-plaintext highlighter-rouge">tickTackWithSwitch</code>). In unserem Beispiel kombinieren wir <code class="language-plaintext highlighter-rouge">ticktackProp</code> mit <code class="language-plaintext highlighter-rouge">shouldBlinkProp</code>, um bei ausgeschaltetem Blinken immer eine 1 im Ergebnisstrom zu haben:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">ticktackProp</span><span class="p">:</span>    <span class="mi">000001111100000111110000011111</span>
+    <span class="nx">shouldBlinkProp</span><span class="p">:</span> <span class="nx">tttttttttttffffffffffftttttttt</span>
+    <span class="nx">combined</span><span class="p">:</span>        <span class="mi">000001111101111111111100011111</span>
+</code></pre></div></div>
+
+<p>Wir sollten nun ein Gefühl für die grundlegenden Funktionen (<a href="https://github.com/baconjs/bacon.js#observable-filter" rel="noreferrer noopener" target="_blank">filter</a>, <a href="https://github.com/baconjs/bacon.js#observable-map" rel="noreferrer noopener" target="_blank">map</a>, <a href="https://github.com/baconjs/bacon.js#observable-scan" rel="noreferrer noopener" target="_blank">scan</a>, <a href="https://github.com/baconjs/bacon.js#observable-combine" rel="noreferrer noopener" target="_blank">combine</a>) eines <em>Observable</em> haben. Auch haben wir gesehen, wie wir das Verhalten durch Zusammenstecken von Strömen leicht ändern und erweitern können. Als nächstes zeige ich Code aus einem unserer echten Projekte.</p>
+
+<h2 id="ein-beispiel-aus-der-praxis">Ein Beispiel aus der Praxis</h2>
+
+<p>In einem unserer neuesten Projekte geben wir <a href="http://nodejs.org/" rel="noreferrer noopener" target="_blank">Node.js</a> die Gelegenheit, sich als Backend zu bewähren, und haben einen <a href="http://martinfowler.com/bliki/CircuitBreaker.html" rel="noreferrer noopener" target="_blank">Circuit Breaker</a> mit Bacon.js umgesetzt. Ähnlich einer elektrischen Sicherung, die bei einem überlasteten Stromkreis das gesamte Haus vor dem Abfackeln schützt, kappt der Circuit Breaker eine überlastete Verbindung zu einem entfernten System, damit nicht zu viele Anfragen auflaufen und unnötig Ressourcen fressen. Fehler in einer Komponente werden so früh signalisiert (<a href="http://en.wikipedia.org/wiki/Fail-fast" rel="noreferrer noopener" target="_blank">Fail Fast</a> und pflanzen sich nicht fort.</p>
+
+<p>Ein Circuit Breaker kennt 3 Zustände</p>
+
+<ol>
+  <li>
+    <p>Im geschlossenen Zustand lässt er alle Anfragen an das entfernte System passieren. Sollten zu viele Anfragen in Folge scheitern (durch Zeitüberschreitung), wechselt er in den offenen Zustand.</p>
+  </li>
+  <li>
+    <p>Ist der Circuit Breaker offen, lehnt er alle Anfragen sofort ab und übermittelt nichts an das entfernte System. Nach einer Abkühlperiode landet er im halboffenen Zustand.</p>
+  </li>
+  <li>
+    <p>Hier taucht der Circuit Breaker den großen Zeh ins Wasser und lässt genau eine Anfrage durch. Scheitert sie, kehrt er in den offenen Zustand zurück und die Warteperiode beginnt von neuem. Ist sie erfolgreich, schließt er den Kreis wieder.</p>
+  </li>
+</ol>
+
+<p><img src="image-0.png" alt="image alt text"></p>
+
+<p>Wir steuern unseren Circuit Breaker über 3 Busse <code class="language-plaintext highlighter-rouge">sendQueue</code>, <code class="language-plaintext highlighter-rouge">successes</code> und <code class="language-plaintext highlighter-rouge">failures</code>. Ein <a href="https://github.com/baconjs/bacon.js#bus" rel="noreferrer noopener" target="_blank">Bus</a> ist ein <a href="https://github.com/baconjs/bacon.js#eventstream" rel="noreferrer noopener" target="_blank">EventStream</a>, der zusätzlich eine <a href="https://github.com/baconjs/bacon.js#bus-push" rel="noreferrer noopener" target="_blank">push</a>-Methode anbietet, um Werte in den Strom zu schieben. Um den Circuit Breaker in AngularJS zu nutzen, habe ich ihn als <a href="https://docs.angularjs.org/api/ng/service/$http" rel="noreferrer noopener" target="_blank">$http</a>-Interceptor eingebunden:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span> <span class="dl">'</span><span class="s1">circuitBreakerDemo</span><span class="dl">'</span><span class="p">,</span> <span class="p">[]</span> <span class="p">)</span>
+<span class="c1">// factory für circuitBreaker zunächst ausgelassen</span>
+
+<span class="p">.</span><span class="nf">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">circuitBreakerInterceptor</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">circuitBreaker</span><span class="p">,</span> <span class="nx">$q</span><span class="p">,</span> <span class="nx">$log</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">request</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">deferred</span> <span class="o">=</span> <span class="nx">$q</span><span class="p">.</span><span class="nf">defer</span><span class="p">();</span>
+      <span class="nx">circuitBreaker</span><span class="p">.</span><span class="nx">sendQueue</span><span class="p">.</span><span class="nf">push</span><span class="p">({</span><span class="na">deferred</span><span class="p">:</span> <span class="nx">deferred</span><span class="p">,</span> <span class="na">config</span><span class="p">:</span> <span class="nx">config</span><span class="p">});</span>
+      <span class="k">return</span> <span class="nx">deferred</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="p">},</span>
+
+    <span class="na">response</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="dl">"</span><span class="s2">CB</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Response</span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+      <span class="nx">circuitBreaker</span><span class="p">.</span><span class="nx">successes</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
+    <span class="p">},</span>
+
+    <span class="na">responseError</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">rejection</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$log</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">CB</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ResponseError</span><span class="dl">"</span><span class="p">,</span> <span class="nx">rejection</span><span class="p">);</span>
+      <span class="nx">circuitBreaker</span><span class="p">.</span><span class="nx">failures</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">$q</span><span class="p">.</span><span class="nf">reject</span><span class="p">(</span><span class="nx">rejection</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">})</span>
+
+<span class="p">.</span><span class="nf">config</span><span class="p">([</span><span class="dl">'</span><span class="s1">$httpProvider</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$httpProvider</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$httpProvider</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">circuitBreakerInterceptor</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}]);</span>
+</code></pre></div></div>
+
+<p>Die Funktionen <code class="language-plaintext highlighter-rouge">response</code> und <code class="language-plaintext highlighter-rouge">responseError</code> des Interceptors sind schnell erklärt: Wir signalisieren dem Circuit Breaker den Erfolg bzw. Fehlschlag einer Anfrage, indem wir eine <code class="language-plaintext highlighter-rouge">1</code> in den entsprechenden Bus schieben (<code class="language-plaintext highlighter-rouge">successes</code> bzw. <code class="language-plaintext highlighter-rouge">failures</code>).</p>
+
+<p>Die <code class="language-plaintext highlighter-rouge">request</code>-Funktion ist nur wenig anspruchsvoller: Mit <a href="https://docs.angularjs.org/api/ng/service/$q" rel="noreferrer noopener" target="_blank">$q</a> erzeugen wir zunächst ein neues <code class="language-plaintext highlighter-rouge">deferred</code>-Objekt, packen es mit der Anfrage (<code class="language-plaintext highlighter-rouge">config</code>) in ein Container-Objekt und schieben dies in die <code class="language-plaintext highlighter-rouge">sendQueue</code>. Dann geben wir das zu <code class="language-plaintext highlighter-rouge">deferred</code> gehörige <code class="language-plaintext highlighter-rouge">promise</code> an AngularJS zurück. Der Circuit Breaker kann nun abhängig von seinem Zustand die Anfrage erlauben (mit <code class="language-plaintext highlighter-rouge">deferred.resolve(config)</code>) oder ablehnen (mit <code class="language-plaintext highlighter-rouge">deferred.reject(config)</code>) und AngularJS erfährt von der Entscheidung über das zugehörige <code class="language-plaintext highlighter-rouge">promise</code>.</p>
+
+<p>Den Code des Circuit Breakers will ich nicht in jedem Detail erklären, weil er überwiegend aus den alten Bekannten <a href="https://github.com/baconjs/bacon.js#observable-filter" rel="noreferrer noopener" target="_blank">filter</a>, <a href="https://github.com/baconjs/bacon.js#observable-map" rel="noreferrer noopener" target="_blank">map</a> und <a href="https://github.com/baconjs/bacon.js#observable-scan" rel="noreferrer noopener" target="_blank">scan</a> besteht. Der folgende Plunk demonstriert die Funktionsweise des Circuit Breakers und enthält den vollständigen Code.</p>
+
+<p><a href="/assets/mirror/embed.plnkr.co/VZbodliA86xSQotOxpKZ/preview/">Plunkr in neuem Fenster öffnen</a></p>
+
+<p>Ich beleuchte deshalb nur die Stellen, an denen wir den neuen Funktionen <a href="https://github.com/baconjs/bacon.js#observable-throttle" rel="noreferrer noopener" target="_blank">throttle</a>, <a href="https://github.com/baconjs/bacon.js#stream-merge" rel="noreferrer noopener" target="_blank">merge</a> und <a href="https://github.com/baconjs/bacon.js#observable-slidingwindow" rel="noreferrer noopener" target="_blank">slidingWindow</a> begegnen.</p>
+
+<p>Die Warteperiode, nach der wir vom offenen Zustand in den halboffenen wechseln, können wir leicht mit Bacon.js implementieren:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">retryPing</span> <span class="o">=</span> <span class="nx">failures</span>
+                <span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="nx">tripped</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">throttle</span><span class="p">(</span><span class="nx">cbConfig</span><span class="p">.</span><span class="nx">waitUntilRetry</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Die Property <code class="language-plaintext highlighter-rouge">tripped</code>, die wir an anderer Stelle berechnen, zeigt uns an, ob die Zahl der aufeinanderfolgenden Fehler einen konfigurierbaren Grenzwert erreicht hat. <a href="https://github.com/baconjs/bacon.js#observable-throttle" rel="noreferrer noopener" target="_blank">throttle</a> schläft für eine bestimmte Zeit, gibt den letzten Wert des Eingabestroms aus und legt sich wieder hin.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">failures</span><span class="p">:</span> <span class="p">..</span><span class="mi">1</span><span class="p">...</span><span class="mf">1.1</span><span class="p">..</span><span class="mi">1</span><span class="p">..........</span>
+    <span class="nx">tripped</span><span class="p">:</span>  <span class="nx">fffffffftttttttttttttt</span>
+    <span class="nx">filter</span><span class="p">:</span>   <span class="p">........</span><span class="mi">1</span><span class="p">..</span><span class="mi">1</span><span class="p">..........</span>
+    <span class="nx">throttle</span><span class="p">:</span> <span class="p">.....................</span><span class="mi">1</span>
+                      <span class="o">|</span><span class="nx">___Schlaf___</span><span class="o">|</span>
+</code></pre></div></div>
+
+<p>Der folgende Codeblock entscheidet, ob wir vom halboffenen Zustand in den geschlossenen wechseln:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">halfOpenReceive</span> <span class="o">=</span> <span class="nx">retries</span>
+                        <span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="nx">successes</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+                        <span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="nx">failures</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+                        <span class="p">.</span><span class="nf">slidingWindow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">halfOpenToClosedReceive</span> <span class="o">=</span> <span class="nx">halfOpenReceive</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">halfOpenToClosedReceive</span><span class="p">.</span><span class="nf">onValue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$log</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="dl">"</span><span class="s2">CLOSED due to successful retry.</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">recloses</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Der Strom <code class="language-plaintext highlighter-rouge">retries</code> enthält für jeden Verbindungsversuch im halboffenen Zustand eine <code class="language-plaintext highlighter-rouge">1</code>. Wir führen dann <code class="language-plaintext highlighter-rouge">retries</code>, <code class="language-plaintext highlighter-rouge">successes</code> und <code class="language-plaintext highlighter-rouge">failures</code> mittels <a href="https://github.com/baconjs/bacon.js#stream-merge" rel="noreferrer noopener" target="_blank">merge</a> zusammen. Das Ergebnis ist ein Strom, in den alle Werte der zusammengeführten Ströme fließen. Da jeder dieser Ströme nur Einsen liefert, bilden wir sie zur Unterscheidung vorher auf verschiedene Werte ab.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">retries</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>   <span class="p">..</span><span class="mi">2</span><span class="p">......</span><span class="mi">2</span><span class="p">...</span>
+<span class="nx">successes</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="p">...........</span><span class="mi">1</span><span class="p">.</span>
+<span class="nx">merge</span><span class="p">:</span>            <span class="p">..</span><span class="mi">2</span><span class="p">......</span><span class="mf">2.1</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>Um herauszufinden, ob ein Verbindungsversuch erfolgreich war, betrachten wir die letzten beiden Werte des zusammengeführten Stroms und schließen den Kreis wieder, wenn auf einen Verbindungsversuch ein Erfolg folgt. Dazu picken wir mit <code class="language-plaintext highlighter-rouge">slidingWindow(2,2)</code>mind. 2 und max. 2, also genau 2 Werte aus dem Strom und schieben sie als Array in den Ausgabestrom.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">halfOpenReceive</span><span class="p">:</span>         <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="nx">halfOpenToClosedReceive</span><span class="p">:</span> <span class="p">.</span>    <span class="p">.</span>    <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="warum-so-umständlich-was-habe-ich-davon">Warum so umständlich? Was habe ich davon?</h2>
+
+<p>Meine Erfahrung ist, dass ich mit FRP kompakteren und robusteren Code schreibe, um komplexes Verhalten abzubilden. Zusätzlich treten bei Änderungen/Erweiterungen seltener unerwünschte Seiteneffekte auf.</p>
+
+<p>Ich führe das auf folgende Eigenschaften von FRP zurück:</p>
+
+<ul>
+  <li>
+    <p><strong>Inversion of Control</strong>: Unser Code muss sich nicht um den Kontrollfluss kümmern. Alle hier gezeigten Beispiele kommen ohne Schleifen und <a href="https://francescocirillo.com/pages/anti-if-campaign" rel="noreferrer noopener" target="_blank">if</a>-Anweisungen aus (<a href="http://de.wikipedia.org/wiki/McCabe-Metrik" rel="noreferrer noopener" target="_blank">McCabe</a> würde sich freuen). Mit <a href="https://docs.angularjs.org/guide/di" rel="noreferrer noopener" target="_blank">Dependency Injection</a> begegnet uns eine Anwendung dieses Prinzips bereits bei AngularJS.</p>
+  </li>
+  <li>
+    <p><strong>Vielseitigkeit</strong>: Wir programmieren für den allgemeinen Fall, d.h. uns ist egal, ob wir einen Wert oder viele Werte, synchron oder asynchron verarbeiten. Wie unsere Beispiele zeigen, arbeitet der Großteil unseres Codes mit nur ein oder zwei Werten, die er als Funktionsparameter erhält, und bleibt so sehr einfach.</p>
+  </li>
+  <li>
+    <p><strong>Komponierbarkeit</strong>: FRP kommt dem Lego-Ideal recht nahe. Observables können wir beliebig zusammenstecken, zerlegen, und neu zusammensetzen. Die Selbstähnlichkeit und Wiederverwendbarkeit unseres Codes steigt, da Komponenten nur über Ein- und Ausgabeströme ohne gemeinsamen Zustand miteinander gekoppelt sind, egal, wie tief wir zoomen.</p>
+  </li>
+</ul>
+
+<p><img src="image-1.png" alt="image alt text"></p>
+
+<h2 id="was-sollte-ich-bei-der-entwicklung-mit-frpbaconjs-beachten">Was sollte ich bei der Entwicklung mit FRP/Bacon.js beachten?</h2>
+
+<p>Zum Abschluss gebe ich einige Empfehlungen, die helfen sollen, Fallstricke zu umgehen.</p>
+
+<ul>
+  <li>
+    <p><strong>Werte nicht ändern!</strong> Für uns hat sich bewährt, die Werte in den Strömen als unveränderlich zu behandeln. Sonst riskieren wir schwer nachvollziehbare Seiteneffekte.</p>
+  </li>
+  <li>
+    <p><strong>Zeitabhängige Operationen kapseln!</strong> Testen von asynchronem Verhalten ist ein Graus und Konstrukte wie Jasmines Clock sind bestenfalls Krücken. Wir lagern asynchrone Operationen meist gemäß dem <a href="http://de.wikipedia.org/wiki/Strategie_(Entwurfsmuster)" rel="noreferrer noopener" target="_blank">Strategie-Muster</a> aus.</p>
+  </li>
+</ul>
+
+<p>Beim Circuit Breaker würden wir die oben vorgestellte <code class="language-plaintext highlighter-rouge">throttle</code>-Operation wie folgt kapseln:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">throttler</span> <span class="o">=</span> <span class="nx">throttleStrategy</span> <span class="o">||</span> <span class="kd">function</span><span class="p">(</span><span class="nx">observable</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">observable</span><span class="p">.</span><span class="nf">throttle</span><span class="p">(</span><span class="nx">cbConfig</span><span class="p">.</span><span class="nx">waitUntilRetry</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">retryPing</span> <span class="o">=</span> <span class="nf">throttler</span><span class="p">(</span><span class="nx">failures</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="nx">tripped</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Übergeben wir keine <code class="language-plaintext highlighter-rouge">throttleStrategy</code>, verhält sich die <code class="language-plaintext highlighter-rouge">throttler</code>-Funktion einfach wie <code class="language-plaintext highlighter-rouge">throttle</code> aus Bacon.js. Für den Testfall können wir jetzt aber anderes Verhalten injizieren und z.B. folgende Strategie wählen:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">output</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bacon</span><span class="p">.</span><span class="nc">Bus</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">lastValue</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">throttleStrategy</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">observable</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">observable</span><span class="p">.</span><span class="nf">onValue</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">lastValue</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">output</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Unser Testcode kann nun mit <code class="language-plaintext highlighter-rouge">output.push(lastValue)</code> das Verhalten von <code class="language-plaintext highlighter-rouge">throttle</code> steuern.</p>
+
+<ul>
+  <li>
+<strong>Schnittstellen für Monitoring und Management anbieten!</strong> Eine große Herausforderung ist, unerwartetes Verhalten nachzuvollziehen. Klassisches Debugging ist nicht sehr wirksam, da der Großteil des Kontrollflusses außerhalb unseres Codes liegt. Logging/Monitoring verdienen besondere Aufmerksamkeit, insb. da in diesem Bereich <a href="https://github.com/baconjs/bacon.js/issues/273" rel="noreferrer noopener" target="_blank">Bacon.js noch Schwächen</a> zeigt. Logging wie Monitoring können wir über entsprechende Ströme anbieten (wir nutzen einen Strom pro Log-Level).</li>
+</ul>
+
+<p>Besonders in einer Serverumgebung sind Management-Schnittstellen wichtig, z.B. um den Timeout des Circuit Breakers im laufenden Betrieb zu rekonfigurieren. Auch das ist im Falle von Bacon.js mit einem <em>Bus</em> möglich.</p>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Im Zusammenspiel mit AngularJS kann Bacon.js den Bau von Oberflächen und Komponenten mit komplexen Interaktionen vereinfachen und unseren Code einfach und kompakt halten. Von den gleichen Konzepten, die AngularJS für Databinding oder Dependency Injection nutzt, können wir nun auch profitieren.</p>
+
+<h2 id="nützliche-links-zu-baconjs">Nützliche Links zu Bacon.js</h2>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/baconjs/bacon.js/" rel="noreferrer noopener" target="_blank">Bacon.js Dokumentation</a> und <a href="https://github.com/baconjs/bacon.js/wiki/Documentation" rel="noreferrer noopener" target="_blank">Wiki</a></p>
+  </li>
+  <li>
+    <p><a href="http://philipnilsson.github.io/badness/" rel="noreferrer noopener" target="_blank">Implementierung des Spiels Snake mit Bacon.js</a></p>
+  </li>
+  <li>
+    <p>Bacon.js Tutorial <a href="http://nullzzz.blogspot.com/2012/11/baconjs-tutorial-part-i-hacking-with.html" rel="noreferrer noopener" target="_blank">Teil 1</a>, <a href="http://nullzzz.blogspot.com/2012/11/baconjs-tutorial-part-ii-get-started.html" rel="noreferrer noopener" target="_blank">Teil 2</a>, <a href="http://nullzzz.blogspot.com/2012/12/baconjs-tutorial-part-iii-ajax-and-stuff.html" rel="noreferrer noopener" target="_blank">Teil 3</a></p>
+  </li>
+  <li>
+    <p><a href="http://eamodeorubio.github.io/reactive-baconjs/#/" rel="noreferrer noopener" target="_blank">Reactive Programming in Practice</a></p>
+  </li>
+</ul>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2014-07-07-angularjs-baconjs/2014-07-07-angularjs-baconjs.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Ramy Hardan" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/aaad8cd76f2ffbe36d4d07ff7b08790e-160x160.jpg"
+      data-srcset="/assets/img/gravatars/aaad8cd76f2ffbe36d4d07ff7b08790e-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Ramy Hardan
+    </p>
+    
+      <p class="text-muted small">
+        Ramy Hardan schrieb seine erste Software im Alter von 12 Jahren. Der Schritt in die Selbständigkeit erfolgte schon zu Beginn seines Informatik-Studiums und bis zu dessen Abschluss entstanden etliche Web-Anwendungen, eine mit mehr als 300.000 Nutzern.
+2001 begann Ramy Hardan, eigene Werkzeuge zu bauen, mit denen er Teile der Entwicklung automatisierte und Software schneller liefern konnte. Heute generiert er bis zu 80% eines Softwaresystems automatisch.
+Unter dem Dach der bitzeche GmbH baut Ramy Hardan seit 2010 ein schlagkräftiges Team von Experten auf, das hochskalierbare, ausfallsichere Web- und Mobil-Anwendungen entwickelt.
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/ramyhardan" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/was-ist-angular/"
+    data-style="background-image: url('/artikel/was-ist-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Was sind Angular und AngularJS?
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ngupgrade-migration-angularjs-angular/"
+    data-style="background-image: url('/artikel/ngupgrade-migration-angularjs-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Migration AngularJS zu Angular
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

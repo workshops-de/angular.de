@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>AngularJS-Tutorial für Einsteiger | Angular.DE</title>
+  
+  <meta name="description" content="Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angularjs-tutorial-deutsch/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="AngularJS-Tutorial für Einsteiger - Angular.DE">
+
+
+
+  <meta property="og:description" content="Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angularjs-tutorial-deutsch/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="AngularJS-Tutorial für Einsteiger - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Unser Einführungstutorial in AngularJS. Lernt alle Grundlagen anhand von viele praktischen Beispielen und einer ersten eigenen Single-Page-Application.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angularjs-tutorial-deutsch/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AngularJS-Tutorial für Einsteiger"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu AngularJS-Tutorial für Einsteiger" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">AngularJS-Tutorial für Einsteiger</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/tutorial/" class="badge bg-secondary text-bg-secondary text-uppercase">tutorial</a>
+            
+            <a href="/kategorie/angularjs/" class="badge bg-secondary text-bg-secondary text-uppercase">angularjs</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Sascha Brink
+            
+            
+            <span class="ms-1 me-1">•</span> <time>23.03.2014</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  26 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Dieses Tutorial ist für Anfänger gedacht, die gerade erst mit AngularJS beginnen. Als Beispiel werden wir eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von AngularJS kennenlernen.</p>
+
+<blockquote>
+  <p><strong><i class=" fa fa-eye fa-fw"></i>  Demo: <a href="http://angularjs-de.github.io/angularjs-tutorial-code/13-routes-final" rel="noreferrer noopener" target="_blank">Finale Version</a></strong></p>
+</blockquote>
+
+<h2 id="voraussetzungen">Voraussetzungen</h2>
+
+<p>Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:</p>
+
+<blockquote>
+  <p><strong><i class="fa fa-cloud-download fa-fw"></i> <a href="https://github.com/angularjs-de/angularjs-tutorial-code/archive/gh-pages.zip" rel="noreferrer noopener" target="_blank">Download als ZIP</a> / <a href="https://github.com/angularjs-de/angularjs-tutorial-code" rel="noreferrer noopener" target="_blank">Code auf GitHub</a></strong></p>
+</blockquote>
+
+<p><strong>Wichtig</strong>: Den Code müsst ihr lokal auf einem beliebigen Webserver starten, da ihr sonst Probleme mit der <em><a href="https://en.wikipedia.org/wiki/Same-origin_policy" rel="noreferrer noopener" target="_blank">Same-origin policy</a></em> bekommt. Ob ihr Apache, den eingebauten Webserver von WebStorm oder sonstigen Webserver nutzt, ist egal. Habt ihr Python installiert, funktioniert z.B.: <code class="language-plaintext highlighter-rouge">python -m SimpleHTTPServer</code>. Eine weitere Möglichkeit ist es Node.js zu installieren - die Installation liefert euch zugleich den Paketmanager npm. Mit diesem könnt ihr dann global einen HTTP-Server über den folgenden Befehl installieren: <code class="language-plaintext highlighter-rouge">npm install -g http-server</code>. Und danach ist es möglich in eurem Projektverzeichniss den HTTP-Server auszuführen mit <code class="language-plaintext highlighter-rouge">http-server -o</code>.</p>
+
+<hr>
+
+<div class="workshop-hint">
+  <div class="h3">Keine Lust zu Lesen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>
+        Du lernst lieber interaktiv und möchtest Fragen an Experten stellen? Wir bieten euch auch
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-top-link">Angular
+                    und TypeScript Schulungen</a> an. Hier kannst du in kleinen Gruppen deine Lernkurve maximieren.
+      </p>
+      <p class="">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-top-button">
+          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+        </a>
+      </p>
+
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
+</div>
+<hr>
+
+<h2 id="überblick">Überblick</h2>
+
+<p>Diese Teile wirst du von AngularJS kennenlernen:</p>
+
+<ul>
+  <li><a href="#voraussetzungen">Voraussetzungen</a></li>
+  <li><a href="#%C3%BCberblick">Überblick</a></li>
+  <li><a href="#ng-app---der-anfang-jeder-angularjs-applikation">ng-app - Der Anfang jeder AngularJS-Applikation</a></li>
+  <li><a href="#zwei-wege-datenbindung">Zwei-Wege-Datenbindung</a></li>
+  <li><a href="#expressions">Expressions</a></li>
+  <li><a href="#direktiven">Direktiven</a></li>
+  <li><a href="#schleifen-mit-ng-repeat">Schleifen mit ng-repeat</a></li>
+  <li><a href="#filter">Filter</a></li>
+  <li><a href="#module">Module</a></li>
+  <li><a href="#scopes--controller">Scopes \&amp; Controller</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#service-factory">Service (Factory)</a></li>
+  <li><a href="#animationen">Animationen</a></li>
+  <li>
+<a href="#eigene-direktiven">Eigene Direktiven</a>
+    <ul>
+      <li><a href="#restrict">restrict</a></li>
+      <li><a href="#scope">scope</a></li>
+      <li><a href="#template">template</a></li>
+    </ul>
+  </li>
+  <li><a href="#routen">Routen</a></li>
+  <li><a href="#wie-geht-es-weiter">Wie geht es weiter?</a></li>
+</ul>
+
+<h2 id="ng-app---der-anfang-jeder-angularjs-applikation">ng-app - Der Anfang jeder AngularJS-Applikation</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/01-ng-app" rel="noreferrer noopener" target="_blank">Code</a></p>
+</blockquote>
+
+<p>Wir beginnen mit einer einfachen HTML-Datei, die zu Beginn AngularJS und <a href="http://getbootstrap.com" rel="noreferrer noopener" target="_blank">Bootstrap</a> enthält.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html</span> <span class="na">ng-app</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf8mb4"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;title&gt;</span>AngularJS Tutorial<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Die Datei <code class="language-plaintext highlighter-rouge">angular.js</code> ist die Einzige, die wir für eine lauffähige AngularJS-Applikation benötigen. Wir benutzen hier die Online-Version, die Google über ihr CDN verteilt. Alternativ kannst du die Datei von <a href="http://angularjs.org" rel="noreferrer noopener" target="_blank">angularjs.org</a> herunterladen und lokal einbinden.</p>
+
+<p>Durch das Attribut <code class="language-plaintext highlighter-rouge">ng-app</code> im <em>html</em>-Tag erkennt AngularJS unsere Seite nun als AngularJS-Applikation. AngularJS durchsucht dadurch die Seite nach speziellen Tags und Attributen, die zum Framework gehören. Diese heißen in AngularJS Direktiven. Mehr dazu lernst du in den nächsten Schritten.</p>
+
+<h2 id="zwei-wege-datenbindung">Zwei-Wege-Datenbindung</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/02-two-way-databinding" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/02-two-way-databinding" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Das erste, was Leute erstaunt, wenn sie AngularJS zum ersten Mal sehen, ist die Zwei-Wege-Datenbindung. Ergänzen wir unser Beispiel um folgende Zeilen innerhalb des <em>body</em>-Tags, um es zu veranschaulichen.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ng-model=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;p&gt;</span>Du suchst gerade nach: {{search}}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>Wenn ihr etwas in das Eingabefeld eingebt, wird der Text an der Stelle ausgegeben, wo <code class="language-plaintext highlighter-rouge">{{search}}</code> steht. Dies funktioniert durch die Zwei-Wege-Datenbindung.</p>
+
+<p>Durch <code class="language-plaintext highlighter-rouge">ng-model="search"</code> reagiert AngularJS, sobald Du den Wert des Eingabefeldes änderst. Der Wert in <code class="language-plaintext highlighter-rouge">search</code> wird im Speicher gehalten und andere Stellen, die <code class="language-plaintext highlighter-rouge">search</code> verwenden, werden über die Änderung informiert.</p>
+
+<p>Der Ausdruck <code class="language-plaintext highlighter-rouge">{{search}}</code> ist ein Beispiel für eine Expression. AngularJS sorgt dafür, dass  die View bei einer Änderung der Variable automatisch aktualisiert wird.</p>
+
+<h2 id="expressions">Expressions</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/03-expressions" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/03-expressions" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Expressions sind viel mächtiger, als sie im ersten Moment erscheinen. Expressions erlauben uns, Daten zu manipulieren und zu kombinieren.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{search.toUpperCase() + "!"}} oder {{1 + 2 + 3}}
+</code></pre></div></div>
+
+<p>In diesem Fall wird z.B. der Inhalt von <code class="language-plaintext highlighter-rouge">search</code> immer direkt in Großbuchstaben umgewandelt und ein Ausrufezeichen angehängt. Expressions kannst du mit mit der <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval" rel="noreferrer noopener" target="_blank">eval()</a>-Funktion von JavaScript vergleichen - jedoch mit eingeschränkten Möglichkeiten.</p>
+
+<h2 id="direktiven">Direktiven</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/04-directives" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/04-directives" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Wie wir bereits in der Einleitung erwähnten, hat AngularJS spezielle Tags wie <code class="language-plaintext highlighter-rouge">ng-app</code>, die wir Direktiven nennen.  Diese erweitern den Sprachumfang von HTML. Direktiven von AngularJS erkennst du an dem Präfix <code class="language-plaintext highlighter-rouge">ng-</code>. Die Direktiven helfen dir, große Teile einer Applikation ohne eine Zeile Code zu schreiben.</p>
+
+<p>Probieren wir eine weitere, einfache Direktive aus und ändern dazu die Zeile mit dem Suchergebnis leicht ab:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">ng-show=</span><span class="s">"search"</span><span class="nt">&gt;</span>Du suchst gerade nach: {{search}}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>Der Paragraph wird nun erst sichtbar, wenn wir anfangen, etwas in das Eingabefeld zu tippen. <code class="language-plaintext highlighter-rouge">ng-show</code> ist eine Direktive, die Elemente nur einblendet, wenn die übergebene Variable einen Wert enthält.</p>
+
+<h2 id="schleifen-mit-ng-repeat">Schleifen mit ng-repeat</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/05-loops" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/05-loops" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Bevor wir später unsere eigene Direktive schreiben, schauen wir uns die wahrscheinlich meistgenutzte Direktive in AngularJS an: <code class="language-plaintext highlighter-rouge">ng-repeat</code>. Dieser Direktive können wir ein Array übergeben und darüber iterieren. <code class="language-plaintext highlighter-rouge">ng-repeat</code> können wir dabei mit einer <em>forEach</em>-Schleife für DOM-Elemente vergleichen. Fügen wir also folgenden Code ein:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">ng-repeat=</span><span class="s">"article in ['Pizza Margherita', 'Pizza Tonno']"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{article}}<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+<p>Was passiert dabei? AngularJS hält sich intern eine Kopie vom <code class="language-plaintext highlighter-rouge">&lt;tr&gt;</code>-Element vor und kopiert dieses für jedes Element aus unserem Array. Für eine Kopie wird das Element in die Variable <code class="language-plaintext highlighter-rouge">article</code> geschrieben, welche wir dann benutzen können. In unserem Beispiel hat <code class="language-plaintext highlighter-rouge">article</code> in der ersten Kopie den Wert <em>Pizza Margherita</em>, in der zweiten Kopie den Wert <em>Pizza Tonno</em>.</p>
+
+<p>Natürlich können wir auch mit Variablen anstatt von fest programmierten Arrays arbeiten. In unserem Beispiel tauschen wir das Array durch eine Variable names <code class="language-plaintext highlighter-rouge">articles</code> aus:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tr</span> <span class="na">ng-repeat=</span><span class="s">"article in articles"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Bevor wir die Artikel später dynamisch laden lassen, initialisieren wir sie im <em>body</em>-Tag über eine weitere Direktive: <code class="language-plaintext highlighter-rouge">ng-init</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body</span> <span class="na">ng-init=</span><span class="s">"articles = ['Pizza Margherita', 'Pizza Tonno']"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Wir haben also bisher eine Liste von Pizzen und eine nicht funktionierende Suchbox. Zeit, Beides zu kombinieren.</p>
+
+<h2 id="filter">Filter</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/06-filters" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/06-filters" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Um die Suche funktionstüchtig zu machen, müssen wir nur die Zeile mit <code class="language-plaintext highlighter-rouge">ng-repeat</code> abändern:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tr</span> <span class="na">ng-repeat=</span><span class="s">"article in articles | filter:search"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Das war’s - probiert es aus! Wir haben hier einen Filter benutzt - einen Filter mit dem Namen <em>filter</em>. Generell benutzen wir Filter, indem wir eine Pipe (<code class="language-plaintext highlighter-rouge">|</code>) einfügen und danach den Namen des Filters angeben. Der benutzte Filter ist also der <em>filter</em>-Filter.</p>
+
+<p>Durch einen Filter kann eine Liste oder ein Wert dynamisch verändert werden. In diesem Fall wird das Array von <code class="language-plaintext highlighter-rouge">articles</code> an den Filter <em>filter</em> übergeben. Dieser schränkt das Array ein. Dann wird über das eingeschränkte Array iteriert.</p>
+
+<p>Filter können auch Argumente entgegennehmen (filter:<code class="language-plaintext highlighter-rouge">search</code>), die wir durch einen Doppelpunkt abtrennen. AngularJS selber bringt bereits einige Filter mit, mit denen wir Daten z.B. sortieren oder eingrenzen können. Natürlich können wir auch eigene Filter erstellen.</p>
+
+<h2 id="module">Module</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/07-modules" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/07-modules" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Auch wenn wir bisher ohne eine Zeile JavaScript-Code ausgekommen sind, kommt doch irgendwann der Punkt, wo es nicht mehr ohne geht. Deshalb kann AngularJS natürlich auch mit JavaScript-Code “reden”. Das Erste, was wir dazu tun müssen, ist, ein <code class="language-plaintext highlighter-rouge">Modul</code> zu erstellen. In diesem Fall legen wir eine neue Datei <code class="language-plaintext highlighter-rouge">app.js</code> an und fügen folgende Zeile hinzu:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">tutorialApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[]);</span>
+</code></pre></div></div>
+
+<p>Ein Modul ist eine Sammlung von Controllern, Services, Filtern und Direktiven. Module können dabei von anderen Modulen abhängig sein. Diese tragen wir in das Array hinter dem Modulnamen ein.</p>
+
+<p>Das leere Array hinter <code class="language-plaintext highlighter-rouge">tutorialApp</code> bedeutet in diesem Fall, dass wir noch keine Abhängigkeit haben. Wenn wir eine Abhängigkeit hätten, könnte die Moduldefinition z.B. so aussehen: <code class="language-plaintext highlighter-rouge">angular.module('tutorialApp', ['ng-animate']);</code>.</p>
+
+<p>Um dieses Modul nutzen zu können, müssen wir eine kleine Änderung am HTML-Code vornehmen. Wir erweitern das Attribut <code class="language-plaintext highlighter-rouge">ng-app</code> um den Namen unseres Moduls.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html</span> <span class="na">ng-app=</span><span class="s">"tutorialApp"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Vergesst nicht, das Skript einzubinden!</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h2 id="scopes--controller">Scopes &amp; Controller</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/08-controllers" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/08-controllers" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Einfach nur ein leeres Modul zu erstellen, hilft uns nicht viel weiter. Also fügen wir unseren ersten Controller hinzu. Controller werden wie alle anderen AngularJS-Komponenten auch <em>in</em> einem Modul definiert. Die Konvention hat sich eingebürgert, die Abkürzung <code class="language-plaintext highlighter-rouge">Ctrl</code> an ihren Namen anzuhängen. Den JavaScript-Code in der <code class="language-plaintext highlighter-rouge">app.js</code> ersetzen wir durch folgenden Code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">tutorialApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[])</span>
+  <span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">ArticlesCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">){</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">articles</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Pizza Vegetaria</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Pizza Salami</span><span class="dl">"</span><span class="p">,</span>    <span class="na">price</span><span class="p">:</span> <span class="mf">5.5</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Pizza Thunfisch</span><span class="dl">"</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="mi">6</span> <span class="p">}</span>
+    <span class="p">];</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Wie wir sehen, können wir nicht nur einfache Arrays mit primitiven Datentypen sondern auch Arrays von Objekten erstellen. Dementsprechend ändern wir unsere Tabelle im HTML-Code auch leicht ab:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span> <span class="na">ng-controller=</span><span class="s">"ArticlesCtrl"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">ng-repeat=</span><span class="s">"article in articles | filter:search"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{article.id}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{article.name}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{article.price}}<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+<p>An dieser Stelle lernen wir zwei neue Dinge kennen: <em>Controller</em> und <em>Scopes</em>. In einem Scope werden die Variablen gespeichert, die View- und JavaScript-Code miteinander verbinden. Mit dem <em>Controller</em> mappen wir einen Teil des DOMs zum entsprechenden JavaScript-Code.</p>
+
+<p>Als wir das erste Mal <code class="language-plaintext highlighter-rouge">search</code> mit <code class="language-plaintext highlighter-rouge">ng-model</code> benutzten und es auf magische Weise <code class="language-plaintext highlighter-rouge">{{search}}</code> änderte, nachdem wir den Text im Eingabefeld änderten, musste der Wert von <code class="language-plaintext highlighter-rouge">search</code> irgendwo zwischengespeichert werden.</p>
+
+<p>Dieser Ort ist ein Scope. Wir schreiben <em>ein</em> Scope, weil es mehrere geben kann. Zudem können wir sie verschachteln. Das ist aber im Moment noch nicht wichtig. Wichtig ist, dass sie einen Mechanismus besitzen, um Teile der Applikation zu informieren, wenn etwas geändert wurde.</p>
+
+<p><img src="angularjs-tutorial-deutsch-scopes.png" alt="Scopes"></p>
+
+<p>Ein Controller kann einen neuen Scope erstellen und ihn für einen Abschnitt im DOM festlegen. Wenn wir uns das Beispiel oben anschauen, legen wir für die Tabelle einen Controller <code class="language-plaintext highlighter-rouge">ArticlesCtrl</code> fest. Im JavaScript-Code beschreiben wir den Controller näher. Dieser soll in dem Scope, unserer Vermittlungsschicht zum Template, eine Variable <code class="language-plaintext highlighter-rouge">articles</code> mit einem Array von Objekten enthalten. Deshalb können wir auch im Template über alle Artikel iterieren.</p>
+
+<h2 id="services">Services</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/09-services-http" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/09-services-http" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Bisher hatten wir die Daten statisch im <em>Controller</em> definiert. Der geläufigere Fall sieht so aus, dass uns eine REST-Schnittstelle die Daten im JSON-Format liefern würde. Da dies so ein häufiger Anwendungsfall ist, besitzt AngularJS auch eine Komponente, um mit einer JSON-Schnittstelle zu kommunizieren.</p>
+
+<p>Wiederverwendbare und komplexere Logik definieren wir in AngularJS mithilfe von <em>Services</em>. Das Framework bringt von Hause aus bereits viele interessante Services mit. Um also zum Beispiel eine JSON-Schnittstelle anzusprechen, verfügt AngularJS über den <code class="language-plaintext highlighter-rouge">$http</code>-Service.</p>
+
+<blockquote>
+  <p>Das <code class="language-plaintext highlighter-rouge">$</code> am Anfang zeigt dabei an, dass es sich um einen Service von AngularJS handelt. Vermeidet deshalb unbedingt, eure eigenen Services mit einem <code class="language-plaintext highlighter-rouge">$</code> zu beginnen.</p>
+</blockquote>
+
+<p>Da wir an dieser Stelle keinen Server implementieren möchten, erstellen wir eine Datei <code class="language-plaintext highlighter-rouge">articles.json</code> im gleichen Verzeichnis und füllen sie mit einem JSON-Objekt:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pizza Vegetaria"</span><span class="p">,</span><span class="w"> </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pizza Salami"</span><span class="p">,</span><span class="w">    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.5</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pizza Thunfisch"</span><span class="p">,</span><span class="w"> </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aktueller Flyer"</span><span class="p">,</span><span class="w"> </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Die Daten in euren Controller zu laden ist ganz leicht. Zunächst müsst ihr <code class="language-plaintext highlighter-rouge">$http</code> als Parameter in der Funktions-Deklaration hinzufügen, um den Service überhaupt nutzen zu können:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">ArticlesCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$http</span><span class="p">){</span>
+</code></pre></div></div>
+
+<p>Als nächstes müsst ihr die statische Zuweisung von <code class="language-plaintext highlighter-rouge">$scope.articles</code> in der <code class="language-plaintext highlighter-rouge">app.js</code> ersetzen. An dieser Stelle benutzen wir den <code class="language-plaintext highlighter-rouge">$http</code>-Service. Somit ergibt sich:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">tutorialApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[])</span>
+  <span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">ArticlesCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$http</span><span class="p">){</span>
+    <span class="nx">$http</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">articles.json</span><span class="dl">'</span><span class="p">).</span><span class="nf">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">articlesResponse</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">articles</span> <span class="o">=</span> <span class="nx">articlesResponse</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Was der $http-Service zurückliefert, nennen wir ein <a href="http://en.wikipedia.org/wiki/Futures_and_promises" rel="noreferrer noopener" target="_blank">Promise</a>. Promises ähneln Callbacks und können asynchrone Aufrufe stark vereinfachen.</p>
+
+<p>Im derzeitigen Zustand ist unsere Tabelle beim Start der Applikation leer. Sobald also die <code class="language-plaintext highlighter-rouge">articles.json</code> vom Server erfolgreich geladen wurde, wird das Ergebnis <code class="language-plaintext highlighter-rouge">$scope.articles</code> zugewiesen. AngularJS merkt nun, dass sich Daten in <code class="language-plaintext highlighter-rouge">articles</code> befinden und aktualisiert die Tabelle.</p>
+
+<h2 id="service-factory">Service (Factory)</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/10-services-cart" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/10-services-cart" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Wir können nicht nur bestehende Services von AngularJS nutzen, sondern auch unsere Eigenen schreiben. Wenn wir einen kleinen Shop programmieren, darf natürlich der Warenkorb nicht fehlen. Wir wollen euch nur grundsätzlich zeigen, wie Services funktionieren und werden hier deshalb nur einen kleinen Teil der Funktionalität implementieren, nämlich das Hinzufügen von Artikeln und die Berechnung der Summe.</p>
+
+<p>Wir können Services auf verschiedene Arten definieren. An dieser Stelle stellen wir die wahrscheinlich am häufigsten verwendete Methode vor: der Factory-Service.</p>
+
+<p>Services sind Singletons. Es existiert also immer nur eine Instanz jedes Services. Die Definition erfolgt wie beim Controller mithilfe einer Modulfunktion. In diesem Fall heißt diese Funktion factory().</p>
+
+<p>Fügen wir folgenden Code nach der Moduldefinition und vor <code class="language-plaintext highlighter-rouge">.controller</code> in die <code class="language-plaintext highlighter-rouge">app.js</code> ein (<a href="https://github.com/angularjs-de/angularjs-tutorial-code/blob/gh-pages/10-services-cart/app.js" rel="noreferrer noopener" target="_blank">Code</a>):</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">tutorialApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[])</span>
+  <span class="p">.</span><span class="nf">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">Cart</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">getItems</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">items</span><span class="p">;</span>
+      <span class="p">},</span>
+      <span class="na">addArticle</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">article</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">items</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">article</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="na">sum</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nf">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">article</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">total</span> <span class="o">+</span> <span class="nx">article</span><span class="p">.</span><span class="nx">price</span><span class="p">;</span>
+        <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">})</span>
+</code></pre></div></div>
+
+<p>In der <code class="language-plaintext highlighter-rouge">Cart</code>-Factory definieren wir 3 Funktionen:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">getItems()</code> gibt alle Artikel zurück.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">addArticle()</code> nimmt ein Objekt entgegen und fügt einen Artikel hinzu.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">sum()</code> summiert die Preise im Warenkorb.</li>
+</ul>
+
+<p>Die Artikel selber halten wir in einem Array <code class="language-plaintext highlighter-rouge">items</code> vor.</p>
+
+<p>Um unsere <code class="language-plaintext highlighter-rouge">Cart</code>-Factory als Service nutzen zu können, müssen wir sie dem Controller bekannt machen. Genau wie <code class="language-plaintext highlighter-rouge">$http</code> fügen wir sie nach <code class="language-plaintext highlighter-rouge">$scope</code> in die Parameterliste ein. Danach weisen wir den Service noch einer Variable auf dem Scope zu. Ansonsten könnten wir den Warenkorb nicht im Template verwenden.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">ArticlesCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$http</span><span class="p">,</span> <span class="nx">Cart</span><span class="p">){</span>
+  <span class="nx">$scope</span><span class="p">.</span><span class="nx">cart</span> <span class="o">=</span> <span class="nx">Cart</span><span class="p">;</span>
+  <span class="c1">// ... usw.</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Damit können wir die Funktionen des Services jetzt nutzen. Die Artikelliste erweitern wir um eine Schaltfläche zum Hinzufügen. Dazu nutzen wir eine weitere Direktive <code class="language-plaintext highlighter-rouge">ng-click</code>.  Diese, wie der Name es vermuten lässt, reagiert auf einen Klick. Wir übergeben <code class="language-plaintext highlighter-rouge">ng-click</code> die <code class="language-plaintext highlighter-rouge">addArticle</code>-Funktion mit dem aktuellen Artikel.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href</span> <span class="na">class=</span><span class="s">"btn btn-default btn-sm"</span> <span class="na">ng-click=</span><span class="s">"cart.addArticle(article);"</span><span class="nt">&gt;</span>Hinzufügen<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+</code></pre></div></div>
+
+<p>Wir können nun Artikel in den Warenkorb legen. Aber natürlich fehlt an dieser Stelle noch die Anzeige des Warenkorbes. Wir legen dazu einen zweiten Controller für unseren Warenkorb an:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">CartCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">Cart</span><span class="p">){</span>
+  <span class="nx">$scope</span><span class="p">.</span><span class="nx">cart</span> <span class="o">=</span> <span class="nx">Cart</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Mit der zugehörigen Änderung im Template:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"CartCtrl"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">ng-hide=</span><span class="s">"cart.getItems().length"</span> <span class="na">class=</span><span class="s">"alert alert-warning"</span><span class="nt">&gt;</span>Ihr Warenkorb ist noch leer.<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;table</span> <span class="na">ng-show=</span><span class="s">"cart.getItems().length"</span> <span class="na">class=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">ng-repeat=</span><span class="s">"item in cart.getItems() track by $index"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{item.name}}<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{item.price | currency}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{cart.getItems().length}} Artikel<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{cart.sum() | currency}}<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Zur Erinnerung: Der <em>Cart</em>-Service ist ein Singleton und somit gibt es insgesamt nur eine Instanz dieses Services in einer Applikation. Mithilfe von Services kommunizieren wir auch zwischen Controllern, wenn diese nicht verschachtelt, sondern Geschwister sind.</p>
+</blockquote>
+
+<p>Wenn wir nun einen Artikel über die Artikelliste hinzufügen, werden die Artikel direkt im Warenkorb angezeigt. An dieser Stelle verwenden wir noch einen Trick. Normalerweise erlaubt <code class="language-plaintext highlighter-rouge">ng-repeat</code> keine Duplikate. Das umgehen wir hier, indem wir mit <code class="language-plaintext highlighter-rouge">track by $index</code> den aktuellen Index der Schleife als eindeutige Nummer setzen. Die Ausgabe der Preise hübschen wir mit dem <code class="language-plaintext highlighter-rouge">currency</code>-Filter auf.</p>
+
+<h2 id="animationen">Animationen</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/11-animations" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/11-animations" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Um auch visuell ein wenig etwas zu bieten, werden wir uns als nächstes um Animationen in AngularJS kümmern. Dazu werden wir das Einfügen von Artikeln im Warenkorb animieren.</p>
+
+<p>Animationen wurden von den AngularJS-Entwicklern in ein separates Modul mit dem Namen <em>ngAnimate</em> ausgelagert. Deshalb müssen wir dieses Modul erst einmal mithilfe eines <em>script</em>-Tags in unsere <code class="language-plaintext highlighter-rouge">index.html</code> (vor der <code class="language-plaintext highlighter-rouge">app.js</code>) einfügen. Dazu nutzen wir erneut die Version, die uns Google über sein CDN bereitstellt.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Als wir unser Module <code class="language-plaintext highlighter-rouge">tutorialApp</code> definiert hatten, ließen wir das Array für die Abhängigkeiten noch leer. In dieses Array fügen wir nun das Modul <code class="language-plaintext highlighter-rouge">ngAnimate</code> als Abhängigkeit ein, um die Animationen nutzen zu können.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">tutorialApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">ngAnimate</span><span class="dl">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Hiernach haben wir unsere Arbeiten auf der Code-Seite abgeschlossen und können jetzt Direktiven von AngularJS animieren. Alle weiteren Einstellungen laufen über CSS-Klassen, mit denen wir festlegen können, wann welche Animation ausgeführt werden soll.</p>
+
+<p>Direktiven haben verschiedene Ereignisse, die wir animieren können. Nehmen wir als Beispiel <code class="language-plaintext highlighter-rouge">ng-repeat</code>. Wir können die Animation für ein Element festlegen, das in die Liste eingefügt, entfernt oder verschoben wird. Die Namen dieser Ereignisse lauten <code class="language-plaintext highlighter-rouge">ng-enter</code>, <code class="language-plaintext highlighter-rouge">ng-leave</code> und <code class="language-plaintext highlighter-rouge">ng-move</code> (Eine Übersicht über alle Ereignisse aller Direktiven findet ihr <a href="http://docs.angularjs.org/api/ngAnimate" rel="noreferrer noopener" target="_blank">hier</a>).</p>
+
+<p>Zum praktischen Schritt. Neue Artikel im Warenkorb wollen wir kurz aufblinken lassen. Dazu weisen wir unserer Tabellenzeile <code class="language-plaintext highlighter-rouge">&lt;tr&gt;</code> zuerst die CSS-Klasse <code class="language-plaintext highlighter-rouge">cart-item</code> zu. In einer zusätzlichen CSS-Datei <code class="language-plaintext highlighter-rouge">style.css</code> müssen wir lediglich noch zwei zusätzliche CSS-Klassen <code class="language-plaintext highlighter-rouge">.cart-item.ng-enter</code> und <code class="language-plaintext highlighter-rouge">.cart-item.ng-enter-active</code> definieren:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.cart-item.ng-enter</span> <span class="p">{</span>
+  <span class="nl">-webkit-transition</span><span class="p">:</span><span class="m">0.5s</span> <span class="n">linear</span> <span class="n">all</span><span class="p">;</span>
+  <span class="nl">transition</span><span class="p">:</span><span class="m">0.5s</span> <span class="n">linear</span> <span class="n">all</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.cart-item.ng-enter-active</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Die zwei CSS-Klassen bestimmen Start- und Endzustand. In <code class="language-plaintext highlighter-rouge">ng-enter</code> werden die Startfarbe <em>gelb</em> und die CSS3-Transition festgelegt. Diese Klasse wird zuerst hinzugefügt. Unmittelbar danach wird die zweite Klasse mit dem Endzustand der Farbe <em>weiß</em> hinzugefügt. Ist die Animation durchgelaufen, werden beide entfernt. Im Folgenden sehen wir graphisch, was passiert:</p>
+
+<p><img src="angularjs-tutorial-deutsch-ng-animate.png" alt="Animation"></p>
+
+<p>Mit minimalem Aufwand könnt ihr dadurch sehr schöne Effekte erzielen. AngularJS kümmert sich dabei vollständig um das richtige Timing. Animationen über JavaScript-Frameworks sind auch möglich, sprengen aber den Rahmen dieses Tutorials.</p>
+
+<h2 id="eigene-direktiven">Eigene Direktiven</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/12-directives" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/12-directives" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Wir haben im Laufe des Tutorials einige Direktiven von AngularJS kennengelernt. Wir können aber auch eigene Direktiven schreiben. Direktiven eignen sich besonders gut für Funktionalitäten, die man wiederverwenden möchte.</p>
+
+<p>Beispielsweise werden wir die Preisausgabe etwas schöner gestalten. Statt einfach <em>0</em> auszugeben, machen wir es besser und geben <em>kostenlos</em>  aus. Die Direktiven bisher, wie <code class="language-plaintext highlighter-rouge">ng-app</code> oder <code class="language-plaintext highlighter-rouge">ng-repeat</code>, waren nur Attribute. Wir können aber auch Tags benutzen. Schön wäre es, etwas in der Art zu haben:</p>
+
+<price value="article.price"></price>
+
+<p>Wenn wir dies mit AngularJS umsetzen möchten, können wir dazu ganz einfach eine Direktive schreiben in Form eines neuen Tags <code class="language-plaintext highlighter-rouge">&lt;price /&gt;</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">directive</span><span class="p">(</span><span class="dl">'</span><span class="s1">price</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">restrict</span><span class="p">:</span> <span class="dl">'</span><span class="s1">E</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">scope</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span>
+    <span class="p">},</span>
+    <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;span ng-show="value == 0"&gt;kostenlos&lt;/span&gt;</span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">&lt;span ng-show="value &gt; 0"&gt;{{value | currency}}&lt;/span&gt;</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>Gehen wir die einzelnen Bestandteile der Direktive durch:</p>
+
+<p>Eine Direktive erstellen wir ganz offensichtlich mit dem Keyword <code class="language-plaintext highlighter-rouge">directive</code>. Diese wird wieder in einem Modul erstellt. Die gleiche Methodik kennen wir bereits von <em>Controllern</em> und <em>Services</em>. Der Direktive übergeben wir als Parameter einen Namen und eine Funktion. Auch hier können der Funktion als Parameter wieder andere Services hinzugefügt werden. Diese Funktion gibt ein Objekt zurück, mit dem wir die Direktive konfigurieren können. Im Folgenden gehen wir die Konfigurationsparameter durch.</p>
+
+<h3 id="restrict">restrict</h3>
+
+<p>Mit <em>restrict</em> legen wir die Art der Direktive fest. D.h. wird die Direktive durch Tag, Attribut oder Klasse aufgerufen. E steht in dem Fall für Element und meint Tag. Hier wären Beispiele für die anderen Möglichkeiten:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;price</span> <span class="na">value=</span><span class="s">"article.price"</span> <span class="nt">/&gt;</span><span class="c">&lt;!-- E für Element --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">price</span> <span class="na">value=</span><span class="s">"article.price"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- A für Attribute --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">value=</span><span class="s">"article.price"</span> <span class="na">class=</span><span class="s">"price"</span><span class="nt">&gt;</span><span class="c">&lt;!-- C für Class --&gt;</span>
+</code></pre></div></div>
+
+<h3 id="scope">scope</h3>
+
+<p>Wenn wir Direktiven erstellen, machen wir das normalerweise mit der Idee, diese später wieder zu verwenden. Würden wir ein Template erstellen, in dem fest <code class="language-plaintext highlighter-rouge">article.price</code> stehen würde, könnten wir dieses Template sehr schlecht wieder verwenden. Deshalb definieren wir eine Schnittstelle, die den inneren Teil von der Umgebung entkoppelt. Da in AngularJS alles über Scopes läuft, isolieren wir sie hiermit und können so eigenständige Komponenten bauen.</p>
+
+<p>Die Option <em>scope</em> macht genau dies - Scopes isolieren. In diesem Fall haben wir <code class="language-plaintext highlighter-rouge">value: '='</code>, was bedeutet, wir geben an den inneren Teil nur weiter, was als Attribut in <code class="language-plaintext highlighter-rouge">value</code> steht. Das <code class="language-plaintext highlighter-rouge">=</code> gibt an, wie diese Verbindung hergestellt werden soll. Manchmal möchten wir nur die Werte von außen nach innen lassen. Manchmal möchten wir die Werte auch innerhalb der Komponente verändern können.</p>
+
+<p>In diesem Fall stellt das <code class="language-plaintext highlighter-rouge">=</code> die Zwei-Wege-Datenbindung wieder her. Wir haben <code class="language-plaintext highlighter-rouge">value="article.price"</code> gesetzt. Somit geben wir die Zwei-Wege-Datenbindung an die Variable <code class="language-plaintext highlighter-rouge">value</code> intern weiter und könnten auch <code class="language-plaintext highlighter-rouge">article.price</code> innerhalb der Direktive verändern.</p>
+
+<h3 id="template">template</h3>
+
+<p>Im Template bringen wir den HTML-Code unter, den wir sonst normalerweise in unserer HTML-Seite direkt einfügen würden. Durch <code class="language-plaintext highlighter-rouge">scope: { ... }</code> haben wir erstmal keinen Zugriff auf die Umgebung mehr. Auf den Preis in Form von <code class="language-plaintext highlighter-rouge">{{value}}</code> können wir nur zugreifen, weil wir die Zwei-Wege-Datenbindung nach außen wieder hergestellt haben.</p>
+
+<p>Bei komplexeren Templates kann der HTML-Code auch in eine eigene Datei ausgelagert werden. Dazu schreiben wir ihn in eine beliebige externe Datei, z.B. <em>price.tpl.html</em> und würden dann statt <code class="language-plaintext highlighter-rouge">template: '...'</code>, <code class="language-plaintext highlighter-rouge">templateUrl: 'price.tpl.html'</code> schreiben.</p>
+
+<h2 id="routen">Routen</h2>
+
+<blockquote>
+  <p>Link zum <a href="https://github.com/angularjs-de/angularjs-tutorial-code/tree/gh-pages/13-routes-final" rel="noreferrer noopener" target="_blank">Code</a> / <a href="http://angularjs-de.github.io/angularjs-tutorial-code/13-routes-final" rel="noreferrer noopener" target="_blank">Demo</a></p>
+</blockquote>
+
+<p>Bisher bestand bei uns alles nur aus einer einzigen Seite. Wenn wir eine richtige Web-Applikation bauen möchten, gehört natürlich mehr dazu. Insbesondere möchte man oft definierte Anwendungszustände über eine URL erreichbar machen. Für die sogenannten Routen bringt AngularJS deswegen ebenfalls ein eigenes Modul mit.</p>
+
+<p>Wir laden zuerst das Extra-Modul und fügen es in unsere <code class="language-plaintext highlighter-rouge">index.html</code> ein (oberhalb von <code class="language-plaintext highlighter-rouge">app.js</code>):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Wie bei den Animationen müssen wie das Modul unserer Applikation bekannt machen.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">tutorialApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">ngAnimate</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ngRoute</span><span class="dl">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Als nächstes kopieren wir alles, was innerhalb der Klasse <code class="language-plaintext highlighter-rouge">.container</code> steht in eine neue Datei <em>articles.html</em> und ersetzen den Inhalt durch:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"well"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#/"</span><span class="nt">&gt;</span>Start<span class="nt">&lt;/a&gt;</span> | <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#/about"</span><span class="nt">&gt;</span>Über<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">ng-view</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">ng-view</code> ist der Container für alle Unterseiten, die Teil unserer Anwendung sind. Damit werden nur noch Seiten-Inhalte nachgeladen, ohne Skript- und CSS-Dateien erneut vom Server zu holen. AngularJS löst zudem bei einem Seitenwechsel die Scopes der aktuellen Seite auf. Dies sorgt dafür, dass der Speicher nicht unnötig belegt wird.</p>
+
+<p>Auch wenn wir jetzt Seiten laden könnten, brauchen wir noch eine Verknüpfung zu URLs. Diese können wir in einem Konfigurationsblock von AngularJS angeben. Die <code class="language-plaintext highlighter-rouge">config()</code>-Blöcke werden einmal am Anfang der Applikation ausgewertet. Um die Routen in diesem zu konfigurieren, müssen wir den <code class="language-plaintext highlighter-rouge">$routeProvider</code> in dessen Funktions-Parameter übergeben.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$routeProvider</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$routeProvider</span>
+    <span class="p">.</span><span class="nf">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">articles.html</span><span class="dl">'</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nf">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Über unsere Pizzeria</span><span class="dl">'</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nf">otherwise</span><span class="p">({</span> <span class="na">redirectTo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="p">});</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>Der <code class="language-plaintext highlighter-rouge">$routeProvider</code> hat zwei Methoden: <code class="language-plaintext highlighter-rouge">.when</code> und <code class="language-plaintext highlighter-rouge">.otherwise</code>. Mit when könnt ihr die Route, inkl. Konfigurations-Objekt übergeben. Wie ihr seht, könnt ihr <em>template</em> oder <em>templateUrl</em> wie in den Direktiven verwenden. Mit <code class="language-plaintext highlighter-rouge">.otherwise</code> könnt ihr festlegen, was passiert, wenn keine der Routen ausgewählt wurde.</p>
+
+<p>Über die Links ganz oben könnt ihr nun zwischen zwei Seiten wechseln.</p>
+
+<h2 id="wie-geht-es-weiter">Wie geht es weiter?</h2>
+
+<p>Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei nicht genug Zeit, um auf alles intensiv einzugehen und es im Detail zu erklären. Einige coole Dinge, die wir an dieser Stelle noch nicht behandelt haben, sind z.B.:</p>
+
+<ul>
+  <li>Promises</li>
+  <li>Lokalisierung</li>
+  <li>Dependency Injection</li>
+  <li>Formular-Validierung</li>
+  <li>Unit- und E2E-Tests</li>
+</ul>
+
+<hr>
+
+<div class="workshop-hint text-center">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p> Maximaler Lernerfolg um direkt in deinem Projekt durchzustarten? Überpring die "Anfängerfehler" und nutze lieber unsere
+        jahrelange Erfahrung. Komm in unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-bottom-link">Angular und TypeScript Schulungen</a>.
+        Hier lernst du die Konzepte, Features und Fallstricke des Frameworks und kannst uns direkt spezifisch zu Herausforderungen
+        in deinem nächsten Projekt zu rat ziehen.
+      </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-bottom-button">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
+</div>
+<hr>
+
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2014-03-23-angularjs-tutorial-deutsch/2014-03-23-angularjs-tutorial-deutsch.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Sascha Brink" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/80cf026b76f105f6e03cc2955c1d21ff-160x160.jpg"
+      data-srcset="/assets/img/gravatars/80cf026b76f105f6e03cc2955c1d21ff-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Sascha Brink
+    </p>
+    
+      <p class="text-muted small">
+        Sascha betreut regelmäßig Angular-Projekte und unterstützt Firmen bei der Ausbildung ihrer Mitarbeiter. Im Jahr 2013 hat er die Platform AngularJS.DE gestartet um das Framework in Deutschland bekannter zu machen. Sascha gibt Angular- und JavaScript-Schulungen auf deutsch und englisch.
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/sbrink" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/nestjs-tutorial/"
+    data-style="background-image: url('/artikel/nestjs-tutorial/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NestJS Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

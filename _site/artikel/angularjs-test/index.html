@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Testen deiner AngularJS Anwendung mit Jasmine | Angular.DE</title>
+  
+  <meta name="description" content="Lerne, wie du Unit-Tests in AngularJS mit Jasmine schreiben kannst.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angularjs-test/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Testen deiner AngularJS Anwendung mit Jasmine - Angular.DE">
+
+
+
+  <meta property="og:description" content="Lerne, wie du Unit-Tests in AngularJS mit Jasmine schreiben kannst.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angularjs-test/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Testen deiner AngularJS Anwendung mit Jasmine - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Lerne, wie du Unit-Tests in AngularJS mit Jasmine schreiben kannst.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angularjs-test/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Testen deiner AngularJS Anwendung mit Jasmine"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Testen deiner AngularJS Anwendung mit Jasmine" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Testen deiner AngularJS Anwendung mit Jasmine</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angularjs/" class="badge bg-secondary text-bg-secondary text-uppercase">angularjs</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Robin Böhm
+            
+            <a href="https://twitter.com/robinboehm" target="_blank" style="margin-bottom: 5px;">
+              <img src="/shared/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
+            </a>
+            
+            
+            <span class="ms-1 me-1">•</span> <time>30.05.2013</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  10 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Unit-Tests für meine Web-Anwendung? Für viele Web-Entwickler:innen ist dieser Bereich noch absolutes Neuland. Bisher beschränkten sich Tests oft auf die Simulation von Interaktionen wie es Werkzeuge wie z.B. <a href="https://selenium.dev/documentation/en/" rel="noreferrer noopener" target="_blank">Selenium</a> ermöglichen. Diese Tests sind sinnvoll und notwendig, jedoch wird hier meistens nur das Endprodukt in der gesamten Komplexität getestet. Dies macht es schwer Fehler exakt zu identifizieren. Möchtest du einen einzelnen Funktionsbaustein auf seine <em>Korrektheit</em> prüfen, ohne die Komplexität des gesamten Systems mit einzubeziehen, benötigst du einen isolierten Test für z.B. eine Methode.</p>
+
+<!--more-->
+
+<p>Seit der Definition des <a href="http://agilemanifesto.org/iso/de/manifesto.html" rel="noreferrer noopener" target="_blank">Manifests für Agile Softwareentwicklung</a> im Jahre 2001 hat sich die testgetriebene Entwicklung als essentieller Bestandteil jedes Software-Entwicklungs-Prozesses etabliert. Gerade hier ist die Möglichkeit, isolierte Tests einfach und schnell schreiben zu können, enorm wichtig. Aus diesem Grund ist AngularJS von Anfang an unter dem Aspekt der Testbarkeit entwickelt worden. Das Framework liefert Dir ‘out of the box’ ein Paket von Mock-Objekten und bietet Dir außerdem alle Vorteile des Dependency Injection Mechanismus in Deinen Tests. Somit ist die Definition von Unit-Tests und End-to-End-Tests sehr angenehm im Vergleich zu anderen JavaScript Frameworks wie z.B. <a href="http://backbonejs.org/" rel="noreferrer noopener" target="_blank">Backbone.js</a>.</p>
+
+<h2 id="einführung-in-jasmine">Einführung in Jasmine</h2>
+
+<p>Um die Tests für AngularJS zu definieren, wurde in diesem Fall das BDD-Framework <a href="http://jasmine.github.io/" rel="noreferrer noopener" target="_blank">Jasmine</a> eingesetzt. Es nutzt eine klare und sehr einfach verständliche Syntax, die Dir das Schreiben von Tests sehr intuitiv ermöglicht. Als erstes definierst du mit der <code class="language-plaintext highlighter-rouge">describe(…)</code> Methode eine Gruppe zusammenhängender Tests. Diese Funktion nimmt zwei Parameter entgegen: Der erste Parameter ist ein String und beschreibt in natürlicher Sprache die beinhaltenden Tests. Der zweite Parameter ist eine Funktion, die alle Spezifikationen zu den Tests beinhaltet. Innerhalb dieser kann die <code class="language-plaintext highlighter-rouge">it(…)</code> Funktion genutzt werden, um die spezifische Test-Logik zu implementieren. Schauen wir uns folgendes Beispiel an:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">A suite</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">contains spec with an expectation</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nf">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>In CoffeeScript lässt es sich noch einfacher lesen. Innerhalb dieses Artikels wird aber weiter mit JavaScript gearbeitet. Wenn Du mehr über CoffeeScript in Verbindung mit AngularJS erfahren möchtest, kannst Du das in unserem <a href="/artikel/angularjs-mit-coffeescript/">Artikel über AngularJS in Verbindung mit CoffeeScript</a> nachlesen.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">describe</span> <span class="dl">'</span><span class="s1">A suite</span><span class="dl">'</span><span class="p">,</span> <span class="o">-&gt;</span>
+  <span class="nx">it</span> <span class="dl">'</span><span class="s1">contains spec with an expectation</span><span class="dl">'</span><span class="p">,</span> <span class="o">-&gt;</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">toBe</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<h2 id="matcher">Matcher</h2>
+
+<p>Jasmine bringt eine Reihe von sogenannten Matchern mit, die genutzt werden können, um Bedingungen für Deine Tests zu definieren. Zum Beispiel:</p>
+
+<ul>
+  <li>toBe</li>
+  <li>toBeDefined</li>
+  <li>toBeTruthy</li>
+  <li>toEqual</li>
+  <li>toMatch</li>
+  <li>toContain</li>
+  <li>toThrow</li>
+</ul>
+
+<p>Wie auch in anderen XUnit Test-Frameworks bekannt, ermögtlicht uns Jasmine <code class="language-plaintext highlighter-rouge">setup</code> und <code class="language-plaintext highlighter-rouge">teardown</code> Funktionen zu definieren, die vor bzw. nach jedem Test der aktuellen Test-Suite ausgeführt werden können. Sie sind über die Methoden <code class="language-plaintext highlighter-rouge">beforeEach</code> und <code class="language-plaintext highlighter-rouge">afterEach</code> zu definieren.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">A suite</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">testMe</span><span class="p">;</span>
+
+  <span class="nf">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">testMe</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should be true</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">testMe</span><span class="p">).</span><span class="nf">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Du kannst beliebig viele <code class="language-plaintext highlighter-rouge">describe(…)</code> Aufrufe schachteln und somit auch <code class="language-plaintext highlighter-rouge">setup</code> und <code class="language-plaintext highlighter-rouge">teardown</code> Funktionen für ganze Suites definieren.</p>
+
+<p><img src="angularjs-test-dia-2.png" alt="Schachtelung von setup &amp; teardown in einer Suite"></p>
+
+<p><img src="angularjs-test-dia-1.png" alt="Schachtelung von setup &amp; teardown über eine Suite"></p>
+
+<h2 id="spies">Spies</h2>
+
+<p>Oft kommt es vor, dass eine Methode ein anderes Objekt über ein Interface anspricht. Nicht immer ist es gewollt oder gar möglich eine reale Implementierung des Objekts direkt zu nutzen.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">MyController</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">restService</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">authSuccessful</span><span class="o">=</span> <span class="nx">restService</span><span class="p">.</span><span class="nf">auth</span><span class="p">(</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">pass</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="k">if </span><span class="p">(</span><span class="nx">authSuccessful</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">xxx</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">yyy</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Wollen wir die Logik dieses Controllers isoliert testen, ohne die Implementierung des <em>restService</em> indirekt mit einzubeziehen, benötigen wir ein Stub- oder Mock-Objekt. Sogenannte Stubs sind Objekte, die lediglich das Interface anbieten, jedoch keine wirkliche Implementierung beinhalten. Mocks sind Objekte, die das Verhalten eines Objektes in einem ganz bestimmten Zustand simulieren. Diese strikte Trennung von anderen Komponenten ist durchaus sinnvoll und beabsichtigt, da somit der Test komplett isoliert den einzelnen atomaren Funktionsteil testet und keine Abhängigkeiten zu der Korrektheit einer speziellen Implementierung hat. Der Mechanismus, den uns Jasmine hier anbietet, nennt sich Spies (Spione). Mit Jasmine kann man sehr einfache solche Spies erstellen. Gehen wir davon aus, dass wir ein einfaches Funktions-Objekt mit dem Namen ‘restService’ in unserem Scope haben. Wir wollen nun herausfinden, ob unsere Methode wirklich, wie wir es erwarten, die Methode C aufruft. Somit erstellen wir einen Spy auf diese Methode.</p>
+
+<p><img src="angularjs-test-restservice-1.png" alt="RestService"></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">A spy</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+  <span class="nf">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">restService</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">valueObject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span><span class="na">status</span><span class="p">:</span><span class="mi">200</span><span class="p">};</span>
+      <span class="p">},</span>
+      <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">valueObject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span><span class="na">status</span><span class="p">:</span><span class="mi">201</span><span class="p">};</span>
+      <span class="p">},</span>
+      <span class="dl">'</span><span class="s1">auth</span><span class="dl">'</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">});</span>
+
+  <span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">auth was called</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">spyOn</span><span class="p">(</span><span class="nx">restService</span><span class="p">,</span> <span class="dl">'</span><span class="s1">auth</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">restService</span><span class="p">.</span><span class="nf">auth</span><span class="p">(</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">password</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">restService</span><span class="p">.</span><span class="nx">auth</span><span class="p">).</span><span class="nf">toHaveBeenCalled</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><img src="angularjs-test-restservice-2.png" alt="RestService mit spyOn"></p>
+
+<p>Falls wir die Aufrufe der reale Implementierung überwachen wollen, können wir dies mit <code class="language-plaintext highlighter-rouge">.andCallThrough()</code> einleiten.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">auth was called</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">spyOn</span><span class="p">(</span><span class="nx">restService</span><span class="p">,</span> <span class="dl">'</span><span class="s1">auth</span><span class="dl">'</span><span class="p">).</span><span class="nf">andCallThrough</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="k">return</span> <span class="o">=</span> <span class="nx">restService</span><span class="p">.</span><span class="nf">auth</span><span class="p">(</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">password</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">restService</span><span class="p">.</span><span class="nx">auth</span><span class="p">).</span><span class="nf">toHaveBeenCalled</span><span class="p">();</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">restService</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="k">return</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><img src="angularjs-test-restservice-3.png" alt="RestService mit .andCallThrough()"></p>
+
+<p>Wollen wir den Test isoliert ausführen, können wir die Implementierung der auth-Funktion simulieren und die erwartete Rückgabe definieren.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">auth was called</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">//spyOn(restService, auth).andReturn(true);</span>
+  <span class="nf">spyOn</span><span class="p">(</span><span class="nx">restService</span><span class="p">,</span> <span class="dl">'</span><span class="s1">auth</span><span class="dl">'</span><span class="p">).</span><span class="nf">andCallFake</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">login</span><span class="p">,</span><span class="nx">pass</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">(</span><span class="nx">login</span><span class="o">==</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">pass</span><span class="o">==</span><span class="dl">'</span><span class="s1">password</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="kd">var</span> <span class="k">return</span> <span class="o">=</span> <span class="nx">restService</span><span class="p">.</span><span class="nf">auth</span><span class="p">(</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">wrongPassword</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">restService</span><span class="p">.</span><span class="nx">auth</span><span class="p">).</span><span class="nf">toHaveBeenCalled</span><span class="p">();</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">restService</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="k">return</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><img src="angularjs-test-restservice-4.png" alt="RestService mit .andCallFake()"></p>
+
+<h2 id="testen-deiner-angularjs-module">Testen Deiner AngularJS Module</h2>
+
+<p>Nun sind wir in der Lage mit Jasmine Tests zu definieren. Aber wie schaffen wir es, dass unsere Module innerhalb der Test-Funktionen nutzbar sind? Hier können wir die bereits am Anfang erwähnten Vorteile der Dependency Injection nutzen. Wir können über die <code class="language-plaintext highlighter-rouge">beforeEach</code>-Funktion unser Modul initialisieren und dann mit Hilfe der <code class="language-plaintext highlighter-rouge">inject</code>-Methode auf die gewünschten Komponenten zugreifen. Für die folgenden Test-Beispiele gehen wir von folgendem Modul aus.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">angularjsDE</span><span class="dl">'</span><span class="p">,</span> <span class="p">[])</span>
+  <span class="p">.</span><span class="nf">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">restService</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">$http</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">auth</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">login</span><span class="p">,</span><span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return </span><span class="p">(</span><span class="nx">login</span><span class="o">==</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">pass</span><span class="o">==</span><span class="dl">'</span><span class="s1">password</span><span class="dl">'</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="na">get</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">$http</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user</span><span class="dl">'</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Wir können nun testen, ob wir unseren Service über den Inject-Mechanismus übergeben bekommen.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">beforeEach</span><span class="p">(</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">angularjsDE</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should exist</span><span class="dl">'</span><span class="p">,</span> <span class="nf">inject</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">restService</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">restService</span><span class="p">).</span><span class="nf">toBeDefined</span><span class="p">();</span>
+<span class="p">}));</span>
+</code></pre></div></div>
+
+<p>In einem nächsten Test überprüfen wir, ob der Service die Schnittstelle <code class="language-plaintext highlighter-rouge">auth</code> korrekt implementiert.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should implementent a auth function</span><span class="dl">'</span><span class="p">,</span> <span class="nf">inject</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">restService</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">restService</span><span class="p">.</span><span class="nx">auth</span><span class="p">).</span><span class="nf">toBeDefined</span><span class="p">();</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">restService</span><span class="p">.</span><span class="nf">auth</span><span class="p">(</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">password</span><span class="dl">'</span><span class="p">)).</span><span class="nf">toEqual</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}));</span>
+</code></pre></div></div>
+
+<p>Wir können einen Spy nutzen, um zu überprüfen, ob unsere auth-Funktion wirklich die get-Methode des $http Services aufruft. Wir erzeugen mit SpyOn + andCallThrough() einen Wrapper um die $http.get-Methode und können dann die bereits erwähnte Methode toHaveBeenCalled() nutzen. Zusätzlich müssen wir einen Spy auf unser $http registrieren.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should call $http.get in get</span><span class="dl">'</span><span class="p">,</span> <span class="nf">inject</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">restService</span><span class="p">,</span><span class="nx">$http</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">spyOn</span><span class="p">(</span><span class="nx">$http</span><span class="p">,</span><span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">restService</span><span class="p">.</span><span class="nf">get</span><span class="p">();</span>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">$http</span><span class="p">.</span><span class="kd">get</span><span class="p">).</span><span class="nf">toHaveBeenCalled</span><span class="p">();</span>
+<span class="p">}));</span>
+</code></pre></div></div>
+
+<h2 id="stubmock-objekte">Stub/Mock Objekte</h2>
+
+<p>Möchtest Du überprüfen, ob auch tatsächlich ein GET-Request abgesendet wurde, kannst Du dies über das Mock-Objekt $httpBackend überprüfen.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should call $http.get in auth</span><span class="dl">'</span><span class="p">,</span> <span class="nf">inject</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">restService</span><span class="p">,</span> <span class="nx">$httpBackend</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$httpBackend</span><span class="p">.</span><span class="nf">expectGET</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">restService</span><span class="p">.</span><span class="nf">get</span><span class="p">();</span>
+  <span class="nx">$httpBackend</span><span class="p">.</span><span class="nf">flush</span><span class="p">();</span>
+<span class="p">}));</span>
+</code></pre></div></div>
+
+<p>Folgende Objekte sind in dem Modul <em>ngMock</em> derzeitig implementiert.</p>
+
+<ul>
+  <li>$httpBackend</li>
+  <li>$browser</li>
+  <li>$exceptionHandlerProvider</li>
+  <li>$exceptionHandler</li>
+  <li>$log</li>
+  <li>$timeout</li>
+</ul>
+
+<p>Minimale Beispiele sind in der AngularJS Dokumentation beschrieben. Wenn Du Dich jedoch tiefer mit dem Testen von AngularJS beschäftigen möchtest, solltest Du Dir einfach ein paar Tests des Frameworks selbst ansehen. Zu finden sind diese im <a href="https://github.com/angular/angular.js/tree/master/test" rel="noreferrer noopener" target="_blank">AngularJS Projekt auf GitHub</a>.</p>
+
+<h2 id="ausführen-der-tests">Ausführen der Tests</h2>
+
+<p>Zum Ausführen der Tests wird das <a href="http://karma-runner.github.io/0.8/index.html" rel="noreferrer noopener" target="_blank">Werkzeug Karma</a>, ehemals Testacular, genutzt. Es erlaubt Dir die definierten Tests parallel in mehreren Browsern auszuführen und sammelt die Ergebnisse ein. Es basiert auf Node.js und Socket.IO. Alle Tests in echten Browsern laufen zu lassen bietet einen großen Vorteil: Es ermöglicht die Nutzung bereits vorhandener Tools, wie z.B. der diversen Debugging-Werkzeuge. Karma startet automatisch mehrere Instanzen der verschiedenen Browser, welche sich über eine einfache Konfigurationsdatei im JSON-Format definieren lassen. Des Weiteren ist es möglich Karma als eine Art lokales <a href="https://martinfowler.com/articles/continuousIntegration.html" rel="noreferrer noopener" target="_blank">Continuous Integration</a> System zu betreiben. Der Prozess überwacht das Projekt und führt Deine Tests aus, sobald eine Änderung festgestellt wird.</p>
+
+<p>Mit der vorgestellten Testumgebung von AngularJS ist es sehr einfach Tests zu definieren und auszuführen. Methoden wie testgetriebene Entwicklung lassen sich ohne großen Konfigurationsaufwand direkt anwenden. Der Frontend-JavaScript Entwickler kann sich endlich auf die wesentlichen Sachen wie z.B. die Implementierung der eigentlichen Anwendungslogik konzentrieren. AngularJS ermöglicht die Entwicklung von hochqualitativen Webanwendungen - jetzt bist Du am Zug! :)</p>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2013-05-30-angularjs-test/2013-05-30-angularjs-test.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Robin Böhm" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/e9e044629f5324a4a3c27302f0d4efcc-160x160.jpg"
+      data-srcset="/assets/img/gravatars/e9e044629f5324a4a3c27302f0d4efcc-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Robin Böhm
+    </p>
+    
+      <p class="text-muted small">
+        Robin beschäftigt sich seit 2012 intensiv mit der Erstellung client-seitiger Web-Applikationen. 2014 hat er das erste deutschsprachige Buch zum Thema AngularJS geschrieben und ist Mitgründer der Platform Angular.DE. Mit seinem Schulungs-Team hat er bereits über 1200 Unternehmen den erfolgreichen Start mit Angular ermöglicht.
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/robinboehm" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+        <a href="https://twitter.com/robinboehm" class="btn btn-sm btn-outline-secondary" target="_blank">Twitter</a>
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/was-ist-angular/"
+    data-style="background-image: url('/artikel/was-ist-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Was sind Angular und AngularJS?
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ngupgrade-migration-angularjs-angular/"
+    data-style="background-image: url('/artikel/ngupgrade-migration-angularjs-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Migration AngularJS zu Angular
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

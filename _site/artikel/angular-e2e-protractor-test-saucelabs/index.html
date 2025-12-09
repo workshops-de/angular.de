@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Angular E2E Tests mit Protractor und Sauce Labs | Angular.DE</title>
+  
+  <meta name="description" content="Einführung in E2E Tests mit Protractor und Sauce Labs - Die universelle Fernbedienung für Browser. Hier findest du eine Schritt für Schritt Anleitung.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angular-e2e-protractor-test-saucelabs/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Angular E2E Tests mit Protractor und Sauce Labs - Angular.DE">
+
+
+
+  <meta property="og:description" content="Einführung in E2E Tests mit Protractor und Sauce Labs - Die universelle Fernbedienung für Browser. Hier findest du eine Schritt für Schritt Anleitung.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angular-e2e-protractor-test-saucelabs/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Angular E2E Tests mit Protractor und Sauce Labs - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Einführung in E2E Tests mit Protractor und Sauce Labs - Die universelle Fernbedienung für Browser. Hier findest du eine Schritt für Schritt Anleitung.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angular-e2e-protractor-test-saucelabs/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Angular E2E Tests mit Protractor und Sauce Labs"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Angular E2E Tests mit Protractor und Sauce Labs" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Angular E2E Tests mit Protractor und Sauce Labs</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angular/" class="badge bg-secondary text-bg-secondary text-uppercase">angular</a>
+            
+            <a href="/kategorie/angular2/" class="badge bg-secondary text-bg-secondary text-uppercase">angular2</a>
+            
+            <a href="/kategorie/angular4/" class="badge bg-secondary text-bg-secondary text-uppercase">angular4</a>
+            
+            <a href="/kategorie/testing/" class="badge bg-secondary text-bg-secondary text-uppercase">testing</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Martin Wiesmüller
+            
+            
+            <span class="ms-1 me-1">•</span> <time>12.01.2017</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  22 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Die innovative Entwicklung der Web Welt bietet inzwischen eine ganze Menge an Möglichkeiten, testgetriebene Entwicklungen durchzuführen. Neben den Komponententests mittels <a href="https://karma-runner.github.io" rel="noopener noreferrer nofollow" target="_blank">Karma</a> und <a href="http://phantomjs.org/" rel="noopener noreferrer nofollow" target="_blank">PhantomJs</a>, nehmen wir heute End2End Tests mit Hilfe von <a href="http://www.protractortest.org/#/" rel="noopener noreferrer nofollow" target="_blank">Protractor</a> genauer unter die Lupe. Um anschließend eine Testabdeckung über verschiedene Browser und deren Versionen zu erreichen, wollen wir das ganze zusammen mit dem Cloud Dienst von <a href="https://saucelabs.com/" rel="noopener noreferrer nofollow" target="_blank">SauceLabs</a> realiseren.</p>
+
+<h2 id="warum-e2e-tests-vor--und-nachteile">Warum E2E Tests? Vor- und Nachteile</h2>
+
+<p>Natürlich bestehen sowohl Vor- als auch Nachteile. Daher bedarf es die richtige Balance zwischen Unit- und den E2E-Tests zu finden, um eine Web-Applikation sinnvoll testen zu können. Im Gegensatz zu den Unit-Tests kann bei den E2E Tests die komplette Applikation in den Browser geladen und getestet werden. Dies stellt natürlich schon einen großen Vorteil dieser Testmethode dar. Allerdings kann auch jede Weiterentwicklung am Quellcode eine umfangreiche Änderung der End to End Test-Suites nach sich ziehen. Folglich kann dies bedeuten, dass zwischen der Entwicklung der Tests und der Funktionalitäten einer Applikation sehr viel Zeit liegen kann. Bei der Informationsbeschaffung für diesen Artikel habe ich auch von Fällen gehört, bei welchen die kompletten Entwicklungen einer Applikation zum Erliegen kamen, weil die E2E Tests die Veröffentlichung einer Version verhindert haben.</p>
+
+<p>Zudem habe ich von Projekten gehört, bei welchen die Abteilungen für die Entwicklung der E2E- und Unit Tests größer waren als die der Applikation selbst. An dieser Stelle kommt natürlich schnell die Frage auf, wie hier noch “testgetrieben” entwickelt werden kann. Ebenso stellt man dann das Testen an sich in Frage. Daher nochmal ein paar Vor- und Nachteile gegenüber gestellt:</p>
+
+<h3 id="vorteile">Vorteile</h3>
+
+<ul>
+  <li>Echter Integrationstest der final auszuliefernden Software</li>
+  <li>Kommunikation zwischen Front- und Backend wird mit-getestet</li>
+  <li>Wie sieht der User meine Applikation?</li>
+  <li>Testen aller Funktionalitäten direkt vom Nutzer-Device(Browser) aus</li>
+  <li>Cross-Browser Testing</li>
+</ul>
+
+<h3 id="nachteile">Nachteile</h3>
+
+<ul>
+  <li>Entwicklung der E2E Tests sehr zeitintensiv</li>
+  <li>Eine Änderung innerhalb der Applikation kann eine aufwendige Änderung der Test-Suites nach sich ziehen</li>
+  <li>Je nach Größe der Applikation oder des Projektes ist personeller Aufwand erforderlich</li>
+  <li>Kosten bei Cross-Browser Testing (Sauce Labs)</li>
+</ul>
+
+<p>Trotz der mitunter gerechtfertigten Nachteile, sehe ich die Anwendung von E2E Tests als unabdingbar. Gerade bei der Entwicklung der E2E Tests in Richtung der verschiedenen Browser stellt man oft fest, dass die Browser doch nicht alle gleich ticken. Und das nicht nur zwischen den unterschiedlichen Typen, sondern auch zwischen den Versionen eines Browser. Solche unterschiedlichen Verhaltensweisen, welche auch ganz schnell zu gravierenden Bugs führen können, stellt man oft nur bei der Entwicklung solcher E2E Tests fest.</p>
+
+<p>Aber diese Tests als notwendiges Übel anzusehen ist nicht richtig. Man muss nur die richtige Balance zwischen Unit- und E2E Tests halten, sowie die richtige Tiefe der E2E Tests definieren. Folglich die sinnvolle Gestaltung der Tests. Ebenso kann diese Testmethode die Unit-Tests keinesfalls ersetzen. Die Durchführung der E2E Tests sind als “zusätzlich” zu betrachten.</p>
+
+<h3 id="protractorjs">Protractor.Js</h3>
+
+<p><a href="http://www.protractortest.org/#/" rel="noreferrer noopener" target="_blank">Protractor</a> ist ein Testframework, welches speziell für Angular Apps entwickelt wurde. Die Entwicklung basiert auf Node und knüpft an <a href="https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs" rel="noreferrer noopener" target="_blank">WebDriverJs</a> von Selenium an. Dieses Framework stellt den Mittelpunkt der Schnittstelle zwischen euren Tests und den Browser dar.</p>
+
+<p>Die Version 4 von <a href="http://www.protractortest.org/#/" rel="noreferrer noopener" target="_blank">Protractor</a> ist lauffähig auf Node Version &gt; 4. In dieser Version werden sowohl Angular Apps größer 1.1.4 unterstützt, als auch alle Angular 2 Apps. Allerdings wird hier das Testen auf Bindings und Models nicht unterstützt.</p>
+
+<p>Nähere und die aktuellsten Informationen findet Ihr auf der Github Page von <a href="http://www.protractortest.org/#/" rel="noreferrer noopener" target="_blank">Protractor</a>.</p>
+
+<h3 id="sauce-labs">Sauce Labs</h3>
+
+<p>Um sich das Thema Cross-Browser Testing deutlich zu vereinfachen, bietet <a href="https://saucelabs.com/" rel="noopener noreferrer nofollow" target="_blank">SauceLabs</a> für die E2E Tests hier eine spitzen Integrationsmöglichkeit für Protractor. <a href="https://saucelabs.com/" rel="noopener noreferrer nofollow" target="_blank">SauceLabs</a> bietet einen Selenium Dienst in der Cloud an, mit welchem alle aktuellsten Browser und Versionen von Protractor angesprochen werden können. Die zu testenden Browser werden in Protractor definiert und beim Starten der Tests an den Seleniumdienst von <a href="https://saucelabs.com/" rel="noopener noreferrer nofollow" target="_blank">SauceLabs</a> übergeben.</p>
+
+<p><img src="e2e-testing-angular-protractor.png" alt="Protractor-Angular-Test-Sauce Labs"></p>
+
+<p>Dieser Dienst erstellt eine virtuelle Maschine mit der genannten Browserversion und führt darin die definierten Test-Suites durch. Darüber hinaus werden die Tests von <a href="https://saucelabs.com/" rel="noopener noreferrer nofollow" target="_blank">SauceLabs</a> aufgezeichnet, sowie Screenshots erstellt. Diese können hinterher sehr bequem innerhalb der UI von SauceLabs angesehen werden. Dies vereinfacht das Debugging bei der Suche von Fehlern deutlich. Hat man sich zusätzlich eine Deployment-Pipe innerhalb seiner Architektur aufgesetzt, kann man mit dem Ergebnis dieser Tests ein Deployment durchführen oder auch verhindern.</p>
+
+<h2 id="testprojekt">Testprojekt</h2>
+
+<p>Nachdem ich euch nun mit Vor- und Nachteilen und sehr viel Theorie bombardiert habe, wollen wir nun mal loslegen und ein Projekt anlegen. Wenn Ihr bereits eine Angular App habt, könnt ihr auch direkt in dieser starten. Viele Templates beinhalten auch schon die Grundkonfiguration von Protractor.</p>
+
+<p>Als erstes müsst Ihr Protractor global sowie die notwendigen Dependencies installieren:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> protractor
+npm i <span class="nt">--save-dev</span> <span class="nt">--save-exact</span> request moment protractor-jasmine2-screenshot-reporter jasmine-spec-reporter<span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Einmal werden nun zwei Command-Line Tools installiert. Protractor selbst und der Webdriver Manager. Ruft am besten mal <code class="language-plaintext highlighter-rouge">protractor --version</code> auf, um zu sehen, ob das Framework sauber installiert wurde. Zudem werden Module für den Report installiert.</p>
+
+<p>Anschließend updaten wir den installierten Webdrivermanager und starten diesen:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>webdriver-manager update
+webdriver-manager start<span class="sb">`</span>
+</code></pre></div></div>
+
+<h3 id="protractor-konfigurieren">Protractor konfigurieren</h3>
+
+<p>Nun kommen wir zur Konfiguration von Protractor. Hierzu wird die Datei <code class="language-plaintext highlighter-rouge">protractor.conf.js</code> benötigt. In dieser Datei definiert ihr die komplette Konfiguration von Protractor. Dies kann ein sehr aufwendiger Prozess sein bzw. kann ein Prozess sein, der über die komplette Entwicklung des Projekts lebt. In dieser Konfiguration werden unter anderem Test-Suites, Browser sowie Reporter definiert. Ich persönlich versuche aber immer die “Wiederverwendbarkeit” von Konfigurationen zu ermöglichen. Daher lege ich drei Dateien in einem separaten Folder (protractor) im Projekt an:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">browserlist.json</code>
+Datei zur Definition welche Browser getestet werden sollen. (Lokal und über Saucelabs)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">testsuites.json</code>
+Datei zur Definition der Test-Suites</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">protractor.conf.js</code>
+Datei zur allgemeinen Konfiguration von Protractor</li>
+</ul>
+
+<p>Diese drei Dateien wollen wir uns nun mal im Detail ansehen. Wobei es sich streng genommen nur um eine Datei handelt. Nämlich die <code class="language-plaintext highlighter-rouge">protractor.conf.js</code>. Wie aber bereits geschrieben, versuche ich solche Konfigurationsfiles auf Wiederverwendbarkeit zu schreiben. Daher handelt es sich bei den zwei JSON Files nur um Objekte, welche am Ende in der Konfigurationsdatei von Protractor required werden.</p>
+
+<h4 id="browserlistjson">BROWSERLIST.JSON</h4>
+
+<p>In diesem JSON werden die zu testenden Browser definiert. Das Objekt hat insgesamt zwei Keys. Einmal <code class="language-plaintext highlighter-rouge">saucelab</code> und einmal <code class="language-plaintext highlighter-rouge">local</code>. Wie es die Namen schon sagen, werden hier die Browser definiert, welche lokal und auf SauceLabs getestet werden sollen:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"saucelab"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"browserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chrome"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Windows 10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chrome"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shardTestFiles"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxInstances"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"browserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"firefox"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Windows 7"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla Firefox"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shardTestFiles"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxInstances"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"browserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"internet explorer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Windows 10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.103"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internet Explorer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shardTestFiles"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxInstances"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"local"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"browserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chrome"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Die genaue Definition für die Konfiguration der SauceLab Browser findet ihr im SauceLabs <a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/" rel="noopener noreferrer nofollow" target="_blank">Platform Configurator</a>. Zudem möchte ich euch dennoch die Keys kurz erklären:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">browserName</code> (string)
+Der Name des Browsers, welcher verwendet werden soll.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">platform</code> (string)
+Definiert das Betriebssystem, auf welchem der Browser gestartet werden soll</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">version</code> (string)
+Gibt die Version des Browsers an, welcher in der virtuellen Instanz installiert werden soll</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">name</code> (string)
+Frei definierbarer Name der Testinstanz</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">shardTestFiles</code> (boolean)
+Gibt an, ob die Instanz mit anderen Tests geteilt werden darf</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">maxInstances</code> (number)
+Definiert die maximale Anzahl an Instanzen für diesen Browser</li>
+</ul>
+
+<p>Wenn Ihr euch das Objekt anseht, erkennt Ihr das hier auf SauceLabs die Browser Chrome, Firefox und Internet Explorer getestet werden sollen. Lokal wird nur Chrome getestet. Dieses Objekt könnte man auch direkt in die Konfigurationsdatei von Protractor mit einsetzen. Allerdings würde dies die Datei sehr lange und folglich unübersichtlich machen. Daher habe ich dieses JSON aus der protractor.conf.js gelöst und in ein separtes File geschoben. Dieses File wird in der Konfiguration dann als Variable required.</p>
+
+<h4 id="testsuitesjson">TESTSUITES.JSON</h4>
+
+<p>Das Objekt in diesem File wurde von mir genauso wie die <code class="language-plaintext highlighter-rouge">browserlist.json</code> aus der <code class="language-plaintext highlighter-rouge">protractor.conf.js</code> heraus getrennt, um eine klarere Struktur zu erhalten. In diesem File werden die einzelnen Test-Suites definiert:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"../src/app/template/**/*e2e-spec.js"</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"home"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"../src/app/pages/home/**/*e2e-spec.js"</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"site1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"../src/app/pages/site1/**/*e2e-spec.js"</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Als Key wird der Name der Suite definiert. Das dazugehörige Array definiert die Dateien mit den Testfällen. Die Aufteilung der Tests in Suiten ist nicht zwingend erforderlich. Man kann theoretisch auch alle Testfiles ohne Suites angeben. Allerdings nimmt man sich hiermit einen großen Vorteil:</p>
+
+<p>Wenn ich die Testfälle in Suiten aufteile, habe ich anschließend auch die Möglichkeit, Suiten einzeln zu testen. Andernfalls kann ich nur alle Tests auf einmal starten. Und da die E2E Tests mitunter auch sehr viel Zeit in Anspruch nehmen können, ist es sehr hilfreich, nur einzelne Suiten aufzurufen.</p>
+
+<h4 id="protractorconfjs">PROTRACTOR.CONF.JS</h4>
+
+<p>Hier mal eine Protractor Konfigurationsdatei, welche das Testing lokal, sowie auch über SauceLabs unterstützt. Als Testframework verwende ich hier <a href="https://jasmine.github.io/" rel="noreferrer noopener" target="_blank">Jasmine</a>. Zudem habe ich einen Testreporter mit integriert, welcher Screenshots erstellt und diese zusammen mit dem Test-Report lokal ablegt.</p>
+
+<p>Dieses File wollen wir uns mal Stück für Stück ansehen:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">HtmlScreenshotReporter</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">protractor-jasmine2-screenshot-reporter</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">ENV</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">pkg</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../package.json</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">browserslist</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./browserslist.json</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">testsuites</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./testsuites.json</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">q</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">q</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">moment</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">moment</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">time</span> <span class="o">=</span> <span class="nf">moment</span><span class="p">().</span><span class="nf">format</span><span class="p">(</span><span class="dl">'</span><span class="s1">DD.MM.YYYY</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">reporter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HtmlScreenshotReporter</span><span class="p">({</span>
+    <span class="na">dest</span><span class="p">:</span> <span class="dl">'</span><span class="s1">coverage/screenshots</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-report.html</span><span class="dl">'</span>
+<span class="p">});</span>
+
+<span class="c1">// Setup the position of the tests. local / saucelab</span>
+<span class="kd">let</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">http://127.0.0.1:8080/</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">caps</span> <span class="o">=</span> <span class="nx">browserslist</span><span class="p">[</span><span class="dl">'</span><span class="s1">local</span><span class="dl">'</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">sauceUser</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">sauceKey</span><span class="p">;</span>
+
+<span class="k">if </span><span class="p">(</span><span class="nx">ENV</span><span class="p">.</span><span class="nx">saucetest</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sauceUser</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">UserName</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">sauceKey</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">SauceLabKey</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">http://your.url.com</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">caps</span> <span class="o">=</span> <span class="nx">browserslist</span><span class="p">[</span><span class="dl">'</span><span class="s1">saucelab</span><span class="dl">'</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="nx">exports</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">sauceUser</span><span class="p">,</span>
+    <span class="nx">sauceKey</span><span class="p">,</span>
+    <span class="nx">baseUrl</span><span class="p">,</span>
+    <span class="na">suites</span><span class="p">:</span> <span class="nx">testsuites</span><span class="p">,</span>
+
+    <span class="na">jasmineNodeOpts</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">showColors</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">defaultTimeoutInterval</span><span class="p">:</span> <span class="mi">120000</span><span class="p">,</span>
+      <span class="na">isVerbose</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">includeStackTrace</span> <span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+
+    <span class="na">framework</span><span class="p">:</span> <span class="dl">'</span><span class="s1">jasmine2</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">useAllAngular2AppRoots</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+    <span class="c1">// Setup Capabilities</span>
+    <span class="na">getMultiCapabilities</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">deferred</span> <span class="o">=</span> <span class="nx">q</span><span class="p">.</span><span class="nf">defer</span><span class="p">();</span>
+      <span class="kd">const</span> <span class="nx">multiCaps</span> <span class="o">=</span> <span class="nx">caps</span><span class="p">;</span>
+
+      <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">multiCaps</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">multiCaps</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">pkg</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+        <span class="nx">multiCaps</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">tags</span> <span class="o">=</span> <span class="p">[</span> <span class="nx">pkg</span><span class="p">.</span><span class="nx">version</span> <span class="p">]</span>
+      <span class="p">}</span>
+
+      <span class="nx">deferred</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">multiCaps</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">deferred</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+    <span class="p">},</span>
+
+    <span class="c1">// Setup the report before any tests start</span>
+     <span class="na">beforeLaunch</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">reporter</span><span class="p">.</span><span class="nf">beforeLaunch</span><span class="p">(</span><span class="nx">resolve</span><span class="p">);</span>
+      <span class="p">});</span>
+     <span class="p">},</span>
+
+     <span class="c1">// Assign the test reporter to each running instance</span>
+     <span class="na">onPrepare</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+       <span class="kd">const</span> <span class="nx">SpecReporter</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">jasmine-spec-reporter</span><span class="dl">'</span><span class="p">);</span>
+
+       <span class="nx">jasmine</span><span class="p">.</span><span class="nf">getEnv</span><span class="p">().</span><span class="nf">addReporter</span><span class="p">(</span><span class="k">new</span> <span class="nc">SpecReporter</span><span class="p">({</span> <span class="na">displayStacktrace</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+       <span class="nx">jasmine</span><span class="p">.</span><span class="nf">getEnv</span><span class="p">().</span><span class="nf">addReporter</span><span class="p">(</span><span class="nx">reporter</span><span class="p">);</span>
+     <span class="p">},</span>
+
+     <span class="c1">// Close the report after all tests finish</span>
+     <span class="na">afterLaunch</span><span class="p">:</span> <span class="p">(</span><span class="nx">exitCode</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">reporter</span><span class="p">.</span><span class="nf">afterLaunch</span><span class="p">(</span><span class="nx">resolve</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">exitCode</span><span class="p">));</span>
+      <span class="p">});</span>
+     <span class="p">},</span>
+
+     <span class="c1">// Lifecycle when test-suite is complete</span>
+     <span class="na">onComplete</span><span class="p">:</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+       <span class="nx">browser</span><span class="p">.</span><span class="nf">getSession</span><span class="p">().</span><span class="nf">then</span><span class="p">((</span><span class="nx">session</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+           <span class="k">return</span> <span class="nx">browser</span><span class="p">.</span><span class="nf">getProcessedConfig</span><span class="p">().</span><span class="nf">then</span><span class="p">((</span><span class="nx">config</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+             <span class="kd">let</span> <span class="nx">local</span><span class="p">;</span>
+
+              <span class="k">if</span><span class="p">(</span><span class="nx">ENV</span><span class="p">.</span><span class="nx">localrun</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">local</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Local run: </span><span class="dl">'</span><span class="p">;</span>
+              <span class="p">}</span>
+
+             <span class="k">if </span><span class="p">(</span><span class="nx">ENV</span><span class="p">.</span><span class="nx">saucetest</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">.... Sending Pass-Status to Sauce Labs ....</span><span class="dl">'</span><span class="p">);</span>
+
+               <span class="nf">request</span><span class="p">({</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://saucelabs.com/rest/v1/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">sauceUser</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/jobs/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">session</span><span class="p">.</span><span class="nf">getId</span><span class="p">(),</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PUT</span><span class="dl">'</span><span class="p">,</span> <span class="na">json</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">auth</span><span class="p">:</span> <span class="p">{</span> <span class="na">user</span><span class="p">:</span> <span class="nx">sauceUser</span><span class="p">,</span> <span class="na">pass</span><span class="p">:</span> <span class="nx">sauceKey</span> <span class="p">},</span> <span class="na">body</span><span class="p">:</span> <span class="p">{</span> <span class="na">passed</span><span class="p">:</span> <span class="nx">state</span><span class="p">,</span> <span class="na">build</span><span class="p">:</span> <span class="nx">local</span> <span class="o">+</span> <span class="nx">pkg</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> - </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">time</span> <span class="p">}},</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                 <span class="k">if </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                   <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+                 <span class="p">}</span>
+
+                 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">--- Pass-Status is send sucessfully ---</span><span class="dl">'</span><span class="p">);</span>
+               <span class="p">});</span>
+             <span class="p">}</span>
+
+             <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">SauceOnDemandSessionID=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">session</span><span class="p">.</span><span class="nf">getId</span><span class="p">()</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> job-name=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">config</span><span class="p">.</span><span class="nx">capabilities</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+             <span class="k">return</span> <span class="nx">browser</span><span class="p">.</span><span class="kd">get</span>
+           <span class="p">});</span>
+       <span class="p">});</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Im oberen Teil laden wir die externen Module, sowie die zwei bereits genannten JSON Files für die Browser- und der Testsuites Definitionen. Als externe Module werden hier folgende Dependencies geladen:</p>
+
+<ul>
+  <li>
+    <p><a href="https://www.npmjs.com/package/protractor-jasmine2-screenshot-reporter" rel="noreferrer noopener" target="_blank">protractor-jasmine2-screenshot-reporter</a>
+Das ist der Jasmine Reporter welcher die Screenshots während der Tests durchführt. Dieses Modul wird anschließend direkt mit der Variable <code class="language-plaintext highlighter-rouge">reporter</code> konfiguriert. Mit dem Key <code class="language-plaintext highlighter-rouge">dest</code> wird die Destination für die Screenshots, und mit dem Key <code class="language-plaintext highlighter-rouge">filename</code> der Pfad für den globalen Report angegeben.</p>
+  </li>
+  <li>
+    <p><a href="https://www.npmjs.com/package/request" rel="noreferrer noopener" target="_blank">request</a>
+Dieses Modul benötigen wir für die Rückmeldung der Testergebnisse an SauceLabs. Siehe hierzu den Punkt “Automatischer Build und Browsermatrix” weiter unten.</p>
+  </li>
+  <li>
+    <p><a href="http://momentjs.com/" rel="noreferrer noopener" target="_blank">moment</a>
+Das Modul MomentJS benötigen wir zur Bestimmung des Timestamps im Build. Siehe ebenfalls weiter unten.</p>
+  </li>
+</ul>
+
+<p>Wie bereits genannt, wird mit dieser Konfiguration von Protractor lokale, sowie auch die Tests über SauceLabs definiert. Gesteuert wird das Ganze über die Belegung der Umgebunsvariable <code class="language-plaintext highlighter-rouge">saucetest</code>. Setzt man diese auf “true” wird der Test nicht lokal, sondern auf SauceLabs in der Cloud durchgeführt. Hierfür werden die Variablen <code class="language-plaintext highlighter-rouge">baseUrl, caps, sauceUser, sauceKey</code> benannt. Während ohne Umgebungsvariable die <code class="language-plaintext highlighter-rouge">baseUrl</code> und die <code class="language-plaintext highlighter-rouge">caps</code> die lokalen Einstellungen abrufen, werden bei der Aktiverung der Umgebungsvariable die Einstellungen für SauceLabs verwendet.</p>
+
+<h3 id="saucelabs-aktivieren">SauceLabs aktivieren</h3>
+
+<p>Um SauceLabs verwenden zu können, muss ein Account angelegt werden. Innerhalb der SauceLabs Verwaltung kann man sich dann die notwendige sauceUser-ID sowie den Key für die Protractor Einstellung generieren lassen. Diese kann man dann in der Variable <code class="language-plaintext highlighter-rouge">sauceUser</code> und <code class="language-plaintext highlighter-rouge">sauceKey</code> innerhalb der protractor.conf.js hinterlegen.</p>
+
+<blockquote>
+  <p>Tipp: SauceLabs bietet die Möglichkeit, zu seinem Account sogenannte Sub-Accounts anzulegen. Dies macht dann vor allem Sinn, wenn man mehrere Applikationen hat, welche man testen möchte. Hier ist es dann empfehlenswert, pro Applikation einen eigenen Account anzulegen. Über diese einzelnen Accounts lässt sich anschließend auch eine Browsermatrix, welche die Browserunterstützung anzeigt, sowie eine Test-Badge erstellen.</p>
+</blockquote>
+
+<p>Nun aber zurück zur unserer Konfigurationsdatei. Nachdem Ihr die Keys für SauceLabs eingesetzt habt, kommen wir nun direkt in die Config von Protractor. Als erstes seht ihr die Keys, welche wir direkt im Vorfeld bereits benannt haben und über die Umgebungsvariable steuern können. Im nächsten Key <code class="language-plaintext highlighter-rouge">jasmineNodeOpts</code> wird die Einstellung von Jasmine definiert. Hier gibt es unterschiedliche Ansätze Jasmine zu konfigurieren. Die kompletten Konfigurationsmöglichkeiten von Jasmine findet Ihr <a href="https://jasmine.github.io/" rel="noreferrer noopener" target="_blank">auf der Jasmine Page</a>. Das Framework für Jasmine wird auch anschließend direkt mit dem Key <code class="language-plaintext highlighter-rouge">framework</code> definiert. Aber auch hier ist man frei bei der Wahl des Frameworks.</p>
+
+<h3 id="protractor-lifecycles">Protractor Lifecycles</h3>
+
+<p>Nun kommen wir auch schon zu den verschiedenen Lifecycles welche von Protractor bei der Durchführung der Tests durchlebt werden. Innerhalb der verschiedenen Lifecycles haben wir dann die Möglichkeit unsere Reports, Fehler oder Rückmeldungen zu steuern:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">getMultiCapabilities</code>
+In diesem Lifecycle wird unsere Konfiguration der zu testenden Browser geladen.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">beforeLaunch</code>
+Hier aktivieren wir unseren Jasmine Reporter, welcher die Screenshots in unseren Tests durchführt.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">onPrepare</code>
+Hier aktivieren wir den Jasmine Reporter, welcher die Ergebnisse unserer Tests protokolliert.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">afterLaunch</code>
+Hier wird das Protokoll des Jasmine-Tests abgeschlossen.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">onComplete</code>
+Dies ist der Lifecycle, wenn der Test abgeschlossen wurde. Hier melden wir unsere Testergebnisse an den Build in SauceLabs zurück. Als Build-ID nehme ich hier den Namen aus der <code class="language-plaintext highlighter-rouge">package.json</code> sowie das aktuelle Datum. Hiermit wird dann der Build auch eindeutig.</li>
+</ul>
+
+<p><img src="e2e-testing-angular-saucelabs.png" alt="Protractor Sauce Labs Overview"></p>
+
+<h3 id="saucelabs-browsermatrix">SauceLabs Browsermatrix</h3>
+
+<p>Wenn wir im Lifecycle <code class="language-plaintext highlighter-rouge">onComplete</code> unsere Testergebnisse, sowie eindeutige Build-ID’s zurückliefern, können wir uns von SauceLabs eine Browsermatrix erstellen lassen:</p>
+
+<p><img src="browsermatrix.png" alt="Browsermatrix"></p>
+
+<p>Diese Browsermatrix kann dann beispielsweise in der Beschreibung des GitHub Repos oder auf Promotion Seiten der Applikation mit eingebunden werden. Diese Browsermatrix wird vor allem immer mit den Ergebnissen der Tests live aktualisiert. Das bedeutet, wenn z.B. die Tests bei Firefox fehlschlagen, wird dieser automatisch rot. Einbinden lässt sich die Matrix ganz einfach per Markdown:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">![Sauce Test Status</span><span class="p">](</span><span class="sx">https://saucelabs.com/buildstatus/YOUR_SAUCE_USERNAME</span><span class="p">)</span>](https://saucelabs.com/u/YOUR_SAUCE_USERNAME)<span class="err">`</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Wichtig: Diese Browsermatrix funktioniert nur, wenn die Testergebnisse an den Build in SauceLabs zurück geliefert werden. Aus diesem Grund wird in meiner <code class="language-plaintext highlighter-rouge">protractor.conf.js</code> im Lifecycle <code class="language-plaintext highlighter-rouge">onComplete</code> ein Request an die SauceLabs Rest API abgesetzt, welcher die Session-ID sowie die Ergebnisse zurück meldet. Anhand dieses Ergebnisses wird von SauceLabs diese Matrix erstellt. Mehr hierzu findet Ihr im <a href="https://wiki.saucelabs.com/display/DOCS/Using+Status+Badges+and+the+Browser+Matrix+Widget+to+Monitor+Test+Results" rel="noopener noreferrer nofollow" target="_blank">Wiki von SauceLabs</a></p>
+</blockquote>
+
+<h3 id="meine-ersten-tests">Meine ersten Tests</h3>
+
+<p>Bei dieser Konfiguration stehen drei globale Variablen zur Verfügung:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">browser</code>
+Zur Steuerung von Aktionen innerhalb vom Browser</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">element</code>
+Zur Lokalisierung von Elementen im DOM</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">protractor</code>
+Zur Steuerung von Protractor innerhalb eines Tests</li>
+</ul>
+
+<p>Ein einfaches Beispiel:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">My first Angular 2 Application...</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">beforeAll</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">browser</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://my.page.com</span><span class="dl">'</span><span class="p">));</span>
+
+  <span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">... have the title "What a nice day"</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">browser</span><span class="p">.</span><span class="nf">getTitle</span><span class="p">()).</span><span class="nf">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">What a nice day</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">... have an inputfield</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">inputfield</span> <span class="o">=</span> <span class="nf">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nf">tagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">));</span>
+
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">inputfield</span><span class="p">.</span><span class="nf">isPresent</span><span class="p">()).</span><span class="nf">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span><span class="s2">`
+</span></code></pre></div></div>
+
+<p>In dieser Suite sind zwei Tests enthalten. Allerdings öffnen wir die Page <code class="language-plaintext highlighter-rouge">http://my.page.com</code> zuerst im beforeAll Hook. Da es sich hier um eine Aktion im Browser handelt, verwenden wir hierzu die Variable <code class="language-plaintext highlighter-rouge">browser</code>. Die Variable <code class="language-plaintext highlighter-rouge">browser</code> verwenden wir auch im ersten Test. Denn wir möchten den Titel vom Browser prüfen. Also rufen wir folglich die variable <code class="language-plaintext highlighter-rouge">browser</code> mit der Funktion <code class="language-plaintext highlighter-rouge">getTitle()</code> auf und prüfen über <code class="language-plaintext highlighter-rouge">expect</code> und <code class="language-plaintext highlighter-rouge">toEqual</code> den richtigen Inhalt.</p>
+
+<blockquote>
+  <p>Tipp: Unter <a href="http://www.protractortest.org/#/api" rel="noreferrer noopener" target="_blank">http://www.protractortest.org/#/api</a> findet Ihr die komplette API Beschreibung von Protractor.</p>
+</blockquote>
+
+<p>Im zweiten Test hingegen prüfen wir, ob die Seite ein Inputfield enthält. Folglich benutzen wir das Element mit dem Locator <code class="language-plaintext highlighter-rouge">tagName</code> und suchen nach <code class="language-plaintext highlighter-rouge">input</code>. Mit der Elementerweiterung <code class="language-plaintext highlighter-rouge">isPresent()</code> wird mir ein boolean zurückgeliefert, mit welchem ich abprüfen kann, ob das Element existent ist oder nicht.</p>
+
+<p>Wenn meine Tests dann fertig sind, kann ich Protractor ganz einfach mit</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protractor protractor.conf.js
+</code></pre></div></div>
+
+<p>lokal mit Chrome starten. Wenn ich wie bereits o.g. meine Tests in unterschiedliche Suiten aufteile, kann ich diese separat aufrufen mit:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protractor protractor.conf.js <span class="nt">--suite</span> mySuite<span class="sb">`</span>
+</code></pre></div></div>
+
+<p>Hier werden nur die Testfälle welche sich innerhalb der Suite mit dem Name <code class="language-plaintext highlighter-rouge">mySuite</code> befinden aufgerufen.</p>
+
+<p>Wenn dann lokal die Tests alle sauber durchlaufen, kann ich die Tests gegen verschiedene Browser auf SauceLabs laufen lassen. Wie bereits genannt, wird dies über die Umgebungsvariable “saucetest” geregelt. Folglich muss ich Protractor nun wie folgt aufrufen:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">saucetest</span><span class="o">=</span><span class="nb">true </span>protractor protractor.conf.js
+</code></pre></div></div>
+
+<blockquote>
+  <p>Tipp: Nutzt das Skripting von Npm innerhalb der <code class="language-plaintext highlighter-rouge">package.json</code>. Über dieses Skripting lässt sich die notwendige Umgebungsvariable einfach steuern, indem ich einfach zwei Aufrufe per NPM erstelle. Zum Beispiel mit dem Befehl <code class="language-plaintext highlighter-rouge">npm run e2e-sauce</code> werden alle Tests auf SauceLabs ausgeführt und mit <code class="language-plaintext highlighter-rouge">npm run e2e</code> nur lokal.</p>
+</blockquote>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Aufgrund der Breite dieses Spektrums, konnte ich mit diesem Artikel nur an der Oberfläche dieser Thematik schwimmen. Ebenso muss man sich mit diesem Thema intensiv beschäftigen, um die Vor- aber auch die Nachteile kennen zu lernen. Zudem muss man erst seine Erfahrungen sammeln, bis man seine eigene Konfiguration der Frameworks ausgefeilt hat. Dies gilt auch für die Entwicklung der Tests. Glaubt mir.. Bis bei mir die ersten Tests wirklich stabil über die verschiedenen Browsern gelaufen sind, ist eine Menge Zeit vergangen. Aber jetzt im Nachhinein muss ich feststellen, dass sich die investierte Zeit gelohnt hat.</p>
+
+<p>Wenn man ausgeklügelt die Unit-Tests und die E2E Tests über SauceLabs kombiniert, bekommt man sehr viel Sicherheit und Produktqualität. SauceLabs kostet zwar Geld, eine Reklamation aufgrund eines Bugs kostet unter Umständen aber noch mehr. Alleine die Möglichkeit, auf SauceLabs sich mal schnell einen Browser nach Wahl in einer virtuellen Maschine manuell starten zu können, ist Gold wert. Daher kann ich dieses Trio Protractor, Jasmine und SauceLabs nur empfehlen. Das ganze dann noch kombiniert, in einer ausgeklügelten Deployment-Pipe mithilfe von <a href="https://circleci.com/" rel="noopener noreferrer nofollow" target="_blank">CircleCI</a> per Nightly Build gibt dem Ganzen dann noch die Krönung.</p>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2017-01-12-angular-e2e-protractor-test-saucelabs/2017-01-12-angular-e2e-protractor-test-saucelabs.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Martin Wiesmüller" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/16e3b496c44a89b7e79851e5f3dade4b-160x160.jpg"
+      data-srcset="/assets/img/gravatars/16e3b496c44a89b7e79851e5f3dade4b-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Martin Wiesmüller
+    </p>
+    
+      <p class="text-muted small">
+        "Manchmal ist der Weg ein etwas anderer"
+Vom KFZ Techniker - Serviceleiter eines Autohauses zum Web-Entwickler.
+Da das Web und IT schon immer mein Hobby war und ich mich folglich schon immer mit den Technologien des Web beschäftigt habe, wechselte ich im Jahr 2011 mein Hobby zum Beruf.
+Anfänglich im Support eines DMS Herstellers für die KFZ Werkstattbranche. Seit zwei Jahren Teil eines Startup-Unternehmens welches sich dich Aufgabe gemacht hat, EDV Prozesse einer KFZ Werkstatt direkt auf mobilen Devices und folglich direkt am Fahrzeug  abzubilden.
+Hier setzen wir Technologien eines MEAN Stack mit Angular2 und Co ein. In meiner Freizeit schreibe ich gerne noch Artikel, gehe gerne laufen oder koche meiner Familie was gutes.. :)
+Wenn Du noch mehr über mich erfahren möchtest, schau einfach auf meine Page.
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/mwiesmueller" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ng-de-conference-2025-ankuendigung/"
+    data-style="background-image: url('/artikel/ng-de-conference-2025-ankuendigung/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NG-DE Conference 2025 wieder in Berlin
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

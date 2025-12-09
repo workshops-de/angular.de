@@ -1,0 +1,2823 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-18T16:32:02+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Angular.DE</title><subtitle></subtitle><entry><title type="html">NG-DE Conference 2025 wieder in Berlin</title><link href="http://localhost:4000/artikel/ng-de-conference-2025-ankuendigung/" rel="alternate" type="text/html" title="NG-DE Conference 2025 wieder in Berlin" /><published>2025-06-11T00:00:00+02:00</published><updated>2025-06-11T00:00:00+02:00</updated><id>http://localhost:4000/artikel/ng-de-conference-2025-ankuendigung</id><content type="html" xml:base="http://localhost:4000/artikel/ng-de-conference-2025-ankuendigung/"><![CDATA[**Die NG-DE Conference kehrt zurück nach Berlin!** Vom **5.-7. November 2025** verwandelt sich der GLS Campus Berlin wieder in das Epizentrum der deutschsprachigen Angular-Community. Als [Workshops.DE](https://workshops.de) freuen wir uns riesig, als Veranstalter die nächste Ausgabe der community-getriebenen Angular-Konferenz präsentieren zu können.
+
+Die [NG-DE](https://ng-de.org/) ist **die** Angular-Konferenz in Deutschland - ein Ort, an dem sich Entwickler:innen und Angular-Enthusiasten aus ganz Europa treffen, um die neuesten Entwicklungen zu diskutieren und die Zukunft von Angular mitzugestalten.
+
+> "Die NG-DE ist das Herz der deutschsprachigen Angular-Community. Hier entstehen die Ideen, die morgen die Angular-Welt bewegen werden." - Robin Böhm, CEO Workshops.DE
+
+## Eine Konferenz von der Community für die Community
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="NG-DE Conference Community Gathering"
+class="lazy img-fluid img-rounded" data-src="community-gathering.jpg" data-srcset="community-gathering.jpg"
+/>
+</p>
+
+### Was macht die NG-DE besonders?
+
+- **Community-driven**: Inhalte direkt aus der Praxis
+- **Nachhaltig**: 100% vegane Verpflegung und papierlos
+- **Inklusiv**: Barrierefreier Zugang für alle
+- **Vernetzt**: Intensive Networking-Möglichkeiten
+
+## Das Programm 2025: Angular-Expertise auf höchstem Niveau
+
+### Tag 1 (5. November): Workshop Day - Hands-on Learning
+
+Der Workshop Day bietet vier intensive 8-stündige Workshops, die tief in die modernsten Angular-Technologien eintauchen:
+
+#### 🏗️ Modern Angular Architectures - 2025 Edition
+**Trainer**: Manfred Steyer & Rainer Hahnekamp (Angular Architects)
+
+Meistert moderne Architektur-Patterns für skalierbare Enterprise-Anwendungen:
+- **Nx Workspaces** für Monorepo-Architekturen
+- **Micro Frontends** für modulare Anwendungen
+- **Signal Store** für effiziente Zustandsverwaltung
+
+#### 🤖 Agent-Driven Coding: Developer Productivity mit Cursor
+**Trainer**: Robin Böhm & Gregor Woiwode (Workshops.DE)
+
+Revolutioniert euren Workflow mit KI-gestützter Entwicklung:
+- **10x produktiver** mit Cursor IDE und AI-Modellen
+- **Automatische Code-Standards** durch Rule Files
+- **Optimale Prompt-Strategien** für AI Code Generation
+
+#### ⚡ Angular Performance mit Modern Reactivity und SSR
+**Trainer**: Michael Hladky & Enea Jahollari
+
+Maximiert die Performance eurer Angular-Anwendungen:
+- **Browser Render Pipeline** verstehen und optimieren
+- **JavaScript Event Loop** meistern
+- **Server-Side Rendering** und Defer-Strategien
+
+#### 🛡️ Security in Angular Applications
+**Trainerin**: Martina Kraus
+
+Baut sichere Angular-Anwendungen in einer unsicheren Welt:
+- **XSS-Prevention** und Browser-Security
+- **Content Security Policy** richtig implementieren
+- **OAuth 2.1** und sichere Token-Handhabung
+
+### Tag 2-3 (6.-7. November): Conference Days - Inspiration und Innovation
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="NG-DE Conference Main Stage"
+class="lazy img-fluid img-rounded" data-src="main-stage.jpg" data-srcset="main-stage.jpg"
+/>
+</p>
+
+#### 🎯 Keynote vom Angular Team
+Das **offizielle Angular Team von Google** wird die neuesten Entwicklungen und die Roadmap für 2025/2026 präsentieren. Ein absolutes Muss für jeden Angular-Entwickler!
+
+## Die Location: GLS Campus Berlin
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="GLS Campus Berlin Location"
+class="lazy img-fluid img-rounded" data-src="venue-berlin.jpg" data-srcset="venue-berlin.jpg"
+/>
+</p>
+
+Die Konferenz findet im **GLS Campus Berlin** statt (Kastanienallee 82, 10435 Berlin) - einem modernen, nachhaltigen und vollständig barrierefreien Veranstaltungsort im Herzen Berlins. Die Location bietet:
+
+- **Barrierefreier Zugang** zu allen Bereichen
+- **Moderne Technik** für optimale Präsentationserfahrung
+- **Zentrale Lage** mit hervorragender Anbindung an öffentliche Verkehrsmittel
+
+## Nachhaltigkeit & Inklusion
+
+- **100% vegetarische Verpflegung** für alle Teilnehmer:innen
+- **Papierlose Konferenz** mit digitalen Lösungen
+- **Barrierefreier Zugang** zu allen Bereichen
+- **ÖPNV-freundliche Location** in Berlin Mitte
+
+## Ticket-Information: Early Bird läuft noch!
+
+Die **Early Bird Phase** läuft noch bis zum 1. Juli! Nutzt die Gelegenheit und sichert euch jetzt eure Tickets:
+
+## Unsere Speaker: Angular-Koryphäen aus der ganzen Welt
+
+Die NG-DE 2025 versammelt die absolute Elite der Angular-Community:
+
+### 🌟 International Speakers
+- **Jens Kühlers** (Angular Team, Google)
+- **Younes Jaaidi** (Google Developer Expert, Marmicode)
+- **Enea Jahollari** (Google Developer Expert, Push-based.io)
+- **Marko Stanimirović** (NgRx Core Team)
+
+### 🇩🇪 DACH Region Experts
+- **Manfred Steyer** (Angular Architects)
+- **Rainer Hahnekamp** (Angular Architects)
+- **Christian Liebel** (Thinktecture)
+- **Martina Kraus** (Independent Consultant)
+- **Michael Hladky** (Push-based.io)
+- **Robin Böhm** & **Gregor Woiwode** (Workshops.DE)
+
+## Community-Networking: Wo Ideen zu Realität werden
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="NG-DE Conference Networking"
+class="lazy img-fluid img-rounded" data-src="networking.jpg" data-srcset="networking.jpg"
+/>
+</p>
+
+Die NG-DE ist berühmt für ihre entspannte und offene Atmosphäre. Hier entstehen:
+
+- **Neue Freundschaften** zwischen Angular-Enthusiasten
+- **Job-Opportunities** und Karrierechancen
+- **Open Source Collaborationen** für die Community
+- **Mentoring-Beziehungen** zwischen erfahrenen und neuen Entwickler:innen
+- **Innovative Projektideen** durch interdisziplinäre Gespräche
+
+### Evening Event: Mehr als nur Networking
+
+Das traditionelle Evening Event am ersten Conference-Tag ist legendär! Bei Drinks und leckerem (veganem) Food entstehen die besten Gespräche, tiefere Verbindungen und oft die Grundlage für zukünftige Projekte.
+
+### 🎯 Eure nächsten Schritte:
+
+1. **[Tickets sichern](https://ng-de.org/)** - Early Bird bis 1. Juli!
+2. **Save the Date** - 5.-7. November 2025, Berlin
+3. **Newsletter abonnieren** - für Updates und News
+
+## Fazit
+
+Die NG-DE 2025 ist **das** Angular-Event des Jahres - drei Tage voller Expertise, Community und Innovation.
+
+**Seid ihr dabei?** Die Angular-Community wartet auf euch!]]></content><author><name>Robin Böhm</name></author><category term="conference" /><category term="community" /><category term="angular" /><category term="ng-de" /><summary type="html"><![CDATA[Die NG-DE Conference 2025 findet vom 5.-7. November in Berlin statt. Workshops.DE präsentiert drei Tage voller Angular-Expertise, Community-Spirit und wegweisender Technologien.]]></summary></entry><entry><title type="html">Angular 20 - Die Zukunft ist da</title><link href="http://localhost:4000/artikel/angular-20-die-zukunft-ist-da/" rel="alternate" type="text/html" title="Angular 20 - Die Zukunft ist da" /><published>2025-06-09T00:00:00+02:00</published><updated>2025-06-09T00:00:00+02:00</updated><id>http://localhost:4000/artikel/angular-20-die-zukunft-ist-da</id><content type="html" xml:base="http://localhost:4000/artikel/angular-20-die-zukunft-ist-da/"><![CDATA[Es ist soweit: Angular v20 wurde veröffentlicht!
+
+Mit Angular 20 erreicht die Angular Renaissance einen neuen Höhepunkt. Diese Version markiert einen bedeutenden Wendepunkt in der Geschichte des Frameworks: **Standalone Components sind jetzt der Standard**, Zoneless Change Detection hat Developer Preview erreicht, und moderne Template-Features wie Template Literals revolutionieren die Art, wie wir Angular-Anwendungen entwickeln.
+
+Das Angular-Team hat nach den experimentellen Features der letzten Versionen nun den Fokus darauf gelegt, das Framework grundlegend zu modernisieren und für die Zukunft zu rüsten. Wie Minko Gechev vom Angular-Team es ausdrückt:
+
+> "Angular 20 represents our vision of modern web development - simpler, faster, and more intuitive than ever before."
+
+Diese Version ist mehr als nur ein Update - sie ist eine Neuausrichtung hin zu einem Framework, das die Komplexität reduziert und gleichzeitig die Leistung maximiert. NgModules gehören der Vergangenheit an, Zone.js wird optional, und die Developer Experience erreicht ein neues Niveau.
+
+## Die Highlights von Angular 20
+
+- **Standalone Components als Standard**: NgModules sind nicht mehr erforderlich, Standalone ist der neue Default
+- **Zoneless Change Detection in Developer Preview**: Bessere Performance ohne Zone.js-Overhead
+- **Template Literals**: Moderne Template-Syntax für intuitivere String-Verarbeitung
+- **Experimentelle Vitest-Unterstützung**: Schnellere und modernere Test-Infrastruktur
+- **Verbesserte TypeScript-Integration**: Bessere Type-Checking in Templates und Host-Bindings
+- **Stabilisierte Signal APIs**: Alle reaktiven Primitives sind jetzt production-ready
+
+Das Ganze könnt ihr euch zusammen mit unserem Team anschauen! Hier ist das Video zum Angular 20 Release:
+
+<iframe class="" width="100%" height="315" src="https://www.youtube-nocookie.com/embed/FcDamOe1qxA?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Standalone Components sind jetzt Standard
+
+Die größte Veränderung in Angular 20 ist der Wechsel zu Standalone Components als Standard. NgModules sind nicht mehr erforderlich und werden nur noch für Legacy-Unterstützung bereitgestellt. Diese Änderung vereinfacht die Angular-Architektur erheblich und macht den Einstieg für neue Entwickler deutlich einfacher.
+
+### Was bedeutet das konkret?
+
+Bei der Erstellung einer neuen Angular-Anwendung mit `ng new` generiert die CLI automatisch Standalone Components:
+
+```typescript
+@Component({
+  selector: 'app-root',
+  imports: [CommonModule, RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+  // standalone: true ist jetzt der Standard!
+})
+export class AppComponent {
+  title = 'meine-app';
+}
+```
+
+### Migration bestehender Anwendungen
+
+Das Angular-Team hat einen automatisierten Migrationspfad bereitgestellt. Beim Update auf v20 via `ng update` wird automatisch:
+
+- `standalone: true` aus bestehenden Standalone Components entfernt (da es jetzt Standard ist)
+- `standalone: false` zu NgModule-basierten Components hinzugefügt
+- Imports entsprechend angepasst
+
+### Vorteile der neuen Architektur
+
+- **Weniger Boilerplate**: Keine NgModule-Deklarationen mehr erforderlich
+- **Bessere Tree-Shaking**: Nur verwendete Dependencies werden gebündelt
+- **Einfachere Tests**: Direkter Import von Components ohne TestBed-Setup
+- **Intuitivere Lernkurve**: Weniger Konzepte für Einsteiger
+
+## Zoneless Change Detection in Developer Preview
+
+Nach dem experimentellen Status in Angular 18 und 19 hat Zoneless Change Detection nun Developer Preview erreicht. Diese Technologie befreit Angular von der Abhängigkeit zu Zone.js und bringt signifikante Performance-Verbesserungen.
+
+### Wie aktiviere ich Zoneless?
+
+Zoneless ist jetzt einfacher denn je zu aktivieren. Bei neuen Projekten fragt die CLI direkt danach:
+
+```bash
+$ ng new meine-app
+? Would you like to use zoneless change detection? Yes
+```
+
+Für bestehende Projekte:
+
+```typescript
+// main.ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideZonelessChangeDetection } from '@angular/core';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideZonelessChangeDetection(), // Neuer Provider-Name
+    // weitere Providers...
+  ]
+});
+```
+
+### Performance-Verbesserungen
+
+Erste Benchmarks zeigen beeindruckende Ergebnisse:
+- **40-50% bessere LCP (Largest Contentful Paint)**
+- **Kleinere Bundle-Größe** durch Wegfall von Zone.js
+- **Saubere Stack Traces** ohne Zone.js-Pollution
+- **Bessere Interoperabilität** mit anderen Frameworks
+
+### Best Practices für Zoneless
+
+Mit Zoneless werden Angular Signals noch wichtiger:
+
+```typescript
+@Component({
+  template: `
+    <h1>{{ title() }}</h1>
+    <button (click)="updateTitle()">Update</button>
+  `
+})
+export class MyComponent {
+  title = signal('Hallo Angular 20');
+
+  updateTitle() {
+    // Signals triggern automatisch Change Detection
+    this.title.set('Zoneless funktioniert!');
+  }
+}
+```
+
+## Template Literals revolutionieren Templates
+
+Angular 20 führt native Unterstützung für Template Literals in Angular-Templates ein. Diese lang ersehnte Funktion macht String-Verarbeitung in Templates deutlich intuitiver und näher an Standard-JavaScript.
+
+### Neue Möglichkeiten mit Template Literals
+
+```html
+<!-- Einfache String-Interpolation -->
+<h1>{{ `Willkommen ${userName()}, heute ist ${getCurrentDay()}!` }}</h1>
+
+<!-- Mit Pipes kombinieren -->
+<p>{{ `Hallo ${name()}` | uppercase }}</p>
+
+<!-- Dynamische CSS-Klassen -->
+<div class="{{ `user-type-${userType()} status-${status()}` }}">
+  Benutzer-Info
+</div>
+
+<!-- Komplexe Ausdrücke -->
+<span>{{ `Du hast ${messageCount()} ${messageCount() === 1 ? 'Nachricht' : 'Nachrichten'}` }}</span>
+```
+
+### Exponentiation und moderne Operatoren
+
+Angular 20 unterstützt jetzt auch moderne JavaScript-Operatoren direkt in Templates:
+
+```html
+<!-- Exponentiation Operator -->
+<p>2 hoch 8 = {{ 2 ** 8 }}</p>
+
+<!-- In-Operator für Type Narrowing -->
+@if ('email' in user) {
+  <p>Email: {{ user.email }}</p>
+}
+
+<!-- Void Operator -->
+<button (click)="void trackEvent('click')">Click me</button>
+```
+
+## Modernisierte Test-Infrastruktur mit Vitest
+
+Mit der Deprecation von Karma führt Angular 20 experimentelle Unterstützung für Vitest ein - einen modernen, schnellen Test-Runner, der die Zukunft des Testens in Angular darstellt.
+
+### Vitest aktivieren
+
+```bash
+# Für neue Projekte
+ng new meine-app --test-runner=vitest
+
+# Für bestehende Projekte
+ng add @angular/vitest
+```
+
+### Warum Vitest?
+
+- **10x schneller** als Karma in den meisten Szenarien
+- **Native ESM-Unterstützung** ohne Konfigurationsaufwand
+- **Hot Module Reload** für Tests
+- **TypeScript out-of-the-box**
+- **Kompatibel** mit bestehenden Jasmine-Tests
+
+### Beispiel-Test mit Vitest
+
+```typescript
+import { describe, it, expect } from 'vitest';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { UserComponent } from './user.component';
+
+describe('UserComponent', () => {
+  let component: UserComponent;
+  let fixture: ComponentFixture<UserComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [UserComponent] // Standalone Component!
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(UserComponent);
+    component = fixture.componentInstance;
+  });
+
+  it('should update username signal', () => {
+    component.username.set('John Doe');
+    expect(component.username()).toBe('John Doe');
+  });
+});
+```
+
+## Verbesserte TypeScript-Integration
+
+Angular 20 bringt eine deutlich verbesserte Integration mit TypeScript, die besonders bei der Template-Entwicklung spürbar wird.
+
+### Enhanced Template Type-Checking
+
+Host-Bindings und Template-Ausdrücke werden jetzt vollständig typisiert:
+
+```typescript
+@Component({
+  template: `<div [class.active]="isActive()">Content</div>`,
+  host: {
+    '[class.disabled]': 'disabled()', // Jetzt typisiert!
+    '(click)': 'handleClick($event)' // Event-Type wird geprüft!
+  }
+})
+export class MyComponent {
+  isActive = signal(false);
+  disabled = signal(false);
+
+  handleClick(event: MouseEvent) { // TypeScript erkennt den korrekten Typ
+    console.log('Clicked:', event.target);
+  }
+}
+```
+
+### Bessere Diagnostics
+
+Der Angular Compiler bietet jetzt erweiterte Diagnostics:
+
+```html
+<!-- Compiler warnt vor falschem Nullish Coalescing -->
+{{ user?.name || undefined ?? 'Default' }} <!-- Warnung: Gemischte Operatoren -->
+{{ (user?.name || undefined) ?? 'Default' }} <!-- Korrekt -->
+
+<!-- Warnung bei nicht-invokierten Track-Funktionen -->
+@for (item of items; track trackById) { } <!-- Warnung -->
+@for (item of items; track trackById(item)) { } <!-- Korrekt -->
+```
+
+## Stabilisierte Signal APIs
+
+Mit Angular 20 sind alle fundamentalen Signal APIs offiziell stabil und production-ready:
+
+### Alle Signal Primitives sind stabil
+
+```typescript
+import { signal, computed, effect } from '@angular/core';
+
+@Component({
+  template: `
+    <h1>{{ fullName() }}</h1>
+    <input [value]="firstName()" (input)="firstName.set($event.target.value)">
+  `
+})
+export class UserComponent {
+  firstName = signal('John');
+  lastName = signal('Doe');
+
+  // Computed Signal
+  fullName = computed(() => `${this.firstName()} ${this.lastName()}`);
+
+  constructor() {
+    // Effect für Side Effects
+    effect(() => {
+      console.log('Name changed:', this.fullName());
+    });
+  }
+}
+```
+
+### afterRender APIs umbenannt
+
+```typescript
+import { afterEveryRender, afterNextRender } from '@angular/core';
+
+@Component({...})
+export class MyComponent {
+  constructor() {
+    // Neuer Name für bessere Klarstellung
+    afterEveryRender(() => {
+      console.log('Nach jedem Render');
+    });
+
+    afterNextRender(() => {
+      console.log('Nach dem nächsten Render');
+    });
+  }
+}
+```
+
+## Incremental Hydration wird stabil
+
+Nach dem Developer Preview in Angular 19 ist Incremental Hydration nun stabil und bereit für den produktiven Einsatz.
+
+### Wie funktioniert Incremental Hydration?
+
+```html
+<!-- Components werden nur bei Bedarf hydratisiert -->
+@defer (on viewport) {
+  <heavy-component />
+} @placeholder {
+  <div>Loading...</div>
+}
+
+@defer (on interaction) {
+  <interactive-widget />
+} @placeholder {
+  <static-preview />
+}
+```
+
+### Performance-Gewinne
+
+Erste Messungen zeigen:
+- **40-50% bessere LCP-Werte**
+- **Reduzierte Initial Bundle Size**
+- **Bessere Time to Interactive (TTI)**
+- **Optimierte Server-Ressourcen-Nutzung**
+
+## Route-Level Render Modes sind stabil
+
+Angular 20 stabilisiert auch die Route-Level Render Modes, die granulare Kontrolle über das Rendering verschiedener Routen ermöglichen:
+
+```typescript
+// app.routes.ts
+export const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent,
+    data: { renderMode: 'prerender' } // Statisch generiert
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: { renderMode: 'ssr' } // Server-Side Rendering
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    data: { renderMode: 'client' } // Client-Side Rendering
+  }
+];
+```
+
+## Breaking Changes und Migration
+
+### Node.js und TypeScript Anforderungen
+
+Angular 20 erhöht die Mindestanforderungen:
+- **Node.js**: `^20.11.1` || `^22.11.0` || `^24.0.0`
+- **TypeScript**: `>=5.8.0 <5.9.0`
+- **RxJS**: `^6.5.3` || `^7.4.0`
+
+### Migration bestehender Anwendungen
+
+Der Migrationsprozess ist größtenteils automatisiert:
+
+```bash
+ng update @angular/core @angular/cli
+```
+
+Die Migration:
+- Entfernt `standalone: true` aus bestehenden Standalone Components
+- Fügt `standalone: false` zu NgModule Components hinzu
+- Aktualisiert Provider-Namen (z.B. `provideZonelessChangeDetection`)
+- Migriert deprecated APIs
+
+### Entfernte Features
+
+- **ng-reflect-* Attribute**: Standardmäßig in Development entfernt
+- **InjectFlags Enum**: Vollständig entfernt
+- **HammerJS Support**: Deprecated (Entfernung in v21 geplant)
+
+## Ausblick: Was kommt nach Angular 20?
+
+### Signal Forms (Angular 21+)
+
+```typescript
+// Vorschau auf Signal Forms
+const userForm = signalForm({
+  name: signalControl('', [required]),
+  email: signalControl('', [required, email]),
+  age: signalControl(0, [min(18)])
+});
+
+// Reactive Validierung
+effect(() => {
+  if (userForm.valid()) {
+    console.log('Form ist gültig:', userForm.value());
+  }
+});
+```
+
+### Selectorless Components
+
+```typescript
+// Zukunftsvision: Direkter Import ohne Selektoren
+import { MyComponent } from './my-component';
+
+@Component({
+  template: `
+    <MyComponent [data]="myData" />
+  `
+})
+export class AppComponent {}
+```
+
+## Community und Ökosystem
+
+Die Angular Community ist lebendiger denn je! Angular 20 wird auf wichtigen Konferenzen weltweit präsentiert:
+
+- **[NG-DE Conference](https://ng-de.org/)** - November 5-7, 2025 in Berlin
+- **[ng-conf](https://ng-conf.org/)** - Die größte Angular-Konferenz
+- **[Angular Belgrade](https://angularbelgrade.org/)** - Europäische Angular-Community
+- **[NGPoland](https://ng-poland.pl/)** - Polens Angular-Gathering
+
+## Fazit: Angular 20 - Ein Meilenstein der Moderne
+
+Angular 20 markiert einen historischen Wendepunkt. Mit Standalone Components als Standard, der Reife der Zoneless Change Detection und modernen Template-Features positioniert sich Angular als das führende Framework für moderne Webentwicklung.
+
+### Die wichtigsten Errungenschaften:
+
+- **Vereinfachte Architektur**: Keine NgModules mehr erforderlich
+- **Bessere Performance**: Zoneless bringt messbare Verbesserungen
+- **Moderne Developer Experience**: Template Literals und TypeScript-Integration
+- **Zukunftssicherheit**: Stabile APIs und klare Roadmap
+- **Community-Momentum**: Lebendiges Ökosystem und starke Adoption
+
+### Unsere Einschätzung
+
+Angular 20 ist mehr als nur ein Release - es ist die Verwirklichung der Vision einer modernen, performanten und entwicklerfreundlichen Plattform. Das Framework hat sich von seinen komplexen Anfängen zu einem eleganten, intuitiven Tool entwickelt, das sowohl für Einsteiger als auch für Enterprise-Anwendungen optimal geeignet ist.
+
+Die strategische Entscheidung, bewährte Konzepte zu stabilisieren und gleichzeitig mutige Schritte in Richtung Zukunft zu gehen, zeigt die Reife des Angular-Teams. Mit Features wie Zoneless Change Detection und Standalone Components als Standard setzt Angular neue Maßstäbe in der Frontend-Entwicklung.
+
+**Die Angular Renaissance hat mit Version 20 ihren Höhepunkt erreicht - und das ist erst der Anfang einer noch spannenderen Zukunft.**
+
+Welche Features von Angular 20 freuen euch am meisten? Teilt eure Gedanken in den Kommentaren oder diskutiert mit uns auf [Twitter](https://twitter.com/angular_de)!]]></content><author><name>Robin Böhm</name></author><category term="angular" /><category term="release" /><category term="update" /><summary type="html"><![CDATA[Angular 20 bringt Standalone Components als Standard, Template Literals, Zoneless Change Detection und viele weitere revolutionäre Features für moderne Webentwicklung.]]></summary></entry><entry><title type="html">Angular 20 Tutorial für Einsteiger</title><link href="http://localhost:4000/artikel/angular-tutorial-deutsch/" rel="alternate" type="text/html" title="Angular 20 Tutorial für Einsteiger" /><published>2025-06-09T00:00:00+02:00</published><updated>2025-06-09T00:00:00+02:00</updated><id>http://localhost:4000/artikel/angular-tutorial-deutsch</id><content type="html" xml:base="http://localhost:4000/artikel/angular-tutorial-deutsch/"><![CDATA[## Einführung
+
+Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular in der neuesten Version 20. Angular 20 bringt viele spannende Neuerungen mit sich, darunter Standalone Components als Standard, verbesserte Template-Syntax mit Template Literals, Zoneless Change Detection und vieles mehr. Das Framework nutzt semantische Versionierung und wird kontinuierlich weiterentwickelt.
+
+Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalte der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-intro).
+
+Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil.
+
+
+### Was wirst du in diesem Tutorial lernen?
+
+Dieses Tutorial zeigt dir die grundlegenden Bestandteile einer Angular 20-Anwendung anhand eines praktischen Beispiels, welches du selber implementieren oder mit fertigen Musterlösungen nutzen und verändern kannst.
+
+Wir werden hierbei folgende Themen behandeln:
+
+- Was ist Angular 20?
+- Unterschiede zu React und Vue
+- Installation von Angular 20
+- Standalone Components (Standard in Angular 20)
+- Template Literals und moderne Template-Syntax
+- Expressions und Schleifen
+- Event- & Property-Binding
+- Services und Dependency-Injection
+- Zoneless Change Detection
+- Anbinden einer Rest-API mit modernen APIs
+
+Wir werden hierbei die Motivation und den theoretischen Background kurz einleiten, uns jedoch primär auf praktische Beispiele konzentrieren. Wir werden eine kleine Anwendung bauen, welche uns eine Liste von Daten von einer REST-API ausliest und diese anzeigt.
+
+<p class="text-center">
+<img
+style="max-width:40%"
+src="/shared/assets/img/placeholder-image.svg" alt="Beispielansicht unserer Anwendung die in diesem Tutorial gemeinsam gebaut wird. Eine Liste an Büchern welche von einem Server geladen wird."
+class="lazy img-fluid img-rounded" data-src="preview-bookmonkey-app.png" data-srcset="preview-bookmonkey-app.png"
+/>
+</p>
+
+<div class="alert alert-success">Dieser Artikel und unser Portal ist open-source. Wenn ihr Vorschläge zur Verbesserung des Artikels habt, fühlt euch jederzeit herzlich willkommen, euch über unser <a href="https://github.com/workshops-de/angular.de" target="_blank">GitHub Repo</a> zu beteiligen. Wir freuen uns über jeden Input! </div>
+
+## Was ist Angular 20?
+
+Angular 20 ist die neueste Version des sehr erfolgreichen, clientseitigen JavaScript-Web-Frameworks zur Erstellung von Single-Page-Webanwendungen. Angular hat sich mittlerweile zu einer vollständigen Plattform weiterentwickelt, die neben der reinen "API" zur Anwendungsentwicklung auch moderne Entwicklungs-Werkzeuge, Generatoren und durchdachte Architektur-Konzepte bietet.
+
+**Wichtige Neuerungen in Angular 20:**
+- **Standalone Components als Standard**: Keine NgModules mehr erforderlich
+- **Template Literals**: Moderne Template-Syntax mit Template Strings
+- **Zoneless Change Detection**: Bessere Performance ohne Zone.js
+- **Verbesserte TypeScript-Integration**: Bessere Type-Checking in Templates
+- **Moderne Testing-Tools**: Experimentelle Unterstützung für Vitest
+
+Angular reiht sich neben den beiden anderen erfolgreichen Frontend Frameworks [React](https://reactjs.de) und [VueJS](https://vuejs.de) ein, bietet aber durch seine opinionated Architektur besonders für Enterprise-Anwendungen klare Vorteile.
+
+### Unterschiede zu VueJS und React
+
+Alle drei Bibliotheken, beziehungsweise Frameworks, haben ihre Daseinsberechtigung, Stärken und Schwächen. Je nach Use-Case sollte hier entschieden werden, welche der Alternativen die beste Basis für das aktuelle Projekt liefert.
+
+**Angular** zielt hierbei ganz klar auf die professionelle Entwicklung von Enterprise Software ab. Durch klare Vorgaben in der Struktur und den Einsatz von Generatoren können langfristig wartbare und skalierbare Softwarelösungen erstellt werden. Konzepte wie Dependency Injection und ein Fokus auf TDD sind seit der ersten Stunde von Angular im Core verankert. Durch die klare Struktur von Projekten ist hierbei explizit die Skalierbarkeit von neuen Entwickler:innen hervorzuheben. Durch dieses massive Grundgerüst wirkt Angular auf den ersten Blick oft etwas schwergewichtig - überzeugt jedoch in Production durch systematische Optimierungen und Erweiterbarkeit.
+
+**ReactJS** zielt hierbei eher auf einen sehr minimalen Layer auf Komponenten-Ebene ab und ermöglicht/erfordert das Konzipieren einer eigenen Architektur von Grund auf. Das bietet sehr flexible Möglichkeiten, um für individuelle Problemstellungen sehr explizite Lösungen zu bauen. Es gibt eine Auswahl an verschiedensten Modulen für die verschiedenen Anforderungen. Der Aufwand der Integration und Pflege ist hier höher als in Angular, allerdings ist das Projekt dadurch oftmals auch simpler und sehr leichtgewichtig.
+
+**VueJS** bedient die Anforderungen zwischen diesen beiden Frameworks. Indem das Framework auf einen Generator und klare Strukturen setzt, begünstigt es ebenfalls die Skalierung von Projekt-Teams. Allerdings versucht VueJS gleichzeitig sehr leichtgewichtig zu bleiben und möglichst wenig "Framework-Magic" einzubringen. Es ist also die simple, aber strukturierte Mittellösung.
+
+Dies ist meine persönliche Einschätzung und ich habe bereits sehr gut mit allen diesen Frameworks gearbeitet. Es kommt individuell auf die Problemstellung und das Team an. Falls ihr gerade neu im Bereich Web seid, kann ich euch auch sehr unseren [Moderne Webentwicklung und Frontend-Architekur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, welcher euch einen Überblick über die moderne Webentwicklung von heute aufzeigt.
+
+### Motivation
+
+Angular selbst hat die Ursprünge in 2009, im "wilden Westen" der Webanwendungsentwicklung. Seitdem ist viel passiert - keine Angst, ich werde jetzt hier keine Geschichtsstunde starten. Es geht eher um diesen Punkt: Wie konnte sich Angular in der wilden Welt von JavaScript Frameworks, in der gefühlt jeden Tag 10 neue Frameworks erscheinen, trotzdem als eines der erfolgreichsten Frameworks beweisen?
+Dies lässt sich wahrscheinlich am einfachsten mit der Mission von Angular beschreiben:
+
+- Apps that users ❤️ to use.
+- Apps that developers ❤️ to build.
+- A community where everyone feels welcome.
+
+Durch diese Mission ist ein wunderbares Ökosystem mit einer wahnsinnig tollen Community entstanden.
+Dabei ist aber der Fokus auf Qualität und Enterprise ebenfalls klar zu spüren.
+Google selbst nutzt nach eigenen Angaben Angular in über 1600 Projekten.
+(Google Teams nutzen übrigens AUCH React und VueJS für Projekte, wo dieser Stack besser passt).
+
+In 2016 hat sich das Angular-Team für einen kompletten Rewrite in TypeScript entschieden.
+Damals wurde die Entscheidung größtenteils negativ wahrgenommen und von anderen Framework-Benutzern zerrissen.
+
+<img
+src="/shared/assets/img/placeholder-image.svg" alt="Angular Historie - Ein Zeitstrahl, welcher sich 2016 in zwei Zweige aufgeteilt hat. AngularJS und Angular."
+class="lazy img-fluid img-rounded" data-src="angular-history.png" data-srcset="angular-history.png"
+/>
+
+Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele andere Frameworks ebenfalls auf TypeScript setzen. Um Breaking Changes einfacher kommunizieren zu können, hat sich das Team ebenfalls für einen fixen Release-Plan entschieden. So können Projektteams Budgets für Updates bereits im Voraus einplanen und werden nicht von Breaking-Changes in einem Release "überrascht".
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche." data-src="release-cycle.png" data-srcset="release-cycle.png"
+/>
+
+<hr>
+<div class="workshop-hint">
+  <div class="h3">Angular noch schneller lernen?</div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
+      </p>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+           Öffentliche Termine verfügbar
+         </div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+           Vor Ort, als auch Remote
+         </div>
+         <div class="d-flex align-items-center mb-3">
+           <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+           Deutsch/Englisch möglich
+         </div>
+         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
+           Zur Angular & TypeScript Schulung
+         </a>
+   </div>
+ </div>
+</div>
+<hr>
+
+### Die Angular Plattform
+
+Das Ökosystem von Angular ist sehr groß. Die Basis bildet hierbei das Core-Framework. Hier sind die fundamentalen Konzepte implementiert, die für moderne Webanwendungen essenziell sind. Zwei weitere Core-Konzepte, die jedoch separat nutzbar sind, sind die Angular-CLI und die Verwaltung von Komponenten. Diese bilden die Kernfunktionalitäten, welche in fast jeder Anwendung benötigt werden. Weitere Module lassen sich _optional einbinden_, falls ihr diese benötigt:
+
+- Routing - Routing für Single Page Applications
+- forms - Formulare und Validierung
+- i18n - Mehrsprachige Anwendungen
+- Animations - Animationen für Transitionen
+- PWA - Offline Fähigkeiten
+- HTTP - HTTP, Rest und GraphQL Kommunikation
+- und viele mehr
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Angular Platform Overview. Viele verschiedene Blöcke mit Modulen wie Forms, OWA, HTTP, I81n, Language Services, Router, Animcations  Cli, Components und dem Core Framework selber." data-src="angular-platform-overview.png" data-srcset="angular-platform-overview.png"
+/>
+
+In diesem Tutorial werden wir uns primär um das Framework, die Angular CLI und Komponenten kümmern.
+
+## Vorbereitung & Installation für Angular 20
+
+Beginnen wir nun mit der Installation der erforderlichen Tools für Angular 20.
+
+### System-Anforderungen für Angular 20
+
+**Node.js**: Angular 20 benötigt eine aktuelle Node.js Version:
+- **Node.js**: `^20.11.1` || `^22.11.0` || `^24.0.0`
+- **TypeScript**: `>=5.8.0 <5.9.0`
+- **RxJS**: `^6.5.3` || `^7.4.0`
+
+Ihr könnt die neueste Node.js Version über folgenden Link herunterladen und installieren: [https://nodejs.org/download/](https://nodejs.org/download/)
+
+Mit Node.js wird ebenfalls das Kommandozeilenwerkzeug `npm` installiert, welches uns ermöglicht, weitere Node.js Pakete auf unserem Rechner zu installieren.
+
+<div class="alert alert-info">Hinweis: Falls ihr spezielle Proxy Einstellungen benötigt, könnt ihr diese in der <a href="https://docs.npmjs.com/misc/config#https-proxy" target="_blank">NPM Dokumentation für HTTPS Proxies</a> nachlesen.</div>
+
+### Angular CLI 20 installieren
+
+Nachdem ihr die Installation erfolgreich abgeschlossen habt, könnt ihr nun über euren Terminal folgenden Befehl ausführen:
+
+```bash
+npm i -g @angular/cli@20 bookmonkey-api
+```
+
+Dieser Befehl installiert die `Angular CLI Version 20` global auf eurem Rechner und ermöglicht euch somit nach der Installation mit dem Kommandozeilenwerkzeug `ng` zu arbeiten. Als zweites Paket wird das Paket `bookmonkey-api` installiert, welches uns als simulierter Backend-Server in unserem Beispiel dient.
+
+### Überprüfung der Installation
+
+Überprüft eure Installation mit:
+
+```bash
+ng version
+```
+
+Ihr solltet eine Ausgabe ähnlich dieser sehen:
+
+```
+Angular CLI: 20.0.0
+Node: 22.11.0
+Package Manager: npm 10.9.0
+OS: darwin x64
+
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.2000.0
+@angular-devkit/core         20.0.0
+@angular-devkit/schematics   20.0.0
+@schematics/angular          20.0.0
+```
+
+## Generieren der Angular App
+
+Die Angular-CLI wird genutzt, um neue Strukturen innerhalb unserer Anwendungen zu generieren, anstatt wie oft in Projekten die Basis-Strukturen zu kopieren und über potenzielle Fehler bei der Umbenennung zu stolpern. Es ist ein mächtiges Werkzeug, welches euch mit `ng --help` einen ausführlichen Hilfetext anbietet.
+
+Um unsere erste Anwendung zu generieren, verwenden wir den `new` command, welcher als Argument den Namen eurer Anwendung entgegennimmt. In Angular 20 werden euch neue Optionen angeboten:
+
+```bash
+$ ng new angular-de-tutorial
+
+? Would you like to use zoneless change detection? (y/N)
+  Yes
+? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)?
+  No
+? Which stylesheet format would you like to use?
+  SCSS
+```
+
+**Wichtige Änderungen in Angular 20:**
+- **Zoneless Change Detection**: Wir empfehlen "Yes" für bessere Performance
+- **SSR und SSG**: Angular 20 bietet erweiterte Server-Side Rendering Optionen
+- **Standalone Components**: Sind jetzt der Standard (keine separate Frage mehr)
+- **Strict Mode**: Ist jetzt standardmäßig aktiviert für bessere Code-Qualität
+
+> In Angular 20 sind Standalone Components der Standard und NgModules optional geworden. Dies vereinfacht die Entwicklung erheblich.
+
+Wenn du die Angular CLI später verwendest um Code zu erzeugen, oder das Projekt auszuführen, stellt die CLI die Frage, ob du deine Nutzungsdaten anonymisiert zur Verfügung stellen möchtest, um die Angular CLI zu verbessern.
+
+```bash
+? Would you like to share anonymous usage data about this project with the Angular Team at
+Google under Google's Privacy Policy at https://policies.google.com/privacy? For more
+details and how to change this setting, see http://angular.io/analytics. Yes|No
+```
+
+Nun werden automatisch die Projektstrukturen für euch angelegt. Dies inkludiert eine Startseite, eine Komponente, die ersten End2End Tests, Linter-Regeln, GitIgnore-Regeln und eine TypeScript Konfiguration.
+
+```bash
+CREATE angular-de-tutorial/angular.json (3809 bytes)
+CREATE angular-de-tutorial/package.json (1209 bytes)
+CREATE angular-de-tutorial/README.md (1026 bytes)
+CREATE angular-de-tutorial/.editorconfig (274 bytes)
+CREATE angular-de-tutorial/.gitignore (631 bytes)
+CREATE angular-de-tutorial/tsconfig.json (737 bytes)
+CREATE angular-de-tutorial/tslint.json (3185 bytes)
+CREATE angular-de-tutorial/.browserslistrc (703 bytes)
+...
+CREATE angular-de-tutorial/src/app/app.module.ts (314 bytes)
+CREATE angular-de-tutorial/src/app/app.component.scss (0 bytes)
+CREATE angular-de-tutorial/src/app/app.component.html (25725 bytes)
+CREATE angular-de-tutorial/src/app/app.component.spec.ts (979 bytes)
+CREATE angular-de-tutorial/src/app/app.component.ts (224 bytes)
+...
+CREATE angular-de-tutorial/e2e/protractor.conf.js (904 bytes)
+CREATE angular-de-tutorial/e2e/tsconfig.json (274 bytes)
+CREATE angular-de-tutorial/e2e/src/app.e2e-spec.ts (670 bytes)
+CREATE angular-de-tutorial/e2e/src/app.po.ts (274 bytes)
+```
+
+Nach dem Generieren werden ebenfalls notwendige Pakete via `npm` installiert. Dies kann durchaus einige Minuten dauern. Ist die Installation abgeschlossen, könnt ihr die Entwicklungsumgebung starten.
+
+```bash
+$ cd angular-de-tutorial
+$ ng serve
+
+Angular Live Development Server is listening on localhost:4200
+```
+
+Eure Basisanwendung ist nun generiert und kann im Browser unter http://localhost:4200 aufgerufen werden. Ihr solltet ein ähnliches Bild wie folgendes sehen:
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Die Webansicht von ng serve nach dem generieren der Angular Anwedung." data-src="first-ng-serve.png" data-srcset="first-ng-serve.png"
+/>
+
+## Komponenten und Services
+
+In Angular gibt es zwei primäre Bestandteile des Frameworks, mit welchen wir uns zuerst auseinandersetzen.
+
+**Komponenten** sind Anzeigeelemente. Sie werden als eigene HTML-Elemente definiert. Abhängig der definierten Anzeige-Logik und den aktuellen Daten stellen diese Elemente den Zustand der Anwendung dar.
+
+**Services** sind unabhängig von der Anzeige eurer Anwendung. Sie definieren Daten, Logik und Algorithmen der Anwendung. Sie sind modular und wiederverwendbar.
+
+### Komponenten
+
+Angular Komponenten sind die sogenannten "building blocks" jeder Anwendung. Die verschiedenen logischen Bausteine einer Anwendung werden also in Komponenten aufgeteilt. Jeder dieser Komponenten übernimmt dabei eine bestimmte Funktion und wird als eigenes HTML-Element definiert.
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Beispiel ToDo App, welche die Anwendung in verschiedene logische Bausteine unterteilt wie Title, ItemList und Items." data-src="basic-todo-component-annotated.png" data-srcset="basic-todo-component-annotated.png"
+/>
+
+```html
+<todo-title>ToDo App</todo-title>
+<todo-list>
+  <todo-item state="checked">Prepare Workshop</todo-item>
+  <todo-item>Hold the Workshop</todo-item>
+</todo-list>
+```
+
+<div class="alert alert-info">Hinweis: Diese Darstellung ist noch nicht 100% korrekt und dient in vereinfachter Form der schrittweisen Erklärung. 🙂</div>
+
+Wie ihr in diesem kleinen Beispiel einer ToDo-Liste seht, gibt es für die verschiedenen Bereiche eigene Elemente, die in diesem Fall mit dem Prefix `todo-` eingeleitet werden. Wie ihr gut an der `todo-list` erkennt, ist es möglich und auch absolut üblich, eigene Komponenten ineinander zu verschachteln. Ziel ist es, immer wiederverwendbare und wartbare Elemente zu bauen. Was hierbei die richtige Komponentengröße ist, werdet ihr in euren Projekten selber entscheiden müssen und mit wachsender Erfahrung ein immer besseres Gefühl dafür bekommen. Bei Unsicherheit könnt ihr euch aber auch jederzeit in unserem [Discord](https://workshops.de/discord) bei uns melden.
+
+### Services
+
+Für Daten und Logik, die nicht zwingend nur an eine Komponente gekoppelt sind, werden in Angular Services genutzt. Ein Service ist eine Klasse, welche Attribute und Methoden definiert, die von Komponenten und anderen Services genutzt werden können.
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Beispiel der Beziehung von Angular Komponenten und Services." data-src="angular-component-service-simple-example.png" data-srcset="angular-component-service-simple-example.png"
+/>
+
+```typescript
+export class TodoService {
+  data = [
+    {
+      title: "Prepare Workshop",
+      state: "checked",
+    },
+    {
+      title: "Hold the Workshop",
+    },
+  ];
+}
+```
+
+Die eigentlichen Daten werden also aus einem Service referenziert, denn gegebenenfalls werden auf Basis der aktuellen To-dos auch noch andere Komponenten angezeigt, wie z.B. eine Komponente, welche die aktuell offenen To-dos zählt.
+
+Als erste Übersicht soll dies an dieser Stelle reichen. Wir werden uns später Services noch einmal genauer ansehen.
+
+## Die erste Komponente
+
+Wenn wir uns nun die Komponenten-Definition anschauen, kommen wir das erste Mal mit [TypeScript](https://www.typescriptlang.org/) in Berührung. TypeScript ist eine Erweiterung von JavaScript, welche uns die Möglichkeit bietet, die Daten unserer Anwendung explizit zu typisieren. Weiterhin führt diese Meta-Sprache auch Features ein, die es in JavaScript (noch) nicht gibt, wie `Decorators`. TypeScript "transpiled" unseren geschriebenen Quellcode, sodass der Browser nachher wieder ganz normales JavaScript sieht und interpretieren kann. Es ist also ein Feature, welches uns als Entwickler:innen die tägliche Arbeit angenehmer macht.
+
+> **Klassen** wurden in ES2015 eingeführt, um Konzepte wie Vererbung und Konstruktoren nicht mehr über Prototypen abbilden zu müssen. Diese können nun über eine einfache und saubere Syntax erstellt werden.
+
+> **Decorator** sind strukturierte Metadaten einer Klasse. Ihr kennt diese vielleicht aus anderen Programmiersprachen wie z.B. Java. Das eigentliche fachliche Verhalten der Komponente bilden wir innerhalb der Klasse mit Methoden ab.
+
+Eine Komponenten-Definition besteht primär aus folgenden Bestandteilen:
+
+- Einem **Component-Decorator**, welcher die Komponente innerhalb von Angular bekannt macht.
+- Einer **Selektor**, welcher das HTML-Element beschreibt, welches wir erzeugen.
+- Einem **HTML-Template**, welches die Darstellung unserer Komponente definiert.
+- Einer **Klasse**, welche das Interface und die Anzeige-Logik der Komponente beschreibt.
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Beispiel einer Item-Komponenten-Definition der eben gezeigten ToDo App" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
+/>
+
+Unsere erste Komponente wird eine statische Infobox sein. Um diese zu generieren, nutzen wir wieder die Angular-CLI.
+Ihr könnt hierzu einen neuen Terminal öffnen oder den laufenden `ng serve` kurzzeitig stoppen.
+Der Serve-Prozess erkennt aber automatisch Veränderungen innerhalb eures Quellcodes und kompiliert die jeweils aktuelle Version ihrer Anwendung in wenigen Sekunden.
+Ich würde euch also empfehlen, ein zweites Terminal zu öffnen und folgenden Befehl zu benutzen:
+
+```bash
+$ ng generate component info-box
+CREATE src/app/info-box/info-box.component.scss (0 bytes)
+CREATE src/app/info-box/info-box.component.html (23 bytes)
+CREATE src/app/info-box/info-box.component.spec.ts (636 bytes)
+CREATE src/app/info-box/info-box.component.ts (277 bytes)
+UPDATE src/app/app.module.ts (0 bytes)
+```
+
+Die für uns aktuell relevanten Dateien sind zur Zeit die `info-box.component.ts` und unser Template `info-box.component.html`. Schauen wir uns zunächst einmal unsere Klasse an.
+
+```typescript
+@Component({
+  selector: "app-info-box",
+  templateUrl: "./info-box.component.html",
+  styleUrls: ["./info-box.component.scss"],
+  // standalone: true ist jetzt der Standard in Angular 20
+})
+export class InfoBoxComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit() {}
+}
+```
+
+Hier sehen wir wie erwartet eine Standalone Component. Unser Selektor hat den automatischen Prefix `app-` bekommen. Somit ist unsere neue Komponente nun unter dem HTML-Tag `<app-info-box></app-info-box>` nutzbar.
+
+**Wichtig in Angular 20**: Da Standalone Components jetzt der Standard sind, müssen wir die Komponente direkt in der `AppComponent` importieren. Der Einstiegspunkt unserer kompletten Anwendung ist ebenfalls eine Standalone Component mit dem Namen `AppComponent`.
+
+Um unsere frisch generierte Komponente anzuzeigen, müssen wir diese zuerst in der `AppComponent` importieren und dann in dem Template aufrufen. Hierzu geht ihr in die Datei `app.component.ts` und fügt den Import hinzu:
+
+```typescript
+import { Component } from '@angular/core';
+import { InfoBoxComponent } from './info-box/info-box.component';
+
+@Component({
+  selector: 'app-root',
+  imports: [InfoBoxComponent], // Hier importieren wir unsere Komponente
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'angular-de-tutorial';
+}
+```
+
+Anschließend geht ihr in die Datei `app.component.html`, löscht dort den kompletten derzeitigen Inhalt und fügt eure Komponente via HTML-Tag ein.
+
+```html
+<app-info-box></app-info-box>
+```
+
+Wenn ihr nun eure Anwendung wieder im Browser öffnet, solltet ihr die Ausgabe `info-box works!` sehen.
+Ihr könnt an dieser Stelle gerne mit eurem Template in `info-box.component.html` etwas herumspielen und auch mehrere dieser Info-Boxen erzeugen, indem ihr den HTML-Tag in eurem App-Template einfach kopiert.
+Ein historischer Moment – nehmt euch ein paar Sekunden Zeit, um eure erste eigene Komponente zu bewundern. 😉
+
+## Expressions und Template Literals
+
+Eine Komponente mit statischen Inhalten ist natürlich nur sehr begrenzt in einer Anwendung nutzbar.
+Um variable Daten anzuzeigen, nutzt Angular sogenannte Expressions in den Templates.
+Diese werden mit doppelten geschweiften Klammern eingeleitet und auch wieder geschlossen.
+
+{{ expression }}
+
+**Neu in Angular 20: Template Literals**
+Angular 20 unterstützt jetzt Template Literals direkt in den Templates, was die String-Verarbeitung erheblich vereinfacht:
+
+```html
+<!-- Traditionelle Expressions -->
+<p>{{text}}</p>
+
+<!-- Neue Template Literals in Angular 20 -->
+<p>{{ `Hallo ${name}, heute ist ${day}!` }}</p>
+
+<!-- Template Literals mit Pipes -->
+<p>{{ `Willkommen ${name}` | uppercase }}</p>
+```
+
+Eine Expression wird von Angular dynamisch auf Basis der aktuellen Properties eurer Klasse ausgewertet.
+Führen wir also ein neues Property `text` ein und füllen dieses mit einem String, können wir diesen in unserem Template ausgeben.
+
+```typescript
+class InfoBoxComponent implements OnInit {
+  text = "Additional Info-Text on our Info Box! 🎊";
+
+  constructor() {}
+
+  ngOnInit() {}
+}
+```
+
+```html
+<p>info-box works!</p>
+<p>{{text}}</p>
+```
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Ausgabe der Info-Box Komponente mit unserem dynamischen Expression Text" data-src="info-box-with-expression.png" data-srcset="info-box-with-expression.png"
+/>
+
+Sollte sich die Property `text` ändern, z. B. durch externe Events, wird diese automatisch von Angular aktualisiert. Dieses Konzept nennt sich `Data-Binding`.
+
+## Property- & Event-Bindings
+
+Andere Komponenten können über sogenannte Property- und Event-Bindings eingebunden werden.
+Angular verbindet sich hierbei mit den Eigenschaften und Events der nativen HTML-Elemente.
+Somit ist auch das Benutzen von anderen Elementen aus Frameworks wie ReactJS oder VueJS einfach möglich.
+
+Um auf eine Properties von Elementen zuzugreifen, nutzen wir die eckigen Klammern innerhalb unseres HTML Templates. Möchten wir also z.B. die [HTMLElement.hidden Property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidden) einer Komponente beeinflussen, können wir das wie folgt erreichen:
+
+```html
+<p [hidden]="'true'">{{text}}</p>
+```
+
+Hier wird die Eigenschaft `hidden` des Elements auf `'true'` gesetzt und somit das Element ausgeblendet.
+Um diese Eigenschaft dynamisch zu ändern, haben wir die Möglichkeit, in unserer Klasse selbst eine neue Property einzuführen und diese per `Property-Binding` an die Property des p-Elements zu binden.
+Hierzu setzen wir statt dem string `'true'` den Namen des Attributes in unserer Klasse auf das Binding:
+
+```typescript
+class InfoBoxComponent implements OnInit {
+  text = "Additional Info-Text on our Info Box! 🎊";
+  hidden = true;
+
+  constructor() {}
+
+  ngOnInit() {}
+}
+```
+
+```html
+<p>info-box works!</p>
+<p [hidden]="hidden">{{text}}</p>
+```
+
+Um die Komponente nun durch User-Interaktion zu ändern, haben wir die Möglichkeit, auf sogenannte `Events` zu hören und hierfür ebenfalls ein `Event-Binding` zu definieren.
+Event-Bindings werden in Angular über Runde Klammern definiert, welche den Namen des Events enthalten.
+Wenn wir nun also auf das [click Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) eines HTML-Elements hören wollen, können wir das wie folgt erreichen.
+
+```html
+<button (click)="someFunction()">Button Text</button>
+```
+
+Innerhalb dieser Definition haben wir nun die Möglichkeit, ein sogenanntes `Template-Statement` zu definieren. Dies kann sowohl eine `Template-Expression` sein, die z. B. direkt Änderungen an Attributen eurer Klasse als auch eine Referenz auf eine Methode in eurer Klasse macht.
+Um es einfach zu halten, nutzen wir in diesem Fall erstmal eine `Template-Expression`, welche den Wert von `hidden` jeweils negiert. Also aus `true` wird `false` und andersherum.
+
+```html
+<p>info-box works!</p>
+<button (click)="hidden=!hidden">Toggle</button>
+<p [hidden]="hidden">{{text}}</p>
+```
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Animation der Basis Show and Hide Infobox" data-src="info-box-toggle.gif" data-srcset="info-box-toggle.gif"
+/>
+
+Wir können natürlich auch jedes andere Event, wie z. B. `keyup` benutzen. Mit diesem sehr simplen Mechanismus können wir generisch alle Arten von Komponenten benutzen und mit ihnen interagieren. Dies ist unabhängig davon, ob sie in Angular oder einem anderen Framework geschrieben sind.
+
+## Schleifen mit \*ngFor
+
+Ein weiteres Core-Feature ist wie in jedem Framework die Ausgabe von listenartigen Datenstrukturen.
+Hierfür gibt es in Angular die Direktive `*ngFor`.
+
+> Direktiven sind HTML Attribute, welche an DOM-Elementen genutzt werden können.
+> Hierbei können wir zwischen `Attribute Directives` und `Structural directives` unterscheiden.
+> Attribute Directives verändern oder beeinflussen das Verhalten eines Elements, an dem sie angehangen werden, wie z. B. `ngStyle` zum Setzen von CSS-Styles auf Basis von Daten.
+> Structural directives erzeugen oder entfernen DOM-Elemente, wie z.B. `ngIf` oder `ngFor`.
+> Strukturelle Direktiven werden mit dem Prefix `*` gekennzeichnet.
+
+Die Direktive ist angelehnt an eine For-Schleife, iteriert über eine listenartige Struktur und erzeugt für jedes Element eine Kopie des DOM-Elements, auf das es angewandt wird.
+
+```html
+<!-- book-list.component.html -->
+
+<ul>
+  <li *ngFor="let book of books">
+    <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
+  </li>
+</ul>
+```
+
+Hierbei wird eine sogenannte `Looping Variable`, in unserem Beispiel `book` und eine Liste, in unserem `books` definiert. Die Variable Buch enthält somit jeweils den Wert des aktuellen Listeneintrags.
+
+Um `*ngFor` auszuprobieren, erzeugen wir eine neue Komponente mit der Angular CLI.
+Dazu führen wir den command `ng generate component book-list` aus.
+
+**Wichtig in Angular 20**: Da wir Standalone Components verwenden, müssen wir die neue Komponente in der `AppComponent` importieren:
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { InfoBoxComponent } from './info-box/info-box.component';
+import { BookListComponent } from './book-list/book-list.component';
+
+@Component({
+  selector: 'app-root',
+  imports: [InfoBoxComponent, BookListComponent], // BookListComponent hinzufügen
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'angular-de-tutorial';
+}
+```
+
+Anschließend fügen wir das Tag `<app-book-list></app-book-list>` in das Template der `app.component.html` ein.
+Wenn wir also in der `BookListComponent` (siehe _book-list.component.ts_) eine Variable `books` mit einer Liste von Büchern definieren, erhalten wir hierfür 3 DOM-Elemente.
+
+```typescript
+books = [
+  {
+    title: "Book #1",
+    subtitle: "Subtitle #1",
+  },
+  {
+    title: "Book #2",
+    subtitle: "Subtitle #2",
+  },
+  {
+    title: "Book #3",
+    subtitle: "Subtitle #3",
+  },
+];
+```
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Die liste der statischen Bücher in HTML ausgeben" data-src="static-list-of-books.png" data-srcset="static-list-of-books.png"
+/>
+
+<hr>
+<div class="workshop-hint">
+ <div class="h3">Angular noch schneller lernen?</div>
+  <div class="row mb-3">
+    <div class="col-8">
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
+      </p>
+    </div>
+
+  </div>
+ <div class="row mb-4">
+   <div class="col-12">
+      <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+           Öffentliche Termine verfügbar
+         </div>
+         <div class="d-flex align-items-center mb-2">
+           <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+           Vor Ort, als auch Remote
+         </div>
+         <div class="d-flex align-items-center mb-3">
+           <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+           Deutsch/Englisch möglich
+         </div>
+         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
+           Zur Angular & TypeScript Schulung
+         </a>
+   </div>
+ </div>
+</div>
+<hr>
+
+## Der erste Service
+
+Wer genau aufgepasst hat, dem ist aufgefallen, dass die Daten in einer Angular Anwendung nicht in die Komponente gehören.
+Wir vermischen hier die Anzeige-Logik mit der Verwaltung unserer Daten.
+Nehmen wir also ein kurzes Refactoring unserer Anwendung vor und extrahieren die Daten in einen separaten Service.
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Animation der Extraktion der Daten von der Komponente in einen Service." data-src="extract-service.gif" data-srcset="extract-service.gif"
+/>
+
+Ein Service sollte sich immer um eine explizite Aufgabe kümmern und dementsprechend auch benannt werden.
+In unserem Fall wollen wie die Daten von Büchern verwalten.
+Wir nennen unseren Service also `BookDataService`.
+Um diesen zu generieren, können wir wie gewohnt die Angular-CLI benutzen.
+
+```bash
+$ ng generate service book-data
+```
+
+```typescript
+export class BookDataService {
+  books = [
+    {
+      title: "Book #1 from Service",
+      subtitle: "Subtitle #1",
+    },
+    {
+      title: "Book #2 from Service",
+      subtitle: "Subtitle #2",
+    },
+    {
+      title: "Book #3 from Service",
+      subtitle: "Subtitle #3",
+    },
+  ];
+
+  constructor() {}
+
+  getBooks() {
+    return this.books;
+  }
+}
+```
+
+Somit haben wir die Daten aus unserer Komponente gezogen.
+Die Frage ist jetzt nur: Wie bekomme ich die Daten nun wieder in meine Komponente verbunden?
+An dieser Stelle kommt der Begriff `Dependency Injection` ins Spiel.
+
+### Dependency Injection
+
+Unter `Dependency Injection` versteht man ein Design-Pattern, welches ebenfalls `Inversion of Control` genannt wird. Hierbei geht es darum, dass die erforderliche Abhängigkeit (Dependency) nicht von der aufrufenden Stelle selbst erzeugt wird, sondern diese Komponente die Kontrolle abgibt und lediglich definiert, welche Abhängigkeiten bestehen.
+
+In unserem kleinen Beispiel erstellt also die `BookListComponent` nicht unseren Service, sondern gibt dem Angular Framework lediglich Bescheid, dass sie einen `BookDataService` benötigt, um zu funktionieren.
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Angular DI erklärt indem die Komponente mit dem Injektor einen Dialog über ihre Bedürfnisse führt" data-src="di-explained-dialog.gif" data-srcset="di-explained-dialog.gif"
+/>
+
+<div class="alert alert-info">Hinweis: Dies ist eine sehr vereinfachte Darstellung von Dependency Injection in Angular, um das Grundkonzept zu verstehen. </div>
+
+Innerhalb des Angular Frameworks werden die verschiedenen Services von dem sogenannten `Injector` verwaltet.
+Dieser gibt der aufrufenden Stelle eine Referenz auf den angefragten Service, sofern dieser definiert ist.
+
+Die Definition der Abhängigkeit wird hierbei über den Konstruktor abgebildet. In dem Beispiel unserer `BookListComponent` definieren wir die Abhängigkeit auf `BookDataService` und binden diese an das Feld `bookData` unserer Komponente.
+
+<div class="alert alert-info">Hinweis: Wir benutzen hier die Typisierung von TypeScript, indem wir `: BookDataService` nach unserer Variablen schreiben. Dies bedeutet, dass die Variable `bookData` den Typ `BookDataService` hat und essenziell für den Dependency Injection Mechanismus ist. An den anderen Stellen dieses Tutorials haben wir die Typisierung nicht benutzt, um die Komplexität des Tutorials möglichst klein zu halten.</div>
+
+Innerhalb des Konstruktors rufen wir dann die `getBooks()` Methode des Services auf und beschaffen uns unsere Daten.
+
+```typescript
+export class BookListComponent {
+   books: { title: string; subtitle: string; }[];
+
+  constructor(private bookData: BookDataService) {
+    this.books = this.bookData.getBooks();
+  }
+}
+```
+
+Meist importiert deine IDE den `BookDataService` automatisch.
+Sollte dies nicht der Fall sein, kannst du dies selbst vornehmen und folgenden import an den Anfang der `book-list.component.ts` schreiben.
+
+```typescript
+import { BookDataService } from "../book-data.service";
+```
+
+## Daten via Rest-API nachladen
+
+Die aktuelle Version hat uns die Konzepte von Angular Stück für Stück näher erklärt. In der Realität werden Daten jedoch meist von einem Server asynchron nachgeladen.
+
+Wir laden diese Daten von einer Beispiel-API, welche ihr mit folgendem Befehl starten könnt:
+
+```bash
+$ npx bookmonkey-api
+JSON Server is running on port 4730
+```
+
+Unter folgender URL könnt ihr euch nun die Daten ansehen, welche vom Server ausgegeben werden: <a href="http://localhost:4730/books" target="_blank">http://localhost:4730/books</a>
+
+Im nächsten Schritt wollen wir diese Daten aus unserem `BookDataService` heraus abrufen. Dazu benötigen wir den sogenannten `HttpClient` Service. Dieser bietet uns eine sehr einfache API, um verschiedene Operationen auf eine HTTP-Schnittstelle auszuführen.
+
+**Wichtige Änderung in Angular 20**: Da wir Standalone Components verwenden, gibt es keine `app.module.ts` mehr. Stattdessen konfigurieren wir HTTP-Services in der `main.ts`:
+
+```typescript
+// main.ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideHttpClient(), // HTTP-Client Provider hinzufügen
+    // Weitere Providers...
+  ]
+});
+```
+
+Alternativ können wir den `HttpClient` auch direkt in der Komponente importieren, die ihn benötigt:
+
+```typescript
+// book-list.component.ts
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-book-list',
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.scss']
+})
+export class BookListComponent {
+  // ...
+}
+```
+
+Ist dies erledigt, kennt unser `Injector` auch einen Service vom Typ `HttpClient`, welchen wir nun über den Konstruktor unseres `BookDataService` einbinden können.
+
+```typescript
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+
+@Injectable({
+  providedIn: "root",
+})
+export class BookDataService {
+  constructor(private http: HttpClient) {}
+
+  getBooks() {
+    return this.http.get("http://localhost:4730/books");
+  }
+}
+```
+
+Der Service bietet uns die Methode `.get(url:string)`, welcher wir den API-Endpoint für unsere Abfrage angeben können. Wir nutzen hier die Adresse des lokal gestarteten JSON-Servers.
+
+### Umgang mit Asynchronität
+
+<div class="alert alert-info">Hinweis: Wir gehen in diesem Tutorial davon aus, dass Asynchronität in JavaScript bereits bekannt ist. Es gibt dazu eine sehr gute Einführung in den <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous" target="_blank">Mozilla Web Docs über Asynchronous JavaScript</a>. </div>
+
+Der Rückgabewert der get-Methode des HTTP-Services liefert ein [Observable](https://v17.angular.io/guide/observables-in-angular) zurück. Dies ist eine Datenstruktur, welche uns den Umgang mit asynchronen Daten erleichtert. Angular nutzt dafür die [RxJS Observables](https://rxjs.dev/guide/observable).
+
+Es hat sich als guter Stil etabliert, Variablen und Felder, welche asynchrone Datenstrukturen halten, mit einem `$` postfix zu kennzeichnen. Es hat rein funktional keinen Einfluss, hilft jedoch beim langfristigen Zurechtfinden und der Wartung eurer Anwendung.
+
+```typescript
+export class BookListComponent {
+  books$: Observable<any>;
+
+  constructor(private bookData: BookDataService) {
+    this.books$ = this.bookData.getBooks();
+  }
+}
+```
+
+Meist importiert deine IDE den `Observable` automatisch.
+Sollte dies nicht der Fall sein, kannst du dies selbst vornehmen und folgenden import an den Anfang der `book-list.component.ts` schreiben.
+
+```typescript
+import { Observable } from "rxjs";
+```
+
+Der Aufruf innerhalb unserer Komponente ändert sich also im Grunde nicht. Die Auswertung innerhalb unseres HTML-Templates muss jedoch etwas angepasst werden. Mithilfe einer sogenannten `async` Pipe können wir der `*ngFor` Direktive den Umgang mit der asynchronen Datenstruktur ermöglichen.
+
+```html
+<ul>
+  <li *ngFor="let book of books$ | async">
+    <span>{{book.title}}</span> - <small>{{book.subtitle}}</small>
+  </li>
+</ul>
+```
+
+Die `async` Pipe in Verbindung mit `*ngFor` registriert sich auf asynchrone Updates der `books$` Variable. Durch diese Anpassung unseres Templates können wir nun auch die Daten von unseren JSON-Server wie folgt anzeigen:
+
+<img
+class="lazy img-fluid img-rounded"
+src="/shared/assets/img/placeholder-image.svg" alt="Die Ausgabe der Liste von Büchern aus dem HTTP-Backend" data-src="http-list-of-books.png" data-srcset="http-list-of-books.png"
+/>
+
+## Zoneless Change Detection - Die Zukunft von Angular
+
+Eine der wichtigsten Neuerungen in Angular 20 ist die **Zoneless Change Detection**. Diese revolutionäre Änderung verbessert die Performance erheblich und vereinfacht das Debugging.
+
+### Was ist Zoneless Change Detection?
+
+Traditionell nutzte Angular Zone.js, um automatisch zu erkennen, wann sich Daten ändern und die Benutzeroberfläche aktualisiert werden muss. Mit Zoneless Change Detection wird dieser Mechanismus durch ein moderneres, signal-basiertes System ersetzt.
+
+**Vorteile von Zoneless:**
+- **Bessere Performance**: Bis zu 40-50% Verbesserung bei LCP (Largest Contentful Paint)
+- **Kleinere Bundle-Größe**: Zone.js wird nicht mehr benötigt
+- **Saubere Stack Traces**: Einfacheres Debugging ohne Zone.js-Overhead
+- **Bessere Interoperabilität**: Einfachere Integration mit anderen Frameworks
+
+### Zoneless in der Praxis
+
+Wenn ihr bei der Projekt-Erstellung "Yes" für Zoneless Change Detection gewählt habt, ist euer Projekt bereits konfiguriert. Falls nicht, könnt ihr es nachträglich aktivieren:
+
+```typescript
+// main.ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideZonelessChangeDetection(), // Zoneless aktivieren
+    // Weitere Providers...
+  ]
+});
+```
+
+**Wichtig**: Mit Zoneless Change Detection müsst ihr bei manuellen Änderungen explizit Change Detection triggern:
+
+```typescript
+import { ChangeDetectorRef, inject } from '@angular/core';
+
+export class MyComponent {
+  private cdr = inject(ChangeDetectorRef);
+
+  updateData() {
+    // Daten ändern
+    this.data = newData;
+
+    // Change Detection manuell triggern
+    this.cdr.markForCheck();
+  }
+}
+```
+
+Oder noch besser: Nutzt Angular Signals, die automatisch Change Detection triggern:
+
+```typescript
+import { signal } from '@angular/core';
+
+export class MyComponent {
+  data = signal('initial value');
+
+  updateData() {
+    // Signals triggern automatisch Change Detection
+    this.data.set('new value');
+  }
+}
+```
+
+## Moderne Testing-Tools in Angular 20
+
+Angular 20 bringt experimentelle Unterstützung für moderne Testing-Tools mit sich. Während Karma deprecated wurde, bietet Angular 20 neue Optionen für das Testen.
+
+### Vitest - Der neue Test Runner
+
+**Vitest** ist ein schneller, moderner Test Runner, der in Angular 20 experimentell unterstützt wird:
+
+```bash
+# Vitest zu einem bestehenden Projekt hinzufügen
+ng add @angular/vitest
+
+# Oder bei der Projekt-Erstellung
+ng new my-app --test-runner=vitest
+```
+
+**Vorteile von Vitest:**
+- **Extrem schnell**: Bis zu 10x schneller als Karma
+- **ESM-nativ**: Moderne JavaScript-Module-Unterstützung
+- **Hot Module Reload**: Tests werden bei Änderungen automatisch neu ausgeführt
+- **TypeScript-Support**: Keine zusätzliche Konfiguration nötig
+
+### Beispiel-Test mit Vitest
+
+```typescript
+// book-list.component.spec.ts
+import { describe, it, expect } from 'vitest';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BookListComponent } from './book-list.component';
+
+describe('BookListComponent', () => {
+  let component: BookListComponent;
+  let fixture: ComponentFixture<BookListComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [BookListComponent] // Standalone Component importieren
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(BookListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should display books', () => {
+    component.books = [
+      { title: 'Test Book', subtitle: 'Test Subtitle' }
+    ];
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement;
+    expect(compiled.textContent).toContain('Test Book');
+  });
+});
+```
+
+### Testing mit Signals
+
+Signals vereinfachen das Testen erheblich:
+
+```typescript
+import { signal } from '@angular/core';
+import { describe, it, expect } from 'vitest';
+
+describe('Signal Testing', () => {
+  it('should update signal value', () => {
+    const count = signal(0);
+
+    expect(count()).toBe(0);
+
+    count.set(5);
+    expect(count()).toBe(5);
+
+    count.update(val => val + 1);
+    expect(count()).toBe(6);
+  });
+});
+```
+
+## Fazit
+
+Angular 20 markiert einen wichtigen Meilenstein in der Evolution des Frameworks. Mit Standalone Components als Standard, Template Literals, Zoneless Change Detection und vielen weiteren Verbesserungen wird die Entwicklung moderner Webanwendungen noch effizienter und angenehmer.
+
+**Die wichtigsten Vorteile von Angular 20:**
+
+- **Vereinfachte Architektur**: Standalone Components eliminieren die Komplexität von NgModules
+- **Bessere Performance**: Zoneless Change Detection reduziert Overhead und verbessert die Laufzeit-Performance
+- **Moderne Template-Syntax**: Template Literals machen String-Verarbeitung intuitiver
+- **Verbesserte Developer Experience**: Bessere TypeScript-Integration und moderne Testing-Tools
+- **Enterprise-Ready**: Bewährte Architektur-Konzepte für skalierbare Anwendungen
+
+Angular bleibt in vielerlei Hinsicht sehr opinionated (meinungsstark), was besonders für Enterprise-Projekte von Vorteil ist. Die einheitliche Struktur und die klaren Architektur-Vorgaben ermöglichen es Teams, sich voll auf die Feature-Entwicklung zu konzentrieren.
+
+### Ausblick: Was kommt nach Angular 20?
+
+Angular entwickelt sich kontinuierlich weiter. Hier sind einige spannende Features, die in zukünftigen Versionen erwartet werden:
+
+**Signal Forms** (geplant für Angular 21+):
+```typescript
+// Zukünftige Signal-basierte Forms API
+const userForm = signalForm({
+  name: signalControl(''),
+  email: signalControl('', [emailValidator]),
+  age: signalControl(0, [minValidator(18)])
+});
+
+// Reactive Updates
+effect(() => {
+  console.log('Form value:', userForm.value());
+  console.log('Form valid:', userForm.valid());
+});
+```
+
+**Selectorless Components** (in Entwicklung):
+```typescript
+// Zukünftige Syntax ohne Selektoren
+import { MyComponent } from './my-component';
+
+@Component({
+  template: `
+    <!-- Direkte Nutzung ohne Selektor -->
+    <MyComponent [data]="myData" />
+  `
+})
+export class AppComponent {
+  // ...
+}
+```
+
+**Weitere geplante Features:**
+- **Verbesserte HMR (Hot Module Reload)**: Noch schnellere Entwicklungszyklen
+- **Erweiterte Accessibility Primitives**: Bessere Unterstützung für barrierefreie Anwendungen
+- **Nitro-Integration**: Verbesserte SSR-Optionen und Deployment-Flexibilität
+
+Generell ist Angular 20 für langlebige Enterprise Projekte eine ausgezeichnete Wahl. Andere Frameworks wie React und VueJS sollten aber ebenfalls in Betracht gezogen werden, um objektiv die beste Entscheidung für die aktuellen Herausforderungen zu treffen.
+
+Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Discord Chat](/discord) mit über 2000 wunderbaren anderen Menschen! Zusammen lernt es sich besser! :)
+
+<hr>
+<div class="workshop-hint">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
+      </p>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
+      <div class="d-flex align-items-center mb-2">
+        <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Öffentliche Termine verfügbar
+      </div>
+      <div class="d-flex align-items-center mb-2">
+        <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Vor Ort, als auch Remote
+      </div>
+      <div class="d-flex align-items-center mb-3">
+        <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
+        Deutsch/Englisch möglich
+      </div>
+      <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-button">
+        Zur Angular & TypeScript Schulung
+      </a>
+    </div>
+  </div>
+</div>
+<hr>]]></content><author><name>Robin Böhm</name></author><category term="tutorial" /><category term="angular" /><summary type="html"><![CDATA[Tutorial zu Angular 20, dem modernen JavaScript-Framework. Wir gehen mit euch Schritt für Schritt die neuesten Konzepte des Frameworks anhand eines Beispiels durch.]]></summary></entry><entry><title type="html">Webdave im Gespräch mit: Mark Thompson (aka. @marktechson)</title><link href="http://localhost:4000/artikel/webdave-im-gespraech-mit-mark-thompson/" rel="alternate" type="text/html" title="Webdave im Gespräch mit: Mark Thompson (aka. @marktechson)" /><published>2024-08-26T00:00:00+02:00</published><updated>2024-08-26T00:00:00+02:00</updated><id>http://localhost:4000/artikel/webdave-im-gespraech-mit-mark-thompson</id><content type="html" xml:base="http://localhost:4000/artikel/webdave-im-gespraech-mit-mark-thompson/"><![CDATA[Nach einer wohlverdienten Sommerpause sind wir wieder da – und das mit einem echten Highlight! Zum Start haben wir ein exklusives Interview für euch mit Mark Thomson, Transformational Public Speaker und Mitglied des Angular-Teams bei Google.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz" title="Interview mit Mark Thompson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+In diesem tollen Interview erzählt uns Mark von seiner persönlichen Reise, die ihn von seiner Kindheit in Chicago, Illinois, bis hin zu einer zentralen Rolle im Angular-Team geführt hat. Es gibt tiefe Einblicke in seine Karriere, seine Leidenschaft für die Fotografie, das Gitarrespielen, die Programmierung und seine Lernphilosophie.
+
+
+Besonders spannend finden wir die Karrieretipps für Entwickler/innen, egal ob ihr am Anfang ihrer Laufbahn steht oder bereits erfahrene Profis seid.
+
+### Timestamps
+
+- [0:00](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=0) Wer ist Mark Thomson?
+- [6:13](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=373) Der Weg in die Tech-Branche und was der Sega Megadrive damit zu tun hat.
+- [9:20](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=560) Über Leidenschaft, das Fotografieren und die Schwierigkeit, motiviert zu bleiben.
+- [14:10](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=850) Neue Dinge lernen: Vom Programmieren bis zu Kameras.
+- [23:38](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=1418) Karrierestart: Der Weg zu Google und Marks Erfolgsgeschichte.
+- [27:41](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=1661) Flutter, Dart und die Unterschiede zu TypeScript.
+- [33:38](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2018) Marks Lieblingsfeatures in TypeScript.
+- [35:37](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2137) Marks Rolle im Angular-Team.
+- [38:02](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2282) Über Gemini Nano, Künstliche Intelligenz und die Rolle von Entwicklerinnen in der Zukunft.
+- [41:35](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2495) Ist KI gefährlich?
+- [47:19](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=2839) Marks Lieblingsfeatures in Angular: Deferrable Views und Signals.
+- [51:21](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3081) Morning with Mark und das Erstellen von Videos.
+- [56:29](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3389) Karrieretipps für Junior-Entwickler.
+- [59:28](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3568) Karrieretipps für Senior-Entwickler.
+- [01:02:58](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3778) Wo sieht sich Mark in 10 Jahren? Persönlich und beruflich.
+- [01:05:00](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=3900) Über Gitarren, gemeinsames Musizieren und die Bedeutung des lebenslangen Lernens.
+- [01:22:22](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=4942) Marks Anfänge in der Programmierung.
+- [01:29:22](https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz&start=5362) Neue Features in Angular.
+
+
+Ob Junior oder Senior, Marks Ratschläge bieten wertvolle Orientierung für deine Karriere im Tech-Bereich. Schau rein und lass dich von seinen Erfahrungen und Insights inspirieren!
+
+
+## Wer ist Mark Thomson?
+
+<img
+style="max-width: 40%"
+src="/shared/assets/img/placeholder-image.svg" alt="Portrait Mark Thompson"
+class="lazy img-fluid img-rounded" data-src="profilepic.jpg" data-srcset="profilepic.jpg"
+/>
+
+
+Mark Thomson ist mehr als nur ein Mitglied des Angular-Teams – er ist ein inspirierender Public Speaker und bekannt für seine Leidenschaft, Menschen bei ihrer beruflichen Entwicklung zu fördern.
+
+Natürlich findest du Mark auch auf Social Media:
+
+
+- [Mark Thompson auf X](https://x.com/marktechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf Instagram](https://www.instagram.com/marktechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf YouTube](https://www.youtube.com/@marktechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf Github](https://github.com/MarkTechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf LinkedIn](https://www.linkedin.com/in/marktechson){:rel="noopener noreferrer nofollow"}
+- [Mark Thompson auf Medium](https://medium.com/@markathompson){:rel="noopener noreferrer nofollow"}
+
+
+Wir freuen uns darauf, nach der Sommerpause wieder voll durchzustarten und dir viele weitere spannende Artikel rund ums Thema Angular zu bieten. Kudos an unseren Trainer und einen unserer Lieblings-Streamer [Webdave](https://webdave.de/start) für dieses inspirierende Interview.
+
+Wie immer, werde Teil unserer wachsenden Community!]]></content><author><name>Lulëzim Ukaj</name></author><category term="angular" /><category term="open-community" /><summary type="html"><![CDATA[Webdave spricht mit Mark Thomson, Angular-Teammitglied bei Google, über Karriere, KI, neue Angular-Features & wertvolle Tipps.]]></summary></entry><entry><title type="html">Open Community: Angular - Performance zwischen dynamisch gerenderten Komponenten per Template oder @switch</title><link href="http://localhost:4000/artikel/open-community-marvin-heilemann/" rel="alternate" type="text/html" title="Open Community: Angular - Performance zwischen dynamisch gerenderten Komponenten per Template oder @switch" /><published>2024-06-18T00:00:00+02:00</published><updated>2024-06-18T00:00:00+02:00</updated><id>http://localhost:4000/artikel/open-community-marvin-heilemann</id><content type="html" xml:base="http://localhost:4000/artikel/open-community-marvin-heilemann/"><![CDATA[Oft frage ich mich, gerade für Anwendungen mit vielen dynamisch geladenen Komponenten, wie ich diese noch besser programmieren kann, um die Latenz oder Layout-Shifts zu verringern. Ich mache mir deshalb immer viele Gedanken, wie ich etwas programmiere, auch weil wir in Zukunft, bei mir im Unternehmen, ein Refactoring unseres Formular-Moduls planen. Deshalb wollte ich herausfinden, wo wir mit kleinen Änderungen bessere Render-Performance erzielen können. In diesem Artikel beschreibe ich mein Vorgehen und etwas unsere interne Modulstruktur.
+
+
+Das Formular-Modul bekommt aktuell eine JSON-Konfiguration, entweder vom Backend oder direkt aus der App, welche dann mit Rows und Cols zu einem Formular mit Seiten und Gruppen umgesetzt wird. Die Bestandteile setzen sich wie folgt zusammen:
+
+- **Formular-Service**: verwaltet u.a. `FormGroup` und persistente Formulardaten sowie Helper-Funktionen
+- **Layout-Modul**: baut die Rows, Cols, etc.
+- **Die Eingabefelder**: Standalone Komponenten, welche auch für sich existieren können ohne Formular-Komponente; Input, Checkbox, Date, etc.
+- **Der Feldtyp-Komponente**: rendert ein Eingabefelder basierend auf einer Typ-Property aus der Konfiguration
+
+
+Da Angular vor kurzem die Control-Flow Syntax herausgebracht hat, wollte ich diese auch hier nutzen. Aktuell rendert die Feld-Typ-Komponente die Eingabefelder per `ViewContainerRef.createComponent`. Die Komponenten liegen mit dem Typen in einem Objekt. Per `ViewChild` wird dann auf ein `ng-template` zugegriffen und anschließend das Eingabefeld dort hinein generiert.
+
+Das sieht in etwa so aus:
+
+
+```typescript
+@Component({
+  template: `<ng-template #placeholder></ng-template>`,
+})
+class TypeComponent {
+  @ViewChild("placeholder", { read: ViewContainerRef })
+  private readonly view!: ViewContainerRef;
+
+  @Input({ required: true }) field!: FormFieldType;
+
+  ngAfterViewInit(): void {
+    this.view.clear();
+    this.view.createComponent(formFields[this.field.type]);
+  }
+}
+```
+
+
+Nun, dieser Code-Teil ist bereits drei Jahre alt und ich wusste nicht, ob das hier noch eine moderne Lösung ist oder dem typischen Angular-Paradigma entspricht. Also wollte ich einen Vergleich haben zu einer anderen Methodik mit der neuen Control-Flow-Syntax: `@switch {}`. Dieser war vergleichsweise damals weitaus langsamer und komplexer zu bauen mit Typisierung.
+
+
+Da sich in Angular in den letzten Jahren viel getan hat, dachte ich, dass es doch sein kann, dass andere Methoden nun viel bessere Performance erzielen. Nun bin ich aber nicht sehr tief in der Materie zu Change Detection und Rendering in Angular an sich bewandert.
+
+Deshalb startete ich einen neuen Post in der mit im deutschen Raum bekanntesten Angular Community [Angular.de](https://angular.de). Hier habe ich mir, zusammen mit David Müllerchen aka Webdave, Gedanken darüber gemacht, was die richtige Herangehensweise wäre und wie die Performance in Angular am besten verglichen werden kann.
+
+
+## Vor- und Nachteile der Möglichkeiten
+
+
+Da wir schon seit Jahren mit ComponentRef arbeiten (und man sagt “Never change a running system”), wollte ich erst mal wissen, ob dies nicht mit der neuen Control-Flow-Syntax, zu Change Detection Problemen kommt und ob es andere Möglichkeiten gibt. Gerade weil wir sehr viele Feld-Typ-Komponenten laden, also aus dem Backend kommen, de Felder , die dem Frontend erstmal unbekannt sind (200 pro Formular im Schnitt, mit Seiten und Kategorien).
+
+
+Webdave schrieb mir hierzu:
+
+> `ViewContainerRef.createComponent`, `@defer` und `@if` sind für unterschiedliche Use Cases. Die flow syntax ist für statisch bekannte Komponenten, wobei du mit `.createComponent` auch dynamisch erzeugte Komponenten, oder hinzugefügte Komponenten einbinden kannst.
+
+
+Da all meine Komponenten bekannt sind, war seine Antwort dann `@switch`. Da wir bei 14 verschiedenen Eingabekomponenten das `@switch` aber zu groß und unschön wurden, wollte ich wissen, ob ich denn hier nicht einfach schauen kann, welche der beiden wirklich besser ist. Gerade auch, weil Angular doch theoretisch mit `@switch` besser die Change Detection bemessen kann, weil die Komponenten direkt im Template bekannt sind.
+
+
+## Performance in Angular Vergleichen
+
+
+Auf dem Gebiet bin ich quasi neu, ich wusste zwar, dass es eine Angular-Erweiterung für Chromium-Browser gibt, nur hab ich sie noch nie genutzt.
+
+Also war das der Anfang. Erweiterung installiert, App aufgemacht, “Profiler” geöffnet und gestartet.
+
+[Mehr zum Profiler der Angular Devtools erfährst du hier](https://angular.dev/tools/devtools#profile-your-application).
+
+Nach einigen Tests kam ich damit ganz gut klar. Wichtig war mir hier, dass ich die FPS sehen kann, wie lange Komponenten laden bis sie gerendert sind und wie sich die Werte verändern beim Ein- und Ausblenden (re-render) bzw. beim Hinzufügen von neuen Elementen oder entfernen.
+
+
+Für einen wirklichen Vergleich hab ich mir in Chrome noch den “Performance Monitor” aufgemacht, um die DOM Nodes und Auslastung live zu sehen. Per “Rendering” und “Frame Rendering Stats” dann noch die FPS. Die Angular-Erweiterung nimmt das alles dann auf und ich kann es exportieren als JSON oder Screenshots davon machen (siehe weiter unten).
+
+
+## Das Repl und die Tests
+
+
+[Angular Component Ref vs Switch - StackBlitz](https://stackblitz.com/edit/angular-componentref-vs-switch?embed=1&file=src/main.ts)
+
+
+Während ich für beide Möglichkeiten ein Repl geschrieben habe, kam ich auch schon in einige Fehler mit ComponentRef und Signals. Hier konnte ich mit Webdave’s Unterstützung dann herausfinden, wie man an die `component` Signals übergibt. Interessant dabei war, dass ich dazu nahezu nichts in der API Dokumentation von Angular fand, ggf. liegt das auch daran, dass das alles sehr neu ist und die Dokumentation und auf [angular.dev](https://angular.dev) zu finden ist.
+
+
+```typescript
+component.setInput("options", this.options());
+```
+
+
+Nachdem mein Use-Case nachgebaut war, baute ich noch etwas Style drum herum (ich habs gerne etwas Stylisch), ein paar Buttons zum ein- und ausblenden, zu generieren weitere Eingabefelder und Szenario-Beispiele zu generieren. In meinem Repl sind diese aber nur Text mit Signals, um es nicht zu Komplex zu gestalten.
+
+
+<aside>
+🔥 Ein großes Plus, das Repl ist Zoneless (unsere App inzwischen auch) und nutzt ChangeDetection.OnPush.
+</aside>
+
+
+## Das Ergebnis und Auswertung
+
+
+Ich habe Anfangs mit 200 Elementen für beide Möglichkeiten gestartet. Hier bin ich einige Tests durchgegangen: mehrfach Neuladen und per Button rendern, ein- und ausblenden, schnelles ein- und ausblenden und neue Elemente hinzufügen. So das, was unsere Benutzer auch machen würde oder die Applikation während der Laufzeit.
+
+
+Abweichungen können entstehen, je nachdem in welchem Browser getestet oder Gerät ein Szenario gestartet wird.
+
+
+<aside>
+ℹ️ Den StackBlitz Browser, welcher als Splitview gestartet wird, kann auch als neues Tab geöffnet werden, was ein realeres Szenario darstellt, da es nicht als iFrame in StackBlitz geöffnet ist.
+</aside>
+
+
+### Szenario 1
+
+<p class="left">
+    <img
+        style="max-width: 80%"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 15ms"
+        class="lazy img-fluid img-rounded" data-src="szenario1typea.jpg" data-srcset="szenario1typea.jpg"
+    />
+    <br>
+    <em>ComponentRef</em>
+</p>
+
+
+<p class="left">
+    <img
+        style="max-width: 80%"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 14ms"
+        class="lazy img-fluid img-rounded" data-src="szenario1typeb.jpg" data-srcset="szenario1typeb.jpg"
+    />
+    <br>
+    <em>Switch</em>
+</p>
+
+Dieses Szenario blendet nur nach einem Intervall die gesamte Liste ein und wieder aus. Hier wollte ich einfach sehen, wie gut beide in einem Szenario performen, wo bspw. ein Wechsel von Formularseiten simuliert wird.
+Wie man gut sehen kann, liefern die Tests schon mal gute Ergebnisse. Leider kann man die Dom-Nodes nicht zurücksetzen. Aber man erkennt gut, dass Type A hier weitaus mehr generiert und Type B mehr wiederverwendet. Eine Sache, die ich bis jetzt noch nicht näher ergründen konnte.
+Darüber hinaus sieht man, dass beide Initials so gut wie gleich sind, was die FPS, die Schnelligkeit zum Anzeigen der Komponenten, angeht.
+
+
+### Szenario 2
+
+<p class="left">
+    <img
+        style="max-width: 80%"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 17ms"
+        class="lazy img-fluid img-rounded" data-src="szenario2typea.jpg" data-srcset="szenario2typea.jpg"
+    />
+    <br>
+    <em>ComponentRef</em>
+</p>
+
+
+<p class="left">
+    <img
+        style="max-width: 80%"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 12ms"
+        class="lazy img-fluid img-rounded" data-src="szenario2typeb.jpg" data-srcset="szenario2typeb.jpg"
+    />
+    <br>
+    <em>Switch</em>
+</p>
+
+
+Dieses Szenario weicht kaum vom ersten ab, hier werden nur zusätzlich “Eingabefelder” hinzugefügt und wieder entfernt. Dies würde in unserem Fall simulieren, wenn eine Formularaktion, ein anderes Feld ein- und ausblendet oder verändert.
+Hier sieht man ganz gut, dass Type A ein wenig schlechter performt als Type B. Das könnte unter anderem daran liegen, dass Angular evtl. die Komponente nicht richtig Cacht, da sie im Template nicht existiert.
+
+
+### Szenario 3
+
+<p class="left">
+    <img
+        style="max-width: 80%"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 4ms"
+        class="lazy img-fluid img-rounded" data-src="szenario3typea.jpg" data-srcset="szenario3typea.jpg"
+    />
+    <br>
+    <em>ComponentRef</em>
+</p>
+
+
+<p class="left">
+    <img
+        style="max-width: 80%"
+        src="/shared/assets/img/placeholder-image.svg" alt="Screenshot aus den Angular DevTools Profiler, zeigt die Initial Loading Time - 3ms"
+        class="lazy img-fluid img-rounded" data-src="szenario3typeb.jpg" data-srcset="szenario3typeb.jpg"
+    />
+    <br>
+    <em>Switch</em>
+</p>
+
+
+Im letzten Szenario, wollte ich sehen, was passiert, wenn nichts mehr ein- und ausgeblendet wird, aber neue “Eingabefelder” hinzugefügt werden und anschließend zufällig entfern werden.
+
+
+Nun sieht man etwas sehr interessantes, Angular scheint weitaus mehr ChangeDetections auszuführen mit Type A, da die Komponenten nicht im Template existieren!
+
+
+## Auswertung und Zusammenfassung
+
+
+Während den Tests sind mir natürlich immer wieder Verbesserungen aufgefallen, welche ich direkt umgesetzt habe, deshalb gab es mehrere Iterationen.
+Abschließend muss ich sagen, dass mir zwar Type A weitaus besser gefällt, wenn es um die Lesbarkeit in der Typ-Komponente geht, aber Type B performant weitaus besser. Gerade die ChangeDetections sind etwas, was in unserer Applikation sehr wichtig ist. Das ist deshalb so wichtig, weil eine Feldkomponente Aktionen ausführen kann: ein-/ausblenden anderer Komponenten, öffnen von Dialogen oder Automationen anstoßen.
+Schließlich werde ich nun bei Type A erst mal bleiben, aber im Refactoring Type B umsetzen und noch mals bei uns in der Staging-Umgebung testen.
+
+
+### Änderungen während der Tests
+
+
+- Mit `@defer` wurde Type B deutlich besser in der Performance
+- Splitten vom Effects in Type A verbesserte dessen Performance
+- Szenarien automatisieren erzielte genauere Ergebnisse zwischen den Tests
+- Vereinheitlichung der Console.logs stellt Fairen vergleich dar
+
+Ich muss sagen, dass der Prozess außerordentlich viel Spaß gemacht hat und ich muss [Webdave](https://webdave.de/start) ganz großen Dank schenken, für seine Expertise und Hilfe.]]></content><author><name>Lulëzim Ukaj</name></author><category term="angular" /><category term="rendering" /><category term="control-flow" /><category term="refactoring" /><category term="open-community" /><summary type="html"><![CDATA[Marvin Heilemann erklärt, wie dynamische Angular-Komponenten durch Control-Flow-Syntax und Refactoring optimiert gerendert werden können.]]></summary></entry><entry><title type="html">Open Community: Veröffentliche deinen Artikel für Angular.de!</title><link href="http://localhost:4000/artikel/open-community/" rel="alternate" type="text/html" title="Open Community: Veröffentliche deinen Artikel für Angular.de!" /><published>2024-06-18T00:00:00+02:00</published><updated>2024-06-18T00:00:00+02:00</updated><id>http://localhost:4000/artikel/open-community</id><content type="html" xml:base="http://localhost:4000/artikel/open-community/"><![CDATA[[Angular.de](https://angular.de) ist ein Ort der Community für die Community. Seit 2013 bieten wir euch hier Tutorials, Artikel, Meetups und unseren Discord Channel rund um das Angular Framework. Wir sind sehr stolz, dass unsere Community mittlerweile auf über 13.500 Entwickler:innen gewachsen ist. Damit sind wir die größte Angular Community in Europa. Aber wir wollen nicht nur über neue Features berichten!
+
+Aus unserer langjährigen Erfahrung wissen wir, dass ein entscheidender Erfolgsfaktor für den Lernerfolg die aktive Teilnahme in der Angular-Community ist. Während offizielle Dokumentationen und Tutorials wertvolle Ressourcen sind, bietet deine Community ihr kollektives Wissen und Unterstützung, maßgeschneidert auf deinen eigenen Use Case. Gerade Einsteiger profitieren enorm von Diskussionen und Code-Beispielen, die von erfahrenen Angular-Entwicklern geteilt werden. Oftmals sind es genau diese Community-Beiträge, die Lösungen für spezifische Probleme oder klare Erklärungen komplexer Konzepte bieten.
+
+Genau dieses kollektive Wissen und die Diskussionen wollen wir euch und der Öffentlichkeit in Zukunft als Artikel zur Verfügung stellen. Deshalb gibt es bei uns jetzt Open Community – jede und jeder kann auf Angular.de zum Autor werden.
+
+## So funktioniert’s – eine Anleitung in drei Schritten:
+
+### Schritt 1: Ihr wollt etwas mit der Community teilen.
+
+Wir wollen wissen, welchen speziellen Use Case du hattest. Besonders interessiert uns:
+
+- **Besonderheiten in der Implementierung neuer Features:** Habt ihr online keine Lösung gefunden? Teilt eure einzigartigen Ansätze.
+- **Dein Blick auf unsere Community:** Hast du Feedback zu unserer Community? Wir freuen uns über Kudos, Geheimtipps, Best Practices.
+- **Perspektiven aus aller Welt:** Bist du Teil der Angular Community in Europa außerhalb der DACH Region? Welche Themen werden dort gerade heiß diskutiert?
+
+### Schritt 2: Schreibe deinen Artikel.
+
+Dein Artikel sollte gut recherchiert und klar und verständlich geschrieben sein. Wenn möglich, sollte dein Artikel nicht mehr als 10.000 Zeichen (inklusive Leerzeichen) haben. Wir nehmen aber auch gerne kürzere Artikel. Ansonsten bitten wir dich, ein bis zwei Sätze zu dir zu schreiben, damit wir sie unter deinem Artikel veröffentlichen können.
+
+### Schritt 3: Sende uns deinen Artikel.
+
+Schick uns deinen Artikel!
+
+Wir unterstützen dich bei Bedarf gerne beim Schreiben und bei der Erstellung von Grafiken und Bildern.
+
+Email an <lulezim.ukaj@workshops.de>
+
+[Werde Teil unserer Community!](https://workshops.de/join-discord)]]></content><author><name>Lulëzim Ukaj</name></author><category term="angular" /><category term="open-community" /><summary type="html"><![CDATA[Entdecke Open Community auf Angular.de – die Artikelserie für die Community aus der Community. Teile deinen Use Case, Lösungen und Perspektiven.]]></summary></entry><entry><title type="html">Angular 18 - Die Renaissance geht weiter</title><link href="http://localhost:4000/artikel/angular-18-die-renaissance-geht-weiter/" rel="alternate" type="text/html" title="Angular 18 - Die Renaissance geht weiter" /><published>2024-06-11T00:00:00+02:00</published><updated>2024-06-11T00:00:00+02:00</updated><id>http://localhost:4000/artikel/angular-18-die-renaissance-geht-weiter</id><content type="html" xml:base="http://localhost:4000/artikel/angular-18-die-renaissance-geht-weiter/"><![CDATA[Es ist soweit: Angular v18 wurde veröffentlicht!
+
+Seit Beginn der Angular Renaissance gab es viele neue Features und Updates. Als Erstes ist einem sicherlich das neue Logo und das neue Portal [angular.dev](https://www.angular.dev) aufgefallen, das [angular.dev](https://angular.dev/) als Hauptquelle für Informationen und Ressourcen abgelöst hat. Neben den visuellen Neuerungen gab es einige bahnbrechende – in diesem Fall ist das Wort durchaus angebracht – technische Updates. In diesem Zusammenhang sind vor allem die [Angular Signals](https://angular.dev/guide/signals) und [Full App Non-Destructive Hydration](https://angular.dev/guide/ssr#configure-server-side-rendering) zu nennen. Beide Features waren der Beginn einer Neuausrichtung im Bereich der Change Detection bzw. der gesamten Rendering-Strategie für das Framework. Insbesondere die Signals sind auf großes Interesse in der Angular Community gestoßen.
+
+Mit dem Update auf Angular Version 18 scheint sich das Angular-Team darauf konzentriert zu haben, kurz innezuhalten und alle neuen Features zu stabilisieren. Oder wie Minko Gechev vom Angular-Team-Lead selbst sagt:
+
+
+„Over the past three releases, we’ve introduced a lot of new features and improvements. This time we focused on polishing the work we shipped.“
+
+
+Es geht darum, die Fortschritte zu bewerten und diese in die Gesamtstrategie einzuordnen, um eine stabile und kohärente Basis für spannende neue Experimente zu schaffen. Eines dieser lang ersehnten Experimente wurde nun auch in Angular 18 vorgestellt: die Zoneless Change Detection. Auch wenn das Feature bisher explizit als “experimental feature” geführt wird, ist das nicht weniger als eine kleine Revolution in der Change Detection. Wir werden uns in der näheren Zukunft ausführlich mit diesem Thema befassen.
+
+
+Hier sind die Highlights dieses Releases kurz zusammengefasst:
+
+- Experimentelle Unterstützung für die zoneless Change Detection:
+  Ein Schritt weg von zone.js, hin zu einer schlankeren, schnelleren Änderungserkennung.
+- Angular.dev avanciert zur neuen Heimat für Angular-Entwickler:
+  Angular.dev löst nun endgültig angular.io als Plattform für Angular Entwickler ab. Sie bietet viel mehr als nur Dokumentation und ist ein interaktiver Spielplatz mit Tutorials und Lernumgebung.
+- Stabilisierung von Material 3, deferrable views und built-in Control Flow:
+  Die Key Features des letzten Releases sind nun reif für den produktiven Einsatz und wurden um zahlreiche Verbesserungen ergänzt.
+- Fortschritte im Server-Side Rendering:
+  Verbesserter i18n Hydration-Support, Debugging mit visuellen Hinweisen, Hydration-Support in Angular Material und Event Replay, angetrieben von der gleichen Technologie, die auch Google Search nutzt.
+
+
+Das Ganze könnt ihr euch zusammen mit Webdave anschauen! Hier ist der Link zum Video zum Angular Release auf Version 18!
+
+<iframe class="" width="100%" height="315" src="https://www.youtube.com/embed/fNf4BM6sJRE?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Zoneless Change Detection
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Zoneless-Logo"
+class="lazy img-fluid img-rounded" data-src="zoneless.jpg" data-srcset="zoneless.jpg"
+/>
+</p>
+
+Die aufregendste Neuigkeit zum Major Release von Angular v18 ist die experimentelle Unterstützung für die Zoneless Change Detection. Das ist eine kleine Revolution. Angular beginnt sich von zone.js zu lösen. Auch wenn die Scheidung noch einige Zeit dauern wird, ist sie offiziell eingereicht. Das zeigt sich auch darin, dass Zone.js keine neuen Features mehr annimmt, einschließlich Patches für native Plattform-APIs. Niedrig priorisierte Fehlerbehebungen werden vom Team nicht mehr akzeptiert. [Das Angular-Team rät sogar dringend davon ab, Zone.js in Zukunft außerhalb des Kontexts von Angular-Anwendungen zu verwenden](https://www.npmjs.com/package/zone.js?activeTab=readme).
+
+### Wie nutze ich Zoneless schon jetzt?
+
+
+Du kannst mit der Zoneless Change Detection ab sofort in deiner Angular-Anwendung experimentieren. Füge einfach `provideExperimentalZonelessChangeDetection()` zu deinen Providern hinzu:
+
+```typescript
+bootstrapApplication(App, {
+  providers: [
+    provideExperimentalZonelessChangeDetection()
+  ]
+});
+```
+
+Nachdem du den Provider hinzugefügt hast, entferne zone.js aus deinen Polyfills in angular.json. Ein Beispiel, wie du zoneless in deinen Komponenten verwenden kannst:
+
+```typescript
+@Component({
+  ...
+  template: `
+    <h1>Hallo von {{ name() }}!</h1>
+    <button (click)="handleClick()">Go Zoneless</button>
+  `,
+})
+export class App {
+  protected name = signal('Angular');
+
+  handleClick() {
+    this.name.set('Zoneless Angular');
+  }
+}
+
+```
+
+In diesem Beispiel bewirkt ein Klick auf den Button, dass die Methode handleClick aufgerufen wird, was den Signalwert aktualisiert und die UI entsprechend anpasst.
+
+
+### Vorteile der Zoneless Change Detection?
+Die neue Zoneless Change Detection bietet viele Möglichkeiten für Entwickler/innen:
+Verbesserte Integration für Micro-Frontends und Interoperabilität mit anderen Frameworks.
+Schnelleres Rendering und bessere Laufzeitperformance.
+Vereinfachtes Debugging und lesbarere Stacktraces.
+
+
+### Die Rolle von Signals für Zoneless
+Ein Kernaspekt von zoneless ist die Einführung von Signals, die eine direkte und reaktive Zustandsverwaltung ermöglichen. Signals sind entscheidend für die effiziente Steuerung der Änderungserkennung, da sie es ermöglichen, Zustände explizit zu aktualisieren, ohne dass zone.js jede Aktion überwachen muss. Dies führt zu einer deutlichen Performance-Steigerung und vereinfacht die Komponentenkommunikation durch klar definierte Datenflüsse.
+
+## Signals
+
+Unser persönliches Highlight in dieser Version sind die neuen Signal APIs, die jetzt im Developer Preview verfügbar sind. Diese APIs transformieren die Art und Weise, wie Werte in Komponenten gehandhabt werden, weg von klassischen Klassenattributen hin zu Signals. Das Ziel ist, Komponenten zu Signal-Komponenten weiterzuentwickeln, was die Change Detection revolutionieren könnte.
+Zu den Signal APIs gehören:
+
+- input
+- output
+- viewChild
+- viewChildren
+- contentChild
+- contentChildren
+- model
+
+Bis auf model, das eine Kombination aus input und output darstellt und damit ein intuitives Two-Way-Binding ermöglicht, sind die anderen schnell erklärt: Sie ersetzen die bestehenden Dekoratoren durch Signale.
+Ein Beispiel:
+```typescript
+import { Component, model } from '@angular/core';
+
+@Component({
+  selector: 'app-search',
+  standalone: true,
+  template: `
+    <input
+      #searchInput
+      [value]="searchStr()"
+      (input)="searchStr.set(searchInput.value)" />
+  `,
+})
+export class SearchComponent {
+  searchStr = model();
+}
+
+<app-search [(searchStr)]="search" />
+```
+
+
+## Updates der Angular DevTools
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Hydration-Logo"
+class="lazy img-fluid img-rounded" data-src="hydration.jpg" data-srcset="hydration.jpg"
+/>
+</p>
+
+Angular v18 bringt auch ein Update für die Angular DevTools. Die neueste Version der DevTools ermöglicht es Entwicklern, den Hydration-Status der Komponenten visuell zu verfolgen. Du findest jetzt neben jeder Komponente ein Icon, das den Hydrationstatus der Komponente anzeigt. Ein neuer Overlay-Modus zeigt an, welche Komponenten hydratisiert wurden und welche noch ausstehen. Sollten in der Anwendung Hydrationsfehler auftreten, sind diese in den Angular DevTools im Komponenten-Explorer leichter zu erkennen.
+
+## Verbesserungen im Server-Side Rendering
+
+Das Server-Side Rendering (SSR) in Angular hatte für das Entwicklerteam dieses Jahr eine hohe Priorität, wie aus der Roadmap und zahlreichen Interviews hervorgeht. Folgerichtig gibt es aus dem Joint Venture mit dem [Chrome Aurora Team](https://developer.chrome.com/docs/aurora/overview?hl=de) auch mit diesem Major Update wieder einiges zu berichten im Bereich des Server-Side Rendering.
+
+Zu den neuen Features gehören die Unterstützung für i18n Hydration, ein verbessertes Debugging, der Hydration Support in Angular Material sowie das Event Replay, das durch die gleiche Bibliothek ermöglicht wird, die auch die Google Search antreibt. Mindestens genauso wichtig sind in diesem Zusammenhang aber auch die Stabilisierung der Deferrable Views und deren Rolle in der Implementierung der partiellen Hydration.
+
+### i18n Hydration-Support
+
+Ein Update gab es auch für den i18n Hydration Support. I18n ist ein Numeronym und heißt nichts anderes als “Internationalisation”. Gemeint ist damit ein Modul, das sowohl Inhalte als auch Attribute deiner HTML-Tags übersetzt. Lokalisierte Inhalte werden nun noch schneller geladen und rehydriert, was eine durchgehend flüssige User Experience über verschiedene Sprachen hinweg sicherstellt. Dies ist besonders wichtig für globale Anwendungen, die eine breite Nutzerbasis haben und schnelle Ladezeiten in verschiedenen Sprachen bieten müssen. Ein anderes Anwendungsgebiet ist die Accessibility, wenn es darum geht, ARIA Attribute zu übersetzen.
+
+### Event Replay
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Wiz-Logo"
+class="lazy img-fluid img-rounded" data-src="wiz.jpg" data-srcset="wiz.jpg"
+/>
+</p>
+
+
+Angular und Googles internes Framework Wiz sollen langfristig zusammengeführt bzw. integriert werden, um ihre Features und Technologien zu vereinheitlichen. Das Ziel dieser Konvergenz ist natürlich, die besten Eigenschaften beider Frameworks zu kombinieren. Zur Erinnerung: Angular und Wiz haben bisher zwei verschiedene Anwendungsbereiche bedient. Wiz wurde vor allem für leistungsorientierte Consumer Apps genutzt, während Angular sich auf die Developer Experience konzentrierte.
+
+In einem ersten Schritt arbeitet Wiz jetzt mit Angular Signals in sein Rendering-Modell integriert. So nutzt die Video-Plattform YouTube bereits Angular Signals. In die andere Richtung ist das Event Dispatch (früher als jsaction bekannt) nun im Angular-Monorepo integriert. Event Replay zeichnet Benutzerinteraktionen während der Initialladung auf und spielt sie ab, sobald deine Anwendung vollständig hydratisiert und interaktiv ist. Damit wird sichergestellt, dass trotz schlechter Internetverbindung keine Usereingaben verloren gehen.
+
+Event Replay ist von nun an in der Developer Preview verfügbar. Du kannst es via `withEventReplay()` aktivieren:
+
+```javascript
+bootstrapApplication(App, {
+  providers: [
+    provideClientHydration(withEventReplay())
+  ]
+});
+```
+
+
+## Angular.dev ist das neue Zuhause
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem AngularDev-Logo"
+class="lazy img-fluid img-rounded" data-src="angulardev.jpg" data-srcset="angulardev.jpg"
+/>
+</p>
+
+[Angular.dev](https://angular.dev/) wurde bereits mit dem Update auf Version 17 vorgestellt und löst nun endgültig Angular.io als Hauptquelle für Informationen und Ressourcen ab. Alle Anfragen an angular.io werden nun automatisch auf angular.dev umgeleitet. Damit sichergestellt ist, dass alle bestehenden Links weiterhin funktionieren, werden eure Anfragen zu [v17.angular.io](https://angular.dev/) weitergeleitet.
+
+Über das überarbeitete, neue Design, Dokumentation und die [Tutorials](https://angular.dev/tutorials/learn-angular) haben wir euch bereits berichtet. Richtig gut finden wir die [interaktive Lernumgebung](https://angular.dev/playground), um neue Features oder erste Schritte direkt im Browser auszuprobieren und zu lernen. Angular.dev erleichtert insbesondere Junior Entwicklern und Quereinsteigern den Einstieg in das Framework.
+
+## Diese Features sind jetzt stabil
+
+### Material 3
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Material-Logo"
+class="lazy img-fluid img-rounded" data-src="material.jpg" data-srcset="material.jpg"
+/>
+</p>
+
+
+Material 3 ist die neueste Iteration des bekannten Design Systems und nun offiziell stabil. Die Komponentenbibliothek wurde vor einigen Monaten als experimentelles Feature vorgestellt. Mit der Stabilisierung von Material 3 wurden auch neue Komponenten und Funktionen eingeführt. Dazu gehören neue Date- und Timepicker, eine verbesserte Navigation und neue Formularsteuerelemente. Dazu gibt es neue Themes, eine bessere Unterstützung für dunkle Modi und mehr Accessibility in den Komponenten.
+
+Neben den visuellen Updates hat Angular Material 3 auch in Sachen Performance zugelegt. Die Komponenten sind optimiert worden, um schneller und effizienter zu laden. Zusätzlich wurde die Webseite [material.angular.io](https://material.angular.io/) mit den neuen Material 3 Themes und entsprechenden Dokumentationen aktualisiert.
+
+Eine Anleitung zur Nutzung von Angular Material 3 in eurer Anwendung findet ihr [hier](https://material.angular.io/guide/getting-started).
+
+### Built-in Control Flow
+
+Die in v17 vorgestellte neue Built-In Control Flow Syntax ist nun ebenfalls stabil. Die Control Flow Syntax ermöglicht eine effiziente Handhabung logischer Operationen innerhalb einer Angular Anwendung. Bisher gehörten Strukturdirektiven wie ngIf, ngFor und ngSwitch zwar zum Framework, aber nicht direkt zur Komponentenlogik, was zu einer Diskrepanz zwischen Komponentenlogik und Template-Kontrolle führte. Vor allem komplexere Datenstrukturen und State Management sind jetzt einfacher zu implementieren.
+
+Entwickler können nun direkt auf Änderungen im Template reagieren, ohne auf Umwege über Strukturdirektiven angewiesen zu sein. Ein Beispiel für diese neue Syntax könnte so aussehen:
+
+```html
+@template {
+  <!-- Bisher -->
+  <div *if="bedingung">Inhalt anzeigen</div>
+
+  <!-- Neu -->
+  @if(bedingung){
+    <div>Inhalt anzeigen</div>
+  }
+}
+```
+Hier findest du den Link zum passenden Stackblitz unseres Trainers Webdave.
+
+## Partial Hydration und Deferrable Views
+Ein Highlight des Updates sind die nun stabilisierten "deferrable views". Das sind die Code-Bausteine für Partial Hydration. Sie erlauben es Entwicklern, gezielt zu steuern, welche Teile ihrer Anwendung wann gerendert und hydratisiert werden sollen. Deferrable Views erlauben es, das Laden bestimmter Komponenten bis zu einem ausgelösten Ereignis zu verzögern. Statt wie bisher den @placeholder-Block auf dem Server zu rendern, müssen dafür alle Inhalte innerhalb der festgelegten Defer-Blöcke serverseitig gerendert und nur auf Client-Seite nach Bedarf hydratisiert werden. Das kann ein Scrollen des Users sein oder ein anderer Interaktionspunkt.
+Mit Hilfe von @defer-Blöcken können Entwickler das Laden und Rendern von Komponenten gezielt verzögern:
+```html
+@defer (on viewport) {
+  <meine-komponente />
+}
+```
+Hier haben Entwickler folgende Möglichkeiten:
+- on idle: Lädt Komponenten, wenn der Browser inaktiv ist.
+- on immediate: Lädt Komponenten sofort nach der Initialisierung.
+- on viewport: Lädt Komponenten, wenn sie in den
+- on viewport: Lädt Komponenten, wenn sie in den sichtbaren Bereich des Bildschirms kommen.
+
+In diesem Szenario lädt der Browser die JavaScript-Bundles für die eingestellten Deferred Views nicht, bis ein Trigger-Ereignis auftritt. Erst dann lädt Angular das zugehörige JavaScript herunter und hydratisiert diesen Teil der Ansicht. Wenn eine Komponente nicht benötigt wird, wird sie gar nicht erst hydratisiert. Das macht auch Sinn. Wenn man einen Flug suchen oder buchen will, ist es für die User Experience wichtiger, dass alle interaktiven Elemente in diesem Zusammenhang möglichst schnell geladen sind. In eher seltenen Fällen priorisieren Nutzerinnen die Marketing- oder Bonusangebote wie Restauranttipps. Und wenn diese Angebote gar nicht erst wahrgenommen werden, warum sollten sie überhaupt hydratisiert werden?
+
+
+Die stabilisierten Deferrable Views sind ein weiterer Schritt einer grundsätzlichen Richtungsänderung für das Rendering in Angular. Wie bereits in der Roadmap angekündigt, plant das Angular Team, zukünftig standardmäßig auf ein hybrides Rendering (Server-Side Rendering, Partial Hydration und Static Site Generation) zu setzen. Derzeit arbeitet man im Hause Angular daran, die Bedeutung von Data Triggers zu evaluieren, wie zum Beispiel das Übergeben von empfangenen Eigenschaften oder das Ändern von Binding Values.
+
+
+Für Unternehmen gibt es nun das Early Access Programm. Wer daran teilnehmen möchte, kann sich per E-Mail an devrel@angular.io wenden.
+
+## Firebase App Hosting
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem Firebase-Logo"
+class="lazy img-fluid img-rounded" data-src="firebase.jpg" data-srcset="firebase.jpg"
+/>
+</p>
+
+Um der gewachsenen Komplexität auch auf der Hosting-Ebene gerecht zu werden, gibt es auch gute Neuigkeiten aus dem Hause Firebase.
+
+Firebase hat "App Hosting" hilft dir beim Hosting von Angular- und Next.js-Anwendungen durch automatisches Bauen und Deployen von statischen Assets und dynamischen Inhalten. Die nahtlose Integration mit GitHub ermöglicht es, Änderungen direkt aus dem Repository zu deployen.
+
+
+Durch die Integration in das breite Spektrum der Google Cloud-Produkte und durch die Verwaltung von Backend-Services wie Cloud Build, Cloud Run und Cloud CDN, skaliert Firebase App Hosting automatisch mit der Nachfrage.
+
+
+Mehr Informationen gibt es dazu [hier](https://firebase.blog/posts/2024/05/introducing-app-hosting/).
+
+## Community-Highlights
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Illustration von Händen, die ein leeres Plakat halten mit dem NG-DE Logo"
+class="lazy img-fluid img-rounded" data-src="ngde.jpg" data-srcset="ngde.jpg"
+/>
+</p>
+
+In der Welt von Angular tut sich aber auch in der Community viel. Sie ist lebendiger denn je!
+
+
+Am meisten hat uns gefreut, dass es dieses mal Kudos an unsere Konferenz [Ng-de](https://ng-de.org/tickets/) gab! Neben der [ng-conf](https://ng-conf.org/), [Angular Belgrade](https://angularbelgrade.org/), [NGPoland](https://ng-poland.pl/), [ngRome](https://ngrome.io/), [NG Kenya](https://ng-kenya.com/home), [ngIndia](https://www.ng-ind.com/) und [Angular TLV](https://angular-tlv.com/) wurde die Ng-de als ein Konferenz-Highlight des Jahres genannt.
+
+
+BTW, die Ng-de findet vom 10-11. Oktober im Maritim Hotel in Bonn statt. [Karten kannst du hier bestellen](https://ng-de.org/tickets/). Wir freuen uns auf dich!
+
+## Outro: Angular 18 – die Angular Renaissance hat gerade erst angefangen
+
+Alles in allem sagen wir zum Release: Die "Angular Renaissance" setzt sich mit voller Kraft fort! Und wenn Angular v18 unter dem Motto “innehalten und reflektieren” lesen, dann wirds bald wild!
+
+Version 18 ist wieder mal der beste Beweis dafür, dass Developer Experience und technische Performance Hand in Hand gehen müssen. Die Einführung der experimentellen Zoneless Change Detection und die strategische Implementierung von Signals und Deferrable Views haben einen soliden technischen Grundstein gelegt. Dies ermöglicht eine schrittweise und fundamentale Neugestaltung der Change Detection und Rendering-Strategie, die Entwicklern den Übergang erleichtert, ohne sie zu überfordern. Angulars Ansatz, diese Änderungen schrittweise und auf Basis der neuen technischen Features umzusetzen, stellt sicher, dass alle weiteren Entwicklungen auf einem stabilen Fundament aufbauen. Diese durchdachte Herangehensweise ist kein Zufall, sondern das Resultat der aktiven Integration des Community-Feedbacks in den Entwicklungsprozess. Wir sind gespannt auf die Updates, die sich auf diese grundlegenden Neuerungen stützen werden.
+
+
+Mit dem neuesten Update hat Angular unserer Meinung nach seine Position als Primus in der Entwicklung von skalierbarer Unternehmenssoftware gestärkt. Wir begrüßen die deutliche Ausrichtung auf eine optimierte Developer Experience, mehr Accessibility und Community. Das ist eine gelungene Vision für eine lange und große Zukunft des Frameworks.
+
+
+Sind wir also am Höhepunkt der "Angular Renaissance" oder erst am Anfang einer neuen Ära? Wir sind zweifellos mittendrin in einer spannenden Zeit.]]></content><author><name>Lulëzim Ukaj</name></author><category term="angular" /><category term="release" /><category term="update" /><summary type="html"><![CDATA[Alle neuen Features und Updates in Angular 18, über die Zoneless Change Detection und die Angular Developer Experience und die Angular Renaissance."]]></summary></entry><entry><title type="html">Signal Inputs: Jetzt wird die Kommunikation zwischen Eltern- und Kindelementen noch einfacher</title><link href="http://localhost:4000/artikel/angular-signal-inputs/" rel="alternate" type="text/html" title="Signal Inputs: Jetzt wird die Kommunikation zwischen Eltern- und Kindelementen noch einfacher" /><published>2024-05-02T00:00:00+02:00</published><updated>2024-05-02T00:00:00+02:00</updated><id>http://localhost:4000/artikel/angular-signal-inputs</id><content type="html" xml:base="http://localhost:4000/artikel/angular-signal-inputs/"><![CDATA[Mit einem Minor Update der Version 17 hat das Angular-Team ein neues Feature, [Signal Inputs](https://angular.dev/guide/signals/inputs#monitoring-changes), eingeführt. Die neuen Inputs sind eine reaktive Alternative zum traditionellen [@Input()-Dekorator](https://angular.dev/api/core/Input#) und machen es Entwicklern nun noch leichter, Daten zwischen Parent- und Child-Komponenten zu übertragen. Das Feature befindet sich zwar noch in der Developer Preview, dennoch ist der neue deklarative Ansatz bereits ein voller Erfolg in der Angular Community. Das ist ein guter Grund, uns das Ganze mal näher anzusehen.
+
+
+## Der @Input-Dekorator
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Infografik, die den Data Flow von einer Parentkomponente zur Childkomponente darstellt"
+class="lazy img-fluid img-rounded" data-src="2.jpg" data-srcset="2.jpg"
+/>
+</p>
+
+
+Der [@Input()-Dekorator](https://angular.dev/guide/components/inputs#customizing-inputs)  ist eines der meistgenutzten Features in Angular. Er ermöglicht es, Daten von einer Eltern- an ihre Kinderkomponente zu übertragen. Das ist einer der technischen Grundbausteine für wiederverwendbare und modulare UI-Komponenten und damit für skalierbare Web-Anwendungen in Angular. Traditionell gab es immer einiges manuell einzustellen und zu managen, wenn es darum ging, ein performantes State Management zu implementieren. Das ist zeitintensiv und erfordert auch tiefgreifende Kenntnisse der Web-Entwickler*innen.
+
+
+Um das Ganze verständlicher zu machen, betrachten wir ein einfaches Beispiel:
+
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Grafische Darstellung einer Grußkarten Web-Anwendung bestehend aus zwei select-Elementen und einer Textbox"
+class="lazy img-fluid img-rounded" data-src="1.jpg" data-srcset="1.jpg"
+/>
+</p>
+
+
+
+Unsere Anwendung besteht aus zwei Dropdown-Menüs (`<select>`-Elementen) und soll einem Unternehmen helfen, Glückwunsch- oder Beileid-Nachrichten zu verfassen. Das erste Dropdown enthält eine Liste von Mitarbeitern, und das zweite Dropdown eine Liste von Anlässen wie Geburtstag, Todesfall, Geburt und Urlaub. Wir haben unsere Angular-Anwendung in eine Parent- und eine Child-Komponente aufgeteilt. Die Parent-Komponente (CongratsParentComponent) verwaltet die Auswahl von Namen und Anlässen aus den Dropdown-Menüs und gibt diese Werte an die Child-Komponente weiter. Die Child-Komponente (CongratsChildComponent) empfängt die ausgewählten Werte als Inputs und generiert eine passende Nachricht.
+
+
+### Elternkomponente (ParentComponent)
+
+
+```typescript
+import { Component } from '@angular/core';
+
+
+@Component({
+  selector: 'app-congrats-parent',
+  template: `
+    <h2>Glückwunsch-Generator</h2>
+    <app-congrats-child [selectedEmployee]="selectedEmployee" [selectedReason]="selectedReason"></app-congrats-child>
+    <select [(ngModel)]="selectedEmployee">
+      <option *ngFor="let employee of employees">{{employee}}</option>
+    </select>
+    <select [(ngModel)]="selectedReason">
+      <option *ngFor="let reason of reasons">{{reason.label}}</option>
+    </select>
+  `
+})
+export class CongratsParentComponent {
+  selectedEmployee: string;
+  selectedReason: { value: string; label: string };
+  employees = ['Max Mustermann', 'Erika Musterfrau', 'John Doe'];
+  reasons = [
+    { value: 'birthday', label: 'Geburtstag' },
+    { value: 'death', label: 'Todesfall' },
+    { value: 'birth', label: 'Geburt' },
+    { value: 'vacation', label: 'Urlaub' }
+  ];
+
+
+  constructor() {
+    this.selectedEmployee = this.employees[0];
+    this.selectedReason = this.reasons[0];
+  }
+}
+```
+
+
+### Kindkomponente (ChildComponent)
+
+
+```typescript
+import { Component, Input } from '@angular/core';
+
+
+@Component({
+  selector: 'app-congrats-child',
+  template: `
+    <div>
+      <p>Generierte Nachricht:</p>
+      <p>{{ generateMessage(selectedEmployee, selectedReason.value) }}</p>
+    </div>
+  `
+})
+export class CongratsChildComponent {
+  @Input() selectedEmployee: string;
+  @Input() selectedReason: { value: string; label: string };
+
+
+  generateMessage(employee: string, reason: string): string {
+    switch(reason) {
+      case 'birthday':
+        return `Herzlichen Glückwunsch zum Geburtstag, ${employee}!`;
+      case 'death':
+        return `Unser tiefstes Beileid zum Verlust, betreffend ${employee}.`;
+      case 'birth':
+        return `Herzlichen Glückwunsch zur Geburt, ${employee}!`;
+      case 'vacation':
+        return `Schönen Urlaub, ${employee}!`;
+      default:
+        return 'Bitte wählen Sie einen Mitarbeiter und einen Grund aus.';
+    }
+  }
+}
+```
+
+
+## Wie machen Signal Inputs das Ganze leichter?
+
+
+Die neuen Signal Inputs in Angular machen es für Entwickler um einiges leichter, mit dynamischen Komponenten zu arbeiten.
+
+Anstatt wie in unserem Codebeispiel den @Input()-Dekorator und einen OnChanges-Lifecycle-Hook zu verwenden, bieten Signal Inputs eine direkte und reaktive Alternative.
+
+
+Hier kannst du übrigens [unser Codebeispiel auf Stackblitz](https://stackblitz.com/edit/stackblitz-starters-3cb1y5?file=src%2Fcongrats-child.component.ts) ansehen! Kudos wieder an Webdave!
+
+
+### Elternkomponente (ParentComponent) mit Signal Inputs
+
+
+```typescript
+
+import { Component, signal } from '@angular.core';
+import { CongratsChildComponent } from './congrats-child.component';
+
+
+@Component({
+  selector: 'app-congrats-parent',
+  standalone: true,
+  imports: [CongratsChildComponent],
+  template: `
+    <h2>Grußkarten-Generator</h2>
+    <app-congrats-child
+      [employee]="selectedEmployee()"
+      [reason]="selectedReason()"
+    ></app-congrats-child>
+    <select #employeeSelect (change)="selectedEmployee.set(employeeSelect.value)">
+      <option *ngFor="let emp of employees">{{emp}}</option>
+    </select>
+    <select #reasonSelect (change)="selectedReason.set(reasonSelect.value)">
+      <option *ngFor="let reason of reasons">{{reason.label}}</option>
+    </select>
+  `,
+})
+export class CongratsParentComponent {
+  employees = ['Max Mustermann', 'Erika Musterfrau', 'John Doe'];
+  reasons = [
+    { value: 'birthday', label: 'Geburtstag' },
+    { value: 'death', label: 'Todesfall' },
+    { value: 'birth', label: 'Geburt' },
+    { value: 'vacation', label: 'Urlaub' },
+    { value: null, label: 'none' },
+  ];
+
+
+  selectedEmployee = signal<string>(this.employees[0]);
+  selectedReason = signal<{ value: string | null; label: string }>(this.reasons[0]);
+
+
+  setSelectedReason(i: string) {
+    this.selectedReason.set(this.reasons[parseInt(i, 10)]);
+  }
+}
+```
+
+
+### Kindkomponente (ChildComponent) mit Signal Inputs
+
+
+```typescript
+import { Component, computed, effect, input } from '@angular.core';
+
+
+@Component({
+  selector: 'app-congrats-child',
+  standalone: true,
+  template: `
+    <div>
+      <p>Generierte Nachricht:</p>
+      <p>{{ message() }}</p>
+    </div>
+  `,
+})
+export class CongratsChildComponent {
+  employee = input<string>();
+  reason = input<{ value: string | null; label: string }>({
+    value: '', label: ''
+  });
+
+
+  e = effect(() => {
+    const { value } = this.reason();
+    if (!value) {
+      alert('Ein Glückwunsch-Grund muss angegeben werden!');
+    }
+  });
+
+
+  message = computed(() => {
+    if (!this.employee() || !this.reason()) {
+      return 'Bitte wählen Sie einen Mitarbeiter und einen Grund aus.';
+    } else {
+      switch(this.reason()?.value) {
+        case 'birthday':
+          return `Herzlichen Glückwunsch zum Geburtstag, ${this.employee()}!`;
+        case 'death':
+          return `Unser tiefstes Beileid zum Verlust, betreffend ${this.employee()}.`;
+        case 'birth':
+          return `Herzlichen Glückwunsch zur Geburt, ${this.employee()}!`;
+        case 'vacation':
+          return `Schönen Urlaub, ${this.employee()}!`;
+        default:
+          return '';
+      }
+    }
+  });
+}
+```
+
+
+Anstatt auf Änderungen manuell mit ngOnChanges zu reagieren, geben die Signal Inputs die aktuellen Werte von employee und reason automatisiert weiter. Dies vereinfacht die Implementierung und macht den Code kürzer, sauberer und intuitiver.
+
+## Optionale vs. erforderliche Inputs
+Angular unterscheidet klar zwischen optionalen und erforderlichen Signal Inputs.
+### Optionale Inputs
+Optionale Signal Inputs müssen nicht verwendet werden und können undefined sein.
+Das ist für Szenarien gedacht, in denen Daten nicht an die Elternkomponente übergeben werden müssen. Beispielsweise hat das Input einen Default-Wert, der noch überschrieben werden kann. Das geschieht dann mit Hilfe der input()-Funktion.
+
+**Außerdem wichtig:**
+
+Wenn kein Wert angegeben wird, verwendet Angular per Default “undefined” als Wert.
+
+
+Zurück zu unserem Beispiel: Angenommen, die Auswahl eines Mitarbeiters ist optional. Bei bestimmten Anlässen, wie bei einem Todesfall, soll der Name handschriftlich notiert werden:
+```typescript
+class CongratsChildComponent {
+  employee = input<string | undefined>(undefined);
+}
+```
+
+
+
+
+### Erforderliche Inputs
+Erforderliche Signal Inputs hingegen müssen genutzt werden. Diese Inputs werden mit der input.required()-Funktion deklariert. Hier sollen vor allem Fehler durch fehlende Daten vermieden werden.
+
+
+In unserem Beispiel muss der Anlass für unsere Glückwunschkarte immer angegeben werden:
+
+
+```typescript
+class CongratsChildComponent {
+  reason = input.required<{ value: string; label: string }>();
+}
+```
+
+
+## Aliasing von Inputs
+Aliasing ermöglicht es dir, ein Input in der Parent-Komponente einen anderen Namen zu geben als in der Child-Komponente. Das hat den Vorteil, dass du die Namen verwenden kannst, die am besten zum internen Kontext oder zur Logik deiner Komponenten passen. In unserem Beispiel möchtest du den selectedEmployee-Input in der Child-Komponente als employeeName nutzen. Das kannst du über die Alias-Funktion der input()-Methode erreichen.
+
+Betrachten wir wieder unser Grußkarten-Beispiel:
+
+
+```typescript
+// In der Kindkomponente
+employeeName = input<string>('', { alias: 'selectedEmployee' });
+generateMessage() {
+  return `Herzlichen Glückwunsch, ${this.employeeName()}!`;
+}
+
+
+// In der Elternkomponente
+<app-congrats-child [selectedEmployee]="selectedEmployee"></app-congrats-child>
+<!-- Rest des Templates →
+
+
+```
+
+
+Das Aliasing kann in bestimmten Fällen sinnvoll sein, um zum Beispiel Namenskonflikte zu vermeiden oder für Refactoring-Arbeiten.
+
+**ABER!**
+
+Hier verweisen wir euch auf den Style Guide in der Angular Dokumentation:
+
+[Style 05-13: Avoid aliasing inputs and outputs](https://angular.dev/style-guide#avoid-aliasing-inputs-and-outputs)
+
+
+Generell gilt, bei Aliases für @input - und @ output - Dekoratoren vorsichtig zu sein. Zwei unterschiedliche Namen für die gleiche Property stiften im Team eher Verwirrung als sie Nutzen bringen. Der Styleguide empfiehlt nur dann ein Alias nur in einem einzigen Fall zu ​​verwenden, und zwar wenn der Direktivenname auch eine Input Property ist und der Direktivenname die Property nicht beschreibt!
+
+
+## Ableiten von Werten (Deriving)
+Das Ableiten von Werten (Deriving) mit Signal Inputs ermöglicht es, abgeleitete States oder Werte dynamisch zu erzeugen. Mit Hilfe der computed-Funktion lassen sich leicht neue, abgeleitete States erzeugen, ohne dass sie manuell eingestellt werden müssen.
+
+In unserem fiktiven Beispiel könnten wir die computed-Funktion nutzen, um anhand des Mitarbeitergeschlechts unsere Glückwunschnachricht entsprechend abzuleiten. Je nachdem, ob der Name mit einem "a" endet (weiblich), soll die Grußbotschaft ein "liebe" oder "lieber" vor dem Text setzen:
+
+
+```typescript
+message = computed(() => {
+  if (!this.employee() || !this.reason()) {
+    return 'Bitte wählen Sie einen Mitarbeiter und einen Grund aus.';
+  } else {
+    switch (this.reason()?.value) {
+      case 'birthday':
+        return `Herzlichen Glückwunsch zum Geburtstag, ${this.employee()}!`;
+      case 'death':
+        return `Unser tiefstes Beileid zum Verlust, betreffend ${this.employee()}.`;
+      case 'birth':
+        return `Herzlichen Glückwunsch zur Geburt, ${this.employee()}!`;
+      case 'vacation':
+        return `Schönen Urlaub, ${this.employee()}!`;
+      default:
+        return '';
+    }
+  }
+});
+```
+
+
+Die computed Funktion ermöglicht es, dynamisch abgeleitete States effizient zu verwalten. Das vereinfacht das Arbeiten mit interaktiven Anwendungen deutlich. Zudem wird dein Code lesbarer, indem klar zwischen statischen und dynamischen Zuständen getrennt wird.
+
+
+## Monitoring (Überwachen von Änderungen)
+
+Das Monitoring ist das A und O der reaktiven Programmierung in Angular. Eine zentrale Rolle spielt hier die effect-Funktion. Sie hilft dir, Aktionen oder Effekte auszulösen, sobald sich der Wert eines Signal Inputs ändert. Das ist besonders nützlich, wenn die Benutzeroberfläche automatisch aktualisiert werden soll oder in unserem Beispiel eine Notification an den User gegeben werden soll. Was passiert, wenn wir vergessen, einen Grund auszuwählen? Unsere Anwendung erzeugt eine Fehlermeldung! Diese Warnung soll als Popup (alert) angezeigt werden. Sie kann aber auch als sichtbare Nachricht im Benutzerinterface erscheinen.
+
+
+```typescript
+reasonEffect = effect(() => {
+  const { value } = this.reason();
+  if (!value) {
+    alert('Ein Grund muss angegeben werden!');
+  }
+});
+```
+
+
+Das Monitoring über Signal Inputs in einer Anwendung bietet eine Reihe von Vorteilen. Zum einen werden durch das Monitoring Ressourcen geschont, da nur die View-Updates durchgeführt werden, in denen sich tatsächlich etwas ändert. Im Gegensatz dazu prüft Angular im Default Mode bei einem Auslöser den gesamten Komponentenbaum der App auf Änderung. Der andere große Vorteil ist, dass keine onPush Change Detection mühsam manuell implementiert werden muss. Diese automatische Aktualisierung verbessert die Benutzererfahrung, indem sie die Anwendung reaktiv und aktuell hält. Zudem trägt es zur Fehlerminimierung bei, indem es sicherstellt, dass alle erforderlichen Daten vorhanden sind, bevor weiterführende Aktionen ausgeführt werden, was letztlich die Zuverlässigkeit der Anwendung steigert. Das führt zu einer deutlich entspannteren Entwickler-Experience.
+## Werttransformation
+Die Transform-Funktion bei Signal Inputs in Angular dient dazu, Eingabewerte in Echtzeit zu modifizieren oder zu normalisieren, bevor sie weiterverarbeitet werden. Ein Beispiel dafür ist die Umwandlung von Datumsangaben in ein einheitliches Format. Das ist besonders nützlich im internationalen Umfeld und reduziert die Komplexität in den Komponenten. Nehmen wir an, unsere Glückwunsch-Anwendung erhält das Geburtsdatum eines Mitarbeiters in verschiedenen internationalen Formaten. Die Transform-Funktion könnte verwendet werden, um das Datum in ein einheitliches Format umzuwandeln, bevor es in einer Nachricht verarbeitet oder angezeigt wird:
+```typescript
+birthDate = input('', {
+  // Transformiert das Datum ins deutsche Format
+  transform: (date: string) => new Date(date).toLocaleDateString('de-DE'),
+});
+```
+
+
+## Fazit und Ausblick auf Signal Inputs
+
+Signal Inputs in Angular bieten ein neues Tool fürs Data Binding und State Management in komplexen Webanwendungen. Der große Vorteil der neuen Inputs liegt in ihrer reaktiven Natur. Anders als traditionelle @Input-Dekoratoren ermöglichen Signal Inputs eine automatische Change Detection. Das vereinfacht die Implementierung von dynamischen Benutzeroberflächen. Das wiederum spart Zeit und Ressourcen.
+
+
+Die Signal sind Input sind ein weiterer Beweis, welchen Stellenwert die Developer Experience für das Angular Team dieses Jahr bekommen hat. Wir haben hier bereits oft davon gesprochen, eine verbesserte Developer Experience ist eines der Hauptziele dieses Jahr. Viele der neuen Angular Features müssen unter diesem Aspekt betrachtet werden. Während die Anforderungen an und die Komplexität der Webanwendungen gerade eher exponentiell zu steigen scheinen, reduzieren Signal Inputs den Boilerplate-Code. Das ist frischer Wind und macht Spaß.
+Keep the Flow, Angular!
+
+
+## Werde Teil unserer Community
+
+
+Wie immer laden wir euch ein, Teil unserer [Angular Community auf Discord](https://workshops.de/join-discord) zu werden. Seit 2013 bieten wir euch hier Tutorials, Artikel und Schulungen rund um das Angular Framework. Gestartet durch unsere Begeisterung für die modernen Möglichkeiten der Webentwicklung hat sich mittlerweile eine ganze Community dazu entwickelt. Mit mittlerweile 18 Meetups, die insgesamt über 10.000 Angular-Entwickler*innen:innen als Plattform für regelmäßigen Austausch dienen, sind wir damit in Europa die Region mit den meisten Angular-Entwickler*innen.
+[Werde Teil unserer Community!](https://workshops.de/join-discord)]]></content><author><name>Lulëzim Ukaj</name></author><category term="angular" /><category term="signals" /><category term="input" /><category term="output" /><summary type="html"><![CDATA[Signal Inputs in Angular: Vereinfachte Parent-Child-Kommunikation mit deklarativem, reaktivem Ansatz für eine bessere Developer Experience.]]></summary></entry><entry><title type="html">Bonn ruft: ng-de &amp;amp; vuejs.de 2024 suchen Speaker – Call for Papers endet morgen.</title><link href="http://localhost:4000/artikel/bonn-ruft-ngde-and-vuejsde-2024-suchen-speaker-call-for-paper-endet-morgen/" rel="alternate" type="text/html" title="Bonn ruft: ng-de &amp;amp; vuejs.de 2024 suchen Speaker – Call for Papers endet morgen." /><published>2024-04-09T00:00:00+02:00</published><updated>2024-04-09T00:00:00+02:00</updated><id>http://localhost:4000/artikel/bonn-ruft-ngde-and-vuejsde-2024-suchen-speaker-call-for-paper-endet-morgen</id><content type="html" xml:base="http://localhost:4000/artikel/bonn-ruft-ngde-and-vuejsde-2024-suchen-speaker-call-for-paper-endet-morgen/"><![CDATA[<p><iframe width="560" height="315" src="https://www.youtube.com/embed/oLYbPS-Zrr0" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe></p>
+
+Vom 8. bis zum 11. Oktober 2024 verwandeln wir die Stadt Bonn, die traditionell eher bekannt ist als Ort der Geschichte, in eine Stadt der digitalen Zukunft: Die [Ng-de](https://ng-de.org/) und [Vuejs.de](https://conf.vuejs.de/) Konferenzen stehen wieder an! Beide Events sind nicht nur Tech-Konferenzen mit internationaler Strahlkraft, sondern auch ein wichtiger Treffpunkt der deutschen Webentwickler-Community. Die ng-de ist die erste von der Community selbst organisierte Angular-Konferenz in Deutschland und versteht sich als Plattform für Wissensaustausch, Networking und Weiterbildung. Mit insgesamt 1300 erwarteten Teilnehmern, 60 nationalen und internationalen Speakern und Trainern sowie einem Programm, das über vier Tage 9 Workshops und 32 Sessions umfasst, sind die Ng-de und die Vuejs.de das europäischen Key-Events für alle, die im Angular-Bereich tätig sind oder sich dafür interessieren. Hier werden Best Practices und Trends ausgetauscht und kräftig innerhalb der deutschen und internationalen Entwickler-Community networked.
+
+## Call for Papers: Der Countdown läuft!
+
+Derzeit läuft unser Countdown für Call for Papers (CfP) für beide Konferenzen auf Hochtouren. Die ng-de und vuejs.de suchen nach Speakern, die bereit sind, ihr Wissen und ihre Leidenschaft mit der Community zu teilen. Egal, ob alte Hasen oder noch frisch hinter den Ohren in der Welt der Webentwicklung, viele von euch haben die Gelegenheit genutzt und spannende Themen eingereicht. Für alle anderen ist hier noch die letzte Erinnerung: Ihr habt noch Zeit bis morgen, dem 10. April 2024 um 23:59 Uhr CET, eure Paper einzureichen und Teil des Speaker-Teams zu werden. Also seid mutig und schickt uns eure Paper!
+
+* Für die ng-de habt ihr die Möglichkeit, hier eure Paper einzureichen: [Ng-de: Call for Paper](https://ng-de.org/call-for-papers/)
+* Für die vuejs.de habt ihr die Möglichkeit, hier eure Paper einzureichen: [Vuejs.de: Call for Paper](https://conf.vuejs.de/call-for-paper/)
+
+
+## Wie sieht der Bewerbungsprozess aus?
+
+
+Wir folgen dem Prozess der jsconf.eu für die Auswahl der Vorträge. Das bedeutet, dass eure Paper zunächst anonymisiert werden, um eine unvoreingenommene Bewertung zu gewährleisten. Erst dann bewertet unsere Jury eure eingereichten Paper. Die Top-Beiträge werden anschließend de-anonymisiert, um eure Speaker-Biography mit in die endgültige Entscheidung einfließen zu lassen.
+
+
+Nach Abschluss des Bewertungsprozesses werden die Ergebnisse zusammengetragen und analysiert. Vorträge, die durchweg positive Bewertungen erhalten haben, werden für das Konferenzprogramm in Betracht gezogen. Bei Vorträgen, bei denen die Meinungen auseinandergehen, kann eine Diskussion innerhalb der Jury dazu führen, dass eine gemeinsame Entscheidung getroffen wird.
+
+
+Dieser Prozess zielt darauf ab, eine ausgewogene und vielfältige Auswahl an Vorträgen für die Konferenz zu gewährleisten. Dabei spielen Faktoren wie Aktualität des Themas, Innovationsgrad, praktischer Nutzen für die Teilnehmenden und die Fähigkeit, komplexe Inhalte verständlich zu vermitteln, eine entscheidende Rolle.
+
+
+Abschließend wird bei der endgültigen Auswahl der Vorträge auch darauf geachtet, dass eine Vielfalt an Perspektiven und Hintergründen vertreten ist. Dies soll nicht nur die Qualität des Konferenzprogramms steigern, sondern auch die Inklusivität und Breite der Developer-Community widerspiegeln.
+
+## Tipps für eine erfolgreiche Einreichung: Wonach suchen wir?
+
+Damit dein Beitrag beim Call for Papers der ng-de und vuejs.de Konferenzen erfolgreich ist, sollte er am besten folgende Merkmale haben:
+
+
+- **Klarer und ansprechender Vortragstitel**: Dein Titel sollte informativ und gleichzeitig auch Neugier beim Publikum wecken. Vermeide daher immer generische Titel. Es ist am besten, dein Thema präzise und locker zusammenzufassen. Wenn es dir möglich ist, beziehe die Kernbotschaft deines Vortrags mit im Titel ein.
+- **Detaillierte und überzeugende Beschreibung**: Deine Beschreibung des Vortrags ist entscheidend. Sie sollte nicht nur das Was und Warum der Vortragsthemen erklären, sondern auch aufzeigen, welchen Nutzen deine Zuhörer aus dem Ganzen ziehen können. Es ist wichtig, den Inhalt so detailliert wie möglich zu beschreiben: Was werden die Zuhörer lernen? Wie können sie das Gelernte in ihrer eigenen Arbeit anwenden?
+- **Wer ist deine Zielgruppe?**: Mache dir Gedanken, wer dein Publikum ist. Die ng-de und vuejs.de Konferenzen haben ein Publikum mit vielen Interessen. Manche davon sind Einsteiger, andere Experten. Sei dir im Klaren darüber, für wen dein Vortrag gedacht ist und vor allem, warum er relevant ist. Eine gut definierte Zielgruppe hilft der Jury bei der Entscheidungsfindung.
+
+**Weitere Tipps zur Verbesserung deiner Chancen:**
+
+- **Originalität und Aktualität**: Themen, die neue Perspektiven bieten oder aktuelle Trends aufgreifen, haben eine höhere Chance, ausgewählt zu werden.
+- **Praxisbezug**: Können deine Erkenntnisse in der realen Anwender-Welt genutzt werden? Die Jury legt besonderen Wert auf innovative Themen und praktische Anwendungsbeispiele.
+- **Du hast nur 30 Minuten Zeit für deinen Vortrag!**: Dein Vortrag kann nur 30 Minuten lang sein. Du musst keinen Roman schreiben!
+
+## Gratuliere, dein Vortrag wurde ausgewählt!
+
+In diesem Fall übernehmen wir deine Reise- und Unterkunftskosten (für zwei Nächte) und natürlich auch das Konferenzticket. Zudem werden wir deinen Vortrag (video-)aufzeichnen und auf unserer Website und auf dem YouTube-Kanal der ng-de sowie der Vue.js veröffentlichen und über die sozialen Medien bewerben.
+
+
+Dein Vortrag darf maximal 30 Minuten lang sein. Es ist keine weitere Zeit für eine Frage- und Antwort-Runde vorgesehen. Du kannst ein Q&A aber innerhalb deines 30-minütigen Zeitfensters integrieren, sofern du es wünschst. Wichtig ist, dass alle Vorträge auf Englisch gehalten werden müssen.
+
+## Bedeutung der Konferenzen für die Community
+
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/CR7vEy0URzE&t" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe></p>
+
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/q3K0xyx6Oco" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe></p>
+
+Die ng-de und vuejs.de Konferenzen spielen eine wichtige Rolle in der deutschen und internationalen Webentwickler-Community. Sie bieten nicht nur eine Plattform für den Austausch von Fachwissen und die Präsentation neuer Trends, sondern sind auch ein Meetup für die Community und entspanntes Networking für alle Besucher. Uns geht es vor allem um:
+
+- **Wissensaustausch und Lernen**: Von technischen Deep Dives in Angular und Vue.js bis hin zu übergreifenden Themen wie Web Performance, Sicherheit und State Management - Wir erhoffen uns vielfältige Themen und tiefgehende Diskussionen. In einer sich ständig ändernden Branche sind Konferenzen wie die ng-de und vuejs.de entscheidend, um am Ball zu bleiben. Tausche dich über die neuesten Trends, Werkzeuge und Best Practices aus und lerne von führenden Experten.
+- **Networking und Community**: Abseits der Vorträge bieten dir die ng-de und die Vue.js zahlreiche Möglichkeiten zum Networking. Knüpfe Kontakte zu Gleichgesinnten, tausche dich aus mit potenziellen Arbeitgebern oder Mitarbeitern und stoße neue Partnerschaften oder Projekte an. Diese sozialen Interaktionen stärken den Zusammenhalt innerhalb der Community und fördern eine Kultur der Offenheit und Zusammenarbeit.
+- **Vielfalt und Inklusion**: Wir bieten unsere Bühne für Speaker mit diversen Biografien und Skill-Level. Wir hoffen, damit zur Vielfalt und Inklusion in der Tech-Branche beizutragen und den Diskurs voranzubringen.
+- **Inspiration und Motivation**: Wie viele Rock-Bands haben sich auf Rock-Konzerten ihrer Idole gegründet? Vielleicht sind die ng-de und Vue.js der Grundstein, deine eigenen Ideen zu entwickeln, Herausforderungen anzunehmen und persönliche sowie berufliche Ziele zu verfolgen.
+- **Feedback und direkter Austausch mit Experten**: Auf der ng-de und der Vue.js hast du die Möglichkeit, direkt mit führenden Experten ins Gespräch zu kommen und Feedback zu eigenen Projekten oder Herausforderungen zu erhalten.
+- **Die Zukunft mitgestalten**: Unsere Vorträge und Feedback-Sessions haben großen Einfluss auf die Ausrichtung der Frameworks. Unsere Community gestaltet die Technologien aktiv mit. Werde aktiver Teil der Zukunft!
+
+## Ran an die Tasten – Deine Chance auf der ng-de und vuejs.de
+Hast du eine bahnbrechende Idee, ein spannendes Projekt oder einfach nur ein paar coole Tipps und Tricks, die du mit Gleichgesinnten teilen möchtest? Egal, ob du auf der Bühne stehen willst oder lieber im Hintergrund zuhören willst – Wir freuen uns auf dich. Die ng-de und vuejs.de sind in erster Linie ein Community-Fest. Nutze die Gelegenheit, dabei zu sein. Wir können es kaum erwarten, dich im Oktober in Bonn willkommen zu heißen.
+
+
+Falls du Fragen hast oder mehr Infos brauchst, schreib uns einfach an info@ng-de.org. Lass uns zusammen die Webentwicklung rocken!
+
+## Dabei sein ist alles – Dein Platz in der Community
+
+Auch wenn der Call for Papers für die ng-de und vuejs.de Konferenzen 2024 fast vorbei ist, endet damit nicht deine Gelegenheit, aktiver Teil der Community zu werden. Eine Konferenz endet nicht mit dem letzten Konferenztag. Über das ganze Jahr hinweg gibt es zahlreiche Möglichkeiten, sich einzubringen: sei es durch [Meetups](https://www.meetup.com/de-DE/angular-meetup-berlin/), [Workshops](https://workshops.de/schulungsthemen/vuejs?_gl=1*hzplxl*_up*MQ..*_ga*MTM1OTE3NDc4Ni4xNzEyNjY3Mzk4*_ga_E0Z1EPK01Y*MTcxMjY2NzM5Ny4xLjAuMTcxMjY2NzM5Ny4wLjAuOTgxMzYwMjAy) oder in unserer [Community auf Discord](https://workshops.de/join-discord).
+
+
+Teile dein Wissen, deine Fragen und deine Projekte mit uns. Gemeinsam können wir nicht nur die Angular- und Vue.js-Landschaft in Deutschland, sondern auch die globale Webentwickler-Community bereichern und voranbringen. Bleib dran für kommende Events und Initiativen – es gibt immer eine Möglichkeit, sich einzubringen und zu engagieren.
+
+
+[Werde Teil unserer Community!](https://workshops.de/join-discord)]]></content><author><name>Lulëzim Ukaj</name></author><category term="angular" /><category term="vuejs" /><category term="ng-de" /><category term="conference" /><category term="call-for-paper" /><summary type="html"><![CDATA[Bonn wird im Oktober 2024 zum Treffpunkt für Angular- & Vue.js-Enthusiasten: Sei dabei bei ng-de & vuejs.de Konferenzen – Call for Papers jetzt nutzen!]]></summary></entry><entry><title type="html">Webdave im Gespräch mit: Juri Strumpflohner</title><link href="http://localhost:4000/artikel/webdave-im-gespraech-mit-juri-strumpflohner/" rel="alternate" type="text/html" title="Webdave im Gespräch mit: Juri Strumpflohner" /><published>2024-03-15T00:00:00+01:00</published><updated>2024-03-15T00:00:00+01:00</updated><id>http://localhost:4000/artikel/webdave-im-gespraech-mit-juri-strumpflohner</id><content type="html" xml:base="http://localhost:4000/artikel/webdave-im-gespraech-mit-juri-strumpflohner/"><![CDATA[## Das Interview mit Juri Strumpflohner
+
+Hier kannst du dir das Gespräch mit Juri Strumpflohner und unserem Trainer Webdave ansehen!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0waHOk3hoUs?si=BK-FW1XuKsDm2Cjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Monorepos: Essentials in der modernen Webentwicklung
+
+In der modernen Webentwicklung nutzen Teams Monorepos für große Projekte, um ihre Codebasis zu verwalten. Monorepo steht kurz für "Monolithisches Repository" und bedeutet nichts anderes, als dass der gesamte Code für mehrere Projekte in einem einzigen Repository gespeichert wird. Zum Beispiel verwendet Google Monorepos für die Entwicklung seines Chrome Browsers. [Das Chromium Project](https://www.chromium.org/chromium-projects/) ist ein riesiges Open-Source-Projekt mit über 25 Millionen Codezeilen, das von über 2.000 Entwicklern aus der ganzen Welt gepflegt wird. Anstatt hier separate Repositories für jedes Feature oder Extension zu haben, werden alle Projekte unter einem Dach vereint.
+
+Monorepos bieten viele Vorteile, bringen aber auch Herausforderungen mit sich. Wie schaffe ich es, dass ein riesiges Team effizient zusammenarbeiten kann? Genau hier setzen Juri Strumpflohner und das NX Team an. NX ist ein modernes Tool, das speziell für die Entwicklung in Monorepos entwickelt wurde. NX bietet eine Vielzahl von Funktionen, die euch dabei helfen können, effizienter und produktiver zu arbeiten.
+
+Welche sind das? Was ist Task Parallelisierung und Caching? Was sind bewährte Praktiken in der Softwareentwicklung in großen Teams? Welche realen Probleme löst in der Entwicklung?
+
+Darüber und über noch viel mehr haben sich Web Dave und  Juri Strumpflohner, Sr. Director of Developer Experience for [Nx](https://nx.dev/) unterhalten. Wer Juri ist und wie Juri zum NX Team gestoßen ist, erfahrt ihr natürlich auch. Schaut euch das Videogespräch dazu an.
+
+In diesem Artikel zum Gespräch haben wir euch die Basics zusammengefasst und werden euch NX kurz vorstellen und euch einen Installation Guide aufgeschrieben.
+
+
+## Was ist NX?
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-_4WMl-Fn0w?si=-vSUyVCQC7ylxZTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+Nx ist ein Build-System mit integrierten Built-In-Tooling und fortgeschrittenen CI-Fähigkeiten. NX ist vor allem für Monorepos gedacht und hilft dir, diese sowohl lokal als auch auf CI zu pflegen und skalieren.
+
+## Wie hilft dir NX?
+
+Kurz gesagt, Nx hilft euch bei Builds und Tests, sowohl lokal auf deinem Computer als auch auf CI-Systemen (Continuous Integration, also Systeme, die automatisch deinen Code testen und vorbereiten). Dazu findest du NX Plugins, die es dir ermöglichen, verschiedene Entwicklungs-Tools nahtlos zu integrieren und zu automatisieren.
+
+NX hilft dir dabei:
+
+- **Optimierung bestehender Projekte:** Deine aktuellen Projekte optimieren, indem Builds und Tests beschleunigt werden, egal ob es sich um ein einzelnes Projekt oder ein Monorepo handelt.
+- **Einfache Einrichtung neuer Projekte:** Neue Projekte einrichten, ohne alle Build-Tools selbst konfigurieren zu müssen. Das übernehmen die Nx Plugins für dich.
+- **Problemlose Integration neuer Tools:** Neue Tools wie Storybook oder Tailwind CSS problemlos in dein Projekt einbinden.
+- **Qualität:** Die Einheitlichkeit und Qualität deines Codes sicherstellen, indem du benutzerdefinierte Generatoren und Lint-Regeln verwendest.
+- **Automatisierung:** Eine automatisierte Code-Migration zu nutzen.
+
+## Wie funktioniert NX?
+
+Nx funktioniert modular, sodass du nur die Features nutzen kannst, die du wirklich brauchst.
+
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="Infographik zum Aufbau eines NX Workspaces"
+class="lazy img-fluid img-rounded" data-src="infographic.jpg" data-srcset="infographic.jpg"
+/>
+
+
+
+Das NX-Paket bietet technologieunabhängige Features wie [workspace analysis](https://nx.dev/features/explore-graph), [task running](https://nx.dev/features/run-tasks), [caching](https://nx.dev/features/cache-task-results), [distribution](https://nx.dev/ci/features/distribute-task-execution), [code generation](https://nx.dev/features/generate-code), and [automated code migrations](https://nx.dev/features/automate-updating-dependencies). Plugins sind NPM-Pakete, die auf den Funktionen aufbauen, die das Nx-Paket bietet. Nx-Plugins enthalten Code Generatoren, Executer, und eine automatisierte Code-Migration, um deine Werkzeuge up to date zu halten. Devkit ist ein Set von Hilfsmitteln zum Bauen von Nx-Plugins. Nx Cloud hilft dir, dein Projekt auf CI zu skalieren, indem es dir Remote-Caching und eine leichtere Aufgabenstellung bietet. Dazu werden GitHub, GitLab und BitBucket integriert und durchsuchbare, strukturierte Logs bereitgestellt. Nx Console ist eine Erweiterung für VSCode, IntelliJ und VIM. Sie bietet Code-Autovervollständigung, interaktive Generatoren, Visualisierungen des Arbeitsbereichs, leistungsstarke Refaktorisierungen und mehr.
+
+## Installation von NX
+
+### Neuen Workspace erstellen
+
+Um einen neuen Nx workspace zu erstellen, verwende zunächst folgenden Befehl:
+
+```bash
+npx create-nx-workspace
+```
+
+Dieser Prozess führt dich durch das Setup und fragt, ob du einen Monorepo oder eine Standalone App bevorzugst und ob du mit einem leeren oder einer vorkonfigurierten Setup beginnen möchtest.
+
+```bash
+npx create-nx-workspace@latest
+
+NX   Let's create a new workspace [https://nx.dev/getting-started/intro]
+
+✔ Where would you like to create your workspace? · myorg
+? Which stack do you want to use? …
+
+None:          Configures a TypeScript/JavaScript project with minimal structure.
+React:         Configures a React application with your framework of choice.
+Vue:           Configures a Vue application with your framework of choice.
+Angular:       Configures a Angular application with modern tooling.
+Node:          Configures a Node API application with your framework of choice.
+```
+
+Nachdem du deinen Arbeitsbereich erstellt hast, kannst du:
+
+* Einzelne Aufgaben ausführen mit: ```vnpx nx <ziel> <projekt>```
+* Mehrere Aufgaben gleichzeitig ausführen mit: ```npx nx run-many <ziel> <projekt>```
+
+
+Führe ```npx nx run-many -t build``` zweimal aus, um zu sehen, wie das leistungsfähige Caching von Nx deinen Build-Prozess beschleunigt.
+Erfahre mehr über die running tasks.
+
+
+### NX zu einem bereits betehenden Repository hinzufügen
+
+Falls du Nx zu einem bestehenden Repository hinzufügen möchtest:
+
+
+```npx nx@latest init```
+
+
+Du kannst das Nx NPM-Paket auch manuell installieren und eine `nx.json` zur Konfiguration erstellen.
+Lerne mehr, wie du Nx in einem bestehenden Projekt einsetzen kannst:
+
+### Nx global installieren
+
+Du kannst Nx auch global installieren.
+
+Je nachdem, welchen Paketmanager du nutzt, musst du einen der folgenden Befehle verwenden:
+
+```npm add --global nx@latest```
+
+
+Der Vorteil einer globalen Installation von NX ist, dass du Befehle für NX nicht mit npx, yarn oder pnpm starten musst. Stattdessen leitet die globale Installation die Ausführung einfach an die lokale NX-Installation in deinem Projektverzeichnis weiter. Dadurch vermeidest du Probleme, die durch veraltete, global installierte Pakete entstehen könnten.
+
+## Weiterführende Links
+
+* [NX Dokumentation](https://nx.dev/getting-started/intro)
+* [NX Blog](https://nx.dev/blog)
+* [NX auf Youtube](https://www.youtube.com/@NxDevtools/videos)
+* [NX Community](https://nx.dev/community)
+* [Wie update ich meine NX Global Installation?](https://nx.dev/recipes/installation/update-global-installation)
+* [Wie installiere ich Nx in einem non-javascript Repo?](https://nx.dev/recipes/installation/install-non-javascript)
+* [Wie nutze ich NX für mein Angular Projekt?](https://nx.dev/recipes/angular)
+
+
+## Juri Strumpflohner
+
+<img
+style="max-width: 40%"
+src="/shared/assets/img/placeholder-image.svg" alt="Portrait Juri Strumpflohner"
+class="lazy img-fluid img-rounded" data-src="profilepic.jpg" data-srcset="profilepic.jpg"
+/>
+
+
+[Juri Strumpflohner](https://juri.dev/about/) ist Entwickler, Speaker, Content Creator und Sr. Director of Developer Experience for Nx.
+Juri ist Softwareentwickler seit über 15 Jahren, vom Backend bis hin zu Web-Apps. In dieser Zeit hat er sowohl in kleinen Startups als auch großen Unternehmen gearbeitet und als Softwarearchitekt auch Fortune-500-Unternehmen beraten. Als [Google Developers Expert](https://developers.google.com/community/experts/directory?hl=de) und [Egghead instructor](https://egghead.io/) teilt er sein Wissen mit Leidenschaft und ist so eine führende Stimme in der Entwickler Community geworden.
+Du findest Juris Artikel auf seinem Blog [juri.dev](https://juri.dev/), seine [Videokurse auf Egghead](https://egghead.io/q/resources-by-juri-strumpflohner) oder [dem Nx YouTube Kanal](https://www.youtube.com/@NxDevtools/videos) oder auf unzähligen Konferenzen weltweit.
+
+
+Natürlich findest du Juri auch auf Social Media:
+
+
+* [X (ehemals Twitter)](https://twitter.com/juristr)
+* [Twitch](https://www.twitch.tv/juridev)
+* [GitHub](https://github.com/juristr)
+* [LinkedIn](https://www.linkedin.com/in/juristr/)]]></content><author><name>Lulëzim Ukaj</name></author><category term="angular" /><category term="nx" /><category term="monorepo" /><category term="webdave" /><category term="interview" /><summary type="html"><![CDATA[Webdave im Gespräch mit Juri Strumpflohner, Sr. Director Developer Experience für Nx: Insights zu Nx & Monorepo-Management in großen Teams.]]></summary></entry></feed>

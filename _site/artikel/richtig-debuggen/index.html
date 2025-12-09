@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Debugging mit WebStorm und Chrome | Angular.DE</title>
+  
+  <meta name="description" content="Lerne, wie du mit WebStorm oder den Chrome Developer Tools deine AngularJS-Applikation debuggen kannst.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/richtig-debuggen/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Debugging mit WebStorm und Chrome - Angular.DE">
+
+
+
+  <meta property="og:description" content="Lerne, wie du mit WebStorm oder den Chrome Developer Tools deine AngularJS-Applikation debuggen kannst.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/richtig-debuggen/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Debugging mit WebStorm und Chrome - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Lerne, wie du mit WebStorm oder den Chrome Developer Tools deine AngularJS-Applikation debuggen kannst.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/richtig-debuggen/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Debugging mit WebStorm und Chrome"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Debugging mit WebStorm und Chrome" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Debugging mit WebStorm und Chrome</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angularjs/" class="badge bg-secondary text-bg-secondary text-uppercase">angularjs</a>
+            
+            <a href="/kategorie/debugging/" class="badge bg-secondary text-bg-secondary text-uppercase">debugging</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Robin Böhm
+            
+            <a href="https://twitter.com/robinboehm" target="_blank" style="margin-bottom: 5px;">
+              <img src="/shared/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
+            </a>
+            
+            
+            <span class="ms-1 me-1">•</span> <time>09.08.2013</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  4 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Debugging? Wofür brauchen wir das denn? Wir schreiben doch alle unsere Anwendungen <em>testgetrieben</em> in kleinen simplen Bausteinen, sodass wir eigentlich nie in die Bredouille kommen sollten, auf diese Technik zurückgreifen zu müssen.</p>
+
+<p>Jedoch kommen wir manchmal doch in Situationen, in denen wir bestimmte Fehler oder <em>Phänome</em> im Verhalten unserer Anwendung nicht so einfach erklären können und allein durch das Lesen des Quellcodes nicht zeitnah lösen können. In diesen Fällen bietet es sich an, den <em>Ablauf des Programmes anzuhalten</em> und einen genauen Blick auf den Stacktrace und die aktuelle Variablenbelegung zu werfen. Gerade in der Welt von AngularJS ist es durch die Unterstützung diverser Patterns wie z.B. HTTP-Interceptoren nicht immer sofort ersichtlich, wo der Fehler liegt. Daher können wir trotz des Sicherheitsnetzes unserer Tests auf das <em>Debugging</em> nicht verzichten.</p>
+
+<!--more-->
+
+<h2 id="welche-werkzeuge-kann-ich-hierzu-nutzen">Welche Werkzeuge kann ich hierzu nutzen?</h2>
+
+<p>Um unsere Applikation debuggen zu können, benötigen wir ein Werkzeug, das den Ablauf unserer <em>Anwendung überwacht</em>. In diesem können wir dann für gewöhntlich Haltepunkte definieren, an denen der Ablauf angehalten wird und wir den aktuellen <em>Zustand analysieren</em> können. Außerdem können wir Veränderungen des Zustands Schritt für Schritt <em>nachvollziehen</em>. Ein ziemlich bekanntes Werkzeug, welches diesen Vorgang sehr einfach macht, sind die <a href="https://developer.chrome.com/devtools" rel="noreferrer noopener" target="_blank">Chrome Developer Tools</a>. <img src="richtig-debuggen-chrome-dev-tools.png" alt="Chrome Developer Tools"> Über den Tab <em>Sources</em> können wir hier in unserem Quellcode Haltepunkte definieren, an denen die Anwendung stoppt und wir somit den Zustand ablesen können.</p>
+
+<p>Folgende Hotkeys erleichtern uns hierbei das Leben:</p>
+
+<ul>
+  <li>F8 - Programmablauf fortführen</li>
+  <li>F10 - Über den nächsten Funktionsaufruf springen</li>
+  <li>F11 - In den nächsten Funktionsaufruf springen</li>
+  <li>Shift + F11 - Aus dem aktuellen Funktionsaufruf heraus springen</li>
+</ul>
+
+<p>Ein weiteres Werkzeug, das sich in diesem Kontext sehr gut eignet und aktuell eine verbreitete Entwicklungsumgebung im Bereich JavaScript ist, ist <em><a href="http://www.jetbrains.com/webstorm/" rel="noreferrer noopener" target="_blank">WebStorm</a></em>. Wir können hier eine <em>JavaScript Remote Debug</em> Konfiguration für unser Projekt erstellen. Dazu ist lediglich eine Basis-URL anzugeben und das lokale Mapping auf unsere Projekt-Struktur zu definieren. Ein Beispiel hierfür ist in dem folgenden Screenshot dargestellt:</p>
+
+<p><img src="richtig-debuggen-idea-config.png" alt="Chrome Developer Tools"></p>
+
+<blockquote>
+  <p>Zu beachten ist hierbei, dass die URL zu unserer Anwendung ohne die Raute angegeben wird, da das Mapping auf die Web-Ressourcen hierüber läuft und diese ohne Raute aufgerufen werden.</p>
+</blockquote>
+
+<p>Darüber hinaus benötigen wir hierfür die Chrome-Erweiterung <em>JetBrains IDE Support</em> (Die Erweiterung exisitert leider nicht mehr), die sich über den Chrome Web Store installieren lässt. Ist dies getan, können wir unsere Anwendung im <em>Debug Modus starten</em> (Shift+F9). Es öffnet sich der Browser und führt unsere Web-Anwendung aus. Die Haltepunkte können wir nun bequem innerhalb der IDE setzen. Erreicht die Anwendung einen der definierten Haltepunkt, wird die Ausführung angehalten.</p>
+
+<p><img src="richtig-debuggen-idea-breakpoint.png" alt="Chrome Developer Tools"></p>
+
+<p>Auch hier können wir den aktuellen <em>Stacktrace</em> und die Variablenbelegung einsehen. Außerdem natürlich den weiteren Programmablauf steuern.</p>
+
+<p>Folgende IntelliJ-Hotkeys erleichtern uns hierbei das Leben:</p>
+
+<ul>
+  <li>F9 - Programmablauf fortführen</li>
+  <li>F8 - Über den nächsten Funktionsaufruf springen</li>
+  <li>F10 - In den nächsten Funktionsaufruf springen</li>
+  <li>Shift + F8 - Aus dem aktuellen Funktionsaufruf heraus springen</li>
+</ul>
+
+<p><img src="richtig-debuggen-idea-debug.png" alt="Chrome Developer Tools"></p>
+
+<h2 id="debuggen-von-tests-in-der-ablaufumgebung-karma">Debuggen von Tests in der Ablaufumgebung Karma</h2>
+
+<p>Im Kontext von AngularJS nutzen wir oftmals <em>Karma</em> als <em>Test Runner</em> für unsere Tests. Auch das Yeoman-Projekt, welches aktuell quasi einen Standard-Stack für AngularJS-Projekte definiert, stellt eine Karma-Konfiguration für eine bequeme Testausführung zur Verfügung. Daher ist es wünschenswert, innerhalb von Tests auf das Debugging zurückgreifen zu können. Sogar in diesem Szenario können wir IntelliJ nutzen, um uns mithilfe des Remote Debuggers in den Applikationsablauf einzuklinken. Jedoch sind hier die <em>Mapping-Konfigurationen</em> nicht so offensichtlich wie beim Starten eines simplen Web-Servers mit unserer Anwendung. Die verschiedenen Dateien werden in virtuelle Unterordner gemappt. Unsere Anwendungsdateien befindet sich hierbei in dem Pfad <code class="language-plaintext highlighter-rouge">base</code>. In dem folgenden Bild ist eine lauffähige Konfiguration hierfür dargestellt:</p>
+
+<p><img src="richtig-debuggen-karma-debug.png" alt="Chrome Developer Tools"></p>
+
+<p>Somit ist auch das Debuggen von Tests im JavaScript-Umfeld kein großes Problem.</p>
+
+<h2 id="debuggen-von-grunt-build-jobs">Debuggen von Grunt Build Jobs</h2>
+
+<p>Ein weiteres Werkzeug, das uns bei der Automatisierung von wiederkehrenden Aufgaben hilft, ist der Task Runner <em>Grunt</em>. Wenn hier etwas schief läuft oder man sogar ein eigenes Plugin entwickelt, ist es ebenfalls manchmal sinnvoll, auf die <em>Hilfe eines Debuggers</em> zurückgreifen zu können. Da in diesem Szenario nicht der Browser die <em>Ablaufumgebung</em> stellt, sondern die Ausführung in einem Node.js-Prozess geschieht, gestaltet sich die Konfiguration hierbei ein wenig anders.</p>
+
+<p>Wir erstellen in diesem Fall eine Debug-Konfiguration in Node.js und geben dort unser Projekt-Verzeichnis als Working Directory an. Außerdem müssen wir den Pfad zu dem globalen Grunt-CLI Modul als Node App JS File angeben. Optional können wir noch Parameter an den Grunt-Prozess übergeben.</p>
+
+<p><img src="richtig-debuggen-grunt-debug.png" alt="Chrome Developer Tools"></p>
+
+<p>Ist dies erledigt, können wir wie gewohnt in unseren Grunt-Plugins Haltepunkte setzen, an denen der Ablauf gestoppt werden soll.</p>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Es gibt genug Werkzeuge im Bereich von JavaScript, die uns die <em>Analyse</em> in <em>Fehlersituationen</em> vereinfachen. Viele Entwickler wissen gar nicht, wie <em>einfach</em> es ist, JavaScript-Anwendungen zu debuggen und versuchen sich mit <code class="language-plaintext highlighter-rouge">console.log()</code> oder ähnlichen Konstrukten zu helfen. Ich hoffe, dass mit diesen kleinen Tipps die eine oder andere Fehlersuche beschleunigt wird.</p>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2013-08-09-richtig-debuggen/2013-08-09-richtig-debuggen.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Robin Böhm" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/e9e044629f5324a4a3c27302f0d4efcc-160x160.jpg"
+      data-srcset="/assets/img/gravatars/e9e044629f5324a4a3c27302f0d4efcc-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Robin Böhm
+    </p>
+    
+      <p class="text-muted small">
+        Robin beschäftigt sich seit 2012 intensiv mit der Erstellung client-seitiger Web-Applikationen. 2014 hat er das erste deutschsprachige Buch zum Thema AngularJS geschrieben und ist Mitgründer der Platform Angular.DE. Mit seinem Schulungs-Team hat er bereits über 1200 Unternehmen den erfolgreichen Start mit Angular ermöglicht.
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/robinboehm" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+        <a href="https://twitter.com/robinboehm" class="btn btn-sm btn-outline-secondary" target="_blank">Twitter</a>
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/was-ist-angular/"
+    data-style="background-image: url('/artikel/was-ist-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Was sind Angular und AngularJS?
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ngupgrade-migration-angularjs-angular/"
+    data-style="background-image: url('/artikel/ngupgrade-migration-angularjs-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Migration AngularJS zu Angular
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

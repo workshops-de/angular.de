@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Angular in der Browser Konsole Teil 2 - Scopes | Angular.DE</title>
+  
+  <meta name="description" content="Ihr wollt aus der Browser-Konsole heraus einen Scope mit anhängenden Objekte analysieren? Wir zeigen euch wie.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angularjs-access-scope-via-console/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Angular in der Browser Konsole Teil 2 - Scopes - Angular.DE">
+
+
+
+  <meta property="og:description" content="Ihr wollt aus der Browser-Konsole heraus einen Scope mit anhängenden Objekte analysieren? Wir zeigen euch wie.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angularjs-access-scope-via-console/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Angular in der Browser Konsole Teil 2 - Scopes - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Ihr wollt aus der Browser-Konsole heraus einen Scope mit anhängenden Objekte analysieren? Wir zeigen euch wie.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angularjs-access-scope-via-console/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Angular in der Browser Konsole Teil 2 - Scopes"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Angular in der Browser Konsole Teil 2 - Scopes" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Angular in der Browser Konsole Teil 2 - Scopes</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angularjs/" class="badge bg-secondary text-bg-secondary text-uppercase">angularjs</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Tilman Potthof
+            
+            
+            <span class="ms-1 me-1">•</span> <time>03.12.2014</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  11 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Dieser Artikel ist eine Fortsetzung von <a href="/artikel/angularjs-access-services-via-console/">“Angular in der Browser Konsole: Services”</a>, in dem erklärt wurde wie man auf Angular Services in der Browser Konsole zugreift und eine Anwendung interaktiv manipulieren kann.
+Allerdings konnte man auch sehen, dass Änderungen an den Model-Objekten nicht direkt zu einer Aktualisierung der Anzeige geführt haben, da diese Änderungen außerhalb des <code class="language-plaintext highlighter-rouge">$digest()</code> Aktualierungszyklus vorgenommen wurden.
+Um trotzdem die Änderungen zu sehen, haben wir diesen Mechanismus von Hand ausgelöst, in dem wir andere Elemente angeklickt haben, die ebenfalls eine Aktualisierung bewirken.
+In diesem Artikel zeige ich euch, wie ihr das Scope-Objekt direkt manipulieren könnt und ihr die <code class="language-plaintext highlighter-rouge">$digest()</code> Aktualisierung von der Konsole aus auslöst.</p>
+
+<p><em>Achtung: Falls ihr euch fragt, warum man als klar-denkender Mensch Angular Scopes interaktiv und von außerhalb der Anwendung manipulieren möchte, schaut noch mal in den ersten Artikel in dem die Motivation genauer erklärt ist.</em></p>
+
+<h2 id="unser-experimentierkasten">Unser Experimentierkasten</h2>
+
+<p>Wir verwenden wieder die gleichen Werkzeuge wie im ersten Teil.
+Hier noch mal die Übersicht:</p>
+
+<ul>
+  <li>Ein moderner Browser mit einer JavaScript Konsole
+    <ul>
+      <li><a href="https://developer.chrome.com/docs/devtools/console/reference#open" rel="noreferrer noopener" target="_blank">Chrome – Öffnen der Konsole</a></li>
+      <li><a href="https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html" rel="noreferrer noopener" target="_blank">Firefox – Öffnen der Konsole</a></li>
+    </ul>
+  </li>
+  <li>Eine Angular Anwendung zum experimentieren
+    <ul>
+      <li><a href="https://todomvc.com/examples/angularjs_require/#/" rel="noreferrer noopener" target="_blank">Angular TodoMVC</a></li>
+      <li>Irgendeine andere Angular Anwendung</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="zugriff-auf-scopes">Zugriff auf Scopes</h2>
+
+<p>Scope-Objekte in Angular sind dazu da, um Variablen für das Template-Rendering bereitzuhalten.
+Nur Objekte, die einem Scope-Objekt hinzugefügt werden, können in den Template-Tags verwendet werden.
+Jedes Element innerhalb einer Angular-Anwendung braucht also einen Scope, um angezeigt zu werden.
+Daher kann man auf die verschiedenen Scopes über die Elemente zugreifen.
+Zuerst müssen wir ein Element zum Analysieren aussuchen.
+Dazu muss man nur einen Kontext-Klick auf das Todo-Eingabefeld machen und die Option “Element untersuchen” auswählen.</p>
+
+<p><img src="todomvc-inspect-element.png" alt="TodoMVC"></p>
+
+<p>Jetzt können wir die aktuellen Elemente auf der Seite sehen.
+Der Body-Tag hat das <code class="language-plaintext highlighter-rouge">ng-app</code> Attribut und eine Klasse <code class="language-plaintext highlighter-rouge">ng-scope</code>. Jedes Element, das einen eigenen Scope hat, erhält auch die CSS-Klasse <code class="language-plaintext highlighter-rouge">ng-scope</code>, um das Debuggen zu vereinfachen.
+Die einzige Ausnahme sind direkte Kind-Elemente eines <code class="language-plaintext highlighter-rouge">ng-view</code> Elements.
+Im Beispiel teilt sich sowohl das Section- als auch das Footer-Element einen Scope mit dem <code class="language-plaintext highlighter-rouge">ng-view</code> Element, aber alle haben die <code class="language-plaintext highlighter-rouge">ng-scope</code> Klasse.</p>
+
+<p><img src="todomvc-html-structure.png" alt="Chrome Element Ansicht"></p>
+
+<p>Wie man sehen kann, hat das Section-Element die ID <code class="language-plaintext highlighter-rouge">todoapp</code>, mit der wir es auswählen können.
+Häufig nimmt man dafür jQuery, und viele Angular Anwendungen werden zusammen mit jQuery verwendet, allerdings funktioniert Angular auch ohne jQuery.
+Aus diesem Grund hat die originale TodoMVC Anwendung kein jQuery und ich zeige euch den Zugriff mit und ohne jQuery.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">todoappDomElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#todoapp</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">todoappAngularElement</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nf">element</span><span class="p">(</span><span class="nx">todoappDomElement</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">$scope</span> <span class="o">=</span> <span class="nx">todoappAngularElement</span><span class="p">.</span><span class="nf">scope</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Jetzt noch mal mit jQuery. Das Beispiel funktioniert mit meiner selbst-gehosteten Variante von <code class="language-plaintext highlighter-rouge">TodoMVC</code>, da ich für diesen Artikel jQuery eingebunden habe.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">$todoappElement</span> <span class="o">=</span> <span class="nf">jQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">#todoapp</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">$scope</span> <span class="o">=</span> <span class="nx">$todoappElement</span><span class="p">.</span><span class="nf">scope</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Das Ganze noch mal als Einzeiler.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// native</span>
+<span class="kd">var</span> <span class="nx">$scope</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nf">element</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#todoapp</span><span class="dl">"</span><span class="p">)).</span><span class="nf">scope</span><span class="p">();</span>
+
+<span class="c1">// jQuery</span>
+<span class="kd">var</span> <span class="nx">$scopeFromJQuery</span> <span class="o">=</span> <span class="nf">jQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">#todoapp</span><span class="dl">"</span><span class="p">).</span><span class="nf">scope</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="die-0-variable">Die $0 Variable</h3>
+
+<p>Die Chrome <a href="https://developer.chrome.com/docs/devtools/console/utilities" rel="noreferrer noopener" target="_blank">Command Line API</a> bietet einen weiteren sehr einfachen Weg an, auf Elemente zuzugreifen.
+Durch die Variable <code class="language-plaintext highlighter-rouge">$0</code> erhält man Zugriff auf das Element, das man in der Element-Anzeige gerade ausgewählt hat.
+Um den dazugehörigen Scope zu laden kann man <code class="language-plaintext highlighter-rouge">angular.element($0).scope()</code> ähnlich zu den Beispielen oben verwenden.</p>
+
+<p><img src="chrome-dev-tools-dollar-zero-trick.png" alt="Der $0 Trick in der Konsole"></p>
+
+<h2 id="scope-attribute">Scope Attribute</h2>
+
+<p>Das so erhaltene Scope-Objekt kann jetzt analysiert und manipuliert werden.
+Man kann es einfach in der Browser Konsole ausgeben und sich die innere Struktur genauer anschauen.
+Dabei findet man die Todo-Liste, die wir schon im letzten Artikel manipuliert haben, als <code class="language-plaintext highlighter-rouge">$scope.todos</code>.</p>
+
+<p><img src="todomvc-scope-introspection.png" alt="Scope Attributes"></p>
+
+<h2 id="scope-attribute-mit--und-">Scope Attribute mit $ und $$</h2>
+
+<p>Neben allen Attributen die vom <code class="language-plaintext highlighter-rouge">TodoCtrl</code> erzeugt wurden, findet man auch einige Attribute die das Präfix <code class="language-plaintext highlighter-rouge">$</code> oder <code class="language-plaintext highlighter-rouge">$$</code> haben.
+Das Attribute <code class="language-plaintext highlighter-rouge">$parent</code> ist eventuell schon bekannt.
+Es hält eine Verknüpfung zum – Überraschung – Eltern-Scope.
+Wenn man der Kette von Eltern-Scopes immer weiter folgt, dann wird man einen Scope mit <code class="language-plaintext highlighter-rouge">$parent: null</code> finden und man hat den <code class="language-plaintext highlighter-rouge">$rootScope</code> erreicht, der von der <code class="language-plaintext highlighter-rouge">ng-app</code> Direktive erzeugt wurde.
+Die beiden anderen dokumentierten Attribute sind <code class="language-plaintext highlighter-rouge">$id</code> und <code class="language-plaintext highlighter-rouge">$root</code>, genauso wie alle Methoden, die mit einem <code class="language-plaintext highlighter-rouge">$</code> anfangen (<a href="https://code.angularjs.org/1.2.22/docs/api/ng/type/$rootScope.Scope" rel="noreferrer noopener" target="_blank">$rootScope.Scope documentation</a>).
+Alle Attribute, die mit <code class="language-plaintext highlighter-rouge">$$</code> beginnen, sind private undokumentierte Attribute und können sich in zukünftigen Versionen ändern, ohne dass darüber informiert wird.</p>
+
+<h3 id="beobachter-funktionen">Beobachter-Funktionen</h3>
+
+<p>Auch wenn man diese privaten Attribute nicht für seine Anwendungen verwenden sollte, kann man in der Konsole bedenkenlos mit ihnen experimentieren.
+Ein schönes Beispiel ist das <code class="language-plaintext highlighter-rouge">$$watchers</code> Array, das Informationen über überwachte Expressions und Funktionen speichert.
+Die einzelnen Watcher werden entweder von der <code class="language-plaintext highlighter-rouge">$scope.$watch</code> Methode (ebenfalls <code class="language-plaintext highlighter-rouge">$scope.$watchCollection</code> seit 1.2.x) erzeugt oder von Template Expressions.</p>
+
+<p><img src="scope-watchers.png" alt="Scope Watchers"></p>
+
+<p>Man kann einfach überprüfen, wie die Watcher von Angular verwendet werden, indem man einen Watcher hinzufügt und danach die Länge des Watcher-Arrays überprüft.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">$scope.$$watchers.length: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">$$watchers</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nf">$watchCollection</span><span class="p">(</span><span class="dl">"</span><span class="s2">todos</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">$scope.$$watchers.length: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">$$watchers</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Als weiteres, aber etwas destruktiveres Experiment, kann man die Watcher mit einem leeren Array ersetzen.
+Danach wird nichts mehr in dem betroffenen Element aktualisiert.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$scope</span><span class="p">.</span><span class="nx">$$watchers</span> <span class="o">=</span> <span class="p">[];</span>
+</code></pre></div></div>
+
+<h3 id="zählen-der-watchers">Zählen der <code class="language-plaintext highlighter-rouge">$$watchers</code>
+</h3>
+
+<p>Kürzlich habe ich ein interessantes Beispiel gefunden, in dem das <code class="language-plaintext highlighter-rouge">$$watchers</code> Array dazu verwendet wird, alle Watcher in einer Anwendung zu zählen (Quelle: The Top 10 Mistakes AngularJS Developers Make (Nicht verlinkt, da es die Quelle leider nicht mehr gibt)).
+Ich habe das Original-Beispiel noch etwas aufgeräumt und funktional umgestaltet.
+Auf jeden Fall bekommt man einen guten Eindruck, wie man die internen Attribute zur tieferen Analyse einer Anwendung einsetzen kann.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// fetch all elements with ng-scope class</span>
+<span class="kd">var</span> <span class="nx">scopeElements</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.ng-scope</span><span class="dl">"</span><span class="p">));</span>
+<span class="c1">// map elements to scopes</span>
+<span class="kd">var</span> <span class="nx">scopes</span> <span class="o">=</span> <span class="nx">scopeElements</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">angular</span><span class="p">.</span><span class="nf">element</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nf">scope</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="c1">// filter duplicated scopes created by ng-view</span>
+<span class="kd">var</span> <span class="nx">scopesById</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">uniqueScopes</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">scopes</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">scopesById</span><span class="p">[</span><span class="nx">scope</span><span class="p">.</span><span class="nx">$id</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">scopesById</span><span class="p">[</span><span class="nx">scope</span><span class="p">.</span><span class="nx">$id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">scope</span><span class="p">;</span>
+    <span class="nx">uniqueScopes</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">// map uniqueScopes to watchers</span>
+<span class="kd">var</span> <span class="nx">watchers</span> <span class="o">=</span> <span class="nx">uniqueScopes</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">scope</span><span class="p">.</span><span class="nx">$$watchers</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// extract the length</span>
+<span class="kd">var</span> <span class="nx">watchersLengths</span> <span class="o">=</span> <span class="nx">watchers</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">watcher</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">watcher</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">})</span>
+<span class="c1">// sum up the length with reduce</span>
+<span class="kd">var</span> <span class="nx">watchersCount</span> <span class="o">=</span> <span class="nx">watchersLengths</span><span class="p">.</span><span class="nf">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">watchersCount: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">watchersCount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="manipulieren-des-scopes">Manipulieren des Scopes</h2>
+
+<p>Nachdem wir genau wissen, wie wir auf das Scope-Objekt zugreifen können, machen wir uns ans Manipulieren.
+Zum Beispiel können wir das Model verändern, das mit dem Todo-Eingabefeld verbunden ist <code class="language-plaintext highlighter-rouge">$scope.newTodo</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">$scope</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nf">element</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#todoapp</span><span class="dl">"</span><span class="p">)).</span><span class="nf">scope</span><span class="p">();</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">newTodo</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Write a blog post</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Wie im letzten Artikel haben wir das Model geändert, aber können immer noch keine Änderung in der Anzeige feststellen.
+Die Änderung hat wieder außerhalb des <code class="language-plaintext highlighter-rouge">$digest()</code> Aktualisierungszyklus stattgefunden, aber da wir Zugriff auf das Scope-Objekt haben können wir jetzt die <code class="language-plaintext highlighter-rouge">$apply()</code> Methode verwenden, um die Aktualisierung manuell zu starten.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$scope</span><span class="p">.</span><span class="nf">$apply</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Damit erreichen wir dann die gewünschte Aktualisierung der Anzeige.</p>
+
+<p><img src="todomvc-new-todo.png" alt="Aktualisiertes Eingabefeld"></p>
+
+<p>Wir können über den Scope ebenfalls den neuen Todo-Eintrag der Liste hinzufügen.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$scope</span><span class="p">.</span><span class="nf">addTodo</span><span class="p">();</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nf">$apply</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><img src="todomvc-added-todo.png" alt="Hinzugefügtes Todo"></p>
+
+<h3 id="anmerkung-zu-apply">Anmerkung zu <code class="language-plaintext highlighter-rouge">$apply</code>
+</h3>
+
+<p>Die <code class="language-plaintext highlighter-rouge">$apply</code> Methode kann auch sinnvoll in einer Anwendung verwendet werden, falls Änderungen außerhalb des Aktualisierungszyklus passieren – z.B. wenn man jQuery-Plugins einsetzt.
+Man sollte dabei aber zwei Dinge im Hinterkopf behalten.
+Ersten gibt es oft einen besseren Weg innerhalb des Aktualisierungszyklus, so zum Beispiel den <code class="language-plaintext highlighter-rouge">$timeout()</code> Service, der die native Methode <code class="language-plaintext highlighter-rouge">setTimeout()</code> ersetzt.
+Zweitens sorgt die <code class="language-plaintext highlighter-rouge">$apply()</code> Methode dafür, dass alle Scope-Objekte angefangen beim Root-Scope auf Änderungen überprüft werden, was eine teuere Operation werden kann, je nach Anzahl und Komplexität der Watcher.</p>
+
+<h2 id="alte-scope-objekte">Alte Scope-Objekte</h2>
+
+<p>Scope-Objekte haben gegebenenfalls eine begrenzte Lebenszeit und können ungültig werden, wenn sich die Anzeige ändert.
+Auch wenn man weiterhin Zugriff auf eine bereits geladene <code class="language-plaintext highlighter-rouge">$scope</code> Variable hat und man sie immer noch manipulieren kann, führt die <code class="language-plaintext highlighter-rouge">$apply</code> Methode in so einem Fall zu keiner Änderung.
+Welche Scopes noch auf der Seite vorhanden sind, kann man mit folgender Funktion über die IDs recht gut unterscheiden.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">scopeIds</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">scopeElements</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.ng-scope</span><span class="dl">"</span><span class="p">));</span>
+  <span class="k">return</span> <span class="nx">scopeElements</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">angular</span><span class="p">.</span><span class="nf">element</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nf">scope</span><span class="p">().</span><span class="nx">$id</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">scopeIds</span><span class="p">());</span>
+</code></pre></div></div>
+
+<p>Wenn man alle Todos löscht und die Seite neu lädt, dann sollte <code class="language-plaintext highlighter-rouge">scopeIds()</code> folgende IDs ausgeben.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="dl">"</span><span class="s2">001</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">002</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">002</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">002</span><span class="dl">"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Zum einen hat man den Root-Scope (<code class="language-plaintext highlighter-rouge">"001"</code>) und den Scope, der von <code class="language-plaintext highlighter-rouge">ng-view</code> erzeugt wird (<code class="language-plaintext highlighter-rouge">"002"</code>), wobei dieser auch noch für die Kind-Elemente (<code class="language-plaintext highlighter-rouge">section#todoapp</code>, <code class="language-plaintext highlighter-rouge">footer#info</code>) auftaucht.
+Wenn man jetzt ein Todo hinzufügt, dann erzeugt <code class="language-plaintext highlighter-rouge">ng-repeat</code> einen weiteren Scope (<code class="language-plaintext highlighter-rouge">"003"</code>).</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="dl">"</span><span class="s2">001</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">002</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">002</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">003</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">002</span><span class="dl">"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Anschließend wählen wir den Todo-Filter <em>Active</em> aus und erhalten eine andere Ausgabe für <code class="language-plaintext highlighter-rouge">scopeIds()</code>, da wir einen View-Wechsel ausgelöst haben und der <code class="language-plaintext highlighter-rouge">ng-view</code> Scope (<code class="language-plaintext highlighter-rouge">"004"</code>) und alle seine Kind-Elemente (<code class="language-plaintext highlighter-rouge">"005"</code>) neu erzeugt wurden.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="dl">"</span><span class="s2">001</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">004</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">004</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">005</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">004</span><span class="dl">"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Scopes sind ein Herzstück von Angular und zum Debuggen und Analysieren praktischerweise komplett zugreifbar.
+Allerdings eröffnen diese Techniken auch vielfältige Möglichkeiten, um echte Anwendungen zu manipulieren oder einfach nur schwer nachvollziehbaren Code zu schreiben.</p>
+
+<p>Falls für euch noch Fragen offengeblieben sind, oder Ihr coole Ideen habt, was man mit Scopes noch für Experimente machen kann, wir freuen uns über jeden Kommentar.</p>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2014-12-03-angularjs-access-scope-via-console/2014-12-03-angularjs-access-scope-via-console.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Tilman Potthof" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/c9884efe50e4a426e3c7c32af17560cd-160x160.jpg"
+      data-srcset="/assets/img/gravatars/c9884efe50e4a426e3c7c32af17560cd-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Tilman Potthof
+    </p>
+    
+      <p class="text-muted small">
+        Tilman Potthof ist begeisterter Softwareentwickler mit einem Fokus auf komplexe Frontend-Entwicklung. Während seines Studiums hat er sich intensiv mit JavaScript und Web-Frameworks beschäftigt. Aktuell arbeitet er als Software-Entwickler bei //SEIBERT/MEDIA und entwickelt dort Anwendungen mit AngularJS und JavaEE. Als Anhänger von Clean Code und TDD setzt er sich für kontinuierliche Verbesserungen von Code-Qualität und Entwicklungsprozess ein.
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/tilmanschweitzer" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/was-ist-angular/"
+    data-style="background-image: url('/artikel/was-ist-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Was sind Angular und AngularJS?
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ngupgrade-migration-angularjs-angular/"
+    data-style="background-image: url('/artikel/ngupgrade-migration-angularjs-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Migration AngularJS zu Angular
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

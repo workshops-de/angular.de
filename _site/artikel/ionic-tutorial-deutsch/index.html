@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Ionic Framework Tutorial - hybride Apps | Angular.DE</title>
+  
+  <meta name="description" content="Unser Einführungstutorial zu Ionic erklärt euch alle wichtigen Konzepte und Bestandteile des Frameworks. Vom Erstellen des Projekts bis hin zur ersten App.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/ionic-tutorial-deutsch/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Ionic Framework Tutorial - hybride Apps - Angular.DE">
+
+
+
+  <meta property="og:description" content="Unser Einführungstutorial zu Ionic erklärt euch alle wichtigen Konzepte und Bestandteile des Frameworks. Vom Erstellen des Projekts bis hin zur ersten App.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/ionic-tutorial-deutsch/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Ionic Framework Tutorial - hybride Apps - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Unser Einführungstutorial zu Ionic erklärt euch alle wichtigen Konzepte und Bestandteile des Frameworks. Vom Erstellen des Projekts bis hin zur ersten App.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/ionic-tutorial-deutsch/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ionic Framework Tutorial - hybride Apps"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Ionic Framework Tutorial - hybride Apps" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Ionic Framework Tutorial - hybride Apps</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/tutorial/" class="badge bg-secondary text-bg-secondary text-uppercase">tutorial</a>
+            
+            <a href="/kategorie/ionic/" class="badge bg-secondary text-bg-secondary text-uppercase">ionic</a>
+            
+            <a href="/kategorie/angularjs/" class="badge bg-secondary text-bg-secondary text-uppercase">angularjs</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Bengt Weiße
+            
+            
+            <span class="ms-1 me-1">•</span> <time>12.03.2016</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  39 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Wer sich ein wenig mit AngularJS beschäftigt oder bereits beschäftigt hat, wird bzw. ist sicher schon über den Namen Ionic oder das <a href="http://ionicframework.com/" title="Ionic Framework" rel="noreferrer noopener" target="_blank">Ionic Framework</a> gestolpert.</p>
+
+<p>Der erste Teil des Tutorials befasst sich mit folgenden Themen:</p>
+
+<ul>
+  <li>Was ist hybride App-Entwicklung?</li>
+  <li>Cordova, PhoneGap, Ionic CLI</li>
+  <li>App anlegen</li>
+  <li>Routing mit uiRouter</li>
+  <li>Basiselemente - ionHeader, ionContent, ionFooter</li>
+  <li>Navigation - ionNavView, ionView</li>
+  <li>Nutzung von Sidemenus</li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-modals/">Modals</a></li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-popups/">Popups</a></li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-ionicons/">Ionicons</a></li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-scss/">Styling mit SCSS</a></li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-configuration/">Konfiguration mit $ionicConfigProvider</a></li>
+</ul>
+
+<h2 id="voraussetzung">Voraussetzung</h2>
+
+<p>Zum Verständnis des Tutorials sollten die Grundlagen von AngularJS bekannt und vor allem verstanden sein!</p>
+
+<p>Alle Quelltexte findet ihr auf <a href="https://github.com/angularjs-de/ionic-tutorial" rel="noreferrer noopener" target="_blank">GitHub</a> oder ladet euch alles als <a href="https://github.com/angularjs-de/ionic-tutorial/archive/master.zip" rel="noreferrer noopener" target="_blank">ZIP-Archiv</a> herunter. In jedem Abschnitt ist natürlich auch eine Live-Demo verlinkt.</p>
+
+<hr>
+
+<div class="workshop-hint">
+    <div class="h3">Keine Lust zu Lesen?</div>
+    <div class="row mb-2">
+        <div class="col-xs-12 col-md-6">
+            <p>
+                Du willst tiefer und vor allem effektiv in das Thema Ionic einsteigen? Kein Problem! Wir bieten interative Workshops zum Thema
+                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-top-link">Ionic
+                    und TypeScript</a> an.
+            </p>
+            <p class="">
+                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-top-button">
+                    <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
+                </a>
+            </p>
+
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
+        </div>
+    </div>
+</div>
+<hr>
+
+<h2 id="ionic-und-hybride-app-entwicklung">Ionic und hybride App-Entwicklung</h2>
+
+<p>Hinter dem Namen Ionic verbirgt sich nicht etwa noch ein weiteres Singel-Page-Application-Framework oder eine einfache Erweiterung von AngularJS. Das Team rund um Ionic hat mit ihrem Framework mehr einen Aufsatz für AngularJS geschaffen, um damit <em>hybride mobile Apps</em> zu bauen.</p>
+
+<p>Der Vorteil ist die einfache Nutzung von Webtechnologien, wie HTML5, CSS3 und JavaScript anstatt Objective-C, Swift oder Java zu erlernen. Dadurch schafft man eine gemeinsame Code-Basis für alle Plattformen.</p>
+
+<h3 id="cordova-phonegap-und-ionic-cli">Cordova, PhoneGap und Ionic CLI</h3>
+
+<p>Den Zugriff auf native Schnittstellen oder Dienste und Komponenten des mobilen Gerätes erhält der Entwickler mit <a href="https://cordova.apache.org/" title="Cordova" rel="noreferrer noopener" target="_blank">Apache Cordova</a> oder <a href="https://github.com/phonegap/phonegap-cli" title="PhoneGap" rel="noreferrer noopener" target="_blank">Adobe PhoneGap</a>.
+Beide Anbieter stellen ein CLI bereit, über das alle wichtigen Schritte ausgeführt werden können.</p>
+
+<ul>
+  <li>Projekt anlegen</li>
+  <li>Plattform hinzufügen/entfernen</li>
+  <li>Plugin hinzufügen/entfernen</li>
+  <li>Plugin suchen</li>
+  <li>Projekt bauen (finale App, z.B. als .apk-Datei)</li>
+</ul>
+
+<p>Cordova ist OpenSource und die Basis für PhoneGap. Adobe behält sich jedoch vor eigene Änderungen an PhoneGap vorzunehmen. Dadurch konnte der Dienst <a href="https://github.com/phonegap/phonegap-cli" title="PhoneGap Build" rel="noreferrer noopener" target="_blank">PhoneGap Build</a> entstehen mit dem Anwendungen direkt in der Cloud gebaut werden. Besonders für iOS-Apps ist der Dienst eine große Hilfe, da diese auf einem Mac kompiliert werden müssen.</p>
+
+<p>Ionic soll zukünftig ein Rundum-Paket liefern. Dazu zählen bereits eigene Services, wie Push-Nachrichten oder Analytics, aber auch eine eigene App-Verwaltung, um jederzeit die eigenen Apps ausprobieren und vorzuführen können.</p>
+
+<p>Damit dies überhaupt möglich ist, stellt auch Ionic ein eigenes CLI, die <code class="language-plaintext highlighter-rouge">Ionic CLI</code> - bereit, welches wiederum auf <code class="language-plaintext highlighter-rouge">Cordova</code> basiert.</p>
+
+<p>Die Ionic CLI enthält dabei alle wichtigen Funktionen der Cordova CLI und erweitert diese um weitere Befehle.</p>
+
+<h3 id="die-erste-app-anlegen">Die erste App anlegen</h3>
+
+<p>Es gibt im Prinzip zwei Möglichkeiten eine Ionic-App zu entwickeln.</p>
+
+<ol>
+  <li>über Ionic CLI – Nutzung der CLI Befehle und Mechanismen</li>
+  <li>als normale Web-App – eigenständige Einbindung der nötigen Bibliothek und Testen im Browser (ggfs. Nutzung von PhoneGap Build)</li>
+</ol>
+
+<p><strong>Ionic CLI</strong>
+Im ersten Fall muss zuvor Cordova und danach das Ionic CLI über die nachstehende Code-Zeile installiert werden.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> ionic
+</code></pre></div></div>
+
+<p>Der folgende Befehl erstellt dann ein neues Projekt.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ionic start pizzaApp <span class="o">[</span>template]
+</code></pre></div></div>
+
+<p>Jetzt finden sich die Projektdateien in einem neuen Ordner mit dem Namen <em>pizzaApp</em> wieder. Der Parameter <em>template</em> ist optional und gibt an, welches der angebotenen Starter-Templates genutzt wird.</p>
+
+<p>Mögliche Templates sind:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">tabs</code> - App mit Tab-Navigation (Standard)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">sidemenu</code> - App mit einem Seitenmenü</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">maps</code> - Beispiel mit Google Maps</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">salesforce</code> - Kooperation zur Nutzung des Salesforce CRM</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">blank</code> - ein leeres Projekt</li>
+</ul>
+
+<p>Im <code class="language-plaintext highlighter-rouge">www</code>-Verzeichnis befinden sich jetzt die eigentlichen Anwendungsquellen, die für diese Einführung wichtig sind.</p>
+
+<p>Über den Befehl</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ionic serve
+</code></pre></div></div>
+
+<p>wird ein lokaler Dateiserver gestartet, sodass die Anwendung ohne Einschränkungen ausgeführt werden kann. Wird der Befehl mit dem Parameter <code class="language-plaintext highlighter-rouge">--lab</code> gestartet, erhalten wir eine parallele Ansicht der App auf iOS und Android.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ionic serve <span class="nt">--lab</span>
+</code></pre></div></div>
+
+<p><img src="02-ionic-serve-lab.png" alt="Beispiel eines ionic serve --lab"></p>
+
+<p><strong>Web-App</strong></p>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/02-App%20anlegen" rel="noreferrer noopener" target="_blank">Quellcode</a></p>
+
+<p>Eine Ionic-App kann auch genauso wie eine normale Web-App bzw. AngularJS-App entwickelt werden. So kann sich PhoneGap Build die Projektdaten direkt von GitHub laden. Danach baut der Service intern ein eigenes CLI Projekt und installiert Plugins und Plattformen je nach Konfiguration in der <code class="language-plaintext highlighter-rouge">config.xml</code>.
+Im Vergleich zum CLI Projekt sind hier nur die Inhalte des <code class="language-plaintext highlighter-rouge">www</code>-Ordners und die <code class="language-plaintext highlighter-rouge">config.xml</code> relevant.
+Zusätzliche Ordner und Dateien eines CLI-Projekts sind hier überflüssig.
+Im Gegensatz dazu müssen die Bibliotheken AngularJS und Ionic manuell eingebunden werden.</p>
+
+<p>Möglichkeiten zur Einbindung des Ionic Frameworks:</p>
+
+<ol>
+  <li>Über ein CDN - <a href="https://code.ionicframework.com/" rel="noreferrer noopener" target="_blank">code.ionicframework.com</a> für Entwicklungs- und Testphasen</li>
+  <li>Bower - <code class="language-plaintext highlighter-rouge">bower install ionic</code>
+</li>
+  <li>GitHub - Download der <a href="https://github.com/driftyco/ionic/releases" title="Release-Quellen" rel="noreferrer noopener" target="_blank">Release-Quellen</a>
+</li>
+</ol>
+
+<p>Allgemein besteht das Framework aus AngularJS, der AngularJS-Erweiterungen von Ionic, das Ionic Basis-Script, zusätzlichen AngularJS-Modulen (z.B. UI-Router für das erweiterte Routing) Je nach Bedarf werden nicht alle benötigt. und den Styling-Dateien (CSS, SCSS und Icon-Font). Zur Vereinfachung stellt Ionic eine zusammengefügte Datei zur Verfügung in der alle benötigten JavaScript-Dateien bereits enthalten sind.</p>
+
+<p>Im einfachsten Fall sieht die Definition einer Ionic-Anwendung folgendermaßen aus.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html</span> <span class="na">ng-app=</span><span class="s">"pizzaApp"</span> <span class="na">strict-di</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"initial-scale=1,   maximum-scale=1, user-scalable=no, width=device-width"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;title&gt;</span>Pizza-App<span class="nt">&lt;/title&gt;</span>
+    <span class="c">&lt;!-- Load ionic sources over cdn --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"//code.ionicframework.com/nightly/css/ionic.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//code.ionicframework.com/nightly/js/ionic.bundle.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+      <span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">pizzaApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">ionic</span><span class="dl">'</span><span class="p">]);</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- HTML content of the app --&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="routing-mit-ui-router">Routing mit UI-Router</h2>
+
+<p>Ionic nutzt nicht den zum Core gehörenden ngRouter sondern setzt auf <a href="https://github.com/angular-ui/ui-router" title="UI-Router" rel="noreferrer noopener" target="_blank">UI-Router</a>. Durch den UI-Router haben wir die Möglichkeit dynamisch mehrere View pro Route, die im UI-Router State heißen, anzusprechen und mit Inhalt zu füllen.</p>
+
+<h3 id="erstellen-von-zuständen">Erstellen von Zuständen</h3>
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/03a-Routing%20(States)" target="_blank" rel="noreferrer noopener">Quellcode</a> / <a href="https://angularjs-de.github.io/ionic-tutorial/03a-Routing%20(States)/#/order" target="_blank" rel="noreferrer noopener">Demo</a></p>
+
+<p>Anstatt, wie bisher, Routen zu definieren, werden nun Zustände in der config-Phase der Anwendung erstellt. Dazu bietet der UI-Router zwei Provider.</p>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">$stateProvider</code> - Definieren von Zuständen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">$urlRouterProvider</code> - Definieren von Regeln bzw. Bedingungen, wie wann navigiert wird</li>
+</ol>
+
+<p>Unsere JavaScript-Code unserer Tutorial-App, die wir im vorherigem Abschnitt angelegt haben, wandert nun auf Grund der Übersichtlichkeit in eine eigene Datei. Hinzu kommt ein config-Block in dem wir zwei Zustände erstellen.</p>
+
+<ol>
+  <li>order - Gibt alle Pizzen aus und nimmt Bestellungen entgegen</li>
+  <li>about - Enthält Text über den Pizza-Service</li>
+</ol>
+
+<p>Der config-Block sieht im einfachsten Fall wie folgt aus:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">$stateProvider</span><span class="p">,</span> <span class="nx">$urlRouterProvider</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$urlRouterProvider</span>
+    <span class="p">.</span><span class="nf">otherwise</span><span class="p">(</span><span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">$stateProvider</span>
+    <span class="p">.</span><span class="nf">state</span><span class="p">(</span><span class="dl">'</span><span class="s1">order</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app/templates/order.html</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OrderCtrl</span><span class="dl">'</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nf">state</span><span class="p">(</span><span class="dl">'</span><span class="s1">about</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app/templates/about.html</span><span class="dl">'</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Als erstes laden wir beide Provider. Danach werden die beiden Zustände über die <code class="language-plaintext highlighter-rouge">state</code>-Methode des <strong><code class="language-plaintext highlighter-rouge">$stateProvider</code></strong> mit einem Namen und einem Konfigurationsobjekt erstellt. Das Objekt beinhaltet die zu füllenden Views mit Angabe von Template und dem Controller sowie die zu verknüpfende URL. Mit den <strong><code class="language-plaintext highlighter-rouge">$urlRouterProvider</code></strong> kann eine Fallback-URL angegeben werden, die genutzt wird falls ein nicht vorhandener Zustand aufgerufen wird.</p>
+
+<p>Der UI-Router bringt weiterhin eigene Direktiven mit.</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">uiView</code> - ersatz für <code class="language-plaintext highlighter-rouge">ngView</code>, optionale Angabe eines Namen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">uiSref</code> - ersatz für <code class="language-plaintext highlighter-rouge">ngHref</code>, Angabe eines State-Namen bzw. URL und Übergabe eines optionalen Parameter-Objektes</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">uiSrefActive</code> - setzt eine CSS-Klasse, falls der unter <code class="language-plaintext highlighter-rouge">uiSref</code> angegebene Zustand aktiv ist</li>
+</ul>
+
+<p>Der Inhalt unserer <code class="language-plaintext highlighter-rouge">index.html</code> könnte unter Verwendung der vorgestellten Direktiven, wie folgt aussehen.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">"order"</span> <span class="na">ui-sref-active=</span><span class="s">"active"</span><span class="nt">&gt;</span>Start<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">"about"</span> <span class="na">ui-sref-active=</span><span class="s">"active"</span><span class="nt">&gt;</span>Über Uns<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;ui-view&gt;&lt;/ui-view&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>Unsere App hat nun ein Einhängepunkt in dem Inhalte eingefügt werden, sowie zwei Verlinkungen. Falls ein Zustand aktiv ist, wird am Element die Klasse <code class="language-plaintext highlighter-rouge">active</code> gesetzt. Werden nun noch die fehlenden Templates und der Controller angelegt, lässt sich die Anwendung fehlerfrei ausführen.</p>
+
+<p>Wird der <code class="language-plaintext highlighter-rouge">uiView</code> ein Name zugewiesen:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ui-view</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/ui-view&gt;</span>
+</code></pre></div></div>
+
+<p>oder</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ui-view=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Sieht eine Zustandsdefinition so aus:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">state</span><span class="p">(</span><span class="dl">'</span><span class="s1">order</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">views</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">content@</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app/templates/order.html</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OrderCtrl</span><span class="dl">'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>Das Konfigurationsobjekt erhält den Schlüssel <code class="language-plaintext highlighter-rouge">views</code>. Dieser hält wieder ein Objekt aus <em><code class="language-plaintext highlighter-rouge">uiViewName@zustandDerUiViewDefinition</code></em> als Schlüssel und als Wert ein Objekt mit Template, Controller, usw..</p>
+
+<h3 id="parameter">Parameter</h3>
+<p>Natürlich kann ein Zustand auch Parameter erhalten. Dazu muss einfach der Name des Parameters mit einem ‘:’ als Prefix in die URL eingepflegt werden.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span><span class="nx">order</span><span class="o">/</span><span class="p">:</span><span class="nx">id</span>
+</code></pre></div></div>
+
+<p>Alternativ kann die ‘{}’-Schreibweise genutzt und optional sogar der Datentyp festgelegt werden. Das spart möglicherweise unnötiges Parsen der Daten.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span><span class="nx">order</span><span class="o">/</span><span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="nx">int</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Einen vollständigen Überblick erhaltet ihr im dazugehörigen Abschnitt des <a href="https://github.com/angular-ui/ui-router/wiki/url-routing#url-parameters" rel="noreferrer noopener" target="_blank">UI-Router-Wikis</a>.</p>
+
+<h3 id="abstrakte-und-eltern-zustände">Abstrakte und Eltern-Zustände</h3>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/03b-Routing%20(Parent%2C%20Abstract)" target="_blank" rel="noreferrer noopener">Quellcode</a> / <a href="https://angularjs-de.github.io/ionic-tutorial/03b-Routing%20(Parent,%20Abstract)/#/order" target="_blank" rel="noreferrer noopener">Demo</a></p>
+
+<p>Ein weiterer Vorteil vom UI-Router ist die Möglichkeit State-Hierarchien aufzubauen. Dadurch kann beispielsweise ein Basis-Zustand definiert werden um gemeinsame Logik übersichtlich in einen eigenen Zustand auszulagern. Häufig nutzt man diese Hierarchien wenn Funktionen oder Information über mehrere States, also Routen, zur Verfügung stehen sollen. Dadurch müssen wir nicht den <code class="language-plaintext highlighter-rouge">$rootScope</code> missbrauchen oder die Funktionen in jedem Controller extra definieren.</p>
+
+<p>Als Beispiel erhält unsere Anwendung nun einen Basis-Zustand, der das Basis-Template beinhaltet. Alle Kind-Zustände erhalten diesen als Eltern-Zustand.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">$stateProvider</span><span class="p">,</span> <span class="nx">$urlRouterProvider</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">$urlRouterProvider</span>
+    <span class="p">.</span><span class="nf">otherwise</span><span class="p">(</span><span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">$stateProvider</span>
+    <span class="p">.</span><span class="nf">state</span><span class="p">(</span><span class="dl">'</span><span class="s1">base</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">views</span><span class="p">:</span> <span class="p">{</span>
+          <span class="dl">'</span><span class="s1">base</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app/templates/base.html</span><span class="dl">'</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nf">state</span><span class="p">(</span><span class="dl">'</span><span class="s1">base.order</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">order</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app/templates/order.html</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OrderCtrl</span><span class="dl">'</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nf">state</span><span class="p">(</span><span class="dl">'</span><span class="s1">about</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">parent</span><span class="p">:</span> <span class="dl">'</span><span class="s1">base</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">about</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app/templates/about.html</span><span class="dl">'</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Es gibt mehrere Möglichkeiten einen Eltern-Zustand zuzuweisen.</p>
+
+<ol>
+  <li>dot-Notation - Order State erhält <code class="language-plaintext highlighter-rouge">base</code> als Elternzustand durch die Benennung in “base.order”</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">parent</code>-Attribut - Der <code class="language-plaintext highlighter-rouge">about</code>-State erhält <code class="language-plaintext highlighter-rouge">base</code> als Elternzustand durch seine Angabe im <code class="language-plaintext highlighter-rouge">parent</code>-Attributes</li>
+</ol>
+
+<p>Das <code class="language-plaintext highlighter-rouge">base</code>-Template beinhaltet nun die früheren Inhalte des body-Tags. Dort haben wir nun nur noch ein <code class="language-plaintext highlighter-rouge">uiView</code>-Element, das der Basis-Zustand als Einstiegspunkt nutzt.</p>
+
+<p><em>Beachte: Die URL eines Kind-Zustandes darf den gemeinsamen Teil mit dem Eltern-Zustand bei seiner Definition nicht beinhalten. Aus diesem Grund fehlt bei den Kind-Urls der ‘/’.</em></p>
+
+<p>Jetzt haben wir nur noch ein Problem. Wenn wir nämlich direkt unsere Anwendung mit ‘/’ aufrufen wird nur der Basis-Zustand geladen und angezeigt. Dies wollen wir vermeiden und glücklicherweise bietet der UI-Router auch dafür eine Lösung.
+Wir müssen aus unserem Basis-Zustand einen abstrakten Zustand machen. Dazu erhält der Basis-Zustand das Attribut <code class="language-plaintext highlighter-rouge">abstract</code>, welches wir auf <code class="language-plaintext highlighter-rouge">true</code> setzen. Danach ist ‘/’ nicht mehr eigenständig aufrufbar und unser Fallback-Mechanismus greift.
+Das ist so ähnlich wie in der <abbr title="Objektorientierte Programmierung">OOP</abbr> mit abstrakten Klassen. Man kann sie verwenden, um eigene Klassen zu implementieren, aber nie direkt Objekte von ihr selbst erzeugen.</p>
+
+<h3 id="events-und-services">Events und Services</h3>
+<p>Ähnlich zum Standard-Router bietet der UI-Router ein paar Services und Events, um flexible in das Routing einzugreifen. Wichtige Services sind dabei:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">$state</code> - enthält Methoden zum programmatischem Routen
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">transitionTo()</code></li>
+      <li>
+<code class="language-plaintext highlighter-rouge">go(stateName, paramsObject)</code> (nutzt intern transitionTo)</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">$stateParams</code> - Zugriff auf die Parameter eines Zustands</li>
+</ul>
+
+<p>Mit Hilfe dieser AngularJS-Events könnt ihr auf das Navigieren reagieren:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">$stateChangeStart</code> - Routing zu neuem Zustand startet</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">$stateChangeSuccess</code> - Routing erfolgreich abgeschlossen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">$stateChangeError</code> - Routing mit Fehler abgeschlossen</li>
+</ul>
+
+<p>Alle Events erhalten folgende Parameter:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">event</code> - das AngularJS Event-Objekt</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">toState</code> - der Zeilzustand</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">toStateParams</code> - die ggfs. gesetzten Url-Parameter</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">fromState</code> - vorherige Zustand</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">fromStateParams</code> - die ggfs. gesetzten Url-Parameter des vorherigen Zustands</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">error</code> - nur im <code class="language-plaintext highlighter-rouge">$stateChangeError</code>
+</li>
+</ul>
+
+<h2 id="basis-komponenten">Basis-Komponenten</h2>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/04-BaseComponents" rel="noreferrer noopener" target="_blank">Quellcode</a> / <a href="https://angularjs-de.github.io/ionic-tutorial/04-BaseComponents/#/order" rel="noreferrer noopener" target="_blank">Demo</a></p>
+
+<p>Bisher sieht unsere App noch so gar nicht nach einer mobilen Anwendung aus. Ionic stellt genau für diesen Zweck eine Reihe von vorgefertigten Direktiven zur Verfügung. Dabei sollte beachtet werden, dass damit auch in vielen Fällen zusätzliche Funktionen verknüpft sind. Wird nur das Styling der Komponenten genutzt existieren dafür häufig bereits vorgefertigte Alternativen mit reinem <a href="https://ionicframework.com/docs/components" title="CSS Komponenten" rel="noreferrer noopener" target="_blank">CSS</a>.</p>
+
+<p>Als Basis einer Ionic-App stehen drei Komponenten zur Verfügung:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionHeaderBar</code> - Kopfzeile der App, beinhaltet Titel und Schaltflächen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionContent</code> - Inhaltsbereich der App, übernimmt Scrolling</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionFooterBar</code> - Fußzeile der App, beinhaltet Text und Schaltflächen</li>
+</ul>
+
+<p>Wir benutzen nun die Komponenten in unserem Basis-Layout. Die Navigationslinks werden Inhalt einer <code class="language-plaintext highlighter-rouge">ionHeaderBar</code> und die <code class="language-plaintext highlighter-rouge">uiView</code> wird in ein <code class="language-plaintext highlighter-rouge">ionContent</code>-Element verschoben.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-header-bar</span> <span class="na">class=</span><span class="s">"bar-positive"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"buttons"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">"base.order"</span> <span class="na">ui-sref-active=</span><span class="s">"active"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Start<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Pizza App<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"buttons"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">"about"</span> <span class="na">ui-sref-active=</span><span class="s">"active"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Über Uns<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/ion-header-bar&gt;</span>
+<span class="nt">&lt;ion-content&gt;</span>
+  <span class="nt">&lt;ui-view&gt;&lt;/ui-view&gt;</span>
+<span class="nt">&lt;/ion-content&gt;</span>
+</code></pre></div></div>
+
+<p>Beim Aufruf fällt sofort auf, dass bei Einhaltung der Struktur, die Links direkt als Schaltflächen dargestellt und der aktive Zustand hervorgehoben wird. Dazu sollte sich an die vorgegebene Struktur gehalten werden:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">div</code> mit Klasse <code class="language-plaintext highlighter-rouge">buttons</code>
+    <ul>
+      <li>enthält Buttons links</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">h1</code> mit Klasse <code class="language-plaintext highlighter-rouge">title</code>
+    <ul>
+      <li>enthält Seitentitel</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">div</code> mit Klasse <code class="language-plaintext highlighter-rouge">buttons</code>
+    <ul>
+      <li>enthält Buttons rechts</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Des Weiteren lässt sich der Inhaltsbereich scrollen. Dazu können eine Vielzahl von Einstellungen getroffen werden. Unter anderem lässt sich JavaScript-Scrollen aktivieren, dass für manche Ionic-Funktionen wichtig ist aber auch die Performance der Anwendung minimieren kann oder auch ein Standard-Padding einfügt werden.</p>
+
+<p>Die Fußleiste kann einfach, wie die <code class="language-plaintext highlighter-rouge">ionHeaderBar</code> davor, nach dem <code class="language-plaintext highlighter-rouge">ionContent</code> eingefügt werden.</p>
+
+<p>Zusätzlich zu einer Kopfzeile kann man eine fixierte Unterzeile eingefügen. Dazu kommt eine zweite <code class="language-plaintext highlighter-rouge">ionHeaderBar</code> nach der ersten hinzu. Jedoch benötigt das Element Klasse <code class="language-plaintext highlighter-rouge">bar-subheader</code>.</p>
+
+<h2 id="erstellen-einer-eigenen-navigation">Erstellen einer eigenen Navigation</h2>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/05-Navigation" rel="noreferrer noopener" target="_blank">Quellcode</a> / <a href="https://angularjs-de.github.io/ionic-tutorial/05-Navigation/#/order" rel="noreferrer noopener" target="_blank">Demo</a></p>
+
+<p>Die bisherige App-Struktur macht für eine komplexe App wenig Sinn. Derzeit kann immer nur der scrollbare Inhalt ausgetauscht werden. Es kann aber sein, dass in einem Zustand gar nicht gescrollt werden soll oder in der Kopfzeile andere Schaltflächen angezeigt werden.</p>
+
+<p>Dafür könnte natürlich in jedem Zustand eine neue Kopfzeile, Fußzeile und ein eigener Content-Bereich definiert werden. Das ist zu mühselig und geht auch einfacher.</p>
+
+<h3 id="komponenten-für-navigation">Komponenten für Navigation</h3>
+<p>Aus diesem Grund gibt es im Ionic Framework Navigations-Komponenten.</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionNavView</code> - basiert auf uiView</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionView</code> - Wrapper einer View</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionNavBar</code> - Navigationsleiste (basiert auf ionHeaderBar)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionNavBackButton</code> - zeigt Zurück-Button an, falls nötig</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionNavButtons</code> - Erlaubt das Konfigurieren der Schaltflächen in der <code class="language-plaintext highlighter-rouge">ionNavBar</code> pro View</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionNavTitle</code> - Setzt Titel in der <code class="language-plaintext highlighter-rouge">ionNavBar</code> pro View</li>
+</ul>
+
+<p>Als erstes ersetzen wir jede <code class="language-plaintext highlighter-rouge">uiView</code> mit <code class="language-plaintext highlighter-rouge">ionNavView</code>. Danach wird die <code class="language-plaintext highlighter-rouge">ionHeaderBar</code> mit einer <code class="language-plaintext highlighter-rouge">ionNavBar</code> ausgetauscht. Da Zwischenergebnis grauenvoll aussehen würde, machen wir direkt mit den nächsten Umbauarbeiten weiter.</p>
+
+<p>Wir könnten jetzt innerhalb der Navigationsleiste die Buttons mit der <code class="language-plaintext highlighter-rouge">ionNavButtons</code>-Komponente konfigurieren. Jedoch sollten wir überlegen, ob wir diese jetzt überhaupt noch brauchen. Unser Startzustand ist der <code class="language-plaintext highlighter-rouge">order</code>-State. Von diesem aus müssen wir irgendwie zur <em>Über Uns</em>-Seite gelangen von wo aus nur die Möglichkeit besteht wieder zurückzugehen. Aus diesem Grund erhält nun jedes View-Template einen eigenen <code class="language-plaintext highlighter-rouge">ionContent</code>, dieser wird nun von einer <code class="language-plaintext highlighter-rouge">ionView</code> umschlossen. Dadurch können wir nun dort im order-State den Navigationsbutton setzen.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-view&gt;</span>
+  <span class="nt">&lt;ion-nav-buttons</span> <span class="na">side=</span><span class="s">"right"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">"about"</span> <span class="na">ui-sref-active=</span><span class="s">"active"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Über Uns<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/ion-nav-buttons&gt;</span>
+  <span class="nt">&lt;ion-content</span> <span class="na">padding=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"pizza in pizzas"</span><span class="nt">&gt;</span>
+      {{pizza.name}} {{pizza.price}}
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/ion-content&gt;</span>
+<span class="nt">&lt;/ion-view&gt;</span>
+</code></pre></div></div>
+
+<p>Zusätzlich erhält die Navigationsleiste im Basis-Template einen <code class="language-plaintext highlighter-rouge">ionNavBackButton</code> und setzt den App-Titel über die <code class="language-plaintext highlighter-rouge">ionNavTitle</code>-Komponente.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-nav-bar</span> <span class="na">class=</span><span class="s">"bar-positive"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ion-nav-back-button&gt;&lt;/ion-nav-back-button&gt;</span>
+  <span class="nt">&lt;ion-nav-title</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Pizza App<span class="nt">&lt;/ion-nav-title&gt;</span>
+<span class="nt">&lt;/ion-nav-bar&gt;</span>
+<span class="nt">&lt;ion-nav-view&gt;&lt;/ion-nav-view&gt;</span>
+</code></pre></div></div>
+
+<p>Klicken wir nun auf <em>Über Uns</em> erscheint sofort der Zurück-Button in der Navigationsleiste.</p>
+
+<p><img src="ionic-navigation.gif?v=63629079934" alt="Ionic Navigation Bild"></p>
+
+<h3 id="services-für-navigation">Services für Navigation</h3>
+
+<p>Natürlich kann auch programmatisch auf die Navigation und das Verhalten der Navigationsleiste zugegriffen werden. Dazu stellt das Framework zwei Services bereit:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">$ionicNavBarDelegate</code> - Zugriff auf die Navigationleiste, z.B. Zurück-Button ausblenden, Titel setzen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">$ionicHistory</code> - Manipulieren der Navigationshistorie, manuelles Zurück-Gehen, Historie löschen, Optionen der nächsten View setzen (z.B. Animation deaktivieren, als Navigationswurzel setzen)</li>
+</ul>
+
+<h3 id="seitenmenüs">Seitenmenüs</h3>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/06-Sidemen%C3%BC" rel="noreferrer noopener" target="_blank">Quellcode</a> / <a href="https://angularjs-de.github.io/ionic-tutorial/06-Sidemen%C3%BC/#/order" rel="noreferrer noopener" target="_blank">Demo</a></p>
+
+<p>Das Ionic Framework stellt dem Entwickler zwei zusätzliche und grundlegende Komponenten zur Navigation bereit.</p>
+
+<ol>
+  <li>Seitenmenüs - Ausklappbares Menü, Wechsel zwischen Hauptpunkten der App</li>
+  <li>Tabs - Reihe von Schaltflächen zum Wechsel zwischen Hauptfunktionen</li>
+</ol>
+
+<p>Dabei sollte beachtet werden, dass der Einsatz der Komponenten global für die App gilt. In meiner Arbeit mit Ionic habe ich auch die Erfahrungen gemacht, dass es nicht ratsam ist ein Seitenmenü oder Tabs nur in einem bestimmten Teil der Anwendung zu nutzen. Dies führt häufig zu unerwartetem Verhalten im Routing da jeder Tab eine eigene Navigationshistorie hat. Nur mit vielen Verbiegungen ist es möglich Tabs auf einer Unterseite direkt aufzurufen. Ein ähnlichen Fall gibt es bei Seitenmenüs. In der Regel ist ein Seitenmenü ein Schnellzugriff für die wichtigsten Funktionen und Informationen. Oft ist dieses auch nur zugänglich, wenn man sich nicht in einem Kind-Zustand befindet.</p>
+
+<h3 id="der-aufbau">Der Aufbau</h3>
+<p>Unsere Pizza-App soll nun um ein Seitenmenü ergänzt werden. Dazu schauen wir uns erstmal an, aus was so ein Menü eigentlich besteht.</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionSideMenus</code> - beinhaltet die einzelnen Seitenmenüs</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionSideMenu</code> - stellt ein Seitenmenü dar, Angabe der Seite über Attribute <code class="language-plaintext highlighter-rouge">side</code> mit Wert <code class="language-plaintext highlighter-rouge">left</code> oder <code class="language-plaintext highlighter-rouge">right</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ionSideMenuContent</code> - hier kommt dann der Hauptinhalt der App rein, in den meisten Fällen die Basis <code class="language-plaintext highlighter-rouge">ionNavView</code>
+</li>
+</ul>
+
+<p>Wir erstellen nun im Basis-Template unserer App ein Seitenmenü auf der linken Seite. Zusätzlich erhält das Menü zwei Links, einen zur Bestellseite und einen zur „Über Uns“-Seite.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-side-menus&gt;</span>
+
+  <span class="nt">&lt;ion-side-menu</span> <span class="na">side=</span><span class="s">"left"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ion-header-bar</span> <span class="na">class=</span><span class="s">"bar-assertive"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Menü<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;/ion-header-bar&gt;</span>
+    <span class="nt">&lt;ion-content</span> <span class="na">scroll=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">"base.order"</span> <span class="na">ui-sref-active=</span><span class="s">"active"</span><span class="nt">&gt;</span>
+          Bestellen
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">"about"</span> <span class="na">ui-sref-active=</span><span class="s">"active"</span><span class="nt">&gt;</span>
+          Über Uns
+        <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/ion-content&gt;</span>
+  <span class="nt">&lt;/ion-side-menu&gt;</span>
+
+  <span class="nt">&lt;ion-side-menu-content&gt;</span>
+    <span class="nt">&lt;ion-nav-bar</span> <span class="na">class=</span><span class="s">"bar-positive"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ion-nav-back-button&gt;</span>
+      <span class="nt">&lt;/ion-nav-back-button&gt;</span>
+      <span class="nt">&lt;ion-nav-title</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Pizza App<span class="nt">&lt;/ion-nav-title&gt;</span>
+    <span class="nt">&lt;/ion-nav-bar&gt;</span>
+    <span class="nt">&lt;ion-nav-view&gt;&lt;/ion-nav-view&gt;</span>
+  <span class="nt">&lt;/ion-side-menu-content&gt;</span>
+
+<span class="nt">&lt;/ion-side-menus&gt;</span>
+</code></pre></div></div>
+
+<p>Über <code class="language-plaintext highlighter-rouge">ionSideMenus</code> sagen wir, dass unsere App Seitenmenüs verwendet. Danach folgt die Definition unseres Sidemenus durch <code class="language-plaintext highlighter-rouge">ionSideMenu</code> unter der Angabe von <code class="language-plaintext highlighter-rouge">side="left“</code>. Die entsprechenden Links legen wir als Inhalt des Menüs an. Alles übrige vom vorherigen Code wird in das <code class="language-plaintext highlighter-rouge">ionSideMenuContent</code>-Element verschoben.</p>
+
+<h3 id="öffnen-und-schließen-des-menüs">Öffnen und Schließen des Menüs</h3>
+<p>Beim Ausführen der App fällt auf, dass es keinen Button gibt, um das Menü zu öffnen. Aber wir können schon einmal das Menü “aufziehen” (auch draggen genannt). Auf der Startseite ziehen wir nun quasi am Inhalt (von links nach rechts) und bringen so das Menü zum Vorschein.
+Natürlich hat das Ionic-Team auch daran gedacht, dass ein Seitenmenü auch möglichst elegant über einen Button oder generell eine Klick-Aktion geöffnet und geschlossen werden kann. Dazu existiert die Direktive <code class="language-plaintext highlighter-rouge">menuToggle</code>. Als Wert erhält sie dann den Wert, welches Seitenmenü (<code class="language-plaintext highlighter-rouge">left</code> oder <code class="language-plaintext highlighter-rouge">right</code>) mit dem Button verknüpft ist.
+In unsere Anwendung bauen wir, wie für eine mobile App typisch, in der Navigationsleiste auf der linken Seite eine Schaltfläche ein, die unser Menü öffnet und schließt.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-nav-buttons</span> <span class="na">side=</span><span class="s">"left"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button button-icon button-clear ion-navicon"</span> <span class="na">menu-toggle=</span><span class="s">"left"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/ion-nav-buttons&gt;</span>
+</code></pre></div></div>
+
+<p>Nun können wir schnell und einfach unser wunderschönes Seitenmenü ein- und ausblenden.</p>
+
+<p><img src="ionic-sidemenu.gif?v=63629079934" alt="Ionic Sidemenu Bild"></p>
+
+<h3 id="einhalten-des-navigationskonzeptes">Einhalten des Navigationskonzeptes</h3>
+
+<p>Beim Ausführen der Anwendung und klicken auf die Links im Seitenmenü fällt nun auf, dass das Menü immer offen bleibt und das, obwohl der komplette Kontext gewechselt wird (kein Aufruf einer Kinder-View) blendet Ionic automatisch den Zurück-Knopf nach dem Zustandswechsel ein.
+Dieses Verhalten lässt sich dank einer eigenen Direktive - namens <code class="language-plaintext highlighter-rouge">menuClose</code> für Links in Seitenmenüs beheben. Schreiben wir an die beiden Links <code class="language-plaintext highlighter-rouge">menu-close</code> als Attribut, passiert beim Klick auf diese folgendes.</p>
+
+<ol>
+  <li>das Seitenmenü wird geschlossen</li>
+  <li>Historie der Navigation wird zurückgesetzt</li>
+  <li>Animation für den kommenden Zustandsübergang deaktiviert</li>
+  <li>Zustand wird gewechselt</li>
+</ol>
+
+<p>Daher erweitern wir die Links, um die <code class="language-plaintext highlighter-rouge">menuClose</code>-Direktive.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">"base.order"</span> <span class="na">ui-sref-active=</span><span class="s">"active"</span> <span class="na">class=</span><span class="s">"item"</span> <span class="na">menu-close</span><span class="nt">&gt;</span>
+  Bestellen
+<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>Weil die Historie der Navigation zurückgesetzt wird verhindern wir, dass Zustände mehrfach in der Historie landen.</p>
+
+<p>Hätten wir an dieser Stelle schon eine Detail-View auf einen weiteren Zustand, wie eine Informationsseite zu einer bestimmten Pizza, würde auffallen, dass unser Menü-Knopf dort automatisch ausgeblendet wird. Dies hat schlicht und ergreifend den Grund, dass man den Weg, den man als Nutzer gegangen ist auch erst wieder zurückgehen sollte. Das hat den Grund, dass sonst an vielen Stellen Navigationzyklen entstehen könnten und dadurch Funktionen oder der Bedienbarkeit der Anwendung in Mitleidenschaft gezogen werden. Wer dieses Verhalten nicht mag, kann dieses auch einfach über einen Konfigurationsparameter der <code class="language-plaintext highlighter-rouge">ionSideMenus</code>-Direktive ändern. Über das Attribut <code class="language-plaintext highlighter-rouge">enable-menu-with-back-views</code> kann der Menü-Button immer eingeblendet werden. Dazu setzt ihr den Wert einfach auf <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-side-menus</span> <span class="na">enable-menu-with-back-views=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/ion-side-menus&gt;</span>
+</code></pre></div></div>
+
+<h3 id="programmatischer-zugriff-auf-seitenmenüs">Programmatischer Zugriff auf Seitenmenüs</h3>
+
+<p>Auch dafür gibt es natürlich eine ziemlich gute Lösung. Wie bei vielen Komponenten bietet Ionic auch hier einen eigenen Service an, um das Verhalten der Seitenmenüs zu steuern. Bindet einfach den <code class="language-plaintext highlighter-rouge">$ionicSideMenuDelegate</code>-Service als Abhängigkeit in euern Controller ein. Danach hab ihr Zugriff auf viele Funktionen. Ein paar wichtige stell ich hier kurz vor:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">toggleLeft([isOpen])</code> - getter- und setter-Methode, wenn <code class="language-plaintext highlighter-rouge">isOpen</code> gesetzt ist, dann wird das linke Menü bei <code class="language-plaintext highlighter-rouge">true</code> geöffnet und bei <code class="language-plaintext highlighter-rouge">false</code> geschlossen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">toggleRight([isOpen])</code> - wie <code class="language-plaintext highlighter-rouge">toggleLeft</code> nur für die rechte Seite</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">isOpen()</code>, <code class="language-plaintext highlighter-rouge">isOpenLeft()</code>, <code class="language-plaintext highlighter-rouge">isOpenRight()</code> - gibt <code class="language-plaintext highlighter-rouge">true</code> zurück, falls irgendein, das linke oder das rechte Menü geöffnet ist</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">canDragContent([canDrag])</code> - getter- und setter-Methode, wenn <code class="language-plaintext highlighter-rouge">canDrag</code> gesetzt ist, dann kann das Aufziehen/Zuschieben durch das Ziehen am Inhaltsbereich aktiviert/deaktiviert werden</li>
+</ul>
+
+<h2 id="listen-in-ionic">Listen in Ionic</h2>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/07-Lists" rel="noreferrer noopener" target="_blank">Quellcode</a> und <a href="https://angularjs-de.github.io/ionic-tutorial/07-Lists/#/order" rel="noreferrer noopener" target="_blank">Live-Demo</a></p>
+
+<p>Eine der wichtigsten Komponente zur Darstellung von Content in einer App sind Listen. Ob einfach nur zur Umsetzung eine simplen Aufzählung von Einträgen gleichen Typs oder zum strukturieren komplexer Inhalte, Listen sind überall.</p>
+
+<p>Als wohl häufigsten Anwendungsfall zeigen Listen eine Auswahl, die per Interaktion, wie Klick/Tap auf eine Detailseite des Eintrags leitet. Daran angelehnt, bietet Ionic - wie so oft - zwei Möglichkeiten zur Umsetzung.</p>
+
+<ol>
+  <li>einfache Listen mit HTML/CSS</li>
+  <li>erweiterte Listenfunktionalitäten über JavaScript-Komponenten</li>
+</ol>
+
+<p>Bei den einfachen Listen passiert die ganze Magie nur über einer bestimmten DOM-Struktur und dazugehörigen CSS-Klassen. Ein kleines Beispiel:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>
+    ...
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+
+<p>Im Grunde besteht eine Liste aus einem Wrapper-Knoten - im Normalfall ein <em>ul</em>- oder ein <em>div</em>-Tag mit der CSS-Klasse <code class="language-plaintext highlighter-rouge">list</code>. Jeder Listen Eintrag ist wiederum ein <em>li</em>- bzw. <em>div</em>-Tag mit der Klasse <code class="language-plaintext highlighter-rouge">item</code>.</p>
+
+<p>Erinnern wir uns kurz an den letzten Stand unserer Pizza-App. Wir haben zwar ein Sidemenu und die Pizzen werden auch bereits auf der Start-View ausgegeben, aber hübsch ist etwas anderes. Das sollten wir schleunigst ändern und passen das <code class="language-plaintext highlighter-rouge">order</code>-Template, wie folgt an.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-view&gt;</span>
+  <span class="nt">&lt;ion-content</span> <span class="na">padding=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span> <span class="na">ng-repeat=</span><span class="s">"pizza in pizzas"</span><span class="nt">&gt;</span>
+        {{pizza.name}} {{pizza.price}}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/ion-content&gt;</span>
+<span class="nt">&lt;/ion-view&gt;</span>
+</code></pre></div></div>
+
+<p><img src="ionic-list.png" alt="Ionic Tutorial Simple List"></p>
+
+<p>Aus meiner Erfahrung als Ionic-Entwickler weiß ich, dass Listeneinträge oft gruppiert ausgegeben werden soll, beispielsweise wie ein Kontaktliste nach Buchstaben getrennt oder wie in einem Kalendar nach Zeit/Datum. Auch für solche Trenner bietet Ionic eine einfache Lösung. Durch die zusätzliche CSS-Klasse <em>item-divider</em> wird ein Listeneintrag zum Trenner.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item-divider"</span><span class="nt">&gt;</span>
+    Angebot
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span> <span class="na">ng-repeat=</span><span class="s">"pizza in pizzas"</span><span class="nt">&gt;</span>
+    {{pizza.name}} {{pizza.price}}
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Nach dem gleichen Prinzip können auch Buttons oder Bilder ausgerichtet und angepasst werden.</p>
+
+<ul>
+  <li>Buttons
+    <ul>
+      <li>CSS-Klassen: item-button-left, item-button-right</li>
+    </ul>
+  </li>
+  <li>Bilder
+    <ul>
+      <li>CSS-Klassen: item-avatar, item-thumbnail-left, item-thumbnail-right</li>
+      <li>Avatar: zeigt automatisch einen runden Bildauschnitt</li>
+      <li>Thumbnail: kleine Vorschauansicht</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Eine vollständige Dokumentation dazu findet ihr in den <a href="https://ionicframework.com/docs/api/list" rel="noreferrer noopener" target="_blank">Ionic-Docs</a>.</p>
+
+<p>Natürlich hat Ionic auch daran gedacht, dass Listen in nativen Apps viel mehr können als nur Daten auflisten. So können Einträge umsortiert oder über Gesten erweiterte Funktionalitäten angesteuert werden. Ionic bietet genau dafür eigene Direktiven und Services an.</p>
+
+<ul>
+  <li>ionList: Listen-Wrapper, Ersatz für ul/div-Tag mit Klasse list</li>
+  <li>ionItem: Listeneintrag, Ersatz für Listeneintrag mit Klasse item</li>
+  <li>ionDeleteButton: vordefinierter Löschen-Knopf, blendet vor jedem Eintrag einen Löschen-Button ein</li>
+  <li>ionReorderButton: Möglichkeit zum Umsortieren von Listeneinträgen, “Greifer” an jedem Eintrag</li>
+  <li>ionOptionButton: Option-Buttons pro Listeneintrag</li>
+  <li>$ionicListDelegate: programmatischer Zugriff auf Liste und Zusatzfunktionen</li>
+</ul>
+
+<p>Als Beispiel erweitern wir unsere Pizza-App, um die Funktionalität Pizzen in einen Warenkorb zu legen. Der Warenkorb ist ein eigener State und zeigt die Liste der zu kaufenden Waren. Jeder Eintrag kann über einen <code class="language-plaintext highlighter-rouge">ionOptionButton</code> gelöscht werden.</p>
+
+<p>Das Template zum Warenkorb könnte dann wie folgt aussehen.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-view&gt;</span>
+  <span class="nt">&lt;ion-nav-title&gt;</span>Warenkorb<span class="nt">&lt;/ion-nav-title&gt;</span>
+  <span class="nt">&lt;ion-content&gt;</span>
+    <span class="nt">&lt;ion-list&gt;</span>
+      <span class="nt">&lt;ion-item</span> <span class="na">ng-repeat=</span><span class="s">"item in cart"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2&gt;</span>{{item.name}}<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;p&gt;</span>{{item.price | currency}}<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;ion-option-button</span> <span class="na">class=</span><span class="s">"button-assertive"</span> <span class="na">ng-click=</span><span class="s">"removeFromCart($index)"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon ion-minus-circled"</span><span class="nt">&gt;&lt;/i&gt;</span>
+        <span class="nt">&lt;/ion-option-button&gt;</span>
+      <span class="nt">&lt;/ion-item&gt;</span>
+    <span class="nt">&lt;/ion-list&gt;</span>
+  <span class="nt">&lt;/ion-content&gt;</span>
+<span class="nt">&lt;/ion-view&gt;</span>
+</code></pre></div></div>
+
+<p>Die <em>ionOptionButton</em>-Direktive wird als Kind des Listeneintrags eingebunden und erhält eine Klick-Funktion die diesen Eintrag aus dem Warenkorb entfernt. Im Hintergrund besitzt die App nun einen eigenen <em>cartService</em>, der die nötigen Daten speichert.</p>
+
+<p><img src="ionic-extended-list.gif?v=63629079934" alt="Ionic Tutorial Extend List"></p>
+
+<p>Die Benutzung von <em>ionReorderButton</em> und <em>ionDeleteButton</em> sind sich sehr ähnlich. Als Beispiel könnte das Löschen im Warenkorb auch über <em>ionDeleteButtons</em> funktionieren.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-list</span> <span class="na">show-delete=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ion-item</span> <span class="na">ng-repeat=</span><span class="s">"item in cart"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>{{item.name}}<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>{{item.price | currency}}<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;ion-delete-button</span> <span class="na">class=</span><span class="s">"ion-minus-circled"</span> <span class="na">ng-click=</span><span class="s">"removeFromCart($index)"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/ion-delete-button&gt;</span>
+  <span class="nt">&lt;/ion-item&gt;</span>
+<span class="nt">&lt;/ion-list&gt;</span>
+</code></pre></div></div>
+
+<p>Über das Attribute <em>show-delete</em> können die Löschen-Buttons auch flexibel ein- und auch wieder ausgeblendet werden. Für ionReorderButton existiert dafür das Attribut <em>show-reorder</em>. Als Kind des <em>ionItems</em> kann dem Button ganz normal unsere Klick-Funktion übergeben werden.</p>
+
+<p><img src="ionic-list-delete.gif?v=63629079934" alt="Ionic Tutorial Extend List"></p>
+
+<p>Programmatischen Zugriff auf eure Listen erhaltet ihr über den <code class="language-plaintext highlighter-rouge">$ionicListDelegate</code>-Service.
+Mit diesem lassen sich die Spezial-Buttons ein und ausblenden, Swipen der Listeneinträge unterbinden.</p>
+
+<p>Jetzt haben wir nur noch ein Problem - Listen können seeeeeeeeehr lang sein. Gerade in hybriden Apps ist das ein großer Nachteil und Performance-Killer - vor allem wenn noch Bilder im Spiel sind. Als Lösung hat Ionic eine eigene Listen-Komponente mit dem Namen <code class="language-plaintext highlighter-rouge">collectionRepeat</code> entwickelt, die versucht nur eine minimale Anzahl an Listenelemente in den DOM hängt und diese beim Scrollen wiederverwendet.</p>
+
+<p>Im Prinzip funktioniert collectionRepeat wie ein ngRepeat mit Arrays. Einziger Unterschied ist, dass ihr statt <code class="language-plaintext highlighter-rouge">ng-repeat</code> an den zu wiederholenden DOM-Knoten <code class="language-plaintext highlighter-rouge">collection-repeat</code> schreibt. Ionic bestimmt automatisch die Höhe und Breite der Listeneinträge anhand des ersten Elements. Ihr könnt die Werte auch für jeden Eintrag selbst bestimmten bzw. setzen. Dazu stehen die Attribute <em>item-width</em> und <em>item-height</em> zu Verfügung, die einen Ausdruck oder direkt eine Zahl oder Prozentwert erwarten. Dadurch habt ihr auch die Möglichkeit mehrere Listeneinträge pro Zeile anzuzeigen.</p>
+
+<p>Hier der Code unserer Warenkorbliste mit <em>collection-repeat</em>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-list</span> <span class="na">show-delete=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ion-item</span> <span class="na">collection-repeat=</span><span class="s">"item in cart"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>{{item.name}}<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>{{item.price | currency}}<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;ion-delete-button</span> <span class="na">class=</span><span class="s">"ion-minus-circled"</span> <span class="na">ng-click=</span><span class="s">"removeFromCart($index)"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/ion-delete-button&gt;</span>
+  <span class="nt">&lt;/ion-item&gt;</span>
+<span class="nt">&lt;/ion-list&gt;</span>
+</code></pre></div></div>
+
+<h2 id="umgang-mit-hintergrundaktivitäten">Umgang mit Hintergrundaktivitäten</h2>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/08-Loading" rel="noreferrer noopener" target="_blank">Quellcode</a> und <a href="https://angularjs-de.github.io/ionic-tutorial/08-Loading/#/order" rel="noreferrer noopener" target="_blank">Live-Demo</a></p>
+
+<p>Bei der Programmierung von Anwendungen ist es wichtig dem Nutzer Feedback zu geben, ob gerade etwas im Hintergrund geschieht oder falls temporär Nutzereingaben blockiert werden - wie beim Absenden eines Formulars - , sollte er wissen wieso.
+Für diese beiden Anwendungsfälle stellt Ionic zwei Komponenten zur Verfügung.</p>
+
+<ul>
+  <li>$ionicLoading
+    <ul>
+      <li>Service</li>
+      <li>Overlay über die ganze View</li>
+      <li>Blockierung von Nutzerinteraktionen</li>
+      <li>möglicher Hinweistext</li>
+    </ul>
+  </li>
+  <li>ionSpinner
+    <ul>
+      <li>Ladekringel-Direktive</li>
+      <li>Indikator, dass Daten geladen werden, z.B. API-Request läuft und noch keine Daten vorhanden</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Um einen Ladelayer über die aktive View zu legen, muss der <code class="language-plaintext highlighter-rouge">$ionicLoading</code>-Service einfach im Controller als Abhängigkeit geladen werden. Danach stehen uns zwei Funktionen zur Verfügung.</p>
+
+<ul>
+  <li>show([options])
+    <ul>
+      <li>Einblenden des Ladelayers</li>
+      <li>Optionen:
+        <ul>
+          <li>template (String) - Template als String</li>
+          <li>templateUrl (String) - Pfad zu einer Templatedatei</li>
+          <li>noBackdrop (Boolean) - versteckt Backdrop, um Inhalt der View voll sichtbar zu lassen</li>
+          <li>scope (Scope-Objekt) - eigner Scope, um Template zu füllen (Standardwert: <code class="language-plaintext highlighter-rouge">$rootScope.$new()</code>)</li>
+          <li>hideOnStateChange (Boolean) - automatisch beim Verlassen des States verstecken</li>
+          <li>delay (Zahl als ms) - Einblenden mit einer Verzögerung</li>
+          <li>duration (Zahl als ms) - automatisches Ausblenden nach x ms</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>hide()
+    <ul>
+      <li>Ausblenden des Ladelayers</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Beide Funktionen liefern ein <code class="language-plaintext highlighter-rouge">Promise</code> zurück, welches erfolgreich aufgelöst wird, wenn der Ladelayer angezeigt bzw. ausgeblendet wurde. Dadurch habt ihr die Möglichkeit mit der Ausführung bestimmter Code-Abschnitte auf das tatsächliche Anzeigen/Verschwinden zu warten.</p>
+
+<p>In einer Ionic-Anwendung gibt es nur einen einzigen Ladelayer. Wird <code class="language-plaintext highlighter-rouge">$ionicLoading.show()</code> mehrmals hintereinander aufgerufen, verändert sich nur das Aussehen des ersten.</p>
+
+<p>Als kleine Übung bauen wir unsere Startseite der Pizza-App so um, dass die Pizzen aus einer eigenen Datei mit einer $http-Anfrage geladen werden. Während dieser Zeit blenden wir ein Ladeoverlay ein, das mindestens 2000ms zu sehen ist. Das Absenden des Requests übernimmt ein eigener Pizza-Service.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span>
+  <span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">pizzaApp</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">OrderCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="dl">'</span><span class="s1">$scope</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">$timeout</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">$ionicLoading</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">cartService</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">pizzaService</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nf">function </span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$timeout</span><span class="p">,</span> <span class="nx">$ionicLoading</span><span class="p">,</span> <span class="nx">cartService</span><span class="p">,</span> <span class="nx">pizzaService</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Einblenden des Layers</span>
+      <span class="nx">$ionicLoading</span><span class="p">.</span><span class="nf">show</span><span class="p">({</span>
+        <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bitte warten...</span><span class="dl">'</span>
+      <span class="p">});</span>
+
+      <span class="c1">// Laden der Pizzen</span>
+      <span class="nx">pizzaService</span>
+        <span class="p">.</span><span class="nf">getPizzas</span><span class="p">()</span>
+        <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// Schreibe Ergebnis auf Scope</span>
+          <span class="nx">$scope</span><span class="p">.</span><span class="nx">pizzas</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
+        <span class="p">},</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+          <span class="c1">// Error case</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+          <span class="c1">// Ausblenden mit Verzögerung von 2000ms</span>
+          <span class="nf">$timeout</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$ionicLoading</span><span class="p">.</span><span class="nf">hide</span><span class="p">();</span>
+          <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+        <span class="p">});</span>
+
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">addToCart</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">pizza</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">cartService</span><span class="p">.</span><span class="nf">addCartItem</span><span class="p">(</span><span class="nx">pizza</span><span class="p">);</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+  <span class="p">]);</span>
+</code></pre></div></div>
+
+<p><img src="ionic-loading.png" alt="Ionic Tutorial Loading Layer"></p>
+
+<p>Für unsere Beispiel-App ist der Lade-Layer ein wenig unpraktikabel, da der Nutzer sich ja trotzdem frei in der Anwendung bewegen können soll. Aus diesem Grund nutzen wir nun den <code class="language-plaintext highlighter-rouge">ionSpinner</code>. Während des Ladevorgangs setzen wir eine Scope-Variable als Indikator, um den Spinner über <em>ngIf</em> oder <em>ngShow</em> ein- und vor allem wieder auszublenden.</p>
+
+<p>Der Controller-Code sieht nun so aus.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span>
+  <span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">pizzaApp</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">OrderCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="dl">'</span><span class="s1">$scope</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">$timeout</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">cartService</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">pizzaService</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nf">function </span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$timeout</span><span class="p">,</span> <span class="nx">cartService</span><span class="p">,</span> <span class="nx">pizzaService</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">loading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+      <span class="nx">pizzaService</span>
+        <span class="p">.</span><span class="nf">getPizzas</span><span class="p">()</span>
+        <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">$scope</span><span class="p">.</span><span class="nx">pizzas</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
+        <span class="p">},</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+          <span class="c1">// error case</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+          <span class="nf">$timeout</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$scope</span><span class="p">.</span><span class="nx">loading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+          <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+        <span class="p">});</span>
+
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">addToCart</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">pizza</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">cartService</span><span class="p">.</span><span class="nf">addCartItem</span><span class="p">(</span><span class="nx">pizza</span><span class="p">);</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+  <span class="p">]);</span>
+</code></pre></div></div>
+
+<p>Im Template richten wir den Spinner noch zentriert aus und blenden den Listeninhalt erst ein, wenn der Ladespinner ausgeblendet wurde.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-view&gt;</span>
+  <span class="nt">&lt;ion-nav-title</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>
+    Pizza App
+  <span class="nt">&lt;/ion-nav-title&gt;</span>
+  <span class="nt">&lt;ion-content</span> <span class="na">padding=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-show=</span><span class="s">"loading"</span> <span class="na">class=</span><span class="s">"text-center padding"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ion-spinner&gt;&lt;/ion-spinner&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span> <span class="na">ng-show=</span><span class="s">"!loading"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item-divider"</span><span class="nt">&gt;</span>
+        Angebot
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item-button-right"</span> <span class="na">ng-repeat=</span><span class="s">"pizza in pizzas"</span><span class="nt">&gt;</span>
+        {{pizza.name}} {{pizza.price}}
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button button-balanced icon ion-ios-cart"</span> <span class="na">ng-click=</span><span class="s">"addToCart(pizza)"</span><span class="nt">&gt;&lt;/button&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/ion-content&gt;</span>
+<span class="nt">&lt;/ion-view&gt;</span>
+</code></pre></div></div>
+
+<p><img src="ionic-loading-spinner.png" alt="Ionic Tutorial Loading Spinner"></p>
+
+<p>Standardmäßig bestimmt Ionic die passende Ladeanimation. Darüber hinaus könnt ihr aber mit Hilfe einer CSS-Klasse eine eigene Ladeanimation als SVG erstellen oder einfach eine der vordefinierten <a href="https://ionicframework.com/docs/v3/api/components/spinner/Spinner/" rel="noreferrer noopener" target="_blank">Spinner-Klassen</a> nutzen.</p>
+
+<h2 id="daten-aktualisieren-mit-pull-to-refresh">Daten aktualisieren mit Pull-To-Refresh</h2>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/09-Refresher" rel="noreferrer noopener" target="_blank">Quellcode</a> und <a href="https://angularjs-de.github.io/ionic-tutorial/09-Refresher/#/order" rel="noreferrer noopener" target="_blank">Live-Demo</a></p>
+
+<p>Sind einmal Daten einer View geladen, können diese in nativen Anwendung meist über ein Ziehen am Inhalt aktualisiert werden. Diese Geste bzw. Interaktion wird auch Pull-To-Refresh genannt. Das Ionic-Team hat natürlich auch dafür eine passende Lösung parat, denn diese Standardfunktion wird fast in jeder App genutzt und gebraucht. Mit der <code class="language-plaintext highlighter-rouge">ionRefresher</code>-Direktive wird einem Scroll-Container, wie dem <em>ion-content</em>- oder einem <em>ion-scroll</em>-Tag, die Pull-To-Refresh Funktionalität hinzugefügt.
+Die Direktive kann über eigene Attribute konfiguriert werden.</p>
+
+<ul>
+  <li>
+<em>on-refresh</em>: erwartet Funktion, die beim Aktualisieren aufgerufen wird</li>
+  <li>
+<em>on-pulling</em>: erwartet Funktion, die beim Herunterziehen des Contents aufgerufen wird</li>
+  <li>
+<em>pulling-text</em>: Text der beim Herunterziehen angezeigt wird</li>
+  <li>
+<em>pulling-icon</em>: Icon das beim Herunterziehen angezeigt wird (ionicon)</li>
+  <li>
+<em>spinner</em>: Spinner-Icon, zeigt ionSpinner während der Aktualisierung</li>
+  <li>
+<em>disable-pulling-rotation</em>: Deaktiviert das Rotieren des pulling-icon beim Erreichen des Aktualisierungs-Grenzwertes</li>
+</ul>
+
+<p>Zum Veständnis der Attribute folgt ein kleiner Ablaufplan der Pull-To-Refresh Interaktion.</p>
+
+<ol>
+  <li>Nutzer hat noch nicht gescrollt bzw. der Scroll-Container ist nicht gescrollt</li>
+  <li>Nutzer beginnt den Inhalt nach unten zu ziehen (drag-down)</li>
+  <li>optionale <em>on-pulling</em>-Funktion wird ausgeführt, <em>pulling-text</em> und <em>pulling-icon</em> angezeigt</li>
+  <li>Drag-Down erreicht Grenzwert zum Aktualisieren</li>
+  <li>
+<em>pulling-icon</em> wird standardmäßig rotiert (z.B. aus “Pfeil-nach-unten” wird zu “Pfeil-nach-oben”)</li>
+  <li>Nutzer lässt Inhalt los</li>
+  <li>
+<em>spinner</em> wird angezeigt und <em>on-refresh</em>-Funktion ausgeführt</li>
+</ol>
+
+<p>Zum Abschluss, müssen wir der Direktive noch informieren, dass der Aktualisierungsprozesses abgeschlossen ist. Für diesen Zweck reicht es, wenn wir an der passenden Stelle - meist am Ende der Aktualisierungfunktion im Controller - das Event <code class="language-plaintext highlighter-rouge">scroll.refreshComplete</code> “broadcasten”.</p>
+
+<p>Unsere Pizza-Liste soll nun um eine Aktualisierungfunktion erweitert werden. Dabei müssen wir darauf achten, dass sich unser <em>ionSpinner</em> und <em>ionRefresher</em> nicht in die Quere kommen.</p>
+
+<p>Hier eine mögliche Umsetzung des Controller-Codes.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">loadPizzas</span><span class="p">(</span><span class="nx">refresh</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// do not show ionSpinner if refreshing</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">refresh</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$scope</span><span class="p">.</span><span class="nx">loading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">pizzaService</span>
+    <span class="p">.</span><span class="nf">getPizzas</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$scope</span><span class="p">.</span><span class="nx">pizzas</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
+    <span class="p">},</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// error case</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// show the spinner a little bit longer</span>
+      <span class="nf">$timeout</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$scope</span><span class="p">.</span><span class="nx">loading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+<span class="c1">// inital loading of pizzas</span>
+<span class="nf">loadPizzas</span><span class="p">();</span>
+
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">refresh</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// reload pizzas as refresh</span>
+  <span class="nf">loadPizzas</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+    <span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">$scope</span>
+        <span class="p">.</span><span class="nf">$broadcast</span><span class="p">(</span><span class="dl">'</span><span class="s1">scroll.refreshComplete</span><span class="dl">'</span><span class="p">);</span>
+      <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">addToCart</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">pizza</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">cartService</span><span class="p">.</span><span class="nf">addCartItem</span><span class="p">(</span><span class="nx">pizza</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Das Template wird um ein <em>ion-refresher</em>-Element erweitert und unsere <em>refresh</em>-Funktion gesetzt.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-view&gt;</span>
+  <span class="nt">&lt;ion-nav-title</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Pizza App<span class="nt">&lt;/ion-nav-title&gt;</span>
+  <span class="nt">&lt;ion-content</span> <span class="na">padding=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-show=</span><span class="s">"loading"</span> <span class="na">class=</span><span class="s">"text-center padding"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ion-spinner&gt;&lt;/ion-spinner&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;ion-refresher</span>
+      <span class="na">pulling-text=</span><span class="s">"aktualisieren..."</span>
+      <span class="na">on-refresh=</span><span class="s">"refresh()"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/ion-refresher&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span> <span class="na">ng-show=</span><span class="s">"!loading"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item-divider"</span><span class="nt">&gt;</span>
+        Angebot
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item-button-right"</span> <span class="na">ng-repeat=</span><span class="s">"pizza in pizzas"</span><span class="nt">&gt;</span>
+        {{pizza.name}} {{pizza.price}}
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button button-balanced icon ion-ios-cart"</span> <span class="na">ng-click=</span><span class="s">"addToCart(pizza)"</span><span class="nt">&gt;&lt;/button&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/ion-content&gt;</span>
+<span class="nt">&lt;/ion-view&gt;</span>
+</code></pre></div></div>
+
+<p><img src="ionic-refresher.gif?v=63629079934" alt="Ionic Tutorial Refresher"></p>
+
+<h2 id="strukturieren-von-inhalten-durch-cards">Strukturieren von Inhalten durch Cards</h2>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-tutorial/tree/master/10-Cards" rel="noreferrer noopener" target="_blank">Quellcode</a> und <a href="https://angularjs-de.github.io/ionic-tutorial/10-Cards/#/order" rel="noreferrer noopener" target="_blank">Live-Demo</a></p>
+
+<p>Mit sogenannten Karten (engl. Cards) bietet Ionic eine gute Möglichkeit Listeneinträge, ganze Listen oder einfach nur Inhaltesbereiche mit wenig Quellcode etwas ansprechender zu gestalten.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Der Aufbau ist dem einer Liste sehr ähnlich. Ein Elternelement - meist ein div-Tag - bekommt die CSS-Klasse <em>card</em> und das Kindelement - oft auch ein div- oder a-Tag - erhält die bereits bekannte <em>item</em>-Klasse. Darüber hinaus können auch alle weiteren “item”-Klassen genutzt werden, um das Layout anzupassen, z.B. <em>item-divider</em>, <em>item-avatar</em>, *item-icon-left</td>
+      <td>right*, …</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="ionic-cards.png" alt="Ionic Tutorial Cards"></p>
+
+<p>Als kleines Praxisbeispiel erhält unsere App eine Detail-View für die Pizzen, die beim Klick auf einen Angebotseintrag angezeigt wird.</p>
+
+<p><img src="ionic-card-final.png" alt="Ionic Tutorial Cards Pizza"></p>
+
+<p>Das dazugehörige Template sieht dann so aus.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-view&gt;</span>
+  <span class="nt">&lt;ion-nav-title&gt;</span>
+    {{pizza.name}}
+  <span class="nt">&lt;/ion-nav-title&gt;</span>
+  <span class="nt">&lt;ion-content&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list card"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item-avatar item-icon-left"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon ion-pizza"</span><span class="nt">&gt;&lt;/i&gt;</span>
+        <span class="nt">&lt;h2&gt;</span>{{pizza.name}}<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Ist in unserem Angebot die Nummer {{pizza.id}}<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item-body"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          {{pizza.description}}
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item-divider balanced text-big text-right"</span><span class="nt">&gt;</span>
+        {{pizza.price ? (pizza.price | currency) : 'kostenlos'}}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/ion-content&gt;</span>
+<span class="nt">&lt;/ion-view&gt;</span>
+</code></pre></div></div>
+
+<p>Im entsprechenden Detail-Controller wird die anzuzeigende Pizza geladen und bereitgestellt.</p>
+
+<h2 id="wie-geht-es-weiter">Wie geht es weiter?</h2>
+
+<p>Folgende Artikel helfen dir nun in der Thematik weiter zu kommen:</p>
+
+<ul>
+  <li><a href="/artikel/ionic-tutorial-deutsch-modals/">Modals</a></li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-popups/">Popups</a></li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-ionicons/">Ionicons</a></li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-scss/">Styling mit SCSS</a></li>
+  <li><a href="/artikel/ionic-tutorial-deutsch-configuration/">Konfiguration mit $ionicConfigProvider</a></li>
+</ul>
+
+<h2 id="abschluss--fazit">Abschluss &amp; Fazit</h2>
+
+<p>Damit ist unsere kleine Rundreise durch den Ionischen-Ozean abgeschlossen. Wir hoffen es hat euch gefallen und euer Interesse an der hybriden Entwicklung mobiler Apps geweckt.</p>
+
+<p>Leider haben nicht alle Komponenten im Tutorial und in unserer App ihren Platz gefunden. Aus diesem Grund nun noch die wichtigsten kurz vorgestellt.</p>
+
+<ul>
+  <li>Popover - Overlay, welches sich teilweise über die View legt, wird an einem DOM-Element ausgerichtet, z.B. Button in Kopfzeile öffnet Popover mit Liste an weiteren Navigationspunkten oder Einstellungen</li>
+  <li>ActionSheet - Schiebt sich von unten über die View, bedeckt diese nur teilweise, Auswahl an Funktionen und Aktionen</li>
+  <li>Tabs - Grundlegends Navigationskonzept, jeder Tab hat eigene Navigationshistorie</li>
+  <li>Slidebox - Galerie von Inhalten, z.B. Bildergalerie, ab v1.2. sollte <a href="/artikel/ionic-framework-new-slider/" title="ionSlides">ionSlides</a> benutzt werden!!!</li>
+</ul>
+
+<p>Hinzu kommen noch zahlreiche Services und Funktionen, die euch vor dem Kentern bewahren oder euch zumindest erstmal über Wasser halten.</p>
+
+<p>Ihr findet natürlich auch alles in der <a href="http://ionicframework.com/docs/" title="Ionic Docs" rel="noreferrer noopener" target="_blank">Ionic Dokumentation</a>.</p>
+
+<p>Zum Abschluss haben wir die App noch ein wenig gepimpt - aber seht einfach selbst.</p>
+
+<p>Link zum <a href="https://github.com/angularjs-de/ionic-pizza-service/tree/master" rel="noreferrer noopener" target="_blank">Quellcode</a> und <a href="https://angularjs-de.github.io/ionic-pizza-service/#/order" rel="noreferrer noopener" target="_blank">Live-Demo</a></p>
+
+<hr>
+
+<div class="workshop-hint text-center">
+<div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p>Wir haben bereits viele Projekte mit Ionic umgesetzt - nutze unserer Projekterfahrung! Wir geben regelmäßig Schulungen zum Thema <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-bottom-link">Ionic und TypeScript</a>, auch Inhouse. Im Kurs lernst du die Grundlagen und Konzepte des Ionic Frameworks und kannst die Fragen stellen, die dir direkt bei deiner Umsetzung helfen.</p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-bottom-button">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
+  </div>
+  <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
+  </div>
+</div>
+</div>
+<hr>
+
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2016-03-12-ionic-tutorial-deutsch/2016-03-12-ionic-tutorial-deutsch.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Bengt Weiße" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/236d5f3a57a66853a82cfb2fd4ab6bc9-160x160.jpg"
+      data-srcset="/assets/img/gravatars/236d5f3a57a66853a82cfb2fd4ab6bc9-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Bengt Weiße
+    </p>
+    
+      <p class="text-muted small">
+        Bengt Weiße kommt aus dem grünen Herzen Deutschlands und interessiert sich schon seit seiner Kindheit für die Webentwicklung. Darum machte er auch sein früheres Hobby zum Beruf. Er beschäftigt sich bereits seit mehreren Jahren mit Web- und hybriden mobilen Anwendungen. Neben der frontendseitigen Umsetzung entwickelt er auch die nötigen Schnittstellen auf Basis von NodeJS und MongoDB. Anfang 2016 veröffentlichte er das erste deutsche Buch über das Ionic Framwork mit dem Titel "AngularJS & Ionic Framework, welches auch die nötigen Grundlagen im Bereich AngularJS vermittelt. 
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/KillerCodeMonkey" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/nestjs-tutorial/"
+    data-style="background-image: url('/artikel/nestjs-tutorial/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NestJS Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

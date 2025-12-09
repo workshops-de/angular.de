@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>David's way into tech | Angular.DE</title>
+  
+  <meta name="description" content="Why is community so important? How could you find your way into tech?">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/david-muellerchen-my-way-into-tech/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="David's way into tech - Angular.DE">
+
+
+
+  <meta property="og:description" content="Why is community so important? How could you find your way into tech?">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/david-muellerchen-my-way-into-tech/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="David's way into tech - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Why is community so important? How could you find your way into tech?">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/david-muellerchen-my-way-into-tech/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "David's way into tech"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="en" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu David's way into tech" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">David's way into tech</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angular/" class="badge bg-secondary text-bg-secondary text-uppercase">angular</a>
+            
+            <a href="/kategorie/developer/" class="badge bg-secondary text-bg-secondary text-uppercase">developer</a>
+            
+            <a href="/kategorie/tech/" class="badge bg-secondary text-bg-secondary text-uppercase">tech</a>
+            
+            <span class="ms-1 me-1">|</span>
+            David Müllerchen
+            
+            <a href="https://twitter.com/webdave_de" target="_blank" style="margin-bottom: 5px;">
+              <img src="/shared/assets/img/twitter-logo.svg" height="12" alt="Twitter Logo" />
+            </a>
+            
+            
+            <span class="ms-1 me-1">•</span> <time>21.09.2020</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  5 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <h2 id="davids-way-into-tech">David’s way into tech</h2>
+
+<p>I’ve been asked a lot about how I became a developer.
+So I decided to write about my journey.</p>
+
+<p>This is a very personal post, so almost no technical content, just personal experience.</p>
+
+<h3 id="1997--2004">1997 -2004</h3>
+
+<p>In my last year at school, I had to make a decision. I have had almost a plan for what to do with my life. I want to become a Sound engineer.
+Therefore I either needed a high school diploma or completed vocational training.
+I felt I was done with school at this time so I decided to start a career as a television technician.
+The training company was awesome.
+I learned so much and enjoyed the topic.
+What I loved the most: Fixing TVs and VCRs. After my training, I moved to Hamburg in order to start a job in a small workshop.</p>
+
+<h3 id="2004">2004</h3>
+
+<p>At this time I realized that most of the televisions in the shop became flat TVs.
+So, after two years I quit that job and joined a company that made aircraft electronics. Passenger control units and entertainment systems for several companies such as Boing, Airbus, Bombardier…</p>
+
+<p>I loved this job. I was able to develop some skills and even hardware.
+After a few months, I was promoted to head of the production.
+My job was to take care of the PCB production. I also had a team of 8 awesome engineers.</p>
+
+<p>Again, after a few months, I asked my self: How can I get better? Of course, I already was playing around with some production parameters (movement speed, pressure, temperature) and hoped I could learn how these changes affect the production.</p>
+
+<p>One day during lunchtime I talked to some software developers and asked a few questions. They told me that often, these machines are able to write data into databases and I should check it on my production machines. I found these databases and learned how to access them and how to connect the production robots to them.
+When I arrived home this evening, I started Googling about databases. I had no clue. I found words like MySQL, MSSQL, so I searched for resources to learn more about it.
+The next day I came up with an (ugly) SQL script for reading some specific data and I was able to compare them after I changed some parameters.</p>
+
+<p>So I was deeply impressed by my one-night skills.
+But I learned that only seeing these numbers wasn’t particularly helpful.
+It was kind of weird to open an MYSQL admin tool to run this script.</p>
+
+<p>Again my developer friends helped me: They mentioned something called PHP.
+It took me two nights to build a PHP script and use a chart library to display some data.
+This was my very first web app.
+It grew over time and I added more Information to me. After some weeks, I was wondering, if I can make it more dynamic. At this time, every report required a reload.
+That was the day someone introduced JavaScript to me. This was back in 2004. The developers around me told me to learn something serious not that toy. However, I fell in love with JavaScript, so I didn’t listen. Turns out, I was going to be right.
+Since then I’ve learned a lot of cool stuff, but most importantly, I learned how to learn and how important a mentor can be.</p>
+
+<h3 id="2014">2014</h3>
+
+<p>I can’t remember how I started with AngularJS but I can remember the day when I had my first attempt with Angular2. It was at around alpha-52.
+At this time, I had already started doing workshops at my employer at the time and I wrote blog posts on how to do web technologies.
+I also had a tutorial on AngularJS. So, starting an Angular2 tutorial was the next logical step.
+When I published my post about Angular2 I recognized a new follower on Twitter:
+<a href="https://angular.de/" target="_blank">Robin Böhm</a>, Founder of angularjs.de reached out to me to have a chat on some serious topics.
+I was scared.
+I was expecting some serious argument about Angular posts.
+But he was very nice and asked me to join the community. He also asked me, if I’d interested in becomeing a team member and instructor at angularjs.de.</p>
+
+<p>This was the beginning of very successful collaboration and we became friends.</p>
+
+<h3 id="2016">2016</h3>
+
+<p>In 2016, the first conference organizer reached out to me to have me as a speaker. I was totally scared because of my English skills. Then I found talk by <a href="https://www.angulararchitects.io/" rel="noreferrer noopener" target="_blank">Manfred Steyer</a> on YouTube and his confidence on stage gave me courage on doing this. Later that year, I finally met him in person and thanked him for his silent mentorship.
+We started collaborating and we became friends.
+At this time some Developers from the Angular Community recognized me and encouraged me to send an application to the Google Developer Expert program.</p>
+
+<h3 id="2017">2017</h3>
+
+<p>In 2017 I decided to give it a go as a freelancer. At the same time, my GDE application was approved and I was announced as a GDE in Angular and web Technologies.</p>
+
+<p>Since then I’ve spoken at many conferences and meetups, did a lot of workshops and met so incredible awesome people from the community.</p>
+
+<p>This community is very special, it’s almost family-like.
+We take care of each other, like a real family.</p>
+
+<p>I hope you see, there is no “The way” to start your profession. It’s important to have mentors and friends. It’s important to stay curious. Find your passion, follow it. never give up.</p>
+
+<p>Here are some of the important (at least to me) people in the community (in no particular order) mentioned.
+They gave me (often by accident) opportunities or help or just a good feeling of being welcome:</p>
+
+<ul>
+  <li><a href="https://twitter.com/tobmaster" target="_blank" rel="noreferrer noopener">Tobias Struckmeier</a></li>
+  <li><a href="https://twitter.com/robinboehm" target="_blank" rel="noreferrer noopener">Robin Böhm</a></li>
+  <li><a href="https://twitter.com/ManfredSteyer" target="_blank" rel="noreferrer noopener">Manfred Steyer</a></li>
+  <li><a href="https://twitter.com/webmaxru" target="_blank" rel="noreferrer noopener">Maximilian Salnikov</a></li>
+  <li><a href="https://twitter.com/sherrrylst" target="_blank" rel="noreferrer noopener">Sherry</a></li>
+  <li><a href="https://twitter.com/AnaCidre_" target="_blank" rel="noreferrer noopener">Ana</a></li>
+  <li><a href="https://twitter.com/sebawita" target="_blank" rel="noreferrer noopener">Sebastian Witalec</a></li>
+  <li><a href="https://twitter.com/brechtbilliet" target="_blank" rel="noreferrer noopener">Brecht</a></li>
+  <li><a href="https://twitter.com/bobrov1989" target="_blank" rel="noreferrer noopener">Vitalii Bobrov</a></li>
+  <li><a href="https://twitter.com/manekinekko" target="_blank" rel="noreferrer noopener">Wassim</a></li>
+  <li><a href="https://twitter.com/jawache" target="_blank" rel="noreferrer noopener">Asim Hussain</a></li>
+  <li><a href="https://twitter.com/jowe" target="_blank" rel="noreferrer noopener">Johannes Weber</a></li>
+  <li><a href="https://twitter.com/Maggysche" target="_blank" rel="noreferrer noopener">Madeleine Neumann</a></li>
+  <li><a href="https://twitter.com/stephenfluin" target="_blank" rel="noreferrer noopener">Stephen Fluin</a></li>
+  <li><a href="https://twitter.com/Brocco" target="_blank" rel="noreferrer noopener">Mike Brocchi</a></li>
+  <li><a href="https://twitter.com/aaronfrost" target="_blank" rel="noreferrer noopener">Frosty</a></li>
+</ul>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2020-09-21-david-muellerchen-my-way-into-tech/2020-09-21-david-muellerchen-my-way-into-tech.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="David Müllerchen" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/a9cbad4d6a1ad2ecb26fc079e204dbb1-160x160.jpg"
+      data-srcset="/assets/img/gravatars/a9cbad4d6a1ad2ecb26fc079e204dbb1-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      David Müllerchen
+    </p>
+    
+      <p class="text-muted small">
+        David Müllerchen ist leidenschaftlicher Webentwickler und ein neugieriges Spielkind. Er entwickelt seit mehr als einem Jahrzehnt Webanwendungen, (u.a. für Olympus, Telefonica, Hermes) und vermittelt seit 2014 sein Wissen über Javascript und Angular in Schulungen. Nebenbei engagiert er sich in der Angular Community, hält regelmäßig Talks auf internationalen Konferenzen und organisiert das Angular Meetup in Hamburg.
+
+      </p>
+    
+    <div>
+      
+        <a href="https://webdave.de" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">Website</a>
+      
+      
+        <a href="https://github.com/web-dave" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+        <a href="https://twitter.com/webdave_de" class="btn btn-sm btn-outline-secondary" target="_blank">Twitter</a>
+      
+      
+        <a href="https://workshops.de/profiles/web-dave55" class="btn btn-sm btn-outline-secondary" target="_blank">workshops.de Profil</a>
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ng-de-conference-2025-ankuendigung/"
+    data-style="background-image: url('/artikel/ng-de-conference-2025-ankuendigung/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NG-DE Conference 2025 wieder in Berlin
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

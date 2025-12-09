@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Angular kurz erklärt: Hydration | Angular.DE</title>
+  
+  <meta name="description" content="Einführung in Angulars Full App Non-Destructive Hydration: Server- & Client-Side-Rendering, Web Core Vitals & warum es ein Meilenstein ist.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angular-hydration-kurz-erklaert/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Angular kurz erklärt: Hydration - Angular.DE">
+
+
+
+  <meta property="og:description" content="Einführung in Angulars Full App Non-Destructive Hydration: Server- & Client-Side-Rendering, Web Core Vitals & warum es ein Meilenstein ist.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angular-hydration-kurz-erklaert/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Angular kurz erklärt: Hydration - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Einführung in Angulars Full App Non-Destructive Hydration: Server- & Client-Side-Rendering, Web Core Vitals & warum es ein Meilenstein ist.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angular-hydration-kurz-erklaert/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Angular kurz erklärt: Hydration"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Angular kurz erklärt: Hydration" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Angular kurz erklärt: Hydration</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angular/" class="badge bg-secondary text-bg-secondary text-uppercase">angular</a>
+            
+            <a href="/kategorie/hydration/" class="badge bg-secondary text-bg-secondary text-uppercase">hydration</a>
+            
+            <a href="/kategorie/server-side-rendering/" class="badge bg-secondary text-bg-secondary text-uppercase">server-side-rendering</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Lulëzim Ukaj
+            
+            
+            <span class="ms-1 me-1">•</span> <time>12.02.2024</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  14 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <h2 id="full-app-non-destructive-hydration-kurz-erklärt">Full App Non-Destructive Hydration kurz erklärt</h2>
+
+<p>In unserem zweiten Artikel aus der Kurz-erklärt-Serie Artikel führen wir euch schrittweise in das große Thema Hydration in Angular ein und erklären kurz die Schlüsselbegriffe und die Mechanismen des Rendering. Dazu starten wir mit dem Begriff der Hydration. Als nächstes werden wir uns ansehen, was Server-Side-Rendering und Client-Side-Rendering sind und worin sich die Prozesse genau unterscheiden. Danach werfen wir einen kurzen Blick auf die Web Core Vitals. Abschließend befassen wir uns wieder umfassend mit dem Thema Hydration in Angular.</p>
+
+<h3 id="was-ist-hydration">Was ist Hydration?</h3>
+
+<p>Zunächst muss die Frage gestellt werden: Was ist Hydration? Und in welchem Zusammenhang steht der Begriff mit den Begriffen wie Server-Side Rendering (SSR) und Client-Side Rendering (CSR)?
+Hydration beschreibt einen Prozess, bei dem eine auf dem Server gerenderte Webseite im Browser des Benutzers “zum Leben erweckt” wird. Dabei geht es darum, dass das statische HTML-Template durch deinen JavaScript-Code interaktiv wird.</p>
+
+<p>Angular selbst definiert den Begriff in seiner Dokumentation wie folgt:</p>
+
+<blockquote>
+  <p>“Hydration is the process that restores the server-side rendered application on the client. This includes things like reusing the &gt; server rendered DOM structures, persisting the application state, transferring application data that was retrieved already by the &gt; server, and other processes.”
+(<a href="https://angular.dev/guide/hydration#what-is-hydration" target="_blank">Angular Documentation</a>)</p>
+</blockquote>
+
+<p class="left">
+<img style="max-width: 80%" src="/shared/assets/img/placeholder-image.svg" alt="" class="lazy img-fluid img-rounded" data-src="hydration.jpg" data-srcset="hydration.jpg">
+</p>
+
+<p>Single-Page Applications (SPAs) bieten eine bessere Laufzeit-Performance als klassische Webanwendungen. Ist deine Webanwendung einmal geladen, werden alle Inhalte dynamisch aktualisiert, ohne dass die Website jedes Mal komplett neu gecatcht und gerendert werden muss. Das sorgt für eine flüssige und app-ähnliche User Experience. Allerdings muss der Browser dafür beim initialen Laden der Seite zusätzlich zum HTML große Mengen an JavaScript-Code laden. Dieser Prozess wird der “Initial Load” genannt und definiert den Zeitraum, bis eine Webseite nach deinem HTTP-Request für die User vollständig sichtbar und interaktiv ist.</p>
+
+<p>Während diese verlängerte Ladezeit für Webanwendungen wie z.B. Google Maps oder für soziale Medien wie Instagram oder Twitter kaum ins Gewicht fallen, ist sie in anderen Bereichen kritisch. Insbesondere im E-Commerce-Bereich gilt es, die User Experience so einfach und möglichst ohne Ladezeiten zu gestalten, um die sogenannte “Bounce Rate” (auch Absprungrate genannt) zu minimieren. Deswegen ist es in diesem Zusammenhang gängige Praxis geworden, SPAs serverseitig zu rendern. Der Server generiert eine vollständige HTML-Datei vorab, die sofort vom Browser gerendert werden kann. Damit sehen Nutzer fast sofort zumindest eine statische Version der Seite. Sobald die JavaScript-Bundles geladen sind, können User die Seite auch interaktiv nutzen.</p>
+
+<p>Bis zur Einführung der “Full App Non-destructive Hydration” war dieser Prozess in Angular jedoch “destruktiv”. Das hat bedeutet, dass die bereits auf Serverseite vorab-gerenderten DOM-Strukturen wieder zerstört und für jeden Neustart auf Clientseite wieder neu gerendert wurden. In einfacher Sprache: Es wurde doppelt gerendert. Die Folge war ein berühmt-berüchtigtes Flickern bei jedem Initial Load vieler Webseiten.</p>
+
+<p>Aber warum tritt dieses Flackern auf? Was bedeutet es, wenn DOM-Strukturen serverseitig oder clientseitig gerendert werden?
+Wie funktioniert Server-Side Rendering und worin unterscheidet es sich vom Client-Side Rendering? Was versteht man unter Full App Non-Destructive Hydration?  Und nach welchen Messparametern wird hier überhaupt gemessen?</p>
+
+<p>Damit ihr die vielen bevorstehenden Updates im Hause Angular zum Thema Hydration und zukünftige Artikel hier auf dem Portal besser einordnen könnt, wollen wir euch die Prozesse hinter den Begriffen in diesem Artikel kurz erklären.</p>
+
+<h3 id="was-ist-server-side-rendering-und-was-ist-client-side-rendering">Was ist Server-Side Rendering und was ist Client-Side Rendering?</h3>
+
+<p>Um es kurz und in zwei Sätzen zu sagen. Beim Server-Side Rendering (SSR) ist es die Aufgabe des Servers, deine Webanwendung zu rendern. Beim Client-Side Rendering findet das Rendering in deinem Browser, also auf Client-Seite, statt. Aber um das Ganze besser zu verstehen, werden wir uns die Prozesse des SSR und CSR genauer ansehen.</p>
+
+<h4 id="server-side-rendering-ssr">Server-Side Rendering (SSR)</h4>
+
+<p class="left">
+<img style="max-width:100%" src="/shared/assets/img/placeholder-image.svg" alt="" class="lazy img-fluid img-rounded" data-src="ssr.jpg" data-srcset="ssr.jpg">
+</p>
+
+<p>Beim Server-Side Rendering wird der Inhalt einer Webseite vorab auf dem Server gerendert und als vollständige HTML-Datei an den Browser des Benutzers geliefert. Dadurch wird die Webseite sofort sichtbar, sobald sie vom Browser geladen ist. Vorausgesetzt natürlich, es besteht eine anständige Internetverbindung.</p>
+
+<h5 id="die-funktionsweise-von-ssr-im-detail">Die Funktionsweise von SSR im Detail:</h5>
+
+<ol>
+  <li>
+<strong>Anfrage des Nutzers:</strong> Der Prozess beginnt, wenn ein Nutzer eine URL in seinen Browser eingibt oder auf einen Link klickt. Der Browser sendet diese HTTP-Anfrage an den Server.</li>
+  <li>
+<strong>Server-Side Rendering:</strong> Der Server empfängt die Anfrage und generiert ein vollständiges HTML-Dokument der angeforderten Seite. Dieses Dokument enthält bereits alle Inhalte und Strukturen, sodass der Browser es ohne zusätzliche Verarbeitungsschritte darstellen kann.</li>
+  <li>
+<strong>Browser:</strong> Der Server sendet anschließend die HTML-Datei an den Browser des Nutzers. Der Browser rendert die HTML-Datei. Zu diesem Zeitpunkt ist die Seite jedoch noch nicht interaktiv, da die Event-Handler noch nicht geladen oder ausgeführt wurden.</li>
+  <li>
+<strong>Hydration:</strong> Nachdem das HTML und die erforderlichen CSS-Styles gerendert wurden, lädt der Browser die JavaScript-Dateien. Dieser Schritt wird oft als “Hydration” bezeichnet.</li>
+  <li>
+<strong>Dynamisches Rendering:</strong> Die Webanwendung ist nun vollständig geladen und interaktiv. Ist die Anwendung erst einmal geladen, sind weitere Seitenwechsel und Inhaltsaktualisierungen meist sehr schnell, da nur die notwendigen Daten nachgeladen werden müssen, ohne die ganze Seite vom Server neu laden zu müssen.</li>
+</ol>
+
+<h5 id="vorteile-und-nachteile-von-ssr">Vorteile und Nachteile von SSR</h5>
+
+<p>Der entscheidende Vorteil des Server-Side Renderings liegt in einem deutlich verbesserten Initial Load der Webanwendung. Verkürzte Wartezeiten steigern die User Experience erheblich und verbessern das SEO-Ranking auf Google. Zudem ist die Anwendung auch auf langsamen Geräten oder bei schlechter Internetverbindung nutzbar, da der Server die Hauptlast des Renderings trägt.
+Die Medaille hat natürlich auch eine andere Seite. Das führt zu einer erhöhten Belastung des Servers, was insbesondere bei Webseiten mit hohem Traffic Auswirkungen auf Skalierbarkeit und Kosten haben kann.  Außerdem macht das SSR die Architektur deiner Webanwendungen komplexer, da einige Szenarien für das Rendering und die Zustandsverwaltung auf dem Server durchdacht werden müssen. Diese Komplexität ist mit mehr Entwicklungszeit und somit höheren Kosten verbunden. Auch die Wartung wird damit komplexer.
+Zusammenfassend kann gesagt werden, SSR ist besonders nützlich für content-orientierte Webanwendungen wie E-Commerce-Seiten, bei denen SEO-Rankings und schnelle Ladezeiten entscheidend sind.</p>
+
+<h4 id="client-side-rendering-csr-erklärt">Client-Side Rendering (CSR) erklärt</h4>
+
+<p class="left">
+<img style="max-width:100%" src="/shared/assets/img/placeholder-image.svg" alt="" class="lazy img-fluid img-rounded" data-src="csr.jpg" data-srcset="csr.jpg">
+</p>
+
+<p>Beim Client-Side Rendering (CSR) übernimmt der Browser des Nutzers die Hauptarbeit des Renderings der Webseite. Anders als beim Server-Side Rendering (SSR), bei dem der Server dem Browser eine vollständige HTML-Datei liefert, sendet der Server hier ein minimales HTML-Dokument zusammen mit JavaScript-Dateien, die die Webseite dynamisch generieren und darstellen. Sobald der Browser diese Dateien lädt, wird das JavaScript ausgeführt, um die Webseite dynamisch zu generieren und darzustellen.</p>
+
+<h5 id="prozess-des-client-side-renderings-im-detail">Prozess des Client-Side Renderings im Detail:</h5>
+
+<ol>
+  <li>
+<strong>Anfrage des Nutzers:</strong> Der Prozess startet, sobald der Nutzer eine Webseite anfordert, indem er eine URL eingibt oder auf einen Link klickt.</li>
+  <li>
+<strong>Server sendet minimale HTML-Datei:</strong> Der Server reagiert mit einem einfachen HTML-Dokument und Links zu CSS- und JavaScript-Dateien.</li>
+  <li>
+<strong>Download der JavaScript-Dateien:</strong> Der Browser lädt die JavaScript-Dateien, die als “Bauplan” für das Abrufen der Daten und das Generieren der HTML-Struktur dienen.</li>
+  <li>
+<strong>Client-Side Rendering:</strong> Die Webseite wird im Browser dynamisch generiert, anstatt den gesamten Inhalt vom Server zu beziehen.</li>
+  <li>
+<strong>Interaktivität:</strong> Nach dem Aufbau der Seite durch JavaScript wird sie interaktiv. Nutzer können interagieren und Daten werden bei Bedarf nachgeladen.</li>
+</ol>
+
+<h5 id="vorteile-und-nachteile-von-csr">Vorteile und Nachteile von CSR</h5>
+
+<p>Der große Vorteil beim Client-Side Rendering (CSR) ist die reduzierte Serverbelastung, da der Großteil des Renderings direkt im Browser des Users stattfindet. Das schont Serverressourcen insbesondere bei hohen Datenaufkommen, senkt damit Kosten und erleichtert die Skalierbarkeit in Projekten. Insbesondere für datenstarke Projekte ist das ein wichtiger Punkt. Auf der anderen Seite dauert der Inital Load beim CSR deutlich länger. User müssen länger warten, bis sie die erste vollständige Seite sehen, da der Browser zusätzliche Skripte laden und ausführen muss. Das verschlechtert eure Web Core Vitals und damit euer SEO-Ranking.
+Zusammenfassend eignet sich CSR besonders für Anwendungen, die eine hohe Interaktivität und dynamische Inhaltsaktualisierungen ohne ständiges Neuladen der Webseite erfordern. Als bestes Beispiel kann hier zum Beispiel Google Maps genannt werden.
+Letztendlich hängt die Wahl zwischen SSR und CSR von den spezifischen Anforderungen eures Projekts und den Prioritäten in Bezug auf Performance, SEO und Nutzererfahrung ab. Allgemein gesprochen, sobald SEO Performance wichtig ist, sollte eure Wahl auf SSR fallen.</p>
+
+<p>CSR eignet sich besonders für Anwendungen mit hoher Interaktivität und dynamischen Inhalten ohne ständiges Neuladen, wie z.B. Google Maps. Die Wahl zwischen SSR und CSR sollte basierend auf den spezifischen Anforderungen des Projekts und den Prioritäten hinsichtlich Performance, SEO und Nutzererfahrung getroffen werden. Generell gilt: Ist SEO-Performance entscheidend, ist SSR die bevorzugte Wahl.</p>
+
+<p>Aber nach welchen Metriken wird eigentlich gemessen? Wann ist eine Webseite schnell?</p>
+
+<h3 id="web-core-vitals">Web Core Vitals</h3>
+
+<p class="left">
+<img style="max-width:80%" src="/shared/assets/img/placeholder-image.svg" alt="Infografik Auflistung derWeb Core Vitals: Contentful Paint (LCP), dem First Input Delay (FID) und dem Cumulative Layout Shift (CLS)" class="lazy img-fluid img-rounded" data-src="vitals.jpg" data-srcset="vitals.jpg">
+</p>
+
+<p>Um die User Experience auf Webseiten zu messen und zu verbessern, haben sich die Core Web Vitals von Google etabliert. Sie umfassen drei Hauptaspekte: die Ladezeit, die Interaktivität und die visuelle Stabilität von Webseiten.
+Die Core Web Vitals sind ein wichtiger Faktor für das SEO-Ranking deiner Webseite. Schnelle Ladezeiten und reibungslose Interaktivität führen zu einer besseren User Experience, minimieren die Absprungrate (engl. “Bounce Rate”) und erhöhen die durchschnittliche Verweildauer (engl. “Average Time on Site”). Das hat maßgeblich Einfluss auf das Ranking in den Google-Suchergebnissen.</p>
+
+<p>Der Fokus der Web Core Vitals (und damit haben diese auch den größten Einfluss auf dein SEO-Ranking) liegt dabei auf dem Largest Contentful Paint (LCP), dem First Input Delay (FID) und dem Cumulative Layout Shift (CLS). Sie messen, wie schnell Inhalte für den Nutzer sichtbar und interaktiv werden.</p>
+
+<p class="left">
+<img style="max-width:80%" src="/shared/assets/img/placeholder-image.svg" alt="Infografik Darstellung des Largest Contentful Paint am Beispiel der Webansicht für Instagram" class="lazy img-fluid img-rounded" data-src="largestcontentfulpaint.jpg" data-srcset="largestcontentfulpaint.jpg">
+</p>
+
+<p>Der LCP ist quasi der erste Eindruck deiner Seite. Gemessen wird, wie lange es dauert, bis das größte Element auf deiner Webseite gerendert ist und für den User sichtbar wird. Meist handelt es sich dabei um ein Bild oder eine Grafik. Für eine gute Bewertung sollte der LCP innerhalb von 2,5 Sekunden nach dem ersten Laden der Seite erfolgen. Der CLS bewertet die visuelle Stabilität während des Ladeprozesses. Verschieben sich Elemente auf dem Bildschirm während des Renderings? Wir alle haben die Erfahrung gemacht, dass Bedienelemente während der Ladezeit im Layout sich plötzlich verschieben. Der FID misst die Zeit, die eine Seite benötigt, um auf den ersten Klick eines Links oder Buttons zu reagieren. Für eine gute Bewertung sollte die Seite eine FID von 100 Millisekunden oder weniger aufweisen.</p>
+
+<p class="left">
+<img style="max-width:80%" src="/shared/assets/img/placeholder-image.svg" alt="Infografik CLS: Button verschiebt sich nach unten durch verzögerte Einblendung von Inhalten in Webansicht" class="lazy img-fluid img-rounded" data-src="cumulativeshift.jpg" data-srcset="cumulativeshift.jpg">
+</p>
+
+<p>Für mehr Informationen, Tutorials zur Optimierung von Performance und SEO-Ranking sowie Tools zur Messung besucht  am besten die <a href="https://web.dev/explore/learn-core-web-vitals?hl=de" rel="noreferrer noopener" target="_blank">Web Core Vitals Webseite</a>.</p>
+
+<p>Aber jetzt wieder zurück zu Angular und zur Full App Non-Destructive Hydration.</p>
+
+<h3 id="wie-full-app-non-destructive-hydration-funktioniert">Wie Full App Non-Destructive Hydration funktioniert?</h3>
+
+<p>Angular unterstützt serverseitiges Rendering (SSR) bereits seit einiger Zeit durch seine Libary Angular Universal. Dieser Prozess war jedoch bis zum Update auf Angular 16 destruktiv. Um zu verstehen, was das bedeutet, wollen wir uns den Prozess näher ansehen:</p>
+
+<p class="left">
+<img style="max-width:80%" src="/shared/assets/img/placeholder-image.svg" alt="Prozesses der destruktiven Hydration als Gif" class="lazy img-fluid img-rounded" data-src="gif-destructive-hydration.gif" data-srcset="gif-destructive-hydration.gif">
+</p>
+
+<p><strong>Prozess der destruktiven Hydration in Angular Universal bis Version 16:</strong></p>
+
+<ol>
+  <li>
+<strong>Anfrage des Browsers:</strong> Der Browser sendet eine HTTP-Anfrage an den Webserver.</li>
+  <li>
+<strong>Server-Side-Rendering:</strong> Der Server empfängt die Anfrage und generiert ein vollständiges HTML-Dokument der angeforderten Seite.</li>
+  <li>
+<strong>Browser:</strong> Der Browser rendert die initiale Version des Seiten-Markups. Zu diesem Zeitpunkt ist die Seite noch statisch, da JavaScript noch nicht geladen wurde.</li>
+  <li>
+<strong>Download der JavaScript-Datei:</strong> Die JavaScript-Files werden im Browser heruntergeladen.</li>
+  <li>
+<strong>Angular-Client-App:</strong> Die Angular-Client-App wird initialisiert, lädt das Bundle und startet.</li>
+  <li>
+<strong>Repainting des DOM-Markups:</strong> Angular rendert die gesamte Seite nochmals neu, was zur Zerstörung des vorgeladenen HTML führt und den destruktiven Hydrationsprozess kennzeichnet.</li>
+</ol>
+
+<p>Wie wir sehen können, zerstört Angular die bereits (im dritten Schritt) gerenderten HTML-Strukturen und lädt in einem letzten Schritt das gesamte Markup neu. Im Grunde wurde die Seite dadurch doppelt gerendert. Das ist ein besonders ineffizienter Prozess für umfangreiche Anwendungen. Das ist auch der Grund für das Flickern. Über die Zeit gab es viele Ansätze, dieses Flickern zu minimieren. Dennoch war dieses in Tools wie Lighthouse und WebPageTest weiterhin sichtbar.</p>
+
+<h3 id="angular-16-und-die-full-app-non-destructive-hydration">Angular 16 und die Full App Non-Destructive Hydration</h3>
+
+<p>Die Full App Non-Destructive Hydration hat genau da angesetzt, indem das bereits serverseitig gerenderte DOM-Markup wiederverwendet wird. “Non-destructive” meint nichts anderes, als dass das serverseitig gerenderte DOM-Markup nicht zerstört und wieder neu gerendert wird; stattdessen durchläuft Angular die DOM-Struktur, hängt Event-Listener an und bindet Daten, um das Rendering zu vervollständigen.</p>
+
+<p class="left">
+<img style="max-width:80%" src="/shared/assets/img/placeholder-image.svg" alt="Prozesses der non-dedstructive Hydration als Gif" class="lazy img-fluid img-rounded" data-src="gif-full-hydration.gif" data-srcset="gif-full-hydration.gif">
+</p>
+
+<p>Die Vorteile von Full App Non-Destructive Hydration sind ein deutlicher Performance-Boost um 40% bis 50% für den Largest Contentful Paint (LCP).
+<a href="https://twitter.com/naveedahmed/status/1645983995820376065?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1645983995820376065%7Ctwgr%5Ee4f6b5fdc7af3261fc76397d4952b9779e02f6de%7Ctwcon%5Es1_&amp;ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext2Fhtmlkey%3Da19fcc184b9711e1b4764040d3dc5c07schema%3Dtwitterurl%3Dhttps3A%2F%2Ftwitter.com%2Fnaveedahmed%2Fstatus%2F1645983995820376065image%3Dhttps3A%2F%2Fi.embed.ly%2F1%2Fimage3Furl3Dhttps253A252F252Fabs.twimg.com252Ferrors252Flogo46x38.png26key3Da19fcc184b9711e1b4764040d3dc5c07" rel="noreferrer noopener" target="_blank">Siehe Tweet</a></p>
+
+<p>Das ist ein immenser Boost vor allem für Projekte mit komplexen Benutzeroberflächen oder dynamischen Inhalten. Ein verbesserter LCP führt wiederum zu einem besseren SEO-Ranking.</p>
+
+<h3 id="was-sind-die-nächsten-schritte-für-die-hydration-und-server-side-rendering-in-angular">Was sind die nächsten Schritte für die Hydration und Server-Side Rendering in Angular?</h3>
+
+<p>Die Full App Non-Destructive Hydration war nur der erste Schritt einer grundsätzlichen Richtungsänderung für das Rendering in Angular. Bisher ist das clientseitige Rendering der Default für alle Projekte in Angular. Das soll sich schrittweise ändern. Wie bereits in der Roadmap angekündigt, plant das Angular Team, zukünftig standardmäßig auf ein hybrides Rendering (Server-Side Rendering und Static Site Generation) zu setzen.</p>
+
+<p>Gleichzeitig hat sich die partielle Hydration in der Webentwicklung etabliert. Hierbei werden Komponenten, die nicht essentiell für die Seite sind oder sich nicht im Viewport befinden, verzögert geladen. Wichtige Begriffe in diesem Zusammenhang sind Lazy Loading und Deferrable Views.</p>
+
+<p class="left">
+<img style="max-width:80%" src="/shared/assets/img/placeholder-image.svg" alt="Prozesses der partiellen Hydration als Gif" class="lazy img-fluid img-rounded" data-src="gif-partial-hydration.gif" data-srcset="gif-partial-hydration.gif">
+</p>
+
+<p>In einem nächsten Update in Angular sollen alle Inhalte innerhalb der festgelegten Defer-Blöcke serverseitig gerendert und nur auf Client-Seite nach Bedarf hydratisiert werden. In diesem Szenario lädt der Browser die JavaScript-Bundles für die eingestellten Deferred Views nicht, bis ein Trigger-Ereignis auftritt. Erst dann lädt Angular das zugehörige JavaScript herunter und hydratisiert diesen Teil der Ansicht. Wenn eine Komponente nicht benötigt wird, wird sie gar nicht erst hydratisiert. Das macht auch Sinn. Wenn man einen Flug suchen oder buchen will, ist es für die User Experience wichtiger, dass alle interaktiven Elemente in diesem Zusammenhang möglichst schnell geladen sind. In eher seltenen Fällen priorisieren Nutzerinnen die Marketing- oder Bonusangebote wie Restauranttipps. Und wenn diese Angebote gar nicht erst wahrgenommen werden, warum sollten sie überhaupt hydratisiert werden?</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In diesem Artikel haben wir euch die Begriffe Hydration, Server-Side Rendering (SSR) und Client-Side Rendering (CSR) kurz erklärt. Das ist wichtig, um zu verstehen, warum die Einführung der Full App Non-Destructive Hydration für Angular ein Meilenstein war. Wir haben uns außerdem die Bedeutung der Core Web Vitals angesehen. Insbesondere für angehende Webentwickler ist es wichtig, ein allgemeines Verständnis für die technischen Prozesse aufzubauen. Je fester das Fundament ist, desto höher lässt sich bauen. Und im Falle der Angular Hydration erwarten uns die nächsten Monate viele Neuigkeiten. Umso wichtiger ist es, dass wir das Thema umfassend beleuchten. Deswegen werden wir eine Reihe an Artikel zu den Themenkomplexen Performance und Server-Side-Rendering in Angular veröffentlichen.</p>
+
+<p>Im nächsten Artikel widmen wir uns der praktischen Implementierung der Full App Non-destructive Hydration, Lazy Loading und Deferred Views in Angular. Dazu wird uns wieder Webdave via Twitch einige detaillierte Codebeispiele geben, die euch helfen, die Materie noch besser zu verstehen. Wir freuen uns!</p>
+
+<h3 id="werde-teil-unserer-community">Werde Teil unserer Community</h3>
+
+<p>Immer bessere und feinere Steuerungsmöglichkeiten, bedeuten aber auch höhere Anforderungen an euch. Umso wichtiger ist es, eine Community zu haben und Best Practices auszutauschen. Wie immer laden wir euch deshalb ein, Teil unserer Angular Community auf Discord zu werden. Seit 2013 bieten wir euch hier Tutorials, Artikel und Schulungen rund um das Angular Framework. Gestartet durch unsere Begeisterung für die modernen Möglichkeiten der Webentwicklung hat sich mittlerweile eine ganze Community dazu entwickelt. Mit mittlerweile 18 Meetups, die insgesamt über 10.000 Angular-Entwicklerinnen:innen als Plattform für regelmäßigen Austausch dienen, sind wir damit in Europa die Region mit den meisten Angular-Entwicklerinnen. Werde Teil unserer Community!</p>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2024-02-11-angular-hydration-kurz-erklaert/2024-02-11-angular-hydration-kurz-erklaert.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Lulëzim Ukaj" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/ac2a40a8dd0eda491c1ffaf1cf58d05bbb266f08f36ec2acdec22896ce51fd12-160x160.jpg"
+      data-srcset="/assets/img/gravatars/ac2a40a8dd0eda491c1ffaf1cf58d05bbb266f08f36ec2acdec22896ce51fd12-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Lulëzim Ukaj
+    </p>
+    
+      <p class="text-muted small">
+        Lulëzim ist ein junger Vater, Web Accessibility Experte und Künstler. Für Workshops.DE schreibt er Blogartikel, erstellt Social Media Posts und unterstützt unsere Discord Community.
+
+      </p>
+    
+    <div>
+      
+      
+      
+      
+        <a href="https://workshops.de/profiles/lulezim-ukaj" class="btn btn-sm btn-outline-secondary" target="_blank">workshops.de Profil</a>
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ng-de-conference-2025-ankuendigung/"
+    data-style="background-image: url('/artikel/ng-de-conference-2025-ankuendigung/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NG-DE Conference 2025 wieder in Berlin
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

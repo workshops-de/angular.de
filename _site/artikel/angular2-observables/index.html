@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Angular - Asynchronität von Callbacks zu Observables | Angular.DE</title>
+  
+  <meta name="description" content="Moderne Web-Awendungen leben von mehr Interaktion. Hier erfahrt ihr wie - von Callbacks bis zu den neuen Observables in Angular.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angular2-observables/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Angular - Asynchronität von Callbacks zu Observables - Angular.DE">
+
+
+
+  <meta property="og:description" content="Moderne Web-Awendungen leben von mehr Interaktion. Hier erfahrt ihr wie - von Callbacks bis zu den neuen Observables in Angular.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angular2-observables/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Angular - Asynchronität von Callbacks zu Observables - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Moderne Web-Awendungen leben von mehr Interaktion. Hier erfahrt ihr wie - von Callbacks bis zu den neuen Observables in Angular.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angular2-observables/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Angular - Asynchronität von Callbacks zu Observables"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Angular - Asynchronität von Callbacks zu Observables" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Angular - Asynchronität von Callbacks zu Observables</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angular/" class="badge bg-secondary text-bg-secondary text-uppercase">angular</a>
+            
+            <a href="/kategorie/angular2/" class="badge bg-secondary text-bg-secondary text-uppercase">angular2</a>
+            
+            <a href="/kategorie/angular4/" class="badge bg-secondary text-bg-secondary text-uppercase">angular4</a>
+            
+            <a href="/kategorie/observables/" class="badge bg-secondary text-bg-secondary text-uppercase">observables</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Bengt Weiße
+            
+            
+            <span class="ms-1 me-1">•</span> <time>27.05.2016</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  13 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Mobile Apps und Webanwendungen leben von der Interaktion mit dem Nutzer und dadurch von Asynchronität. Sei es nur ein Tap/Klick, oder das Abschnicken einer Anfrage an eine Schnittstelle. In unserem <a href="/artikel/angular-tutorial-deutsch/">Angular Einsteigertutorials</a> sind wir schon kurz auf wichtige Punkte bezüglich der Asynchonität in Angular Anwendungen eingegangen. Natürlich steckt hinter diesem Begriff noch viel mehr, was erklärt werden kann und sollte. Daher folgt nun dieser Artikel, in dem wir uns ausschließlich mit Fragen und Problemen rundum das Thema Asynchronität beschäftigen.</p>
+
+<h2 id="asynchronität">Asynchronität</h2>
+
+<p>Was genau bedeuted eigentlich <em>asynchron</em> und <em>synchron</em>. Vielleicht habt ihr selbst schon beides genutzt, aber wart euch dessen gar nicht bewusst.</p>
+
+<p>Synchronität zeichnet sich in der Programmierung oft dadurch aus, dass ihr das Ergebnis eines Funktionsaufrufs direkt einer Variablen zuweisen könnt, welche dann den entsprechenden Rückgabewert beinhaltet.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// count is 2</span>
+
+<span class="kd">function</span> <span class="nf">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// result = 3</span>
+</code></pre></div></div>
+
+<p>Bei Asynchronität steht das Ergebnis erst nach einer unbestimmbaren Zeit oder erst zu einem bestimmten Zeitpunkt in der Zukunft fest. Erweitern wir das obige Beispiel und starten die Berechnung einer Summe zu einem späteren Zeitpunkt.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="nf">setTimeout</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">result</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+
+<span class="nf">alert</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Führen wir dieses Code-Beispiel aus, erscheint im Browser eine Hinweisbox mit dem Inhalt <code class="language-plaintext highlighter-rouge">0</code>. Die Funktion <code class="language-plaintext highlighter-rouge">setTimeout</code> startet einen asynchronen Kontext, da die Ausführung und somit das Ergebnis der Funktion erst nach mindestens zwei Sekunden feststeht. Der restliche Code wird normal (synchron) ausgeführt.</p>
+
+<p>Asynchron bedeuetet daher auch nicht blockierend, sonst würde zwei Sekunden lang nichts passieren und danach die Hinweisbox mit dem Wert <code class="language-plaintext highlighter-rouge">3</code> erscheinen.</p>
+
+<p>Wie eingangs erwähnt, müssen wir uns früher oder später auch mit Asynchonronitäten in einer Angular Anwendung beschäftigen. Dabei gibt es verschiedene Möglichkeiten diese zu Erzeugen bzw. mit diesen umzugehen. Hier stoßen wir - nicht nur im Angular Kontext - auf folgende Schlagworte.</p>
+
+<ul>
+  <li>
+<strong>Callback</strong> - Funktion, die einer anderen Funktion übergeben und von dieser aus aufgerufen wird</li>
+  <li>
+<strong>Event</strong> - Interaktion des Nutzers (z.B. <code class="language-plaintext highlighter-rouge">click</code>), <a href="/artikel/angular2-output-events/">Kommunikation zwischen Komponenten</a> (<code class="language-plaintext highlighter-rouge">EventEmitter</code>)</li>
+  <li>
+<strong>Promise</strong> - kapselt Asynchrone Code-Blöcke, kann erfolgreich sein oder fehlschlagen</li>
+  <li>
+<strong>Observable</strong> - Stream, wichtiger Bestandteil der reaktiven Programmierung</li>
+</ul>
+
+<h2 id="probleme">Probleme</h2>
+
+<p><strong>Callbacks</strong></p>
+
+<p>Wie wir schon ausführlich in userem AngularJS-Buch im Kapitel Promises erklärt haben, stellen uns Callbacks vor folgende Probleme, die auch normale JavaScript Events nicht lösen können. Hier noch einmal ein Überblick der Probleme:</p>
+
+<ul>
+  <li>komplexer, unleserlicher Code</li>
+  <li>keine Parallelität</li>
+  <li>umständliche Fehlerbehandlung, -korrektur (try-catch funktioniert nicht!)</li>
+  <li>Vermischung von Verantwortlichkeiten</li>
+</ul>
+
+<p>Aus dem Kapitel können wir auch entnehmen, dass Promises dafür eine geeignete Lösung darstellt.</p>
+
+<p>Promises sind auch in Angular vorhanden. Programmiert ihr mit TypeScript, könnt bereits die ES2015 Promises verwenden. Diese werden einfach durch den Aufruf von <code class="language-plaintext highlighter-rouge">new Promise()</code> erstellt.</p>
+
+<p><strong>Promises</strong></p>
+
+<p>So gut Promises auch funktionieren, decken sie nicht alle möglchen Anwendungsfälle bzw. Wünsche des Entwicklers ab. Im Vergleich zu einfachen Callbacks verbessern sie das Leben von uns Entwicklern trotzdem erheblich.</p>
+
+<p>Stellen wir uns nun vor, wir würden gerne den asynchronen Aufruf einer Promise-Funktion abbrechen, dann ist dies nicht möglich. Wird eine Promise-Funktion aufgerufen, wird sie auch direkt ausgeführt und irgendwann mit einem Wert resolved oder rejected.</p>
+
+<p>Dies bedeuted auch, dass wir uns immer wieder selbst vergewissern müssen, ob sich das Resultat einer asynchronen Funktion geändert hat oder nicht. Ein Promise kann nur einmal erfüllt oder abgelehnt werden. Als Anwendungsfall fragt eine Funktion Daten von einer Schnittstelle ab. Ein anderer Programmteil führt auch diese Funktion aus und erhält aktuellere Daten. Wir müssen uns nun selbst darum kümmern, dass überall die aktuellsten Daten benutzt werden.</p>
+
+<p>Daraus resultiert auch, dass Promises in Verbindung von WebSockets unbrauchbar sind.</p>
+
+<ul>
+  <li>Können nicht abgebrochen werden</li>
+  <li>Hält nur einen zukünftigen Wert</li>
+  <li>Einmalige Ausführung (nicht <em>lazy</em> - Ausführung geschieht direkt beim Aufruf)</li>
+</ul>
+
+<p>Glücklicherweise sind wir ja noch nicht am Ende unseres Artikels. Vielleicht lassen sich ja die oben aufgeführten Problemchen mit Observables lösen.</p>
+
+<h2 id="observables">Observables</h2>
+
+<p>Observables (dt. <em>beobachtbar</em>) seid ihr vielleicht schon einmal begegnet, wenn ihr bereits mit Angular oder reaktiven Programmierung gearbeitet habt.</p>
+
+<p>Im Namen Observable versteckt sich der Begriff Observer. Ein Observer - zu Deutsch <em>Beobachter</em> - behält etwas im Auge und reagiert auf mögliche Änderungen. Möchte ein anderer Anwendungsteil vom Observer über die Änderungen am Observable informiert werden, kann er sich an diesem dazu an- (<em>subscribe</em>) und auch wieder abmelden (<em>unsubscribe</em>).</p>
+
+<p>Ein Observable kann dabei abstrakt einfach als Daten-Stream betrachtet werden. Dadurch sind diese auch flexibel einsetzbar und es können beispielsweise mehrere Observables verknüpft oder zusammengefasst werden.</p>
+
+<p>Das Prinzip ähnelt stark dem Observer-Pattern und nennt sich <em>Reactive Programming</em>. Angular nutzt als Basis dazu die Observables der <a href="http://reactivex.io/" rel="noreferrer noopener" target="_blank">ReactiveX</a> Architektur. Durch Microsofts <a href="https://github.com/Reactive-Extensions" rel="noreferrer noopener" target="_blank">Microsoft Reactive Extensions</a> existiert dazu eine sehr gute Implementierung in JavaScript und anderen Sprachen - kurz <a href="https://github.com/Reactive-Extensions/RxJS" rel="noreferrer noopener" target="_blank">RxJS</a> genannt.</p>
+
+<p>Aber bevor wir tiefer in die Materie einsteigen schauen wir uns ein komplettes Beispiel an, wie Observables in Angular genutzt werden können.</p>
+
+<p>Im folgenden werden die einzelnen Abschnitte und Funktionen des nachstehenden Quellcodes näher erklärt.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// import observable from the reactivex lib</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">Observable</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs/Observable</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// create an oberservable</span>
+<span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Observable</span><span class="p">.</span><span class="nf">create</span><span class="p">((</span><span class="nx">observer</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// random async operation</span>
+  <span class="kd">const</span> <span class="nx">deregister</span> <span class="o">=</span> <span class="nf">asyncCall</span><span class="p">((</span><span class="nx">response</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// in error case --&gt; publish error</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">observer</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// success --&gt; publish values</span>
+    <span class="nx">observer</span><span class="p">.</span><span class="nf">next</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="c1">// no other "next"-call --&gt; complete</span>
+    <span class="nx">observer</span><span class="p">.</span><span class="nf">complete</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="c1">// optional clean up function</span>
+  <span class="k">return </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// is called on unsubcription</span>
+    <span class="nf">deregister</span><span class="p">();</span>
+  <span class="p">};</span>
+<span class="p">});</span>
+
+<span class="c1">// listen on observable</span>
+<span class="nx">source</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// success</span>
+<span class="p">},</span> <span class="p">(</span><span class="nx">errData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// error</span>
+<span class="p">},</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// complete</span>
+<span class="p">});</span>
+
+<span class="c1">// source.unsubscribe();</span>
+</code></pre></div></div>
+
+<p><strong>Observable erzeugen</strong></p>
+
+<p>Als Ausgangspunkt benötigen wir ein Observable mit dem wir weiter arbeiten können. Dazu existiert in der <code class="language-plaintext highlighter-rouge">rxjs</code>-Bibliothek ein extra Modul mit dem Namen <em>Observable</em>. Dieses exportiert wiederum die Basis-Klasse <code class="language-plaintext highlighter-rouge">Observable</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">Observable</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs/Observable</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Auf dem <code class="language-plaintext highlighter-rouge">Observable</code> Objekt existiert die <code class="language-plaintext highlighter-rouge">create</code>-Funktion. Sie erlaubt uns ein neues Observable-Objekt zu erzeugen und erwartet eine Callback-Funktion, die einen <em>Observer</em> als Parameter erhält. Als Rückgabewert kann eine Funktion angegeben werden.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Observable</span><span class="p">.</span><span class="nf">create</span><span class="p">((</span><span class="nx">observer</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// optional clean up function</span>
+  <span class="k">return </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{};</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Glücklicherweise müsst ihr euch in den meisten Anwendungsfälle nicht selbst um die Erzeugung eines Observables kümmern. Dazu gibts es verschiedene Hilfsfunktion oder ein externer Programmteil liefert euch direkt ein Observable. Als Beispiel ist der Rückgabewert eines Http-Requests bereits ein Observable.</p>
+
+<p>Über folgende Funktionen könnt ihr euch ein Observalbe erzeugen lassen.</p>
+
+<ul>
+  <li>
+<strong>Observalbe.of</strong>(value1 [, value2, …]) - erzeugt aus einer Reihe von Werten ein Observable</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+<strong>Observable.from</strong>(promise</td>
+          <td>iterable</td>
+          <td>observable) - wandelt, z.b. ein Promise in ein Observable um</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+<strong>Observable.fromEvent</strong>(eventEmitter, eventName [, selectorFn]) - wandelt ein Event in ein Observable um, <code class="language-plaintext highlighter-rouge">eventEmitter</code> kann, z.B. ein DOM-, Angular-Element, EventEmitter, … sein</li>
+</ul>
+
+<div class="alert alert-warning">
+<b>Wichtig:</b> In den meisten Fällen müsst ihr euch nicht selbst um die Erstellung eines Observables kümmern!</div>
+
+<p><strong>Arbeiten mit dem Observer</strong></p>
+
+<p>Der Observer eines Observables kümmert sich, um das Weiterleiten von Werten und Fehlern. Dazu besitzt er drei grundlegende Funktionen:</p>
+
+<ol>
+  <li>
+<strong>next(response)</strong> - informiert Subscriber über neue Daten</li>
+  <li>
+<strong>complete()</strong> - informiert Subscriber, dass keine weiteren Daten kommen, nach letztem <em>next</em>-Aufruf</li>
+  <li>
+<strong>error(error)</strong> - informiert Subscriber über Fehler</li>
+</ol>
+
+<p>Daraus ergibts sich dann folgender, vereinfachter Observable-Code.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Observable</span><span class="p">.</span><span class="nf">create</span><span class="p">((</span><span class="nx">observer</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">asyncCall</span><span class="p">((</span><span class="nx">response</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// in error case --&gt; publish error</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">observer</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// success --&gt; publish values</span>
+    <span class="nx">observer</span><span class="p">.</span><span class="nf">next</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="c1">// no other "next"-call --&gt; complete</span>
+    <span class="nx">observer</span><span class="p">.</span><span class="nf">complete</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>Subscribe und Unsubscribe</strong></p>
+
+<p>Damit uns der Observer überhaupt mitteilen kann, dass Änderungen vorliegen, müssen wir uns am Observable dazu anmelden. Die passende Funktion dazu heißt <code class="language-plaintext highlighter-rouge">subscribe</code> und kann auf der Observer-Instanz aufgerufen werden. Als Parameter können drei Funktionen für</p>
+
+<ol>
+  <li>den Erfolgsfall - erhält die Daten</li>
+  <li>den Fehlerfall - erhält Informationen über den Fehler bzw. das Fehlerobjekt</li>
+  <li>den Abschluss bzw. die Fertigstellung - keine Parameter</li>
+</ol>
+
+<p>übergeben werden.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// listen on observable</span>
+<span class="nx">source</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// success</span>
+<span class="p">},</span> <span class="p">(</span><span class="nx">errData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// error</span>
+<span class="p">},</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// complete</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Möchte man nicht mehr auf Änderungen reagieren, können wir uns vom Observable auch wieder über die <code class="language-plaintext highlighter-rouge">unsubscribe</code>-Funktion abmelden.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">source</span><span class="p">.</span><span class="nf">unsubscribe</span><span class="p">();</span>
+</code></pre></div></div>
+
+<div class="alert alert-info">Hinweis: Ihr könnt euch jederzeit von einem Observable abmelden und wieder anmelden.</div>
+
+<p><strong>Weitere Funktionen und Operatoren</strong></p>
+
+<p>Observables bieten eine Vielzahl an weiteren Funktionen und Operatoren, die ihr nutzen könnt. In Angular ist jedoch alles sehr Modular aufgebaut und ihr müsst euch selbst darum kümmern alles zu laden, was ihr braucht.</p>
+
+<p>Um beispielsweise die <code class="language-plaintext highlighter-rouge">of</code> oder <code class="language-plaintext highlighter-rouge">from</code> Funktionen zur Verfügung zu haben, müsst ihr diese extra importieren.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">rxjs/add/observable/of</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">rxjs/add/observable/from</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Das gleiche Spiel müsst ihr bei der Nutzung von Operatoren betreiben.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">rxjs/add/operator/map</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="alert alert-warning">Wichtig: Zusätzliche Funktionen und Operatoren müssen extra importiert werden.</div>
+
+<p>Darüber hinaus gibt es eine Vielzahl von Operatoren, wie z.B. <em>zip</em> - Zusammenführen von Observables, <em>flatMap</em> - transformiert Werte eines Observables zu einem neuen Observable oder <em>map</em> - Transformationsfunktion für jeden Wert des Observables.</p>
+
+<h3 id="lösung-der-probleme-mit-promises---ja">Lösung der Probleme mit Promises? - JA!</h3>
+
+<p>Euch ist vielleicht schon aufgefallen, dass alle noch offenen Probleme von Promises allein beim Erklären von Observables gelöst wurden.</p>
+
+<p><strong>Abbrechen von Asynchronitäten</strong></p>
+
+<p>Wie beschrieben, könnt ihr euch von Observables abmelden durch den simplen Aufruf von <code class="language-plaintext highlighter-rouge">unsubscribe</code>.</p>
+
+<p><strong>Hält nur einen Zukunftswert</strong></p>
+
+<p>Solange ihr auf Änderungen hört, werdet ihr bei jedem Aufruf von <em>next</em> darüber informiert.</p>
+
+<p><strong>Nicht lazy</strong></p>
+
+<p>Observables sind <em>lazy</em>, da sie nur Daten generieren, wenn auf sie <em>subscribed</em> wurde. Dabei spielt es keine Rolle, ob die Asynchronität direkt oder erst später ausgeführt wird.</p>
+
+<h3 id="anwendung-in-angular">Anwendung in Angular</h3>
+
+<p>Es folgen noch ein paar kleine Anwendungsfälle in Angular Apps. Vielleicht habt ihr sogar unbewusst bereits mit Observables gearbeitet.</p>
+
+<p><strong>Http-Anfragen</strong></p>
+
+<p>Der Http-Servie in Angular arbeitet mit Observables.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">Http</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/http</span><span class="dl">'</span><span class="p">;</span>
+<span class="c1">// ...</span>
+
+<span class="c1">// returns an observable</span>
+<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">XXX</span><span class="p">);</span>
+<span class="c1">// ...</span>
+</code></pre></div></div>
+
+<p>Mehr Informationen, wie ihr Http-Requests senden könnt, folgt in einem späteren Artikel von uns.</p>
+
+<p><strong>Reagieren auf Benutzereingaben</strong></p>
+
+<p>Nehmen wir an, wir wollen eine Suche realisieren. Dabei gelten folgende Bedingungen:</p>
+
+<ol>
+  <li>Die Suchanfrage soll erst 800ms nach der Eingabe des letzten Zeichens abgesendet werden.</li>
+  <li>Es soll wirklich nur gesucht werden, wenn sich der aktuelle zum vorherigen Wert geändert hat.</li>
+  <li>Falls mehrere Suchanfragen laufen, soll nur das letzte Ergebnis genutzt werden.</li>
+</ol>
+
+<p>Puh, das sieht jetzt aber doch nach ziemlich viel Arbeit aus. Normalerweise ja, aber ist durch Observables in wenigen Zeilen erledigt.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// searchControl = new Control();</span>
+<span class="nx">searchControl</span>
+  <span class="c1">// react on value changes</span>
+  <span class="p">.</span><span class="nx">valueChanges</span>
+  <span class="c1">// wait 800ms after last change</span>
+  <span class="p">.</span><span class="nf">debounceTime</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
+  <span class="c1">// check if new value differs from old one</span>
+  <span class="p">.</span><span class="nf">distinctUntilChanged</span><span class="p">()</span>
+  <span class="c1">// transform value of observable to new observable -&gt; use only response of latest change</span>
+  <span class="c1">// avoiding out of order results</span>
+  <span class="p">.</span><span class="nf">switchMap</span><span class="p">(</span><span class="nx">term</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataService</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="nx">term</span><span class="p">))</span>
+  <span class="c1">// listen on results of the search</span>
+  <span class="p">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nx">items</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">items</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Was es genau mit einem <em>Control</em> auf sich hat erfahrt ihr auch bald in einem eigenen Artikel über Formulare in Angular.</p>
+
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+
+<p>Zum Abschluss stellen wir die vorgestellten Methoden, um mit Asychronitäten zu arbeiten gegenüber.</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Callbacks</th>
+      <th>Promises</th>
+      <th>Observables</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Single value</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Multi values</td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Composable</td>
+      <td>✗</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Lazy</td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Cancable</td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✓</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Wie sich bereits herausgestellt hat, sind Observables derzeit der flexibelste Weg.</p>
+
+<div class="alert alert-info">
+<b>Hinweis:</b> Nur weil Observables das meiste können, müsst ihr sie nicht unbedingt überall einsetzen.</div>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Asynchronität ist im modernen Web überall zu finden. Gerade in Single-Page-Applications, bei denen es auf dynamische Inhalte und Interaktionen ankommt, muss es für den Entwickler elegant möglich sein auf solche Situationen zu reagieren. Jede der angesprochenen Möglichkeiten hat seine Daseinsberechtigung. Verlangt ein Anwendungsfall nicht kontinuierlich auf Änderungen zu reagieren und der Vorgang muss auch nicht abgebrochen werden, steht der Nutzung von Promises im Vergleich zu Observables nichts entgegen. Auch Events oder einfache Callbacks werden euch immer noch begegnen und ihr werdet sie nutzen.</p>
+
+<p>Angular setzt schon an den richtigen Stellen auf die aktuellste und flexibelste Methode mit den Observables. Kommunikation zwischen Komponenten erfolgt über Events, um eine einheitliche Basis zu den DOM-Events zu halten.</p>
+
+<p>Wir hoffen, dass wir euch die Angst vor dem Arbeiten mit asynchronen Programmteilen genommen haben und ihr nun das Rüstzeug besitzt, um eure Probleme elegant und einfach zu lösen.</p>
+
+<hr>
+
+<div class="workshop-hint text-center">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-bottom-link">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
+        </p>
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-bottom-button">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
+</div>
+<hr>
+
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2016-05-27-angular2-observables/2016-05-27-angular2-observables.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Bengt Weiße" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/236d5f3a57a66853a82cfb2fd4ab6bc9-160x160.jpg"
+      data-srcset="/assets/img/gravatars/236d5f3a57a66853a82cfb2fd4ab6bc9-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Bengt Weiße
+    </p>
+    
+      <p class="text-muted small">
+        Bengt Weiße kommt aus dem grünen Herzen Deutschlands und interessiert sich schon seit seiner Kindheit für die Webentwicklung. Darum machte er auch sein früheres Hobby zum Beruf. Er beschäftigt sich bereits seit mehreren Jahren mit Web- und hybriden mobilen Anwendungen. Neben der frontendseitigen Umsetzung entwickelt er auch die nötigen Schnittstellen auf Basis von NodeJS und MongoDB. Anfang 2016 veröffentlichte er das erste deutsche Buch über das Ionic Framwork mit dem Titel "AngularJS & Ionic Framework, welches auch die nötigen Grundlagen im Bereich AngularJS vermittelt. 
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/KillerCodeMonkey" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ng-de-conference-2025-ankuendigung/"
+    data-style="background-image: url('/artikel/ng-de-conference-2025-ankuendigung/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NG-DE Conference 2025 wieder in Berlin
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

@@ -1,17 +1,41 @@
-_site
 node_modules
-opengraph/*
-.sass-cache
-.jekyll-metadata
-.jekyll-cache
-.firebase
+.env
+.env.*
+
+# Astro build output
+dist/
+.astro/
+
+# Generated OG images (created during build)
+public/og/*
+!public/og/.gitkeep
+
+# Copied article images (created during build from src/content/posts/)
+public/artikel/
+
+# Fetched data from API (generated during prebuild)
+src/data/events/*.json
+!src/data/events/.gitkeep
+src/data/related_events/*.json
+!src/data/related_events/.gitkeep
+src/data/course_trainers/*.json
+!src/data/course_trainers/.gitkeep
+src/data/course.json
+src/data/trainers.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
-_includes/_course_reviews.json
-_data/events/*.json
-_data/related_events/*.json
-_data/course_trainers/*.json
-_data/course.json
-_data/meetups.json
-_data/trainers.json
-_data/videos.json
-firebase-debug.log
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Optional: Scripts (if you don't want to commit migration scripts)
+# scripts/

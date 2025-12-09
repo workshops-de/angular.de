@@ -1,0 +1,198 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PostAuthor from '../components/PostAuthor.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import ReadingTime from '../components/ReadingTime.astro';
+import ArticleJsonLd from '../components/ArticleJsonLd.astro';
+import { getCollection } from 'astro:content';
+import { siteConfig } from '../config/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  author: string;
+  co_author?: string;
+  published_at: Date;
+  categories?: string;
+  header_image?: string;
+  toc?: boolean;
+  language?: string;
+  canonical_url?: string;
+  slug?: string;
+  folderName?: string;
+}
+
+const {
+  title,
+  description,
+  author,
+  co_author,
+  published_at,
+  categories = '',
+  header_image = 'header.jpg',
+  toc = false,
+  language = 'de',
+  canonical_url,
+  slug: propSlug,
+  folderName,
+} = Astro.props;
+
+const slug = propSlug || Astro.params.slug;
+
+// Get author data
+const users = await getCollection('users');
+const authorData = users.find(u => u.data.name === author);
+const coAuthorData = co_author ? users.find(u => u.data.name === co_author) : null;
+
+// Parse categories
+const categoryList = categories.split(' ').filter(Boolean);
+
+// Format date
+const formattedDate = published_at.toLocaleDateString('de-DE', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric'
+});
+
+// Get the raw content for reading time
+const rawContent = await Astro.slots.render('default');
+
+// Resolve header image path
+const resolvedHeaderImage = header_image?.startsWith('/') || header_image?.startsWith('http')
+  ? header_image
+  : `/artikel/${slug}/${header_image}`;
+
+// Full URL for JSON-LD
+const fullUrl = `${siteConfig.url}/artikel/${slug}/`;
+const fullImageUrl = resolvedHeaderImage.startsWith('http')
+  ? resolvedHeaderImage
+  : `${siteConfig.url}${resolvedHeaderImage}`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonical_url}
+  ogType="article"
+  publishedTime={published_at}
+  author={author}
+  slug={slug}
+>
+  <!-- Article JSON-LD for rich search results -->
+  <ArticleJsonLd
+    title={title}
+    description={description}
+    author={author}
+    publishedTime={published_at}
+    image={fullImageUrl}
+    url={fullUrl}
+  />
+
+  <article lang={language} class="pb-16 dark:bg-gray-950">
+    <!-- Header Image -->
+    <div class="w-full h-64 md:h-80 lg:h-96 relative overflow-hidden">
+      <img
+        src={resolvedHeaderImage}
+        class="w-full h-full object-cover"
+        alt={`Artikel Header Bild zu ${title}`}
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+    </div>
+
+    <div class="container mx-auto px-4 -mt-16 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <!-- Article Header -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 mb-8">
+          <!-- Categories -->
+          {categoryList.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-4">
+              {categoryList.map((category) => (
+                <a
+                  href={`/kategorie/${category.toLowerCase()}/`}
+                  class="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
+                >
+                  {category}
+                </a>
+              ))}
+            </div>
+          )}
+
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{title}</h1>
+
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+            <span>{author}</span>
+            {co_author && (
+              <>
+                <span>•</span>
+                <span>{co_author}</span>
+              </>
+            )}
+            <span>•</span>
+            <time datetime={published_at.toISOString()}>{formattedDate}</time>
+            <span>•</span>
+            <ReadingTime content={rawContent} />
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 mb-8">
+          <div class="prose-content">
+            <slot />
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700 text-right">
+            <a
+              href={`${siteConfig.repository_url}/edit/master/_posts/${folderName || slug}/${folderName || slug}.md`}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
+            >
+              🐛 Diesen Artikel auf GitHub verbessern
+            </a>
+          </div>
+        </div>
+
+        <!-- Author Info -->
+        {authorData && (
+          <div class="mb-8">
+            <PostAuthor author={authorData.data} />
+          </div>
+        )}
+        {coAuthorData && (
+          <div class="mb-8">
+            <PostAuthor author={coAuthorData.data} />
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    <div class="container mx-auto px-4 mt-16">
+      <RelatedPosts currentSlug={slug} categories={categoryList} />
+    </div>
+  </article>
+
+  <!-- Sidebar CTA (floating on desktop) -->
+  <div class="hidden xl:block fixed right-8 top-1/3 w-64">
+    <a
+      href="https://angular.de/schulungen/angular-intensiv/?utm_source=angular_de&utm_campaign=schulungen_2025&utm_medium=portal&utm_content=article_sidebar"
+      target="_blank"
+      class="block bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow border border-transparent dark:border-gray-700"
+    >
+      <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+        <span class="text-primary">🎓</span>
+        Angular Schulungen
+      </h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+        Intensiv-Schulung für Angular & TypeScript
+      </p>
+      <div class="flex flex-wrap gap-1 mb-3">
+        <span class="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">Angular & TypeScript</span>
+        <span class="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">Modern Angular</span>
+      </div>
+      <span class="text-xs font-semibold text-primary uppercase tracking-wide">
+        Jetzt buchen →
+      </span>
+    </a>
+  </div>
+</BaseLayout>

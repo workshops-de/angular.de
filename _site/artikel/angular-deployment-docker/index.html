@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Continuous Deployment mit Docker in 5 Schritten | Angular.DE</title>
+  
+  <meta name="description" content="Tutorial zu Continuous Deployment mit Docker und CircleCI für deine Angular Anwendung. Hier lernst du Schritt für Schritt wie du dein Deployment automatisierst.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angular-deployment-docker/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Continuous Deployment mit Docker in 5 Schritten - Angular.DE">
+
+
+
+  <meta property="og:description" content="Tutorial zu Continuous Deployment mit Docker und CircleCI für deine Angular Anwendung. Hier lernst du Schritt für Schritt wie du dein Deployment automatisierst.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angular-deployment-docker/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Continuous Deployment mit Docker in 5 Schritten - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Tutorial zu Continuous Deployment mit Docker und CircleCI für deine Angular Anwendung. Hier lernst du Schritt für Schritt wie du dein Deployment automatisierst.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angular-deployment-docker/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Continuous Deployment mit Docker in 5 Schritten"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Continuous Deployment mit Docker in 5 Schritten" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Continuous Deployment mit Docker in 5 Schritten</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angular/" class="badge bg-secondary text-bg-secondary text-uppercase">angular</a>
+            
+            <a href="/kategorie/angular2/" class="badge bg-secondary text-bg-secondary text-uppercase">angular2</a>
+            
+            <a href="/kategorie/angular4/" class="badge bg-secondary text-bg-secondary text-uppercase">angular4</a>
+            
+            <a href="/kategorie/docker/" class="badge bg-secondary text-bg-secondary text-uppercase">docker</a>
+            
+            <a href="/kategorie/deployment/" class="badge bg-secondary text-bg-secondary text-uppercase">deployment</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Martin Wiesmüller
+            
+            
+            <span class="ms-1 me-1">•</span> <time>19.03.2017</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  13 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Welche:r Web-Entwickler:in kennt nicht die guten alten Zeiten, in welchen Webserver sehr aufwendig aufgesetzt werden mussten. Jeder aus dieser Zeit kann bestätigen, dass dies alles andere als einfach war.</p>
+
+<p>Inzwischen gibt es aber Möglichkeiten, hierbei wesentlich flexibler zu agieren. Daher wollen wir uns in diesem Artikel das Zusammenspiel von Docker, Node, Unit-Testing mit einer Angular App ansehen. Ziel soll es sein, dass ein Deployment vollständig automatisiert ab dem Punkt des Code Check-In stattfindet. Allerdings nur dann, wenn alle Tests erfolgreich durchgeführt wurden. Folglich - wir wollen eine Deployment-Pipe aufsetzen.</p>
+
+<p>In diesem Artikel spreche ich von einer Angular Applikation. Allerdings ist es letztlich egal, was ich deployen möchte. Wichtig ist das komplette Zusammenspiel der verschiedenen Prozesse kennen zu lernen und zu verstehen. Das bedeutet, dass ihr diesen Artikel auch für andere Systeme anwenden könnt. Egal ob man eine Angular App oder ein Express Backend deployen möchtet, der Ablauf bleibt der gleiche.</p>
+
+<p>Bevor wir jedoch in das Gesamtkonstrukt eintauchen, müssen wir uns die einzelnen Bausteine ansehen:</p>
+
+<h2 id="1-einführung-in-docker">1. Einführung in Docker</h2>
+
+<p>Mit Docker wurde eine Engine geschaffen, welche es ermöglicht eine Anwendung zusammen mit allen notwendigen Umgebungen in einen Container einzusperren und zu starten. Dieser Container ist eine Art leichtgewichtige virtuelle Maschine, die alles mitbringt, um die Applikation laufen zu lassen. Dies hat den Vorteil, dass das Problem “Is running on my machine” nahezu völlig ausgeschlossen wird.</p>
+
+<p><img src="docker.jpg" alt="Docker"></p>
+
+<p>Als Grundlage für den Dockercontainer muss immer ein Image definiert werden. In diesem Image befindet sich das komplette Betriebssystem, auf welchem anschließend unsere Applikation läuft. Auch hier ist der Aufbau dieses Schemas sehr flexibel und kann frei definiert werden. Die Apple-Jünger unter euch müssen <a href="https://docs.docker.com/machine/install-machine/" rel="noreferrer noopener" target="_blank">Docker-Machine auf ihrem System installieren</a>.</p>
+
+<p>Bei den Linux Anwendern reicht die Engine selbst. Hierzu gibt es eine ausführliche <a href="https://docs.docker.com/engine/installation/" rel="noreferrer noopener" target="_blank">Installationsanleitung für Docker unter Linix</a>.</p>
+
+<p>Auch für Windows-User besteht die Möglichkeit Docker zu installieren. Ich selbst habe dies getestet, war allerdings sowohl mit der Art der Implementierung als auch der Bedienung sehr unzufrieden.</p>
+
+<p>Nach der Installation auf einem System eurer Wahl steht euch die Docker-CLI zur Verfügung. Anhand dessen könnt ihr im Anschluss mit <code class="language-plaintext highlighter-rouge">docker --version</code> testen, ob die Engine verfügbar ist.</p>
+
+<h3 id="was-ist-ein-dockerfile">Was ist ein Dockerfile?</h3>
+
+<p>Wie bereits genannt, kann der Aufbau unseres Dockercontainers sehr flexibel gestaltet werden. Die Gestaltung eines solchen Containers wird im Dockerfile vorgenommen. Dieses File, welches von der Engine in der Root des Projekts auffindbar sein muss, wird beim Build-Prozess ausgelesen und danach Zeile für Zeile abgearbeitet. Hier ein Dockerfile, mit welchem eine Angular App ausgeliefert werden kann:</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> node:7.2.0-wheezy</span>
+<span class="k">MAINTAINER</span><span class="s"> MWIESMUELLER &lt;martin@fa-wiesmueller.de&gt;</span>
+
+<span class="k">COPY</span><span class="s"> . /usr/share/site</span>
+<span class="k">WORKDIR</span><span class="s"> /usr/share/site</span>
+
+<span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-y</span> nginx
+
+<span class="k">COPY</span><span class="s"> nginx.conf /etc/nginx</span>
+
+<span class="k">RUN </span>npm <span class="nb">install</span> <span class="nt">-g</span> gulp webpack rimraf
+<span class="k">RUN </span>npm <span class="nb">install</span>
+
+<span class="k">RUN </span><span class="nb">echo</span> <span class="s2">"npm run build"</span> <span class="o">&gt;&gt;</span> /usr/share/site/startup.sh
+<span class="k">RUN </span><span class="nb">echo</span> <span class="s2">"/etc/init.d/nginx start"</span> <span class="o">&gt;&gt;</span> /usr/share/site/startup.sh
+
+<span class="k">RUN </span><span class="o">[</span><span class="s2">"chmod"</span>, <span class="s2">"777"</span>, <span class="s2">"/usr/share/site/startup.sh"</span><span class="o">]</span>
+
+<span class="k">CMD</span><span class="s"> ./startup.sh</span>
+
+<span class="k">EXPOSE</span><span class="s"> 80</span>
+</code></pre></div></div>
+
+<p>Hier mal eine Erklärung der Tags, welche ich in diesem Dockerfile anwende:</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">FROM</code>: Mit diesem Tag definiert ihr das Basis-Image für euer Projekt. Dies kann auf <a href="https://hub.docker.com" rel="noreferrer noopener" target="_blank">Dockerhub</a> sowohl in public als auch in private Repos gehostet werden. Mehr zu diesem Thema findet ihr weiter unten. In meinem Beispiel installiere ich ein Image, welches gleich Node mit Version 7.2 mit sich bringt.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MAINTAINER</code>: Hiermit definiert Ihr den Urheber des Images. Hier kann Name und / oder E-Mailadresse angegeben werden.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">COPY</code>: Mit diesem Befehl könnt Ihr Daten während des Build Prozesses von euerem lokalen System in den Dockercontainer kopieren. In diesem Beispiel kopiere ich das komplette Projekt in den Container. Dies hat den Vorteil, dass man dadurch den kompletten Build der Applikation innerhalb des Containers laufen lassen kann. Etwas weiter unten kopiere ich noch die Konfigurationsdatei von nginx in den jeweiligen Pfad, an welchem <a href="https://www.f5.com/go/product/welcome-to-nginx" rel="noreferrer noopener" target="_blank">nginx</a> diese Datei erwartet.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">WORKDIR</code>: Hiermit gebt Ihr den Pfad des Arbeitsverzeichnisses innerhalb des Containers an. Folglich werden alle künftigen Befehle innerhalb dieses Pfades stattfindenden.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">RUN</code>: Mit diesem Aufruf könnt Ihr Befehle innerhalb des Build Prozesses im Containers ausführen. In meinem Beispiel führe ich ein Update des Betriebssystems durch und installiere anschließend zusätzlich nginx als Webservice zum ausliefern meiner Angular Applikation. Als nächstes installiere ich alle notwendigen Dependencies über <a href="https://www.npmjs.com/" rel="noreferrer noopener" target="_blank">npm</a>. Anschließend lege ich ein Shell Skript an, in welchem ich als erstes den Build-Prozess meiner Angular App durchführe und letztlich den Webservice starte.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CMD</code>: Dieser Tag führt einen Befehl beim Starten des Containers aus. In meinem Fall führe ich das zuvor mit <code class="language-plaintext highlighter-rouge">RUN</code> angelegte Skript aus.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ÈXPOSE</code>: Mit diesem Tag definiert Ihr, welcher Port von außen erreichbar sein soll.</p>
+  </li>
+</ul>
+
+<p>Wenn man sich dieses File nun genauer ansieht, stellt man sehr schnell fest, dass man in diesem <code class="language-plaintext highlighter-rouge">Dockerfile</code> seinen kompletten Build Prozess definiert. Und genau das ist unser Ziel. Ähnlich als würde man im Supermarkt seine Produkte in den Einkaufswagen legen, die man benötigt, um anschließend nach seinem Rezept kochen zu können.</p>
+
+<p>Ihr kennt bestimmt das File <code class="language-plaintext highlighter-rouge">.gitignore</code> zum Ignorieren von Dateien beim Check-In auf Github. Die gleiche Funktion steht uns auch mit dem File <code class="language-plaintext highlighter-rouge">.dockerignore</code> zur Verfügung. Hier könnt ihr Files / Folders Ignorieren, z.b. gibt es keinen Grund die Testfiles aus dem Repo in Dockerhub mit hoch zu laden.*</p>
+
+<h3 id="was-ist-dockerhub">Was ist Dockerhub?</h3>
+
+<p>Mit Dockerhub hat Docker ein Ökosystem geschaffen, in welchem Images gespeichert werden können. Nachdem man sich einen Account auf Dockerhub angelegt hat, besteht entweder die Möglichkeit fertige Images über <code class="language-plaintext highlighter-rouge">docker push</code> im lokalen CLI hochzuladen, oder dies automatisiert per Webhook über Github / Bitbucket durchlaufen zu lassen.</p>
+
+<p>Die manuelle Variante kann sehr umständlich sein, da man den Container erst lokal bauen muss, um anschließend den Upload durchführen zu können. Und genau dies sollte automatisiert werden.</p>
+
+<p>Also wählen wir folglich die Variante per Webhook bei Check-In. Nachdem wir uns im Dockerhub angemeldet haben, besteht die Möglichkeit einen <code class="language-plaintext highlighter-rouge">Àutomated Build</code> anzulegen, mit welchem das Repo von Github mit Dockerhub verknüpft werden kann. Nachdem dies erfolgt ist, wird automatisch Dockerhub beim Check-In informiert, dass neue Daten vorliegen. Dockerhub lädt sich automatisiert das Repo herunter, und führt den im Dockerfile definierten Build Prozess durch. Dieser Build steht anschließend unter meinem Account zu Verfügung und kann heruntergeladen werden.</p>
+
+<p>Dockerhub bietet die Möglichkeit sowohl public, als auch kostenpflichtige private Repos anzulegen. Die public Repos sind für alle frei zugänglich, die private Repos hingegen können nur nach Autorisierung erreicht werden.</p>
+
+<p>Schaut euch die <a href="https://docs.docker.com" rel="noreferrer noopener" target="_blank">Dokumentation von Docker</a> an.
+In diesem Artikel konnte ich das Thema “Docker” leider nur kurz anschneiden.
+Denn mit dieser Engine ist noch weit aus mehr möglich.
+Der Build-Prozess auf Dockerhub kann je nach Tageszeit mehrere Minuten dauern.
+Daher empfehle ich, vor allem bei Änderungen am Build Prozess selbst, den Container mit <code class="language-plaintext highlighter-rouge">docker build</code> vorab lokal zu bauen. Somit lässt sich überprüfen, ob der Prozess fehlerfrei durchläuft. Sollten Fehler im Build Prozess auftreten, ist es immer sehr ärgerlich wenn auf Dockerhub sinnlos gewartet hat.*</p>
+
+<h2 id="2-circle-ci-als-continuous-integration-umgebung">2. Circle CI als Continuous Integration Umgebung</h2>
+
+<p><a href="https://circleci.com" rel="noreferrer noopener" target="_blank">Circle CI</a> ist ein mächtiges Tool, welches uns ermöglicht alle Tests automatisiert in der Cloud durchzuführen. Anschließend hat man die Möglichkeit, je nach Ergebnis der Tests, weitere Aktionen (z.B. Deploy) anzustoßen.</p>
+
+<p>Um Circle CI verwenden zu können, muss man sich genauso wie bei Docker einen Account anlegen, und kann anschließend seine Github Repos verlinken. Nach dieser Verlinkung wird Circle CI ebenfalls nach Check-In von Github informiert. Anschließend beginnt Circle CI das Repo zu prüfen.</p>
+
+<p>Ihr könnt hierfür natürlich auch andere CI Umgebungen nutzen die mit diesem Stack funktionieren.</p>
+
+<h3 id="das-konfigurationsfile-für-circle-ci">Das Konfigurationsfile für Circle CI</h3>
+
+<p>Um Circle CI konfigurieren zu können, muss in der Root des Projektes die <code class="language-plaintext highlighter-rouge">circle.yml</code> zu Verfügung stehen.</p>
+
+<p>Hier mal ein Beispiel aus einer Angular App:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">machine</span><span class="pi">:</span>
+  <span class="na">timezone</span><span class="pi">:</span> <span class="s">Europe/Berlin</span>
+  <span class="na">node</span><span class="pi">:</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">7.5.0</span>
+
+<span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">pre</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">npm install</span>
+
+<span class="na">general</span><span class="pi">:</span>
+  <span class="na">artifacts</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">coverage"</span>
+
+<span class="na">test</span><span class="pi">:</span>
+  <span class="na">override</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">npm run test</span>
+
+<span class="na">deployment</span><span class="pi">:</span>
+  <span class="na">dev</span><span class="pi">:</span>
+    <span class="na">branch</span><span class="pi">:</span> <span class="s">master</span>
+    <span class="na">commands</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">./scripts/deploy_dev.sh</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">machine</code>: Hier wird die Timezone sowie das Basisimage mit Node v7.5 definiert.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">dependencies</code>:  In diesem Tag werden alle npm packages welche anschlie0end zur Durchführung der Tests notwendig sind installiert.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">general</code>: Hier definieren wir einen Pfad für den Speicherort der Testergebnisse. Diese können anschließend unter Circle CI ausgewertet werden und stehen auch Online zu Verfügung.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">test</code>: Hier geben wir den Befehl an, welcher zur Durchführung der Unit-Tests ausgeführt werden soll.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">deployment</code>: Sind alle Tests erfolgreich durchgelaufen, können hier Skripte ausgeführt werden, welche einen Redeploy auslösen und die Version erneuern.</p>
+  </li>
+</ul>
+
+<h3 id="nightly-builds-mit-circle-ci">Nightly Builds mit Circle CI</h3>
+
+<p>Mit Circle CI besteht auch die Möglichkeit sogenannte Nightly-Builds durchzuführen. Dies ist vor allem dann sinnvoll, wenn man sehr aufwendige E2E Tests beispielsweise über <a href="https://saucelabs.com/" rel="noopener noreferrer nofollow" target="_blank">SauceLabs</a> durchführen möchte.</p>
+
+<p>Um dies zu realisieren, muss die API von Circle CI z.B. per Scheduler angetriggert werden. Dies wird mit Hilfe eines POSTS durchgeführt. Innerhalb dieses Requests kann man Informationen mitliefern, die Circle CI erkennen lässt, dass es sich um einen Nightly Build handelt.</p>
+
+<p>Mehr hierzu findet Ihr unter der Doc vom <a href="https://circleci.com/docs/" rel="noreferrer noopener" target="_blank">Circle CI</a></p>
+
+<h2 id="3-sauce-labs-für-eure-e2e-tests">3. Sauce Labs für eure E2E Tests</h2>
+
+<p><a href="https://saucelabs.com/" rel="noopener noreferrer nofollow" target="_blank">SauceLabs</a> ist ein Clouddienst, welcher es ermöglicht cross-browser-testing innerhalb der Cloud durchzuführen. Als Framework in Zusammenhang mit Angular empfiehlt sich hier <a href="http://www.protractortest.org/#/" rel="noopener noreferrer nofollow" target="_blank">Protractor</a> im Zusammenspiel mit <a href="https://jasmine.github.io/" rel="noopener noreferrer nofollow" target="_blank">Jasmine</a>. Der Vorteil ist, dass man hier sämtliche Betriebssysteme und Browser auf Abruf erhält und dort seine Tests laufen lassen kann.</p>
+
+<p>Falls euch dieses Thema tiefer interessieren sollte, empfehle ich euch meinen Artikel <a href="/artikel/angular-e2e-protractor-test-saucelabs/">Angular E2E Tests mit Protractor und Sauce Labs</a>. Hier beschreibe ich Schritt für Schritt die Anwendung von SauceLabs.</p>
+
+<h2 id="4-dockercloud-als-continuous-delivery-umgebung">4. Dockercloud als Continuous Delivery Umgebung</h2>
+
+<p>Mit <a href="https://hub.docker.com" rel="noopener noreferrer nofollow" target="_blank">Dockercloud</a> (ehemals Tutum) hat Docker eine Umgebung geschaffen, in welcher sich diese Dockercontainer mit ihren Applikationen sehr einfach von Dockerhub herunterladen, starten und veröffentlichen lassen. Als Basis lassen sich Machinedroplets von Digital Ocean, AWS o.ä. als Node in Dockercloud verlinken.</p>
+
+<h3 id="arbeiten-mit-unterschiedlichen-stacks">Arbeiten mit unterschiedlichen Stacks</h3>
+
+<p>Ein Stack ist die Zusammenführung von verschiedenen Systemen (Containern), welches die gesamte Architektur abbilden kann. Aber dennoch ist die Definiton eines Stacks flexibel. Es besteht ebenso die Möglichkeit, verschiedene Aufgaben in Stacks zusammenzufassen. (Datenbanken, Proxyserver etc.)</p>
+
+<p>Ich persönlich halte es für sinnvoll, die Entwicklungsbereiche einer Applikation in verschiedene Stacks aufzuteilen.
+Dies sollte in meinen Augen (je nachdem welche Branches existieren) mindestens drei sein:</p>
+
+<ul>
+  <li>Development
+Der Developmentstack ist, wie der Name schon sagt, der Stack, welcher als erstes nach einem Check-In aktulisiert wird. Hier ist immer der aktuelle Entwicklungsstand präsent.</li>
+  <li>Staging
+In diesem Stack wird immer die Zielversion, welche kurz vor einem Deployment zu Production steht veröffentlicht.</li>
+  <li>Production
+Hier wird, wie der Name es schon sagt, die produktive Version der App veröffentlicht.</li>
+</ul>
+
+<h2 id="5-konfiguration-der-einzelnen-komponenten-für-euer-automatisiertes-deployment">5. Konfiguration der einzelnen Komponenten für euer automatisiertes Deployment</h2>
+
+<p>Nachdem wir nun die einzelnen Baustene kennen lernen durften, müssen wir uns damit befassen diese zusammen zu bauen.</p>
+
+<p>Wie ist denn eigentlich der grobe Ablauf hierfür?</p>
+
+<p>Zunächst checkt der/die Entwickler:in den neuen Code ein. Anschließend durchläuft dieser alle Tests, um dann nach deren Bestehen die App automatisch zu deployen.</p>
+
+<p>Aber wie bekommen wir das hin? Das Schlüsselwort hierfür lautet <code class="language-plaintext highlighter-rouge">Webhooks</code>, welche alle Bausteine der Pipe letztlich verbinden sollen. Eine sehr einfache Beschreibung eines Webhooks ist auf <a href="https://de.wikipedia.org/wiki/WebHooks" rel="noreferrer noopener" target="_blank">Wikipedia</a> zu finden.</p>
+
+<blockquote>
+  <p>WebHooks ermöglichen es, einer Server-Software mitzuteilen, dass ein bestimmtes Ereignis eingetreten ist und eine Reaktion &gt; auf das Ereignis auszulösen.</p>
+</blockquote>
+
+<p>Wie bereits beschrieben, kann man mit Hilfe von Webhooks einem anderem System etwas mitteilen. Zum Beispiel wird <code class="language-plaintext highlighter-rouge">Dockerhub</code> mitgeteilt, dass Code eingecheckt wurde. Github bzw. das System in welchem euer Code verwaltet wird muss diese Information senden.</p>
+
+<h3 id="übersicht-der-continuous-deployment-pipeline">Übersicht der Continuous Deployment Pipeline</h3>
+
+<p>Nun kennt Ihr alle Bausteine, aus welchem das Gesamtkonstrukt gebaut werden soll. Ich habe euch eine Schemazeichnung erstellt, in welcher euch der Gesamtprozess bildlich dargestellt werden soll:</p>
+
+<p><img src="docker-ci-schema.jpg" alt="Schema der Angular Docker Continuous Deployment Pipe"></p>
+
+<p>Wie ihr erkennen könnt, gibt es zwei Auslöser, welche die Automatismen anwerfen können. Zum einem Check-In von Code, zum anderen per Scheduler (Nightly Build).</p>
+
+<h3 id="ablauf-bei-einem-code-check-in-via-webhook">Ablauf bei einem Code Check-In via WebHook</h3>
+
+<ul>
+  <li>Der Entwickler checkt auf Github neuen Code ein. Github informiert in diesen Moment Circle CI per Webhook.</li>
+  <li>Circle CI führt alle Unit-Tests durch. Sind diese erfolgreich durchgelaufen, wird Dockerhub per Webhook informiert.</li>
+  <li>Dockerhub holt sich anschließend das Repo aus Github, und erstellt nach Vorgaben des Dockerfiles den Container. Dieser wird folglich auf Dockerhub bereit gestellt. Ist dies abgeschlossen, wird wieder per Webhook Dockercloud für den laufenden Container im Development Stack zum Redeploy angetriggert.</li>
+  <li>Dockercloud lädt sich aus Dockerhub den fertigen neuen Container und deployed diesen automatisch</li>
+</ul>
+
+<p>=&gt; Ziel erreicht: Die Codeänderung ist sofort im Developmentstack verfügbar, sofern die Tests dies zugelassen haben.</p>
+
+<p>Ihr könnt direkt beim Check-In abfangen, dass nur dann eingecheckt werden kann, wenn alle Test erfolgreich waren. Hierfür gibt es das NPM Modul <a href="https://www.npmjs.com/package/pre-commit" rel="noopener noreferrer nofollow" target="_blank">pre-commit</a>. Dieses Modul lässt erst dann den Commit zu, wenn die in der <code class="language-plaintext highlighter-rouge">package.json</code>definierten pre-commits ohne Fehler durchlaufen sind.</p>
+
+<h3 id="ablauf-beim-zeitgesteuerten-build-via-scheduler">Ablauf beim zeitgesteuerten Build via Scheduler</h3>
+
+<ul>
+  <li>Der Scheduler setzt an Circle CI einen Webhook ab, und informiert diesen darüber das es sich um einen Nightly Build handelt.</li>
+  <li>Circle CI führt die Unit-Tests sowie die durch den Nightly-Build angegebenen Frontend-Tests durch.</li>
+  <li>Sind alle Tests erfolgreich abgeschlossen, wird Dockercloud wieder von Circle CI informiert. Diesmal allerdings, wird der Container im Staging Stack auf den neuesten Stand gebracht.</li>
+</ul>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche Arbeit erleichtern.
+Allerdings haben wir es in einer solchen Pipe mit sehr vielen unterschiedlichen Systemen und Oberflächen zu tun.
+In diesem Artikel konnte ich nur grob erklären, was es mit den einzelnen Bausteinen auf sich hat.
+Daher - falls ich euer Interesse geweckt habe, kann ich euch nur empfehlen, sich mit den einzelnen Bausteinen intensiv auseinander zu setzen.</p>
+
+<hr>
+
+<div class="workshop-hint text-center">
+  <div class="h3">Hat dir das Tutorial geholfen?</div>
+  <div class="row mb-2">
+    <div class="col-xs-12 col-md-6">
+      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-bottom-link">Docker Schulungen</a> an um dich möglichst effektiv in das Thema zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht
+        googlen kannst, z.B. “Beste Weg, um meine Container zu strukturieren”. Wir können sie Dir beantworten. </p>
+
+      <p class="text-center">
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angular_de&amp;utm_campaign=tutorial&amp;utm_medium=portal&amp;utm_content=text-bottom-button">
+          <button class="btn btn-danger">Jetzt weiter lernen</button>
+        </a>
+      </p>
+
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
+    </div>
+  </div>
+</div>
+<hr>
+
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2017-03-19-angular-deployment-docker/2017-03-19-angular-deployment-docker.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Martin Wiesmüller" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/16e3b496c44a89b7e79851e5f3dade4b-160x160.jpg"
+      data-srcset="/assets/img/gravatars/16e3b496c44a89b7e79851e5f3dade4b-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Martin Wiesmüller
+    </p>
+    
+      <p class="text-muted small">
+        "Manchmal ist der Weg ein etwas anderer"
+Vom KFZ Techniker - Serviceleiter eines Autohauses zum Web-Entwickler.
+Da das Web und IT schon immer mein Hobby war und ich mich folglich schon immer mit den Technologien des Web beschäftigt habe, wechselte ich im Jahr 2011 mein Hobby zum Beruf.
+Anfänglich im Support eines DMS Herstellers für die KFZ Werkstattbranche. Seit zwei Jahren Teil eines Startup-Unternehmens welches sich dich Aufgabe gemacht hat, EDV Prozesse einer KFZ Werkstatt direkt auf mobilen Devices und folglich direkt am Fahrzeug  abzubilden.
+Hier setzen wir Technologien eines MEAN Stack mit Angular2 und Co ein. In meiner Freizeit schreibe ich gerne noch Artikel, gehe gerne laufen oder koche meiner Familie was gutes.. :)
+Wenn Du noch mehr über mich erfahren möchtest, schau einfach auf meine Page.
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/mwiesmueller" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ng-de-conference-2025-ankuendigung/"
+    data-style="background-image: url('/artikel/ng-de-conference-2025-ankuendigung/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NG-DE Conference 2025 wieder in Berlin
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+  <div class="alert alert-danger fixed-bottom mb-0">
+    Meta Description too long (160 chars). Should be less than 156 chars.
+  </div>
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

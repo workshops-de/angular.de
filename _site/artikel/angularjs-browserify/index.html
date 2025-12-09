@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Browserify und AngularJS - Dream Team für SPAs | Angular.DE</title>
+  
+  <meta name="description" content="Browserify ist eine Alternative zu gängigen Projekt-Setups. Der Mehrwert ist die Modularisierung des Codes und das einfache Einbinden von npm-Paketen.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angularjs-browserify/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Browserify und AngularJS - Dream Team für SPAs - Angular.DE">
+
+
+
+  <meta property="og:description" content="Browserify ist eine Alternative zu gängigen Projekt-Setups. Der Mehrwert ist die Modularisierung des Codes und das einfache Einbinden von npm-Paketen.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angularjs-browserify/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Browserify und AngularJS - Dream Team für SPAs - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Browserify ist eine Alternative zu gängigen Projekt-Setups. Der Mehrwert ist die Modularisierung des Codes und das einfache Einbinden von npm-Paketen.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angularjs-browserify/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Browserify und AngularJS - Dream Team für SPAs"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Browserify und AngularJS - Dream Team für SPAs" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Browserify und AngularJS - Dream Team für SPAs</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angularjs/" class="badge bg-secondary text-bg-secondary text-uppercase">angularjs</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Bastian Krol
+            
+            
+            <span class="ms-1 me-1">•</span> <time>02.06.2014</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  13 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <p>Mit <a href="http://browserify.org/" rel="noreferrer noopener" target="_blank">Browserify</a> lassen sich client-seitige JavaScript-Projekte mit CommonJS-Modulen strukturieren, obwohl CommonJS-Module nicht nativ im Browser lauffähig sind. Browserify transformiert alle Module und ihre transitiven Abhängigkeiten und erzeugt eine einzige, im Browser lauffähige JavaScript-Datei – das Browserify-Bundle. Auch in AngularJS-Projekten lässt sich Browserify hervorragend einsetzen. Wie das geht, zeigt dieser Artikel.</p>
+
+<h2 id="warum-browserify">Warum Browserify?</h2>
+
+<p>Der größte Mehrwert beim Einsatz von Browserify ist die Modularisierung des Codes. JavaScript bietet bis einschließlich ECMAScript 5 kein in die Sprache integriertes Modulkonzept. Browserify/CommonJS steht damit in direkter Konkurrenz zu AMD mit Implementierungen wie RequireJS, aber auch zu ES6-Transpilern wie Traceur (ab ECMAScript 6 gibt es native Module). Meiner Meinung nach bietet Browserify eine ganze Reihe von Vorteilen.</p>
+
+<p>Einer der Vorteile von Browserify (wenn nicht sogar <em>der</em> Hauptvorteil), ist die Möglichkeit, npm-Pakete direkt einzubinden. Die <a href="https://www.npmjs.com/" rel="noreferrer noopener" target="_blank">npm-Registry</a> hält eine Vielzahl von JavaScript-Modulen für alle Lebenslagen bereit. Wer npm bisher nur als Paket-Manager für server-seitiges JavaScript (sprich Node.js) wahrgenommen hat, liegt damit nicht mehr ganz richtig – die npm-Registry enthält bereits eine große Anzahl von Paketen für den Browser. Klassiker wie jQuery, jQuery-UI und es5-shim sind per npm erhältlich. Und es werden stetig mehr, da vermehrt Frontend-Projekte ihre Releases per npm bereitstellen. Selbst Pakete, die eigentlich nicht (oder nicht ausschließlich) für den Einsatz im Browser gedacht sind, lassen sich dank Browserify oft in einem Frontend-Projekt nutzen.</p>
+
+<p>Browserify ist damit eine sehr interessante Alternative zu anderen gängigen Projekt-Setups (RequireJS, Script-Tags, etc.)</p>
+
+<h2 id="wie-funktioniert-browserify">Wie funktioniert Browserify?</h2>
+
+<p>Browserify geht beim Transformieren der Sourcen von einem CommonJS-Modul aus, welches als <em>Entry Point</em> bezeichnet wird. Ausgehend von diesem Einstiegspunkt verfolgt es alle <code class="language-plaintext highlighter-rouge">require</code>-Statements in diesem Modul und nimmt alle Abhängigkeiten des Entry Points mit in das Bundle auf. Auch die <code class="language-plaintext highlighter-rouge">require</code>-Statements in den abhängigen Modulen werden aufgelöst und in das Bundle übernommen. Dieser Prozess wird rekursiv fortgeführt bis alle <code class="language-plaintext highlighter-rouge">require</code>-Statements verarbeitet wurden und das Bundle vollständig ist.</p>
+
+<h2 id="angularjs-und-browserify">AngularJS und Browserify</h2>
+
+<p>Setzt man Browserify ein, arbeitet man mit <a href="http://wiki.commonjs.org/wiki/Modules/1.0" rel="noreferrer noopener" target="_blank">CommonJS-Modulen</a>, inklusive der CommonJS-Konstrukte <code class="language-plaintext highlighter-rouge">exports</code>/<code class="language-plaintext highlighter-rouge">module.exports</code> und <code class="language-plaintext highlighter-rouge">require</code>. Möchte man nun außerdem AngularJS einsetzen, muss man sich mit der Frage beschäftigen, wie man CommonJS-Module und das Dependency-System von AngularJS miteinander kombiniert. Dazu gibt es bereits einige Beiträge.</p>
+
+<h2 id="code">Code</h2>
+
+<p>Das <a href="https://github.com/basti1302/angular-browserify" rel="noreferrer noopener" target="_blank">Beispiel-Repository</a> zu diesem Artikel ist auf GitHub verfügbar. Wer lieber Code statt Prosa liest, wird dort fündig. Die Beispiel-Anwendung ist, wie sollte es anders sein, eine App zum Verwalten von Todos. Das Beispiel-Repository lässt sich auch als Projekt-Template für eigene AngularJS-Projekte mit Browserify einsetzen.</p>
+
+<h2 id="angularjs-einbinden">AngularJS einbinden</h2>
+
+<p>Bevor wir anfangen, unsere eigene App zu implementieren, müssen wir erstmal die AngularJS-Bibliotheken selbst einbinden. Bei Erstveröffentlichung dieses Artikels gab es vom AngularJS-Team weder offizielle Releases auf npm, noch gab es ein CommonJS-kompatible Version der AngularJS-Bibliotheken. Zum Glück hat sich seit dem einiges getan und das AngularJS-Team veröffentlicht von jedem Release auch eine CommonJS-kompatible Variante in der npm Registry. Das macht die ganze Sache deutlich einfacher. Dieser Artikel und das Beispiel-Repository sind dementsprechend angepasst worden.</p>
+
+<p>Um die benötigten AngularJS-Bibliotheken zu installieren, reicht folgendes npm Kommando aus:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> angular angular-route
+</code></pre></div></div>
+
+<p>Nun sind angular-core und angular-route verfügbar. Um sie in unserer App zu nutzen müssen sie nur per <code class="language-plaintext highlighter-rouge">require</code> eingebunden werden, etwa so:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">angular</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">angular</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="angularjs-und-commonjs-miteinander-verheiraten---ein-stück-in-drei-akten">AngularJS und CommonJS miteinander verheiraten - ein Stück in drei Akten</h2>
+
+<p>In einem “normalen” AngularJS-Projekt (ohne Browserify) enthält üblicherweise jede JavaScript-Datei eine AngularJS-Entität, also entweder einen Controller, einen Service oder einen Provider etc. Der typische AngularJS-Boilerplate-Code um die Deklaration z. B. eines Controllers einzuleiten, könnte so aussehen:</p>
+
+<p><em>app/js/controller/todo.js:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nx">angular</span>
+    <span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">todoApp</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">TodoCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">TodoService</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// ...</span>
+    <span class="p">});</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p>Im einfachsten Fall werden alle Einzeldateien dann per Script-Tag in der HTML-Datei eingebunden:</p>
+
+<p><em>app/index.html:</em></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/app/js/service/todos.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/app/js/service/imprint.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/app/js/controller/edit_todo.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/app/js/controller/todo.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/app/js/controller/todo_list.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/app/js/controller/imprint.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/app/js/controller/footer.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+// ... viele weitere Script-Tags
+</code></pre></div></div>
+
+<h3 id="der-naive-ansatz">Der naive Ansatz</h3>
+
+<p>Dies könnte man im Prinzip beim Einsatz von Browserify ähnlich handhaben. Das entsprechende CommonJS-Modul sähe dann so aus:</p>
+
+<p><em>app/js/controller/todo.js:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">angular</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">angular</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">angular</span>
+<span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">todoApp</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">TodoCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">TodoService</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Der einzige Unterschied im Controller ist, dass wir auf die <a href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression" rel="noreferrer noopener" target="_blank">IIFE</a> verzichten können - CommonJS-Module sind per se voneinander isoliert und greifen nicht auf den globalen Scope zu. Daher benötigen wir hier das Statement</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">angular</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">angular</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Eine globale Variable <code class="language-plaintext highlighter-rouge">angular</code> gibt es im CommonJS-Kontext nicht.</p>
+
+<p>Da Browserify aus allen CommonJS-Modulen eine einzige Datei erzeugt, werden die vielen Script-Tags in der <code class="language-plaintext highlighter-rouge">index.html</code> durch ein einziges Script-Tag für das Browserify-Bundle ersetzt. Diese Auflistung verlagert sich ins JavaScript, zum Beispiel in unseren Entry Point. Als Entry Point bietet sich die Datei an, in der das AngularJS-Modul deklariert wird:</p>
+
+<p><em>app/js/app.js:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">angular</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">angular</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">todoApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">ngRoute</span><span class="dl">'</span> <span class="p">]);</span>
+
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./service/todos</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./service/imprint</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./controller/edit_todo</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./controller/todo</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./controller/todo_list</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./controller/imprint</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./controller/footer</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// ... weitere require-Statements, eins pro Datei</span>
+</code></pre></div></div>
+
+<p>Viel gewonnen haben wir dadurch noch nicht. Das müsste doch besser gehen.</p>
+
+<h3 id="eine-indexjs-pro-source-verzeichnis">Eine index.js pro Source-Verzeichnis</h3>
+
+<p>Der erste Schönheitsfehler, den wir beseitigen, ist die lange Liste von <code class="language-plaintext highlighter-rouge">require</code>-Statements in <code class="language-plaintext highlighter-rouge">app.js</code>. In <code class="language-plaintext highlighter-rouge">app.js</code> geben wir nur noch die die <em>Verzeichnisse</em> an, aus denen wir Module importieren wollen.</p>
+
+<p><em>app/js/app.js:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">angular</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">angular</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">todoApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[]);</span>
+
+<span class="c1">// ein require-Statement pro Unterverzeichnis statt eins pro Datei</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./service</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./controller</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Übergibt man der <code class="language-plaintext highlighter-rouge">require</code>-Funktion als Argument ein Verzeichnis statt einer Datei, wird in diesem Verzeichnis automatisch die Datei <code class="language-plaintext highlighter-rouge">index.js</code> gesucht und diese eingebunden. Wir legen also in jedem Verzeichnis eine <code class="language-plaintext highlighter-rouge">index.js</code> an, in der wir festlegen, welche Dateien aus diesem Verzeichnis inkludiert werden sollen:</p>
+
+<p><em>app/js/controller/index.js:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./edit_todo</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./footer</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./todo</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./todo_list</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./imprint</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Kleine Anmerkung am Rande: Über sinnvolle Ordner-Strukturen für AngularJS-Projekte wurde an vielen anderen Stelle schon ausgiebig diskutiert. Die hier gemachten Vorschläge sind unabhängig davon, ob man seine Ordner-Struktur technisch anlegt (controller, service, directive, …) oder sich an der Fachlichkeit orientiert.</p>
+
+<p>Damit haben wir schon ein bisschen mehr Ordnung geschaffen. Trotzdem benutzen wir Browserify immer noch primär als überdimensioniertes Werkzeug zur Skript-Konkatenierung – irgendwie unbefriedigend.</p>
+
+<h3 id="wohin-mit-dem-angularjs-boilerplate-code">Wohin mit dem AngularJS-Boilerplate-Code?</h3>
+
+<p>Unsere nächste Optimierung betrifft den üblichen AngularJS-Boilerplate-Code, um eine AngularJS-Entität zu definieren. Statt diesen Code in das jeweilige CommonJS-Modul zu schreiben, können wir das auch in den <code class="language-plaintext highlighter-rouge">index.js</code>-Dateien abfrühstücken:</p>
+
+<p><em>app/js/controller/index.js:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">angular</span><span class="dl">'</span><span class="p">).</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">todoApp</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">EditTodoCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./edit_todo</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">FooterCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./footer</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">TodoCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./todo</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">TodoListCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./todo_list</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">ImprintCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./imprint</span><span class="dl">'</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Die einzelnen CommonJS-Module für die Controller und Services kommen dann ohne AngularJS-spezifischen Code aus:</p>
+
+<p><em>app/js/controller/todo.js:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">TodoService</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Insgesamt kommt der Code jetzt schon deutlich aufgeräumter daher. Ein positiver Effekt dieses Vorgehens ist die bessere Testbarkeit der AngularJS-Entitäten (siehe nächster Abschnitt).</p>
+
+<h2 id="unit-tests">Unit-Tests</h2>
+
+<p>Dass die einzelnen CommonJS-Module nun nur noch jeweils aus einer Funktion bestehen, die nicht AngularJS-spezifisch ist, hat einen weiteren Vorteil: Wir sind beim Schreiben der Unit-Tests unabhängig von AngularJS, können also jedes beliebige Test-Framework einsetzen. Hier ein Beispiel mit <a href="https://mochajs.org/" rel="noreferrer noopener" target="_blank">Mocha</a> und <a href="http://chaijs.com/" rel="noreferrer noopener" target="_blank">Chai</a>:</p>
+
+<p><em>test/unit/service/todos.js:</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">chai</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">chai</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">expect</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">expect</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">TodoServiceModule</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../../../app/js/service/todos.js</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nf">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">The TodoService</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">TodoService</span><span class="p">;</span>
+
+  <span class="nf">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">TodoService</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TodoServiceModule</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="nf">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should have some todos initially</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">todos</span> <span class="o">=</span> <span class="nx">TodoService</span><span class="p">.</span><span class="nf">getTodos</span><span class="p">();</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">todos</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nf">equal</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">todos</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">title</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nf">equal</span><span class="p">(</span><span class="dl">'</span><span class="s1">Buy milk</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Diese Tests lassen sich unabhängig von AngularJS und insbesondere unabhängig vom Browser durchführen. Sie können z. B. einfach per Mocha in Node.js ausgeführt. Das erlaubt sehr schnelles Feedback und lässt sich (da es headless läuft) sehr einfach in einen CI-Build integrieren.</p>
+
+<p>Zusätzlich sollte man die Unit Tests aber auch gelegentlich in echten Browsern ausführen, da es diffizile Unterschiede zwischen Node.js und den JavaScript-Runtimes in manchen Browsern geben kann. Mit Mocha lassen sich Tests z. B. einfach dadurch im Browser ausführen, dass man sowohl die Mocha-Library als auch die Tests in eine kleine <a href="https://github.com/basti1302/angular-browserify/blob/master/test/browserified/index.html" rel="noreferrer noopener" target="_blank">HTML-Datei</a> packt. Da die Tests auch <code class="language-plaintext highlighter-rouge">require</code>-Statements enthalten, muss dazu auch erst mit Browserify ein Bundle aus den Tests erzeugt werden (s. u.).</p>
+
+<p>Eine weitere Möglichkeit, die Tests im Browser auszuführen ist <a href="http://karma-runner.github.io/0.12/index.html" rel="noreferrer noopener" target="_blank">Karma</a>. Karma unterstützt auch Mocha-Test-Suites und lässt sich sehr gut als Build-Step in Task-Runner (Gulp, Grunt, ect.) einbauen. Auch das lässt sich gut in CI-Builds einsetzen.</p>
+
+<h2 id="kommandozeilen-tools-browserify--watchify">Kommandozeilen-Tools: Browserify &amp; Watchify</h2>
+
+<p>Der Code kann noch so toll strukturiert sein, wenn er nicht im Browser läuft, ist das wenig wert. Um einen Haufen CommonJS-Module für den Einsatz im Browser aufzubereiten, müssen wir diese einmal durch Browserify laufen lassen:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>browserify <span class="nt">--entry</span> app/js/app.js <span class="nt">--outfile</span> app/dist/app.js
+</code></pre></div></div>
+
+<p>Für den Entwicklungs-Workflow wäre es äußerst störend, müsste man nach jeder Änderung erst manuell Browserify aufrufen, damit man die Änderung im Browser testen kann. Dafür gibt es Watchify – Watchify läuft ständig im Hintergrund und beobachtet die Quell-Dateien. Sobald sich eine davon ändert, wird das Browserify-Bundle automatisch neu erzeugt. Der Aufruf entspricht dem von Browserify:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watchify <span class="nt">--entry</span> app/js/app.js <span class="nt">--outfile</span> app/dist/app.js
+</code></pre></div></div>
+
+<p>Um die Tests zu browserifien (z. B. um sie mit Karma auszuführen), kann man die folgenen Kommandos benutzen:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>browserify <span class="nb">test</span>/unit/controller/<span class="k">*</span>.js <span class="nb">test</span>/unit/service/<span class="k">*</span>.js <span class="nt">--outfile</span> <span class="nb">test</span>/browserified/browserified_tests.js
+</code></pre></div></div>
+
+<p>bzw.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watchify <span class="nb">test</span>/unit/controller/<span class="k">*</span>.js <span class="nb">test</span>/unit/service/<span class="k">*</span>.js <span class="nt">--outfile</span> <span class="nb">test</span>/browserified/browserified_tests.js
+</code></pre></div></div>
+
+<p>Im Beispiel-Repository befinden sich im Verzeichnis <code class="language-plaintext highlighter-rouge">bin</code> Shell-Skripte zum Aufruf von <a href="https://github.com/basti1302/angular-browserify/blob/master/bin/browserify.sh" rel="noreferrer noopener" target="_blank">Browserify</a> und <a href="https://github.com/basti1302/angular-browserify/blob/master/bin/watchify.sh" rel="noreferrer noopener" target="_blank">Watchify</a>.</p>
+
+<h2 id="gulp-build-live-reload-karma-protractor-und-der-ganze-rest">Gulp-Build, Live-Reload, Karma, Protractor und der ganze Rest</h2>
+
+<p>Noch etwas komfortabler als mit den Kommandozeilen-Tools Browserify und Watchify geht es mit einem Build-System. Hier ist <a href="http://gulpjs.com" rel="noreferrer noopener" target="_blank">gulp.js</a> eine gute Wahl. Das Beispiel-Repository enthält einen <code class="language-plaintext highlighter-rouge">gulpfile.js</code> in dem die meisten Goodies, die man von einem JavaScript-Build-System erwartet, schon fertig eingerichtet sind:</p>
+
+<ul>
+  <li>
+    <p>Linting der JavaScript-Sourcen mit ESlint</p>
+  </li>
+  <li>
+    <p>Mocha Unit Tests durchführen (in Node.js),</p>
+  </li>
+  <li>
+    <p>Sourcen mit Browserify verarbeiten (um ein nicht-minifiziertes Browserify-Bundle zu erzeugen),</p>
+  </li>
+  <li>
+    <p>ngmin &amp; uglify (um ein minifiziertes Browserify-Bundle zu erstellen),</p>
+  </li>
+  <li>
+    <p>die Unit-Tests mit Browserify bundlen und per Karma im Browser ausführen,</p>
+  </li>
+  <li>
+    <p>End-to-End-Tests mit Protractor ausführen,</p>
+  </li>
+  <li>
+    <p>ein Server für statische Assets (gulp-connect) und</p>
+  </li>
+  <li>
+    <p>Browser Live Reload.</p>
+  </li>
+</ul>
+
+<p>Während der Entwicklung kann man z. B. einfach <code class="language-plaintext highlighter-rouge">gulp watch</code> im Hintergrund laufen lassen. Jedesmal, wenn man eine Source-Datei verändert, wird das Browserify-Bundle neu erzeugt und der Browser lädt automatisch das neue Bundle, so dass die Veränderungen direkt sichtbar sind.</p>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Auch AngularJS-Projekte profitieren von Browserify. Es bietet einige nicht von der Hand zu weisende Vorteile:</p>
+
+<ul>
+  <li>
+    <p>Modularisierung mit CommonJS</p>
+  </li>
+  <li>
+    <p>einfache Verwendung von npm-Paketen</p>
+  </li>
+  <li>
+    <p>bessere Testbarkeit, vereinfachtes Unit-Testing</p>
+  </li>
+  <li>
+    <p>sehr ausgereiftes Tooling (Browserify-Kommandozeilen-Tool, Watchify, Gulp- und Grunt-Integration)</p>
+  </li>
+</ul>
+
+<p>Dabei sind wir auf die fortgeschrittenen Möglichkeiten, die Browserify bietet, noch gar nicht eingegangen:</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/substack/node-browserify/wiki/list-of-transforms" rel="noreferrer noopener" target="_blank">Transforms</a></p>
+  </li>
+  <li>
+    <p>Verwendung von Node.js-Core-Modulen im Browser</p>
+  </li>
+  <li>
+    <p>Source Maps</p>
+  </li>
+  <li>
+    <p>Cloud-basierte Cross-Browser-Tests mit <a href="https://ci.testling.com/" rel="noreferrer noopener" target="_blank">testling-ci</a></p>
+  </li>
+</ul>
+
+<p>Die Empfehlung des Tages lautet daher: Das nächste Projekt mal mit Browserify – und danach nie wieder ohne. :-)</p>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2014-06-02-angularjs-browserify/2014-06-02-angularjs-browserify.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Bastian Krol" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/623cf297a88aa998e58a684eb9afe1d9-160x160.jpg"
+      data-srcset="/assets/img/gravatars/623cf297a88aa998e58a684eb9afe1d9-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Bastian Krol
+    </p>
+    
+      <p class="text-muted small">
+        
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/basti1302" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/was-ist-angular/"
+    data-style="background-image: url('/artikel/was-ist-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Was sind Angular und AngularJS?
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ngupgrade-migration-angularjs-angular/"
+    data-style="background-image: url('/artikel/ngupgrade-migration-angularjs-angular/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Migration AngularJS zu Angular
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>

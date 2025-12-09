@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>Angular Routing Tutorial für Einsteiger | Angular.DE</title>
+  
+  <meta name="description" content="Routing ist ein fester Bestandteil fast jeder Web-Anwendung. Wie das aktuelle Routing im Vergleich zu AngularJS funktioniert, erfahrt ihr hier.">
+  
+
+  
+  <!-- Use canonical_url if available is post -->
+  
+  <link rel="canonical" href="http://localhost:4000/artikel/angular-routing-tutorial-deutsch/">
+  
+  
+
+  
+
+  <!-- Facebook Tags -->
+
+  <meta name="og:title" content="Angular Routing Tutorial für Einsteiger - Angular.DE">
+
+
+
+  <meta property="og:description" content="Routing ist ein fester Bestandteil fast jeder Web-Anwendung. Wie das aktuelle Routing im Vergleich zu AngularJS funktioniert, erfahrt ihr hier.">
+
+
+<meta property="og:url" content="http://localhost:4000/artikel/angular-routing-tutorial-deutsch/" />
+
+  <meta property="og:type" content="article" />
+
+
+
+  <meta property="og:image" content="http://localhost:4000/opengraph/default.png" />
+
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+  <meta name="twitter:title" content="Angular Routing Tutorial für Einsteiger - Angular.DE">
+
+
+<meta name="twitter:site" content="@angular_de">
+<meta name="twitter:creator" content="@angular_de">
+
+  <meta name="twitter:description" content="Routing ist ein fester Bestandteil fast jeder Web-Anwendung. Wie das aktuelle Routing im Vergleich zu AngularJS funktioniert, erfahrt ihr hier.">
+
+
+  <meta name="twitter:image" content="http://localhost:4000/artikel/angular-routing-tutorial-deutsch/header.jpg">
+
+
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/app.css?1750255920177315000">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://localhost:4000",
+  "logo": "http://localhost:4000/assets/img/logo.svg",
+  "sameAs":[
+    "https://twitter.com/angular_de"
+  ]
+}
+</script>
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:4000"
+    },
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artikel",
+      "item": "http://localhost:4000/artikel/"
+    },
+      
+    
+      
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Angular Routing Tutorial für Einsteiger"
+    }
+      
+    
+  ]
+}
+</script>
+</head>
+
+<!-- Position relative is for Bootstrap TOC Plugin -->
+
+<body style="position: relative" data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="navbar-wrapper">
+  
+  <div class="navbar-banner">
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=group_discount&utm_medium=portal&utm_content=banner" target="_blank">Wir bieten einen <b>3=2 Rabatt</b> auf Schulungen an! Buche 2 Teilnehmer:innen und der/die Dritte ist kostenfrei.</a>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand p-0 me-4" href="/">
+        <img alt="Angular.DE powered by workshops.de" src="/assets/img/logo-with-poweredby.svg" height="45">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3 mt-sm-0" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/artikel/">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/artikel/angular-tutorial-deutsch/">Tutorial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/schulungen/angular-intensiv/">Schulung</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=navigation" target="_blank">Lifetime</a>
+          </li>-->
+          <li class="nav-item ">
+            <a class="nav-link" href="/ng-de-konferenz/">NG-DE Konferenz</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/team/">Team</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/discord" target="_blank"><span class="visually-hidden">Community </span>Discord</a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/jobs/">Jobs</a>
+          </li> -->
+        </ul>
+        <form class="form-inline d-none d-lg-inline" action="/suche/" method="GET">
+          <input name="q" class="form-control navbar-search" type="search" placeholder="&#xF002;" autocomplete="off">
+        </form>
+      </div>
+    </div><!-- .container -->
+  </nav>
+</div>
+
+
+  
+
+
+<main role="main" class="mt-4">
+  <article lang="de" class="container">
+
+    <div class="ratio mb-4" style="--bs-aspect-ratio: 30%;">
+      <img src="header.jpg" class="rounded w-100 object-fit-cover" alt="Artikel Header Bild zu Angular Routing Tutorial für Einsteiger" />
+    </div>
+    <div class="row mb-5 gx-6">
+      <div class="col-md-12 col-lg-8 mb-2">
+        <h1 class="header-post-title">Angular Routing Tutorial für Einsteiger</h1>
+
+        <p class="text-muted">
+          <small>
+            
+            <a href="/kategorie/angular/" class="badge bg-secondary text-bg-secondary text-uppercase">angular</a>
+            
+            <a href="/kategorie/angular2/" class="badge bg-secondary text-bg-secondary text-uppercase">angular2</a>
+            
+            <a href="/kategorie/angular4/" class="badge bg-secondary text-bg-secondary text-uppercase">angular4</a>
+            
+            <a href="/kategorie/tutorial/" class="badge bg-secondary text-bg-secondary text-uppercase">tutorial</a>
+            
+            <span class="ms-1 me-1">|</span>
+            Bengt Weiße
+            
+            
+            <span class="ms-1 me-1">•</span> <time>18.02.2016</time>
+            <span class="ms-1 me-1">|</span>
+            
+
+
+  25 Minuten
+
+
+          </small>
+        </p>
+
+
+        <div class="c-content">
+          <h2 id="routing-im-überblick">Routing im Überblick</h2>
+
+<p>So langsam nimmt die zweite Version des beliebten Single-Page-Application Frameworks Formen an. Ein sehr wichtiger Punkt zu Erstellung einer Web-Anwendung ist das <code class="language-plaintext highlighter-rouge">Routing</code>. Dabei müssen Inhalte flexibel ausgetauscht werden, so dass sich der Nutzer einfach und bequem durch die Anwendung bewegen kann.</p>
+
+<h3 id="routing-bis-angularjs-14x-mit-ngroute">Routing bis AngularJS 1.4.x mit ngRoute</h3>
+
+<p>In der ersten Version von Angular steht das <strong>ngRoute</strong>-Modul im Mittelpunkt der Navigation. Es bringt folgende Komponenten mit:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">$routeProvider</code> - im config-Block der Anwendung nutzbar
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">when()</code> - Funktion zur Definition von Routen über URL, Parametern, Template und Controller</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">otherwise()</code> - Setzen der Standardroute</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">$route</code> - Liefert Informationen zur aktuellen Route (als Abhängigkeit in z.B. Controller injizierbar)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">$routeParams</code> - Zugriff auf die Parameter der aktuellen Route (als Abhängigkeit in z.B. Controller injizierbar)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ngView</code> - Direktive, stellt den Einhängepunkt des Routen-Templates dar</li>
+</ul>
+
+<p>Als kleines Beispiel haben wir eine einfach App mit zwei Routen.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span>
+  <span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">tutorialApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">ngRoute</span><span class="dl">'</span><span class="p">])</span>
+  <span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">$routeProvider</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// route definition</span>
+    <span class="nx">$routeProvider</span>
+      <span class="p">.</span><span class="nf">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">controller</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ArticlesCtrl</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">articles.html</span><span class="dl">'</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nf">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Über unsere Pizzeria</span><span class="dl">'</span>
+      <span class="p">})</span>
+      <span class="c1">// default route</span>
+      <span class="p">.</span><span class="nf">otherwise</span><span class="p">(</span><span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">ArticlesCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$routeParams</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// $routeParams: object with possible params;</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Artikelliste</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Das Basis-Template könnte wie folgt aussehen.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"well"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#/"</span><span class="nt">&gt;</span>Start<span class="nt">&lt;/a&gt;</span> | <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#/about"</span><span class="nt">&gt;</span>Über<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-view</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>In Version 1.3 und 1.4 des Frameworks wurden bereits erste Schritte getan, um die Anwendung für den nächsten großen Versionssprung vorzubereiten.</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">controllerAs</code>-Syntax - Alias für Controller, Verwendung der <code class="language-plaintext highlighter-rouge">this</code>-Schreibweise an Stelle von <code class="language-plaintext highlighter-rouge">$scope</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">bindToController</code> - Zugriff auf Daten im isolierten Kontext in Direktiven</li>
+</ul>
+
+<p>Der <code class="language-plaintext highlighter-rouge">controllerAs</code>-Syntax erlaubt es dem Entwickler über einen Alias im Template auf den Controller zuzugreifen. Ein Nebeneffekt ist, dass anstatt <code class="language-plaintext highlighter-rouge">$scope</code> direkt über <code class="language-plaintext highlighter-rouge">this</code> auf den aktuellen Kontext im Controller-Code zugegriffen werden kann.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">meineApp</span><span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">ArticlesCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Artikelliste</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Im Template wird der Controller dann wie folgt verwendet.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"ArticlesCtrl as articles"</span><span class="nt">&gt;</span>
+  {{articles.title}}
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Dadurch kann selbst bei verschachtelten Controllern eindeutig über den Namen auf die entsprechenden Keys zugegriffen werden. Somit können unterschiedliche Controller die gleichen Schlüssel besitzen und bleiben auch bei ihrer Verschachtelung Template immer verfügbar.</p>
+
+<p>Der <code class="language-plaintext highlighter-rouge">controllerAs</code>-Syntax bringt jedoch ein paar Probleme mit sich. Vor allem wird das im Falle von Direktiven mit isoliertem Scope und eigenem Controller bemerkbar. Im Normalfall werden alle angegebenen Data-Bindings über ein Objekt für den Konfigurationsschlüssel <code class="language-plaintext highlighter-rouge">scope</code> in den Kontext - sprich den Scope der Direktive - übertragen.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">meineApp</span><span class="p">.</span><span class="nf">directive</span><span class="p">(</span><span class="dl">'</span><span class="s1">articleDirektice</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">scope</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span>
+    <span class="p">},</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// $scope.titel is available here</span>
+    <span class="p">},</span>
+    <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span>
+  <span class="p">};</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Wird nun die <code class="language-plaintext highlighter-rouge">ControllerAs</code>-Syntax* benutzt, erwartet der Controller den Wert von <code class="language-plaintext highlighter-rouge">title</code> auf <code class="language-plaintext highlighter-rouge">this</code> und nicht auf dem <code class="language-plaintext highlighter-rouge">$scope</code>-Objekt. Dies kann zum Fehlverhalten im Data-Binding führen.
+Um dieses Problem zu lösen, enthält AngularJS 1.4 den zusätzlichen Konfigurationsschlüssel <code class="language-plaintext highlighter-rouge">bindToController</code>. Dieser erhält nun das Objekt, was zuvor auf <code class="language-plaintext highlighter-rouge">scope</code> übergeben wurde. <code class="language-plaintext highlighter-rouge">scope</code> erhält dafür ein leeres Objekt, um AngularJS mitzuteilen, dass die Direktive über einen gekapselten, also isolierten, Scope verfügen soll.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">meineApp</span><span class="p">.</span><span class="nf">directive</span><span class="p">(</span><span class="dl">'</span><span class="s1">articleDirective</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">scope</span><span class="p">:</span> <span class="p">{},</span> <span class="c1">// isolated scope</span>
+    <span class="na">bindToController</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span> <span class="c1">// provides title</span>
+    <span class="p">},</span>
+    <span class="na">controller</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// this.title is available</span>
+    <span class="p">},</span>
+    <span class="na">controllerAs</span><span class="p">:</span> <span class="dl">'</span><span class="s1">articles</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span>
+  <span class="p">};</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Über <code class="language-plaintext highlighter-rouge">bindToController</code> bleibt das Two-Way-Data-Binding auf jeden Fall erhalten!</p>
+
+<h3 id="rounting-ab-angularjs-15x-mit-router-und-components">Rounting ab AngularJS 1.5.x mit <code class="language-plaintext highlighter-rouge">$router</code> und Components</h3>
+
+<p>Mit der Veröffentlichung von v1.5 weicht Angular die Grenzen zwischen erster und zweiter Version des Frameworks weiter auf. Einerseits können nun so genannte <code class="language-plaintext highlighter-rouge">Components</code> definiert  und andererseits eine neue Routing-Möglichkeit über das <code class="language-plaintext highlighter-rouge">ngComponentRouter</code>-Modul benutzt werden.</p>
+
+<h4 id="components">Components</h4>
+
+<p>Im Allgemeinen sind Components (zu deutsch Komponenten) einfach eine Kombination aus Template und Controller. Daher lassen sie sich am ehesten mit den bekannten Direktiven vergleichen. Wie wir in im nächsten Abschnitt kennenlernen werden, besteht eine Angular Anwendung hauptsächlich aus Komponenten. Die Definition einer Komponente erfolgt dabei ähnlich zu den anderen Bestandteilen einer AngularJS-App. Durch den Aufruf der Funktion <code class="language-plaintext highlighter-rouge">.component()</code> wird eine neue Komponente erstellt und kann verwendet werden. Sie erwartet zwei Argumente:</p>
+
+<ol>
+  <li>Name der Komponente (String) - eindeutige Zeichenkette</li>
+  <li>Konfiguration (Object) - verknüpft Template mit Controller</li>
+</ol>
+
+<p>Die Ähnlichkeit zu einer bisherigen Direktive ist auch bei der näheren Betrachtung des Konfigurationsobjektes unverkennbar.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">meineApp</span><span class="p">.</span><span class="nf">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">articleComponent</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">bindings</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span>
+  <span class="p">},</span>
+  <span class="na">controller</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// this.title is available</span>
+  <span class="p">},</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Anstatt, wie zuvor (in der Version 1.4) noch die <code class="language-plaintext highlighter-rouge">scope</code>-, <code class="language-plaintext highlighter-rouge">bindToController</code>- und <code class="language-plaintext highlighter-rouge">controllerAs</code>-Eigenschaft zu setzen, wird jetzt nur noch der <code class="language-plaintext highlighter-rouge">bindings</code>-Schlüssel benötigt.</p>
+
+<p>Als letzten Schritt benötigen wir eine Möglichkeit eine Komponente mit einer Route bzw. besser gesagt mit einer View zu verbinden.</p>
+
+<h4 id="das-ngcomponentrouter-modul">Das ngComponentRouter-Modul</h4>
+
+<p>Hier setzt der Router ein. Er löst das alter und unflexible Verfahren auf Zustände in der Konfigurationsphase festlegen zu müssen. Dies hatte den Nachteil, dass ein flexibles Laden (Lazy-Loading) von Controller und Template erschwerte oder ganz unmöglich gemacht wurde. In Version 1.5 kann der neue Service einfach als Abhängigkeit geladen werden und über ihn neue Routen hinzugefügt werden. Als Beispiel brauch die eigentlich Anwendung nur alle Eltern-Routen zu kennen. Wird der Controller einer dieser Route ausgeführt, kann diese einfach während der Ausführung die Kinder-Routen konfigurieren und bekannt machen. Das ngComponentRouter-Modul besitzt drei Hauptbestandteile.</p>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">$router</code> - Service zum Konfigurieren von Routen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ngOutlet</code> - Direktive, stellt Einhängepunkte der Templates dar - mehrere möglich! (ähnlich zu ngView)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ngLink</code> - Direktive, um zwischen Routen zu navigieren</li>
+</ol>
+
+<p>Als erstes muss das <code class="language-plaintext highlighter-rouge">ngComponentRouter</code>-Modul als Abhängigkeit zu unserer Anwendung hinzugefügt werden. Danach kann der <code class="language-plaintext highlighter-rouge">$router</code>-Service in einem Basis-Controller geladen werden, um die Standardrouten zu definieren. In der Index-Datei der Anwendung wird dieser Controller verwendet und ein Element mit mit <code class="language-plaintext highlighter-rouge">ngOutlet</code> ausgestattet.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span>
+  <span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">tutorialApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">ngComponentRouter</span><span class="dl">'</span><span class="p">])</span>
+  <span class="p">.</span><span class="nf">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">AppCtrl</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">$router</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">$router</span>
+              <span class="p">.</span><span class="nf">config</span><span class="p">([{</span>
+                  <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/start</span><span class="dl">'</span><span class="p">,</span>
+                  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Start</span><span class="dl">'</span><span class="p">,</span>
+                  <span class="na">component</span><span class="p">:</span> <span class="dl">'</span><span class="s1">articleComponent</span><span class="dl">'</span>
+              <span class="p">});</span>
+      <span class="p">});</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nf">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">articleComponent</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="c1">//  ...</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Das Template-Schnipsel sieht dann so aus.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"AppCtrl"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-outlet</span><span class="nt">&gt;&lt;div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Dabei kann es mehrere “<em>Outlets</em>” geben. Dazu kann <code class="language-plaintext highlighter-rouge">ngOutlet</code> als Wert ein Name übergeben werden. Der Standard-Name heißt <em>default</em> und kann weggelassen werden. Das Verlinken zwischen verschiedenen Routen passiert am Ende über die <code class="language-plaintext highlighter-rouge">ngLink</code>-Direktive.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">ng-link=</span><span class="s">"['Start']"</span><span class="nt">&gt;</span>auf zum Start!<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>Wer bereits das externe <em>ui.Router</em>-Modul benutzt hat, wird vieles im neuen Angular <em>ngComponentRouter</em>-Modul wiedererkennen. Auch hier können mehrere Einhängepunkte und somit verschachtelte Routen definiert werden. Die Verlinkung im Template findet über eine eigene Direktive statt, die als Wert eine Liste von Routen - für mögliche Child-Routen - und/oder Objekten von gegebenenfalls vorhandene Routen-Parameter.</p>
+
+<h3 id="routing-in-angular">Routing in Angular</h3>
+
+<p>Im Vergleich zum Standard-Router in AngularJS wurde das Routing komplett überarbeitet. Trotzdem wird vieles nicht unbekannt erscheinen, funktioniert aber doch ein wenig anders. Das Im nachfolgenden Abschnitt erfahrt ihr alles wichtige über das neue Routing.</p>
+
+<h4 id="hauptbestandteile">Hauptbestandteile</h4>
+
+<p>In der neuen Version besteht das Routing wieder aus mehreren Komponenten, welche im <strong>angular2/router</strong>-Modul enthalten sind. Die wichtigsten davon sind:</p>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">RouteConfig</code> - Decorator zur Definition von Routen über URL, Parameter und Components</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">RouterOutlet</code> - Direktive, als Einhängepunkt des Templates der Component der aktuellen Route</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">RouterLink</code> - Direktive, verlinkt Routen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">RouteParams</code> - Service für Zugriff auf die Parameter der aktuellen Route</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Router</code> - Zugriff und programmatische Konfiguration des Routings während der Anwendungsausführung (z.B. Routing in der Komponente anstatt im Template, Zugriff auf aktuelle Route)</li>
+</ol>
+
+<p>Eine mögliche Projektstruktur der TypeScript-Dateien könnte wie folgt aussehen:</p>
+
+<ul>
+  <li>index.html</li>
+  <li>app/
+    <ul>
+      <li>boot.ts</li>
+      <li>components/
+        <ul>
+          <li>app.component.ts</li>
+          <li>order/
+            <ul>
+              <li>order.component.ts</li>
+            </ul>
+          </li>
+          <li>about/
+            <ul>
+              <li>about.component.ts</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="definition-von-routen">Definition von Routen</h4>
+
+<p>Es besteht auch die Möglichkeit einfach alle Direktiven auf einmal zu importieren. Dazu muss einfach die “Konstante” <code class="language-plaintext highlighter-rouge">ROUTER_DIRECTIVES</code> geladen werden. Damit das Routing generell funktioniert, müssen die <code class="language-plaintext highlighter-rouge">ROUTER_PROVIDERS</code> als Providers in den Komponenten Metadaten gesetzt werden. Am einfachsten macht man dies einmal in der Hauptkomponente einer Anwendung.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ROUTER_DIRECTIVES</span><span class="p">,</span> <span class="nx">ROUTER_DIRECTIVES</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/router</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Die Hauptkomponente mit der Definition der AngularJS 1.x Anwendung im Angular Kontext könnte dann so aussehen.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">RouteConfig</span><span class="p">,</span> <span class="nx">ROUTER_DIRECTIVES</span><span class="p">,</span> <span class="nx">ROUTER_PROVIDERS</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/router</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span><span class="nx">PizzaService</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../services/pizza.service</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OrderComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./order/order.component</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AboutComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./about/about.component</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">RouteConfig</span><span class="p">([{</span>
+  <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">redirectTo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span>
+<span class="p">},{</span>
+  <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">OrderComponent</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Order</span><span class="dl">'</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">AboutComponent</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">About</span><span class="dl">'</span>
+<span class="p">}])</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">pizza-app</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">directives</span><span class="p">:</span> <span class="p">[</span><span class="nx">ROUTER_DIRECTIVES</span><span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span><span class="nx">ROUTER_PROVIDERS</span><span class="p">,</span> <span class="nx">PizzaService</span><span class="p">],</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`
+  &lt;p class="well"&gt;
+    &lt;a [routerLink]="['Order']"&gt;Start&lt;/a&gt; |
+    &lt;a [routerLink]="['About']"&gt;Über&lt;/a&gt;
+  &lt;/p&gt;
+  &lt;router-outlet&gt;&lt;/router-outlet&gt;
+  `</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">PizzaAppComponent</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>Neben den bereits hoffentlich bekannten Angular Komponenten, werden mit <code class="language-plaintext highlighter-rouge">RouteConfig</code> drei Routen definiert.</p>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">'/'</code> - Aufruf der Basis-URL soll auf die Bestellen-Route/Komponente weiterleiten</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">'/order'</code> - Bestellung aufnehmen</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">'/about'</code> - Seite mit Informationen über den Pizza-Dienst</li>
+</ol>
+
+<p>Über den Schlüssel <code class="language-plaintext highlighter-rouge">Component</code> wird die URL mit einer Komponente und somit auch mit dem Template dieser verknüpft. Um später nicht immer komplette Pfade verlinken zu müssen, kann der hier angegebene Alias benutzt werden.</p>
+
+<h4 id="routeroutlet---einhängepunkt-im-template">
+<code class="language-plaintext highlighter-rouge">routerOutlet</code> - Einhängepunkt im Template</h4>
+
+<p>Als Pendant zur <code class="language-plaintext highlighter-rouge">ngView</code>-Direktive kann <code class="language-plaintext highlighter-rouge">routerOutlet</code> im Template benutzt werden. Hier wird dann das Template der mit der Route verbundenen Komponente eingehangen, um es dem Nutzer zu präsentieren. Damit die Direktive im Template zur Verfügung steht, muss diese in der Komponenten-Defintion über den <code class="language-plaintext highlighter-rouge">directives</code>-Schlüssel bekannt gemacht werden. Auch hier kann die einzelne Direktive oder einfach alle importiert werden.</p>
+
+<p>Soll das Routing funktionieren, müssen zu Beginn der Anwendung die eigenen Komponenten <code class="language-plaintext highlighter-rouge">OrderComponent</code> und <code class="language-plaintext highlighter-rouge">AboutComponent</code> über <code class="language-plaintext highlighter-rouge">import</code> eingebunden werden.</p>
+
+<h4 id="routerlink---verlinkung-im-template">
+<code class="language-plaintext highlighter-rouge">routerLink</code> - Verlinkung im Template</h4>
+
+<p>Um Routen im Template zu verlinken wird die <code class="language-plaintext highlighter-rouge">RouterLink</code>-Komponente zu Beginn durch <code class="language-plaintext highlighter-rouge">ROUTER_DIRECTIVES</code> geladen und dann mit dem Template verknüpft. Durch den As-Syntax bzw. dem Namen der Route kann <code class="language-plaintext highlighter-rouge">RouterLink</code> einfach der Name als Zeichenkette übergeben werden. Die eckigen Klammern um <code class="language-plaintext highlighter-rouge">router-link</code> geben an, dass nicht nur ein einfacher String, sondern eine Expression (Ausdruck) übergeben wird. Dies wird später wichtig, wenn es um Child-Routes und Routen-Parameter geht.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">[routerLink]=</span><span class="s">"['Order']"</span><span class="nt">&gt;</span>Start<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h4 id="router---programmatisches-navigieren">
+<code class="language-plaintext highlighter-rouge">Router</code> - Programmatisches Navigieren</h4>
+
+<p>Natürlich kann auch programmatisch zwischen Routen gewechselt werden. Dies geschieht über den <code class="language-plaintext highlighter-rouge">Router</code>-Service. Er bietet unter anderem eine <code class="language-plaintext highlighter-rouge">navigate</code>-Methode.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/router</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="c1">// ...</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">MyComponent</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">router</span><span class="p">:</span> <span class="nx">Router</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+  <span class="nf">goTo</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nf">navigate</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="routeparams---arbeiten-mit-url-parameter">
+<code class="language-plaintext highlighter-rouge">RouteParams</code> - Arbeiten mit URL-Parameter</h4>
+
+<p>Um mit Parametern in Routen zu arbeiten kann die <code class="language-plaintext highlighter-rouge">RouteParams</code>-Komponente genutzt werden. Dazu muss der Service importiert und dem Konstruktor der Komponente übergeben werden. Durch die <code class="language-plaintext highlighter-rouge">Dependency-Injection</code> erhalten wir nun Zugriff auf den <code class="language-plaintext highlighter-rouge">RouteParams</code>-Service und könne über die <code class="language-plaintext highlighter-rouge">get</code>-Methode bestimmte Parameter abfragen.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">RouteParams</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/router</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+    <span class="p">...</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">MyComponent</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">routeParams</span><span class="p">:</span> <span class="nx">RouteParams</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">param</span> <span class="o">=</span> <span class="nx">routeParams</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">PARAM_NAME</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Um wirklich mit Parametern arbeiten zu können, müssen auch Routen mit diesen ausgestattet werden können. Dies geschieht sehr ähnlich zu Angular 1.x.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">RouteConfig</span><span class="p">([{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/test/:param1</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">...</span>
+<span class="p">}])</span>
+</code></pre></div></div>
+
+<p>Im Template wird dann einfach die <code class="language-plaintext highlighter-rouge">routerLink</code>-Direktive ein wenig erweitert.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">[routerLink]=</span><span class="s">"['test', {'param': 1}]"</span><span class="nt">&gt;</span>Test<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h4 id="bootstrap-der-anwendung">Bootstrap der Anwendung</h4>
+
+<p>Als letzten Schritt muss die Anwendung noch gestartet werden. Dies geschieht über die allgemeine <code class="language-plaintext highlighter-rouge">Bootstrap</code>-Komponente. Entweder die Hauptanwendung wird dafür erweitert oder es wird eine eigene Datei dazu angelegt. Aus persönlicher Vorliebe entscheide ich mich hier für Variante 2.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">bootstrap</span><span class="p">,</span> <span class="nx">provide</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/platform/browser</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">LocationStrategy</span><span class="p">,</span> <span class="nx">HashLocationStrategy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/platform/common</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">PizzaAppComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/app.component</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nf">bootstrap</span><span class="p">(</span><span class="nx">PizzaAppComponent</span><span class="p">,</span> <span class="p">[</span><span class="nf">provide</span><span class="p">(</span><span class="nx">LocationStrategy</span><span class="p">,</span> <span class="p">{</span><span class="na">useClass</span><span class="p">:</span> <span class="nx">HashLocationStrategy</span><span class="p">})]);</span>
+</code></pre></div></div>
+
+<h4 id="konfigurieren-der-standardroute-und-routing-strategie">Konfigurieren der Standardroute und Routing-Strategie</h4>
+
+<p>Im nächsten Schritt konfigurieren wir den Router. In AngularJS 1.X Anwendungen mit ngRoute ist der <em>#-Mode</em> der Standard und man kann die Verwendung von normalen URLs (mit der HTML5 History API) konfigurieren. Bei Angular legen wir zum Start unserer App mit</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">provide</span><span class="p">(</span><span class="nx">LocationStrategy</span><span class="p">,</span> <span class="p">{</span><span class="na">useClass</span><span class="p">:</span> <span class="nx">HashLocationStrategy</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>fest, dass die Hash-Methode benutzt werden soll. Dadurch entstehen die bereits aus früheren Versionen bekannten URLs, mit einem #-Symbol am Anfang der Routen (<code class="language-plaintext highlighter-rouge">http://xxx.xx/#/order</code>).</p>
+
+<p>In Angular ist dagegen die <code class="language-plaintext highlighter-rouge">PathLocationStrategy</code> Standard, welche URLs ohne den Hash-Zeichen erstellt. Dazu sollte jedoch ein Basis-Pfad der App konfiguriert werden. Dieser ist dann sozusagen ein Ersatz für das #-Symbol, damit die fehlerfreie Ausführung der Anwendung gewährleistet werden kann.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">bootstrap</span><span class="p">,</span> <span class="nx">provide</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/platform/browser</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">APP_BASE_HREF</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/platform/common</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">PizzaAppComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/app.component</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nf">bootstrap</span><span class="p">(</span><span class="nx">PizzaAppComponent</span><span class="p">,</span> <span class="p">[</span><span class="nf">provide</span><span class="p">(</span><span class="nx">APP_BASE_HREF</span><span class="p">,</span> <span class="p">{</span><span class="na">useValue</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/my/app</span><span class="dl">'</span><span class="p">})]);</span>
+</code></pre></div></div>
+
+<p>Dadurch entstehen URLs wie: <code class="language-plaintext highlighter-rouge">http://xxx.xx/my/app/order</code></p>
+
+<p>Als Kurzform kann die Standardroute auch über ein spezielles Attribut in der Routen-Konfiguration gesetzt werden. Dadurch kann die Definition einer Weiterleitungs-Route auf eine andere entfernt werden.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">RouteConfig</span><span class="p">([</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/order</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Order</span><span class="dl">'</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">OrderComponent</span><span class="p">,</span> <span class="na">useAsDefault</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">About</span><span class="dl">'</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">AboutComponent</span> <span class="p">}</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<p>Abschließen muss die Datei <code class="language-plaintext highlighter-rouge">boot.ts</code> als Einstiegspunkt in der <code class="language-plaintext highlighter-rouge">index.html</code> gesetzt und der Tag zum Einbinden der App eingefügt werden.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;pizza-app&gt;&lt;/pizza-app&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<h4 id="child-routes">Child-Routes</h4>
+
+<p>Eine geniale Neuerung im Routing von Angular sind die sogenannten Child-Routen. Dadurch lassen sich für eine bestehende Komponente eigene Sub-Routen definieren. Daraus ergeben sich zwei grundlegende Vorteile.</p>
+
+<ol>
+  <li>modulares Definieren von Routen (kapseln kompletter Components)</li>
+  <li>Auslagerung komplexer Inhalte einer Component in Child-Components/Routes</li>
+</ol>
+
+<p>Als Beispiel bekommt die About-Route eine Child-Route, die sich darum kümmert, dass ein bestimmter Teil des Inhaltes aus einer anderen Komponente geladen wird. Dafür müssen wir drei Sachen anpassen:</p>
+
+<ol>
+  <li>Erstellen einer Pizza-Komponente</li>
+  <li>Pizza-Komponente definiert zwei Child-Routes: eine Liste und eine Detail-Ansicht</li>
+  <li>Child-Routen definieren und verlinken</li>
+  <li>Erstellen der Basis Pizza-Route, Erlauben von Child-Routes</li>
+  <li>Verlinkung in der bisherigen Anwendung erweitern</li>
+</ol>
+
+<p>Unsere Pizza-Komponente ist im Prinzip einfach eine Hülle der Kinder-Routen. Sprich wir definieren die vorhanden Kinder und bietet diesen einen eigene Einhängepunkt.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">RouteConfig</span><span class="p">,</span> <span class="nx">ROUTER_DIRECTIVES</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/router</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span><span class="nx">PizzaListComponent</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./list/list.component.ts</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">PizzaDetailComponent</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./detail/detail.component.ts</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">RouteConfig</span><span class="p">([{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">list</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">component</span><span class="p">:</span> <span class="nx">PizzaListComponent</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">List</span><span class="dl">'</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">detail/:id</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">component</span><span class="p">:</span> <span class="nx">PizzaDetailComponent</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Detail</span><span class="dl">'</span>
+<span class="p">}])</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+    <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">pizzaCmp</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">directives</span><span class="p">:</span> <span class="p">[</span><span class="nx">ROUTER_DIRECTIVES</span><span class="p">],</span>
+    <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span><span class="dl">'</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">PizzaComponent</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>Wir ihr sehen könnt, erwartet die Detail-Route noch einen Parameter, um die Details zu einer bestimmten Pizza oder einem Angebot anzeigen zu können .</p>
+
+<p>Die <code class="language-plaintext highlighter-rouge">PizzaListComponent</code> enthält nichts aufregendes und ist der OrderComponent sehr ähnlich. Der entscheidende Unterschied ist, dass bei einem Klick auf einen Listeneintrag die entsprechende Detailseite aufgerufen werden soll.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">ROUTER_DIRECTIVES</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/router</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">PizzaService</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../services/pizza.service</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">Pizza</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../interfaces/pizza.interface.ts</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">pizzaList</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="na">directives</span><span class="p">:</span> <span class="p">[</span><span class="nx">ROUTER_DIRECTIVES</span><span class="p">],</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./app/components/pizza/list/list.component.html</span><span class="dl">'</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">PizzaListComponent</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="nx">pizzas</span><span class="p">:</span> <span class="nx">Pizza</span><span class="p">[];</span>
+
+  <span class="nf">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">_pizzaService</span><span class="p">:</span> <span class="nx">PizzaService</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="nf">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_pizzaService</span><span class="p">.</span><span class="nf">getPizza</span><span class="p">().</span><span class="nf">subscribe</span><span class="p">(</span><span class="nx">pizzas</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">pizzas</span> <span class="o">=</span> <span class="nx">pizzas</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Das Template dazu könnte wie folgt aussehen.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Nummer<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Preis<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>ID<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">*ngFor=</span><span class="s">"let pizza of pizzas; let index=index"</span> <span class="na">[routerLink]=</span><span class="s">"['Detail', {'id': pizza.id}]"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{index + 1}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{pizza.name}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">*ngIf=</span><span class="s">"pizza.price"</span><span class="nt">&gt;</span>{{pizza.price | currency:'USD':true}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">*ngIf=</span><span class="s">"!pizza.price"</span><span class="nt">&gt;</span>kostenlos<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>{{pizza.id}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-default btn-sm"</span><span class="nt">&gt;</span>Details<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+<p>Wie ihr sehen könnt, sind auch Routen gekapselt, was bedeutet, dass eine Komponente nur die Routen ihres direktiven Elternteils bzw. der umschließenden Komponente kennt. Aus diesem Grund wird die Verlinkung zur Detailseite direkt durch</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="dl">'</span><span class="s1">Detail</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">:</span> <span class="nx">pizza</span><span class="p">.</span><span class="nx">id</span><span class="p">}]</span>
+</code></pre></div></div>
+
+<p>hergestellt.</p>
+
+<p>Die <code class="language-plaintext highlighter-rouge">PizzaDetailComponent</code> zeigt einfach nur die gegebenen Informationen eines bestimmten Angebots an. Dies geschieht über den Routen-Parameter <code class="language-plaintext highlighter-rouge">id</code>. Zusätzlich enthält das Template einen Link zurück zur Angebots-Übersicht.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">RouteParams</span><span class="p">,</span> <span class="nx">ROUTER_DIRECTIVES</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">angular2/router</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">PizzaService</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../services/pizza.service</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">Pizza</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../interfaces/pizza.interface.ts</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">pizzaDetail</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="na">directives</span><span class="p">:</span> <span class="p">[</span><span class="nx">ROUTER_DIRECTIVES</span><span class="p">],</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./app/components/pizza/detail/detail.component.html</span><span class="dl">'</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">PizzaDetailComponent</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="nx">pizza</span><span class="p">:</span> <span class="nx">Pizza</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nx">_pizzaId</span><span class="p">:</span> <span class="nb">Number</span>
+  <span class="k">private</span> <span class="nf">_getPizza</span><span class="p">(</span><span class="nx">pizzas</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">Pizza</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for </span><span class="p">(</span><span class="nx">i</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">pizzas</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if </span><span class="p">(</span><span class="nx">pizzas</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">_pizzaId</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">pizza</span> <span class="o">=</span> <span class="nx">pizzas</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="k">return</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nf">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">_pizzaService</span><span class="p">:</span> <span class="nx">PizzaService</span><span class="p">,</span> <span class="k">private</span> <span class="nx">_routeParams</span><span class="p">:</span> <span class="nx">RouteParams</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_pizzaId</span> <span class="o">=</span> <span class="nf">parseInt</span><span class="p">(</span><span class="nx">_routeParams</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">),</span> <span class="mi">10</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nf">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_pizzaService</span><span class="p">.</span><span class="nf">getPizza</span><span class="p">().</span><span class="nf">subscribe</span><span class="p">(</span><span class="nx">pizzas</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nf">_getPizza</span><span class="p">(</span><span class="nx">pizzas</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Das entsprechende Template könnte dann so aussehen:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">*ngIf=</span><span class="s">"pizza"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">[routerLink]=</span><span class="s">"['List']"</span><span class="nt">&gt;&lt;</span> <span class="nt">zurück</span><span class="err">&lt;/</span><span class="na">a</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>{{pizza.id}} {{pizza.name}}<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">*ngIf=</span><span class="s">"pizza.price"</span><span class="nt">&gt;</span>{{pizza.price | currency:'USD':true}}<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">*ngIf=</span><span class="s">"!pizza.price"</span><span class="nt">&gt;</span>kostenlos<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Der nächste Schritt ist schnell erledigt. Damit Angular überhaupt akzeptiert, dass eine Route Child-Routen besitzt, muss die Eltern-Route mit <code class="language-plaintext highlighter-rouge">'/...'</code> enden. Die Definition unserer Pizza-Route sieht dann wie folgt aus:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="nl">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/pizza/...</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Pizza</span><span class="dl">'</span><span class="p">,</span> <span class="nx">component</span><span class="p">:</span> <span class="nx">PizzaComponent</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Als letzten Schritt muss die Verlinkung im Template über <code class="language-plaintext highlighter-rouge">routerLink</code> hinzugefügt werden. Dazu geben wir als Wert einen zweiten Array-Eintrag mit, welcher den Namen der Child-Route beinhaltet. In diesem Fall wird diese <code class="language-plaintext highlighter-rouge">List</code> heißen.</p>
+
+<p>Das Verfahren kann auch genutzt werden, um natürlich noch tiefere Verschachtelungen zu erzeugen. Dadurch haben wir als Entwickler ein mächtiges Werkzeug, um Anwendungen besser Modularisieren bzw. Funktionen einfach kapseln zu können.</p>
+
+<p>Es müssen nicht alle Routen in einer Komponente definiert werden.</p>
+
+<h4 id="routing-hooks">Routing-Hooks</h4>
+
+<p>Natürlich bietet Angular auch mit dem neuen Routing Einhängepunkte, um auf diverse Routing-Zustände reagieren zu können.</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">routerOnActivate</code>
+    <ul>
+      <li>wird aufgerufen, wenn die mit der Komponente verknüpfte Route aktiv wird</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">routerCanReuse</code>
+    <ul>
+      <li>Gibt an, ob die aktuelle Instanz wiederverwendet werden soll</li>
+      <li>Rückgabewert kann ein Boolean oder ein Promise-Objekt sein</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">routerOnReuse</code>
+    <ul>
+      <li>Funktion die ausgeführt wird, wenn die aktuelle Instanz wiederverwendet wird</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">routerCanDeactivate</code>
+    <ul>
+      <li>Gibt Boolean oder Promise zurück</li>
+      <li>Route wird nur dann verlassen, wenn die Funktion <code class="language-plaintext highlighter-rouge">true</code> oder das Promise erfüllt (resolved) wird</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">routerOnDeactivate</code>
+    <ul>
+      <li>wird vor dem Verlassen der Route ausgeführt</li>
+      <li>Gibt ein Promise zurück</li>
+      <li>Kann den Route-Wechsel solange verzögern bis das Promise erfüllt (resolved) wird</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Alle Funktionen erhalten zwei Parameter:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">nextInstruction</code>
+    <ul>
+      <li>Objekt mit Informationen zur aktuellen Route z.B. Parameter und URL</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">prevInstruction</code>
+    <ul>
+      <li>Objekt mit Informationen zur vorherigen Route (falls vorhanden) z.B. Parameter und URL
+``
+Als kleines Beispiel kann in einer Komponente einfach auf die Funktionen zugegriffen werde.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">routerOnActivate</span><span class="p">(</span><span class="nx">nextInstruction</span><span class="p">,</span> <span class="nx">prevInstruction</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">nextInstruction</span><span class="p">,</span> <span class="nx">prevInstruction</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Zusätzlich kann einer Komponente der <em>Decorator</em> <code class="language-plaintext highlighter-rouge">@CanActivate</code> angegeben werden. Dieser erwartet eine Funktion welche einen booleschen Wert oder ein Promise-Objekt zurückgibt. Wird das Promise abgelehnt (rejected) oder <code class="language-plaintext highlighter-rouge">false</code> zurückgegeben, wird die Komponente nicht eingehangen/ausgeführt. Der Decorator übernimmt damit die Funktion der <em>resolve</em>-Eigenschaft einer Route in AngularJS 1.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">CanActivate</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// if false --&gt; OrderComponente is not executed</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">OrderComponent</span><span class="p">()</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<h3 id="fazit">Fazit</h3>
+
+<p>Es hat sich allein in den letzten Wochen viel beim Thema Routing getan. Aber wer das Routing von AngularJS 1.x verstanden hat, wird Ähnlichkeiten erkennen. Anwendung und die vorhandenen Standardkomponenten ähneln den bisher bekannten sehr. Des Weiteren fällt auf, dass gut gepflegte Apps wohl sehr wenig Probleme beim Upgrade auf Angular haben werden. Wie der Artikel zeigt, bemüht sich das Angular-Team Erkenntnisse und Neuerungen auch in die erste Version des Frameworks einzubringen. Dadurch können neue Paradigmen, wie Components oder das flexible Definieren von Routen bereits jetzt angewandt werden. Ob das finale Routing jedoch wirklich so aussehen wird, steht noch in den Sternen.</p>
+
+        </div>
+
+        <div class="text-end">
+          <a class="btn btn-sm btn-link link-secondary" href="https://github.com/workshops-de/angular.de/edit/master/_posts/2016-02-18-angular-routing-tutorial-deutsch/2016-02-18-angular-routing-tutorial-deutsch.md" target="_blank" rel="noopener noreferrer nofollow">
+            🐛 Diesen Artikel auf GitHub verbessern
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="position-sticky c-top-4 ms-2">
+          <p class="text-muted text-uppercase"><small>Inhaltsverzeichnis</small></p>
+          <nav id="toc" data-toggle="toc"></nav>
+          <!-- <hr> -->
+          <!-- <div>
+            <div class="h5 mb-2">Email Newsletter</div>
+            <p class="small mb-2">Um alle Neuigkeiten zu erfahren, abonniere hier unseren Newsletter!</p>
+            <a class="btn btn-sm btn-primary" href="/newsletter/redirect/article" target="_blank">
+              Newsletter abonnieren
+            </a>
+          </div> -->
+
+          <div class="mt-4">
+            <a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=article_sidebar"
+               target="_blank"
+               class="d-block text-decoration-none">
+              <div class="card border-0 shadow-sm h-100" style="transition: all 150ms;">
+                <img src="/assets/img/ngde-conf-ad.png"
+                     class="card-img-top rounded-top"
+                     alt="NG-DE Conference - November 5-7, 2025"
+                     style="object-fit: cover; height: 100%;">
+                <div class="card-body p-3">
+                  <h5 class="card-title text-dark fw-bold mb-2">NG-DE Conference</h5>
+                  <p class="card-text text-muted small mb-2">
+                    The community-driven Angular conference in Germany
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-calendar text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">November 5-7, 2025</small>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fa fa-map-marker text-primary me-2" style="width: 12px;"></i>
+                    <small class="text-muted">Berlin</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="btn btn-primary btn-sm fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.375rem 0.75rem;">
+                      Get your ticket now!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <style>
+            .mt-4 a:hover .card {
+              box-shadow: 0 0 4px 0 rgba(0,0,0,0.35) !important;
+            }
+
+            .mt-4 a:hover .card-title {
+              color: #0d6efd !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 col-lg-8">
+        <!-- author info -->
+
+<div class="row">
+  <div class="col-sm-3 col-md-2">
+    <span>
+      <img alt="Bengt Weiße" class="shadow-sm rounded img-fluid lazy"
+      src="/shared/assets/img/placeholder-image.svg"
+      
+      data-src="/assets/img/gravatars/236d5f3a57a66853a82cfb2fd4ab6bc9-160x160.jpg"
+      data-srcset="/assets/img/gravatars/236d5f3a57a66853a82cfb2fd4ab6bc9-160x160.jpg"
+      
+      >
+    </span>
+  </div>
+  <div class="col-sm-9 col-md-10">
+    <p class="h5 text-truncate mb-2">
+      Bengt Weiße
+    </p>
+    
+      <p class="text-muted small">
+        Bengt Weiße kommt aus dem grünen Herzen Deutschlands und interessiert sich schon seit seiner Kindheit für die Webentwicklung. Darum machte er auch sein früheres Hobby zum Beruf. Er beschäftigt sich bereits seit mehreren Jahren mit Web- und hybriden mobilen Anwendungen. Neben der frontendseitigen Umsetzung entwickelt er auch die nötigen Schnittstellen auf Basis von NodeJS und MongoDB. Anfang 2016 veröffentlichte er das erste deutsche Buch über das Ionic Framwork mit dem Titel "AngularJS & Ionic Framework, welches auch die nötigen Grundlagen im Bereich AngularJS vermittelt. 
+
+      </p>
+    
+    <div>
+      
+      
+        <a href="https://github.com/KillerCodeMonkey" class="btn btn-sm btn-outline-secondary" target="_blank">Github</a>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </article>
+
+  <div class="container-fluid">
+    <div class="row justify-content-md-center no-gutters mt-6">
+      
+
+
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/ng-de-conference-2025-ankuendigung/"
+    data-style="background-image: url('/artikel/ng-de-conference-2025-ankuendigung/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        NG-DE Conference 2025 wieder in Berlin
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+  
+
+
+
+  
+  
+
+  
+
+  
+    <div class="col-sm-6 p-0">
+  <a class="ratio ratio-16x9 d-flex align-items-center c-img-bg-backdrop c-bg-img-cover-center lazy"
+    style="background-image: url('/shared/assets/img/placeholder-image.svg');"
+    href="/artikel/angular-tutorial-deutsch/"
+    data-style="background-image: url('/artikel/angular-tutorial-deutsch/header.jpg')"
+    >
+    <div class="d-flex flex-column align-items-center justify-content-center px-4">
+      <div class="text-center w-100 h2 text-white">
+        Angular 20 Tutorial für Einsteiger
+      </div>
+      <button class="btn btn-outline-light">Hier weiterlesen</button>
+    </div>
+  </a>
+</div>
+
+
+    
+    
+      
+
+    </div>
+  </div>
+</main>
+
+  
+<div class="newsletter-section d-print-none py-5">
+  <div class="container">
+    <p class="lead text-center">Du möchtest immer auf dem aktuellsten Stand sein? - Melde Dich für unseren Newsletter an!</p>
+    <div class="text-center">
+      <a class="btn btn-primary" href="/newsletter/redirect/footer" target="_blank">
+        Jetzt für Neuigkeiten zu Angular anmelden!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h4 mb-2">Angular.DE</div>
+        <small>
+          <span class="fw-bolder">Powered by <a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav">Workshops.DE</a></span>.
+        </small>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="/artikel/">Artikel</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/schulungen/">Schulungen</a></li>
+          <li><a href="https://workshops.de/seminare-schulungen-kurse/angular-lifetime?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Lifetime</a></li>
+          <li><a href="/meetups/">Meetups</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/presskit/">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Communities</div>
+        <ul class="footer-nav">
+          <li><a href="https://reactjs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">ReactJS.DE</a></li>
+          <li><a href="https://vuejs.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">VueJS.DE</a></li>
+          <li><a href="https://cloudnative.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">CloudNative.EU</a></li>
+          <li><a href="https://a11y-masterclass.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">a11y Masterclass</a></li>
+          <li><a href="https://workshops.de?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Workshops.DE</a></li>
+          <li><a href="https://www.coding-bootcamps.eu?utm_source=angular_de&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav" target="_blank">Coding Bootcamp Europe</a></li>
+          <li><a href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=footer_nav" target="_blank">NG-DE Konferenz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-sm-3 mb-2">
+        <div class="h6 text-uppercase">Folge uns hier</div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://twitter.com/angular_de" target="_blank" rel="noopener">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/workshops-de" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li><a href="/feed.xml" target="_blank" rel="nofollow">RSS-Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row align-items-center">
+      <div class="col-6 small">
+        Copyright © 2025 Symetics GmbH
+      </div>
+      <div class="col-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/impressum/">Impressum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/datenschutz/">Datenschutz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+
+  
+
+  
+  
+
+
+  <script type="text/javascript">
+  (() => {
+
+    function lazyLoadImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.srcset = lazyImage.dataset.srcset;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyImages = [].slice.call(document.querySelectorAll("a.lazy"));
+
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.style = lazyImage.dataset.style;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Possibly fall back to a more compatible method here
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lazyLoadImages();
+      lazyLoadBackgroundImages();
+      });
+  })();
+</script>
+
+  <!-- JavaScript -->
+  <script src="/shared/assets/js/vendor/jquery-3.2.1.slim.min.js"></script>
+  <script src="/shared/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/shared/assets/js/vendor/fp-3.0.0.min.js"></script>
+  <script src="/shared/assets/js/vendor/headroom.min.js"></script>
+  <script src="/shared/assets/js/app.js"></script>
+  
+  <script src="/shared/assets/js/vendor/bootstrap-toc-1.0.0.min.js"></script>
+  
+  
+  
+</body>
+
+</html>
