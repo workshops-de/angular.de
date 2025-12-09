@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  showReadingTime?: boolean;
+}
+
+const { post, showReadingTime = false } = Astro.props;
+const { title, description, author, published_at, header_image, categories } = post.data;
+
+const categoryList = categories?.split(' ').filter(Boolean) || [];
+const formattedDate = published_at.toLocaleDateString('de-DE', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric'
+});
+
+// Extract slug from post id
+const folderName = post.id.split('/')[0];
+const slug = folderName.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+const postUrl = `/artikel/${slug}/`;
+
+// Get header image
+const imageUrl = header_image?.startsWith('/') || header_image?.startsWith('http')
+  ? header_image
+  : `/artikel/${slug}/${header_image || 'header.jpg'}`;
+
+// Calculate reading time (rough estimate: 200 words per minute)
+let readingTime = 5; // default
+if (post.body) {
+  const wordCount = post.body.split(/\s+/).length;
+  readingTime = Math.max(1, Math.ceil(wordCount / 200));
+}
+---
+
+<article class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+  <a href={postUrl} class="block">
+    <div class="relative h-48 overflow-hidden">
+      <img
+        src={imageUrl}
+        alt={title}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+
+      <!-- Reading time badge -->
+      {showReadingTime && (
+        <div class="absolute top-3 right-3">
+          <span class="px-2 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300 rounded-full shadow-sm">
+            {readingTime} min read
+          </span>
+        </div>
+      )}
+
+      {categoryList.length > 0 && (
+        <div class="absolute bottom-3 left-3">
+          <div class="flex gap-1 flex-wrap">
+            {categoryList.slice(0, 2).map(cat => (
+              <span class="px-2 py-1 text-xs font-medium bg-black/70 text-white rounded">
+                {cat}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </a>
+
+  <div class="p-4">
+    <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+      {author} • <time datetime={published_at.toISOString()}>{formattedDate}</time>
+    </div>
+    <a href={postUrl} class="block">
+      <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
+        {title}
+      </h3>
+    </a>
+    {description && (
+      <p class="text-gray-600 dark:text-gray-400 text-sm mt-2 line-clamp-2">{description}</p>
+    )}
+  </div>
+</article>

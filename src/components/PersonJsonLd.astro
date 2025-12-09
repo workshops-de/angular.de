@@ -1,0 +1,43 @@
+---
+/**
+ * Person JSON-LD Schema for team member pages
+ * Used on individual team/author pages for rich search results
+ */
+interface Props {
+  name: string;
+  image?: string;
+  jobTitle?: string;
+  description?: string;
+  worksFor?: string;
+  url?: string;
+  sameAs?: string[];
+}
+
+const {
+  name,
+  image,
+  jobTitle,
+  description,
+  worksFor = 'Angular.DE',
+  url,
+  sameAs = [],
+} = Astro.props;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": name,
+  ...(image && { "image": image }),
+  ...(jobTitle && { "jobTitle": jobTitle }),
+  ...(description && { "description": description }),
+  "worksFor": {
+    "@type": "Organization",
+    "name": worksFor
+  },
+  ...(url && { "url": url }),
+  ...(sameAs.length > 0 && { "sameAs": sameAs })
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+

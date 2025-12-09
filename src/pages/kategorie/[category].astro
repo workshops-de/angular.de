@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+
+  // Extract all unique categories
+  const categories = new Set<string>();
+  allPosts.forEach(post => {
+    const postCategories = post.data.categories?.split(' ').filter(Boolean) || [];
+    postCategories.forEach(cat => categories.add(cat.toLowerCase()));
+  });
+
+  return Array.from(categories).map(category => ({
+    params: { category },
+    props: {
+      category,
+      posts: allPosts
+        .filter(post => {
+          const postCategories = post.data.categories?.split(' ').map(c => c.toLowerCase()) || [];
+          return postCategories.includes(category);
+        })
+        .sort((a, b) => b.data.published_at.getTime() - a.data.published_at.getTime()),
+    },
+  }));
+}
+
+const { category, posts } = Astro.props;
+const displayCategory = category.charAt(0).toUpperCase() + category.slice(1);
+---
+
+<BaseLayout
+  title={`Artikel in #${displayCategory}`}
+  noindex={true}
+>
+  <!-- Header -->
+  <section class="bg-gradient-to-br from-purple-50 to-white py-12">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-gray-900">
+        Artikel in <span class="text-primary">#{displayCategory}</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Posts Grid -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      {posts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map(post => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      ) : (
+        <p class="text-gray-500 text-center py-12">
+          Keine Artikel in dieser Kategorie gefunden.
+        </p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

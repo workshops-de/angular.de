@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="NG-DE Konferenz"
+  description="NG-DE ist die erste community-driven Angular Konferenz in Deutschland mit 400+ Teilnehmern."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-purple-600 to-pink-500 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">NG-DE Konferenz</h1>
+      <p class="text-xl text-purple-100 mb-8">
+        Die Angular Community Konferenz in Deutschland
+      </p>
+      <a
+        href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=hero_button"
+        target="_blank"
+        rel="noopener"
+        class="inline-block bg-white text-purple-600 font-semibold px-8 py-3 rounded-lg hover:bg-purple-50 transition-colors"
+      >
+        Zur NG-DE Website
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Was ist NG-DE?</h2>
+        <div class="prose prose-lg text-gray-600">
+          <p>
+            NG-DE ist die erste community-driven Angular Konferenz in Deutschland.
+            Seit 2019 bringen wir jährlich über 400 Angular-Enthusiasten zusammen,
+            um sich über die neuesten Entwicklungen im Angular-Ökosystem auszutauschen.
+          </p>
+          <p>Die Konferenz bietet:</p>
+          <ul>
+            <li>Internationale Speaker aus der Angular Community</li>
+            <li>Workshop-Tag vor der Konferenz</li>
+            <li>Networking mit Angular-Entwickler:innen aus ganz Europa</li>
+            <li>Party und Community Events</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">NG-DE 2025</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+          <div class="text-4xl mb-3">📅</div>
+          <h3 class="text-xl font-bold text-gray-900">5. - 7. November 2025</h3>
+          <p class="text-gray-500">Workshop-Tag + 2 Konferenztage</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+          <div class="text-4xl mb-3">📍</div>
+          <h3 class="text-xl font-bold text-gray-900">Berlin</h3>
+          <p class="text-gray-500">Kulturbrauerei</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+          <div class="text-4xl mb-3">👥</div>
+          <h3 class="text-xl font-bold text-gray-900">400+ Teilnehmer</h3>
+          <p class="text-gray-500">Aus ganz Europa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-purple-600 to-pink-500 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Sei dabei!</h2>
+      <p class="text-xl text-purple-100 mb-8">
+        Sichere dir jetzt dein Ticket für die NG-DE 2025!
+      </p>
+      <a
+        href="https://ng-de.org?utm_source=angular_de&utm_campaign=conference2025&utm_medium=portal&utm_content=cta_button"
+        target="_blank"
+        rel="noopener"
+        class="inline-block bg-white text-purple-600 font-semibold px-8 py-3 rounded-lg hover:bg-purple-50 transition-colors"
+      >
+        Tickets kaufen
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,378 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { siteConfig, buildUtmUrl } from '../config/site';
+
+// Get latest posts
+const allPosts = await getCollection('posts');
+const latestPosts = allPosts
+  .sort((a, b) => b.data.published_at.getTime() - a.data.published_at.getTime())
+  .slice(0, 6);
+
+const { topic, title, description, training, conference, discord_invite } = siteConfig;
+
+// Stats for the community
+const stats = [
+  { value: '100+', label: 'Artikel' },
+  { value: '18', label: 'Meetups' },
+  { value: '2000+', label: 'Discord Mitglieder' },
+  { value: '400+', label: 'Konferenz-Teilnehmer' },
+];
+
+// Typewriter words for the hero
+const typewriterWords = [
+  'Angular',
+  'TypeScript',
+  'RxJS',
+  'Signals',
+  'Components',
+];
+
+// How we work / Community benefits
+const communityBenefits = [
+  {
+    title: 'Wissen teilen',
+    description: 'Profitiere von kurierten Tutorials, praktischen Artikeln und Einblicken in aktuelle Angular-Trends.',
+  },
+  {
+    title: 'Experten vernetzen',
+    description: 'Verbinde dich mit führenden Angular-Entwickler:innen. Tausche Erfahrungen aus und lerne von den Besten.',
+  },
+  {
+    title: 'Gemeinsam lernen',
+    description: 'Ob Anfänger oder Experte - in unserer Community findest du immer jemanden, der dir weiterhilft.',
+  },
+  {
+    title: 'Events erleben',
+    description: 'Meetups, Konferenzen und Workshops - triff die Community live und erweitere dein Netzwerk.',
+  },
+];
+---
+
+<BaseLayout
+  title={description}
+  description={`Alles rund um ${topic}/JavaScript auf deutsch - Tutorials · Artikel · News · Workshops.`}
+>
+  <!-- Hero Section with Typewriter Effect -->
+  <section class="relative py-20 md:py-32 overflow-hidden hero-background dark:bg-gray-950">
+    <!-- Gradient Mesh Background -->
+    <div class="absolute inset-0 hero-gradient dark:opacity-0"></div>
+    <!-- Dark Mode Gradient -->
+    <div class="absolute inset-0 hidden dark:block" style="background: radial-gradient(at 20% 30%, rgba(133, 20, 245, 0.2) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(59, 130, 246, 0.12) 0px, transparent 50%);"></div>
+    <!-- Dot Grid Pattern Overlay -->
+    <div class="absolute inset-0 hero-dots dark:opacity-30"></div>
+
+    <div class="container mx-auto px-4 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <p class="text-gray-500 dark:text-gray-400 text-lg mb-4">
+          Alles Rund um das Framework auf Deutsch!
+        </p>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6">
+          <span class="block">Deine</span>
+          <span class="text-primary typewriter-container">
+            <span id="typewriter" class="typewriter">{topic}</span><span class="typewriter-cursor">_</span>
+          </span>
+          <span class="block">Community.</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+          Verbinde dich mit {topic}-Entwickler:innen.<br />
+          Lerne. Teile. Wachse.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/discord"
+            target="_blank"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-discord text-white font-semibold rounded-full hover:bg-discord-dark transition-colors"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+            Discord beitreten
+          </a>
+          <a
+            href="/artikel/"
+            class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-full font-semibold text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors"
+          >
+            Artikel lesen
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-white dark:bg-gray-950 border-y border-gray-100 dark:border-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map(stat => (
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
+            <div class="text-gray-500 dark:text-gray-400">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work / Community Benefits -->
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Wie wir arbeiten.</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Eine Community, die {topic}-Entwicklung voranbringt durch Zusammenarbeit, Wissensaustausch und Innovation.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {communityBenefits.map(benefit => (
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{benefit.title}</h3>
+            <p class="text-gray-600 dark:text-gray-400">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Articles -->
+  <section class="py-20 dark:bg-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Neueste <span class="text-primary">Insights.</span></h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Entdecke die neuesten Trends und Best Practices in der {topic}-Entwicklung.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {latestPosts.map(post => (
+          <PostCard post={post} showReadingTime={true} />
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="/artikel/"
+          class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-200 dark:border-gray-700 rounded-full font-semibold text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors"
+        >
+          Alle Artikel
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Unsere <span class="text-primary">Community.</span></h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Konferenzen, Meetups und Discord – werde Teil der größten {topic}-Community in Europa.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Conference -->
+        {conference && (
+          <a href="/ng-de-konferenz/" class="group block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            <div class="h-48 relative overflow-hidden">
+              <img
+                src="/assets/img/ng-de/ng-de-mood-video.png"
+                alt={`${conference.name} Konferenz`}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">Berlin</span>
+                <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">400+ Teilnehmer</span>
+                <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">Mood Video</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">{topic} Community Konferenz</p>
+              <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                {conference.name} ist die erste community-driven {topic} Konferenz in Deutschland
+              </h3>
+            </div>
+          </a>
+        )}
+
+        <!-- Meetups -->
+        <a href="/meetups/" class="group block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="h-48 relative overflow-hidden">
+            <img
+              src="/shared/assets/img/meetups.png"
+              alt="Meetups in der DACH Region"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+              <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">Deutschland</span>
+              <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">Österreich</span>
+              <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">Schweiz</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Meetups in der DACH Region</p>
+            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+              Finde dein {topic} Meetup in deiner Nähe oder gründe selbst eins!
+            </h3>
+          </div>
+        </a>
+
+        <!-- Discord -->
+        <a href="/discord/" target="_blank" rel="noopener" class="group block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="h-48 relative overflow-hidden">
+            <img
+              src="/shared/assets/img/discord.png"
+              alt={`${topic} Discord Community`}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+              <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">Hilfe</span>
+              <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">Austausch</span>
+              <span class="px-2 py-0.5 bg-white/90 dark:bg-gray-900/90 dark:text-white text-xs font-medium uppercase rounded">Lernen</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Dein {topic} Discord auf Deutsch</p>
+            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+              Tausche dich mit anderen über Herausforderungen, Lösungen und Events aus
+            </h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 dark:bg-gray-950">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Deine {topic} Community</h2>
+      <div class="prose prose-lg text-gray-600 dark:text-gray-400">
+        <p>
+          {title} ist ein Community-Portal von <a href={buildUtmUrl(training.providerUrl, 'crossmarketing_permanent', 'website', 'home_page')} target="_blank">{training.provider}</a>.
+          Seit 2013 bieten wir euch hier Tutorials, Artikel und <a href="/schulungen/">Schulungen</a> rund um das {topic} Framework.
+        </p>
+        <p>
+          Mit mittlerweile <a href="/meetups/">18 Meetups</a>, die insgesamt über 10.000 {topic}-Entwickler:innen als Platform für regelmäßigen Austausch dienen,
+          sind wir damit in Europa die Region mit den meisten {topic} Entwicklern.
+          {conference && (
+            <>
+              Seit 2019 gibt es mit der
+              <a href={buildUtmUrl(conference.url, 'crossmarketing_permanent', 'website', 'home_page')}>{conference.name} Konferenz</a>
+              auch die erste {topic}-Konferenz in Deutschland mit 400+ Teilnehmern.
+            </>
+          )}
+        </p>
+        <p>
+          Wir sind eine offene Community die jeden Willkommen heißt. Der meiste Austausch passiert über unseren
+          <a href={discord_invite} rel="noopener nofollow">{topic} Community Discord</a> mit fast 2000 Mitgliedern.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark CTA Banner -->
+  <section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Bereit für die Zukunft?</h2>
+      <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+        Werde Teil einer Community, die die Grenzen der {topic}-Entwicklung neu definiert.
+      </p>
+      <a
+        href="/discord"
+        target="_blank"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-discord text-white font-semibold rounded-full hover:bg-discord-dark transition-colors"
+      >
+        Discord beitreten
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Background - Option 1: Gradient Mesh (modern, Stripe-like) */
+  .hero-gradient {
+    background:
+      radial-gradient(at 20% 30%, rgba(221, 0, 49, 0.08) 0px, transparent 50%),
+      radial-gradient(at 80% 20%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+      radial-gradient(at 40% 80%, rgba(59, 130, 246, 0.08) 0px, transparent 50%),
+      radial-gradient(at 90% 70%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
+      linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+  }
+
+  /* Hero Background - Option 2: Dot Grid Pattern (clean, tech) */
+  .hero-dots {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Typewriter cursor animation */
+  .typewriter-cursor {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* Typewriter text animation */
+  .typewriter {
+    display: inline-block;
+  }
+</style>
+
+<script define:vars={{ typewriterWords }}>
+  // Typewriter effect
+  const element = document.getElementById('typewriter');
+  if (element) {
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let currentWord = typewriterWords[0];
+
+    function type() {
+      const word = typewriterWords[wordIndex];
+
+      if (isDeleting) {
+        currentWord = word.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        currentWord = word.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      element.textContent = currentWord;
+
+      let typeSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === word.length) {
+        // Pause at end of word
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % typewriterWords.length;
+        typeSpeed = 500;
+      }
+
+      setTimeout(type, typeSpeed);
+    }
+
+    // Start after a short delay
+    setTimeout(type, 1000);
+  }
+</script>

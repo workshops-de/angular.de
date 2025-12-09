@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get search query from URL
+const query = Astro.url.searchParams.get('q')?.toLowerCase() || '';
+
+// Get all posts
+const allPosts = await getCollection('posts');
+
+// Filter posts based on search query
+const searchResults = query
+  ? allPosts.filter(post => {
+      const title = post.data.title.toLowerCase();
+      const description = (post.data.description || '').toLowerCase();
+      const categories = (post.data.categories || '').toLowerCase();
+      const author = post.data.author.toLowerCase();
+
+      return (
+        title.includes(query) ||
+        description.includes(query) ||
+        categories.includes(query) ||
+        author.includes(query)
+      );
+    }).sort((a, b) => b.data.published_at.getTime() - a.data.published_at.getTime())
+  : [];
+---
+
+<BaseLayout
+  title={query ? `Suche: ${query}` : 'Suche'}
+  noindex={true}
+>
+  <section class="py-12">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8">Suche</h1>
+
+      <form action="/suche/" method="GET" class="mb-8">
+        <div class="flex gap-2">
+          <input
+            type="search"
+            name="q"
+            placeholder="Suchbegriff eingeben..."
+            value={query}
+            autofocus
+            class="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          />
+          <button
+            type="submit"
+            class="btn-gradient px-6"
+          >
+            Suchen
+          </button>
+        </div>
+      </form>
+
+      {query && (
+        <p class="text-gray-500 mb-6">
+          {searchResults.length} Ergebnis{searchResults.length !== 1 ? 'se' : ''} für "{query}"
+        </p>
+      )}
+
+      {searchResults.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {searchResults.map(post => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      ) : query ? (
+        <div class="bg-blue-50 border border-blue-200 text-blue-800 rounded-lg p-4">
+          Keine Ergebnisse gefunden. Versuche einen anderen Suchbegriff oder
+          <a href="/artikel/" class="underline">durchstöbere unsere Artikel</a>.
+        </div>
+      ) : (
+        <div class="bg-gray-50 border border-gray-200 text-gray-600 rounded-lg p-4">
+          Gib einen Suchbegriff ein, um Artikel zu finden.
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

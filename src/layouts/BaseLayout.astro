@@ -1,0 +1,117 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Newsletter from '../components/Newsletter.astro';
+import SocialMetaTags from '../components/SocialMetaTags.astro';
+import OrganizationJsonLd from '../components/OrganizationJsonLd.astro';
+import BreadcrumbsJsonLd from '../components/BreadcrumbsJsonLd.astro';
+import { siteConfig } from '../config/site';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  noindex?: boolean;
+  ogImage?: string;
+  ogType?: string;
+  publishedTime?: Date;
+  author?: string;
+  slug?: string; // For generated OG images
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  noindex = false,
+  ogImage,
+  ogType = 'website',
+  publishedTime,
+  author,
+  slug,
+} = Astro.props;
+
+const fullTitle = `${title} | ${siteConfig.title}`;
+const siteUrl = Astro.site?.toString() || siteConfig.url;
+const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).toString();
+
+// Only load GTM in production
+const isProd = import.meta.env.PROD;
+const gtmProperty = siteConfig.gtm_property;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <!-- Prevent flash of wrong theme - following Tailwind docs -->
+  <script is:inline>
+    // On page load, best to add inline in `head` to avoid FOUC
+    document.documentElement.classList.toggle(
+      "dark",
+      localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
+  </script>
+  {isProd && <link rel="dns-prefetch" href="//www.google-analytics.com">}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>{fullTitle}</title>
+  {description && <meta name="description" content={description} />}
+
+  {noindex ? (
+    <meta name="robots" content="noindex, follow">
+  ) : (
+    <link rel="canonical" href={currentUrl}>
+  )}
+
+  <SocialMetaTags
+    title={title}
+    description={description}
+    url={currentUrl}
+    image={ogImage}
+    type={ogType}
+    publishedTime={publishedTime}
+    author={author}
+    slug={slug}
+  />
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+
+  {/* Google Tag Manager - only in production */}
+  {isProd && (
+    <script define:vars={{ gtmProperty }}>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer', gtmProperty);
+    </script>
+  )}
+
+  <OrganizationJsonLd />
+  <BreadcrumbsJsonLd />
+</head>
+
+<body class="min-h-screen flex flex-col">
+  {/* Google Tag Manager (noscript) - only in production */}
+  {isProd && (
+    <noscript>
+      <iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmProperty}`}
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+  )}
+
+  <Navigation />
+
+  <main class="flex-1">
+    <slot />
+  </main>
+
+  <Newsletter />
+  <Footer />
+</body>
+</html>
