@@ -8,6 +8,60 @@ const navItems = siteConfig.navigation.items;
 const isActive = (pattern: string) => currentPath.includes(pattern);
 ---
 
+<style is:global>
+  /* Style Google Translate widget */
+  #google_translate_element {
+    display: inline-block;
+  }
+
+  /* Hide Google Translate banner at top */
+  .goog-te-banner-frame {
+    display: none !important;
+  }
+
+  /* Remove top margin added by Google Translate */
+  body {
+    top: 0 !important;
+  }
+
+  /* Hide Google branding flag icon */
+  .goog-te-gadget img {
+    display: none !important;
+  }
+
+  /* Style the translate widget */
+  .goog-te-gadget {
+    font-family: inherit !important;
+    font-size: 14px !important;
+  }
+
+  /* Style the dropdown */
+  .goog-te-combo {
+    padding: 4px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background: white;
+    color: #374151;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .goog-te-combo:hover {
+    border-color: #9ca3af;
+  }
+
+  /* Dark mode styles */
+  html.dark .goog-te-combo {
+    background: #1f2937;
+    color: #d1d5db;
+    border-color: #4b5563;
+  }
+
+  html.dark .goog-te-combo:hover {
+    border-color: #6b7280;
+  }
+</style>
+
 <div class="sticky top-0 z-50 bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
   <NavigationBanner />
 
@@ -69,36 +123,8 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
           </button>
         </form> -->
 
-        <!-- Language Dropdown -->
-        <div class="relative" id="lang-dropdown">
-          <button
-            id="lang-dropdown-btn"
-            class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700"
-          >
-            <span id="current-lang">🇩🇪</span>
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-
-          <!-- Dropdown Menu -->
-          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700 py-1 z-50">
-            <button
-              class="lang-option w-full px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-2"
-              data-lang="de"
-            >
-              <span class="text-base">🇩🇪</span>
-              Deutsch
-            </button>
-            <button
-              class="lang-option w-full px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-2"
-              data-lang="en"
-            >
-              <span class="text-base">🇬🇧</span>
-              English
-            </button>
-          </div>
-        </div>
+        <!-- Google Translate Widget -->
+        <div id="google_translate_element"></div>
 
         <!-- Dark Mode Toggle -->
         <button
@@ -117,8 +143,6 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
         </button>
       </div>
 
-      <!-- Google Translate Element (hidden) -->
-      <div id="google_translate_element" class="hidden"></div>
     </div>
 
     <!-- Mobile navigation with language option -->
@@ -148,23 +172,11 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
           />
         </form> -->
 
-        <!-- Mobile Language & Dark Mode -->
-        <div class="px-4 pt-2 flex gap-2">
-          <button
-            class="lang-option-mobile flex-1 py-2 rounded-lg font-medium text-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 bg-purple-50 dark:bg-purple-900/30 text-primary"
-            data-lang="de"
-          >
-            🇩🇪 Deutsch
-          </button>
-          <button
-            class="lang-option-mobile flex-1 py-2 rounded-lg font-medium text-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
-            data-lang="en"
-          >
-            🇬🇧 English
-          </button>
+        <!-- Mobile Dark Mode -->
+        <div class="px-4 pt-2">
           <button
             id="dark-mode-toggle-mobile"
-            class="py-2 px-4 rounded-lg font-medium text-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+            class="w-full py-2 px-4 rounded-lg font-medium text-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
           >
             <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
@@ -172,6 +184,7 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
             <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
             </svg>
+            Dark Mode
           </button>
         </div>
       </div>
@@ -181,146 +194,19 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
 
 <!-- Google Translate Script -->
 <script is:inline>
-  // Google Translate initialization
+  // Google Translate initialization - simple and clean
   window.googleTranslateElementInit = function() {
-    try {
-      new google.translate.TranslateElement({
-        pageLanguage: 'de',
-        includedLanguages: 'en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-
-      // After initialization, trigger translation if needed
-      if (window.pendingTranslation === 'en') {
-        setTimeout(() => {
-          const select = document.querySelector('.goog-te-combo');
-          if (select) {
-            select.value = 'en';
-            select.dispatchEvent(new Event('change'));
-            updateLangDisplay('en');
-          }
-        }, 500);
-      }
-    } catch (e) {
-      console.error('Google Translate initialization failed:', e);
-    }
+    new google.translate.TranslateElement({
+      pageLanguage: 'de',
+      includedLanguages: 'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
   }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  // Load Google Translate script
-  function loadGoogleTranslate() {
-    if (window.googleTranslateLoaded) return Promise.resolve();
-
-    return new Promise((resolve) => {
-      const script = document.createElement('script');
-      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      script.onload = () => {
-        window.googleTranslateLoaded = true;
-        resolve();
-      };
-      script.onerror = () => {
-        console.error('Failed to load Google Translate');
-        resolve();
-      };
-      document.body.appendChild(script);
-    });
-  }
-
-  // Switch language
-  async function switchLanguage(lang) {
-    if (lang === 'en') {
-      // Check if on localhost - Google Translate doesn't work locally
-      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-        alert('Google Translate funktioniert nicht auf localhost. Bitte auf einer öffentlichen URL testen (z.B. Firebase/Vercel Preview).');
-        return;
-      }
-
-      window.pendingTranslation = 'en';
-      await loadGoogleTranslate();
-
-      // If already loaded, trigger translation immediately
-      if (window.googleTranslateLoaded) {
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-          select.value = 'en';
-          select.dispatchEvent(new Event('change'));
-          updateLangDisplay('en');
-        }
-      }
-    } else {
-      // Reset to German
-      window.pendingTranslation = null;
-
-      // Method 1: Try to click restore button
-      const iframe = document.querySelector('.goog-te-banner-frame');
-      if (iframe) {
-        try {
-          const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-          const restoreBtn = innerDoc.querySelector('.goog-te-button button');
-          if (restoreBtn) {
-            restoreBtn.click();
-            updateLangDisplay('de');
-            document.getElementById('lang-dropdown-menu')?.classList.add('hidden');
-            return;
-          }
-        } catch (e) {
-          // Cross-origin iframe, can't access
-        }
-      }
-
-      // Method 2: Clear cookies and reload
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname;
-      location.reload();
-    }
-
-    // Close dropdown
-    document.getElementById('lang-dropdown-menu')?.classList.add('hidden');
-  }
-
-  // Update display
-  function updateLangDisplay(lang) {
-    const currentLang = document.getElementById('current-lang');
-    if (currentLang) {
-      currentLang.textContent = lang === 'en' ? '🇬🇧' : '🇩🇪';
-    }
-
-    // Update mobile buttons
-    document.querySelectorAll('.lang-option-mobile').forEach(btn => {
-      const isActive = btn.dataset.lang === lang;
-      btn.classList.toggle('bg-purple-50', isActive);
-      btn.classList.toggle('text-primary', isActive);
-      btn.classList.toggle('text-gray-700', !isActive);
-    });
-  }
-
-  // Toggle dropdown
-  document.getElementById('lang-dropdown-btn')?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    document.getElementById('lang-dropdown-menu')?.classList.toggle('hidden');
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', () => {
-    document.getElementById('lang-dropdown-menu')?.classList.add('hidden');
-  });
-
-  // Language option clicks (desktop)
-  document.querySelectorAll('.lang-option').forEach(btn => {
-    btn.addEventListener('click', () => switchLanguage(btn.dataset.lang));
-  });
-
-  // Language option clicks (mobile)
-  document.querySelectorAll('.lang-option-mobile').forEach(btn => {
-    btn.addEventListener('click', () => switchLanguage(btn.dataset.lang));
-  });
-
-  // Check if already translated on load
-  if (document.cookie.includes('googtrans=/de/en')) {
-    updateLangDisplay('en');
-  }
-
+<script is:inline>
   // ==================== DARK MODE ====================
   // Following Tailwind CSS docs: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
 
