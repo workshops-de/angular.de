@@ -183,63 +183,96 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
 <script is:inline>
   // Google Translate initialization
   window.googleTranslateElementInit = function() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'de',
-      includedLanguages: 'en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-      autoDisplay: false
-    }, 'google_translate_element');
+    try {
+      new google.translate.TranslateElement({
+        pageLanguage: 'de',
+        includedLanguages: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+
+      // After initialization, trigger translation if needed
+      if (window.pendingTranslation === 'en') {
+        setTimeout(() => {
+          const select = document.querySelector('.goog-te-combo');
+          if (select) {
+            select.value = 'en';
+            select.dispatchEvent(new Event('change'));
+            updateLangDisplay('en');
+          }
+        }, 500);
+      }
+    } catch (e) {
+      console.error('Google Translate initialization failed:', e);
+    }
   }
 
   // Load Google Translate script
   function loadGoogleTranslate() {
-    if (window.googleTranslateLoaded) return;
+    if (window.googleTranslateLoaded) return Promise.resolve();
 
-    const script = document.createElement('script');
-    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    script.async = true;
-    document.body.appendChild(script);
-    window.googleTranslateLoaded = true;
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      script.onload = () => {
+        window.googleTranslateLoaded = true;
+        resolve();
+      };
+      script.onerror = () => {
+        console.error('Failed to load Google Translate');
+        resolve();
+      };
+      document.body.appendChild(script);
+    });
   }
 
   // Switch language
-  function switchLanguage(lang) {
+  async function switchLanguage(lang) {
     if (lang === 'en') {
       // Check if on localhost - Google Translate doesn't work locally
       if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-        alert('Google Translate funktioniert nicht auf localhost. Bitte auf einer öffentlichen URL testen (z.B. Vercel/Netlify Preview).');
+        alert('Google Translate funktioniert nicht auf localhost. Bitte auf einer öffentlichen URL testen (z.B. Firebase/Vercel Preview).');
         return;
       }
 
-      loadGoogleTranslate();
+      window.pendingTranslation = 'en';
+      await loadGoogleTranslate();
 
-      // Wait for Google Translate to load, then trigger English
-      const checkAndTranslate = setInterval(() => {
+      // If already loaded, trigger translation immediately
+      if (window.googleTranslateLoaded) {
         const select = document.querySelector('.goog-te-combo');
         if (select) {
           select.value = 'en';
           select.dispatchEvent(new Event('change'));
-          clearInterval(checkAndTranslate);
           updateLangDisplay('en');
         }
-      }, 100);
-
-      setTimeout(() => clearInterval(checkAndTranslate), 5000);
+      }
     } else {
-      // Reset to German - remove translation
+      // Reset to German
+      window.pendingTranslation = null;
+
+      // Method 1: Try to click restore button
       const iframe = document.querySelector('.goog-te-banner-frame');
       if (iframe) {
-        const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-        const restoreBtn = innerDoc.querySelector('.goog-te-button button');
-        if (restoreBtn) restoreBtn.click();
+        try {
+          const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const restoreBtn = innerDoc.querySelector('.goog-te-button button');
+          if (restoreBtn) {
+            restoreBtn.click();
+            updateLangDisplay('de');
+            document.getElementById('lang-dropdown-menu')?.classList.add('hidden');
+            return;
+          }
+        } catch (e) {
+          // Cross-origin iframe, can't access
+        }
       }
-      // Fallback: reload page without translation
-      if (document.cookie.includes('googtrans')) {
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname;
-        location.reload();
-      }
-      updateLangDisplay('de');
+
+      // Method 2: Clear cookies and reload
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname;
+      location.reload();
     }
 
     // Close dropdown
