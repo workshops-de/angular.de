@@ -55,6 +55,11 @@
   /* Discord brand color */
   --color-discord: #5865f2;
   --color-discord-dark: #4752c4;
+
+  /* Typography plugin customization */
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-links-hover: var(--color-primary-dark);
+  --tw-prose-quote-borders: var(--color-primary);
 }
 
 /* Base styles */
@@ -66,7 +71,7 @@ html {
 }
 
 body {
-  @apply text-gray-800 leading-relaxed bg-white;
+  @apply text-gray-800 dark:text-gray-200 leading-relaxed bg-white dark:bg-gray-950;
   font-size: 1.125rem;
   line-height: 1.7;
   letter-spacing: -0.01em;
@@ -74,91 +79,6 @@ body {
     background-color 0.3s ease,
     color 0.3s ease;
 }
-
-/* ==================== DARK MODE ==================== */
-html.dark body {
-  @apply bg-gray-950 text-gray-200;
-}
-
-/* Dark mode - Headings */
-html.dark h1,
-html.dark h2,
-html.dark h3,
-html.dark h4,
-html.dark h5,
-html.dark h6 {
-  @apply text-white;
-}
-
-/* Dark mode - Navigation */
-html.dark .sticky {
-  @apply bg-gray-900/95 border-gray-800;
-}
-
-html.dark nav a {
-  @apply text-gray-300 hover:text-primary-light;
-}
-
-html.dark nav a.text-primary {
-  @apply text-primary-light;
-}
-
-html.dark nav input {
-  @apply bg-gray-800 border-gray-700 text-white placeholder-gray-500;
-}
-
-/* Dark mode - Code blocks */
-html.dark :not(pre) > code {
-  @apply bg-primary-900/50 text-primary-200;
-}
-
-/* Dark mode - Prose content */
-html.dark .prose-content h2,
-html.dark .prose-content h3,
-html.dark .prose-content h4 {
-  @apply text-white;
-}
-
-html.dark .prose-content p {
-  @apply text-gray-300;
-}
-
-html.dark .prose-content blockquote {
-  @apply bg-gray-900 text-gray-400;
-}
-
-html.dark .prose-content strong {
-  @apply text-white;
-}
-
-html.dark .prose-content ul,
-html.dark .prose-content ol {
-  @apply text-gray-300;
-}
-
-html.dark .prose-content hr {
-  @apply border-gray-800;
-}
-
-/* Dark mode - Alerts */
-html.dark .alert-info {
-  @apply bg-accent-900/30 border-accent-800 text-accent-300;
-}
-
-html.dark .alert-success {
-  @apply bg-green-900/30 border-green-800 text-green-300;
-}
-
-html.dark .alert-warning {
-  @apply bg-yellow-900/30 border-yellow-800 text-yellow-300;
-}
-
-/* Dark mode - Workshop hint */
-html.dark .workshop-hint {
-  @apply bg-gray-900;
-}
-
-/* ==================== END DARK MODE ==================== */
 
 /* Headings - Bold, punchy, Smashing-style */
 h1,
@@ -210,7 +130,7 @@ code {
 }
 
 :not(pre) > code {
-  @apply bg-primary-100 text-primary-900 px-1.5 py-0.5 rounded;
+  @apply bg-primary-100 dark:bg-primary-900/50 text-primary-900 dark:text-primary-200 px-1.5 py-0.5 rounded;
 }
 
 /* Focus styles */
@@ -223,73 +143,13 @@ code {
   @apply bg-gradient-to-r from-primary-500 to-accent-600 text-white font-medium py-2 px-6 rounded-lg hover:from-accent-600 hover:to-primary-600 transition-all duration-300;
 }
 
-/* Content styles for articles - Smashing-inspired */
-.prose-content {
-  @apply max-w-none;
-  font-size: 1.125rem;
-  line-height: 1.75;
+/* Prose customizations - extend Tailwind Typography */
+.prose img {
+  @apply rounded-xl;
 }
 
-.prose-content h2,
-.prose-content h3,
-.prose-content h4 {
-  @apply font-bold text-gray-900;
-  letter-spacing: -0.025em;
-}
-
-.prose-content h2 {
-  @apply text-2xl md:text-3xl mt-12 mb-6;
-}
-
-.prose-content h3 {
-  @apply text-xl md:text-2xl mt-10 mb-4;
-}
-
-.prose-content h4 {
-  @apply text-lg md:text-xl mt-8 mb-4;
-}
-
-.prose-content p {
-  @apply mb-6 text-gray-700;
-  line-height: 1.8;
-}
-
-.prose-content img {
-  @apply rounded-xl max-w-full h-auto my-8;
-}
-
-.prose-content blockquote {
-  @apply border-l-4 border-primary pl-6 py-2 italic text-gray-600 my-8 bg-gray-50 rounded-r-lg;
-}
-
-.prose-content ul,
-.prose-content ol {
-  @apply my-6 pl-6 text-gray-700;
-}
-
-.prose-content ul {
-  @apply list-disc;
-}
-
-.prose-content ol {
-  @apply list-decimal;
-}
-
-.prose-content li {
-  @apply mb-3;
-  line-height: 1.7;
-}
-
-.prose-content a {
-  @apply text-primary font-medium underline decoration-primary/30 underline-offset-2 hover:decoration-primary hover:text-primary-dark;
-}
-
-.prose-content hr {
-  @apply my-12 border-gray-200;
-}
-
-.prose-content strong {
-  @apply font-semibold text-gray-900;
+.prose blockquote {
+  @apply bg-gray-50 dark:bg-gray-800 rounded-r-lg;
 }
 
 /* Alert boxes */
@@ -298,70 +158,18 @@ code {
 }
 
 .alert-info {
-  @apply bg-accent-50 border border-accent-200 text-accent-800;
+  @apply bg-accent-50 dark:bg-accent-900/30 border border-accent-200 dark:border-accent-800 text-accent-800 dark:text-accent-300;
 }
 
 .alert-success {
-  @apply bg-green-50 border border-green-200 text-green-800;
+  @apply bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-300;
 }
 
 .alert-warning {
-  @apply bg-yellow-50 border border-yellow-200 text-yellow-800;
+  @apply bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 text-yellow-800 dark:text-yellow-300;
 }
 
 /* Workshop hint box */
 .workshop-hint {
-  @apply bg-gray-50 rounded-lg p-6 my-8 border-l-4 border-primary;
-}
-
-/* Animation */
-@keyframes wiggle {
-  0%,
-  100% {
-    transform: rotate(-3deg);
-  }
-  50% {
-    transform: rotate(3deg);
-  }
-}
-
-.animate-wiggle {
-  animation: wiggle 0.5s ease-in-out infinite;
-}
-
-/* Line clamp utilities */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Prose styles for static pages */
-.prose {
-  @apply max-w-none;
-}
-
-.prose h2 {
-  @apply text-2xl font-bold text-gray-900 mt-8 mb-4;
-}
-
-.prose h3 {
-  @apply text-xl font-bold text-gray-900 mt-6 mb-3;
-}
-
-.prose p {
-  @apply mb-4 text-gray-700;
-}
-
-.prose ul {
-  @apply list-disc pl-6 mb-4;
-}
-
-.prose li {
-  @apply mb-2;
-}
-
-.prose a {
-  @apply text-primary hover:underline;
+  @apply bg-gray-50 dark:bg-gray-900 rounded-lg p-6 my-8 border-l-4 border-primary;
 }

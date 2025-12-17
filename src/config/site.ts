@@ -31,62 +31,12 @@ export const siteConfig = {
   url: "https://angular.de",
   language: "de",
 
-  // Branding colors
-  //
-  // Full color scales are defined in src/styles/global.css @theme
-  // Usage examples:
-  //   text-primary, text-primary-500, text-primary-600
-  //   bg-primary-100, bg-primary/10
-  //   border-accent-200, text-accent-700
-  //
+  // Branding - colors defined in src/styles/global.css @theme
+  // Usage: text-primary, bg-primary-500, border-accent-200, etc.
   branding: {
-    // Primary color
-    primary: "#8514f5",
-    primaryDark: "#6b21a8",
-    primaryLight: "#a855f7",
-
-    // Primary color scale (for reference, defined in global.css)
-    primaryScale: {
-      50: "#faf5ff",
-      100: "#f3e8ff",
-      200: "#e9d5ff",
-      300: "#d8b4fe",
-      400: "#c084fc",
-      500: "#a855f7",
-      600: "#8514f5", // Base Angular purple
-      700: "#7c3aed",
-      800: "#6b21a8",
-      900: "#581c87",
-      950: "#3b0764",
-    },
-
-    // Accent color (Pink - matching angular.dev)
-    accent: "#ec4899",
-
-    // Accent color scale (for reference, defined in global.css)
-    accentScale: {
-      50: "#fdf2f8",
-      100: "#fce7f3",
-      200: "#fbcfe8",
-      300: "#f9a8d4",
-      400: "#f472b6",
-      500: "#ec4899", // Base pink
-      600: "#db2777",
-      700: "#be185d",
-      800: "#9d174d",
-      900: "#831843",
-      950: "#500724",
-    },
-
-    // RGB values for gradients
-    primaryRgb: "133, 20, 245", // #8514f5
-    primaryDarkRgb: "107, 33, 168", // #6b21a8
-    accentRgb: "236, 72, 153", // #ec4899
-
     // Hero gradients (light mode)
     heroGradientLight:
       "radial-gradient(at 20% 30%, rgba(133, 20, 245, 0.08) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(236, 72, 153, 0.1) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(133, 20, 245, 0.06) 0px, transparent 50%), radial-gradient(at 90% 70%, rgba(236, 72, 153, 0.05) 0px, transparent 50%), linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%)",
-
     // Hero gradients (dark mode)
     heroGradientDark:
       "radial-gradient(at 20% 30%, rgba(133, 20, 245, 0.15) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(236, 72, 153, 0.12) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(133, 20, 245, 0.1) 0px, transparent 50%)",

@@ -28,7 +28,7 @@ const sortedTeam = teamOrder
     <div class="absolute inset-0 dark:opacity-30" style="background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px); background-size: 24px 24px;"></div>
 
     <div class="container mx-auto px-4 relative text-center z-10">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl text-gray-900 dark:text-white mb-4">
         <span class="block">Das Team von</span>
         <span class="text-primary">Angular.DE</span>
       </h1>
@@ -44,8 +44,8 @@ const sortedTeam = teamOrder
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8 items-center mb-16">
         <div>
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Wer sind wir?</h2>
-          <div class="prose text-gray-600 dark:text-gray-400">
+          <h2 class="text-2xl text-gray-900 dark:text-white mb-4">Wer sind wir?</h2>
+          <div class="prose max-w-none dark:prose-invert">
             <p>
               Wir sind eine deutsche Trainer:innen-Community. Unsere Workshops behandeln
               Technologien wie Angular, React und angrenzende Technologien, welche uns in
@@ -68,7 +68,7 @@ const sortedTeam = teamOrder
       </div>
 
       <!-- Team Grid -->
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Das Team stellt sich vor</h2>
+      <h2 class="text-2xl text-gray-900 dark:text-white mb-8">Das Team stellt sich vor</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {sortedTeam.map(member => member && (
           <TeamMember user={member.data} />
@@ -77,7 +77,7 @@ const sortedTeam = teamOrder
 
       <!-- Cooperation -->
       <div class="mt-16 bg-gray-50 dark:bg-gray-900 rounded-xl p-8">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Kooperationen</h3>
+        <h3 class="text-xl text-gray-900 dark:text-white mb-4">Kooperationen</h3>
         <p class="text-gray-600 dark:text-gray-400">
           Wir arbeiten mit verschiedenen Partnern zusammen, um euch die beste Lernerfahrung zu bieten.
           Interessiert an einer Kooperation? <a href="/kontakt/" class="text-primary hover:underline">Kontaktiere uns!</a>

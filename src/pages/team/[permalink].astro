@@ -61,7 +61,7 @@ if (user.twitter) sameAs.push(`https://twitter.com/${user.twitter}`);
             class="w-40 h-40 rounded-full shadow-lg object-cover"
           />
           <div>
-            <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">{user.name}</h1>
+            <h1 class="text-3xl text-gray-900 dark:text-white mb-2">{user.name}</h1>
             {user.city && (
               <p class="text-gray-500 dark:text-gray-400 mb-4">
                 📍 {user.city}
@@ -101,7 +101,7 @@ if (user.twitter) sameAs.push(`https://twitter.com/${user.twitter}`);
         <!-- Author's Posts -->
         {authorPosts.length > 0 && (
           <div>
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 class="text-2xl text-gray-900 dark:text-white mb-6">
               Artikel von {user.name}
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

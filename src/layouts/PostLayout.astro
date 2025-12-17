@@ -77,6 +77,56 @@ const fullImageUrl = resolvedHeaderImage.startsWith('http')
   author={author}
   slug={slug}
 >
+  <!-- Reading Progress Bar (below navbar) -->
+  <div id="progress-container" class="fixed left-0 right-0 h-1 z-[60]" style="top: var(--navbar-height, 72px)">
+    <div id="progress-bar" class="h-full bg-primary transition-all duration-100" style="width: 0%"></div>
+  </div>
+
+  <!-- Social Share Sidebar (fixed left) -->
+  <div id="share-sidebar" class="hidden lg:flex fixed left-6 top-1/3 flex-col gap-3 z-50 opacity-0 -translate-x-4 transition-all duration-300">
+    <a
+      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(fullUrl)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-[#1DA1F2]"
+      title="Auf X teilen"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a
+      href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(fullUrl)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-[#0A66C2]"
+      title="Auf LinkedIn teilen"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a
+      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(fullUrl)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-[#1877F2]"
+      title="Auf Facebook teilen"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <button
+      id="copy-link-btn"
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-primary"
+      title="Link kopieren"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+    </button>
+    <a
+      href={`mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(`Schau dir diesen Artikel an: ${fullUrl}`)}`}
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-primary"
+      title="Per E-Mail teilen"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    </a>
+  </div>
+
   <!-- Article JSON-LD for rich search results -->
   <ArticleJsonLd
     title={title}
@@ -116,7 +166,7 @@ const fullImageUrl = resolvedHeaderImage.startsWith('http')
             </div>
           )}
 
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{title}</h1>
+          <h1 class="text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">{title}</h1>
 
           <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
             <span>{author}</span>
@@ -135,7 +185,7 @@ const fullImageUrl = resolvedHeaderImage.startsWith('http')
 
         <!-- Article Content -->
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 mb-8">
-          <div class="prose-content">
+          <div class="prose prose-lg max-w-none dark:prose-invert prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
             <slot />
           </div>
 
@@ -178,7 +228,7 @@ const fullImageUrl = resolvedHeaderImage.startsWith('http')
       target="_blank"
       class="block bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow border border-transparent dark:border-gray-700"
     >
-      <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+      <h4 class="text-gray-900 dark:text-white mb-2 flex items-center gap-2">
         <span class="text-primary">🎓</span>
         Angular Schulungen
       </h4>
@@ -194,4 +244,65 @@ const fullImageUrl = resolvedHeaderImage.startsWith('http')
       </span>
     </a>
   </div>
+
+  <!-- Progress Bar & Share Sidebar Script -->
+  <script is:inline>
+    (function() {
+      const progressContainer = document.getElementById('progress-container');
+      const progressBar = document.getElementById('progress-bar');
+      const shareSidebar = document.getElementById('share-sidebar');
+      const copyBtn = document.getElementById('copy-link-btn');
+      const article = document.querySelector('article');
+      const navbar = document.querySelector('.sticky');
+
+      // Set navbar height for progress bar position
+      if (progressContainer && navbar) {
+        const navHeight = navbar.offsetHeight;
+        progressContainer.style.top = navHeight + 'px';
+      }
+
+      if (!progressBar || !article) return;
+
+      // Reading progress
+      function updateProgress() {
+        const articleRect = article.getBoundingClientRect();
+        const articleTop = articleRect.top + window.scrollY;
+        const articleHeight = articleRect.height;
+        const windowHeight = window.innerHeight;
+        const scrolled = window.scrollY - articleTop + windowHeight * 0.3;
+        const progress = Math.min(Math.max(scrolled / articleHeight * 100, 0), 100);
+        progressBar.style.width = progress + '%';
+
+        // Show/hide share sidebar based on scroll position
+        if (shareSidebar) {
+          const shouldShow = window.scrollY > 300;
+          if (shouldShow) {
+            shareSidebar.classList.remove('opacity-0', '-translate-x-4');
+            shareSidebar.classList.add('opacity-100', 'translate-x-0');
+          } else {
+            shareSidebar.classList.add('opacity-0', '-translate-x-4');
+            shareSidebar.classList.remove('opacity-100', 'translate-x-0');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      // Copy link functionality
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+            copyBtn.innerHTML = '<svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+            setTimeout(() => {
+              copyBtn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>';
+            }, 2000);
+          } catch (err) {
+            console.error('Failed to copy:', err);
+          }
+        });
+      }
+    })();
+  </script>
 </BaseLayout>

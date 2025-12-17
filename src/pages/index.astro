@@ -68,7 +68,7 @@ const communityBenefits = [
         <p class="text-gray-500 dark:text-gray-400 text-lg mb-4">
           Alles Rund um das Framework auf Deutsch!
         </p>
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl text-gray-900 dark:text-white mb-6">
           <span class="block">Deine</span>
           <span class="text-primary typewriter-container">
             <span id="typewriter" class="typewriter">{topic}</span><span class="typewriter-cursor">_</span>
@@ -122,7 +122,7 @@ const communityBenefits = [
   <section class="py-20 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Wie wir arbeiten.</h2>
+        <h2 class="text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">Wie wir arbeiten.</h2>
         <p class="text-xl text-gray-600 dark:text-gray-400">
           Eine Community, die {topic}-Entwicklung voranbringt durch Zusammenarbeit, Wissensaustausch und Innovation.
         </p>
@@ -131,7 +131,7 @@ const communityBenefits = [
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {communityBenefits.map(benefit => (
           <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{benefit.title}</h3>
+            <h3 class="text-xl text-gray-900 dark:text-white mb-3">{benefit.title}</h3>
             <p class="text-gray-600 dark:text-gray-400">{benefit.description}</p>
           </div>
         ))}
@@ -143,7 +143,7 @@ const communityBenefits = [
   <section class="py-20 dark:bg-gray-950">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Neueste <span class="text-primary">Insights.</span></h2>
+        <h2 class="text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">Neueste <span class="text-primary">Insights.</span></h2>
         <p class="text-xl text-gray-600 dark:text-gray-400">
           Entdecke die neuesten Trends und Best Practices in der {topic}-Entwicklung.
         </p>
@@ -173,7 +173,7 @@ const communityBenefits = [
   <section class="py-20 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Unsere <span class="text-primary">Community.</span></h2>
+        <h2 class="text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">Unsere <span class="text-primary">Community.</span></h2>
         <p class="text-xl text-gray-600 dark:text-gray-400">
           Konferenzen, Meetups und Discord – werde Teil der größten {topic}-Community in Europa.
         </p>
@@ -256,8 +256,8 @@ const communityBenefits = [
   <!-- About Section -->
   <section class="py-16 dark:bg-gray-950">
     <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Deine {topic} Community</h2>
-      <div class="prose prose-lg text-gray-600 dark:text-gray-400">
+      <h2 class="text-3xl text-gray-900 dark:text-white mb-6">Deine {topic} Community</h2>
+      <div class="prose prose-lg max-w-none dark:prose-invert">
         <p>
           {title} ist ein Community-Portal von <a href={buildUtmUrl(training.providerUrl, 'crossmarketing_permanent', 'website', 'home_page')} target="_blank">{training.provider}</a>.
           Seit 2013 bieten wir euch hier Tutorials, Artikel und <a href="/schulungen/">Schulungen</a> rund um das {topic} Framework.
@@ -284,7 +284,7 @@ const communityBenefits = [
   <!-- Dark CTA Banner -->
   <section class="py-20 bg-gray-900">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Bereit für die Zukunft?</h2>
+      <h2 class="text-4xl md:text-5xl text-white mb-4">Bereit für die Zukunft?</h2>
       <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
         Werde Teil einer Community, die die Grenzen der {topic}-Entwicklung neu definiert.
       </p>
