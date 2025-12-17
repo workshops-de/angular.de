@@ -24,7 +24,8 @@ const {
 } = Astro.props;
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') || siteConfig.url;
-const defaultImage = `${siteUrl}/assets/img/og-default.jpg`;
+// const defaultImage = `${siteUrl}/assets/img/og-default.jpg`;
+const defaultImage = `${siteUrl}/assets/img/facebook-share.png`;
 
 // Priority: 1. Generated OG image (if slug provided), 2. Custom image, 3. Default
 let ogImage: string;
