@@ -53,9 +53,7 @@ Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pi
         Wir haben die Konzepte des Frameworks und unsere Projekterfahrung für euch in einen interaktiven Kurs gegossen.
       </p>
       <p class="">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button">
-          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-        </a>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
       </p>
     </div>
     <div class="col-xs-12 col-md-6">
@@ -680,9 +678,7 @@ Viel Spaß beim Ausprobieren und Entwickeln der eigenen App!
         In kleinen Gruppen bieten wir öffentliche und Inhouse Schulungen an, um dich möglichst effektiv in das Thema Ionic
         zu begleiten. </p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-bottom-button">
-          <button class="btn btn-danger">Jetzt weiter lernen</button>
-        </a>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
       </p>
     </div>
     <div class="col-xs-12 col-md-6">

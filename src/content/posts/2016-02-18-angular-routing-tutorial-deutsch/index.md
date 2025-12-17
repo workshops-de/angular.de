@@ -478,7 +478,7 @@ Das Template dazu könnte wie folgt aussehen.
     <td *ngIf="!pizza.price">kostenlos</td>
     <td>{{pizza.id}}</td>
     <td>
-      <a class="btn btn-default btn-sm">Details</a>
+      <a class="inline-block bg-gray-200 text-gray-700 font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-gray-300 transition-colors">Details</a>
     </td>
   </tr>
 </table>

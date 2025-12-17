@@ -90,7 +90,7 @@ Hier ein kleiner Einblick in eine unserer letzten Trainer On-Sites welche wir zu
 ## Remote Workshop buchen
 Unsere nächsten Online-Schulungen finden bereits kommende Woche statt. Ihr könnt euch wie gewohnt dafür via workshops.de anmelden und bekommt weitere Informationen für die Vorbereitungen via E-Mail geschickt. Über unseren Newsletter bekommt ihr auch regelmäßig aktuelle Termine und Rabatte direkt in euer Postfach. Weiterhin bieten wir natürlich unsere Schulungen auch als Inhouse-Workshops an.
 <p class="text-center">
-  <a class="btn btn-sm btn-success" href="https://workshops.de/veranstaltungen" target="_blank">
+  <a class="inline-block bg-green-600 !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-green-700 transition-colors" href="https://workshops.de/veranstaltungen" target="_blank">
   Workshop buchen
   </a>
 </p>

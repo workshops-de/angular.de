@@ -115,7 +115,7 @@ Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele ander
            <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
            Deutsch/Englisch möglich
          </div>
-         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
+         <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
            Zur Angular & TypeScript Schulung
          </a>
    </div>
@@ -583,7 +583,7 @@ books = [
            <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
            Deutsch/Englisch möglich
          </div>
-         <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
+         <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
            Zur Angular & TypeScript Schulung
          </a>
    </div>
@@ -1012,7 +1012,7 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
         <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
         Deutsch/Englisch möglich
       </div>
-      <a class="btn btn-primary btn-sm" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-button">
+      <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-button">
         Zur Angular & TypeScript Schulung
       </a>
     </div>

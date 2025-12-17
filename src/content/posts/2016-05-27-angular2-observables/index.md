@@ -330,9 +330,7 @@ Wir hoffen, dass wir euch die Angst vor dem Arbeiten mit asynchronen Programmtei
         schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
         </p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button">
-          <button class="btn btn-danger">Jetzt weiter lernen</button>
-        </a>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
       </p>
     </div>
     <div class="col-xs-12 col-md-6">

@@ -228,9 +228,7 @@ Daher - falls ich euer Interesse geweckt habe, kann ich euch nur empfehlen, sich
         googlen kannst, z.B. “Beste Weg, um meine Container zu strukturieren”. Wir können sie Dir beantworten. </p>
 
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button">
-          <button class="btn btn-danger">Jetzt weiter lernen</button>
-        </a>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
       </p>
 
     </div>

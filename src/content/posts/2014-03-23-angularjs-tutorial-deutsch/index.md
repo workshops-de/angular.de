@@ -29,9 +29,7 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
                     und TypeScript Schulungen</a> an. Hier kannst du in kleinen Gruppen deine Lernkurve maximieren.
       </p>
       <p class="">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button">
-          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-        </a>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
       </p>
 
     </div>
@@ -345,7 +343,7 @@ Um unsere `Cart`-Factory als Service nutzen zu können, müssen wir sie dem Cont
 Damit können wir die Funktionen des Services jetzt nutzen. Die Artikelliste erweitern wir um eine Schaltfläche zum Hinzufügen. Dazu nutzen wir eine weitere Direktive `ng-click`.  Diese, wie der Name es vermuten lässt, reagiert auf einen Klick. Wir übergeben `ng-click` die `addArticle`-Funktion mit dem aktuellen Artikel.
 
 ```html
-<td><a href class="btn btn-default btn-sm" ng-click="cart.addArticle(article);">Hinzufügen</a></td>
+<td><a href class="inline-block bg-gray-200 text-gray-700 font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-gray-300 transition-colors" ng-click="cart.addArticle(article);">Hinzufügen</a></td>
 ```
 
 Wir können nun Artikel in den Warenkorb legen. Aber natürlich fehlt an dieser Stelle noch die Anzeige des Warenkorbes. Wir legen dazu einen zweiten Controller für unseren Warenkorb an:
@@ -539,9 +537,7 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
         in deinem nächsten Projekt zu rat ziehen.
       </p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button">
-          <button class="btn btn-danger">Jetzt weiter lernen</button>
-        </a>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
       </p>
     </div>
     <div class="col-xs-12 col-md-6">

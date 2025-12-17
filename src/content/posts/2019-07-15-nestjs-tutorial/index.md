@@ -65,9 +65,7 @@ Sehr stark ausgeprägt in Verbindung mit Angular sind die gemeinsamen Konzepte u
         <a target="_blank" href="/schulungen/nestjs-enterprise-applications/?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-link">NestJS Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
       </p>
       <p class="">
-        <a target="_blank" href="/schulungen/nestjs-enterprise-applications/?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button">
-          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-        </a>
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications/?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
       </p>
     </div>
     <div class="col-xs-12 col-md-6">
@@ -445,9 +443,7 @@ Danke fürs lesen!
         <a target="_blank" href="/schulungen/nestjs-enterprise-applications/?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">NestJS Schulungen</a> an, falls Ihr tiefer in die Thematik einsteigen wollt.
       </p>
       <p class="">
-        <a target="_blank" href="/schulungen/nestjs-enterprise-applications/?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button">
-          <button class="btn btn-danger">Mehr Informationen zur Schulung</button>
-        </a>
+        <a target="_blank" href="/schulungen/nestjs-enterprise-applications/?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
       </p>
     </div>
     <div class="col-xs-12 col-md-6">
