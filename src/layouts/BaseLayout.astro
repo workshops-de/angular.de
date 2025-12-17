@@ -83,7 +83,7 @@ const gtmProperty = siteConfig.gtm_property;
 
   {/* Google Tag Manager - only in production */}
   {isProd && (
-    <script define:vars={{ gtmProperty }}>
+    <script is:inline define:vars={{ gtmProperty }}>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -113,5 +113,16 @@ const gtmProperty = siteConfig.gtm_property;
 
   <Newsletter />
   <Footer />
+
+  {/* Simple Analytics - privacy-friendly analytics */}
+  {isProd && (
+    <Fragment>
+      <script is:inline async defer src="https://sa.workshops.de/latest.js"></script>
+      <script is:inline async data-collect="outbound,emails,downloads" data-extensions="pdf,csv,docx,xlsx,zip,doc,xls" data-use-title="true" data-full-urls="false" src="https://sa.workshops.de/auto-events.js"></script>
+      <noscript>
+        <img src="https://sa.workshops.de/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" />
+      </noscript>
+    </Fragment>
+  )}
 </body>
 </html>
