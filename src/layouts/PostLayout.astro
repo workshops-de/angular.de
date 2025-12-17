@@ -98,7 +98,7 @@ const fullImageUrl = resolvedHeaderImage.startsWith('http')
       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     </div>
 
-    <div class="container mx-auto px-4 -mt-16 relative z-10">
+    <div class="container mx-auto px-4 -mt-16 relative">
       <div class="max-w-4xl mx-auto">
         <!-- Article Header -->
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 mb-8">
@@ -108,7 +108,7 @@ const fullImageUrl = resolvedHeaderImage.startsWith('http')
               {categoryList.map((category) => (
                 <a
                   href={`/kategorie/${category.toLowerCase()}/`}
-                  class="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
+                  class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors"
                 >
                   {category}
                 </a>

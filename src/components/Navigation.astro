@@ -129,7 +129,7 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
             href={item.href}
             class={`px-4 py-2 rounded-lg font-medium ${
               isActive(item.pattern)
-                ? 'bg-purple-50 dark:bg-purple-900/30 text-primary'
+                ? 'bg-primary-50 dark:bg-primary-900/30 text-primary'
                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
             target={item.external ? '_blank' : undefined}
@@ -152,7 +152,7 @@ const isActive = (pattern: string) => currentPath.includes(pattern);
         <div class="px-4 pt-2 flex gap-2">
           <a
             href="https://angular.de"
-            class="lang-option-mobile flex-1 py-2 rounded-lg font-medium text-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 bg-purple-50 dark:bg-purple-900/30 text-primary"
+            class="lang-option-mobile flex-1 py-2 rounded-lg font-medium text-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center gap-2 bg-primary-50 dark:bg-primary-900/30 text-primary"
           >
             🇩🇪 Deutsch
           </a>

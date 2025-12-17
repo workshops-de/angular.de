@@ -60,16 +60,16 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
 
   <!-- Hero Header -->
   <section class="relative py-20 md:py-28 overflow-hidden dark:bg-gray-950">
-    <!-- Gradient Mesh Background (Light) -->
-    <div class="absolute inset-0 dark:hidden" style="background: radial-gradient(at 20% 30%, rgba(221, 0, 49, 0.08) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(139, 92, 246, 0.1) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(59, 130, 246, 0.08) 0px, transparent 50%), radial-gradient(at 90% 70%, rgba(236, 72, 153, 0.06) 0px, transparent 50%), linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);"></div>
-    <!-- Gradient Mesh Background (Dark) -->
-    <div class="absolute inset-0 hidden dark:block" style="background: radial-gradient(at 20% 30%, rgba(133, 20, 245, 0.2) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(59, 130, 246, 0.12) 0px, transparent 50%);"></div>
+    <!-- Gradient Mesh Background (Light) - Angular purple/pink -->
+    <div class="absolute inset-0 dark:hidden" style="background: radial-gradient(at 20% 30%, rgba(133, 20, 245, 0.08) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(236, 72, 153, 0.1) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(133, 20, 245, 0.06) 0px, transparent 50%), radial-gradient(at 90% 70%, rgba(236, 72, 153, 0.05) 0px, transparent 50%), linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);"></div>
+    <!-- Gradient Mesh Background (Dark) - Angular purple/pink -->
+    <div class="absolute inset-0 hidden dark:block" style="background: radial-gradient(at 20% 30%, rgba(133, 20, 245, 0.15) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(236, 72, 153, 0.12) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(133, 20, 245, 0.1) 0px, transparent 50%);"></div>
     <!-- Dot Grid Pattern Overlay -->
     <div class="absolute inset-0 dark:opacity-30" style="background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px); background-size: 24px 24px;"></div>
 
     <div class="container mx-auto px-4 text-center relative z-10">
       <!-- Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-green-700 dark:text-green-400 rounded-full text-sm font-medium mb-6 dark:bg-gray-800/50">
+      <div class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-primary-700 dark:text-primary-400 rounded-full text-sm font-medium mb-6 dark:bg-gray-800/50">
         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
         Nächste Termine verfügbar
       </div>
@@ -98,20 +98,20 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
       <!-- Format badges -->
       <div class="flex flex-wrap justify-center gap-3 mb-8">
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300 shadow-sm">
-          <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
           Vor Ort
         </span>
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300 shadow-sm">
-          <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
           </svg>
           Remote
         </span>
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300 shadow-sm">
-          <svg class="w-4 h-4 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
           </svg>
           Inhouse
@@ -159,9 +159,9 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <!-- All Courses Overview -->
   <section id="kurse" class="py-16 scroll-mt-20 dark:bg-gray-950">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mb-12">
-        <h2 class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Unsere {topic}-Schulungen</h2>
-        <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+      <div class="max-w-5xl mx-auto mb-12">
+        <h2 class="!text-sm !font-semibold text-primary uppercase !tracking-wide mb-3">Unsere {topic}-Schulungen</h2>
+        <p class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Erweitere dein {topic}-Wissen mit diesen Kursen.
         </p>
       </div>
@@ -187,14 +187,14 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
             </p>
 
             <div class="flex flex-col items-center gap-2 mb-4">
-              <span class="inline-flex items-center gap-1 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium rounded-full">
+              <span class="inline-flex items-center gap-1 px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-xs font-medium rounded-full">
                 <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
                 </svg>
                 {course.duration}
               </span>
               <span class="inline-flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-                <svg class="w-3 h-3 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-3 h-3 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                 </svg>
                 {course.format}
@@ -204,7 +204,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
             <a
               href={buildUtmUrl(`${providerUrl}${course.url}`, 'schulungen_2025', 'portal', 'course_card')}
               target="_blank"
-              class="block w-full text-center bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium py-3 px-4 rounded-lg hover:from-purple-600 hover:to-pink-500 transition-all"
+              class="block w-full text-center bg-gradient-to-r from-primary-500 to-accent-600 text-white font-medium py-3 px-4 rounded-lg hover:from-accent-600 hover:to-primary-500 transition-all"
             >
               Zur Schulung
             </a>
@@ -224,7 +224,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <!-- Benefits Section -->
   <section class="py-20 dark:bg-gray-950">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl">
+      <div class="max-w-5xl mx-auto">
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Interaktiver Workshop</p>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
           Schneller und angenehmer lernen.
@@ -234,7 +234,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
         <ul class="space-y-4">
           {[
             'Durch direktes Feedback schneller lernen.',
@@ -243,7 +243,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
             'Einfach eine gute Zeit mit anderen Entwicklern in der gleichen Situation haben.',
           ].map(item => (
             <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               <span class="text-gray-700 dark:text-gray-300">{item}</span>
@@ -272,14 +272,14 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <!-- What is Angular/TypeScript -->
   <section class="py-20 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl">
+      <div class="max-w-5xl mx-auto">
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Was sind {topic} bzw. TypeScript?</p>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-16 leading-tight">
           Ein Kurzüberblick, um<br />was es geht.
         </h2>
       </div>
 
-      <div class="space-y-12 max-w-4xl">
+      <div class="space-y-12 max-w-5xl mx-auto">
         <!-- Angular -->
         <div class="flex gap-6 items-start">
           <img src="/assets/img/schulungen/shared/logo-angular.svg" alt="Angular Logo" loading="lazy" class="w-16 h-16 flex-shrink-0" />
@@ -395,7 +395,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <!-- Agenda Section -->
   <section class="py-20 bg-white dark:bg-gray-950">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mb-16">
+      <div class="max-w-5xl mx-auto mb-16">
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Agenda</p>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
           Wissen aus der Praxis.
@@ -407,7 +407,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
         </p>
       </div>
 
-      <div class="space-y-12 max-w-5xl">
+      <div class="space-y-12 max-w-5xl mx-auto">
         <!-- TypeScript Basics -->
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div class="flex gap-5">
@@ -420,10 +420,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['Unterschiede zu ES6', 'Funktionen und Scopes', 'Fat Arrow', 'Typen', 'Klassen', 'Decorators / Annotationen', 'Modul-System', 'Interfaces', 'Generics', 'Destructuring'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -445,10 +445,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['Einführung in die Konzepte von Angular', 'Komponenten und Komponentenarchitektur', 'Inputs und Outputs', 'Kommunikation zwischen Komponenten', 'Umgang mit Direktiven', 'Arbeiten mit Angular CLI', 'Nutzen eigener Services', 'Change Detection', 'Dependency Injection'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -469,10 +469,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['Template Driven Forms', 'Reactive Forms', 'Form Builder', 'Validatoren (Standard und Custom)', 'Routing & Lazy Loading', 'REST-API Zugriff mit HttpClient', 'Authentifizierung', 'Child-Routes und Guards'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -488,7 +488,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <section class="py-20 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4">
       <!-- Header -->
-      <div class="max-w-4xl mb-16">
+      <div class="max-w-5xl mx-auto mb-16">
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Erweiterte Agenda</p>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
           Angepasst auf eure Bedürfnisse.
@@ -509,7 +509,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
       </div>
 
       <!-- Classroom Preview -->
-      <div class="max-w-4xl mb-16">
+      <div class="max-w-5xl mx-auto mb-16">
         <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
           <img
             src="/assets/img/workshops/classroom.png"
@@ -522,7 +522,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
       </div>
 
       <!-- Module Info -->
-      <div class="max-w-4xl mb-16">
+      <div class="max-w-5xl mx-auto mb-16">
         <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
           Aktuell haben wir <strong class="text-gray-900 dark:text-white">über 20 Module</strong> die wir in unserer {topic} Schulung kombinieren können.
           In unserem workshops.de virtuellen Klassenraum können wir diese dynamisch und flexibel verwalten.
@@ -531,7 +531,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
         </p>
       </div>
 
-      <div class="space-y-16 max-w-5xl">
+      <div class="space-y-16 max-w-5xl mx-auto">
         <!-- Angular weiterführende Themen -->
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div class="flex gap-5">
@@ -544,10 +544,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['Observables vs. Promises', 'Reactive Programming mit Observables', 'Angular Signals', 'Standalone Components', 'Performance', 'Unit Testing mit Jasmine und Karma', 'E2E Testing mit Cypress', 'Debugging', 'Deployment'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -568,10 +568,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['Schneiden von Modulen', 'Wiederverwendbare Pakete', 'Arbeiten mit Monorepos', 'Angular Elements', 'Web Components'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -592,10 +592,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['Observables', 'Cold vs. Hot Observables', 'Operatoren im Detail', 'Observables vs. Subjects', 'Different Types of Subjects'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -616,10 +616,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['Unit Tests vs. End-to-End Tests', 'Unit Testing', 'End-To-End Testing mit Protractor', 'Source Maps', 'DevTools'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -640,10 +640,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['Aufteilung in Module', 'Lazy-Loading', 'Router-Event-System', 'Guards', 'Resolver', 'Preloading Strategien'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -664,10 +664,10 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
               </p>
             </div>
           </div>
-          <div class="space-y-2 md:pl-4">
+          <div class="space-y-1 md:pl-4">
             {['State-Libraries im Vergleich', 'Redux und @ngrx/Store', '@ngrx/Effects', 'Performanceverbesserung', 'Signals vs. Observables'].map(item => (
               <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 {item}
@@ -682,7 +682,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <!-- Reviews Section -->
   <section class="py-20 dark:bg-gray-950">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mb-12">
+      <div class="max-w-5xl mx-auto mb-12">
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Bewertungen</p>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
           Die Meinung unserer Teilnehmer:innen zählt.
@@ -726,9 +726,9 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   </section>
 
   <!-- Cost Savings -->
-  <section class="py-20 bg-purple-50 dark:bg-gray-900">
+  <section class="py-20 bg-primary-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
         <div>
           <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Kosteneffizienz</p>
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
@@ -755,7 +755,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <!-- Requirements -->
   <section class="py-20 dark:bg-gray-950">
     <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
         <div>
           <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Voraussetzungen</p>
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
@@ -791,16 +791,16 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <!-- Included Benefits -->
   <section class="py-20 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mb-12">
+      <div class="max-w-5xl mx-auto mb-12">
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Enthaltene Leistungen</p>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
           Alles Wichtige ist dabei.
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
         <div>
-          <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
             </svg>
@@ -813,7 +813,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
         </div>
 
         <div>
-          <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
             </svg>
@@ -826,7 +826,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
         </div>
 
         <div>
-          <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
             </svg>
@@ -838,7 +838,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
         </div>
 
         <div>
-          <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
@@ -856,7 +856,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
   <!-- Contact / FAQ -->
   <section class="py-20 dark:bg-gray-950">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl">
+      <div class="max-w-5xl mx-auto">
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Kontakt</p>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
           Sind noch Fragen offen?
@@ -908,7 +908,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
             <h3 class="text-lg font-bold text-white text-center mb-1">{course.title}</h3>
 
             <div class="flex justify-center gap-2 mb-4">
-              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-medium rounded">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-primary-500/20 text-primary-400 text-xs font-medium rounded">
                 {course.duration}
               </span>
             </div>

@@ -25,6 +25,6 @@ export default defineConfig({
   },
   // Redirects
   redirects: {
-    '/discord': 'https://discord.gg/angular-de',
+    '/discord': 'https://workshops.de/join-discord',
   }
 });

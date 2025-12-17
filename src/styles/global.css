@@ -5,22 +5,56 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Custom fonts - Mona Sans for modern, bold headings */
-@import '@fontsource-variable/source-sans-3/index.css';
-@import '@fontsource/fira-code/400.css';
+@import "@fontsource-variable/source-sans-3/index.css";
+@import "@fontsource/fira-code/400.css";
 
 /* Theme configuration */
 @theme {
-  --font-sans: "Source Sans 3 Variable", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: "Fira Code", Menlo, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --font-sans:
+    "Source Sans 3 Variable", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono:
+    "Fira Code", Menlo, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
 
-  /* Brand colors */
-  --color-primary: #8514f5;
-  --color-primary-dark: #6b10c7;
+  /*
+   * Brand colors - Angular
+   * Usage: text-primary, bg-primary-500, border-primary-200, etc.
+   * To adapt for another portal, change these color values.
+   */
+
+  /* Primary color scale (Angular purple #8514f5) */
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7; /* Purple */
+  --color-primary-600: #8514f5; /* Base Angular purple */
+  --color-primary-700: #7c3aed;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
+  --color-primary-950: #3b0764;
+  --color-primary: #8514f5; /* Alias for primary-600 */
+  --color-primary-dark: #6b21a8;
   --color-primary-light: #a855f7;
 
+  /* Accent color scale (Pink #ec4899) */
+  --color-accent-50: #fdf2f8;
+  --color-accent-100: #fce7f3;
+  --color-accent-200: #fbcfe8;
+  --color-accent-300: #f9a8d4;
+  --color-accent-400: #f472b6;
+  --color-accent-500: #ec4899; /* Base pink */
+  --color-accent-600: #db2777;
+  --color-accent-700: #be185d;
+  --color-accent-800: #9d174d;
+  --color-accent-900: #831843;
+  --color-accent-950: #500724;
+  --color-accent: #ec4899; /* Alias for accent-500 */
+
   /* Discord brand color */
-  --color-discord: #5865F2;
-  --color-discord-dark: #4752C4;
+  --color-discord: #5865f2;
+  --color-discord-dark: #4752c4;
 }
 
 /* Base styles */
@@ -36,7 +70,9 @@ body {
   font-size: 1.125rem;
   line-height: 1.7;
   letter-spacing: -0.01em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* ==================== DARK MODE ==================== */
@@ -45,7 +81,12 @@ html.dark body {
 }
 
 /* Dark mode - Headings */
-html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
   @apply text-white;
 }
 
@@ -68,7 +109,7 @@ html.dark nav input {
 
 /* Dark mode - Code blocks */
 html.dark :not(pre) > code {
-  @apply bg-purple-900/50 text-purple-200;
+  @apply bg-primary-900/50 text-primary-200;
 }
 
 /* Dark mode - Prose content */
@@ -101,7 +142,7 @@ html.dark .prose-content hr {
 
 /* Dark mode - Alerts */
 html.dark .alert-info {
-  @apply bg-blue-900/30 border-blue-800 text-blue-300;
+  @apply bg-accent-900/30 border-accent-800 text-accent-300;
 }
 
 html.dark .alert-success {
@@ -120,7 +161,12 @@ html.dark .workshop-hint {
 /* ==================== END DARK MODE ==================== */
 
 /* Headings - Bold, punchy, Smashing-style */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-bold leading-tight tracking-tight;
   letter-spacing: -0.025em;
 }
@@ -164,7 +210,7 @@ code {
 }
 
 :not(pre) > code {
-  @apply bg-purple-100 text-purple-900 px-1.5 py-0.5 rounded;
+  @apply bg-primary-100 text-primary-900 px-1.5 py-0.5 rounded;
 }
 
 /* Focus styles */
@@ -174,7 +220,7 @@ code {
 
 /* Custom gradient button */
 .btn-gradient {
-  @apply bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium py-2 px-6 rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300;
+  @apply bg-gradient-to-r from-primary-500 to-accent-600 text-white font-medium py-2 px-6 rounded-lg hover:from-accent-600 hover:to-primary-600 transition-all duration-300;
 }
 
 /* Content styles for articles - Smashing-inspired */
@@ -252,7 +298,7 @@ code {
 }
 
 .alert-info {
-  @apply bg-blue-50 border border-blue-200 text-blue-800;
+  @apply bg-accent-50 border border-accent-200 text-accent-800;
 }
 
 .alert-success {
@@ -270,8 +316,13 @@ code {
 
 /* Animation */
 @keyframes wiggle {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
 }
 
 .animate-wiggle {

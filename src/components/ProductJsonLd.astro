@@ -56,8 +56,7 @@ const productSchema = {
     },
     "author": {
       "@type": "Person",
-      "name": review.author?.name || "Anonyme/r Teilnehmer:in",
-      ...(review.author?.url && { "url": review.author.url })
+      "name": review.author?.name || "Anonyme/r Teilnehmer:in"
     }
   })) || []
 };
