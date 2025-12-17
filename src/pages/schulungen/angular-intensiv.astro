@@ -883,7 +883,7 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
     </section>
 
   <!-- All Courses - Bottom Section -->
-  <section class="py-16 bg-gray-900 text-white">
+  <section id="alle-schulungen" class="py-16 bg-gray-900 text-white scroll-mt-20">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Alle {topic}-Schulungen</h2>
@@ -936,4 +936,42 @@ const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular
       </p>
       </div>
     </section>
+
+  <!-- Sticky CTA Button -->
+  <div id="sticky-cta" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
+    <a
+      href="#alle-schulungen"
+      class="inline-flex items-center gap-2 bg-primary hover:bg-primary-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+      Alle Schulungen ansehen
+    </a>
+  </div>
+
+  <script is:inline>
+    (function() {
+      const stickyCta = document.getElementById('sticky-cta');
+      const heroSection = document.querySelector('section.relative');
+
+      if (!stickyCta || !heroSection) return;
+
+      function updateVisibility() {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        const shouldShow = heroBottom < 0;
+
+        if (shouldShow) {
+          stickyCta.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+          stickyCta.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        } else {
+          stickyCta.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+          stickyCta.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        }
+      }
+
+      window.addEventListener('scroll', updateVisibility, { passive: true });
+      updateVisibility();
+    })();
+  </script>
 </BaseLayout>

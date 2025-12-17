@@ -147,6 +147,10 @@ export const siteConfig = {
       { name: "CloudNative.EU", href: "https://cloudnative.eu" },
       { name: "Workshops.DE", href: "https://workshops.de" },
       { name: "NG-DE Konferenz", href: "https://ng-de.org" },
+      {
+        name: "AI-Automation-Engineers.de",
+        href: "https://ai-automation-engineers.de",
+      },
     ] as CommunityLink[],
   },
 
