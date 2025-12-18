@@ -8,6 +8,10 @@ import BreadcrumbsJsonLd from '../components/BreadcrumbsJsonLd.astro';
 import { siteConfig } from '../config/site';
 import '../styles/global.css';
 
+// Font preloading for better LCP
+import sourceSansWoff2 from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
+import firaCodeWoff2 from '@fontsource/fira-code/files/fira-code-latin-400-normal.woff2?url';
+
 interface Props {
   title: string;
   description?: string;
@@ -45,6 +49,11 @@ const gtmProperty = siteConfig.gtm_property;
 <html lang="de">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="utf-8">
+
+  <!-- Preload fonts for better LCP -->
+  <link rel="preload" as="font" type="font/woff2" href={sourceSansWoff2} crossorigin="anonymous" />
+  <link rel="preload" as="font" type="font/woff2" href={firaCodeWoff2} crossorigin="anonymous" />
+
   <!-- Prevent flash of wrong theme - following Tailwind docs -->
   <script is:inline>
     // On page load, best to add inline in `head` to avoid FOUC
