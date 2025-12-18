@@ -1,0 +1,976 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProductJsonLd from '../../../components/ProductJsonLd.astro';
+import { siteConfig, buildUtmUrl, getLocalizedCourses } from '../../../config/site';
+import courseData from '../../../data/course.json';
+
+const { topic } = siteConfig;
+const { providerUrl } = siteConfig.training;
+const courses = getLocalizedCourses('en');
+
+// Client logos
+const clients = [
+  { name: 'RWE', logo: '/shared/assets/img/clients/rwe.svg' },
+  { name: 'Commerzbank', logo: '/shared/assets/img/clients/commerzbank.svg' },
+  { name: 'Allianz', logo: '/shared/assets/img/clients/allianz.svg' },
+  { name: 'Bosch', logo: '/shared/assets/img/clients/bosch.svg' },
+  { name: 'Galeria Kaufhof', logo: '/shared/assets/img/clients/galeria-kaufhof.svg' },
+  { name: 'SWR', logo: '/shared/assets/img/clients/swr.svg' },
+];
+
+// Load reviews from course.json
+const reviews = courseData.review.slice(0, 6).map(review => ({
+  stars: review.reviewRating.ratingValue,
+  quote: review.reviewBody,
+  author: review.author.name,
+  date: review.datePublished,
+}));
+
+// Aggregate rating from course.json
+const aggregateRating = courseData.aggregateRating;
+
+// Featured Testimonials with images
+const testimonials = [
+  {
+    quote: 'The trainers are absolute professionals and convey their enthusiasm for the subject. Our employees benefit from intensive, practical training that addresses their needs. The feedback is exceptionally good.',
+    name: 'Annika Stille',
+    role: 'Head of Internal Training',
+    company: 'Adesso AG',
+    image: '/assets/img/schulungen/shared/testimonial-annika-stille-adesso.jpg',
+    align: 'left',
+  },
+  {
+    quote: 'The training courses are always focused on current market topics and fit our needs perfectly. They help our employees prepare quickly and efficiently for upcoming projects.',
+    name: 'Christian Janz',
+    role: 'Lead Software Architect',
+    company: 'bridgingIT',
+    image: '/assets/img/schulungen/shared/testimonial-christianz-janz.png',
+    align: 'right',
+  },
+];
+
+const bookingUrl = buildUtmUrl(`${providerUrl}/seminare-schulungen-kurse/angular-typescript`, 'schulungen_2025', 'portal', 'schulung_page');
+---
+
+<BaseLayout
+  title={`${topic} & TypeScript Intensive Training (On-Site / Remote)`}
+  description={`Want to learn ${topic}? Learn comfortably on-site or remotely together. Find out more about our intensive training!`}
+>
+  <!-- Product JSON-LD for rich search results -->
+  <ProductJsonLd />
+
+  <!-- Hero Header -->
+  <section class="relative py-20 md:py-28 overflow-hidden dark:bg-gray-950">
+    <!-- Gradient Mesh Background (Light) - Angular purple/pink -->
+    <div class="absolute inset-0 dark:hidden" style="background: radial-gradient(at 20% 30%, rgba(133, 20, 245, 0.08) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(236, 72, 153, 0.1) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(133, 20, 245, 0.06) 0px, transparent 50%), radial-gradient(at 90% 70%, rgba(236, 72, 153, 0.05) 0px, transparent 50%), linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);"></div>
+    <!-- Gradient Mesh Background (Dark) - Angular purple/pink -->
+    <div class="absolute inset-0 hidden dark:block" style="background: radial-gradient(at 20% 30%, rgba(133, 20, 245, 0.15) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(236, 72, 153, 0.12) 0px, transparent 50%), radial-gradient(at 40% 80%, rgba(133, 20, 245, 0.1) 0px, transparent 50%);"></div>
+    <!-- Dot Grid Pattern Overlay -->
+    <div class="absolute inset-0 dark:opacity-30" style="background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-primary-700 dark:text-primary-400 rounded-full text-sm font-medium mb-6 dark:bg-gray-800/50">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        Next dates available
+      </div>
+
+      <!-- Logo -->
+      <div class="w-28 h-28 md:w-36 md:h-36 mx-auto mb-8">
+        <img
+          src="/assets/img/workshops/logo-angular-typescript-schulung.svg"
+          alt={`${topic} & TypeScript Training`}
+          class="w-full h-full drop-shadow-lg"
+        />
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-gray-900 dark:text-white mb-6">
+        The Best Way to Get<br />
+        Started with <span class="text-primary">{topic}</span>.
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-xl text-gray-600 dark:text-gray-400 mb-4 max-w-2xl mx-auto">
+        Our training courses prepare you for productive use of {topic}.
+        Trust in our expertise like over <span class="font-semibold text-gray-900 dark:text-white">2000+ participants</span> before you.
+      </p>
+
+      <!-- Format badges -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300 shadow-sm">
+          <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          On-Site
+        </span>
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300 shadow-sm">
+          <svg class="w-4 h-4 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+          Remote
+        </span>
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300 shadow-sm">
+          <svg class="w-4 h-4 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          </svg>
+          In-House
+        </span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={bookingUrl}
+          target="_blank"
+          class="inline-flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold px-8 py-4 rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shadow-lg"
+        >
+          Book Training
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+        <a
+          href="#kurse"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gray-300 dark:border-gray-600 rounded-full font-semibold text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors"
+        >
+          View All Courses
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos -->
+  <section class="bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-8 md:gap-12 items-center">
+        {clients.map(client => (
+          <img
+            src={client.logo}
+            alt={client.name}
+            loading="lazy"
+            class="h-10 md:h-14 lg:h-30 w-auto mx-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all dark:invert dark:opacity-60 dark:hover:opacity-70 dark:hover:grayscale"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- All Courses Overview -->
+  <section id="kurse" class="py-16 scroll-mt-20 dark:bg-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto mb-12">
+        <h2 class="!text-sm !font-semibold text-primary uppercase !tracking-wide mb-3">Our {topic} Training Courses</h2>
+        <p class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Expand your {topic} knowledge with these courses.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {courses.map(course => (
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 flex flex-col h-full hover:shadow-lg transition-shadow">
+            <div class="flex justify-center mb-4">
+              <img
+                src={course.icon}
+                alt={course.title}
+                class="h-16 w-auto"
+                loading="lazy"
+                onerror={`this.onerror=null; this.src='/assets/img/schulungen/shared/logo-angular.svg'`}
+              />
+            </div>
+
+            <h3 class="text-lg text-gray-900 dark:text-white text-center mb-1">{course.title}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-3">{course.subtitle}</p>
+
+            <p class="text-sm text-gray-600 dark:text-gray-400 text-center flex-1 mb-4">
+              {course.description}
+            </p>
+
+            <div class="flex flex-col items-center gap-2 mb-4">
+              <span class="inline-flex items-center gap-1 px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-xs font-medium rounded-full">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                </svg>
+                {course.duration}
+              </span>
+              <span class="inline-flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+                <svg class="w-3 h-3 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                {course.format}
+              </span>
+            </div>
+
+            <a
+              href={buildUtmUrl(`${providerUrl}${course.url}`, 'schulungen_2025', 'portal', 'course_card')}
+              target="_blank"
+              class="block w-full text-center bg-gradient-to-r from-primary-500 to-accent-600 text-white font-medium py-3 px-4 rounded-lg hover:from-accent-600 hover:to-primary-500 transition-all"
+            >
+              To Training
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-gray-500 dark:text-gray-400 mt-8">
+        All training courses are conducted by
+        <img src="/shared/assets/img/workshops-de-logo.svg" alt="workshops.de" class="inline h-5 mx-1 align-middle" loading="lazy" />
+        <a href={buildUtmUrl(providerUrl, 'schulungen_2025', 'portal', 'provider_link')} target="_blank" class="text-primary hover:underline font-medium">workshops.de</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-20 dark:bg-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Interactive Workshop</p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8 leading-tight">
+          Learn faster and more comfortably.
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+          Books and video courses are indispensable today. However, in our training you can:
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <ul class="space-y-4">
+          {[
+            'Learn faster through direct feedback.',
+            'Ask the trainer for specific solution approaches for your project.',
+            'Overcome learning hurdles together.',
+            'Simply have a good time with other developers in the same situation.',
+          ].map(item => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="grid grid-cols-2 gap-4">
+          <img
+            src="/assets/img/schulungen/angular-enterprise-applications/attendees.jpg"
+            alt="Participants"
+            loading="lazy"
+            class="rounded-lg shadow-lg"
+          />
+          <img
+            src="/assets/img/schulungen/shared/workshops-de-angular-schulung-remote-session.png"
+            alt="Remote Session"
+            loading="lazy"
+            class="rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Angular/TypeScript -->
+  <section class="py-20 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">What are {topic} and TypeScript?</p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-16 leading-tight">
+          A brief overview of<br />what it's all about.
+        </h2>
+      </div>
+
+      <div class="space-y-12 max-w-5xl mx-auto">
+        <!-- Angular -->
+        <div class="flex gap-6 items-start">
+          <img src="/assets/img/schulungen/shared/logo-angular.svg" alt="Angular Logo" loading="lazy" class="w-16 h-16 flex-shrink-0" />
+          <div>
+            <h3 class="text-xl text-gray-900 dark:text-white mb-3">{topic}</h3>
+            <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              {topic} is a client-side JavaScript framework used millions of times worldwide for creating web applications.
+              The framework provides clear structures and supports modularization and lazy loading, among other things. It is
+              developed by Google and targets developers of complex enterprise applications. Since version 2, the framework
+              is no longer called AngularJS but Angular.
+            </p>
+          </div>
+        </div>
+
+        <!-- TypeScript -->
+        <div class="flex gap-6 items-start">
+          <img src="/assets/img/schulungen/shared/logo-typescript.svg" alt="TypeScript Logo" loading="lazy" class="w-16 h-16 flex-shrink-0" />
+          <div>
+            <h3 class="text-xl text-gray-900 dark:text-white mb-3">TypeScript</h3>
+            <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              TypeScript has been developed by Microsoft since 2012 and is a superset of the JavaScript language
+              (the basis of web application development). It extends it with, among other things, a type system that
+              greatly supports the development and maintenance of web applications. Especially developers who have
+              previously learned programming languages like Java or C# find it significantly easier to get started.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="relative" id="testimonial-slider">
+          {testimonials.map((testimonial, index) => (
+            <div
+              class={`testimonial-slide ${index === 0 ? '' : 'hidden'}`}
+              data-index={index}
+            >
+              <div class="flex flex-col md:flex-row gap-8 items-center">
+                <!-- Image -->
+                <div class="w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    class="w-full h-full object-cover object-top rounded-full"
+                    loading="lazy"
+                  />
+                </div>
+
+                <!-- Quote -->
+                <div class="flex-1 text-center md:text-left">
+                  <blockquote class="text-lg text-gray-700 dark:text-gray-300 italic mb-4">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div>
+                    <p class="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}, {testimonial.company}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <!-- Navigation dots -->
+          <div class="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, index) => (
+              <button
+                class={`testimonial-dot w-2 h-2 rounded-full transition-colors ${index === 0 ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-600'}`}
+                data-target={index}
+                aria-label={`Testimonial ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function() {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const dots = document.querySelectorAll('.testimonial-dot');
+      const totalSlides = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('hidden', i !== index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('bg-primary', i === index);
+          dot.classList.toggle('bg-gray-300', i !== index);
+        });
+        currentSlide = index;
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          showSlide(parseInt(dot.dataset.target));
+        });
+      });
+
+      // Auto-advance every 6 seconds
+      setInterval(() => {
+        showSlide((currentSlide + 1) % totalSlides);
+      }, 6000);
+    })();
+  </script>
+
+  <!-- Agenda Section -->
+  <section class="py-20 bg-white dark:bg-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto mb-16">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Agenda</p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8 leading-tight">
+          Knowledge from practice.
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          We are developers ourselves and know which problems will arise first in the real world. That's why
+          we work with examples from the real world. We have then reduced these to the core to make them easy
+          to convey. <strong class="text-gray-900 dark:text-white">The practical share is 60%</strong>.
+        </p>
+      </div>
+
+      <div class="space-y-12 max-w-5xl mx-auto">
+        <!-- TypeScript Basics -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/shared/logo-typescript.svg" alt="TypeScript" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">TypeScript Basics</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                We start with a brief introduction to TypeScript (approx. 3 hours). There we learn the
+                basics for the subsequent {topic} part.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['Differences from ES6', 'Functions and Scopes', 'Fat Arrow', 'Types', 'Classes', 'Decorators / Annotations', 'Module System', 'Interfaces', 'Generics', 'Destructuring'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Angular Components -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/shared/logo-angular.svg" alt="Angular" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">{topic} Components and Services</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Then we work through the basic concepts of {topic} along a continuous
+                example application. There is always a short theory part, followed by a task.
+                We provide a sample solution for the various steps.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['Introduction to Angular concepts', 'Components and component architecture', 'Inputs and Outputs', 'Communication between components', 'Working with directives', 'Working with Angular CLI', 'Using custom services', 'Change Detection', 'Dependency Injection'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Forms and REST -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/shared/logo-angular.svg" alt="Angular" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">{topic} Forms and REST APIs</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                After the basics, we move on to the topics that form the core of every application.
+                Forms, validation, and connecting to backend services.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['Template Driven Forms', 'Reactive Forms', 'Form Builder', 'Validators (Standard and Custom)', 'Routing & Lazy Loading', 'REST API Access with HttpClient', 'Authentication', 'Child Routes and Guards'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extended Agenda -->
+  <section class="py-20 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <!-- Header -->
+      <div class="max-w-5xl mx-auto mb-16">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Extended Agenda</p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8 leading-tight">
+          Adapted to your needs.
+        </h2>
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            As a trainer community, we provide you with a large portfolio of materials and tasks.
+            However, since only a certain amount of knowledge can be absorbed in a few days, we have advanced topics
+            that we adapt to the respective needs and challenges of the group. So if you already know the basics,
+            they are only briefly reviewed so that everyone uses the same terminology and concepts. This works in the other direction
+            of course just as well and, for example, basic modules for HTML & CSS can be added.
+          </p>
+          <p>
+            Together with your trainer, you decide how we can best help you.
+            Sometimes it also makes sense to conduct two units with a gap of a few weeks to let the knowledge sink in a bit.
+          </p>
+        </div>
+      </div>
+
+      <!-- Classroom Preview -->
+      <div class="max-w-5xl mx-auto mb-16">
+        <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+          <img
+            src="/assets/img/workshops/classroom.png"
+            alt="Example Classroom by workshops.DE"
+            class="w-full"
+            loading="lazy"
+          />
+        </div>
+        <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">Example Classroom by workshops.DE</p>
+      </div>
+
+      <!-- Module Info -->
+      <div class="max-w-5xl mx-auto mb-16">
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          Currently we have <strong class="text-gray-900 dark:text-white">over 20 modules</strong> that we can combine in our {topic} training.
+          In our workshops.de virtual classroom, we can manage these dynamically and flexibly.
+          We also want to clearly communicate that in our public training courses, due to the often very mixed group,
+          not all additional modules can be discussed in detail. Here is a selection of our additional modules:
+        </p>
+      </div>
+
+      <div class="space-y-16 max-w-5xl mx-auto">
+        <!-- Angular Advanced Topics -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/shared/logo-angular.svg" alt="Angular" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">{topic} Advanced Topics</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                The remaining time we dedicate to individual topic requests. The group can choose which
+                topics are most relevant to them. We have over 600 slides from which we can choose ad hoc.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['Observables vs. Promises', 'Reactive Programming with Observables', 'Angular Signals', 'Standalone Components', 'Performance', 'Unit Testing with Jasmine and Karma', 'E2E Testing with Cypress', 'Debugging', 'Deployment'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Architecture of Large Applications -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/angular-enterprise-applications/icons/cdk.svg" alt="CDK" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">Architecture of Large Applications</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                How do you best divide an application and why? How do I program future-proof?
+                In this part, we provide the answers.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['Cutting Modules', 'Reusable Packages', 'Working with Monorepos', 'Angular Elements', 'Web Components'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- RxJS for Reactive Architectures -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/angular-enterprise-applications/icons/rxjs.svg" alt="RxJS" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">RxJS for Reactive Architectures</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                What is the difference between ReplaySubject and BehaviorSubject and when do I use what?
+                How do I use RxJS (Reactive Extensions for JavaScript) to implement my application maintainably?
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['Observables', 'Cold vs. Hot Observables', 'Operators in Detail', 'Observables vs. Subjects', 'Different Types of Subjects'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Testing & Debugging -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/angular-enterprise-applications/icons/karma.svg" alt="Karma" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">Testing & Debugging</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Manual testing is very time-consuming and distracts you from actual development.
+                With a sensible testing strategy, you can secure your code and develop faster.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['Unit Tests vs. End-to-End Tests', 'Unit Testing', 'End-To-End Testing with Protractor', 'Source Maps', 'DevTools'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Advanced Routing -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/angular-enterprise-applications/icons/router.svg" alt="Router" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">Advanced Routing</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                The Angular Router is powerful and offers many features. We'll show you how to get the best
+                out of the router and structure your application efficiently.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['Division into Modules', 'Lazy Loading', 'Router Event System', 'Guards', 'Resolvers', 'Preloading Strategies'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- State Management -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="flex gap-5">
+            <img src="/assets/img/schulungen/shared/logo-angular.svg" alt="Angular" loading="lazy" class="w-14 h-14 flex-shrink-0" />
+            <div>
+              <h3 class="text-2xl text-gray-900 dark:text-white mb-3">State Management</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                How do I manage the state of my application efficiently? We compare different approaches
+                and show you when which solution fits best.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-1 md:pl-4">
+            {['State Libraries Compared', 'Redux and @ngrx/Store', '@ngrx/Effects', 'Performance Improvement', 'Signals vs. Observables'].map(item => (
+              <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="py-20 dark:bg-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto mb-12">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Reviews</p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8 leading-tight">
+          The opinion of our participants counts.
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          After each training, we ask our participants for feedback. From a total of <strong class="text-gray-900 dark:text-white">{aggregateRating.reviewCount}</strong> submitted
+          ratings, we currently achieve an average <strong class="text-gray-900 dark:text-white">rating of {aggregateRating.ratingValue} stars</strong>.
+        </p>
+        <a
+          href={`${providerUrl}/seminare-schulungen-kurse/angular-typescript/erfahrungen`}
+          target="_blank"
+          class="text-primary hover:underline mt-2 inline-block"
+        >
+          View all reviews →
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {reviews.map(review => (
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+            <div class="flex gap-1 mb-3">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg
+                  class={`w-5 h-5 ${i < review.stars ? 'text-yellow-400' : 'text-gray-200 dark:text-gray-600'}`}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-700 dark:text-gray-300 italic mb-3">"{review.quote}"</p>
+            <div class="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+              <span class="font-medium text-gray-700 dark:text-gray-300">{review.author}</span>
+              <span>{new Date(review.date).toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' })}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Savings -->
+  <section class="py-20 bg-primary-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+        <div>
+          <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Cost Efficiency</p>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8 leading-tight">
+            Save costs.
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            Do you know the Standish Group study? Errors at the very beginning of a project are the most expensive.
+            We have been working with {topic} for over 10 years and have already made most of the mistakes. Use our experience and
+            avoid the most common beginner mistakes.
+          </p>
+        </div>
+        <div class="relative">
+          <img
+            src="/assets/img/schulungen/shared/piggy-bank.png"
+            alt="Cost savings through professional training"
+            class="w-full max-w-md mx-auto"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Requirements -->
+  <section class="py-20 dark:bg-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+        <div>
+          <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Requirements</p>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8 leading-tight">
+            Get started directly without much prior knowledge.
+          </h2>
+          <div class="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p>
+              Prerequisites are <strong class="text-gray-900 dark:text-white">basic knowledge of JavaScript and HTML</strong>.
+              Within the workshop, we respond to the individual situation of the group and adapt
+              both the focus and the speed. Thus, for example, basics
+              can be reviewed again or skipped.
+            </p>
+            <p>
+              <strong class="text-gray-900 dark:text-white">Technical requirement</strong> for the training is a laptop
+              with Windows, Linux, or MacOSX. Furthermore, NodeJS with some packages is required,
+              you will receive a step-by-step guide after registering for
+              this workshop.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="/assets/img/workshops/attendees-coding.jpg"
+            alt="Participants coding in training"
+            class="w-full rounded-2xl shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Included Benefits -->
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto mb-12">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Included Services</p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8 leading-tight">
+          Everything important is included.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div>
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Pre-meeting with trainer</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Every group is different. So that we can optimally design the workshop for you,
+            we conduct an intensive conversation with you before each in-house workshop.
+          </p>
+        </div>
+
+        <div>
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Course materials incl. updates</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            You receive access to all materials and additional materials via our virtual classroom.
+            With your account, you have lifetime access - including updates!
+          </p>
+        </div>
+
+        <div>
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Certificate of participation</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            After successful completion, you receive an official certificate of participation as proof of your training. The certificate can be shared on LinkedIn.
+          </p>
+        </div>
+
+        <div>
+          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Food & Drinks</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            In our public training courses, food and drinks are included for the entire event time.
+            Vegetarian options are available.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / FAQ -->
+  <section class="py-20 dark:bg-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Contact</p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8 leading-tight">
+          Do you still have questions?
+        </h2>
+
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <img
+            src="/assets/img/gravatars/e9e044629f5324a4a3c27302f0d4efcc-300x300.jpg"
+            alt="Robin Böhm"
+            loading="lazy"
+            class="w-24 h-24 rounded-lg shadow-sm"
+          />
+          <div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Robin Böhm</p>
+            <p class="text-gray-700 dark:text-gray-300">
+              Then just send us an email to <a href="mailto:info@angular.de" class="text-primary hover:underline">info@angular.de</a>.
+              If you prefer more personal contact, we are also happy to receive a call from you! We are available by phone
+              from 8 am to 1 pm on weekdays at <a href="tel:+493075437336" class="text-primary hover:underline">+49 30 / 75437336</a>.
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- All Courses - Bottom Section -->
+  <section id="alle-schulungen" class="py-16 bg-gray-900 text-white scroll-mt-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl mb-4">All {topic} Training Courses</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Find the right training for your level and goals.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {courses.map(course => (
+          <div class="bg-gray-800 rounded-xl p-6 flex flex-col h-full hover:bg-gray-750 transition-colors border border-gray-700">
+            <div class="flex justify-center mb-4">
+              <img
+                src={course.icon}
+                alt={course.title}
+                class="h-14 w-auto"
+                loading="lazy"
+                onerror={`this.onerror=null; this.src='/assets/img/schulungen/shared/logo-angular.svg'`}
+              />
+            </div>
+
+            <h3 class="text-lg text-white text-center mb-1">{course.title}</h3>
+
+            <div class="flex justify-center gap-2 mb-4">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-primary-500/20 text-primary-400 text-xs font-medium rounded">
+                {course.duration}
+              </span>
+            </div>
+
+            <p class="text-sm text-gray-400 text-center flex-1 mb-4">
+              {course.description}
+            </p>
+
+            <a
+              href={buildUtmUrl(`${providerUrl}${course.url}`, 'schulungen_2025', 'portal', 'bottom_course_card')}
+          target="_blank"
+              class="block w-full text-center bg-white text-gray-900 font-medium py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              To Training
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-gray-400 mt-8 flex items-center justify-center gap-2">
+        All training courses are conducted by
+        <img src="/shared/assets/img/workshops-de-logo.svg" alt="workshops.de" class="inline h-5 align-middle" loading="lazy" />
+        <a href={buildUtmUrl(providerUrl, 'schulungen_2025', 'portal', 'bottom_provider_link')} target="_blank" class="text-white hover:underline font-medium">workshops.de</a>.
+      </p>
+      </div>
+    </section>
+
+  <!-- Sticky CTA Button -->
+  <div id="sticky-cta" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
+    <a
+      href="#alle-schulungen"
+      class="inline-flex items-center gap-2 bg-primary hover:bg-primary-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+      View All Training Courses
+    </a>
+  </div>
+
+  <script is:inline>
+    (function() {
+      const stickyCta = document.getElementById('sticky-cta');
+      const heroSection = document.querySelector('section.relative');
+
+      if (!stickyCta || !heroSection) return;
+
+      function updateVisibility() {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        const shouldShow = heroBottom < 0;
+
+        if (shouldShow) {
+          stickyCta.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+          stickyCta.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        } else {
+          stickyCta.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+          stickyCta.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        }
+      }
+
+      window.addEventListener('scroll', updateVisibility, { passive: true });
+      updateVisibility();
+    })();
+  </script>
+</BaseLayout>

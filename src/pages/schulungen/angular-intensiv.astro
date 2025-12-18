@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductJsonLd from '../../components/ProductJsonLd.astro';
-import { siteConfig, buildUtmUrl } from '../../config/site';
+import { siteConfig, buildUtmUrl, getLocalizedCourses } from '../../config/site';
 import courseData from '../../data/course.json';
 
 const { topic } = siteConfig;
-const { providerUrl, courses } = siteConfig.training;
+const { providerUrl } = siteConfig.training;
+const courses = getLocalizedCourses('de');
 
 // Client logos
 const clients = [

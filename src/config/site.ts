@@ -113,48 +113,104 @@ export const siteConfig = {
     courses: [
       {
         id: "angular-typescript",
-        title: "Angular & TypeScript",
-        subtitle: "Grundlagen-Intensivkurs",
-        description:
-          "Grundlagen-Intensivkurs für den Einstieg in Angular und TypeScript. Perfekt für Einsteiger:innen.",
-        duration: "3 Tage",
-        format: "Vor Ort oder Remote",
+        title: {
+          de: "Angular & TypeScript",
+          en: "Angular & TypeScript",
+        },
+        subtitle: {
+          de: "Grundlagen-Intensivkurs",
+          en: "Fundamentals Intensive Course",
+        },
+        description: {
+          de: "Grundlagen-Intensivkurs für den Einstieg in Angular und TypeScript. Perfekt für Einsteiger:innen.",
+          en: "Fundamentals intensive course for getting started with Angular and TypeScript. Perfect for beginners.",
+        },
+        duration: {
+          de: "3 Tage",
+          en: "3 Days",
+        },
+        format: {
+          de: "Vor Ort oder Remote",
+          en: "On-Site or Remote",
+        },
         icon: "/assets/img/workshops/logo-angular-typescript-schulung.svg",
         url: "/seminare-schulungen-kurse/angular-typescript",
         level: "beginner",
       },
       {
         id: "angular-advanced",
-        title: "Angular Advanced",
-        subtitle: "Fortgeschrittene Konzepte",
-        description:
-          "Fortgeschrittene Konzepte für erfahrene Entwickler:innen. RxJS, Testing, Performance und Architektur.",
-        duration: "3 Tage",
-        format: "Vor Ort oder Remote",
+        title: {
+          de: "Angular Advanced",
+          en: "Angular Advanced",
+        },
+        subtitle: {
+          de: "Fortgeschrittene Konzepte",
+          en: "Advanced Concepts",
+        },
+        description: {
+          de: "Fortgeschrittene Konzepte für erfahrene Entwickler:innen. RxJS, Testing, Performance und Architektur.",
+          en: "Advanced concepts for experienced developers. RxJS, Testing, Performance and Architecture.",
+        },
+        duration: {
+          de: "3 Tage",
+          en: "3 Days",
+        },
+        format: {
+          de: "Vor Ort oder Remote",
+          en: "On-Site or Remote",
+        },
         icon: "/assets/img/workshops/logo-angular-advanced.svg",
         url: "/seminare-schulungen-kurse/angular-advanced",
         level: "advanced",
       },
       {
         id: "modern-angular",
-        title: "Modern Angular - 2025 Edition",
-        subtitle: "Neueste Features",
-        description:
-          "Für erfahrene Angular-Entwickler:innen. Lerne Signals, Control Flow, SSR und die neuesten Features.",
-        duration: "2 Tage",
-        format: "Vor Ort oder Remote",
+        title: {
+          de: "Modern Angular - 2025 Edition",
+          en: "Modern Angular - 2025 Edition",
+        },
+        subtitle: {
+          de: "Neueste Features",
+          en: "Latest Features",
+        },
+        description: {
+          de: "Für erfahrene Angular-Entwickler:innen. Lerne Signals, Control Flow, SSR und die neuesten Features.",
+          en: "For experienced Angular developers. Learn Signals, Control Flow, SSR and the latest features.",
+        },
+        duration: {
+          de: "2 Tage",
+          en: "2 Days",
+        },
+        format: {
+          de: "Vor Ort oder Remote",
+          en: "On-Site or Remote",
+        },
         icon: "/assets/img/workshops/logo-angular-enterprise-applications.svg",
         url: "/seminare-schulungen-kurse/modern-angular",
         level: "advanced",
       },
       {
         id: "angular-ai",
-        title: "Angular & AI Engineering",
-        subtitle: "KI-gestützte Entwicklung",
-        description:
-          "Moderne Angular-Entwicklung mit KI-Tools. Lerne AI-unterstützte Entwicklung und Agentic Engineering.",
-        duration: "2 Tage",
-        format: "Vor Ort oder Remote",
+        title: {
+          de: "Angular & AI Engineering",
+          en: "Angular & AI Engineering",
+        },
+        subtitle: {
+          de: "KI-gestützte Entwicklung",
+          en: "AI-Powered Development",
+        },
+        description: {
+          de: "Moderne Angular-Entwicklung mit KI-Tools. Lerne AI-unterstützte Entwicklung und Agentic Engineering.",
+          en: "Modern Angular development with AI tools. Learn AI-assisted development and Agentic Engineering.",
+        },
+        duration: {
+          de: "2 Tage",
+          en: "2 Days",
+        },
+        format: {
+          de: "Vor Ort oder Remote",
+          en: "On-Site or Remote",
+        },
         icon: "/assets/img/workshops/angular-agentic-ai-engineering.svg",
         url: "/seminare-schulungen-kurse/angular-ai-engineering",
         level: "advanced",
@@ -203,5 +259,19 @@ export function getCommunityLinks() {
       "portal",
       "footer_nav"
     ),
+  }));
+}
+
+// Helper to get localized courses
+export type Lang = "de" | "en";
+
+export function getLocalizedCourses(lang: Lang = "de") {
+  return siteConfig.training.courses.map((course) => ({
+    ...course,
+    title: course.title[lang],
+    subtitle: course.subtitle[lang],
+    description: course.description[lang],
+    duration: course.duration[lang],
+    format: course.format[lang],
   }));
 }

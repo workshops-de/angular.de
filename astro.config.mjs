@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import pagefind from "astro-pagefind";
 import tailwindcss from "@tailwindcss/vite";
+import { remarkWorkshopHint } from "./src/plugins/remark-workshop-hint.mjs";
 
 // Site URL - keep in sync with src/config/site.ts
 const SITE_URL = "https://angular.de";
@@ -18,7 +19,15 @@ const codeBlockEnhancer = {
 export default defineConfig({
   site: SITE_URL,
   integrations: [sitemap(), pagefind()],
+  i18n: {
+    defaultLocale: "de",
+    locales: ["de", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   markdown: {
+    remarkPlugins: [remarkWorkshopHint],
     shikiConfig: {
       theme: "github-dark",
       wrap: true,

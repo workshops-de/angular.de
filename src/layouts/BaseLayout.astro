@@ -7,6 +7,8 @@ import OrganizationJsonLd from '../components/OrganizationJsonLd.astro';
 import WebsiteJsonLd from '../components/WebsiteJsonLd.astro';
 import BreadcrumbsJsonLd from '../components/BreadcrumbsJsonLd.astro';
 import { siteConfig } from '../config/site';
+import { getLangFromUrl, getAlternateUrls } from '../i18n/utils';
+import { defaultLang } from '../i18n/ui';
 import '../styles/global.css';
 
 // Font preloading for better LCP (only main font, not code font)
@@ -36,8 +38,12 @@ const {
   slug,
 } = Astro.props;
 
+// i18n: Get current language
+const lang = getLangFromUrl(Astro.url);
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || siteConfig.url;
+const alternateUrls = getAlternateUrls(Astro.url, siteUrl, Astro.locals.currentSlug, Astro.locals.translationSlug);
+
 const fullTitle = `${title} | ${siteConfig.title}`;
-const siteUrl = Astro.site?.toString() || siteConfig.url;
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).toString();
 
 // Only load GTM in production
@@ -46,7 +52,7 @@ const gtmProperty = siteConfig.gtm_property;
 ---
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang={lang}>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="utf-8">
 
@@ -83,6 +89,12 @@ const gtmProperty = siteConfig.gtm_property;
   ) : (
     <link rel="canonical" href={currentUrl}>
   )}
+
+  {/* Alternate language links (hreflang) */}
+  {!noindex && alternateUrls.map(({ lang: altLang, url }) => (
+    <link rel="alternate" hreflang={altLang} href={url} />
+  ))}
+  {!noindex && <link rel="alternate" hreflang="x-default" href={alternateUrls.find(a => a.lang === defaultLang)?.url || currentUrl} />}
 
   <SocialMetaTags
     title={title}

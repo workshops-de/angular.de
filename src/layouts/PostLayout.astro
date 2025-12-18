@@ -4,8 +4,10 @@ import PostAuthor from '../components/PostAuthor.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import ReadingTime from '../components/ReadingTime.astro';
 import ArticleJsonLd from '../components/ArticleJsonLd.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../config/site';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   title: string;
@@ -14,7 +16,7 @@ interface Props {
   co_author?: string;
   published_at: Date;
   categories?: string;
-  header_image?: string;
+  header_image?: ImageMetadata;
   toc?: boolean;
   language?: string;
   canonical_url?: string;
@@ -29,7 +31,7 @@ const {
   co_author,
   published_at,
   categories = '',
-  header_image = 'header.jpg',
+  header_image,
   language = 'de',
   canonical_url,
   slug: propSlug,
@@ -56,16 +58,17 @@ const formattedDate = published_at.toLocaleDateString('de-DE', {
 // Get the raw content for reading time
 const rawContent = await Astro.slots.render('default');
 
-// Resolve header image path
-const resolvedHeaderImage = header_image?.startsWith('/') || header_image?.startsWith('http')
-  ? header_image
-  : `/artikel/${slug}/${header_image}`;
-
 // Full URL for JSON-LD
-const fullUrl = `${siteConfig.url}/artikel/${slug}/`;
-const fullImageUrl = resolvedHeaderImage.startsWith('http')
-  ? resolvedHeaderImage
-  : `${siteConfig.url}${resolvedHeaderImage}`;
+const isEnglish = language === 'en';
+const fullUrl = isEnglish
+  ? `${siteConfig.url}/en/articles/${slug}/`
+  : `${siteConfig.url}/artikel/${slug}/`;
+
+// For JSON-LD, we need the full image URL
+// header_image is now an ImageMetadata object from Astro
+const fullImageUrl = header_image?.src
+  ? (header_image.src.startsWith('http') ? header_image.src : `${siteConfig.url}${header_image.src}`)
+  : `${siteConfig.url}/default-header.jpg`;
 ---
 
 <BaseLayout
@@ -140,11 +143,15 @@ const fullImageUrl = resolvedHeaderImage.startsWith('http')
   <article lang={language} class="pb-16 dark:bg-gray-950">
     <!-- Header Image -->
     <div class="w-full h-64 md:h-80 lg:h-96 relative overflow-hidden">
-      <img
-        src={resolvedHeaderImage}
-        class="w-full h-full object-cover"
-        alt={`Artikel Header Bild zu ${title}`}
-      />
+      {header_image && (
+        <Image
+          src={header_image}
+          class="w-full h-full object-cover"
+          alt={`Artikel Header Bild zu ${title}`}
+          width={1200}
+          height={600}
+        />
+      )}
       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     </div>
 
