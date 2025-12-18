@@ -19,7 +19,7 @@ const clients = [
 ];
 
 // Load reviews from course.json
-const reviews = courseData.review.slice(0, 6).map(review => ({
+const reviews = courseData.review.slice(0, 6).map((review: any) => ({
   stars: review.reviewRating.ratingValue,
   quote: review.reviewBody,
   author: review.author.name,

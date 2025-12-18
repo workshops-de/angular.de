@@ -1,7 +1,5 @@
 // src/plugins/remark-workshop-hint.mjs
 import { visit } from "unist-util-visit";
-import { fileURLToPath } from "url";
-import path from "path";
 
 // Inline CTA definitions
 const ctas = {
@@ -61,7 +59,7 @@ export function remarkWorkshopHint() {
       lang = filePath.includes("/en/") ? "en" : "de";
     }
 
-    visit(tree, "paragraph", (node, index, parent) => {
+    visit(tree, "paragraph", (node) => {
       // Look for text nodes containing CTA shortcode
       if (
         node.children &&

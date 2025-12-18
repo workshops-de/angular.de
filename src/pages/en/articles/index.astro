@@ -96,6 +96,8 @@ const allCategories = [...new Set(
       button.addEventListener('click', () => {
         const category = button.getAttribute('data-category');
 
+        if (!category) return;
+
         // Update active button
         filterButtons.forEach(btn => {
           btn.classList.remove('bg-primary', 'text-white');
