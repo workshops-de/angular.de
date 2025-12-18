@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Search from 'astro-pagefind/components/Search';
+---
+
+<BaseLayout
+  title="Search"
+  description="Search all articles, tutorials and content on angular.de"
+  noindex={true}
+>
+  <section class="py-12">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Search</h1>
+
+      <div class="pagefind-container">
+        <Search
+          id="search"
+          className="pagefind-ui"
+          uiOptions={{
+            showImages: false,
+            showSubResults: true,
+            translations: {
+              placeholder: "Search articles...",
+              zero_results: "No results for [SEARCH_TERM]",
+              many_results: "[COUNT] results for [SEARCH_TERM]",
+              one_result: "1 result for [SEARCH_TERM]",
+              searching: "Searching for [SEARCH_TERM]...",
+              clear_search: "Clear search",
+              load_more: "Load more",
+            }
+          }}
+        />
+      </div>
+
+      <div class="mt-12 text-center text-gray-500 dark:text-gray-400">
+        <p>
+          Or <a href="/en/articles/" class="text-primary hover:underline">browse all articles</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Handle initial search query from URL parameter (client-side)
+  function initSearchFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q');
+    if (query) {
+      const input = document.querySelector<HTMLInputElement>('#search input[type="text"]');
+      if (input) {
+        input.value = query;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+  }
+
+  // Run after Pagefind is initialized
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(initSearchFromUrl, 100));
+  } else {
+    setTimeout(initSearchFromUrl, 100);
+  }
+</script>
+
+<style is:global>
+  /* Pagefind UI Variables */
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: #a855f7;
+    --pagefind-ui-text: #1f2937;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #e5e7eb;
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 0.75rem;
+    --pagefind-ui-font: inherit;
+  }
+
+  .dark {
+    --pagefind-ui-primary: #c084fc;
+    --pagefind-ui-text: #f3f4f6;
+    --pagefind-ui-background: #111827;
+    --pagefind-ui-border: #374151;
+  }
+
+  /* Search input */
+  .pagefind-ui .pagefind-ui__search-input {
+    padding-left: 2.75rem !important;
+  }
+
+  .pagefind-ui .pagefind-ui__search-input:focus {
+    border-color: var(--pagefind-ui-primary) !important;
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2) !important;
+    outline: none !important;
+  }
+
+  /* Results count message */
+  .pagefind-ui .pagefind-ui__message {
+    padding: 1rem 0 !important;
+    font-size: 0.875rem;
+    opacity: 0.7;
+  }
+
+  /* Result cards */
+  .pagefind-ui .pagefind-ui__result {
+    padding: 1rem 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+    border: 1px solid var(--pagefind-ui-border) !important;
+    border-radius: 0.5rem !important;
+    background: var(--pagefind-ui-background) !important;
+  }
+
+  .pagefind-ui .pagefind-ui__result:hover {
+    border-color: var(--pagefind-ui-primary) !important;
+  }
+
+  /* Result title */
+  .pagefind-ui .pagefind-ui__result-title {
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .pagefind-ui .pagefind-ui__result-link {
+    color: var(--pagefind-ui-text) !important;
+    text-decoration: none !important;
+  }
+
+  .pagefind-ui .pagefind-ui__result-link:hover {
+    color: var(--pagefind-ui-primary) !important;
+  }
+
+  /* Result excerpt */
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
+    opacity: 0.8;
+  }
+
+  /* Highlighted terms */
+  .pagefind-ui mark {
+    background-color: rgba(168, 85, 247, 0.2) !important;
+    color: inherit !important;
+    padding: 0.1em 0.2em !important;
+    border-radius: 0.2em !important;
+  }
+
+  .dark .pagefind-ui mark {
+    background-color: rgba(168, 85, 247, 0.3) !important;
+  }
+
+  /* Load more button */
+  .pagefind-ui .pagefind-ui__button {
+    background: var(--pagefind-ui-primary) !important;
+    color: white !important;
+    padding: 0.625rem 1.25rem !important;
+    border-radius: 0.5rem !important;
+    font-weight: 500 !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .pagefind-ui .pagefind-ui__button:hover {
+    opacity: 0.9 !important;
+  }
+</style>
+

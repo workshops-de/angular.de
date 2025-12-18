@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from 'astro:content';
+import PostLayout from '../../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts-en');
+  return posts.map(post => {
+    // Extract slug from the post id (e.g., "en/article-name" -> "article-name")
+    const idParts = post.id.split('/');
+    const folderName = idParts.length > 1 ? idParts[1] : idParts[0];
+    // English articles don't have date prefixes
+    const slug = folderName;
+
+    return {
+      params: { slug },
+      props: { post, slug, folderName: `en/${folderName}` },
+    };
+  });
+}
+
+const { post, slug, folderName } = Astro.props;
+
+// Render the post content
+const { Content } = await render(post);
+
+// Make slugs available for language switching
+Astro.locals.currentSlug = slug;
+if (post.data.translation_slug) {
+  Astro.locals.translationSlug = post.data.translation_slug;
+}
+---
+
+<PostLayout {...post.data} slug={slug} folderName={folderName}>
+  <Content />
+</PostLayout>
+

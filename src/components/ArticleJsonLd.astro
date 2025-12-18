@@ -1,0 +1,56 @@
+---
+/**
+ * Article JSON-LD Schema for blog posts
+ * Used on article pages for rich search results
+ */
+import { siteConfig } from '../config/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  author: string;
+  publishedTime: Date;
+  modifiedTime?: Date;
+  image?: string;
+  url: string;
+}
+
+const {
+  title,
+  description,
+  author,
+  publishedTime,
+  modifiedTime,
+  image,
+  url,
+} = Astro.props;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  ...(description && { "description": description }),
+  "author": {
+    "@type": "Person",
+    "name": author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteConfig.title,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteConfig.url}/assets/img/logo.svg`
+    }
+  },
+  "datePublished": publishedTime.toISOString(),
+  ...(modifiedTime && { "dateModified": modifiedTime.toISOString() }),
+  ...(image && { "image": image }),
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  }
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+

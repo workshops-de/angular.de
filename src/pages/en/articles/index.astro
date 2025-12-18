@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all English posts
+const allPosts = await getCollection('posts-en');
+const sortedPosts = allPosts.sort((a, b) =>
+  b.data.published_at.getTime() - a.data.published_at.getTime()
+);
+
+// Get unique categories
+const allCategories = [...new Set(
+  sortedPosts
+    .map(post => post.data.categories?.split(' '))
+    .flat()
+    .filter(Boolean)
+)].sort();
+---
+
+<BaseLayout
+  title="Angular Articles & Tutorials"
+  description="Latest articles, tutorials and news about Angular, TypeScript and web development in English."
+>
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">
+            Articles & Tutorials
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400">
+            Learn Angular with in-depth articles, practical tutorials and the latest news.
+          </p>
+        </div>
+
+        {/* Category Filter */}
+        {allCategories.length > 0 && (
+          <div class="mb-8 flex flex-wrap gap-2">
+            <button
+              class="category-filter px-4 py-2 rounded-full text-sm font-medium bg-primary text-white transition-colors"
+              data-category="all"
+            >
+              All
+            </button>
+            {allCategories.map(category => (
+              <button
+                class="category-filter px-4 py-2 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                data-category={category}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Articles Grid */}
+        {sortedPosts.length > 0 ? (
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid">
+            {sortedPosts.map(post => (
+              <PostCard post={post} lang="en" />
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-16 bg-gray-50 dark:bg-gray-900 rounded-xl">
+            <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <h3 class="text-xl text-gray-900 dark:text-white mb-2">
+              English articles are coming soon!
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">
+              We're currently translating our most popular articles into English.
+            </p>
+            <a href="/artikel/" class="inline-flex items-center gap-2 text-primary hover:text-primary-700 font-medium">
+              View German articles
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Category filtering
+  const filterButtons = document.querySelectorAll('.category-filter');
+  const articlesGrid = document.getElementById('articles-grid');
+
+  if (filterButtons.length > 0 && articlesGrid) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+
+        if (!category) return;
+
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-primary', 'text-white');
+          btn.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+        });
+        button.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+        button.classList.add('bg-primary', 'text-white');
+
+        // Filter articles
+        const articles = articlesGrid.querySelectorAll('article');
+        articles.forEach(article => {
+          if (category === 'all') {
+            article.style.display = 'block';
+          } else {
+            const articleCategories = article.getAttribute('data-categories') || '';
+            if (articleCategories.includes(category)) {
+              article.style.display = 'block';
+            } else {
+              article.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  }
+</script>
+

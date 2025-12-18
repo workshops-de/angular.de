@@ -1,0 +1,66 @@
+---
+/**
+ * Product JSON-LD Schema for courses/products
+ * Used on training pages for rich search results
+ */
+import courseData from '../data/course.json';
+
+interface Props {
+  name?: string;
+  description?: string;
+  image?: string;
+  sku?: string;
+}
+
+const {
+  name = courseData.name,
+  description = courseData.description,
+  image = courseData.image?.[0] || 'https://angular.de/assets/img/workshops/logo-angular-typescript-schulung.svg',
+  sku = (courseData as any).sku || 'angular-typescript',
+} = Astro.props;
+
+// Build the product schema
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": name,
+  "description": description,
+  "image": Array.isArray(image) ? image : [image],
+  "sku": sku,
+  "brand": {
+    "@type": "Brand",
+    "name": "workshops.de"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": courseData.aggregateRating?.ratingValue || 4.7,
+    "reviewCount": courseData.aggregateRating?.reviewCount || 2500
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": courseData.offers?.lowPrice || "1119",
+    "highPrice": courseData.offers?.highPrice || "1679",
+    "priceCurrency": courseData.offers?.priceCurrency || "EUR",
+    "offerCount": courseData.offers?.offerCount || 6
+  },
+  "review": courseData.review?.slice(0, 6).map((review: any) => ({
+    "@type": "Review",
+    "name": review.name,
+    "datePublished": review.datePublished,
+    "reviewBody": review.reviewBody,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": review.reviewRating?.ratingValue || 5,
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": {
+      "@type": "Person",
+      "name": review.author?.name || "Anonyme/r Teilnehmer:in"
+    }
+  })) || []
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+

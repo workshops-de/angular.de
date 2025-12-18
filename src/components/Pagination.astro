@@ -1,0 +1,86 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath: string;
+}
+
+const { currentPage, totalPages, basePath } = Astro.props;
+
+const getPageUrl = (page: number) => {
+  if (page === 1) return `${basePath}/`;
+  return `${basePath}/seite/${page}/`;
+};
+
+// Generate page numbers to show
+const maxVisiblePages = 5;
+let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+if (endPage - startPage + 1 < maxVisiblePages) {
+  startPage = Math.max(1, endPage - maxVisiblePages + 1);
+}
+
+const pages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+---
+
+<nav aria-label="Seitennavigation" class="flex justify-center mt-12">
+  <div class="flex items-center gap-2">
+    {currentPage > 1 && (
+      <a
+        href={getPageUrl(currentPage - 1)}
+        class="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300"
+        aria-label="Vorherige"
+      >
+        ←
+      </a>
+    )}
+
+    {startPage > 1 && (
+      <>
+        <a href={getPageUrl(1)} class="px-4 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300">
+          1
+        </a>
+        {startPage > 2 && (
+          <span class="px-2 text-gray-400">...</span>
+        )}
+      </>
+    )}
+
+    {pages.map(page => (
+      page === currentPage ? (
+        <span class="px-4 py-2 rounded-lg bg-primary text-white font-medium">
+          {page}
+        </span>
+      ) : (
+        <a
+          href={getPageUrl(page)}
+          class="px-4 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300"
+        >
+          {page}
+        </a>
+      )
+    ))}
+
+    {endPage < totalPages && (
+      <>
+        {endPage < totalPages - 1 && (
+          <span class="px-2 text-gray-400">...</span>
+        )}
+        <a href={getPageUrl(totalPages)} class="px-4 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300">
+          {totalPages}
+        </a>
+      </>
+    )}
+
+    {currentPage < totalPages && (
+      <a
+        href={getPageUrl(currentPage + 1)}
+        class="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300"
+        aria-label="Nächste"
+      >
+        →
+      </a>
+    )}
+  </div>
+</nav>

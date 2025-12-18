@@ -1,0 +1,315 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PostAuthor from '../components/PostAuthor.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import ReadingTime from '../components/ReadingTime.astro';
+import ArticleJsonLd from '../components/ArticleJsonLd.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { siteConfig } from '../config/site';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  author: string;
+  co_author?: string;
+  published_at: Date;
+  categories?: string;
+  header_image?: ImageMetadata;
+  toc?: boolean;
+  language?: string;
+  canonical_url?: string;
+  slug?: string;
+  folderName?: string;
+}
+
+const {
+  title,
+  description,
+  author,
+  co_author,
+  published_at,
+  categories = '',
+  header_image,
+  language = 'de',
+  canonical_url,
+  slug: propSlug,
+  folderName,
+} = Astro.props;
+
+const slug = propSlug || Astro.params.slug;
+
+// Get author data
+const users = await getCollection('users');
+const authorData = users.find(u => u.data.name === author);
+const coAuthorData = co_author ? users.find(u => u.data.name === co_author) : null;
+
+// Parse categories
+const categoryList = categories.split(' ').filter(Boolean);
+
+// Format date
+const formattedDate = published_at.toLocaleDateString('de-DE', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric'
+});
+
+// Get the raw content for reading time
+const rawContent = await Astro.slots.render('default');
+
+// Full URL for JSON-LD
+const isEnglish = language === 'en';
+const fullUrl = isEnglish
+  ? `${siteConfig.url}/en/articles/${slug}/`
+  : `${siteConfig.url}/artikel/${slug}/`;
+
+// For JSON-LD, we need the full image URL
+// header_image is now an ImageMetadata object from Astro
+const fullImageUrl = header_image?.src
+  ? (header_image.src.startsWith('http') ? header_image.src : `${siteConfig.url}${header_image.src}`)
+  : `${siteConfig.url}/default-header.jpg`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonical_url}
+  ogType="article"
+  publishedTime={published_at}
+  author={author}
+  slug={slug}
+>
+  <!-- Reading Progress Bar (below navbar) -->
+  <div id="progress-container" class="fixed left-0 right-0 h-1 z-[60]" style="top: var(--navbar-height, 72px)">
+    <div id="progress-bar" class="h-full bg-primary transition-all duration-100" style="width: 0%"></div>
+  </div>
+
+  <!-- Social Share Sidebar (fixed left) -->
+  <div id="share-sidebar" class="hidden lg:flex fixed left-6 top-1/3 flex-col gap-3 z-50 opacity-0 -translate-x-4 transition-all duration-300">
+    <a
+      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(fullUrl)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-[#1DA1F2]"
+      title="Auf X teilen"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a
+      href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(fullUrl)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-[#0A66C2]"
+      title="Auf LinkedIn teilen"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a
+      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(fullUrl)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-[#1877F2]"
+      title="Auf Facebook teilen"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <button
+      id="copy-link-btn"
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-primary"
+      title="Link kopieren"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+    </button>
+    <a
+      href={`mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(`Schau dir diesen Artikel an: ${fullUrl}`)}`}
+      class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all text-gray-600 dark:text-gray-400 hover:text-primary"
+      title="Per E-Mail teilen"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    </a>
+  </div>
+
+  <!-- Article JSON-LD for rich search results -->
+  <ArticleJsonLd
+    title={title}
+    description={description}
+    author={author}
+    publishedTime={published_at}
+    image={fullImageUrl}
+    url={fullUrl}
+  />
+
+  <article lang={language} class="pb-16 dark:bg-gray-950">
+    <!-- Header Image -->
+    <div class="w-full h-64 md:h-80 lg:h-96 relative overflow-hidden">
+      {header_image && (
+        <Image
+          src={header_image}
+          class="w-full h-full object-cover"
+          alt={`Artikel Header Bild zu ${title}`}
+          width={1200}
+          height={600}
+        />
+      )}
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+    </div>
+
+    <div class="container mx-auto px-4 -mt-16 relative">
+      <div class="max-w-4xl mx-auto">
+        <!-- Article Header -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 mb-8">
+          <!-- Categories -->
+          {categoryList.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-4">
+              {categoryList.map((category) => (
+                <a
+                  href={`/kategorie/${category.toLowerCase()}/`}
+                  class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors"
+                >
+                  {category}
+                </a>
+              ))}
+            </div>
+          )}
+
+          <h1 class="text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">{title}</h1>
+
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+            <span>{author}</span>
+            {co_author && (
+              <>
+                <span>•</span>
+                <span>{co_author}</span>
+              </>
+            )}
+            <span>•</span>
+            <time datetime={published_at.toISOString()}>{formattedDate}</time>
+            <span>•</span>
+            <ReadingTime content={rawContent} />
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 mb-8">
+          <div class="prose prose-lg max-w-none dark:prose-invert prose-a:text-primary prose-a:no-underline prose-a:hover:underline">
+            <slot />
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700 text-right">
+            <a
+              href={`${siteConfig.repository_url}/edit/master/_posts/${folderName || slug}/${folderName || slug}.md`}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
+            >
+              🐛 Diesen Artikel auf GitHub verbessern
+            </a>
+          </div>
+        </div>
+
+        <!-- Author Info -->
+        {authorData && (
+          <div class="mb-8">
+            <PostAuthor author={authorData.data} />
+          </div>
+        )}
+        {coAuthorData && (
+          <div class="mb-8">
+            <PostAuthor author={coAuthorData.data} />
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    <div class="container mx-auto px-4 mt-16">
+      <RelatedPosts currentSlug={slug} categories={categoryList} />
+    </div>
+  </article>
+
+  <!-- Sidebar CTA (floating on desktop) -->
+  <div class="hidden xl:block fixed right-8 top-1/3 w-64">
+    <a
+      href="https://angular.de/schulungen/angular-intensiv/?utm_source=angular_de&utm_campaign=schulungen_2025&utm_medium=portal&utm_content=article_sidebar"
+      target="_blank"
+      class="block bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow border border-transparent dark:border-gray-700"
+    >
+      <h4 class="text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+        <span class="text-primary">🎓</span>
+        Angular Schulungen
+      </h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+        Intensiv-Schulung für Angular & TypeScript
+      </p>
+      <div class="flex flex-wrap gap-1 mb-3">
+        <span class="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">Angular & TypeScript</span>
+        <span class="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">Modern Angular</span>
+      </div>
+      <span class="text-xs font-semibold text-primary uppercase tracking-wide">
+        Jetzt buchen →
+      </span>
+    </a>
+  </div>
+
+  <!-- Progress Bar & Share Sidebar Script -->
+  <script is:inline>
+    (function() {
+      const progressContainer = document.getElementById('progress-container');
+      const progressBar = document.getElementById('progress-bar');
+      const shareSidebar = document.getElementById('share-sidebar');
+      const copyBtn = document.getElementById('copy-link-btn');
+      const article = document.querySelector('article');
+      const navbar = document.querySelector('.sticky');
+
+      // Set navbar height for progress bar position
+      if (progressContainer && navbar) {
+        const navHeight = navbar.offsetHeight;
+        progressContainer.style.top = navHeight + 'px';
+      }
+
+      if (!progressBar || !article) return;
+
+      // Reading progress
+      function updateProgress() {
+        const articleRect = article.getBoundingClientRect();
+        const articleTop = articleRect.top + window.scrollY;
+        const articleHeight = articleRect.height;
+        const windowHeight = window.innerHeight;
+        const scrolled = window.scrollY - articleTop + windowHeight * 0.3;
+        const progress = Math.min(Math.max(scrolled / articleHeight * 100, 0), 100);
+        progressBar.style.width = progress + '%';
+
+        // Show/hide share sidebar based on scroll position
+        if (shareSidebar) {
+          const shouldShow = window.scrollY > 300;
+          if (shouldShow) {
+            shareSidebar.classList.remove('opacity-0', '-translate-x-4');
+            shareSidebar.classList.add('opacity-100', 'translate-x-0');
+          } else {
+            shareSidebar.classList.add('opacity-0', '-translate-x-4');
+            shareSidebar.classList.remove('opacity-100', 'translate-x-0');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      // Copy link functionality
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+            copyBtn.innerHTML = '<svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+            setTimeout(() => {
+              copyBtn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>';
+            }, 2000);
+          } catch (err) {
+            console.error('Failed to copy:', err);
+          }
+        });
+      }
+    })();
+  </script>
+</BaseLayout>

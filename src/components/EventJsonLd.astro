@@ -1,0 +1,116 @@
+---
+/**
+ * Event JSON-LD Schema for training/workshop events
+ * Used on training pages for rich search results with event dates
+ */
+interface EventLocation {
+  name?: string;
+  address?: {
+    addressLocality: string;
+    streetAddress?: string;
+    postalCode?: string;
+  };
+}
+
+interface EventOffer {
+  price: number;
+  priceCurrency?: string;
+  availability?: 'InStock' | 'SoldOut' | 'PreOrder';
+  validFrom?: string;
+  url?: string;
+}
+
+interface Props {
+  name: string;
+  description?: string;
+  startDate: string;
+  endDate?: string;
+  location?: EventLocation;
+  isVirtual?: boolean;
+  image?: string;
+  organizer?: {
+    name: string;
+    url?: string;
+  };
+  performer?: {
+    name: string;
+  };
+  offers?: EventOffer;
+  eventStatus?: 'EventScheduled' | 'EventCancelled' | 'EventPostponed' | 'EventRescheduled';
+}
+
+const {
+  name,
+  description,
+  startDate,
+  endDate,
+  location,
+  isVirtual = false,
+  image = 'https://angular.de/assets/img/workshops/logo-angular-typescript-schulung.svg',
+  organizer = { name: 'Workshops.DE', url: 'https://workshops.de' },
+  performer,
+  offers,
+  eventStatus = 'EventScheduled',
+} = Astro.props;
+
+const eventSchema: Record<string, any> = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": name,
+  "startDate": startDate,
+  ...(endDate && { "endDate": endDate }),
+  ...(description && { "description": description }),
+  "image": image,
+  "eventStatus": `https://schema.org/${eventStatus}`,
+  "eventAttendanceMode": isVirtual
+    ? "https://schema.org/OnlineEventAttendanceMode"
+    : "https://schema.org/OfflineEventAttendanceMode",
+  "organizer": {
+    "@type": "Organization",
+    "name": organizer.name,
+    ...(organizer.url && { "url": organizer.url })
+  }
+};
+
+// Add location
+if (isVirtual) {
+  eventSchema.location = {
+    "@type": "VirtualLocation",
+    "url": "https://zoom.us/"
+  };
+} else if (location) {
+  eventSchema.location = {
+    "@type": "Place",
+    ...(location.name && { "name": location.name }),
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": location.address?.addressLocality || '',
+      ...(location.address?.streetAddress && { "streetAddress": location.address.streetAddress }),
+      ...(location.address?.postalCode && { "postalCode": location.address.postalCode })
+    }
+  };
+}
+
+// Add performer
+if (performer) {
+  eventSchema.performer = {
+    "@type": "Person",
+    "name": performer.name
+  };
+}
+
+// Add offers
+if (offers) {
+  eventSchema.offers = {
+    "@type": "Offer",
+    "price": offers.price,
+    "priceCurrency": offers.priceCurrency || "EUR",
+    "availability": `https://schema.org/${offers.availability || 'InStock'}`,
+    ...(offers.validFrom && { "validFrom": offers.validFrom }),
+    ...(offers.url && { "url": offers.url })
+  };
+}
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(eventSchema)} />
+

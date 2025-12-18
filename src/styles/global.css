@@ -1,0 +1,204 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Enable manual dark mode toggling via .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom fonts - Mona Sans for modern, bold headings */
+@import "@fontsource-variable/source-sans-3/index.css";
+@import "@fontsource/fira-code/400.css";
+
+/* Theme configuration */
+@theme {
+  --font-sans:
+    "Source Sans 3 Variable", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono:
+    "Fira Code", Menlo, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+
+  /*
+   * Brand colors - Angular
+   * Usage: text-primary, bg-primary-500, border-primary-200, etc.
+   * To adapt for another portal, change these color values.
+   */
+
+  /* Primary color scale (Angular purple #8514f5) */
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7; /* Purple */
+  --color-primary-600: #8514f5; /* Base Angular purple */
+  --color-primary-700: #7c3aed;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
+  --color-primary-950: #3b0764;
+  --color-primary: #8514f5; /* Alias for primary-600 */
+  --color-primary-dark: #6b21a8;
+  --color-primary-light: #a855f7;
+
+  /* Accent color scale (Pink #ec4899) */
+  --color-accent-50: #fdf2f8;
+  --color-accent-100: #fce7f3;
+  --color-accent-200: #fbcfe8;
+  --color-accent-300: #f9a8d4;
+  --color-accent-400: #f472b6;
+  --color-accent-500: #ec4899; /* Base pink */
+  --color-accent-600: #db2777;
+  --color-accent-700: #be185d;
+  --color-accent-800: #9d174d;
+  --color-accent-900: #831843;
+  --color-accent-950: #500724;
+  --color-accent: #ec4899; /* Alias for accent-500 */
+
+  /* Discord brand color */
+  --color-discord: #5865f2;
+  --color-discord-dark: #4752c4;
+
+  /* Typography plugin customization */
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-links-hover: var(--color-primary-dark);
+  --tw-prose-quote-borders: var(--color-primary);
+}
+
+/* Base styles */
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply text-gray-800 dark:text-gray-200 leading-relaxed bg-white dark:bg-gray-950;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Headings - Bold, punchy, Smashing-style */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold leading-tight tracking-tight;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl;
+  line-height: 1.1;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl lg:text-5xl;
+  line-height: 1.15;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl;
+  line-height: 1.2;
+}
+
+h4 {
+  @apply text-xl md:text-2xl;
+  line-height: 1.25;
+}
+
+/* Links - only apply default color where not explicitly set */
+a:not([class*="text-"]) {
+  @apply text-primary hover:text-primary-dark;
+}
+
+a {
+  @apply transition-colors;
+}
+
+/* Code blocks with language label and copy button */
+pre {
+  @apply bg-gray-900 rounded-lg overflow-x-auto my-4 relative;
+  padding: 1rem;
+}
+
+/* Language label - top right corner */
+pre[data-lang]::before {
+  content: attr(data-lang);
+  @apply absolute top-0 right-0 px-3 py-1 text-xs font-medium text-gray-500 bg-gray-800 rounded-bl-lg uppercase tracking-wider select-none;
+}
+
+/* Copy button - hidden by default, shown on hover top right (next to language) */
+pre .copy-button {
+  @apply absolute top-2 right-2 w-8 h-8 flex items-center justify-center text-gray-400 bg-gray-800/90 rounded-md border border-gray-700/50 cursor-pointer opacity-0 transition-all duration-200;
+}
+
+/* When language label exists, move copy button left of it */
+pre[data-lang] .copy-button {
+  right: 4rem;
+}
+
+pre .copy-button:hover {
+  @apply bg-gray-700 text-white border-gray-600;
+}
+
+pre:hover .copy-button {
+  @apply opacity-100;
+}
+
+pre .copy-button.copied {
+  @apply text-primary-400 border-primary-500 opacity-100;
+}
+
+code {
+  @apply font-mono text-sm;
+}
+
+:not(pre) > code {
+  @apply bg-primary-100 dark:bg-primary-900/50 text-primary-900 dark:text-primary-200 px-1.5 py-0.5 rounded;
+}
+
+/* Focus styles */
+:focus {
+  @apply outline-2 outline-dotted outline-primary outline-offset-2;
+}
+
+/* Custom gradient button */
+.btn-gradient {
+  @apply bg-gradient-to-r from-primary-500 to-accent-600 text-white font-medium py-2 px-6 rounded-lg hover:from-accent-600 hover:to-primary-600 transition-all duration-300;
+}
+
+/* Prose customizations - extend Tailwind Typography */
+.prose img {
+  @apply rounded-xl;
+}
+
+.prose blockquote {
+  @apply bg-gray-50 dark:bg-gray-800 rounded-r-lg;
+}
+
+/* Alert boxes */
+.alert {
+  @apply p-4 rounded-lg mb-4;
+}
+
+.alert-info {
+  @apply bg-accent-50 dark:bg-accent-900/30 border border-accent-200 dark:border-accent-800 text-accent-800 dark:text-accent-300;
+}
+
+.alert-success {
+  @apply bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-300;
+}
+
+.alert-warning {
+  @apply bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 text-yellow-800 dark:text-yellow-300;
+}
+
+/* Workshop hint box */
+.workshop-hint {
+  @apply bg-gray-50 dark:bg-gray-900 rounded-lg p-6 my-8 border-l-4 border-primary;
+}

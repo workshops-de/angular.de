@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://angular.de/sitemap-index.xml
+

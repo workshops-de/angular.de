@@ -1,0 +1,196 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Newsletter from '../components/Newsletter.astro';
+import SocialMetaTags from '../components/SocialMetaTags.astro';
+import OrganizationJsonLd from '../components/OrganizationJsonLd.astro';
+import WebsiteJsonLd from '../components/WebsiteJsonLd.astro';
+import BreadcrumbsJsonLd from '../components/BreadcrumbsJsonLd.astro';
+import { siteConfig } from '../config/site';
+import { getLangFromUrl, getAlternateUrls } from '../i18n/utils';
+import { defaultLang } from '../i18n/ui';
+import '../styles/global.css';
+
+// Font preloading for better LCP (only main font, not code font)
+import sourceSansWoff2 from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  noindex?: boolean;
+  ogImage?: string;
+  ogType?: string;
+  publishedTime?: Date;
+  author?: string;
+  slug?: string; // For generated OG images
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  noindex = false,
+  ogImage,
+  ogType = 'website',
+  publishedTime,
+  author,
+  slug,
+} = Astro.props;
+
+// i18n: Get current language
+const lang = getLangFromUrl(Astro.url);
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || siteConfig.url;
+const alternateUrls = getAlternateUrls(Astro.url, siteUrl, Astro.locals.currentSlug, Astro.locals.translationSlug);
+
+const fullTitle = `${title} | ${siteConfig.title}`;
+const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).toString();
+
+// Only load GTM in production
+const isProd = import.meta.env.PROD;
+const gtmProperty = siteConfig.gtm_property;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+
+  <!-- Preconnect to external domains for faster loading -->
+  {isProd && (
+    <Fragment>
+      <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+      <link rel="preconnect" href="https://sa.workshops.de" crossorigin />
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    </Fragment>
+  )}
+
+  <!-- Preload critical font for better LCP (only main font, not code font) -->
+  <link rel="preload" as="font" type="font/woff2" href={sourceSansWoff2} crossorigin="anonymous" />
+
+  <!-- Prevent flash of wrong theme - following Tailwind docs -->
+  <script is:inline>
+    // On page load, best to add inline in `head` to avoid FOUC
+    document.documentElement.classList.toggle(
+      "dark",
+      localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
+  </script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+
+  <title>{fullTitle}</title>
+  {description && <meta name="description" content={description} />}
+
+  {noindex ? (
+    <meta name="robots" content="noindex, follow">
+  ) : (
+    <link rel="canonical" href={currentUrl}>
+  )}
+
+  {/* Alternate language links (hreflang) */}
+  {!noindex && alternateUrls.map(({ lang: altLang, url }) => (
+    <link rel="alternate" hreflang={altLang} href={url} />
+  ))}
+  {!noindex && <link rel="alternate" hreflang="x-default" href={alternateUrls.find(a => a.lang === defaultLang)?.url || currentUrl} />}
+
+  <SocialMetaTags
+    title={title}
+    description={description}
+    url={currentUrl}
+    image={ogImage}
+    type={ogType}
+    publishedTime={publishedTime}
+    author={author}
+    slug={slug}
+  />
+
+  <link rel="icon" href="/assets/img/favicon.ico?v=2" type="image/x-icon" />
+
+  {/* Google Tag Manager - only in production */}
+  {isProd && (
+    <script is:inline define:vars={{ gtmProperty }}>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer', gtmProperty);
+    </script>
+  )}
+
+  <OrganizationJsonLd />
+  <WebsiteJsonLd />
+  <BreadcrumbsJsonLd />
+</head>
+
+<body class="min-h-screen flex flex-col">
+  {/* Google Tag Manager (noscript) - only in production */}
+  {isProd && (
+    <noscript>
+      <iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmProperty}`}
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+  )}
+
+  <Navigation />
+
+  <main class="flex-1">
+    <slot />
+  </main>
+
+  <Newsletter />
+  <Footer />
+
+  {/* Code block copy button functionality (like vuejs.org) */}
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      // SVG icons (clipboard style)
+      const copyIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>';
+      const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><polyline points="9 14 11 16 15 12"></polyline></svg>';
+
+      document.querySelectorAll('pre').forEach(pre => {
+        // Skip if already has a copy button or no code element
+        if (pre.querySelector('.copy-button') || !pre.querySelector('code')) return;
+
+        const button = document.createElement('button');
+        button.className = 'copy-button';
+        button.innerHTML = copyIcon;
+        button.type = 'button';
+        button.setAttribute('aria-label', 'Code kopieren');
+
+        button.addEventListener('click', async () => {
+          const code = pre.querySelector('code');
+          if (code) {
+            try {
+              await navigator.clipboard.writeText(code.innerText);
+              button.innerHTML = checkIcon;
+              button.classList.add('copied');
+              setTimeout(() => {
+                button.innerHTML = copyIcon;
+                button.classList.remove('copied');
+              }, 2000);
+            } catch (err) {
+              console.error('Copy failed:', err);
+            }
+          }
+        });
+
+        pre.appendChild(button);
+      });
+    });
+  </script>
+
+  {/* Simple Analytics - privacy-friendly analytics */}
+  {isProd && (
+    <Fragment>
+      <script is:inline async defer src="https://sa.workshops.de/latest.js"></script>
+      <script is:inline async data-collect="outbound,emails,downloads" data-extensions="pdf,csv,docx,xlsx,zip,doc,xls" data-use-title="true" data-full-urls="false" src="https://sa.workshops.de/auto-events.js"></script>
+      <noscript>
+        <img src="https://sa.workshops.de/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" />
+      </noscript>
+    </Fragment>
+  )}
+</body>
+</html>
