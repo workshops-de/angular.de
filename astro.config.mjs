@@ -1,9 +1,17 @@
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 // Site URL - keep in sync with src/config/site.ts
-const SITE_URL = 'https://angular.de';
+const SITE_URL = "https://angular.de";
+
+// Shiki transformer to add language label
+const codeBlockEnhancer = {
+  pre(node) {
+    // Add data-lang attribute for language label (shown via CSS ::before)
+    node.properties["data-lang"] = this.options.lang || "";
+  },
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,20 +19,21 @@ export default defineConfig({
   integrations: [sitemap()],
   markdown: {
     shikiConfig: {
-      theme: 'github-dark',
-      wrap: true
-    }
+      theme: "github-dark",
+      wrap: true,
+      transformers: [codeBlockEnhancer],
+    },
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
   // Output static files for Firebase hosting
-  output: 'static',
+  output: "static",
   build: {
-    format: 'directory'
+    format: "directory",
   },
   // Redirects
   redirects: {
-    '/discord': 'https://workshops.de/join-discord',
-  }
+    "/discord": "https://workshops.de/join-discord",
+  },
 });

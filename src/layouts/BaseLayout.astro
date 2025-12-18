@@ -129,6 +129,45 @@ const gtmProperty = siteConfig.gtm_property;
   <Newsletter />
   <Footer />
 
+  {/* Code block copy button functionality (like vuejs.org) */}
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      // SVG icons (clipboard style)
+      const copyIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>';
+      const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><polyline points="9 14 11 16 15 12"></polyline></svg>';
+
+      document.querySelectorAll('pre').forEach(pre => {
+        // Skip if already has a copy button or no code element
+        if (pre.querySelector('.copy-button') || !pre.querySelector('code')) return;
+
+        const button = document.createElement('button');
+        button.className = 'copy-button';
+        button.innerHTML = copyIcon;
+        button.type = 'button';
+        button.setAttribute('aria-label', 'Code kopieren');
+
+        button.addEventListener('click', async () => {
+          const code = pre.querySelector('code');
+          if (code) {
+            try {
+              await navigator.clipboard.writeText(code.innerText);
+              button.innerHTML = checkIcon;
+              button.classList.add('copied');
+              setTimeout(() => {
+                button.innerHTML = copyIcon;
+                button.classList.remove('copied');
+              }, 2000);
+            } catch (err) {
+              console.error('Copy failed:', err);
+            }
+          }
+        });
+
+        pre.appendChild(button);
+      });
+    });
+  </script>
+
   {/* Simple Analytics - privacy-friendly analytics */}
   {isProd && (
     <Fragment>

@@ -120,9 +120,38 @@ a {
   @apply transition-colors;
 }
 
-/* Code blocks */
+/* Code blocks with language label and copy button */
 pre {
-  @apply bg-gray-900 rounded-lg p-4 overflow-x-auto my-4;
+  @apply bg-gray-900 rounded-lg overflow-x-auto my-4 relative;
+  padding: 1rem;
+}
+
+/* Language label - top right corner */
+pre[data-lang]::before {
+  content: attr(data-lang);
+  @apply absolute top-0 right-0 px-3 py-1 text-xs font-medium text-gray-500 bg-gray-800 rounded-bl-lg uppercase tracking-wider select-none;
+}
+
+/* Copy button - hidden by default, shown on hover top right (next to language) */
+pre .copy-button {
+  @apply absolute top-2 right-2 w-8 h-8 flex items-center justify-center text-gray-400 bg-gray-800/90 rounded-md border border-gray-700/50 cursor-pointer opacity-0 transition-all duration-200;
+}
+
+/* When language label exists, move copy button left of it */
+pre[data-lang] .copy-button {
+  right: 4rem;
+}
+
+pre .copy-button:hover {
+  @apply bg-gray-700 text-white border-gray-600;
+}
+
+pre:hover .copy-button {
+  @apply opacity-100;
+}
+
+pre .copy-button.copied {
+  @apply text-primary-400 border-primary-500 opacity-100;
 }
 
 code {
