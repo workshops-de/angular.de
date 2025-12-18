@@ -8,9 +8,8 @@ import BreadcrumbsJsonLd from '../components/BreadcrumbsJsonLd.astro';
 import { siteConfig } from '../config/site';
 import '../styles/global.css';
 
-// Font preloading for better LCP
+// Font preloading for better LCP (only main font, not code font)
 import sourceSansWoff2 from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
-import firaCodeWoff2 from '@fontsource/fira-code/files/fira-code-latin-400-normal.woff2?url';
 
 interface Props {
   title: string;
@@ -50,9 +49,17 @@ const gtmProperty = siteConfig.gtm_property;
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="utf-8">
 
-  <!-- Preload fonts for better LCP -->
+  <!-- Preconnect to external domains for faster loading -->
+  {isProd && (
+    <Fragment>
+      <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+      <link rel="preconnect" href="https://sa.workshops.de" crossorigin />
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    </Fragment>
+  )}
+
+  <!-- Preload critical font for better LCP (only main font, not code font) -->
   <link rel="preload" as="font" type="font/woff2" href={sourceSansWoff2} crossorigin="anonymous" />
-  <link rel="preload" as="font" type="font/woff2" href={firaCodeWoff2} crossorigin="anonymous" />
 
   <!-- Prevent flash of wrong theme - following Tailwind docs -->
   <script is:inline>
@@ -63,7 +70,6 @@ const gtmProperty = siteConfig.gtm_property;
         (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
     );
   </script>
-  {isProd && <link rel="dns-prefetch" href="//www.google-analytics.com">}
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="keywords" content="">
