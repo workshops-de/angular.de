@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import pagefind from "astro-pagefind";
 import tailwindcss from "@tailwindcss/vite";
 
 // Site URL - keep in sync with src/config/site.ts
@@ -16,7 +17,7 @@ const codeBlockEnhancer = {
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  integrations: [sitemap()],
+  integrations: [sitemap(), pagefind()],
   markdown: {
     shikiConfig: {
       theme: "github-dark",

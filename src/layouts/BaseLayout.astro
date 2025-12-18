@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Newsletter from '../components/Newsletter.astro';
 import SocialMetaTags from '../components/SocialMetaTags.astro';
 import OrganizationJsonLd from '../components/OrganizationJsonLd.astro';
+import WebsiteJsonLd from '../components/WebsiteJsonLd.astro';
 import BreadcrumbsJsonLd from '../components/BreadcrumbsJsonLd.astro';
 import { siteConfig } from '../config/site';
 import '../styles/global.css';
@@ -108,6 +109,7 @@ const gtmProperty = siteConfig.gtm_property;
   )}
 
   <OrganizationJsonLd />
+  <WebsiteJsonLd />
   <BreadcrumbsJsonLd />
 </head>
 
