@@ -18,7 +18,16 @@ const codeBlockEnhancer = {
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  integrations: [sitemap(), pagefind()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        // Exclude category pages (noindex)
+        !page.includes('/kategorie/') &&
+        // Exclude pagination pages (page 1 duplicates main page)
+        !page.includes('/seite/'),
+    }),
+    pagefind(),
+  ],
   i18n: {
     defaultLocale: "de",
     locales: ["de", "en"],
