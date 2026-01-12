@@ -31,7 +31,7 @@ const { posts, currentPage, totalPages } = Astro.props;
 
 <BaseLayout
   title={`Artikel - Seite ${currentPage}`}
-  description={`Alle Artikel rund um ${topic}, TypeScript und moderne Webentwicklung auf Deutsch.`}
+  description={`Alle Artikel rund um ${topic}, TypeScript und moderne Webentwicklung auf Deutsch. Seite ${currentPage} von ${totalPages}.`}
   noindex={currentPage > 1}
 >
   <!-- Hero Header with Pattern Background -->
