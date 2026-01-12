@@ -22,9 +22,9 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         // Exclude category pages (noindex)
-        !page.includes('/kategorie/') &&
+        !page.includes("/kategorie/") &&
         // Exclude pagination pages (page 1 duplicates main page)
-        !page.includes('/seite/'),
+        !page.includes("/seite/"),
     }),
     pagefind(),
   ],
@@ -51,9 +51,9 @@ export default defineConfig({
   build: {
     format: "directory",
   },
-  // Redirects (with and without trailing slash to avoid double redirects)
+  // Redirects
   redirects: {
-    "/discord": "https://workshops.de/join-discord",
     "/discord/": "https://workshops.de/join-discord",
+    "/sitemap.xml": "/sitemap-index.xml",
   },
 });
