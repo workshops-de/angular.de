@@ -42,8 +42,9 @@ export default defineConfig({
   build: {
     format: "directory",
   },
-  // Redirects
+  // Redirects (with and without trailing slash to avoid double redirects)
   redirects: {
     "/discord": "https://workshops.de/join-discord",
+    "/discord/": "https://workshops.de/join-discord",
   },
 });

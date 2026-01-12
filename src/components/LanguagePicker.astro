@@ -53,7 +53,7 @@ const restOfPath = pathParts.slice(langIndex + 1).join("/");
       } else {
         // Default behavior for non-article pages
         const basePath = route ? translatePath(`/${route}/`) : translatePath("/");
-        href = restOfPath ? `${basePath}${restOfPath}` : basePath;
+        href = restOfPath ? `${basePath}${restOfPath}/` : basePath;
       }
 
       return (
