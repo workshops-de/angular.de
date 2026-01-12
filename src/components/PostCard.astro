@@ -35,8 +35,8 @@ if (post.body) {
 ---
 
 <article class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
-  <a href={postUrl} class="block">
-    <div class="relative h-48 overflow-hidden">
+  <div class="relative h-48 overflow-hidden">
+    <a href={postUrl} class="block h-full">
       <Image
         src={header_image}
         alt={title}
@@ -45,29 +45,29 @@ if (post.body) {
         width={800}
         height={400}
       />
+    </a>
 
-      <!-- Reading time badge -->
-      {showReadingTime && (
-        <div class="absolute top-3 right-3">
-          <span class="px-2 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300 rounded-full shadow-sm">
-            {readingTime} min read
-          </span>
-        </div>
-      )}
+    <!-- Reading time badge -->
+    {showReadingTime && (
+      <div class="absolute top-3 right-3">
+        <span class="px-2 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300 rounded-full shadow-sm">
+          {readingTime} min read
+        </span>
+      </div>
+    )}
 
-      {categoryList.length > 0 && (
-        <div class="absolute bottom-3 left-3">
-          <div class="flex gap-1 flex-wrap">
-            {categoryList.slice(0, 2).map(cat => (
-              <span class="px-2 py-1 text-xs font-medium bg-black/70 text-white rounded">
-                {cat}
-              </span>
-            ))}
-          </div>
+    {categoryList.length > 0 && (
+      <div class="absolute bottom-3 left-3">
+        <div class="flex gap-1 flex-wrap">
+          {categoryList.slice(0, 2).map(cat => (
+            <span class="px-2 py-1 text-xs font-medium bg-black/70 text-white rounded">
+              {cat}
+            </span>
+          ))}
         </div>
-      )}
-    </div>
-  </a>
+      </div>
+    )}
+  </div>
 
   <div class="p-4">
     <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">
