@@ -1,0 +1,27 @@
+---
+// Newsletter signup component
+import { siteConfig } from '../config/site';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+// const { topic } = siteConfig;
+---
+
+<section class="newsletter-section bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-2xl text-gray-900 dark:text-white mb-3">{t('newsletter.title')}</h3>
+    <p class="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
+      {t('newsletter.description')}
+    </p>
+    <a
+      href="/newsletter/redirect/footer/"
+      class="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+    >
+      {t('newsletter.subscribe')}
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+    </a>
+  </div>
+</section>

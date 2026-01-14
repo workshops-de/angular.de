@@ -1,0 +1,16 @@
+---
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+// Strip HTML tags and calculate reading time
+const textContent = content.replace(/<[^>]*>/g, '');
+const words = textContent.trim().split(/\s+/).length;
+const wordsPerMinute = 200;
+const minutes = Math.ceil(words / wordsPerMinute);
+---
+
+<span>{minutes} Min. Lesezeit</span>
+

@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import PersonJsonLd from '../../components/PersonJsonLd.astro';
+import { getCollection } from 'astro:content';
+import { siteConfig } from '../../config/site';
+
+export async function getStaticPaths() {
+  const users = await getCollection('users');
+  const posts = await getCollection('posts');
+
+  return users.map(user => {
+    const permalink = user.data.permalink || user.data.name.toLowerCase().replace(/\s+/g, '-');
+    return {
+      params: { permalink },
+      props: {
+        user: user.data,
+        permalink,
+        authorPosts: posts
+          .filter(post => post.data.author === user.data.name || post.data.co_author === user.data.name)
+          .sort((a, b) => b.data.published_at.getTime() - a.data.published_at.getTime()),
+      },
+    };
+  });
+}
+
+const { user, permalink, authorPosts } = Astro.props;
+
+const gravatarUrl = user.gravatar_uid
+  ? `https://www.gravatar.com/avatar/${user.gravatar_uid}?s=300&d=mp`
+  : `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=8514f5&color=fff&size=300`;
+
+// Build social links for sameAs
+const sameAs: string[] = [];
+if (user.github) sameAs.push(`https://github.com/${user.github}`);
+if (user.twitter) sameAs.push(`https://twitter.com/${user.twitter}`);
+---
+
+<BaseLayout
+  title={`${user.name} - Autor & Trainer Profil`}
+  description={user.bio || `${user.name} - Autor bei Angular.DE`}
+>
+  <!-- Person JSON-LD for rich search results -->
+  <PersonJsonLd
+    name={user.name}
+    image={gravatarUrl}
+    jobTitle={user.intro || undefined}
+    description={user.bio || undefined}
+    url={`${siteConfig.url}/team/${permalink}/`}
+    sameAs={sameAs}
+  />
+
+  <section class="py-12 dark:bg-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <!-- Profile Header -->
+        <div class="flex flex-col md:flex-row gap-8 items-start mb-12">
+          <img
+            src={gravatarUrl}
+            alt={user.name}
+            class="w-40 h-40 rounded-full shadow-lg object-cover"
+          />
+          <div>
+            <h1 class="text-3xl text-gray-900 dark:text-white mb-2">{user.name}</h1>
+            {user.city && (
+              <p class="text-gray-500 dark:text-gray-400 mb-4">
+                📍 {user.city}
+              </p>
+            )}
+            {user.intro && (
+              <p class="text-lg text-gray-600 dark:text-gray-400 mb-4" set:html={user.intro} />
+            )}
+            {user.bio && (
+              <p class="text-gray-600 dark:text-gray-400 mb-4">{user.bio}</p>
+            )}
+            <div class="flex gap-3">
+              {user.github && (
+                <a
+                  href={`https://github.com/${user.github}`}
+                  target="_blank"
+                  rel="noopener"
+                  class="px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500 transition-colors"
+                >
+                  GitHub
+                </a>
+              )}
+              {user.twitter && (
+                <a
+                  href={`https://twitter.com/${user.twitter}`}
+                  target="_blank"
+                  rel="noopener"
+                  class="px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-accent-400 hover:text-accent-500 transition-colors"
+                >
+                  Twitter
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <!-- Author's Posts -->
+        {authorPosts.length > 0 && (
+          <div>
+            <h2 class="text-2xl text-gray-900 dark:text-white mb-6">
+              Artikel von {user.name}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {authorPosts.map(post => (
+                <PostCard post={post} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

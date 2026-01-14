@@ -1,0 +1,23 @@
+---
+import { siteConfig } from '../config/site';
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": siteConfig.title,
+  "url": siteConfig.url,
+  "logo": `${siteConfig.url}/assets/img/logo.svg`,
+  "sameAs": [
+    `https://twitter.com/${siteConfig.twitter_username}`,
+    `https://github.com/${siteConfig.github_username}`,
+    siteConfig.linkedin_url
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "url": `${siteConfig.url}/kontakt/`
+  }
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(organization)} />

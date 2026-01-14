@@ -1,0 +1,97 @@
+---
+import { siteConfig, getCommunityLinks } from '../config/site';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const currentYear = new Date().getFullYear();
+const communities = getCommunityLinks();
+
+const navigation = [
+  { name: t('nav.articles'), href: translatePath('/artikel/') },
+  { name: t('footer.tutorials'), href: translatePath('/tutorials/') },
+  { name: t('nav.training'), href: lang === 'en' ? '/en/training/angular-intensiv/' : `/schulungen/${siteConfig.training.mainCourse}/` },
+  { name: t('footer.meetups'), href: translatePath('/meetups/') },
+  { name: t('footer.team'), href: translatePath('/team/') },
+];
+
+const social = [
+  { name: 'LinkedIn', href: siteConfig.linkedin_url },
+  { name: 'GitHub', href: `https://github.com/${siteConfig.github_username}` },
+  { name: 'RSS-Feed', href: '/feed.xml' },
+];
+---
+
+<footer class="bg-gray-900 text-gray-300 py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-1">
+        <div class="text-2xl font-bold mb-2">
+          <span class="text-primary">{siteConfig.titleShort}</span><span class="text-white">{siteConfig.titleSuffix}</span>
+        </div>
+        <p class="text-sm text-gray-400">
+          {t('footer.poweredBy')} <a href={`${siteConfig.training.providerUrl}?utm_source=${siteConfig.utm_source}&utm_campaign=crossmarketing_permanent&utm_medium=portal&utm_content=footer_nav`} class="text-gray-300 hover:text-white">{siteConfig.training.provider}</a>
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="text-white font-semibold uppercase text-sm mb-4">{t('footer.navigation')}</h4>
+        <ul class="space-y-2">
+          {navigation.map(item => (
+            <li>
+              <a href={item.href} class="text-sm text-gray-400 hover:text-white transition-colors">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Communities -->
+      <div>
+        <h4 class="text-white font-semibold uppercase text-sm mb-4">{t('footer.communities')}</h4>
+        <ul class="space-y-2">
+          {communities.map(item => (
+            <li>
+              <a href={item.href} target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-white transition-colors">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h4 class="text-white font-semibold uppercase text-sm mb-4">{t('footer.followUs')}</h4>
+        <ul class="space-y-2">
+          {social.map(item => (
+            <li>
+              <a href={item.href} target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-white transition-colors">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">
+        © {currentYear} {siteConfig.footer.copyright}
+      </p>
+      <div class="flex gap-6">
+        <a href={translatePath('/impressum/')} class="text-sm text-gray-400 hover:text-white transition-colors">
+          {t('footer.imprint')}
+        </a>
+        <a href={translatePath('/datenschutz/')} class="text-sm text-gray-400 hover:text-white transition-colors">
+          {t('footer.privacy')}
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

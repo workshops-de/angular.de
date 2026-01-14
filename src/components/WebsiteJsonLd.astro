@@ -1,0 +1,25 @@
+---
+import { siteConfig } from '../config/site';
+
+// WebSite schema with SearchAction for Google Sitelinks Search Box
+// https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteConfig.title,
+  "url": siteConfig.url,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteConfig.url}/suche/?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(website)} />
+
+
+

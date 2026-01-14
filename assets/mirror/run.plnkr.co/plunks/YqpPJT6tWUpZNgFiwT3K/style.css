@@ -1,7 +1,0 @@
-[name='userForm'] .check {
-  color: rgba(255,255,255,0);
-}
-
-[name='userForm'] .check.valid {
-  color: rgba(130,200,130,1);
-}
