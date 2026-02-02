@@ -316,56 +316,52 @@ Ich würde dir also empfehlen, ein zweites Terminal zu öffnen und folgenden Bef
 
 ```bash
 $ npx @angular/cli generate component info-box
-CREATE src/app/info-box/info-box.component.scss (0 bytes)
-CREATE src/app/info-box/info-box.component.html (23 bytes)
-CREATE src/app/info-box/info-box.component.spec.ts (636 bytes)
-CREATE src/app/info-box/info-box.component.ts (277 bytes)
+CREATE src/app/info-box/info-box.scss (0 bytes)
+CREATE src/app/info-box/info-box.html (23 bytes)
+CREATE src/app/info-box/info-box.spec.ts (636 bytes)
+CREATE src/app/info-box/info-box.ts (277 bytes)
 ```
 
-Die für uns aktuell relevanten Dateien sind zur Zeit die `info-box.component.ts` und unser Template `info-box.component.html`. Schauen wir uns zunächst einmal unsere Klasse an.
+Die für uns aktuell relevanten Dateien sind zur Zeit die `info-box.ts` und unser Template `info-box.html`. Schauen wir uns zunächst einmal unsere Klasse an.
 
 ```typescript
 @Component({
   selector: 'app-info-box',
-  templateUrl: './info-box.component.html',
-  styleUrls: ['./info-box.component.scss'],
+  templateUrl: './info-box.html',
+  styleUrls: ['./info-box.scss'],
 })
-export class InfoBoxComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class InfoBoxComponent {}
 ```
 
 Hier sehen wir wie erwartet eine neue Komponente. Unser Selektor hat den automatischen Prefix `app-` bekommen. Somit ist unsere neue Komponente nun unter dem HTML-Tag `<app-info-box></app-info-box>` nutzbar.
 
 Komponenten referenzieren ihre Abhängigkeiten direkt in der `AppComponent` über `imports`. Der Einstiegspunkt unserer kompletten Anwendung ist die `AppComponent`.
 
-Um unsere frisch generierte Komponente anzuzeigen, müssen wir diese zuerst in der `AppComponent` importieren und dann in dem Template aufrufen. Hierzu gehst du in die Datei `app.component.ts` und fügst den Import hinzu:
+Um unsere frisch generierte Komponente anzuzeigen, müssen wir diese zuerst in der `AppComponent` importieren und dann in dem Template aufrufen. Hierzu gehst du in die Datei `app.ts` und fügst den Import hinzu:
 
 ```typescript
 import { Component } from '@angular/core';
-import { InfoBoxComponent } from './info-box/info-box.component';
+import { InfoBoxComponent } from './info-box/info-box';
 
 @Component({
   selector: 'app-root',
   imports: [InfoBoxComponent], // Hier importieren wir unsere Komponente
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.html',
+  styleUrls: ['./app.scss']
 })
 export class AppComponent {
   title = 'angular-de-tutorial';
 }
 ```
 
-Anschließend gehst du in die Datei `app.component.html`, löschst dort den kompletten derzeitigen Inhalt und fügst deine Komponente via HTML-Tag ein.
+Anschließend gehst du in die Datei `app.html`, löschst dort den kompletten derzeitigen Inhalt und fügst deine Komponente via HTML-Tag ein.
 
 ```html
 <app-info-box></app-info-box>
 ```
 
 Wenn du nun deine Anwendung wieder im Browser öffnest, solltest du die Ausgabe `info-box works!` sehen.
-Du kannst an dieser Stelle gerne mit deinem Template in `info-box.component.html` etwas herumspielen und auch mehrere dieser Info-Boxen erzeugen, indem du den HTML-Tag in deinem App-Template einfach kopierst.
+Du kannst an dieser Stelle gerne mit deinem Template in `info-box.html` etwas herumspielen und auch mehrere dieser Info-Boxen erzeugen, indem du den HTML-Tag in deinem App-Template einfach kopierst.
 Ein historischer Moment – nimm dir ein paar Sekunden Zeit, um deine erste eigene Komponente zu bewundern. 😉
 
 ## Expressions und Template Literals
@@ -395,12 +391,8 @@ Führen wir also ein neues Signal `text` ein und füllen dieses mit einem String
 ```typescript
 import { signal } from '@angular/core';
 
-class InfoBoxComponent implements OnInit {
+class InfoBoxComponent {
   text = signal('Additional Info-Text on our Info Box! 🎊');
-
-  constructor() {}
-
-  ngOnInit() {}
 }
 ```
 
@@ -435,13 +427,9 @@ Hierzu setzen wir statt dem festen Wert den Namen des Signals auf das Binding:
 ```typescript
 import { signal } from '@angular/core';
 
-class InfoBoxComponent implements OnInit {
+class InfoBoxComponent {
   text = signal('Additional Info-Text on our Info Box! 🎊');
   hidden = signal(true);
-
-  constructor() {}
-
-  ngOnInit() {}
 }
 ```
 
@@ -482,7 +470,7 @@ Hierfür gibt es in Angular die Control-Flow-Syntax `@for`.
 Der Block ist angelehnt an eine For-Schleife, iteriert über eine listenartige Struktur und erzeugt für jedes Element eine Kopie des DOM-Elements, auf das es angewandt wird. Mit `track` gibst du an, wie Angular Einträge eindeutig identifiziert.
 
 ```html
-<!-- book-list.component.html -->
+<!-- book-list.html -->
 
 <ul>
   @for (book of books(); track book.id) {
@@ -503,24 +491,24 @@ Dazu führen wir den command `npx @angular/cli generate component book-list` aus
 Damit die `BookListComponent` im Template nutzbar ist, müssen wir sie in der `AppComponent` in `imports` aufnehmen:
 
 ```typescript
-// app.component.ts
+// app.ts
 import { Component } from '@angular/core';
-import { InfoBoxComponent } from './info-box/info-box.component';
-import { BookListComponent } from './book-list/book-list.component';
+import { InfoBoxComponent } from './info-box/info-box';
+import { BookListComponent } from './book-list/book-list';
 
 @Component({
   selector: 'app-root',
   imports: [InfoBoxComponent, BookListComponent], // BookListComponent hinzufügen
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.html',
+  styleUrls: ['./app.scss']
 })
 export class AppComponent {
   title = 'angular-de-tutorial';
 }
 ```
 
-Anschließend fügen wir das Tag `<app-book-list></app-book-list>` in das Template der `app.component.html` ein.
-Wenn wir also in der `BookListComponent` (siehe _book-list.component.ts_) eine Variable `books` mit einer Liste von Büchern definieren, erhalten wir hierfür 3 DOM-Elemente.
+Anschließend fügen wir das Tag `<app-book-list></app-book-list>` in das Template der `app.html` ein.
+Wenn wir also in der `BookListComponent` (siehe _book-list.ts_) eine Variable `books` mit einer Liste von Büchern definieren, erhalten wir hierfür 3 DOM-Elemente.
 
 ```typescript
 import { signal } from '@angular/core';
@@ -660,11 +648,11 @@ export class BookListComponent {
 ```
 
 Meist importiert deine IDE den `BookDataService` und `inject` automatisch.
-Sollte dies nicht der Fall sein, kannst du dies selbst vornehmen und folgenden import an den Anfang der `book-list.component.ts` schreiben.
+Sollte dies nicht der Fall sein, kannst du dies selbst vornehmen und folgenden import an den Anfang der `book-list.ts` schreiben.
 
 ```typescript
 import { inject } from '@angular/core';
-import { BookDataService } from '../book-data.service';
+import { BookDataService } from '../book-data';
 ```
 
 ## Daten via REST-API nachladen
@@ -721,7 +709,7 @@ export class BookListComponent {
 ```
 
 Meist importiert deine IDE den `Observable` automatisch.
-Sollte dies nicht der Fall sein, kannst du dies selbst vornehmen und folgenden import an den Anfang der `book-list.component.ts` schreiben.
+Sollte dies nicht der Fall sein, kannst du dies selbst vornehmen und folgenden import an den Anfang der `book-list.ts` schreiben.
 
 ```typescript
 import { Observable } from 'rxjs';
@@ -773,9 +761,9 @@ npx @angular/cli new my-app --test-runner=vitest
 ### Beispiel-Test mit Vitest
 
 ```typescript
-// book-list.component.spec.ts
+// book-list.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BookListComponent } from './book-list.component';
+import { BookListComponent } from './book-list';
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
