@@ -29,7 +29,7 @@ Wir werden hierbei folgende Themen behandeln:
 - Expressions und Schleifen
 - Event- & Property-Binding
 - Services und Dependency-Injection
-- Anbinden einer Rest-API mit modernen APIs
+- Anbinden einer REST-API mit modernen APIs
 
 Wir werden hierbei die Motivation und den theoretischen Background kurz einleiten, uns jedoch primär auf praktische Beispiele konzentrieren. Wir werden eine kleine Anwendung bauen, welche uns eine Liste von Daten von einer REST-API ausliest und diese anzeigt.
 
@@ -58,7 +58,7 @@ Alle drei Bibliotheken, beziehungsweise Frameworks, haben ihre Daseinsberechtigu
 
 **VueJS** bedient die Anforderungen zwischen diesen beiden Frameworks. Indem das Framework auf einen Generator und klare Strukturen setzt, begünstigt es ebenfalls die Skalierung von Projekt-Teams. Allerdings versucht VueJS gleichzeitig sehr leichtgewichtig zu bleiben und möglichst wenig "Framework-Magic" einzubringen. Es ist also die simple, aber strukturierte Mittellösung.
 
-Dies ist meine persönliche Einschätzung und ich habe bereits sehr gut mit allen diesen Frameworks gearbeitet. Es kommt individuell auf die Problemstellung und das Team an. Falls du gerade neu im Bereich Web bist, kann ich dir auch sehr unseren [Moderne Webentwicklung und Frontend-Architekur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, der dir einen Überblick über die moderne Webentwicklung von heute aufzeigt.
+Dies ist meine persönliche Einschätzung und ich habe bereits sehr gut mit allen diesen Frameworks gearbeitet. Es kommt individuell auf die Problemstellung und das Team an. Falls du gerade neu im Bereich Web bist, kann ich dir auch sehr unseren [Moderne Webentwicklung und Frontend-Architektur Kurs](https://workshops.de/seminare-schulungen-kurse/frontend-architektur) empfehlen, der dir einen Überblick über die moderne Webentwicklung von heute aufzeigt.
 
 ### Motivation
 
@@ -211,7 +211,7 @@ Google under Google's Privacy Policy at https://policies.google.com/privacy? For
 details and how to change this setting, see http://angular.io/analytics. Yes|No
 ```
 
-Nun werden automatisch die Projektstrukturen für dich angelegt. Dies inkludiert eine Startseite, eine Komponente, Tests, Linter-Regeln, GitIgnore-Regeln und eine TypeScript Konfiguration.
+Nun werden automatisch die Projektstrukturen für dich angelegt. Dies inkludiert eine Startseite, eine Komponente, Tests, Linter-Regeln, gitignore-Regeln und eine TypeScript Konfiguration.
 
 Nach dem Generieren werden ebenfalls notwendige Pakete via `npm` installiert. Dies kann durchaus einige Minuten dauern. Ist die Installation abgeschlossen, kannst du die Entwicklungsumgebung starten.
 
@@ -667,7 +667,7 @@ import { inject } from '@angular/core';
 import { BookDataService } from '../book-data.service';
 ```
 
-## Daten via Rest-API nachladen
+## Daten via REST-API nachladen
 
 Die aktuelle Version hat uns die Konzepte von Angular Stück für Stück näher erklärt. In der Realität werden Daten jedoch meist von einem Server asynchron nachgeladen.
 
