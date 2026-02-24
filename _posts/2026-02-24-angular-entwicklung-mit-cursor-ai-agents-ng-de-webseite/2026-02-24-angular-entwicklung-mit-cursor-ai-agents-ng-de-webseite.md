@@ -1,6 +1,6 @@
 ---
 title: "Angular-Entwicklung mit Cursor: Wie AI-Agents die NG-DE Webseite in Rekordzeit gebaut haben"
-description: "Mit Cursor und AI-Agents haben wir die neue NG-DE Konferenz-Webseite in einem Bruchteil der üblichen Zeit entwickelt. Durch geschickt definierte Rules und Agent-Dialog entstehen moderne Angular-Anwendungen mit 5x weniger Zeitaufwand – ohne dabei auf Code-Qualität zu verzichten."
+description: "Mit Cursor und AI-Agents haben wir die neue NG-DE Webseite in einem Bruchteil der üblichen Zeit entwickelt."
 author: "Robin Böhm"
 published_at: 2026-02-24 10:00:00.000000Z
 header_image: header.jpg
