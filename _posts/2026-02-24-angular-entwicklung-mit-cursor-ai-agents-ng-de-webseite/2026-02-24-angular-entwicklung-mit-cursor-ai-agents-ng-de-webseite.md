@@ -46,47 +46,9 @@ Der Schlüssel für erfolgreiche AI-gestützte Angular-Entwicklung liegt in prä
 
 Diese Regeln sorgen dafür, dass jede AI-generierte Komponente moderne Angular-Patterns verwendet und konsistent mit dem Rest der Anwendung ist.
 
-## Praktisches Beispiel: Komponenten-Entwicklung mit Agents
-
-Stell dir vor, du brauchst eine Hero-Komponente für die Startseite. Anstatt sie selbst zu implementieren, beschreibst du dem Agent was du möchtest:
-
-> "Erstelle eine Hero-Komponente für die NG-DE Konferenz mit einem animierten Call-to-Action Button und Responsive Design."
-
-Der Agent generiert daraufhin Code wie diesen:
-
-```typescript
-@Component({
-  selector: 'ngde-hero',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styles: `
-    @keyframes hero-flash-pulse {
-      0%, 100% {
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-      }
-    }
-
-    .hero-flash-sale-button {
-      animation: hero-flash-pulse 10s ease-in-out infinite;
-    }
-  `,
-  template: `...`
-})
-export class HeroComponent {
-  private dialog = inject(Dialog);
-  private flashSaleService = inject(FlashSaleService);
-
-  // Component logic
-}
-```
-
-Beachte: Der Agent verwendet automatisch `inject()` statt Constructor Injection, moderne `ChangeDetectionStrategy.OnPush` und Inline-Styles – genau wie in unseren Rules definiert.
-
 ## Responsive Design per Prompt
 
-Ein besonders beeindruckendes Beispiel ist die Responsive-Entwicklung. Anstatt mühsam Breakpoints zu definieren und CSS zu schreiben, sagst du dem Agent einfach:
+Ein gutes Beispiel ist die Responsive-Entwicklung. Anstatt mühsam Breakpoints zu definieren und CSS zu schreiben, sagst du dem Agent einfach:
 
 > "Die Tickets-Sektion soll auf Mobile einspaltig, auf Tablet zweispaltig und auf Desktop dreispaltig dargestellt werden. Die Karten sollen bei Hover einen subtilen Schatten-Effekt haben."
 
@@ -112,9 +74,17 @@ Der Agent implementiert nicht nur das gewünschte Layout, sondern achtet auch au
 }
 ```
 
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="NG-DE 2025 Speaker List"
+class="lazy img-fluid img-rounded" data-src="ng-de-agenda.png" data-srcset="ng-de-agenda.png"
+/>
+</p>
+
 ## Inspiration für Timeline Komponente: Digitale Leute Agenda
 
-Ein besonders schönes Beispiel für die Kraft von AI-Agents zeigt sich bei der Entwicklung unserer Agenda-Komponente. Als Inspiration nutzte ich die wunderschön gestaltete Agenda-Seite unserer Freunde von [Digitale Leute](https://digitale-leute.de) – ein Design, das ich schon lange bewundert hatte.
+Ein besonders schönes Beispiel für die Kraft von AI-Agents zeigt sich bei der Entwicklung unserer Agenda-Komponente. Als Inspiration nutzte ich die wunderschön gestaltete Agenda-Seite unserer Freunde von [Digitale Leute](https://digitale-leute.de).
 
 <p class="left">
 <img
