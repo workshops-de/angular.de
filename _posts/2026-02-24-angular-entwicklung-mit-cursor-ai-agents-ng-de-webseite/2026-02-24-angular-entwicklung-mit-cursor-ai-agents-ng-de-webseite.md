@@ -213,4 +213,4 @@ Möchtest du selbst AI-gestützte Angular-Entwicklung lernen? In unseren Angular
 * 🔧 [NG-DE Webseite](https://2025.ng-de.org/?utm_source=angular.de&utm_medium=blog&utm_campaign=angular-cursor-ng-de-article&utm_content=sources)
 * 🔧 [NG-DE 2025 Webseite](https://2025.ng-de.org/?utm_source=angular.de&utm_medium=blog&utm_campaign=angular-cursor-ng-de-article&utm_content=sources)
 * 📚 [Cursor Documentation](https://cursor.sh/docs)
-* 🎓 [Angular Schulungen auf workshops.de](https://workshops.de/seminare-schulungen-kurse/angular)
+* 🎓 [Angular & Agentic AI Engineering](https://workshops.de/seminare-schulungen-kurse/angular-ai-agent-driven-development?utm_source=angular.de&utm_medium=blog&utm_campaign=angular-cursor-ng-de-article&utm_content=sources)
