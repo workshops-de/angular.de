@@ -15,6 +15,13 @@ Die Entwicklung der [NG-DE 2025 Webseite](https://ng-de.org/?utm_source=angular.
 <img
 style="max-width: 80%"
 src="/shared/assets/img/placeholder-image.svg" alt="NG-DE 2025 Website Header"
+class="lazy img-fluid img-rounded" data-src="ng-de-2024-header.png" data-srcset="ng-de-2024-header.png"
+/>
+</p>
+<p class="left">
+<img
+style="max-width: 80%"
+src="/shared/assets/img/placeholder-image.svg" alt="NG-DE 2025 Website Header"
 class="lazy img-fluid img-rounded" data-src="ng-de-header.png" data-srcset="ng-de-header.png"
 />
 </p>
