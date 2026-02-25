@@ -128,10 +128,10 @@ Der traditionelle Workflow hat sich grundlegend verändert:
 
 ### Mit Cursor Agents:
 1. Requirements in natürlicher Sprache formulieren (10 min)
-2. Agent implementiert und iteriert (30 min)
-3. Code Review und Anpassungen (45 min)
+2. Agent implementiert und iteriert (10 min)
+3. Code Review und Anpassungen (15 min)
 
-**Gesamt: ~1,5 Stunden**
+**Gesamt: ~35 Minuten**
 
 ## Konkrete Regeln für bessere Ergebnisse
 
