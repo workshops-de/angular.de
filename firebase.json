@@ -6,6 +6,28 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/newsletter/redirect/hero*",
+        "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[21477][65536]=1&group[26094][512]=1",
+        "type": 301
+      },
+      {
+        "source": "/newsletter/redirect/footer*",
+        "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[21477][1]=1&group[26094][512]=1",
+        "type": 301
+      },
+      {
+        "source": "/newsletter/redirect/article*",
+        "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[21477][32768]=1&group[26094][512]=1",
+        "type": 301
+      },
+      {
+        "source": "/newsletter/redirect*",
+        "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[26094][512]=1",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",
