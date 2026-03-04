@@ -109,21 +109,20 @@ export const siteConfig = {
     mainCourse: "angular-intensiv",
     provider: "Workshops.DE",
     providerUrl: "https://workshops.de",
-    // All available courses
     courses: [
       {
-        id: "angular-typescript",
+        id: "angular-modul-1",
         title: {
-          de: "Angular & TypeScript",
-          en: "Angular & TypeScript",
+          de: "Angular: Modul 1 - Komponenten, Reaktivität & Schnittstellen",
+          en: "Angular: Module 1 - Components, Reactivity & Interfaces",
         },
         subtitle: {
-          de: "Grundlagen-Intensivkurs",
-          en: "Fundamentals Intensive Course",
+          de: "Intensiv-Schulung",
+          en: "Intensive Training",
         },
         description: {
-          de: "Grundlagen-Intensivkurs für den Einstieg in Angular und TypeScript. Perfekt für Einsteiger:innen.",
-          en: "Fundamentals intensive course for getting started with Angular and TypeScript. Perfect for beginners.",
+          de: "Intensiv-Schulung für den Einstieg in Angular und TypeScript. Komponenten, Signals, Routing und API-Anbindung.",
+          en: "Intensive training for getting started with Angular and TypeScript. Components, Signals, Routing and API integration.",
         },
         duration: {
           de: "3 Tage",
@@ -134,22 +133,22 @@ export const siteConfig = {
           en: "On-Site or Remote",
         },
         icon: "/assets/img/workshops/logo-angular-typescript-schulung.svg",
-        url: "/seminare-schulungen-kurse/angular-typescript",
+        url: "/seminare-schulungen-kurse/angular-modul-1",
         level: "beginner",
       },
       {
-        id: "angular-advanced",
+        id: "angular-modul-2",
         title: {
-          de: "Angular Advanced",
-          en: "Angular Advanced",
+          de: "Angular: Modul 2 - Architektur, Qualität & Mono-Repositories",
+          en: "Angular: Module 2 - Architecture, Quality & Mono-Repositories",
         },
         subtitle: {
-          de: "Fortgeschrittene Konzepte",
-          en: "Advanced Concepts",
+          de: "Intensiv-Schulung",
+          en: "Intensive Training",
         },
         description: {
-          de: "Fortgeschrittene Konzepte für erfahrene Entwickler:innen. RxJS, Testing, Performance und Architektur.",
-          en: "Advanced concepts for experienced developers. RxJS, Testing, Performance and Architecture.",
+          de: "Intensiv-Schulung für fortgeschrittene Angular-Entwickler:innen. Architektur, Testing, Performance und Mono-Repositories.",
+          en: "Intensive training for advanced Angular developers. Architecture, Testing, Performance and Mono-Repositories.",
         },
         duration: {
           de: "3 Tage",
@@ -160,7 +159,7 @@ export const siteConfig = {
           en: "On-Site or Remote",
         },
         icon: "/assets/img/workshops/logo-angular-advanced.svg",
-        url: "/seminare-schulungen-kurse/angular-advanced",
+        url: "/seminare-schulungen-kurse/angular-modul-2",
         level: "advanced",
       },
       {

@@ -25,11 +25,11 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
     <div class="col-xs-12 col-md-6">
       <p>
         Du lernst lieber interaktiv und möchtest Fragen an Experten stellen? Wir bieten euch auch
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-link">Angular
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-link">Angular
                     und TypeScript Schulungen</a> an. Hier kannst du in kleinen Gruppen deine Lernkurve maximieren.
       </p>
       <p class="">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
       </p>
 
     </div>
@@ -541,12 +541,12 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
   <div class="row mb-2">
     <div class="col-xs-12 col-md-6">
       <p> Maximaler Lernerfolg um direkt in deinem Projekt durchzustarten? Überpring die "Anfängerfehler" und nutze lieber unsere
-        jahrelange Erfahrung. Komm in unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Angular und TypeScript Schulungen</a>.
+        jahrelange Erfahrung. Komm in unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Angular und TypeScript Schulungen</a>.
         Hier lernst du die Konzepte, Features und Fallstricke des Frameworks und kannst uns direkt spezifisch zu Herausforderungen
         in deinem nächsten Projekt zu rat ziehen.
       </p>
       <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
+        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
       </p>
     </div>
     <div class="col-xs-12 col-md-6">

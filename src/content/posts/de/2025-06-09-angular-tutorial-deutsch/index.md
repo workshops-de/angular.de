@@ -12,7 +12,7 @@ header_image: "header.jpg"
 
 Dieses Tutorial erklärt euch die Grundlagen des Frameworks Angular in der neuesten Version 20. Angular 20 bringt viele spannende Neuerungen mit sich, darunter Standalone Components als Standard, verbesserte Template-Syntax mit Template Literals, Zoneless Change Detection und vieles mehr. Das Framework nutzt semantische Versionierung und wird kontinuierlich weiterentwickelt.
 
-Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalte der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-intro).
+Diese Einführung ist für Anfänger gedacht, die gerade mit Angular beginnen. Das Beispiel orientiert sich an den ersten Aufgaben unserer Workshop-Inhalte der [Angular Intensiv Schulung](https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-intro).
 
 Unsere Didaktik behandelt dabei die Motivation, die Theorie und dann den Praxis-Teil.
 
@@ -93,7 +93,7 @@ Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele ander
 [[cta:training-top]]
   <div class="row mb-3">
     <div class="col-12">
-      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
         schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
       </p>
     </div>
@@ -113,7 +113,7 @@ Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele ander
            <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
            Deutsch/Englisch möglich
          </div>
-         <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
+         <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
            Zur Angular & TypeScript Schulung
          </a>
    </div>
@@ -559,7 +559,7 @@ books = [
 [[cta:training-bottom]]
   <div class="row mb-3">
     <div class="col-8">
-      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
         schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
       </p>
     </div>
@@ -580,7 +580,7 @@ books = [
            <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
            Deutsch/Englisch möglich
          </div>
-         <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
+         <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
            Zur Angular & TypeScript Schulung
          </a>
    </div>
@@ -988,7 +988,7 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
 [[cta:training-bottom]]
   <div class="row mb-3">
     <div class="col-12">
-      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
+      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
         schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
       </p>
     </div>
@@ -1011,7 +1011,7 @@ Wenn Ihr euch weiter mit uns und anderen austauschen wollt, kommt in unseren [Di
 
         Deutsch/Englisch möglich
       </div>
-      <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-button">
+      <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-button">
         Zur Angular & TypeScript Schulung
       </a>
     </div>

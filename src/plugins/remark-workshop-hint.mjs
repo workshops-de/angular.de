@@ -17,7 +17,7 @@ const ctas = {
       en: "More information about Angular Training",
     },
     buttonUrl:
-      "https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top",
+      "https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top",
     image: "/assets/img/schulungen/shared/attendees.jpg",
     imageAlt: {
       de: "Teilnehmer:innen in der Veranstaltung Angular-Intensiv-Workshop",
@@ -38,7 +38,7 @@ const ctas = {
       en: "Continue learning now",
     },
     buttonUrl:
-      "https://workshops.de/seminare-schulungen-kurse/angular-typescript?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom",
+      "https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom",
     image: "/assets/img/schulungen/shared/attendees.jpg",
     imageAlt: {
       de: "Teilnehmer:innen der Veranstaltung Angular-Intensiv-Workshop",
