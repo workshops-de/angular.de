@@ -34,11 +34,14 @@ const gravatarUrl = user.gravatar_uid
 const sameAs: string[] = [];
 if (user.github) sameAs.push(`https://github.com/${user.github}`);
 if (user.twitter) sameAs.push(`https://twitter.com/${user.twitter}`);
+
+const hasThinContent = !user.bio || user.bio.trim().length < 50;
 ---
 
 <BaseLayout
   title={`${user.name} - Profil`}
   description={user.bio || `${user.name} - Autor bei Angular.DE`}
+  noindex={hasThinContent}
 >
   <!-- Person JSON-LD for rich search results -->
   <PersonJsonLd
