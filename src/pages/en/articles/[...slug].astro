@@ -5,11 +5,9 @@ import PostLayout from '../../../layouts/PostLayout.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('posts-en');
   return posts.map(post => {
-    // Extract slug from the post id (e.g., "en/article-name" -> "article-name")
     const idParts = post.id.split('/');
     const folderName = idParts.length > 1 ? idParts[1] : idParts[0];
-    // English articles don't have date prefixes
-    const slug = folderName;
+    const slug = folderName.replace(/^\d{4}-\d{2}-\d{2}-/, '');
 
     return {
       params: { slug },

@@ -8,6 +8,16 @@
     ],
     "redirects": [
       {
+        "source": "/ng-de-konferenz/**",
+        "destination": "https://ng-de.org",
+        "type": 301
+      },
+      {
+        "source": "/ng-de-konferenz",
+        "destination": "https://ng-de.org",
+        "type": 301
+      },
+      {
         "source": "/newsletter/redirect/hero*",
         "destination": "https://workshops.us5.list-manage.com/subscribe?u=465db430c1cb88ec6dea2ca40&id=2bee334983&group[21477][65536]=1&group[26094][512]=1",
         "type": 301

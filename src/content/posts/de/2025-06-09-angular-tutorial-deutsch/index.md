@@ -6,6 +6,7 @@ published_at: 2026-02-02T08:00:00.000Z
 categories: "tutorial angular"
 tutorial_page_order: "1"
 header_image: "header.jpg"
+translation_slug: "angular-tutorial"
 ---
 
 ## Einführung

@@ -4,11 +4,15 @@ import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig, buildUtmUrl } from '../../config/site';
 
-// Get latest posts
-const allPosts = await getCollection('posts');
+// Get latest posts - prefer English, fall back to German
+const enPosts = await getCollection('posts-en');
+const dePosts = await getCollection('posts');
+const hasEnglishPosts = enPosts.length > 0;
+const allPosts = hasEnglishPosts ? enPosts : dePosts;
 const latestPosts = allPosts
   .sort((a, b) => b.data.published_at.getTime() - a.data.published_at.getTime())
   .slice(0, 6);
+const articlesLang = hasEnglishPosts ? 'en' : 'de';
 
 const { topic, title, description, training, conference, discord_invite } = siteConfig;
 
@@ -150,13 +154,13 @@ const communityBenefits = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {latestPosts.map(post => (
-          <PostCard post={post} showReadingTime={true} lang="de" />
+          <PostCard post={post} showReadingTime={true} lang={articlesLang} />
         ))}
       </div>
 
       <div class="text-center mt-12">
         <a
-          href="/artikel/"
+          href="/en/articles/"
           class="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-200 dark:border-gray-700 rounded-full font-semibold text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary transition-colors"
         >
           All Articles
@@ -180,7 +184,7 @@ const communityBenefits = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Conference -->
         {conference && (
-          <a href="/ng-de-konferenz/" class="group block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <a href="https://ng-de.org" target="_blank" rel="noopener" class="group block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
             <div class="h-48 relative overflow-hidden">
               <img
                 src="/assets/img/ng-de/ng-de-mood-video.png"
@@ -204,7 +208,7 @@ const communityBenefits = [
         )}
 
         <!-- Meetups -->
-        <a href="/meetups/" class="group block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+        <a href="/en/meetups/" class="group block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
           <div class="h-48 relative overflow-hidden">
             <img
               src="/shared/assets/img/meetups.png"
@@ -242,7 +246,7 @@ const communityBenefits = [
             </div>
           </div>
           <div class="p-4">
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Your {topic} Discord in English</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Your {topic} Discord in German</p>
             <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
               Exchange ideas about challenges, solutions and events with others
             </h3>
@@ -262,7 +266,7 @@ const communityBenefits = [
           Since 2013 we have been offering tutorials, articles and <a href="/en/training/angular-intensiv/">training courses</a> about the {topic} framework.
         </p>
         <p>
-          With now <a href="/meetups/">18 meetups</a> that serve a total of over 10,000 {topic} developers as a platform for regular exchange,
+          With now <a href="/en/meetups/">18 meetups</a> that serve a total of over 10,000 {topic} developers as a platform for regular exchange,
           we are the region with the most {topic} developers in Europe.
           {conference && (
             <>
