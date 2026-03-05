@@ -159,7 +159,7 @@ nest g module events
 
 Ausgabe in der Console:
 
-```cmd-output
+```plaintext
 CREATE /src/events/events.module.ts (83 bytes)
 UPDATE /src/app.module.ts (316 bytes)
 ```
@@ -184,7 +184,7 @@ nest g co events
 
 Ausgabe in der Console:
 
-```cmd-output
+```plaintext
 CREATE /src/events/events.service.spec.ts (460 bytes)
 CREATE /src/events/events.service.ts (90 bytes)
 UPDATE /src/events/events.module.ts (163 bytes)
@@ -295,7 +295,7 @@ Die Initialisierung erwartet eine Datei mit dem Namen `ormconfig.json` in unsere
 
 Falls es Probleme bei der Verbindung gibt, bekommt ihr direkt eine Fehlermeldung in der Konsole.
 
-```cmd-output
+```plaintext
 [TypeOrmModule] Unable to connect to the database. Retrying (1)... +35ms
 Error: connect ECONNREFUSED 127.0.0.1:5433
 ```
@@ -304,7 +304,7 @@ Diese sind auch meistens sehr aussagekräftig, solltet ihr hierbei auf eine Fehl
 
 Wenn alles funktioniert, solltet ihr folgende Zeilen in der Ausgabe eures Servers sehen.
 
-```cmd-output
+```plaintext
 [InstanceLoader] TypeOrmCoreModule dependencies initialized
 [NestApplication] Nest application successfully started
 ```
@@ -399,7 +399,7 @@ Wenn ihr die Tabelle bereits vorher manuell erstellt habt oder eine bestehende T
 
 #### Server über start:dev gestartet
 
-```cmd-output
+```plaintext
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 SyntaxError: Unexpected token
 ```

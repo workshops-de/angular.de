@@ -81,7 +81,7 @@ Manchmal unterscheidet sich auch der Pfad unter dem der Backend-Server erreichba
 ```
 
 Beim Build aktivieren wir eine der Konfigurationen indem wir dessen Namen an die Angular CLI mitgeben:
-```commandline
+```bash
 ng build --configuration <config>
 ```
 

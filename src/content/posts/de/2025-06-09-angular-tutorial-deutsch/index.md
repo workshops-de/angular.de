@@ -80,37 +80,7 @@ Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele ander
 
 ![Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche.](release-cycle.png)
 
-<hr>
 [[cta:training-top]]
-  <div class="row mb-3">
-    <div class="col-12">
-      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
-        schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
-      </p>
-    </div>
-  </div>
-  <div class="row mb-4">
-    <div class="col-12">
-      <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Öffentliche Termine verfügbar
-         </div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Vor Ort, als auch Remote
-         </div>
-         <div class="d-flex align-items-center mb-3">
-           <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Deutsch/Englisch möglich
-         </div>
-         <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
-           Zur Angular & TypeScript Schulung
-         </a>
-   </div>
- </div>
-</div>
-<hr>
 
 ### Die Angular Plattform
 
@@ -334,17 +304,17 @@ Hier sehen wir wie erwartet eine Standalone Component. Unser Selektor hat den au
 Um unsere frisch generierte Komponente anzuzeigen, müssen wir diese zuerst in der `AppComponent` importieren und dann in dem Template aufrufen. Hierzu gehst du in die Datei `app.component.ts` und fügst den Import hinzu:
 
 ```typescript
-import { Component } from '@angular/core';
-import { InfoBoxComponent } from './info-box/info-box.component';
+import { Component } from "@angular/core";
+import { InfoBoxComponent } from "./info-box/info-box.component";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   imports: [InfoBoxComponent], // Hier importieren wir unsere Komponente
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'angular-de-tutorial';
+  title = "angular-de-tutorial";
 }
 ```
 
@@ -473,18 +443,18 @@ Dazu führen wir den command `npx @angular/cli generate component book-list` aus
 
 ```typescript
 // app.component.ts
-import { Component } from '@angular/core';
-import { InfoBoxComponent } from './info-box/info-box.component';
-import { BookListComponent } from './book-list/book-list.component';
+import { Component } from "@angular/core";
+import { InfoBoxComponent } from "./info-box/info-box.component";
+import { BookListComponent } from "./book-list/book-list.component";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   imports: [InfoBoxComponent, BookListComponent], // BookListComponent hinzufügen
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'angular-de-tutorial';
+  title = "angular-de-tutorial";
 }
 ```
 
@@ -510,38 +480,7 @@ books = [
 
 ![Die liste der statischen Bücher in HTML ausgeben](static-list-of-books.png)
 
-<hr>
 [[cta:training-bottom]]
-  <div class="row mb-3">
-    <div class="col-8">
-      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
-        schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
-      </p>
-    </div>
-
-  </div>
- <div class="row mb-4">
-   <div class="col-12">
-      <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Öffentliche Termine verfügbar
-         </div>
-         <div class="d-flex align-items-center mb-2">
-           <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Vor Ort, als auch Remote
-         </div>
-         <div class="d-flex align-items-center mb-3">
-           <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-           Deutsch/Englisch möglich
-         </div>
-         <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-top-button">
-           Zur Angular & TypeScript Schulung
-         </a>
-   </div>
- </div>
-</div>
-<hr>
 
 ## Der erste Service
 
@@ -610,7 +549,7 @@ Innerhalb des Konstruktors rufen wir dann die `getBooks()` Methode des Services 
 
 ```typescript
 export class BookListComponent {
-   books: { title: string; subtitle: string; }[];
+  books: { title: string; subtitle: string }[];
 
   constructor(private bookData: BookDataService) {
     this.books = this.bookData.getBooks();
@@ -644,15 +583,15 @@ Im nächsten Schritt wollen wir diese Daten aus unserem `BookDataService` heraus
 
 ```typescript
 // main.ts
-import { bootstrapApplication } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
-import { AppComponent } from './app/app.component';
+import { bootstrapApplication } from "@angular/platform-browser";
+import { provideHttpClient } from "@angular/common/http";
+import { AppComponent } from "./app/app.component";
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(), // HTTP-Client Provider hinzufügen
     // Weitere Providers...
-  ]
+  ],
 });
 ```
 
@@ -660,13 +599,13 @@ Alternativ können wir den `HttpClient` auch direkt in der Komponente importiere
 
 ```typescript
 // book-list.component.ts
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.scss']
+  selector: "app-book-list",
+  templateUrl: "./book-list.component.html",
+  styleUrls: ["./book-list.component.scss"],
 })
 export class BookListComponent {
   // ...
@@ -740,37 +679,4 @@ Angular bleibt in vielerlei Hinsicht sehr opinionated (meinungsstark), was beson
 
 Wenn du dich weiter mit uns und anderen austauschen willst, komm in unseren [Discord Chat](/discord) mit über 2000 wunderbaren anderen Menschen! Zusammen lernt es sich besser! :)
 
-<hr>
 [[cta:training-bottom]]
-  <div class="row mb-3">
-    <div class="col-12">
-      <p> Wir bieten Schulungen zum Einstieg in Angular. Ideal ist dafür unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-link">Angular & TypeScript Schulung</a> um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
-        schlecht googlen kannst, z.B. "Besserer Weg, um meine Applikation zu strukturieren". Wir können sie Dir beantworten.
-      </p>
-    </div>
-  </div>
-  <div class="row mb-4">
-    <div class="col-12">
-      <div class="h5 | mb-3">Öffentliche & Inhouse Schulung</div>
-      <div class="d-flex align-items-center mb-2">
-        <i class="fa fa-calendar icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-        Öffentliche Termine verfügbar
-      </div>
-      <div class="d-flex align-items-center mb-2">
-        <i class="fa fa-map-marker icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-        Vor Ort, als auch Remote
-      </div>
-      <div class="d-flex align-items-center mb-3">
-        <i class="fa fa-language icon text-center text-secondary | flex-shrink-0 | me-2"></i>
-
-[[cta:training-bottom]]
-
-        Deutsch/Englisch möglich
-      </div>
-      <a class="inline-block bg-primary !text-white font-medium py-1.5 px-3 text-sm rounded-lg hover:bg-primary-dark transition-colors" target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-article-bottom-button">
-        Zur Angular & TypeScript Schulung
-      </a>
-    </div>
-  </div>
-</div>
-<hr>
