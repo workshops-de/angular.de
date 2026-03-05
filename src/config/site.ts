@@ -165,8 +165,8 @@ export const siteConfig = {
       {
         id: "modern-angular",
         title: {
-          de: "Modern Angular - 2025 Edition",
-          en: "Modern Angular - 2025 Edition",
+          de: "Modern Angular - 2026 Edition",
+          en: "Modern Angular - 2026 Edition",
         },
         subtitle: {
           de: "Neueste Features",
