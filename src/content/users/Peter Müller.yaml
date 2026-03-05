@@ -3,7 +3,7 @@ name: Peter Müller
 gravatar_uid: ae93b93b375e9e16cd570872d52aa1d4
 github: BaggersIO
 city: Nürnberg
-team: true
+team: false
 trainer: true
 intro: Web Developer mit Schwerpunkt auf JavaScript und HTML5 insbesondere Angular.
 bio: >
