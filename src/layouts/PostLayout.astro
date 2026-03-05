@@ -211,12 +211,12 @@ const fullImageUrl = header_image?.src
         <!-- Author Info -->
         {authorData && (
           <div class="mb-8">
-            <PostAuthor author={authorData.data} />
+            <PostAuthor author={authorData.data} lang={language} />
           </div>
         )}
         {coAuthorData && (
           <div class="mb-8">
-            <PostAuthor author={coAuthorData.data} />
+            <PostAuthor author={coAuthorData.data} lang={language} />
           </div>
         )}
       </div>

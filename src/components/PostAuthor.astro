@@ -12,9 +12,11 @@ interface Author {
 
 interface Props {
   author: Author;
+  lang?: string;
 }
 
-const { author } = Astro.props;
+const { author, lang = 'de' } = Astro.props;
+const isGerman = lang === 'de';
 
 const gravatarUrl = author.gravatar_uid
   ? `https://www.gravatar.com/avatar/${author.gravatar_uid}?s=150&d=mp`
@@ -32,14 +34,18 @@ const permalink = author.permalink || author.name.toLowerCase().replace(/\s+/g, 
   />
   <div class="flex-1">
     <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-      <a href={`/team/${permalink}/`} class="hover:text-primary transition-colors">
-        {author.name}
-      </a>
+      {isGerman ? (
+        <a href={`/team/${permalink}/`} class="hover:text-primary transition-colors">
+          {author.name}
+        </a>
+      ) : (
+        <span>{author.name}</span>
+      )}
     </h4>
     {author.intro && (
       <p class="text-sm text-gray-500 dark:text-gray-400 mb-2" set:html={author.intro} />
     )}
-    {author.bio && (
+    {isGerman && author.bio && (
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{author.bio}</p>
     )}
     <div class="flex gap-4">
