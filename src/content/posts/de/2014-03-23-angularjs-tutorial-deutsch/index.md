@@ -19,32 +19,11 @@ Um das Tutorial nachzuvollziehen, ladet euch den Code von GitHub herunter:
 
 **Wichtig**: Den Code müsst ihr lokal auf einem beliebigen Webserver starten, da ihr sonst Probleme mit der _[Same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)_ bekommt. Ob ihr Apache, den eingebauten Webserver von WebStorm oder sonstigen Webserver nutzt, ist egal. Habt ihr Python installiert, funktioniert z.B.: `python -m SimpleHTTPServer`. Eine weitere Möglichkeit ist es Node.js zu installieren - die Installation liefert euch zugleich den Paketmanager npm. Mit diesem könnt ihr dann global einen HTTP-Server über den folgenden Befehl installieren: `npm install -g http-server`. Und danach ist es möglich in eurem Projektverzeichniss den HTTP-Server auszuführen mit `http-server -o`.
 
-<hr>
 [[cta:training-top]]
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p>
-        Du lernst lieber interaktiv und möchtest Fragen an Experten stellen? Wir bieten euch auch
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-link">Angular
-                    und TypeScript Schulungen</a> an. Hier kannst du in kleinen Gruppen deine Lernkurve maximieren.
-      </p>
-      <p class="">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
-      </p>
-
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
-
-  </div>
-</div>
-<hr>
 
 ## Überblick
 
-[[cta:training-top]]
-
+[[cta:training-middle-1]]
 
 Diese Teile wirst du von AngularJS kennenlernen:
 
@@ -524,7 +503,6 @@ Der `$routeProvider` hat zwei Methoden: `.when` und `.otherwise`. Mit when könn
 
 [[cta:training-bottom]]
 
-
 ## Wie geht es weiter?
 
 Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei nicht genug Zeit, um auf alles intensiv einzugehen und es im Detail zu erklären. Einige coole Dinge, die wir an dieser Stelle noch nicht behandelt haben, sind z.B.:
@@ -534,24 +512,3 @@ Dies ist ein Tutorial zum schnellen Starten mit AngularJS. Natürlich ist dabei 
 - Dependency Injection
 - Formular-Validierung
 - Unit- und E2E-Tests
-
-<hr>
-<div class="workshop-hint text-center">
-  <div class="h3">Hat dir das Tutorial geholfen?</div>
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p> Maximaler Lernerfolg um direkt in deinem Projekt durchzustarten? Überpring die "Anfängerfehler" und nutze lieber unsere
-        jahrelange Erfahrung. Komm in unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Angular und TypeScript Schulungen</a>.
-        Hier lernst du die Konzepte, Features und Fallstricke des Frameworks und kannst uns direkt spezifisch zu Herausforderungen
-        in deinem nächsten Projekt zu rat ziehen.
-      </p>
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
-  </div>
-</div>
-<hr>

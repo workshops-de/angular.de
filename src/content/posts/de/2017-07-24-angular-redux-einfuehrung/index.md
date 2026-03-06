@@ -19,16 +19,14 @@ Redux ist die bekannteste und beliebste Implementierung von diesem Pattern.
 
 [[cta:training-top]]
 
-
 Version 3 von [Redux](https://github.com/rackt/redux){:rel="noopener noreferrer nofollow"} gibt es seit weniger als einem Jahr, aber es hat sich bereits als sehr erfolgreich erwiesen.
 Inspiriert von [Flux](https://facebook.github.io/flux/){:rel="noopener noreferrer nofollow"} und [Elm](http://elm-lang.org/){:rel="noopener noreferrer nofollow"} wird es verwendet, um den Anwendungsstatus zu händeln und es effektiv an die Benutzeroberfläche zu binden.
-Redux ermöglicht außerdem mit wenig Aufwand Features wie *hot reloading* oder *time travel*.
+Redux ermöglicht außerdem mit wenig Aufwand Features wie _hot reloading_ oder _time travel_.
 Redux wird oft zusammen mit React verwendet, ist aber nicht an ein bestimmtes Framework gebunden.
 
 Redux baut auf Flux-Pattern auf. Für dieses Tutorial braucht ihr aber keine Erfahrung.
 Wir werden alle Grundlagen hiermit behandeln.
 In diesem Artikel werden wir ein Todo-Listen-Beispiel aus React verwenden, welches aus dem neuesten Redux-Videokurs von [Dan Abramov](https://medium.com/@dan_abramov){:rel="noopener noreferrer nofollow"} stammt.
-
 
 ## Warum nicht ngRX
 
@@ -39,33 +37,15 @@ Falls ihr mit Redux in euer Angular Anwendung arbeiten wollt, empfehle ich euch 
 Allerdings zielt dieser Artikel auf die Kommunikation der Konzepte, wofür sich diese simple Version von Redux mehr eignet.
 ngRx enthält noch Erweiterungen wie `Observables`, welche die Beispiele an dieser Stelle unnötig komplex machen würden.
 
-
-<hr>
-[[cta:training-top]]
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p>
-        Du möchtest Angular und Redux in deinem Projekt einsetzen, bist dir aber unsicher ob und wie du das am besten schaffst? Wir behandeln das Thema Redux mit ngRX intensiv in unserer
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-link">Angular
-                    Advanced Schulung</a> und entwickeln mit dir gemeinsam Beispiele, die du direkt in deinem Projekt einsetzen kannst.
-      </p>
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="/assets/img/workshops/teilnehmer-workshop.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
-  </div>
-</div>
-<hr>
+[[cta:training-middle-1]]
 
 ## Einführung in Redux
+
 Redux folgt drei Grundprinzipien:
 
-* Ein unveränderlicher State Tree
-* Unidirektionaler Datenfluss
-* Änderungen am State werden nur mit reinen Funktionen(pure functions) vorgenommen (Reducers)
+- Ein unveränderlicher State Tree
+- Unidirektionaler Datenfluss
+- Änderungen am State werden nur mit reinen Funktionen(pure functions) vorgenommen (Reducers)
 
 Durch diese Grundsätze können wir ein vorhersagbares und reproduzierbares Anwendungsverhalten erreichen.
 Das nächste Diagramm zeigt eine Übersicht der verschiedenen Komponenten von Redux, welche wir nun Schritt für Schritt erklären werden.
@@ -75,11 +55,12 @@ Das nächste Diagramm zeigt eine Übersicht der verschiedenen Komponenten von Re
 </div>
 
 ### Actions
+
 Dies sind tatsächliche Aktionen oder auch Ereignisse in unserer Anwendung, welche potentiell den State bearbeiten.
 Sie können vom Benutzer oder der Serverseite erzeugt werden.
-Sie sind die einzige Informationsquelle für den *Store*.
+Sie sind die einzige Informationsquelle für den _Store_.
 Änderungen am Store werden ausschließlich über Actions angestoßen.
-Actions sind einfache JavaScript-Objekte, die eine Änderung beschreiben und eine *type* Eigenschaft eindeutige Identifizierung verwenden.
+Actions sind einfache JavaScript-Objekte, die eine Änderung beschreiben und eine _type_ Eigenschaft eindeutige Identifizierung verwenden.
 
 Hier ein Beispiel für eine sehr simple Action:
 
@@ -90,18 +71,19 @@ Hier ein Beispiel für eine sehr simple Action:
 }
 ```
 
-Um diese Action-Objekte zu erzeugen werden auch meist *Action Creators* genutzt.
+Um diese Action-Objekte zu erzeugen werden auch meist _Action Creators_ genutzt.
 Diese sind Komponenten, welche Helfer-Methoden enthalten, um spezifische Aktionen erstellen.
 Diese Action-Creator helfen uns dabei die Objekte einfacher zusammen zu bauen und schützen uns vor Struktur- und Tipp-Fehler.
 
-Die fertige Action beschreibt das, was in unserer Anwendung passiert ist und gibt diese Information weiter an die *Reducers*.
+Die fertige Action beschreibt das, was in unserer Anwendung passiert ist und gibt diese Information weiter an die _Reducers_.
 
 ### Reducers
-*Reducers* geben an, wie sich der Zustand in Reaktion auf eine *Action* ändert.
-Alle *Reducers* müssen [reine Funktionen](https://en.wikipedia.org/wiki/Pure_function) sein, das bedeutet:
 
-* Sie produzieren die gleiche Ausgabe bei gleicher Eingabe
-* Sie produzieren keine *side effects* (z.B.: mutierter Zustand, Anrufe zum Backend)
+_Reducers_ geben an, wie sich der Zustand in Reaktion auf eine _Action_ ändert.
+Alle _Reducers_ müssen [reine Funktionen](https://en.wikipedia.org/wiki/Pure_function) sein, das bedeutet:
+
+- Sie produzieren die gleiche Ausgabe bei gleicher Eingabe
+- Sie produzieren keine _side effects_ (z.B.: mutierter Zustand, Anrufe zum Backend)
 
 Reducers erschaffen bei Änderungen immer ein neues State-Objekt, um Nebenwirkungen zu vermeiden.
 Eine erweiterte Option ist, eine Bibliothek wie [immutable.js](https://immutable-js.com/) zu verwenden.
@@ -109,28 +91,29 @@ Somit können Komponenten, die auf diesen State zugreifen, anhand der Object-Ref
 Denn nur wenn der State durch ein neues Object dargestellt wird, hat sich der State verändert.
 
 ```javascript
-function rootReducer(state = initialState, action){
+function rootReducer(state = initialState, action) {
   switch (action.type) {
     case TodoActions.ADD_TODO:
-        //TODO: Implement
-        break;
+      //TODO: Implement
+      break;
     default:
       // mandatory for sanity (Eg: initialisation)
       return state;
   }
-};
+}
 ```
 
 Es ist gängige Praxis, die `initialState` als Standartparameter (Zeile 1) zu definieren und jede Aktion mit einer [switch](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch)-Anweisung zu behandeln.
 
 ### ApplicationStore
-Redux verwendet einen einzelnen Store, der den *Application-State* als ein einfaches JavaScript-Objekt enthält.
+
+Redux verwendet einen einzelnen Store, der den _Application-State_ als ein einfaches JavaScript-Objekt enthält.
 
 Der `Application-Store` ist zentral für Redux und bietet eine API, um
 
-* Aktionen zu triggern [appStore.dispatch](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#dispatch) (action)
-* Listener für Änderungen zu registrieren: [appStore.subscribe](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#subscribe) (callback)
-* Den aktuellen State zu lesen: [appStore.getState](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#getState) ()
+- Aktionen zu triggern [appStore.dispatch](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#dispatch) (action)
+- Listener für Änderungen zu registrieren: [appStore.subscribe](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#subscribe) (callback)
+- Den aktuellen State zu lesen: [appStore.getState](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#getState) ()
 
 ## To-Do-Listen Beispiel
 
@@ -142,7 +125,8 @@ Dies ist eine grundlegende Implementierung, wo wir neue Todos hinzufügen könne
 </div>
 
 ## Anwendungs-Design
-In Angular beginnen wir mit der Gestaltung unserer Anwendungen mit einem `component tree` und gehen von einer `root` Komponente aus. Unten siehst du eine schematische Pseudo-HTML mit allen UI Komponenten: add-todo, todo-list (Child Komponenten: todo), Filter (Chile Componenten_ filter-link).
+
+In Angular beginnen wir mit der Gestaltung unserer Anwendungen mit einem `component tree` und gehen von einer `root` Komponente aus. Unten siehst du eine schematische Pseudo-HTML mit allen UI Komponenten: add-todo, todo-list (Child Komponenten: todo), Filter (Chile Componenten\_ filter-link).
 
 ```html
 <root>
@@ -156,51 +140,41 @@ In Angular beginnen wir mit der Gestaltung unserer Anwendungen mit einem `compon
 </root>
 
 ```
+
 ## Initialisierung von Redux
 
 Initial müssen wir Redux in unserer Anwendung anmelden und starten.
 Dies machen wir, indem wir ein Store erstellen und diesen als Service anmelden.
 
-
 ```javascript
 // src/main.ts
-import {createStore} from 'redux';
-import {rootReducer} from './rootReducer';
-import {TodoActions} from './todoActions';
-import {APP_DECLARATIONS} from './app.declarations';
+import { createStore } from "redux";
+import { rootReducer } from "./rootReducer";
+import { TodoActions } from "./todoActions";
+import { APP_DECLARATIONS } from "./app.declarations";
 
 const appStore = createStore(rootReducer);
 
 @NgModule({
-  declarations: [
-    App,
-    ...APP_DECLARATIONS
-  ],
-  providers: [
-    { provide: 'AppStore', useValue: appStore },
-    TodoActions
-  ]
+  declarations: [App, ...APP_DECLARATIONS],
+  providers: [{ provide: "AppStore", useValue: appStore }, TodoActions],
 })
-export class AppModule { }
+export class AppModule {}
 
 platformBrowserDynamic().bootstrapModule(AppModule);
-
 ```
 
 Angular Anwendungen werden im `Application Module` gebootstrapped.
 Das `Application Module` deklariert alle benötigten Components, Directives und Pipes.
 Dazu gehören die RootComponent `App` und alle Übrigen, die in `APP_DECLARATIONS` gruppiert sind.
-Globale Abhängigkeiten sind in den `Providers` definiert, so dass sie unseren *Redux-Komponenten* zur Verfügung stehen.
-*Siehe `appStore` und `TodoActions` (Zeilen 15-16).
+Globale Abhängigkeiten sind in den `Providers` definiert, so dass sie unseren _Redux-Komponenten_ zur Verfügung stehen.
+\*Siehe `appStore` und `TodoActions` (Zeilen 15-16).
 
-
-TodoActions (Klasse) fungiert als *ActionCreator* mit einer publiken Methode für jede Aktion.
+TodoActions (Klasse) fungiert als _ActionCreator_ mit einer publiken Methode für jede Aktion.
 Wir haben Abhängigkeiten importiert (Zeilen 2-5) und realisieren dann `appStore` (Zeile 7) mit [createStore](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/createStore.md) und übergeben den `rootReducer` (Funktion).
-Schlussendlich haben wir die normale Angular `bootstrap`  Methode mit unserem Modul `AppModule` (Zeile 21) verwendet.
+Schlussendlich haben wir die normale Angular `bootstrap` Methode mit unserem Modul `AppModule` (Zeile 21) verwendet.
 
-
-*Du kannst bei [Angular Modulen](https://v17.angular.io/guide/ngmodules) (angular.io) mehr darüber lesen, wie ngModules funktionieren*
-
+_Du kannst bei [Angular Modulen](https://v17.angular.io/guide/ngmodules) (angular.io) mehr darüber lesen, wie ngModules funktionieren_
 
 Wir melden unseren Store in diesem simplen Beispiel über ein String Token an.
 Beachte, dass wir bei der Verwendung eines String-Tokens @Inject(‘AppStore’) innerhalb unserer Komponenten benutzen müssen.
@@ -211,17 +185,14 @@ Wir werden das in den folgenden Code-Beispielen genauer ansehen.
 Der Application Store (`appStore`) hält den Anwendungsstatus.
 Dieser ist: das Todos array und der aktuelle Filter.
 
-
 Wir definieren de Ausgangszustand wie folgt:
-
 
 ```javascript
 //src/rootReducer.ts
 const initialState = {
- todos: [],
- currentFilter: 'SHOW_ALL'
-}
-
+  todos: [],
+  currentFilter: "SHOW_ALL",
+};
 ```
 
 Im nächsten Abschnitt werden wir die Struktur für ein todo-Item definieren. Diese Kernstruktur bleibt während der Laufzeit der Anwendung unverändert.
@@ -265,7 +236,7 @@ Im Template (Zeilen 4-8) verwenden wir eine [lokale Template-Variable](https://v
 
 ```
 
-Um das manuelle Erstellen von Aktionsobjekten in unseren Komponenten zu vermeiden, haben wir die TodoActions Klasse als einen *ActionCreator* erstellt.
+Um das manuelle Erstellen von Aktionsobjekten in unseren Komponenten zu vermeiden, haben wir die TodoActions Klasse als einen _ActionCreator_ erstellt.
 
 ```javascript
 //src/todoActions.ts
@@ -289,8 +260,7 @@ export class TodoActions {
 
 ```
 
-
-Wir setzen das *ADD_TODO* Token als Aktionskennzeichen (Zeile 2) ein. Beachte, wie wir das Ktionsobjekt erweitert haben, um die Informationen zu enthalten, wie wir benötigen, um Todos zu identifizieren und sie als abgeschlossen oder nicht abgeschlossen zu markieren (Zeilen 12-15). Nach dem Absenden der Aktion wird der rootReducer von dem Store angerufen, der den *currentState (initialState* wenn undefiniert) und die User-Aktion übergibt.
+Wir setzen das _ADD_TODO_ Token als Aktionskennzeichen (Zeile 2) ein. Beachte, wie wir das Ktionsobjekt erweitert haben, um die Informationen zu enthalten, wie wir benötigen, um Todos zu identifizieren und sie als abgeschlossen oder nicht abgeschlossen zu markieren (Zeilen 12-15). Nach dem Absenden der Aktion wird der rootReducer von dem Store angerufen, der den _currentState (initialState_ wenn undefiniert) und die User-Aktion übergibt.
 
 ```javascript
 //src/rootReducer.ts
@@ -314,15 +284,17 @@ Diese zeigen zunächst alle Todos an.
 Jedes Todo kann der Benutzer als abgeschlossen markieren, indem er auf die Stelle über der Beschreibung klickt.
 Im Folgenden siehst du eine vereinfachte Markierung für ein aktives Todo:
 
-
 ```javascript
-<todo-list><ul>
-  <todo id="0" completed="false"><li>buy milk</li></todo>
-</ul></todo-list>
-
+<todo-list>
+  <ul>
+    <todo id="0" completed="false">
+      <li>buy milk</li>
+    </todo>
+  </ul>
+</todo-list>
 ```
 
-Ähnlich wie beim Hinzufügen von einem Todo, wird jedes Klickereigniss die Todo *ID* (Input Attribut, Zeile 6) weitergeben und die entsprechende Aktion (Zeile 17) abschicken.
+Ähnlich wie beim Hinzufügen von einem Todo, wird jedes Klickereigniss die Todo _ID_ (Input Attribut, Zeile 6) weitergeben und die entsprechende Aktion (Zeile 17) abschicken.
 
 ```javascript
 //src/todo.ts
@@ -347,7 +319,7 @@ export class Todo {
 
 ```
 
-*TypeScript-Tipp: Bei privaten oder öffentlichen Modifikatoren in den Konstruktorargumenten handelt es sich um eine Verknüpfung zum Deklarieren privater oder öffentlicher Objekte (Zeilen 12-13). Siehe private / öffentliche Modifikatoren.
+\*TypeScript-Tipp: Bei privaten oder öffentlichen Modifikatoren in den Konstruktorargumenten handelt es sich um eine Verknüpfung zum Deklarieren privater oder öffentlicher Objekte (Zeilen 12-13). Siehe private / öffentliche Modifikatoren.
 
 Das Umschalten des ersten Beispiels würde zu folgender Aktion führen:
 
@@ -358,6 +330,7 @@ Das Umschalten des ersten Beispiels würde zu folgender Aktion führen:
 }
 
 ```
+
 Wie zuvor wird der Versand der Aktion den reducer ausführen und einen neuen Zustand schaffen.
 
 ```javascript
@@ -388,6 +361,7 @@ function toggleTodo(todos, action){
 Die Helper-Funktion toggleTodo kreiert ein neues Array, welches das Todo-Matching der action.id abschaltet und den Rest beibehält.
 
 ### Todos filtern
+
 Die Filter-Komponente ermöglicht es dem Benutzer zu filtern: alle, nur aktive oder nur abgeschlossene Todos. Wir verwenden FilterLink-Komponenten, um jeden Filter, der eine Kennung über den Attributfilter übergibt, zu verkapseln.
 
 ```javascript
@@ -399,6 +373,7 @@ Die Filter-Komponente ermöglicht es dem Benutzer zu filtern: alle, nur aktive o
 </filters>
 
 ```
+
 Innerhalb von FilterLink passiert jedes Klickereignis den Filter (Eingabeattribut, Zeile 6) und sendet die entsprechende Filteraktion ab.
 
 ```javascript
@@ -421,6 +396,7 @@ export class FilterLink {
  }
 }
 ```
+
 Filtern mit Completed wird folgende Aktion generieren
 
 ```javascript
@@ -445,7 +421,8 @@ case TodoActions.SET_CURRENT_FILTER:
 ```
 
 ### Die Todo-Liste anzeigen
-Wir verwenden eine untergeordnete Komponente  todo, um ein einzelnes Todo zu verkapseln, das einige Eigenschaften als Attribute (id, abgeschlossen) und die Beschreibung (Text) als Inhalt übergibt. Dieses Muster ist als [Container Component](https://medium.com/@learnreact/container-components-c0e67432e005){:rel="noopener noreferrer nofollow"} bekannt.
+
+Wir verwenden eine untergeordnete Komponente todo, um ein einzelnes Todo zu verkapseln, das einige Eigenschaften als Attribute (id, abgeschlossen) und die Beschreibung (Text) als Inhalt übergibt. Dieses Muster ist als [Container Component](https://medium.com/@learnreact/container-components-c0e67432e005){:rel="noopener noreferrer nofollow"} bekannt.
 
 ```javascript
 //src/todoList.ts
@@ -458,7 +435,7 @@ Wir verwenden eine untergeordnete Komponente  todo, um ein einzelnes Todo zu ver
 
 ```
 
-Wir verwenden [ngFor](https://v17.angular.io/api/common/NgForOf), um über den todos Array (Zeile 3) zu iterieren. Für jedes Todo geben wir die Information mit einer *[local template variable](https://v17.angular.io/guide/template-syntax#!#local-vars)* Todo.
+Wir verwenden [ngFor](https://v17.angular.io/api/common/NgForOf), um über den todos Array (Zeile 3) zu iterieren. Für jedes Todo geben wir die Information mit einer _[local template variable](https://v17.angular.io/guide/template-syntax#!#local-vars)_ Todo.
 
 Im Folgenden siehst du einen Auszug aus der TodoList Komponente.
 
@@ -483,43 +460,21 @@ export class TodoList implements OnDestroy {
 
 ```
 
+- Beachte, wie wir alle Komponenten-Eigenschaften und Hilfsprogramme als privat gehalten haben. Wir wollen nicht, dass andere Komponenten auf sie zugreifen.\*
 
-* Beachte, wie wir alle Komponenten-Eigenschaften und Hilfsprogramme als privat gehalten haben. Wir wollen nicht, dass andere Komponenten auf sie zugreifen.*
-
-
-[[cta:training-bottom]]
-
+[[cta:training-middle-2]]
 
 ## Redux Lebenszyklus Review
+
 Lass uns überprüfen, wie sich eine Redux-Anwendung in verschiedenen Stadien verhält.
 
 - Application bootstrap: Wir initialisieren den appStore, der den rootReducer übergibt. Dadurch wird die interne Inbetriebnahme von appStore ausgelöst. Normalerweise führt das zu intitialState
-- Komponentenerstellung: Wir injizieren appStore und TodoActions auf dem Konstruktor je nach Bedarf. Die Komponenten, die Daten anzeigen, subscriben zum appStore  und lesen ihn durch Aufruf von [appStore.getState](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#getState)().Komponenten, die den Zustand mutieren, bereiten den Versandcode für die entsprechende Aktion vor, die alle erforderlichen Daten übergibt.
+- Komponentenerstellung: Wir injizieren appStore und TodoActions auf dem Konstruktor je nach Bedarf. Die Komponenten, die Daten anzeigen, subscriben zum appStore und lesen ihn durch Aufruf von [appStore.getState](https://github.com/rackt/redux/blob/ec0b1a36e958584b7a11a5977734f04d05955c22/docs/api/Store.md#getState)().Komponenten, die den Zustand mutieren, bereiten den Versandcode für die entsprechende Aktion vor, die alle erforderlichen Daten übergibt.
 - Komponenten-Zerstörung: Komponenten, die Daten anzeigen,unsubscribe zum appStore, um Ressourcen zu bereinigen.
 - Benutzerinteraktionen: Jede Benutzerinteraktion löst eine abschließende Versandaktion aus. Dies führt den RootReducer aus, der einen neuen Zustand erzeugt. Der AppStore benachrichtigt dann alle abonnierten Benutzer, die entsprechend aktualisiert werden.
 - Bei vom Server initiierten Aktionen: Manche Anwendungen können Aktionen in Reaktion auf serverseitig initiierte Ereignisse versenden. Zum Beispiel: WebSockets. Diese Aktionen nach dem ordnungsgemäßen Setup folgen dem gleichen Fluss wie Benutzerinteraktionen.
 
-
-<hr>
 [[cta:training-bottom]]
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p>
-        Gute Idee - vielleicht ist ja unsere <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Angular
-                                       Advanced Schulung</a> für dich das Richtige. Hier erstellen wir gemeinsam eine Beispiel-Anwendung mit ngRX und können individuell auf deine Anforderungen im Projekt eingehen.
-      </p>
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-enterprise-applications?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="/assets/img/workshops/teilnehmer-workshop.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
-  </div>
-</div>
-<hr>
-
-
 
 Dies ist eine Übersetzung und Überarbeitung von Gerard's großartigem Artikel [Angular — Introduction to Redux](https://medium.com/google-developer-experts/angular-2-introduction-to-redux-1cf18af27e6e){:rel="noopener noreferrer nofollow"}
 

@@ -30,34 +30,11 @@ Zum Verständnis des Tutorials sollten die Grundlagen von AngularJS bekannt und 
 
 Alle Quelltexte findet ihr auf [GitHub](https://github.com/angularjs-de/ionic-tutorial) oder ladet euch alles als [ZIP-Archiv](https://github.com/angularjs-de/ionic-tutorial/archive/master.zip) herunter. In jedem Abschnitt ist natürlich auch eine Live-Demo verlinkt.
 
-<hr>
 [[cta:training-top]]
-    <div class="row mb-2">
-        <div class="col-xs-12 col-md-6">
-            <p>
-                Du willst tiefer und vor allem effektiv in das Thema Ionic einsteigen? Kein Problem! Wir bieten interative Workshops zum Thema
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-link">Ionic
-                    und TypeScript</a> an.
-            </p>
-            <p class="">
-                <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
-            </p>
-
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <img class="img-fluid img-rounded"
-                 src="workshops-attendees.png"
-                 alt="Teilnehmer:innen in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
-        </div>
-    </div>
-
-</div>
-<hr>
 
 ## Ionic und hybride App-Entwicklung
 
-[[cta:training-top]]
-
+[[cta:training-middle-1]]
 
 Hinter dem Namen Ionic verbirgt sich nicht etwa noch ein weiteres Singel-Page-Application-Framework oder eine einfache Erweiterung von AngularJS. Das Team rund um Ionic hat mit ihrem Framework mehr einen Aufsatz für AngularJS geschaffen, um damit _hybride mobile Apps_ zu bauen.
 
@@ -750,7 +727,7 @@ angular.module("pizzaApp").controller("OrderCtrl", [
         },
         function () {
           // Error case
-        }
+        },
       )
       .finally(function () {
         // Ausblenden mit Verzögerung von 2000ms
@@ -789,7 +766,7 @@ angular.module("pizzaApp").controller("OrderCtrl", [
         },
         function () {
           // error case
-        }
+        },
       )
       .finally(function () {
         $timeout(function () {
@@ -875,7 +852,7 @@ function loadPizzas(refresh) {
       },
       function () {
         // error case
-      }
+      },
     )
     .finally(function () {
       // show the spinner a little bit longer
@@ -978,7 +955,6 @@ Folgende Artikel helfen dir nun in der Thematik weiter zu kommen:
 
 [[cta:training-bottom]]
 
-
 ## Abschluss & Fazit
 
 Damit ist unsere kleine Rundreise durch den Ionischen-Ozean abgeschlossen. Wir hoffen es hat euch gefallen und euer Interesse an der hybriden Entwicklung mobiler Apps geweckt.
@@ -997,20 +973,3 @@ Ihr findet natürlich auch alles in der [Ionic Dokumentation](http://ionicframew
 Zum Abschluss haben wir die App noch ein wenig gepimpt - aber seht einfach selbst.
 
 Link zum [Quellcode](https://github.com/angularjs-de/ionic-pizza-service/tree/master) und [Live-Demo](https://angularjs-de.github.io/ionic-pizza-service/#/order)
-
-<hr>
-<div class="workshop-hint text-center">
-<div class="h3">Hat dir das Tutorial geholfen?</div>
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p>Wir haben bereits viele Projekte mit Ionic umgesetzt - nutze unserer Projekterfahrung! Wir geben regelmäßig Schulungen zum Thema <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Ionic und TypeScript</a>, auch Inhouse. Im Kurs lernst du die Grundlagen und Konzepte des Ionic Frameworks und kannst die Fragen stellen, die dir direkt bei deiner Umsetzung helfen.</p>
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
-      </p>
-  </div>
-  <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Ionic &amp; Typescript Intensiv Workshop/Schulung">
-  </div>
-</div>
-</div>
-<hr>

@@ -82,7 +82,7 @@ Today we can see the foresight of those decisions, as many other frameworks now 
 
 ![The Angular release cycle. Major release every 6 months. Minor releases every 1–3 months. Patch release every week.](release-cycle.png)
 
-[[cta:training-top]]
+[[cta:training-middle-1]]
 
 ### The Angular Platform
 
@@ -482,7 +482,7 @@ books = [
 
 ![The list of static books rendered in HTML](static-list-of-books.png)
 
-[[cta:training-bottom]]
+[[cta:training-middle-2]]
 
 ## The First Service
 

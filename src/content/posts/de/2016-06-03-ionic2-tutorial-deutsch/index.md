@@ -45,27 +45,9 @@ In diesem Artikel behandeln wir zunächst den 1. Teil und schauen uns den Grunda
 
 Den finalen und [kompletten Quellcode](https://github.com/angularjs-de/ionic2-pizza-service "Quellcode Ionic 2 Pizza App") der in diesem Tutorial entwickelten App findet unter unserem GitHub-Account. Außerdem gibt es auch eine [Live-Vorschau](http://angularjs-de.github.io/ionic2-pizza-service/www/ "Ionic 2 Pizza App") der App.
 
-<hr>
 [[cta:training-top]]
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p>
-        Du möchtest dich oder dein ganzen Team schnellstmöglich produktive Ionic Anwendung entwickeln lassen? Dann nutze unsere
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-link">Ionic und TypeScript Schulungen</a>.
-        Wir haben die Konzepte des Frameworks und unsere Projekterfahrung für euch in einen interaktiven Kurs gegossen.
-      </p>
-      <p class="">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-top-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Mehr Informationen zur Schulung</a>
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Ionic 2 &amp; Intensiv Workshop/Schulung">
-    </div>
-  </div>
-</div>
-<hr>
 
-### Installation und Anlegen eines Projekts
+## Installation und Anlegen eines Projekts
 
 Wie auch schon Ionic 1, basiert die neue Version ebenso auf dem Ionic CLI. Damit ihr auch alle nötigen Quellen der neue Version besitzt, müsst ihr diese über folgenden Befehl installieren.
 
@@ -161,8 +143,7 @@ Das Ergebnis sieht im Browser zwar nicht mehr sonderlich ansprechend aus, aber d
 
 ## Erstellen von Inhalten
 
-[[cta:training-top]]
-
+[[cta:training-middle-1]]
 
 So wie die App ist auch jede View in der Ionic 2 Welt eine simple Angular2 Component. Eine View ist dabei die gesamte Ansicht einer Seite in der Anwendung. Die Konfiguration einer Seite im Quellcode ist daher hier nichts besonderes, denn die Komponente verknüpft einfach ein Template mit einer Klasse.
 
@@ -653,7 +634,6 @@ Wir sind jedoch noch nicht annähernd am Ende mit der Entwicklung unserer Pizza-
 
 [[cta:training-bottom]]
 
-
 ## Fazit
 
 Nachdem ich die Entwicklung von Ionic 2 bis dato nur immer mal sporadisch verfolgt hatte, ist mein vorheriges Misstrauen bereits jetzt vollkommen verschwunden. Das Ionic Team hat - wie das Angular Team - aus den Erfahrungen und Problemen gelernt und vieles verbessert. Vor allem die Lösung der neuen Navigation macht Spaß, weil einfach anscheinend in diesem Fall wirklich einfach einfach ist.
@@ -665,22 +645,3 @@ Schaut euch einfach die [Dokumentation](http://ionicframework.com/docs/v2/) an, 
 Wir hoffen das Tutorial hat euch gefallen und ihr konntet das eine oder andere Hilfreiche entnehmen.
 
 Viel Spaß beim Ausprobieren und Entwickeln der eigenen App!
-
-<hr>
-<div class="workshop-hint text-center">
-  <div class="h3">Hat dir das Tutorial geholfen?</div>
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p> Noch schneller lernen geht nur in unseren <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Ionic und TypeScript Schulungen</a>.
-        In kleinen Gruppen bieten wir öffentliche und Inhouse Schulungen an, um dich möglichst effektiv in das Thema Ionic
-        zu begleiten. </p>
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-ionic?utm_source=angular_de&utm_campaign=tutorial&utm_medium=button&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
-  </div>
-</div>
-<hr>

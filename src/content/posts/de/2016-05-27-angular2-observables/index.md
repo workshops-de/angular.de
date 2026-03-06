@@ -51,7 +51,6 @@ Wie eingangs erwähnt, müssen wir uns früher oder später auch mit Asynchonron
 
 [[cta:training-top]]
 
-
 **Callbacks**
 
 Wie wir schon ausführlich in userem AngularJS-Buch im Kapitel Promises erklärt haben, stellen uns Callbacks vor folgende Probleme, die auch normale JavaScript Events nicht lösen können. Hier noch einmal ein Überblick der Probleme:
@@ -131,7 +130,7 @@ source.subscribe(
   },
   () => {
     // complete
-  }
+  },
 );
 
 // source.unsubscribe();
@@ -211,7 +210,7 @@ source.subscribe(
   },
   () => {
     // complete
-  }
+  },
 );
 ```
 
@@ -291,8 +290,7 @@ Puh, das sieht jetzt aber doch nach ziemlich viel Arbeit aus. Normalerweise ja, 
 
 ```typescript
 // searchControl = new Control();
-searchControl// react on value changes
-.valueChanges
+searchControl.valueChanges // react on value changes
   // wait 800ms after last change
   .debounceTime(800)
   // check if new value differs from old one
@@ -326,7 +324,6 @@ Wie sich bereits herausgestellt hat, sind Observables derzeit der flexibelste We
 
 [[cta:training-bottom]]
 
-
 ## Fazit
 
 Asynchronität ist im modernen Web überall zu finden. Gerade in Single-Page-Applications, bei denen es auf dynamische Inhalte und Interaktionen ankommt, muss es für den Entwickler elegant möglich sein auf solche Situationen zu reagieren. Jede der angesprochenen Möglichkeiten hat seine Daseinsberechtigung. Verlangt ein Anwendungsfall nicht kontinuierlich auf Änderungen zu reagieren und der Vorgang muss auch nicht abgebrochen werden, steht der Nutzung von Promises im Vergleich zu Observables nichts entgegen. Auch Events oder einfache Callbacks werden euch immer noch begegnen und ihr werdet sie nutzen.
@@ -334,22 +331,3 @@ Asynchronität ist im modernen Web überall zu finden. Gerade in Single-Page-App
 Angular setzt schon an den richtigen Stellen auf die aktuellste und flexibelste Methode mit den Observables. Kommunikation zwischen Komponenten erfolgt über Events, um eine einheitliche Basis zu den DOM-Events zu halten.
 
 Wir hoffen, dass wir euch die Angst vor dem Arbeiten mit asynchronen Programmteilen genommen haben und ihr nun das Rüstzeug besitzt, um eure Probleme elegant und einfach zu lösen.
-
-<hr>
-<div class="workshop-hint text-center">
-  <div class="h3">Hat dir das Tutorial geholfen?</div>
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Angular und TypeScript Schulungen</a>        an um dich möglichst effektiv in das Thema Angular zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur
-        schlecht googlen kannst, z.B. “Besserer Weg, um meine Applikation zu strukturieren”. Wir können sie Dir beantworten.
-        </p>
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/angular-modul-1?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
-      </p>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
-  </div>
-</div>
-<hr>

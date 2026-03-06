@@ -97,7 +97,6 @@ Daher empfehle ich, vor allem bei Änderungen am Build Prozess selbst, den Conta
 
 [[cta:training-top]]
 
-
 [Circle CI](https://circleci.com) ist ein mächtiges Tool, welches uns ermöglicht alle Tests automatisiert in der Cloud durchzuführen. Anschließend hat man die Möglichkeit, je nach Ergebnis der Tests, weitere Aktionen (z.B. Deploy) anzustoßen.
 
 Um Circle CI verwenden zu können, muss man sich genauso wie bei Docker einen Account anlegen, und kann anschließend seine Github Repos verlinken. Nach dieser Verlinkung wird Circle CI ebenfalls nach Check-In von Github informiert. Anschließend beginnt Circle CI das Repo zu prüfen.
@@ -218,31 +217,9 @@ Ihr könnt direkt beim Check-In abfangen, dass nur dann eingecheckt werden kann,
 
 [[cta:training-bottom]]
 
-
 ## Fazit
 
 Mit einer solchen Pipe kann man sehr viel automatisieren, und sich die tägliche Arbeit erleichtern.
 Allerdings haben wir es in einer solchen Pipe mit sehr vielen unterschiedlichen Systemen und Oberflächen zu tun.
 In diesem Artikel konnte ich nur grob erklären, was es mit den einzelnen Bausteinen auf sich hat.
 Daher - falls ich euer Interesse geweckt habe, kann ich euch nur empfehlen, sich mit den einzelnen Bausteinen intensiv auseinander zu setzen.
-
-<hr>
-<div class="workshop-hint text-center">
-  <div class="h3">Hat dir das Tutorial geholfen?</div>
-  <div class="row mb-2">
-    <div class="col-xs-12 col-md-6">
-      <p> Wir bieten auch <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-link">Docker Schulungen</a> an um dich möglichst effektiv in das Thema zu begleiten. Im Kurs kannst Du die Fragen stellen, die Du nur schlecht
-        googlen kannst, z.B. “Beste Weg, um meine Container zu strukturieren”. Wir können sie Dir beantworten. </p>
-
-      <p class="text-center">
-        <a target="_blank" href="https://workshops.de/seminare-schulungen-kurse/docker-kubernetes?utm_source=angular_de&utm_campaign=tutorial&utm_medium=portal&utm_content=text-bottom-button" class="inline-block bg-primary !text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">Jetzt weiter lernen</a>
-      </p>
-
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <img class="img-fluid img-rounded" src="workshops-attendees.png" alt="Teilnehmer:innen in der Veranstaltung Angular &amp; Typescript Intensiv Workshop/Schulung">
-    </div>
-
-  </div>
-</div>
-<hr>

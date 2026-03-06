@@ -81,7 +81,7 @@ Heute sehen wir die Weitsicht dieser Entscheidungen, da mittlerweile viele ander
 
 ![Der Angular Release Cycle. Major Release alle 6 Monate. 1-3 Monate Minor Releases. Patch Release jede Woche.](release-cycle.png)
 
-[[cta:training-top]]
+[[cta:training-middle-1]]
 
 ### Die Angular Plattform
 
@@ -481,7 +481,7 @@ books = [
 
 ![Die liste der statischen Bücher in HTML ausgeben](static-list-of-books.png)
 
-[[cta:training-bottom]]
+[[cta:training-middle-2]]
 
 ## Der erste Service
 
