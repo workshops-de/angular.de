@@ -16,7 +16,8 @@ const allPosts = await getCollection('posts');
 // Filter and sort related posts
 let relatedPosts = allPosts
   .filter(post => {
-    const folderName = post.id.split('/')[0];
+    const idParts = post.id.split('/');
+    const folderName = idParts.length > 1 ? idParts[1] : idParts[0];
     const postSlug = folderName.replace(/^\d{4}-\d{2}-\d{2}-/, '');
     return postSlug !== currentSlug;
   })
