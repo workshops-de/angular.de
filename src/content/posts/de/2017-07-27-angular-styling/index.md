@@ -138,14 +138,9 @@ Durch die Verwendung dieses Modus wird Angular alle definierten Styles dem Kopf 
 `Native Shadow DOM` wird zu diesem Zeitpunkt noch nicht unterstützt.
 Siehe unten emulierten und nativen Browsersupport-Vergleiche, nebeneinander.
 
-<div class="row">
-    <div class="col-lg-6 col-sm-12">
-        <img class="img-fluid" alt="Browser Support for Emulated Shadow DOM im Überblick" src="browser-support-shadow-dom.png">
-    </div>
-    <div class="col-lg-6 col-sm-12">
-        <img class="img-fluid" alt="Browser Support for Native Shadow DOM im Überblick" src="browser-support-native-shadow-dom.png">
-    </div>
-</div>
+![Browser Support for Emulated Shadow DOM im Überblick](browser-support-shadow-dom.png)
+
+![Browser Support for Native Shadow DOM im Überblick](browser-support-native-shadow-dom.png)
 
 \*„Welche Browser das Feature aktuell unterstützen kannst du bei [canIuse.com](https://caniuse.com/#feat=shadowdomv1) nachschauen.“
 
