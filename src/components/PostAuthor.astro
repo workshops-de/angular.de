@@ -46,7 +46,12 @@ const permalink = author.permalink || author.name.toLowerCase().replace(/\s+/g, 
       <p class="text-sm text-gray-500 dark:text-gray-400 mb-2" set:html={author.intro} />
     )}
     {isGerman && author.bio && (
-      <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{author.bio}</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+        {author.bio.length > 300 ? author.bio.slice(0, 300).trimEnd() + '… ' : author.bio}
+        {author.bio.length > 300 && (
+          <a href={`/team/${permalink}/`} class="text-primary hover:underline whitespace-nowrap">Mehr zu {author.name}</a>
+        )}
+      </p>
     )}
     <div class="flex gap-4">
       {author.github && (
