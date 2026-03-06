@@ -219,6 +219,27 @@ const fullImageUrl = header_image?.src
             <PostAuthor author={coAuthorData.data} lang={language} />
           </div>
         )}
+
+        <!-- Community CTA -->
+        <div class="mb-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            {language === 'en' ? 'Join our Community' : 'Werde Teil unserer Community'}
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            {language === 'en'
+              ? 'Since 2013 we have been offering tutorials, articles and training around Angular. With 18 meetups and over 10,000 developers, we are the largest Angular community in Europe.'
+              : 'Seit 2013 bieten wir Tutorials, Artikel und Schulungen rund um Angular. Mit 18 Meetups und über 10.000 Entwickler:innen sind wir die größte Angular-Community in Europa.'}
+          </p>
+          <a
+            href="https://workshops.de/join-discord"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-primary !text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            {language === 'en' ? 'Join the Community' : 'Jetzt beitreten'}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
       </div>
     </div>
 

@@ -137,7 +137,7 @@ Ein BehaviorSubject ist eine Art von Observable, das zwei Hauptmerkmale hat:
 Anfänglicher Wert: Ein BehaviorSubject benötigt einen Anfangswert, den es seinen Abonnenten sofort zur Verfügung stellt, wenn sie sich abonnieren. Das bedeutet, dass jeder Abonnent sofort einen Wert erhält, wenn er sich abonniert, im Gegensatz zu normalen Observables, die möglicherweise keinen Wert senden, bis ein Ereignis eintritt.
 Speicherung des letzten Wertes: Ein BehaviorSubject speichert den letzten emittierten Wert und gibt diesen an jeden neuen Abonnenten weiter. Das ist nützlich, wenn Sie sicherstellen möchten, dass der Abonnent immer den aktuellen Stand eines Wertes hat, auch wenn er sich abonniert, nachdem der Wert emittiert wurde.
 
-Kudos an Dave aka [Webdave](https://webdave.de/start) für das [Code-Beispiel auf Stackblitz](https://stackblitz.com/edit/stackblitz-starters-cv9u63?file=src%2Fobservable-warenkorb.component.ts). Hier findest du den gesamten Angular Prototypen.
+Das vollständige Observable-Beispiel findest du ebenfalls von Dave aka [Webdave](https://webdave.de/start) [auf Stackblitz](https://stackblitz.com/edit/stackblitz-starters-cv9u63?file=src%2Fobservable-warenkorb.component.ts).
 
 ### Angular Signals vs. Observables in RxJS
 
@@ -215,14 +215,6 @@ Für die erfahrenen Angular Entwickler*innen unter euch, haben wir ein paar Frag
 *Nutzt ihr Signals zusammen mit der On Push-Change Detection?
 *In welchen Fällen findet ihr es besser, Signals statt Observables auch bei asynchronen Datenströmen zu nutzen?
 *Habt ihr bereits Signals in Kombination mit Promises verwendet?
-
-## Werde Teil unserer Community
-
-Wie immer laden wir euch ein, Teil unserer [Angular Community auf Discord](https://workshops.de/join-discord) zu werden. Seit 2013 bieten wir euch hier Tutorials, Artikel und Schulungen rund um das Angular Framework. Gestartet durch unsere Begeisterung für die modernen Möglichkeiten der Webentwicklung hat sich mittlerweile eine ganze Community dazu entwickelt. Mit mittlerweile 18 Meetups, die insgesamt über 10.000 Angular-Entwickler*innen:innen als Plattform für regelmäßigen Austausch dienen, sind wir damit in Europa die Region mit den meisten Angular-Entwickler*innen.
-[Werde Teil unserer Community!](https://workshops.de/join-discord)
-
-[[cta:training-bottom]]
-
 ## Quellen
 
 ### Quellen: Signals/Realitivity/Producer-Consumer-Pattern
@@ -245,4 +237,3 @@ Wie immer laden wir euch ein, Teil unserer [Angular Community auf Discord](https
 ### Quellen: Memes
 
 - [Angular Memes - github.com](https://github.com/dzhavat/angular-memes){:rel="noopener noreferrer nofollow"}
-

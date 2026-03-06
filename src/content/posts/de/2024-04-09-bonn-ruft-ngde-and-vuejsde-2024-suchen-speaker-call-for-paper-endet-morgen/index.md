@@ -90,7 +90,3 @@ Auch wenn der Call for Papers für die ng-de und vuejs.de Konferenzen 2024 fast 
 
 
 Teile dein Wissen, deine Fragen und deine Projekte mit uns. Gemeinsam können wir nicht nur die Angular- und Vue.js-Landschaft in Deutschland, sondern auch die globale Webentwickler-Community bereichern und voranbringen. Bleib dran für kommende Events und Initiativen – es gibt immer eine Möglichkeit, sich einzubringen und zu engagieren.
-
-
-[Werde Teil unserer Community!](https://workshops.de/join-discord)
-

@@ -41,5 +41,3 @@ Schick uns deinen Artikel!
 Wir unterstützen dich bei Bedarf gerne beim Schreiben und bei der Erstellung von Grafiken und Bildern.
 
 Email an <lulezim.ukaj@workshops.de>
-
-[Werde Teil unserer Community!](https://workshops.de/join-discord)

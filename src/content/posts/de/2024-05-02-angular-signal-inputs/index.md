@@ -314,9 +314,3 @@ Die Signal sind Input sind ein weiterer Beweis, welchen Stellenwert die Develope
 Keep the Flow, Angular!
 
 [[cta:training-bottom]]
-
-## Werde Teil unserer Community
-
-Wie immer laden wir euch ein, Teil unserer [Angular Community auf Discord](https://workshops.de/join-discord) zu werden. Seit 2013 bieten wir euch hier Tutorials, Artikel und Schulungen rund um das Angular Framework. Gestartet durch unsere Begeisterung für die modernen Möglichkeiten der Webentwicklung hat sich mittlerweile eine ganze Community dazu entwickelt. Mit mittlerweile 18 Meetups, die insgesamt über 10.000 Angular-Entwickler*innen:innen als Plattform für regelmäßigen Austausch dienen, sind wir damit in Europa die Region mit den meisten Angular-Entwickler*innen.
-[Werde Teil unserer Community!](https://workshops.de/join-discord)
-

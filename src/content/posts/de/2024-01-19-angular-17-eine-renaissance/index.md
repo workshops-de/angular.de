@@ -96,7 +96,7 @@ Mehr dazu findest in der Angular Documentaion: [Hydration](https://v17.angular.i
 
 Angular Signals sind nun stabil und nicht länger nur in der Developer Preview verfügbar. Signals sind das neueste Tool in der reaktiven Programmierung in Angular. Sie wurden erstmals im Mai dieses Jahres mit dem Update auf Version 16 als Developer Preview eingeführt und haben sich nun mit der Veröffentlichung von Angular 17 als festes Standbein des Frameworks etabliert.
 
-Signals sind insbesondere für Junior Angular-Entwickler*innen ein hilfreiches Tool, da sie das reaktive Programmieren entscheidend erleichtern. Im Grunde sind sie - wie der Name es vermuten lässt - ein Signalgeber mit einem Wert, der alle verbundenen Consumer benachrichtigt, wenn sich dieser Wert ändert. Diese Werte können einfache Strings, ein Array oder auch komplexere Datentypen sein. Ändern sich diese Werte, werden automatisch alle Konsumenten informiert und aktualisieren ihre Werte. Im Vergleich zu Observables und RxJS bieten Angular Signals eine intuitivere und klarere Syntax. Dies führt zu einer verbesserten Lesbarkeit und Wartbarkeit des Codes und verbessert nebenbei auch signifikant die Leistung der Angular Anwendung.
+Signals vereinfachen reaktive Programmierung in Angular erheblich und bieten gegenüber Observables und RxJS eine klarere, intuitivere Syntax — mit direktem Einfluss auf Performance und Wartbarkeit. Eine ausführliche Einführung mit Codebeispielen findest du in unserem [Angular Signals Artikel](/artikel/angular-kurz-erklaert-signals/).
 
 Weitere Informationen zum Thema der Angular Signals findet ihr in den unsere bereits veröffentlichten Artikel auf Angular.de:
 
@@ -148,5 +148,3 @@ Die Entwicklung ist kein Zufall.Über die letzten Jahre hat sich das Angular-Tea
 Die Angular-Community hat gesprochen, und [die Angular-User-Experience wurde in der Roadmap 2024 als oberste Priorität ausgerufen](https://angular.dev/roadmap.). Das Angular-Team will vor allem attraktiver für Anfänger werden. Dazu werden nach und nach alle funktionellen Pain Points abgearbeitet, um es angehenden Angular-Entwicklern so leicht wie möglich zu machen, in die Welt von Angular einzutauchen.
 
 Das sind sehr gute Neuigkeiten für alle Mitglieder der Angular-Community, insbesondere für unsere deutsche [Angular.de Community](https://angular.de/)). Schließlich bedeutet es, dass wir aktiv an der Zukunft des Frameworks teilhaben können. Eure Diskussionen und euer Feedback haben offiziell die höchste Priorität im Hause Angular. Deshalb ermutigen wir euch: Engagiert euch in unserer [Angular Community auf Discord](https://workshops.de/join-discord). Nehmt Teil an unseren 18 Meetups, die insgesamt über 10.000 Angular-Entwicklerinnen und -Entwickler als Plattform für regelmäßigen Austausch dienen. Wir sind damit in Europa die Region mit den meisten Angular-Entwicklerinnen.
-
-[Werde Teil unserer Community und gestalte die Zukunft mit!](https://workshops.de/join-discord)
