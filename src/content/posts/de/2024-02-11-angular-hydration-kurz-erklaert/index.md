@@ -24,7 +24,7 @@ Angular selbst definiert den Begriff in seiner Dokumentation wie folgt:
 > “Hydration is the process that restores the server-side rendered application on the client. This includes things like reusing the > server rendered DOM structures, persisting the application state, transferring application data that was retrieved already by the > server, and other processes.”
 > ([Angular Documentation](https://angular.dev/guide/hydration#what-is-hydration))
 
-![](hydration.jpg)
+![Schematische Darstellung des Hydration-Prozesses: Server rendert HTML, Browser lädt JavaScript und macht die Seite interaktiv](hydration.jpg)
 
 Single-Page Applications (SPAs) bieten eine bessere Laufzeit-Performance als klassische Webanwendungen. Ist deine Webanwendung einmal geladen, werden alle Inhalte dynamisch aktualisiert, ohne dass die Website jedes Mal komplett neu gecatcht und gerendert werden muss. Das sorgt für eine flüssige und app-ähnliche User Experience. Allerdings muss der Browser dafür beim initialen Laden der Seite zusätzlich zum HTML große Mengen an JavaScript-Code laden. Dieser Prozess wird der "Initial Load" genannt und definiert den Zeitraum, bis eine Webseite nach deinem HTTP-Request für die User vollständig sichtbar und interaktiv ist.
 
@@ -43,7 +43,7 @@ Um es kurz und in zwei Sätzen zu sagen. Beim Server-Side Rendering (SSR) ist es
 
 #### Server-Side Rendering (SSR)
 
-![](ssr.jpg)
+![Diagramm des Server-Side Rendering Prozesses: Server generiert vollständiges HTML und sendet es an den Browser](ssr.jpg)
 
 Beim Server-Side Rendering wird der Inhalt einer Webseite vorab auf dem Server gerendert und als vollständige HTML-Datei an den Browser des Benutzers geliefert. Dadurch wird die Webseite sofort sichtbar, sobald sie vom Browser geladen ist. Vorausgesetzt natürlich, es besteht eine anständige Internetverbindung.
 
@@ -63,7 +63,7 @@ Zusammenfassend kann gesagt werden, SSR ist besonders nützlich für content-ori
 
 #### Client-Side Rendering (CSR) erklärt
 
-![](csr.jpg)
+![Diagramm des Client-Side Rendering Prozesses: Server sendet minimales HTML, Browser rendert die Seite dynamisch per JavaScript](csr.jpg)
 
 Beim Client-Side Rendering (CSR) übernimmt der Browser des Nutzers die Hauptarbeit des Renderings der Webseite. Anders als beim Server-Side Rendering (SSR), bei dem der Server dem Browser eine vollständige HTML-Datei liefert, sendet der Server hier ein minimales HTML-Dokument zusammen mit JavaScript-Dateien, die die Webseite dynamisch generieren und darstellen. Sobald der Browser diese Dateien lädt, wird das JavaScript ausgeführt, um die Webseite dynamisch zu generieren und darzustellen.
 
@@ -108,7 +108,7 @@ Aber jetzt wieder zurück zu Angular und zur Full App Non-Destructive Hydration.
 
 Angular unterstützt serverseitiges Rendering (SSR) bereits seit einiger Zeit durch seine Libary Angular Universal. Dieser Prozess war jedoch bis zum Update auf Angular 16 destruktiv. Um zu verstehen, was das bedeutet, wollen wir uns den Prozess näher ansehen:
 
-![Prozesses der destruktiven Hydration als Gif](gif-destructive-hydration.gif)
+![Animation des destruktiven Hydration-Prozesses: Server-gerendertes DOM wird von Angular zerstört und clientseitig komplett neu aufgebaut, was zu sichtbarem Flickern führt](gif-destructive-hydration.gif)
 
 **Prozess der destruktiven Hydration in Angular Universal bis Version 16:**
 
@@ -125,7 +125,7 @@ Wie wir sehen können, zerstört Angular die bereits (im dritten Schritt) gerend
 
 Die Full App Non-Destructive Hydration hat genau da angesetzt, indem das bereits serverseitig gerenderte DOM-Markup wiederverwendet wird. “Non-destructive” meint nichts anderes, als dass das serverseitig gerenderte DOM-Markup nicht zerstört und wieder neu gerendert wird; stattdessen durchläuft Angular die DOM-Struktur, hängt Event-Listener an und bindet Daten, um das Rendering zu vervollständigen.
 
-![Prozesses der non-dedstructive Hydration als Gif](gif-full-hydration.gif)
+![Animation der Full App Non-Destructive Hydration ab Angular 16: Server-gerendertes DOM wird wiederverwendet, Event-Listener werden angehängt ohne das Markup neu zu rendern](gif-full-hydration.gif)
 
 Die Vorteile von Full App Non-Destructive Hydration sind ein deutlicher Performance-Boost um 40% bis 50% für den Largest Contentful Paint (LCP).
 [Siehe Tweet](https://twitter.com/naveedahmed/status/1645983995820376065?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1645983995820376065%7Ctwgr%5Ee4f6b5fdc7af3261fc76397d4952b9779e02f6de%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext2Fhtmlkey%3Da19fcc184b9711e1b4764040d3dc5c07schema%3Dtwitterurl%3Dhttps3A%2F%2Ftwitter.com%2Fnaveedahmed%2Fstatus%2F1645983995820376065image%3Dhttps3A%2F%2Fi.embed.ly%2F1%2Fimage3Furl3Dhttps253A252F252Fabs.twimg.com252Ferrors252Flogo46x38.png26key3Da19fcc184b9711e1b4764040d3dc5c07     )
@@ -138,7 +138,7 @@ Die Full App Non-Destructive Hydration war nur der erste Schritt einer grundsät
 
 Gleichzeitig hat sich die partielle Hydration in der Webentwicklung etabliert. Hierbei werden Komponenten, die nicht essentiell für die Seite sind oder sich nicht im Viewport befinden, verzögert geladen. Wichtige Begriffe in diesem Zusammenhang sind Lazy Loading und Deferrable Views.
 
-![Prozesses der partiellen Hydration als Gif](gif-partial-hydration.gif)
+![Animation der partiellen Hydration: Nur sichtbare und essentielle Komponenten werden hydratisiert, Deferred Views laden JavaScript erst bei Bedarf nach](gif-partial-hydration.gif)
 
 In einem nächsten Update in Angular sollen alle Inhalte innerhalb der festgelegten Defer-Blöcke serverseitig gerendert und nur auf Client-Seite nach Bedarf hydratisiert werden. In diesem Szenario lädt der Browser die JavaScript-Bundles für die eingestellten Deferred Views nicht, bis ein Trigger-Ereignis auftritt. Erst dann lädt Angular das zugehörige JavaScript herunter und hydratisiert diesen Teil der Ansicht. Wenn eine Komponente nicht benötigt wird, wird sie gar nicht erst hydratisiert. Das macht auch Sinn. Wenn man einen Flug suchen oder buchen will, ist es für die User Experience wichtiger, dass alle interaktiven Elemente in diesem Zusammenhang möglichst schnell geladen sind. In eher seltenen Fällen priorisieren Nutzerinnen die Marketing- oder Bonusangebote wie Restauranttipps. Und wenn diese Angebote gar nicht erst wahrgenommen werden, warum sollten sie überhaupt hydratisiert werden?
 

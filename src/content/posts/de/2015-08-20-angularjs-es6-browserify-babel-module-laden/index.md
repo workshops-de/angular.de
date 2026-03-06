@@ -16,7 +16,7 @@ In diesem Artikel zeige ich ein paar kleine Erweiterungen, die Euch die Entwickl
 - Lösung mit Babelify (ES6)
 - Fazit
 
-# Der aktuelle Stand und die Probleme
+## Der aktuelle Stand und die Probleme
 
 Klassisch müsst ihr all eure Skripte in die _index.html_ einzubinden, damit Controller, Services, etc. geladen werden. Vielleicht wart Ihr bereits genervt von dem ständigen Nachtragen, dass Ihr Pakete wie z.B. [gulp-htmlbuild](https://www.npmjs.com/package/gulp-htmlbuild) benutzt, welche euch diese Einträge automatisch in eure HTML-Datei einfügen. Egal, ob wie ihr es momentan handhabt, Euer Code sollte ungefähr so ausschauen:
 
@@ -47,7 +47,7 @@ Habt Ihr die ganzen Sourcen in einem einzigen Paket geht das noch mit _Suchen un
 
 Um dieses Problem zu vereinfachen hilft euch hierbei Browserify und eine Konvention!
 
-# Module laden mit Browserify (ES5)
+## Module laden mit Browserify (ES5)
 
 Browserify ist ein NodeJS-Modul, welches es euch erlaubt die von NodeJS bekannte CommonJS-Syntax und den `require`-Befehl auch im Browser zu benutzen. Der große Vorteil ist: Ihr müsst jetzt nur noch einen Einstiegspunkt in euer `index .hmtl`definieren. Eure Scripte können damit auf andere Skripte relativ zum File-System bzw auf Dateien im Ordner `node_modules` zeigen.
 Das Ganze sieht so aus:
@@ -69,7 +69,7 @@ export 'myApp.bookData';
 
 Was passiert hier also genau? Wenn wir die Datei anfragen, wird diese geladen und ihr Code ausgeführt. Somit registrieren wir das neue Modul inklusive dem Service über die globale Variable `angular.module()`. Über den Befehl `export` geben wir den Rückgabewert an, den wir erhalten wenn wir das Modul per `require(''../components/bookData/bookData.module')` einbinden. Diesen Wert legen wir dann direkt in das Dependency-Array und können uns somit die lästige Umbenennung an verschiedenen Orten sparen! Eine echte Erleichterung für Wartung und Refactoring!
 
-## index.js oder package.json
+### index.js oder package.json
 
 Um die Schreibweise weiter zu vereinfachen, haben wir unter anderem diese zwei Möglichkeiten:
 
@@ -104,10 +104,9 @@ Hier könnt Ihr neben dem Main-File auch weitere Metadaten wie z.B. die Abhängi
 angular.module("myApp", [require("myApp.bookData")]);
 ```
 
-## AngularJS Pakete via npm installieren und mit Browserify einbinden
+### AngularJS Pakete via npm installieren und mit Browserify einbinden
 
 [[cta:training-top]]
-
 
 Die AngularJS-Pakete sind selber auch auf diese Möglichkeit optimiert. Somit könnt Ihr sehr einfach weitere Framework-Module einbinden und einbinden.
 
@@ -128,7 +127,7 @@ angular.module('myApp', [
 
 Schauen wir uns an, was wir in Kombination mit Babel noch weiter erreichen können:
 
-# Module laden mit Browserify und Babel (ES6)
+## Module laden mit Browserify und Babel (ES6)
 
 Natürlich wollen wir uns langsam mit dem neuen JavaScript Sprachstandart ECMAScript 6 in Verbindung mit AngularJS beschäftigen. Dazu können wir z.B. den Transpiler [BabelJS](https://babeljs.io/) benutzen. Hierzu installieren wir uns zuerst das Paket `babelify`.
 
@@ -205,6 +204,6 @@ angular
   .config(RouteConfig);
 ```
 
-# Fazit
+## Fazit
 
 Alles in allem können wir uns mit diesem Aufbau eine Menge an Schreibarbeit durch das manuelle Einbinden von Skript-Tags, aber auch Modul-Abhängigkeiten sparen. In Verbindung mit Babel sind wir dazu noch ein Stück weiter an Angular2 und können unsere Module für spätere Portierungen vorbereiten. Dazu werde ich in einem weiteren Artikel mehr schreiben. Die Erleichterung der Modul-Einbindung ist eine kleine aber im Entwickler-Alltag sehr angenehme Erweiterung.
