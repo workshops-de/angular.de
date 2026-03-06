@@ -18,7 +18,7 @@ Auf mobilen Geräten ist der Platz sehr beschränkt, um Informationen zu präsen
 
 Ein Anwendungsfall wäre z.B. eine Produktdetailseite. In einer Shopping-App liegt das Hauptaugenmerk auf das Präsentieren der eigenen Produkte und den schnellen Kauf. Auf der Produkt-View wird also ansprechend das Produkt präsentiert mit allen rechtlichen und wichtigen Daten (Lieferzeit, Preis, zum Warenkorb hinzufügen, Lagerbestand, Lieferzeit, ...). Nun gehört das Produkt zu einer bestimmten Marke. Informationen zu dieser können wichtig sein, aber haben im Vergleich zu den restlichen Daten keine Relevanz. Sollen diese trotzdem auf einem Weg erreichbar sein, kann ein Information-Button/Icon eingebaut werden, welches beim Tap ein Modal öffnet und die Marken-Details einblendet. So wird der Nutzer nicht aus seinem "Kauf-Flow" gerissen und verlässt auch die Produktdetailseite nicht.
 
-In Ionic könnt ihr kinderleicht Modals erstellen und mit diesen arbeiten.
+In Ionic könnt ihr kinderleicht Modals und Dialoge erstellen und mit diesen arbeiten.
 Ein Modal in Ionic besteht aus zwei Teilen.
 
 1.  ionicModalView-Direktive - Erstellen des Modal-Templates

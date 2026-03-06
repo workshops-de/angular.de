@@ -7,7 +7,7 @@ categories: "angularjs"
 header_image: "header.jpg"
 ---
 
-Filter sind in AngularJS ein mächtiges Konzept, um Daten vor der Ausgabe beliebig transformieren zu können. Grundsätzlich unterscheiden wir zwischen den so genannten Expression- und Collectionfiltern.
+Filter sind in AngularJS ein mächtiges Konzept, um Daten vor der Ausgabe beliebig transformieren zu können. In diesem Artikel lernt ihr, wie ihr eigene Expressionfilter implementieren und testen könnt. Grundsätzlich unterscheiden wir zwischen den so genannten Expression- und Collectionfiltern.
 
 [[cta:training-top]]
 

@@ -7,7 +7,7 @@ categories: "angularjs"
 header_image: "header.jpg"
 ---
 
-In diesem kleinem Eintrag möchte ich euch eine Erweiterung für den Chrome Browser vorstellen. Der Name dieser Erweiterung ist: **Angular Watcher**.
+In diesem kleinem Eintrag möchte ich euch eine Erweiterung (Chrome Extension) für den Chrome Browser vorstellen. Der Name dieser Extension ist: **Angular Watcher**.
 
 [[cta:training-top]]
 

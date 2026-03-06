@@ -11,8 +11,7 @@ header_image: "header.jpg"
 
 [[cta:training-top]]
 
-
-Dieses Beispiel inspiriert euch hoffentlich, ein wenig kreativ mit AngularJS zu werden. Mit nur wenigen Zeilen könnt ihr eine Analog-Uhr mit SVG und AngularJS erstellen.
+Dieses Beispiel inspiriert euch hoffentlich, SVG kreativ mit AngularJS zu nutzen. Mit nur wenigen Zeilen könnt ihr eine Analog-Uhr mit SVG und AngularJS erstellen.
 
 In der HTML-Datei erstellen wir 3 Zeiger für Stunden, Minuten und Sekunden. Per JavaScript und AngularJS berechnen wir jede Sekunde die korrekte Rotation der Zeiger.
 

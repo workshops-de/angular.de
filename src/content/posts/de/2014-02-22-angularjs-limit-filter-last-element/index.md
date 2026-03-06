@@ -8,7 +8,7 @@ noindex: true
 header_image: "header.jpg"
 ---
 
-Hier nur ein ganz kurzer Tipp zum *Limit*-Filter.
+Hier nur ein ganz kurzer Tipp zum *Limit*-Filter, mit dem ihr das letzte Element einer Liste auswählen könnt.
 
 [[cta:training-top]]
 

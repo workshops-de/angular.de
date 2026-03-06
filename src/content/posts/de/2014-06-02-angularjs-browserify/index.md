@@ -7,7 +7,7 @@ categories: "angularjs"
 header_image: "header.jpg"
 ---
 
-Mit [Browserify](http://browserify.org/) lassen sich client-seitige JavaScript-Projekte mit CommonJS-Modulen strukturieren, obwohl CommonJS-Module nicht nativ im Browser lauffähig sind. Browserify transformiert alle Module und ihre transitiven Abhängigkeiten und erzeugt eine einzige, im Browser lauffähige JavaScript-Datei – das Browserify-Bundle. Auch in AngularJS-Projekten lässt sich Browserify hervorragend einsetzen. Wie das geht, zeigt dieser Artikel.
+Mit [Browserify](http://browserify.org/) lassen sich client-seitige JavaScript-Projekte mit CommonJS-Modulen strukturieren, obwohl CommonJS-Module nicht nativ im Browser lauffähig sind. Browserify transformiert alle Module und ihre transitiven Abhängigkeiten und erzeugt eine einzige, im Browser lauffähige JavaScript-Datei – das Browserify-Bundle. Auch in AngularJS-Projekten und SPAs lässt sich Browserify hervorragend einsetzen – ein echtes Dream Team. Wie das geht, zeigt dieser Artikel.
 
 ## Warum Browserify?
 

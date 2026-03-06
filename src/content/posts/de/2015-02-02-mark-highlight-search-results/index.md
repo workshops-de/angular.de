@@ -8,7 +8,7 @@ header_image: "header.jpg"
 ---
 
 Das Durchsuchen von Tabellen oder Listen lässt sich in Angular spielend lösen.
-Dieser Artikel zeigt euch, wie ihr mithilfe der `ui.utils` von `angular-ui`, die Suchbegriffe in den Ergebnissen markiert.
+Dieser Artikel zeigt euch, wie ihr das Highlighting von Suchergebnissen umsetzt und mithilfe der `ui.utils` von `angular-ui` die Suchbegriffe in den Ergebnissen markiert.
 
 Filter ermöglichen es Daten in Templates zu transformieren.
 Das Ganze ist deshalb so praktisch, weil die Filter mit der Pipe-Syntax `|` funktionieren, die aus UNIX-Shells bekannt ist.

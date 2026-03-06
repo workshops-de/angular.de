@@ -7,7 +7,7 @@ categories: "angularjs"
 header_image: "header.jpg"
 ---
 
-Hattet ihr in Verbindung mit `ng-repeat` schon einmal folgenden Fehler?
+In diesem Artikel zeigen wir, wie ihr den Duplicate error bei `ng-repeat` vermeiden könnt. Hattet ihr schon einmal folgenden Fehler?
 
 > **[ngRepeat:dupes] Duplicates in a repeater are not allowed**
 

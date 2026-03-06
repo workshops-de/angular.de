@@ -11,7 +11,7 @@ header_image: "header.jpg"
 
 ## Ziel des Artikels:
 
-Wie AngularJS ein HTML-Template verarbeitet, ist in den Tiefen des Frameworks verborgen.
+Wie AngularJS ein HTML-Template verarbeitet und das Parsing von Expressions durchführt, ist in den Tiefen des Frameworks verborgen.
 Normalerweise muss man auch nicht wissen, wie es funktioniert.
 Das ändert sich, wenn man eigene Direktiven zu baut.
 In diesem Fall kommt man sehr oft in die Situation, Templates oder Variablen selbst kompilieren zu müssen.

@@ -7,7 +7,7 @@ categories: "angularjs"
 header_image: "header.jpg"
 ---
 
-Dieser Artikel zeigt euch, wie man Variablen aus unterschiedlichen Controllern in Templates besser unterscheiden kann.
+Dieser Artikel zeigt euch, wie die Controller-As-Syntax Fehler vermeidet und wie man Variablen aus unterschiedlichen Controllern in Templates besser unterscheiden kann.
 
 In AngularJS sind Controller die Komponenten, die Daten mit einem Template verbinden.
 Da man beliebig viele Controller verwenden und verschachteln kann, kommt es vor, dass es Chaos mit den Variablennamen gibt.

@@ -14,7 +14,7 @@ Link zum [Quellcode](https://github.com/angularjs-de/ionic-tutorial/tree/master/
 
 Neben den in vorherigen Tutorials - wie [Modale](/artikel/ionic-tutorial-deutsch-modals/) - beschriebenen Anwendungsfällen zur Darstellung weiterer Details und aufbauend auf unserer [Ionic Framework Einführung](/artikel/ionic-tutorial-deutsch/), müssen in einer App oft auch kurze Hinweistexte, Fehlermeldungen oder einfache Nutzereingaben eingepflegt werden. Als Beispiel solltet ihr einen Anwender immer auf dem Laufenden halten. Wenn gerade eine wichtige Aktivität im Hintergrund abläuft, wie das Laden der Daten für die View, dann sollte er das mitbekommen. Genauso - auch wenn sich viele davor scheuen - ist es für den Endnutzer und für euch wichtig zu wissen, wann etwas so richtig schief gelaufen ist ;). So könnte ein wichtiger Request fehlgeschlagen sein, dann ist es gut den Nutzer darauf hinzuweisen. Oft passen aber die Ausgaben solcher Fehlermeldungen nicht in das vom Desginer angedachte Layout, denn wer denkt schon an mögliche Fehlerfälle.
 
-Hier bieten sich Popups gerade zu an. Sie legen sich, wie schon die vorherigen vorgestellten Komponenten über die View, aber bedecken nur einen geringen Teil dieser.
+Hier bieten sich Popups geradezu an, und der richtige Umgang mit ihnen ist schnell erlernt. Sie legen sich, wie schon die vorherigen vorgestellten Komponenten über die View, aber bedecken nur einen geringen Teil dieser.
 
 In Ionic heißt die Popup-Komponente **$ionicPopup**, und ist ein Service der mit Hilfe verschiedenen Funktionen auch unterschiedliche Arten von Popups erzeugen kann.
 

@@ -7,7 +7,7 @@ categories: "tutorial angularjs"
 header_image: "header.jpg"
 ---
 
-Dieses Tutorial ist für Anfänger gedacht, die gerade erst mit AngularJS beginnen. Als Beispiel werden wir eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von AngularJS kennenlernen.
+Dieses AngularJS-Tutorial ist für Anfänger gedacht, die gerade erst mit AngularJS beginnen. Als Beispiel werden wir eine Seite mit Warenkorb für eine Pizzeria bauen und auf dem Weg die Kernelemente von AngularJS kennenlernen.
 
 > **<i class=" fa fa-eye fa-fw"></i> Demo: [Finale Version](http://angularjs-de.github.io/angularjs-tutorial-code/13-routes-final)**
 

@@ -7,7 +7,7 @@ categories: "angularjs"
 header_image: "header.jpg"
 ---
 
-_Einfaches Formular-Handling mit [ng-fab-form](https://github.com/johannesjo/ng-fab-form)_
+_Fabelhafte Formulare dank einfachem Formular-Handling mit [ng-fab-form](https://github.com/johannesjo/ng-fab-form)_
 
 Wer schon einmal mit Formularen in einer AngularJS-App gearbeitet hat, kennt das:
 

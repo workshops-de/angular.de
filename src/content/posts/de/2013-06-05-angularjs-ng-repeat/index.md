@@ -7,7 +7,7 @@ categories: "angularjs"
 header_image: "header.jpg"
 ---
 
-Als AngularJS-Entwickler:in kommen wir an der Direktive _ng-repeat_ nicht vorbei. Ganz im Gegenteil: So ziemlich jede Anwendung, die mit Collections operiert, benötigt den Einsatz dieser Direktive, um die Sammlungen von Daten in einer View bequem ausgeben zu können. Auf den ersten Blick sieht _ng-repeat_ dabei völlig harmlos aus und jede:r Entwickler:in erscheint offensichtlich, welche Logik sich hinter diesem Konstrukt verbirgt. Wenn man jedoch genauer hinschaut, gibt es einige Besonderheiten, die zu beachten sind.
+Als AngularJS-Entwickler:in kommen wir an der Direktive _ng-repeat_ nicht vorbei — sie ist der Teufel im Schafspelz der Angular-Welt. Ganz im Gegenteil: So ziemlich jede Anwendung, die mit Collections operiert, benötigt den Einsatz dieser Direktive, um die Sammlungen von Daten in einer View bequem ausgeben zu können. Auf den ersten Blick sieht _ng-repeat_ dabei völlig harmlos aus und jede:r Entwickler:in erscheint offensichtlich, welche Logik sich hinter diesem Konstrukt verbirgt. Wenn man jedoch genauer hinschaut, gibt es einige Besonderheiten, die zu beachten sind.
 
 ## Grundlagen
 

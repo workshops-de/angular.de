@@ -9,7 +9,7 @@ header_image: "header.jpg"
 
 **UPDATE 05.01.2015:** ZenQuery ist nun Open Source auf [GitHub](https://github.com/BjoernKW/ZenQuery) verfügbar. Insbesondere kann der Quellcode des mit AngularJS umgesetzten Frontends [hier](https://github.com/BjoernKW/ZenQueryUI) eingesehen werden.
 
-In diesem Artikel möchte ich euch anhand eines Enterprise Software Produktes zeigen, wie man AngularJS mit Spring Web MVC als Backend einsetzen kann.
+In dieser Fallstudie möchte ich euch anhand eines Enterprise Software Produktes zeigen, wie man AngularJS mit Spring Web MVC als Backend einsetzen kann.
 
 ## Hintergrund: [ZenQuery](http://www.zenqry.com/), ein ‘Enterprise Backend as a Service'
 
