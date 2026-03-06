@@ -6,6 +6,7 @@ published_at: 2023-11-27T15:00:00.000Z
 header_source: https://unsplash.com/de/fotos/xXiKQ2AavlY
 header_image: header.jpg
 categories: "angular update"
+noindex: true
 ---
 
 ## Angular kurz erklärt: Neue Artikelserie auf Angular.de

@@ -20,6 +20,7 @@ interface Props {
   toc?: boolean;
   language?: string;
   canonical_url?: string;
+  noindex?: boolean;
   slug?: string;
   folderName?: string;
 }
@@ -34,6 +35,7 @@ const {
   header_image,
   language = 'de',
   canonical_url,
+  noindex = false,
   slug: propSlug,
   folderName,
 } = Astro.props;
@@ -79,6 +81,7 @@ const fullImageUrl = header_image?.src
   publishedTime={published_at}
   author={author}
   slug={slug}
+  noindex={noindex}
 >
   <!-- Reading Progress Bar (below navbar) -->
   <div id="progress-container" class="fixed left-0 right-0 h-1 z-[60]" style="top: var(--navbar-height, 72px)">

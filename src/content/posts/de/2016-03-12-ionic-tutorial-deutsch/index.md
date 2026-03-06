@@ -1,9 +1,9 @@
 ---
-title: "Ionic Framework Tutorial - hybride Apps"
-description: "Unser Einführungstutorial zu Ionic erklärt euch alle wichtigen Konzepte und Bestandteile des Frameworks. Vom Erstellen des Projekts bis hin zur ersten App."
+title: "Ionic 1 Framework Tutorial mit AngularJS - hybride Apps"
+description: "Einführungstutorial zu Ionic 1 mit AngularJS: Alle wichtigen Konzepte und Bestandteile des Frameworks erklärt. Vom Erstellen des Projekts bis zur ersten hybriden App."
 author: "Bengt Weiße"
 published_at: 2016-03-12 08:29:00.000000Z
-categories: "tutorial ionic angularjs"
+categories: "tutorial ionic ionic1 angularjs"
 header_image: "header.jpg"
 ---
 
