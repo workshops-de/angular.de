@@ -10,7 +10,7 @@ categories: "angular open-community"
 
 [[cta:training-top]]
 
-Nach einer wohlverdienten Sommerpause sind wir wieder da – und das mit einem echten Highlight! Zum Start haben wir ein exklusives Interview für euch mit Mark Thomson, Transformational Public Speaker und Mitglied des Angular-Teams bei Google.
+Nach einer wohlverdienten Sommerpause sind wir wieder da – und das mit einem echten Highlight! Webdave war im Gespräch mit Mark Thomson, Transformational Public Speaker und Mitglied des Angular-Teams bei Google, und hat dieses exklusive Interview für euch mitgebracht.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tW5gBgM0QrI?si=zvWNKL4oIz5OJ_Yz" title="Interview mit Mark Thompson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

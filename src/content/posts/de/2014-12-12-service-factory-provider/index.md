@@ -7,7 +7,7 @@ categories: "angularjs services"
 header_image: "header.jpg"
 ---
 
-In diesem Artikel werden alle relevanten Wege zum Erzeugen von Services gezeigt und praktische Tipps gegeben, wie ihr die übliche Verwirrung mit den unterschiedlichen Methoden einfach umgehen könnt.
+In diesem Artikel lernst du, Service, Factory und Provider in AngularJS zu verstehen und richtig einzusetzen. Wir zeigen alle relevanten Wege zum Erzeugen von Services und geben praktische Tipps, wie ihr die übliche Verwirrung mit den unterschiedlichen Methoden einfach umgehen könnt.
 Wenn man sich mit Services in Angular beschäftigt, dann stößt man früher oder später darauf, dass es zum Erzeugen die Methoden `service()`, `factory()` und `provider()` gibt.
 Alle haben gemeinsam, dass sie Services erzeugen, aber deren Unterschiede, sowie Vor- und Nachteile sind nicht sofort ersichtlich.
 

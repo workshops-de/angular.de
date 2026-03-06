@@ -7,7 +7,7 @@ categories: "angular typescript ai-development cursor agents"
 header_image: "./header.jpg"
 ---
 
-**TL;DR:** Mit Cursor und AI-Agents haben wir die neue NG-DE Konferenz-Webseite in einem Bruchteil der üblichen Zeit entwickelt. Durch geschickt definierte Rules und Agent-Dialog entstehen moderne Angular-Anwendungen mit 5x weniger Zeitaufwand – ohne dabei auf Code-Qualität zu verzichten.
+**TL;DR:** Mit Cursor und AI-Agents haben wir die neue NG-DE Konferenz-Webseite in Rekordzeit entwickelt – in einem Bruchteil der üblichen Zeit. Durch geschickt definierte Rules und Agent-Dialog entstehen moderne Angular-Anwendungen mit 5x weniger Zeitaufwand – ohne dabei auf Code-Qualität zu verzichten.
 
 Die Entwicklung der [NG-DE 2025 Webseite](https://ng-de.org/?utm_source=angular.de&utm_medium=blog&utm_campaign=angular-cursor-ng-de-article&utm_content=intro) war ein Experiment: Kann man mit AI-Agents eine komplexe Angular-Anwendung entwickeln, die sowohl technisch hochwertig als auch wartbar ist? Die Antwort ist ein klares Ja – und die Zeitersparnis ist dramatisch.
 

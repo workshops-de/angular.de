@@ -9,7 +9,7 @@ header_image: "header.jpg"
 
 ## Problem
 
-Du benutzt eine externes Modul und möchtest das Ergebnis eines Services verändern oder erweitern, ohne den Service selbst zu verändern.
+Du benutzt ein externes Modul und möchtest das Ergebnis eines Services mit Decorators verändern oder erweitern, ohne den Service selbst zu verändern.
 
 ## Lösung
 

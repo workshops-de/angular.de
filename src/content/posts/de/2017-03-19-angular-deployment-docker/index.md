@@ -9,7 +9,7 @@ header_image: "header.jpg"
 
 Welche:r Web-Entwickler:in kennt nicht die guten alten Zeiten, in welchen Webserver sehr aufwendig aufgesetzt werden mussten. Jeder aus dieser Zeit kann bestätigen, dass dies alles andere als einfach war.
 
-Inzwischen gibt es aber Möglichkeiten, hierbei wesentlich flexibler zu agieren. Daher wollen wir uns in diesem Artikel das Zusammenspiel von Docker, Node, Unit-Testing mit einer Angular App ansehen. Ziel soll es sein, dass ein Deployment vollständig automatisiert ab dem Punkt des Code Check-In stattfindet. Allerdings nur dann, wenn alle Tests erfolgreich durchgeführt wurden. Folglich - wir wollen eine Deployment-Pipe aufsetzen.
+Inzwischen gibt es aber Möglichkeiten, hierbei wesentlich flexibler zu agieren. Daher wollen wir uns in diesem Artikel das Zusammenspiel von Docker, Node, Unit-Testing mit einer Angular App ansehen – und das in 5 Schritten. Ziel soll es sein, dass ein Deployment vollständig automatisiert ab dem Punkt des Code Check-In stattfindet. Allerdings nur dann, wenn alle Tests erfolgreich durchgeführt wurden. Folglich - wir wollen eine Deployment-Pipe aufsetzen.
 
 In diesem Artikel spreche ich von einer Angular Applikation. Allerdings ist es letztlich egal, was ich deployen möchte. Wichtig ist das komplette Zusammenspiel der verschiedenen Prozesse kennen zu lernen und zu verstehen. Das bedeutet, dass ihr diesen Artikel auch für andere Systeme anwenden könnt. Egal ob man eine Angular App oder ein Express Backend deployen möchtet, der Ablauf bleibt der gleiche.
 

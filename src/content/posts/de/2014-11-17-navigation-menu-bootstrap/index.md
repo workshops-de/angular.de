@@ -9,7 +9,7 @@ header_image: "header.jpg"
 
 [Single-page-Webanwendungen](http://de.wikipedia.org/wiki/Single-page-Webanwendung) sind mittlerweile sehr verbreitet und je nach Anwendungsfall eine sinnvolle Alternative zu klassischen Webanwendungen.
 Wenn man mit AngularJS Single-page-Webanwendungen entwickelt und gleichzeitig Wert auf benutzerfreundliche URLs legt, dann kommt man am `ngRoute` Modul nicht vorbei.
-In diesem Artikel möchte ich euch zeigen, wie ihr eine Navigations-Direktive mit dem `$route` Service und Bootstrap bauen könnt, die automatisch durch die Definition der Routen erzeugt wird.
+In diesem Artikel möchte ich euch zeigen, wie ihr eine generierte Navigation mit AngularJS und Bootstrap baut – eine Navigations-Direktive mit dem `$route` Service, die automatisch durch die Definition der Routen erzeugt wird.
 
 ![AngularJS Navigation mit $route und Bootstrap](route-navigation.png)
 

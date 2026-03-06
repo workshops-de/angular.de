@@ -9,7 +9,7 @@ header_image: "header.jpg"
 
 ## Warum brauche ich Bootstrap in meinem Angular Projekt?
 
-Bootstrap ist ein CSS-Framework welches ein sehr breites Spektrum fertigen Komponenten und Funktionen bietet.
+Bootstrap SCSS lässt sich in wenigen Sekunden in ein Angular-Projekt einbinden. Bootstrap ist ein CSS-Framework welches ein sehr breites Spektrum fertigen Komponenten und Funktionen bietet.
 Es bietet unter anderen ein fertiges Grid-Layout welches sogar mit Flexbox arbeiten kann.
 Gerade beim Start eines Projektes lassen sich hiermit Layouts und Designs einfach umsetzen, sodass auch die ersten Prototypen eurer WebAnwendung nicht komplett hässlich aussehen.
 

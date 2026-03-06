@@ -7,7 +7,7 @@ header_image: banner.png
 categories: "angular environments"
 ---
 
-Die meisten professionellen Angular Anwendungen durchlaufen im Entwicklungszyklus mehrere Ausführungs-Umgebungen. Während die Unterschiede zwischen diesen Umgebungen für eine reibungslose Auslieferung möglichst gering gehalten werden sollten, muss sich deine Webapp wahrscheinlich auf einer Entwicklungsmaschine ein bisschen anders verhalten als im produktiven Betrieb.
+In diesem Artikel zeigen wir, wie du Angular Environments einrichtest, konfigurierst und testest. Die meisten professionellen Angular Anwendungen durchlaufen im Entwicklungszyklus mehrere Ausführungs-Umgebungen. Während die Unterschiede zwischen diesen Umgebungen für eine reibungslose Auslieferung möglichst gering gehalten werden sollten, muss sich deine Webapp wahrscheinlich auf einer Entwicklungsmaschine ein bisschen anders verhalten als im produktiven Betrieb.
 
 Angular bietet hierfür bereits eine Lösung namens [Environments](https://v17.angular.io/guide/build#configuring-application-environments) an. Die funktionieren wie folgt: man legt eine beliebige Anzahl an Environment-Dateien in einem Ordner, bspw. `src/environments`, an:
 ```

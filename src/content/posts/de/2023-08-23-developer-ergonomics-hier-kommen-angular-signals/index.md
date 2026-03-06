@@ -10,7 +10,7 @@ categories: "angular signals update"
 
 ## Das Angular 16 Update
 
-Vielleicht hast Du es mitbekommen: Mit Angular 16 wurde das, gemessen am Umfang, größte Update nach dem initialen Release von Angular veröffentlicht. Neben Features wie [Non-Destructive Hydration](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d#:~:text=of%20full%20app-,non%2Ddestructive%20hydration,-!){:rel="noopener noreferrer nofollow"} oder dem Support für Typescript 5.0 enthält das Update drei Reactivity Primitives und damit einen Mechanismus für Reaktivität. Sarah Drasnger, Director of Engineering bei Google, spricht auf [Twitter bzw. X](https://twitter.com/sarah_edo/status/1628065696247857152){:rel="noopener noreferrer nofollow"} sogar von einer Angular Renaissance.
+Vielleicht hast Du es mitbekommen: Mit Angular 16 wurde das, gemessen am Umfang, größte Update nach dem initialen Release von Angular veröffentlicht. Im Mittelpunkt stehen dabei Verbesserungen der Developer Ergonomics – also wie angenehm und produktiv sich die Arbeit mit Angular anfühlt. Neben Features wie [Non-Destructive Hydration](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d#:~:text=of%20full%20app-,non%2Ddestructive%20hydration,-!){:rel="noopener noreferrer nofollow"} oder dem Support für Typescript 5.0 enthält das Update drei Reactivity Primitives und damit einen Mechanismus für Reaktivität. Sarah Drasnger, Director of Engineering bei Google, spricht auf [Twitter bzw. X](https://twitter.com/sarah_edo/status/1628065696247857152){:rel="noopener noreferrer nofollow"} sogar von einer Angular Renaissance.
 
 ## Motivation hinter Signals
 

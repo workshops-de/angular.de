@@ -9,7 +9,7 @@ header_image: header.jpg
 categories: "angular rendering control-flow refactoring open-community"
 ---
 
-Oft frage ich mich, gerade für Anwendungen mit vielen dynamisch geladenen Komponenten, wie ich diese noch besser programmieren kann, um die Latenz oder Layout-Shifts zu verringern. Ich mache mir deshalb immer viele Gedanken, wie ich etwas programmiere, auch weil wir in Zukunft, bei mir im Unternehmen, ein Refactoring unseres Formular-Moduls planen. Deshalb wollte ich herausfinden, wo wir mit kleinen Änderungen bessere Render-Performance erzielen können. In diesem Artikel beschreibe ich mein Vorgehen und etwas unsere interne Modulstruktur.
+Oft frage ich mich, gerade für Anwendungen mit vielen dynamisch gerenderten Komponenten, wie ich diese noch besser programmieren kann, um die Latenz oder Layout-Shifts zu verringern. Ich mache mir deshalb immer viele Gedanken, wie ich etwas programmiere, auch weil wir in Zukunft, bei mir im Unternehmen, ein Refactoring unseres Formular-Moduls planen. Deshalb wollte ich herausfinden, wo wir mit kleinen Änderungen bessere Render-Performance erzielen können. In diesem Artikel beschreibe ich mein Vorgehen und etwas unsere interne Modulstruktur.
 
 Das Formular-Modul bekommt aktuell eine JSON-Konfiguration, entweder vom Backend oder direkt aus der App, welche dann mit Rows und Cols zu einem Formular mit Seiten und Gruppen umgesetzt wird. Die Bestandteile setzen sich wie folgt zusammen:
 

@@ -9,7 +9,7 @@ header_image: header.jpg
 categories: "angular signals input output"
 ---
 
-Mit einem Minor Update der Version 17 hat das Angular-Team ein neues Feature, [Signal Inputs](https://angular.dev/guide/signals/inputs#monitoring-changes), eingeführt. Die neuen Inputs sind eine reaktive Alternative zum traditionellen [@Input()-Dekorator](https://angular.dev/api/core/Input#) und machen es Entwicklern nun noch leichter, Daten zwischen Parent- und Child-Komponenten zu übertragen. Das Feature befindet sich zwar noch in der Developer Preview, dennoch ist der neue deklarative Ansatz bereits ein voller Erfolg in der Angular Community. Das ist ein guter Grund, uns das Ganze mal näher anzusehen.
+Mit einem Minor Update der Version 17 hat das Angular-Team ein neues Feature, [Signal Inputs](https://angular.dev/guide/signals/inputs#monitoring-changes), eingeführt. Die neuen Inputs vereinfachen die Kommunikation zwischen Eltern- und Kindelementen erheblich: Sie sind eine reaktive Alternative zum traditionellen [@Input()-Dekorator](https://angular.dev/api/core/Input#) und machen es Entwicklern nun noch leichter, Daten zwischen Parent- und Child-Komponenten zu übertragen. Das Feature befindet sich zwar noch in der Developer Preview, dennoch ist der neue deklarative Ansatz bereits ein voller Erfolg in der Angular Community. Das ist ein guter Grund, uns das Ganze mal näher anzusehen.
 
 ## Der @Input-Dekorator
 
