@@ -46,9 +46,7 @@ Du kannst mit der Zoneless Change Detection ab sofort in deiner Angular-Anwendun
 
 ```typescript
 bootstrapApplication(App, {
-  providers: [
-    provideExperimentalZonelessChangeDetection()
-  ]
+  providers: [provideExperimentalZonelessChangeDetection()],
 });
 ```
 
@@ -75,12 +73,14 @@ export class App {
 In diesem Beispiel bewirkt ein Klick auf den Button, dass die Methode handleClick aufgerufen wird, was den Signalwert aktualisiert und die UI entsprechend anpasst.
 
 ### Vorteile der Zoneless Change Detection?
+
 Die neue Zoneless Change Detection bietet viele Möglichkeiten für Entwickler/innen:
 Verbesserte Integration für Micro-Frontends und Interoperabilität mit anderen Frameworks.
 Schnelleres Rendering und bessere Laufzeitperformance.
 Vereinfachtes Debugging und lesbarere Stacktraces.
 
 ### Die Rolle von Signals für Zoneless
+
 Ein Kernaspekt von zoneless ist die Einführung von Signals, die eine direkte und reaktive Zustandsverwaltung ermöglichen. Signals sind entscheidend für die effiziente Steuerung der Änderungserkennung, da sie es ermöglichen, Zustände explizit zu aktualisieren, ohne dass zone.js jede Aktion überwachen muss. Dies führt zu einer deutlichen Performance-Steigerung und vereinfacht die Komponentenkommunikation durch klar definierte Datenflüsse.
 
 ## Signals
@@ -100,6 +100,7 @@ Zu den Signal APIs gehören:
 
 Bis auf model, das eine Kombination aus input und output darstellt und damit ein intuitives Two-Way-Binding ermöglicht, sind die anderen schnell erklärt: Sie ersetzen die bestehenden Dekoratoren durch Signale.
 Ein Beispiel:
+
 ```typescript
 import { Component, model } from '@angular/core';
 
@@ -148,9 +149,7 @@ Event Replay ist von nun an in der Developer Preview verfügbar. Du kannst es vi
 
 ```javascript
 bootstrapApplication(App, {
-  providers: [
-    provideClientHydration(withEventReplay())
-  ]
+  providers: [provideClientHydration(withEventReplay())],
 });
 ```
 
@@ -182,26 +181,30 @@ Entwickler können nun direkt auf Änderungen im Template reagieren, ohne auf Um
 
 ```html
 @template {
-  <!-- Bisher -->
-  <div *if="bedingung">Inhalt anzeigen</div>
+<!-- Bisher -->
+<div *if="bedingung">Inhalt anzeigen</div>
 
-  <!-- Neu -->
-  @if(bedingung){
-    <div>Inhalt anzeigen</div>
-  }
-}
+<!-- Neu -->
+@if(bedingung){
+<div>Inhalt anzeigen</div>
+} }
 ```
+
 Hier findest du den Link zum passenden Stackblitz unseres Trainers Webdave.
 
 ## Partial Hydration und Deferrable Views
+
 Ein Highlight des Updates sind die nun stabilisierten "deferrable views". Das sind die Code-Bausteine für Partial Hydration. Sie erlauben es Entwicklern, gezielt zu steuern, welche Teile ihrer Anwendung wann gerendert und hydratisiert werden sollen. Deferrable Views erlauben es, das Laden bestimmter Komponenten bis zu einem ausgelösten Ereignis zu verzögern. Statt wie bisher den @placeholder-Block auf dem Server zu rendern, müssen dafür alle Inhalte innerhalb der festgelegten Defer-Blöcke serverseitig gerendert und nur auf Client-Seite nach Bedarf hydratisiert werden. Das kann ein Scrollen des Users sein oder ein anderer Interaktionspunkt.
 Mit Hilfe von @defer-Blöcken können Entwickler das Laden und Rendern von Komponenten gezielt verzögern:
+
 ```html
 @defer (on viewport) {
-  <meine-komponente />
+<meine-komponente />
 }
 ```
+
 Hier haben Entwickler folgende Möglichkeiten:
+
 - on idle: Lädt Komponenten, wenn der Browser inaktiv ist.
 - on immediate: Lädt Komponenten sofort nach der Initialisierung.
 - on viewport: Lädt Komponenten, wenn sie in den
@@ -231,9 +234,9 @@ Mehr Informationen gibt es dazu [hier](https://firebase.blog/posts/2024/05/intro
 
 In der Welt von Angular tut sich aber auch in der Community viel. Sie ist lebendiger denn je!
 
-Am meisten hat uns gefreut, dass es dieses mal Kudos an unsere Konferenz [Ng-de](https://ng-de.org/tickets/) gab! Neben der [ng-conf](https://ng-conf.org/), [Angular Belgrade](https://angularbelgrade.org/), [NGPoland](https://ng-poland.pl/), [ngRome](https://ngrome.io/), [NG Kenya](https://ng-kenya.com/home), [ngIndia](https://www.ng-ind.com/) und [Angular TLV](https://angular-tlv.com/) wurde die Ng-de als ein Konferenz-Highlight des Jahres genannt.
+Am meisten hat uns gefreut, dass es dieses mal Kudos an unsere Konferenz [Ng-de](https://ng-de.org/#tickets) gab! Neben der [ng-conf](https://ng-conf.org/), [Angular Belgrade](https://angularbelgrade.org/), [NGPoland](https://ng-poland.pl/), [ngRome](https://ngrome.io/), [NG Kenya](https://ng-kenya.com/home), [ngIndia](https://www.ng-ind.com/) und [Angular TLV](https://angular-tlv.com/) wurde die Ng-de als ein Konferenz-Highlight des Jahres genannt.
 
-BTW, die Ng-de findet vom 10-11. Oktober im Maritim Hotel in Bonn statt. [Karten kannst du hier bestellen](https://ng-de.org/tickets/). Wir freuen uns auf dich!
+BTW, die Ng-de findet vom 10-11. Oktober im Maritim Hotel in Bonn statt. [Karten kannst du hier bestellen](https://ng-de.org/#tickets). Wir freuen uns auf dich!
 
 [[cta:training-bottom]]
 
@@ -246,4 +249,3 @@ Version 18 ist wieder mal der beste Beweis dafür, dass Developer Experience und
 Mit dem neuesten Update hat Angular unserer Meinung nach seine Position als Primus in der Entwicklung von skalierbarer Unternehmenssoftware gestärkt. Wir begrüßen die deutliche Ausrichtung auf eine optimierte Developer Experience, mehr Accessibility und Community. Das ist eine gelungene Vision für eine lange und große Zukunft des Frameworks.
 
 Sind wir also am Höhepunkt der "Angular Renaissance" oder erst am Anfang einer neuen Ära? Wir sind zweifellos mittendrin in einer spannenden Zeit.
-
