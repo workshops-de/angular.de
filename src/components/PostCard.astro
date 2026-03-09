@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { useTranslations } from '../i18n/utils';
 
 interface Props {
   post: CollectionEntry<'posts'> | CollectionEntry<'posts-en'>;
@@ -12,6 +13,7 @@ const { post, showReadingTime = false, lang = 'de' } = Astro.props;
 const { title, description, author, published_at, header_image, categories } = post.data;
 
 const isEnglish = lang === 'en';
+const t = useTranslations(lang);
 
 const categoryList = categories?.split(' ').filter(Boolean) || [];
 const formattedDate = published_at.toLocaleDateString(isEnglish ? 'en-US' : 'de-DE',
@@ -51,7 +53,7 @@ if (post.body) {
     {showReadingTime && (
       <div class="absolute top-3 right-3">
         <span class="px-2 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300 rounded-full shadow-sm">
-          {readingTime} min read
+          {readingTime} {t('articles.minutesRead')}
         </span>
       </div>
     )}
