@@ -21,9 +21,9 @@ Für Angular-Entwickler bedeutet dieser Security Advisory erhöhte Dringlichkeit
 Die gute Nachricht: Das Angular-Team hat bereits reagiert und stellt umfassende Patches sowie Workarounds zur Verfügung. Die schlechte Nachricht: Ohne schnelles Handeln sind Angular-Anwendungen anfällig für Manipulation und potenzielle XSS-Angriffe.
 ### Technische Details
 Die Schwachstellen konzentrieren sich auf zwei Hauptbereiche:
-**1. Input-Validierung in Angular Core**  
+**1. Input-Validierung in Angular Core**
 Unzureichende Validierung von Benutzereingaben kann zu Cross-Site Scripting (XSS) führen. Dies betrifft besonders Anwendungen, die dynamisch generierte Inhalte ohne ausreichende Sanitization rendern.
-**2. Header-Injection in SSR-Komponenten**  
+**2. Header-Injection in SSR-Komponenten**
 Bei der Server-Side Rendering können manipulierte HTTP-Header zu falscher URL-Konstruktion führen. Dies öffnet Türen für verschiedene Angriffsszenarien, von Phishing bis zu Session-Hijacking.
 ## Empfohlene Sofortmaßnahmen
 ### Workaround für betroffene Anwendungen
@@ -75,7 +75,7 @@ Die Security-Updates haben minimalen Impact auf die Performance bestehender Anwe
 - CVE-2026-27739: Alle Angular SSR Versionen mit `@angular/ssr`
 **Gepatchte Versionen (Update erforderlich):**
 - Angular 19: Update auf 19.2.21 oder höher
-- Angular 20: Update auf 20.3.17 oder höher  
+- Angular 20: Update auf 20.3.17 oder höher
 - Angular 21: Update auf 21.1.5 oder höher
 Teams sollten:
 1. Ihre Angular-Version überprüfen: `ng version`
@@ -100,48 +100,5 @@ Das Angular-Team arbeitet bereits an weiteren Verbesserungen der eingebauten Sec
 - 📰 [Original Security Advisory](https://blog.angular.dev/security-advisory-addressing-recent-vulnerabilities-in-angular-c2656249b799)
 - 📚 [CVE-2026-27738 Details - NIST NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-27738)
 - 📚 [CVE-2026-27739 Details - NIST NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-27739)
-- 🎓 [Angular Security Workshop bei workshops.de](https://workshops.de/angular-security)
+- 🎓 [Angular Security Workshop bei workshops.de](https://workshops.de/schulungsthemen/angular)
 - 🔒 [Angular Security Best Practices Documentation](https://angular.io/guide/security)
-## Technical Review Log - 28.02.2026 14:20 Uhr
-**Review-Status**: ✅ **PASSED WITH CHANGES**
-### Vorgenommene Korrekturen:
-1. **Zeile 1036**: Entfernt: Nicht-existierender CERT-Bund Advisory "WID-SEC-2026-0534" 
-   - **Grund**: Dieser Advisory konnte nicht verifiziert werden. Ersetzt durch korrekte CVE-Referenzen (CVE-2026-27738, CVE-2026-27739)
-   - **Quelle**: Verifiziert via NIST NVD, Angular Blog, GitHub Security Advisories
-2. **Code-Block CSP-Konfiguration (Zeile 3776)**: Kritischer Fehler korrigiert
-   - **Problem**: angular.json "headers" unter "serve" funktioniert NICHT in Production
-   - **Korrektur**: Hinzugefügt: NGINX-Beispiel für Production + Angular 17+ autoCsp Option + Warnhinweis
-   - **Grund**: Entwickler könnten fälschlicherweise annehmen, ihre Production-App wäre geschützt
-   - **Quelle**: Verifiziert via Angular CLI Documentation, CSP Best Practices
-3. **Versionsnummern hinzugefügt (Zeile 4758)**: Fehlende technische Details ergänzt
-   - **Hinzugefügt**: Betroffene Versionen (19, 20, 21) und gepatchte Versionen (19.2.21, 20.3.17, 21.1.5)
-   - **Grund**: Kritische Information für Entwickler zur Entscheidung über Updates
-   - **Quelle**: CVE-2026-27738 Details via Miggo Security, NIST NVD
-4. **Quellen aktualisiert**: CERT-Bund Link durch NVD CVE-Links ersetzt
-   - **Grund**: Authoritative Quellen für CVE-Informationen
-### Verifizierte technische Fakten:
-- ✅ Angular Security Advisory existiert (27.02.2026, blog.angular.dev)
-- ✅ CVE-2026-27738: Open Redirect via X-Forwarded-Prefix Header
-- ✅ CVE-2026-27739: SSRF via Header Injection in SSR pipeline
-- ✅ Code-Beispiel `req.headers.host` vs `process.env.API_BASE_URL` - technisch korrekt
-- ✅ Workaround mit absoluten URLs statt Header-basierter Konstruktion - Best Practice
-- ✅ npm audit Commands - syntax korrekt
-- ✅ DomSanitizer, HttpClient XSRF-Protection - Angular Features korrekt beschrieben
-### Sicherheits-Einschätzung:
-- **Severity**: CRITICAL (Remote exploitable, betrifft Production SSR apps)
-- **Code-Qualität**: Gut - alle Code-Beispiele sind funktional und Best Practice
-- **Vollständigkeit**: Sehr gut - umfassende Abdeckung der Security Issues
-### Empfehlungen:
-- 💡 Artikel könnte erweitert werden mit: Express.js Server-Konfiguration Beispiel
-- 💡 Optional: Hinweis auf Angular CLI `ng update` für automatische Migration
-- 📚 Gut geeignet für: Enterprise-Teams, Security-bewusste Entwickler
-**Reviewed by**: Technical Review Agent  
-**Verification Sources**: 
-- blog.angular.dev/security-advisory (Official Angular Blog)
-- nvd.nist.gov/vuln/detail/CVE-2026-27738
-- nvd.nist.gov/vuln/detail/CVE-2026-27739
-- GitHub Security Advisories (@angular/ssr)
-- Angular CLI Documentation
-- NGINX CSP Configuration Best Practices
-**Konfidenz-Level**: HIGH  
-**Artikel Status**: ✅ Ready to Publish
