@@ -11,13 +11,13 @@ import path from 'path';
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 
 const TRAINER_ENDPOINTS = [
-  { url: 'https://workshops.de/api/portal/angular-de/trainers', file: 'trainers.json' },
-  { url: 'https://workshops.de/api/course/4/trainers', file: 'course_trainers/angular-intensiv.json' },
-  { url: 'https://workshops.de/api/course/23/trainers', file: 'course_trainers/angular-enterprise-applications.json' },
-  { url: 'https://workshops.de/api/course/29/trainers', file: 'course_trainers/nestjs.json' },
-  { url: 'https://workshops.de/api/course/28/trainers', file: 'course_trainers/rxjs.json' },
-  { url: 'https://workshops.de/api/course/4/trainers', file: 'course_trainers/angular-remote.json' },
-  { url: 'https://workshops.de/api/course/26/trainers', file: 'course_trainers/html-css.json' },
+  { url: 'https://workshops.de/api/portals/angular-de/trainers', file: 'trainers.json' },
+  { url: 'https://workshops.de/api/courses/4/trainers', file: 'course_trainers/angular-intensiv.json' },
+  { url: 'https://workshops.de/api/courses/23/trainers', file: 'course_trainers/angular-enterprise-applications.json' },
+  { url: 'https://workshops.de/api/courses/29/trainers', file: 'course_trainers/nestjs.json' },
+  { url: 'https://workshops.de/api/courses/28/trainers', file: 'course_trainers/rxjs.json' },
+  { url: 'https://workshops.de/api/courses/4/trainers', file: 'course_trainers/angular-remote.json' },
+  { url: 'https://workshops.de/api/courses/26/trainers', file: 'course_trainers/html-css.json' },
 ];
 
 async function fetchTrainers() {
