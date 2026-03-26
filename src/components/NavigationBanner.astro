@@ -1,19 +1,21 @@
 ---
 import { siteConfig } from '../config/site';
+import { getLangFromUrl } from '../i18n/utils';
 
 interface Props {
-  message?: string;
   href?: string;
   enabled?: boolean;
 }
 
+const lang = getLangFromUrl(Astro.url);
 const bannerConfig = siteConfig.navigation.banner;
 
 const {
-  message = bannerConfig.message,
   href = bannerConfig.href,
   enabled = bannerConfig.enabled
 } = Astro.props;
+
+const message = bannerConfig.message[lang] ?? bannerConfig.message.de;
 ---
 
 {enabled && (

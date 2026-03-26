@@ -62,8 +62,10 @@ export const siteConfig = {
   navigation: {
     banner: {
       enabled: true,
-      message:
-        "Wir bieten Schulungen an! Von Anfänger bis Experte - inklusive Agentic AI Coding!",
+      message: {
+        de: "Wir bieten Schulungen an! Von Anfänger bis Experte - inklusive Agentic AI Coding!",
+        en: "We offer training courses! From beginner to expert - including Agentic AI Coding!",
+      },
       href: "https://workshops.de/schulungsthemen/angular?utm_source=angular_de&utm_campaign=generic_training&utm_medium=portal&utm_content=banner",
     },
     // Main navigation items
@@ -233,7 +235,7 @@ export function buildUtmUrl(
   baseUrl: string,
   campaign: string,
   medium: string = "portal",
-  content: string = ""
+  content: string = "",
 ): string {
   const params = new URLSearchParams({
     utm_source: siteConfig.utm_source,
@@ -256,7 +258,7 @@ export function getCommunityLinks() {
       community.href,
       "crossmarketing_permanent",
       "portal",
-      "footer_nav"
+      "footer_nav",
     ),
   }));
 }
