@@ -3,7 +3,7 @@ title: "Local AI, Reactive Routing & Vitest: Angular im März 2026"
 description: "Das Angular Team bringt Local AI-Integration, reaktives Routing und die Karma-zu-Vitest-Migration. Was Angular-Entwickler jetzt wissen müssen."
 author: "Robin Böhm"
 published_at: 2026-03-28T10:00:00.000Z
-header_image: header.jpg
+header_image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
 categories: angular typescript frontend development tools
 ---
 
