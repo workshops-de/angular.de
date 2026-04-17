@@ -165,32 +165,6 @@ export const siteConfig = {
         level: "advanced",
       },
       {
-        id: "modern-angular",
-        title: {
-          de: "Modern Angular - 2026 Edition",
-          en: "Modern Angular - 2026 Edition",
-        },
-        subtitle: {
-          de: "Neueste Features",
-          en: "Latest Features",
-        },
-        description: {
-          de: "Für erfahrene Angular-Entwickler:innen. Lerne Signals, Control Flow, SSR und die neuesten Features.",
-          en: "For experienced Angular developers. Learn Signals, Control Flow, SSR and the latest features.",
-        },
-        duration: {
-          de: "2 Tage",
-          en: "2 Days",
-        },
-        format: {
-          de: "Vor Ort oder Remote",
-          en: "On-Site or Remote",
-        },
-        icon: "/assets/img/workshops/logo-angular-enterprise-applications.svg",
-        url: "/seminare-schulungen-kurse/modern-angular",
-        level: "advanced",
-      },
-      {
         id: "angular-ai",
         title: {
           de: "Angular & AI Engineering",
@@ -213,7 +187,7 @@ export const siteConfig = {
           en: "On-Site or Remote",
         },
         icon: "/assets/img/workshops/angular-agentic-ai-engineering.svg",
-        url: "/seminare-schulungen-kurse/angular-ai-engineering",
+        url: "/seminare-schulungen-kurse/angular-ai-agent-driven-development",
         level: "advanced",
       },
     ],
