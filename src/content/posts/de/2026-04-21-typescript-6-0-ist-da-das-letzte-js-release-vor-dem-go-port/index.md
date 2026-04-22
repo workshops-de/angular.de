@@ -16,13 +16,30 @@ Mit Version 6.0, veröffentlicht am 23. März 2026 von Daniel Rosenwasser und de
 
 Die wichtigsten Änderungen sind nicht neue Features, sondern **veränderte Defaults und Deprecations**, die auf TypeScript 7.0 vorbereiten:
 
-`strict` ist jetzt standardmäßig `true` – wer bisher ohne explizites `"strict": false` gearbeitet hat und sich auf den alten Default verlassen hat, bekommt nun mehr Fehler. `module` wechselt auf `esnext` als Default, `types[]` ist nun leer per Default (statt alle `@types` in `node_modules/@types` zu laden), was Build-Zeiten deutlich verbessert, aber in vielen Projekten sofort zu fehlenden Deklarationen führt. `baseUrl` ist deprecated und gilt nicht mehr als Modul-Lookup-Root, `outFile` wurde vollständig entfernt. Das `target: es5` gilt als deprecated – ES2015 ist nun das Minimum. Zusätzlich wird `--moduleResolution node` (node10) deprecated; der empfohlene Pfad ist `nodenext` oder `bundler`.
+`strict` ist jetzt standardmäßig `true` – wer bisher ohne explizites `"strict": false` gearbeitet hat und sich auf den alten Default verlassen hat, bekommt nun mehr Fehler.
 
-Auf der Features-Seite: TypeScript 6.0 bringt native Typen für die **Temporal API** (Stage 4, via `esnext.temporal`), die neuen **`getOrInsert`/`getOrInsertComputed`-Methoden** auf `Map` und `WeakMap`, **`RegExp.escape`** sowie Unterstützung für **Subpath Imports starting with `#/`** – alles Ergebnisse aus der ECMAScript-Standardisierungsarbeit der letzten Jahre. Das neue `--stableTypeOrdering`-Flag hilft dabei, Unterschiede zwischen 6.0 und 7.0 im Declarations Emit zu identifizieren.
+
+`module` wechselt auf `esnext` als Default, `types[]` ist nun leer per Default (statt alle `@types` in `node_modules/@types` zu laden), was Build-Zeiten deutlich verbessert, aber in vielen Projekten sofort zu fehlenden Deklarationen führt.
+
+
+`baseUrl` ist deprecated und gilt nicht mehr als Modul-Lookup-Root, `outFile` wurde vollständig entfernt. Das `target: es5` gilt als deprecated – ES2015 ist nun das Minimum.
+
+Zusätzlich wird `--moduleResolution node` (node10) deprecated; der empfohlene Pfad ist `nodenext` oder `bundler`.
+
+Auf der Features-Seite: TypeScript 6.0 bringt native Typen für die **Temporal API** (Stage 4, via `esnext.temporal`), die neuen **`getOrInsert`/`getOrInsertComputed`-Methoden** auf `Map` und `WeakMap`, **`RegExp.escape`** sowie Unterstützung für **Subpath Imports starting with `#/`** – alles Ergebnisse aus der ECMAScript-Standardisierungsarbeit der letzten Jahre.
+
+Das neue `--stableTypeOrdering`-Flag hilft dabei, Unterschiede zwischen 6.0 und 7.0 im Declarations Emit zu identifizieren.
 
 ## Was bedeutet das für Angular-Teams?
 
-Mit TypeScript 6.0 ändern sich für Angular-Teams konkret mindestens drei Dinge in der `tsconfig.json`: `types` muss explizit gesetzt werden (typischerweise `["node"]` oder `["jest", "node"]`), `rootDir` sollte ebenfalls explizit angegeben sein, und wer noch `baseUrl` verwendet, muss auf explizite `paths`-Einträge migrieren. Migration-Tools für 6.0 sind aktuell in Entwicklung. Deprecations können vorübergehend mit `"ignoreDeprecations": "6.0"` in der tsconfig unterdrückt werden – allerdings **nur** für 6.0: TypeScript 7.0 wird diese Optionen vollständig entfernen. Enterprise-Projekte mit vielen `@types`-Paketen in einem Monorepo profitieren direkt von der leeren `types[]`-Default, da Builds laut Microsoft-Angaben 20–50 % schneller werden können. Die TypeScript-Roadmap ist klar: Jetzt auf 6.0 migrieren und Deprecations bereinigen, bevor 7.0 mit dem Go-Port in einigen Monaten erscheint.
+Mit TypeScript 6.0 ändern sich für Angular-Teams konkret mindestens drei Dinge in der `tsconfig.json`: `types` muss explizit gesetzt werden (typischerweise `["node"]` oder `["jest", "node"]`), `rootDir` sollte ebenfalls explizit angegeben sein, und wer noch `baseUrl` verwendet, muss auf explizite `paths`-Einträge migrieren.
+
+Migration-Tools für 6.0 sind aktuell in Entwicklung. Deprecations können vorübergehend mit `"ignoreDeprecations": "6.0"` in der tsconfig unterdrückt werden – allerdings **nur** für 6.0: TypeScript 7.0 wird diese Optionen vollständig entfernen.
+
+Enterprise-Projekte mit vielen `@types`-Paketen in einem Monorepo profitieren direkt von der leeren `types[]`-Default, da Builds laut Microsoft-Angaben 20–50 % schneller werden können.
+
+
+Die TypeScript-Roadmap ist klar: Jetzt auf 6.0 migrieren und Deprecations bereinigen, bevor 7.0 mit dem Go-Port in einigen Monaten erscheint.
 
 ## Quellen & Weiterführende Links
 
