@@ -4,6 +4,7 @@ description: "TypeScript 6.0 ist da – das letzte JS-Release vor dem Go-Port"
 author: "Robin Böhm"
 published_at: 2026-04-21T10:00:00.000Z
 header_source: https://images.unsplash.com/photo-1568716353609-12ddc5c67f04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTM4MjZ8MHwxfHNlYXJjaHw2fHxUeXBlU2NyaXB0JTIwaXN0JTIwZGElMjBkYXMlMjBUTERSJTIwVHlwZVNjcmlwdCUyMGlzdHxlbnwxfDB8fHwxNzc2NzU3MzYxfDA&ixlib=rb-4.1.0&q=80&w=1080
+header_image: https://images.unsplash.com/photo-1568716353609-12ddc5c67f04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTM4MjZ8MHwxfHNlYXJjaHw2fHxUeXBlU2NyaXB0JTIwaXN0JTIwZGElMjBkYXMlMjBUTERSJTIwVHlwZVNjcmlwdCUyMGlzdHxlbnwxfDB8fHwxNzc2NzU3MzYxfDA&ixlib=rb-4.1.0&q=80&w=1080
 categories: angular typescript frontend development tools
 ---
 
