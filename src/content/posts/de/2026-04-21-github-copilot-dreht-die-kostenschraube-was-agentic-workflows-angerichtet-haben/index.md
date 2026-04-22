@@ -3,7 +3,8 @@ title: "GitHub Copilot dreht die Kostenschraube: Was agentic Workflows angericht
 description: "GitHub Copilot dreht die Kostenschraube: Was agentic Workflows angerichtet haben"
 author: "Robin Böhm"
 published_at: 2026-04-21T10:00:00.000Z
-header_image: header.jpg
+header_image: https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=600&q=80
+header_source: https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU
 categories: angular typescript frontend development tools
 ---
 
