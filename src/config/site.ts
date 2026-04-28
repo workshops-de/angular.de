@@ -115,8 +115,8 @@ export const siteConfig = {
       {
         id: "angular-modul-1",
         title: {
-          de: "Angular: Modul 1 - Komponenten, Reaktivität & Schnittstellen",
-          en: "Angular: Module 1 - Components, Reactivity & Interfaces",
+          de: "Angular & TypeScript",
+          en: "Angular & TypeScript",
         },
         subtitle: {
           de: "Intensiv-Schulung",
@@ -127,8 +127,8 @@ export const siteConfig = {
           en: "Intensive training for getting started with Angular and TypeScript. Components, Signals, Routing and API integration.",
         },
         duration: {
-          de: "3 Tage",
-          en: "3 Days",
+          de: "5 Tage",
+          en: "5 Days",
         },
         format: {
           de: "Vor Ort oder Remote",
@@ -141,8 +141,8 @@ export const siteConfig = {
       {
         id: "angular-modul-2",
         title: {
-          de: "Angular: Modul 2 - Architektur, Qualität & Mono-Repositories",
-          en: "Angular: Module 2 - Architecture, Quality & Mono-Repositories",
+          de: "Angular Advanced: Architektur, Qualität & Mono-Repositories",
+          en: "Angular Advanced: Architecture, Quality & Mono-Repositories",
         },
         subtitle: {
           de: "Intensiv-Schulung",
@@ -153,8 +153,8 @@ export const siteConfig = {
           en: "Intensive training for advanced Angular developers. Architecture, Testing, Performance and Mono-Repositories.",
         },
         duration: {
-          de: "3 Tage",
-          en: "3 Days",
+          de: "5 Tage",
+          en: "5 Days",
         },
         format: {
           de: "Vor Ort oder Remote",
